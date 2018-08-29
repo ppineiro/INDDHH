@@ -1,0 +1,101 @@
+
+
+BODY{
+	BACKGROUND-COLOR: #EFEFEF;
+	MARGIN-TOP: 2px;								
+	MARGIN-BOTTOM:2px;
+	MARGIN-LEFT: 2px;
+	MARGIN-RIGHT: 1px;
+	cursor:pointer;
+	cursor:default;
+}
+
+.tocHolder{
+    /*BORDER:1px solid #416D94;*/
+    SCROLLBAR-FACE-COLOR: #b9d3ee;
+    SCROLLBAR-HIGHLIGHT-COLOR:#FFFFFF;
+    SCROLLBAR-SHADOW-COLOR:  #A4CBEA; 		/* #C0C0C0;*/
+    SCROLLBAR-ARROW-COLOR: navy; 			/*#808080;*/
+    SCROLLBAR-DARKSHADOW-COLOR: #3568CC; 	/*#808080;*/
+    SCROLLBAR-BASE-COLOR: #b9d3ee; /* #FFFFFF;*/			/*#808080;*/
+
+}
+
+#tocContainerBack{
+	background-color: #b9d3ee;
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    MARGIN:0px;
+    OVERFLOW:hidden;
+    WIDTH: 100%;
+    HEIGHT:100%;
+    BORDER:1px solid #416D94;
+}
+
+#tocContainer{
+    SCROLLBAR-FACE-COLOR: #b9d3ee;
+    SCROLLBAR-HIGHLIGHT-COLOR:#FFFFFF;
+    SCROLLBAR-SHADOW-COLOR:  #A4CBEA;
+    SCROLLBAR-ARROW-COLOR: navy;
+    SCROLLBAR-DARKSHADOW-COLOR: #3568CC;
+    SCROLLBAR-BASE-COLOR: #b9d3ee;
+}
+.tocTop{
+	BORDER-COLLAPSE:collapse;
+	background-image:url(../../gradient.jsp?height=1&width=300&colors=A4CBEA;ffffff);
+	background-repeat:repeat-y;
+	background-color:#FFFFFF;
+	WIDTH: 100%;
+	MARGIN:0px;
+	BORDER:1px solid #416D94;
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    COLOR:gray;
+    DISPLAY:none;
+}
+.tocTop TR{
+	HEIGHT:15px;
+}
+.tocTop TR TD{
+	TEXT-ALIGN:center;
+	PADDING:0px;
+	MARGIN:0px;
+	LETTER-SPACING: 2px;
+	TEXT-TRANSFORM: uppercase;
+}
+IMG{
+    MARGIN-RIGHT: 2px;
+    MARGIN-LEFT:4px;
+    POSITION:static;
+    TOP: 4px;
+    CURSOR: default;
+}
+UL{
+    MARGIN: 0px;
+    WIDTH:1px;
+    padding-left:0px;
+}
+LI UL{
+    DISPLAY: none;
+    MARGIN-LEFT: 15px;
+    MARGIN-RIGHT:0px;
+    white-space:nowrap;
+}
+LI{
+	cursor:pointer;
+    CURSOR: hand;
+    LIST-STYLE: none;
+    white-space:nowrap;
+    padding-top:1px;
+    padding-bottom:1px;
+}
+LI span{
+	vertical-align:super;
+	margin-left:2px;
+}
+LI.clsFolder{
+	color:#1B4D80;
+	cursor:pointer;
+    CURSOR: hand;
+    LIST-STYLE: none;
+}

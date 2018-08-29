@@ -1,0 +1,76 @@
+<Schema name="New Schema1">
+	<Cube name="PCNP" cache="true" enabled="true">
+		<Table name="DW_PROCESS" alias="TablaHechos">
+		</Table>
+		<Dimension type="StandardDimension" foreignKey="PRO_ID" name="Process">
+			<Hierarchy name="Process" hasAll="true" allMemberName="Proceso" primaryKey="PRO_ID" primaryKeyTable="COD_PROCESS">
+				<Table name="COD_PROCESS">
+				</Table>
+				<Level name="Name" table="COD_PROCESS" column="PRO_NAME" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+				</Level>
+			</Hierarchy>
+		</Dimension>
+		<Dimension type="StandardDimension" foreignKey="POOL_ID" name="Pool">
+			<Hierarchy name="Pool" hasAll="true" allMemberName="Grupo" primaryKey="POOL_ID" primaryKeyTable="COD_POOL">
+				<Table name="COD_POOL">
+				</Table>
+				<Level name="Pool" column="POOL_NAME" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+				</Level>
+			</Hierarchy>
+		</Dimension>
+		<Dimension type="StandardDimension" foreignKey="PRO_CREATE_DATE" name="Start_Date">
+			<Hierarchy name="Start_Date" hasAll="true" allMemberName="StartDate" primaryKey="Fecha" primaryKeyTable="DIMENSIONFECHA">
+				<Table name="DIMENSIONFECHA">
+				</Table>
+				<Level name="Year" table="DIMENSIONFECHA" column="Ano" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+				</Level>
+				<Level name="Quarter" table="DIMENSIONFECHA" column="Trimestre" type="Integer" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+				</Level>
+				<Level name="Month" table="DIMENSIONFECHA" column="Mes" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+				</Level>
+			</Hierarchy>
+		</Dimension>
+		<Dimension type="StandardDimension" foreignKey="PRO_CREATE_USER" name="User">
+			<Hierarchy name="User" hasAll="true" allMemberName="Usuario" primaryKey="USR_LOGIN" primaryKeyTable="cod_user">
+				<Table name="cod_user">
+				</Table>
+				<Level name="User" table="cod_user" column="USR_NAME" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+				</Level>
+			</Hierarchy>
+		</Dimension>
+		<Dimension type="StandardDimension" foreignKey="PRO_DUR_STATUS_ID" name="Process_Delay_Status">
+			<Hierarchy name="Process_Delay_Status" hasAll="true" allMemberName="PROC_STATUS" primaryKey="DUR_STATUS_ID" primaryKeyTable="cod_dur_status">
+				<Table name="cod_dur_status">
+				</Table>
+				<Level name="Process_Delay_Status" table="cod_dur_status" column="DUR_STATUS" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+				</Level>
+			</Hierarchy>
+		</Dimension>
+		<Dimension type="StandardDimension" foreignKey="PRO_END_DATE" name="End_Date">
+			<Hierarchy name="End_Date" hasAll="true" allMemberName="EndDate" primaryKey="Fecha" primaryKeyTable="DIMENSIONFECHA1">
+				<Table name="DIMENSIONFECHA1">
+				</Table>
+				<Level name="Year" table="DIMENSIONFECHA1" column="Ano" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+				</Level>
+				<Level name="Quarter" table="DIMENSIONFECHA1" column="Trimestre" type="Integer" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+				</Level>
+				<Level name="Month" table="DIMENSIONFECHA1" column="Mes" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+				</Level>
+			</Hierarchy>
+		</Dimension>
+		<Dimension type="StandardDimension" foreignKey="PRO_STATUS_ID" name="Status_Actual">
+			<Hierarchy name="Status" hasAll="true" allMemberName="Status" primaryKey="PRO_STATUS_ID" primaryKeyTable="COD_PRO_STATUS">
+				<Table name="COD_PRO_STATUS">
+				</Table>
+				<Level name="Process_Status" table="COD_PRO_STATUS" column="PRO_STATUS" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+				</Level>
+			</Hierarchy>
+		</Dimension>
+		<Measure name="Cantidad" column="PRO_INST_ID" aggregator="count" visible="true">
+		</Measure>
+		<Measure name="Promedio Tiempo" column="PRO_TIME" datatype="Integer" formatString="#,###.0" aggregator="avg" visible="true">
+		</Measure>
+		<CalculatedMember name="Prom en Dias" formula="[Measures].[Promedio Tiempo] / (86400)" dimension="Measures" visible="true">
+		</CalculatedMember>
+	</Cube>
+</Schema>

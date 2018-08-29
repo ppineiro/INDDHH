@@ -1,0 +1,5 @@
+<%@ taglib uri='/WEB-INF/regions.tld' prefix='region' %><%@page import="com.dogma.vo.*"%><%@page import="com.dogma.bean.execution.*"%><%@page import="java.util.*"%><%@page import="com.st.util.XMLUtils"%><%@include file="../../../components/scripts/server/startInc.jsp" %><%response.setCharacterEncoding(com.dogma.Parameters.APP_ENCODING);%><% TaskBean dBean = (TaskBean) session.getAttribute("dBean"); %><region:render template='/templates/resultHierarchyTemplate.jsp'><region:put section='title'><%=LabelManager.getName(labelSet,"titDelTar")%></region:put><region:put section='message'><table><tr><td></td><td><%out.println(XMLUtils.transform(dBean.getEnvId(request),dBean.getXMLTree(request),"/programs/execution/tasks/hierarchy.xsl")); %></td></tr></table></region:put><region:put section='navigate'>true</region:put><region:put section='closeAutomatically'>false</region:put><region:put section='nextUrl'>/execution.TaskAction.do?action=confirmDelegate</region:put><region:put section='btnSalir'>true</region:put></region:render><%@include file="../../../components/scripts/server/endInc.jsp" %><script>
+	function chk_click(){
+	}
+	
+</script>

@@ -1,0 +1,1 @@
+	<element name="swimlane"><attGroup name=""<%=(!bpmnAtts?" notShown=\"true\"":"")%>><attribute name="documentation" label="<%=lbl("lblbtnDocumentation")%>" type="modalArray" modalclass="view.modal.Condition" modalwidth="530" modalheight="330" use="optional" dataType="string" /><attribute label="<%=lbl("lblName")%>" name="name" type="text" change="setName" /></attGroup></element>

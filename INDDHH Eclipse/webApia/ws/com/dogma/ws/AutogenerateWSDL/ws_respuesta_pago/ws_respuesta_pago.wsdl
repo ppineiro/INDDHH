@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.apiasolutions.com/WebServices"
+	xmlns:impl="http://www.apiasolutions.com/WebServices"
+	xmlns:intf="http://www.apiasolutions.com/WebServices"
+	xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:apachesoap="http://xml.apache.org/xml-soap"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:ns3="http://www.ig.com.br/poc/Venda"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns1="http://www.apiasolutions.com/WebServices/Data">
+	<wsdl:types>
+		<schema elementFormDefault="qualified" targetNamespace="http://www.apiasolutions.com/WebServices" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://www.apiasolutions.com/WebServices">
+			<element name="ApiaWSInput" type="impl:ApiaWSInputType"/>
+			<complexType name="ApiaWSInputType">
+			  	<sequence>
+					<element name="E_TRX_ID_PROCESO_AUTO_NUM" type="xsd:double"/>
+					<element name="E_TRX_ESTADO_PAGO_RESPUESTA_STR" type="xsd:string"/>
+					<element name="E_TRX_GWITC_CANTIDAD_NUM" type="xsd:double"/>
+					<element name="E_TRX_GWITC_COD_AUTORIZACION_NUM" type="xsd:double"/>
+					<element name="E_TRX_GWITC_COD_AUTORIZACION_STR" type="xsd:string"/>
+					<element name="E_TRX_GWITC_COD_ERROR_NUM" type="xsd:double"/>
+					<element name="E_TRX_GWITC_CODS_DESGLOSE_STR" type="xsd:string"/>
+					<element name="E_TRX_GWITC_CONSUMIDOR_FINAL_NUM" type="xsd:double"/>
+					<element name="E_TRX_GWITC_DES_ERROR_STR" type="xsd:string"/>
+					<element name="E_TRX_GWITC_DES_RECHAZO_STR" type="xsd:string"/>
+					<element name="E_TRX_GWITC_FECHA_VTO_STR" type="xsd:string"/>
+					<element name="E_TRX_GWITC_ID_FORMA_PAGO_NUM" type="xsd:double"/>
+					<element name="E_TRX_GWITC_ID_SOL_NUM" type="xsd:double"/>
+					<element name="E_TRX_GWITC_ID_TASA_NUM" type="xsd:double"/>
+					<element name="E_TRX_GWITC_ID_TRAMITE_NUM" type="xsd:double"/>
+					<element name="E_TRX_GWITC_IMPORTE_TASA_1_NUM" type="xsd:double"/>
+					<element name="E_TRX_GWITC_IMPORTE_TASA_2_NUM" type="xsd:double"/>
+					<element name="E_TRX_GWITC_IMPORTE_TASA_3_NUM" type="xsd:double"/>
+					<element name="E_TRX_GWITC_MONTOS_DESCUENTO_IVA_NUM" type="xsd:double"/>
+					<element name="E_TRX_GWITC_MONTOS_DESGLOSE_STR" type="xsd:string"/>
+					<element name="E_TRX_GWITC_MONTO_TOTAL_NUM" type="xsd:double"/>
+					<element name="E_TRX_GWITC_NUMERO_FACTURA_REAL_STR" type="xsd:string"/>
+					<element name="E_TRX_GWITC_NUMERO_FACTURA_STR" type="xsd:string"/>
+					<element name="E_TRX_GWITC_REFERENCIA_STR" type="xsd:string"/>
+					<element name="E_TRX_GWITC_TIPO_OPERACION_STR" type="xsd:string"/>
+					<element name="E_TRX_GWITC_USUARIO_PEU_STR" type="xsd:string"/>
+					<element name="E_TRX_GWITC_VALOR_TASA_NUM" type="xsd:double"/>
+					<element name="E_TRX_GWITC_VENTANILLA_NUM" type="xsd:double"/>
+					<element name="E_TRX_MEDIO_PAGO_SELECCIONADO_STR" type="xsd:string"/>
+					<element name="E_TRX_GESTOR_PAGO_STR" type="xsd:string"/>
+					<element name="E_TRX_COSTO_STR" type="xsd:string"/>
+					<element name="E_TRX_TRM_NOMBRE_STR" type="xsd:string"/>
+					<element name="E_TRX_DOCUMENTO_USUARIO_STR" type="xsd:string"/>
+					<element name="E_TRX_COSTO_MONEDA_STR" type="xsd:string"/>
+					<element name="E_TRX_NUMERO_ORDEN_STR" type="xsd:string"/>
+					<element name="E_TRX_NUMERO_INTENTO_PAGO_NUM" type="xsd:double"/>
+					<element name="E_TRX_ID_TRAMITE_STR" type="xsd:string"/>
+				</sequence>
+			</complexType>
+			<element name="ExecResult" type="impl:ExecResultType"/>
+			<complexType name="ExecResultType">
+			  	<sequence>
+			  		<element name="resultCode" type="xsd:int"/>
+			  		<element name="resultMessage" type="xsd:string"/>
+				</sequence>
+			</complexType>
+		</schema>
+	</wsdl:types>
+	<wsdl:message name="ws_respuesta_pagoRequest">
+		<wsdl:part name="ws_respuesta_pagoInput" element="impl:ApiaWSInput"/>
+	</wsdl:message>
+	<wsdl:message name="ws_respuesta_pagoResponse">
+		<wsdl:part name="ws_respuesta_pagoReturn" element="impl:ExecResult"/>
+	</wsdl:message>	
+	<wsdl:portType name="ApiaWSInterface">
+		<wsdl:operation name="ws_respuesta_pago" parameterOrder="ws_respuesta_pagoInput">
+			<wsdl:input name="ws_respuesta_pagoRequest" message="impl:ws_respuesta_pagoRequest"/>
+			<wsdl:output name="ws_respuesta_pagoResponse" message="impl:ws_respuesta_pagoResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ApiaWSSoapBinding" type="impl:ApiaWSInterface">
+		<wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="ws_respuesta_pago">
+			<wsdlsoap:operation soapAction="apiaAction"/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ApiaWSInterfaceService">
+		<wsdl:port name="ApiaWSws_respuesta_pago" binding="impl:ApiaWSSoapBinding">
+			<wsdlsoap:address location="http://LOCATION-TOKEN"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

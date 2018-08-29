@@ -1,0 +1,265 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<PROCESS_DEFINITION>
+	<ELEMENT id="1004" pro_ele_id="1004" type="O">		<OPERATOR ope_id="2" />
+<DESIGN y="260" x="495"/>
+	<DEPENDENCIES>
+		<DEPENDENCY id="1012" ></DEPENDENCY>
+		<DEPENDENCY id="1018" ></DEPENDENCY>
+		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="1005" pro_ele_id="1005" type="O">		<OPERATOR ope_id="2" />
+<DESIGN y="133" x="494"/>		<DEPENDENCIES>
+		<DEPENDENCY id="1012" >&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;&lt;BOOL_EXP&gt;&lt;UNA_OPE type=&quot;1&quot;&gt;&lt;BOOL_EXP&gt;&lt;LOG_OPE type=&quot;2&quot;&gt;&lt;BOOL_EXP&gt;&lt;LOG_OPE type=&quot;2&quot;&gt;&lt;BOOL_EXP&gt;&lt;CMP_OPE type=&quot;3&quot;&gt;&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1075&quot;/&gt;&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1123&quot;/&gt;&lt;/CMP_OPE&gt;&lt;/BOOL_EXP&gt;&lt;BOOL_EXP&gt;&lt;CMP_OPE type=&quot;3&quot;&gt;&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1038&quot;/&gt;&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1124&quot;/&gt;&lt;/CMP_OPE&gt;&lt;/BOOL_EXP&gt;&lt;/LOG_OPE&gt;&lt;/BOOL_EXP&gt;&lt;BOOL_EXP&gt;&lt;CMP_OPE type=&quot;1&quot;&gt;&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1076&quot;/&gt;&lt;LITERAL type=&quot;STRING&quot;&gt;5&lt;/LITERAL&gt;&lt;/CMP_OPE&gt;&lt;/BOOL_EXP&gt;&lt;/LOG_OPE&gt;&lt;/BOOL_EXP&gt;&lt;/UNA_OPE&gt;&lt;/BOOL_EXP&gt;</DEPENDENCY>
+		<DEPENDENCY id="1013" >&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;&lt;BOOL_EXP&gt;&lt;LOG_OPE type=&quot;2&quot;&gt;&lt;BOOL_EXP&gt;&lt;LOG_OPE type=&quot;2&quot;&gt;&lt;BOOL_EXP&gt;&lt;CMP_OPE type=&quot;3&quot;&gt;&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1075&quot;/&gt;&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1123&quot;/&gt;&lt;/CMP_OPE&gt;&lt;/BOOL_EXP&gt;&lt;BOOL_EXP&gt;&lt;CMP_OPE type=&quot;3&quot;&gt;&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1038&quot;/&gt;&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1124&quot;/&gt;&lt;/CMP_OPE&gt;&lt;/BOOL_EXP&gt;&lt;/LOG_OPE&gt;&lt;/BOOL_EXP&gt;&lt;BOOL_EXP&gt;&lt;CMP_OPE type=&quot;1&quot;&gt;&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1076&quot;/&gt;&lt;LITERAL type=&quot;STRING&quot;&gt;5&lt;/LITERAL&gt;&lt;/CMP_OPE&gt;&lt;/BOOL_EXP&gt;&lt;/LOG_OPE&gt;&lt;/BOOL_EXP&gt;</DEPENDENCY>
+		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="1006" pro_ele_id="1006" type="O">		<OPERATOR ope_id="2" />
+<DESIGN y="168" x="475"/>		<DEPENDENCIES>
+		<DEPENDENCY id="1005" >&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;BOOL_EXP&gt;
+	&lt;CMP_OPE type=&quot;1&quot;&gt;
+		&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1121&quot;/&gt;
+		&lt;LITERAL type=&quot;NUMERIC&quot;&gt;1&lt;/LITERAL&gt;
+	&lt;/CMP_OPE&gt;
+&lt;/BOOL_EXP&gt;</DEPENDENCY>
+		<DEPENDENCY id="1018" >&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;BOOL_EXP&gt;
+	&lt;CMP_OPE type=&quot;1&quot;&gt;
+		&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1121&quot;/&gt;
+		&lt;LITERAL type=&quot;NUMERIC&quot;&gt;0&lt;/LITERAL&gt;
+	&lt;/CMP_OPE&gt;
+&lt;/BOOL_EXP&gt;</DEPENDENCY>
+		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="1007" pro_ele_id="1007" type="O">		<OPERATOR ope_id="2" />
+<DESIGN y="151" x="621"/>		<DEPENDENCIES>
+		<DEPENDENCY id="1011" >&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;BOOL_EXP&gt;
+	&lt;CMP_OPE type=&quot;1&quot;&gt;
+		&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1040&quot;/&gt;
+		&lt;LITERAL type=&quot;STRING&quot;&gt;1039&lt;/LITERAL&gt;
+	&lt;/CMP_OPE&gt;
+&lt;/BOOL_EXP&gt;
+</DEPENDENCY>
+		<DEPENDENCY id="1018" >&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;BOOL_EXP&gt;
+	&lt;UNA_OPE type=&quot;1&quot;&gt;
+		&lt;BOOL_EXP&gt;
+			&lt;CMP_OPE type=&quot;1&quot;&gt;
+				&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1040&quot;/&gt;
+				&lt;LITERAL type=&quot;STRING&quot;&gt;1039&lt;/LITERAL&gt;
+			&lt;/CMP_OPE&gt;
+		&lt;/BOOL_EXP&gt;
+	&lt;/UNA_OPE&gt;
+&lt;/BOOL_EXP&gt;
+</DEPENDENCY>
+		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="1008" pro_ele_id="1008" type="O">		<OPERATOR ope_id="2" />
+<DESIGN y="131" x="360"/>		<DEPENDENCIES>
+		<DEPENDENCY id="1012" >&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;&lt;BOOL_EXP&gt;&lt;UNA_OPE type=&quot;1&quot;&gt;&lt;BOOL_EXP&gt;&lt;LOG_OPE type=&quot;2&quot;&gt;&lt;BOOL_EXP&gt;&lt;LOG_OPE type=&quot;2&quot;&gt;&lt;BOOL_EXP&gt;&lt;CMP_OPE type=&quot;3&quot;&gt;&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1038&quot;/&gt;&lt;LITERAL type=&quot;NUMERIC&quot;&gt;0&lt;/LITERAL&gt;&lt;/CMP_OPE&gt;&lt;/BOOL_EXP&gt;&lt;BOOL_EXP&gt;&lt;CMP_OPE type=&quot;3&quot;&gt;&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1075&quot;/&gt;&lt;LITERAL type=&quot;NUMERIC&quot;&gt;0&lt;/LITERAL&gt;&lt;/CMP_OPE&gt;&lt;/BOOL_EXP&gt;&lt;/LOG_OPE&gt;&lt;/BOOL_EXP&gt;&lt;BOOL_EXP&gt;&lt;CMP_OPE type=&quot;1&quot;&gt;&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1076&quot;/&gt;&lt;LITERAL type=&quot;STRING&quot;&gt;5&lt;/LITERAL&gt;&lt;/CMP_OPE&gt;&lt;/BOOL_EXP&gt;&lt;/LOG_OPE&gt;&lt;/BOOL_EXP&gt;&lt;/UNA_OPE&gt;&lt;/BOOL_EXP&gt;</DEPENDENCY>
+		<DEPENDENCY id="1014" >&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;&lt;BOOL_EXP&gt;&lt;LOG_OPE type=&quot;2&quot;&gt;&lt;BOOL_EXP&gt;&lt;LOG_OPE type=&quot;2&quot;&gt;&lt;BOOL_EXP&gt;&lt;CMP_OPE type=&quot;3&quot;&gt;&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1038&quot;/&gt;&lt;LITERAL type=&quot;NUMERIC&quot;&gt;0&lt;/LITERAL&gt;&lt;/CMP_OPE&gt;&lt;/BOOL_EXP&gt;&lt;BOOL_EXP&gt;&lt;CMP_OPE type=&quot;3&quot;&gt;&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1075&quot;/&gt;&lt;LITERAL type=&quot;NUMERIC&quot;&gt;0&lt;/LITERAL&gt;&lt;/CMP_OPE&gt;&lt;/BOOL_EXP&gt;&lt;/LOG_OPE&gt;&lt;/BOOL_EXP&gt;&lt;BOOL_EXP&gt;&lt;CMP_OPE type=&quot;1&quot;&gt;&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1076&quot;/&gt;&lt;LITERAL type=&quot;STRING&quot;&gt;5&lt;/LITERAL&gt;&lt;/CMP_OPE&gt;&lt;/BOOL_EXP&gt;&lt;/LOG_OPE&gt;&lt;/BOOL_EXP&gt;</DEPENDENCY>
+		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="1009" pro_ele_id="1009" type="O">		<OPERATOR ope_id="2" />
+<DESIGN y="178" x="157"/>		<DEPENDENCIES>
+		<DEPENDENCY id="1015" >&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;BOOL_EXP&gt;
+	&lt;CMP_OPE type=&quot;1&quot;&gt;
+		&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1120&quot;/&gt;
+		&lt;LITERAL type=&quot;NUMERIC&quot;&gt;1&lt;/LITERAL&gt;
+	&lt;/CMP_OPE&gt;
+&lt;/BOOL_EXP&gt;
+</DEPENDENCY>
+		<DEPENDENCY id="1016" >&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;BOOL_EXP&gt;
+	&lt;CMP_OPE type=&quot;1&quot;&gt;
+		&lt;LITERAL type=&quot;ENT_ATTR&quot; att_id=&quot;1120&quot;/&gt;
+		&lt;LITERAL type=&quot;NUMERIC&quot;&gt;0&lt;/LITERAL&gt;
+	&lt;/CMP_OPE&gt;
+&lt;/BOOL_EXP&gt;
+</DEPENDENCY>
+		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="1010" pro_ele_id="1010" type="T">		<TASK task_id="1007" name="REGISTRAR FIRMA DEL CONTRATO">
+			<FORMS>
+				<FORM form_id="1024" name="RSV_FIRMA_CONTRATO" type="E" read_only="false"/>
+				<FORM form_id="1006" name="REGISTRO RESERVA" type="E" read_only="true"/>
+				<FORM form_id="1013" name="REGISTRO RESERVA 2" type="E" read_only="true"/>
+				<FORM form_id="1008" name="STANDS / PUBLICIDAD 1" type="E" read_only="true"/>
+				<FORM form_id="1009" name="STANDS / PUBLICIDAD 2" type="E" read_only="true"/>
+				<FORM form_id="1010" name="STANDS / PUBLICIDAD 3" type="E" read_only="true"/>
+				<FORM form_id="1011" name="STANDS / PUBLICIDAD 4" type="E" read_only="true"/>
+				<FORM form_id="1012" name="STANDS / PUBLICIDAD 5" type="E" read_only="true"/>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="1003" name="VENDEDORES"></POOL>
+			</POOLS>
+			<EVENTS>
+				<EVENT event_id="6" class_id="1046" class_name="RSV_WARN_CAN" event_name="ONWARNING" order="1"/>
+				<EVENT event_id="10" class_id="1051" class_name="RSV_SELL_STOCK" event_name="ONCOMPLETE" order="0"/>
+				<EVENT event_id="10" class_id="1049" class_name="VALIDARFECHAS" event_name="ONCOMPLETE" order="1"/>
+				<EVENT event_id="10" class_id="1040" class_name="UPDATE_GIA" event_name="ONCOMPLETE" order="2"/>
+			</EVENTS>
+		</TASK>
+<DESIGN y="91" x="662"/>		<DEPENDENCY id="1007" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1011" pro_ele_id="1011" type="T">		<TASK task_id="1008" name="REGISTRAR CONTRATO EN FIRME">
+			<FORMS>
+				<FORM form_id="1019" name="REGISTRO CONTRATOS EN FIRME 1" type="E" read_only="false"/>
+				<FORM form_id="1006" name="REGISTRO RESERVA" type="E" read_only="true"/>
+				<FORM form_id="1013" name="REGISTRO RESERVA 2" type="E" read_only="false"/>
+				<FORM form_id="1020" name="CTR_FIR_STAND_1" type="E" read_only="false"/>
+				<FORM form_id="1021" name="CTR_FIR_STAND_2" type="E" read_only="false"/>
+				<FORM form_id="1025" name="CTR_FIR_STAND_3" type="E" read_only="false"/>
+				<FORM form_id="1026" name="CTR_FIR_STAND_4" type="E" read_only="false"/>
+				<FORM form_id="1027" name="CTR_FIR_STAND_5" type="E" read_only="false"/>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="1003" name="VENDEDORES"></POOL>
+			</POOLS>
+			<EVENTS>
+				<EVENT event_id="7" class_id="1042" class_name="RSV_COMPLETAR_RES" event_name="ONOVERDUE" order="1"/>
+				<EVENT event_id="10" class_id="1049" class_name="VALIDARFECHAS" event_name="ONCOMPLETE" order="1"/>
+				<EVENT event_id="10" class_id="1032" class_name="UPDATE_STOCK" event_name="ONCOMPLETE" order="2"/>
+				<EVENT event_id="18" class_id="1032" class_name="UPDATE_STOCK" event_name="ONSAVE" order="1"/>
+			</EVENTS>
+		</TASK>
+<DESIGN y="245" x="612"/>		<DEPENDENCY id="1018" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1012" pro_ele_id="1012" type="T">		<TASK task_id="1006" name="REGISTRAR FIRMA DEL CONTRATO">
+			<FORMS>
+				<FORM form_id="1023" name="RSV_EMISION_CONTRATO" type="E" read_only="false"/>
+				<FORM form_id="1006" name="REGISTRO RESERVA" type="E" read_only="true"/>
+				<FORM form_id="1013" name="REGISTRO RESERVA 2" type="E" read_only="true"/>
+				<FORM form_id="1008" name="STANDS / PUBLICIDAD 1" type="E" read_only="true"/>
+				<FORM form_id="1009" name="STANDS / PUBLICIDAD 2" type="E" read_only="true"/>
+				<FORM form_id="1010" name="STANDS / PUBLICIDAD 3" type="E" read_only="true"/>
+				<FORM form_id="1011" name="STANDS / PUBLICIDAD 4" type="E" read_only="true"/>
+				<FORM form_id="1012" name="STANDS / PUBLICIDAD 5" type="E" read_only="true"/>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="1003" name="VENDEDORES"></POOL>
+			</POOLS>
+			<EVENTS>
+				<EVENT event_id="10" class_id="1049" class_name="VALIDARFECHAS" event_name="ONCOMPLETE" order="1"/>
+				<EVENT event_id="10" class_id="1036" class_name="RSV_GEN_CON" event_name="ONCOMPLETE" order="2"/>
+			</EVENTS>
+		</TASK>
+<DESIGN y="55" x="539"/>		<DEPENDENCY id="1010" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1013" pro_ele_id="1013" type="T">		<TASK task_id="1005" name="RESERVA A AUTORIZAR POR LA JUNTA DIRECTIVA">
+			<FORMS>
+				<FORM form_id="1018" name="RSV_ANA_ACEPTAR" type="E" read_only="false"/>
+				<FORM form_id="1006" name="REGISTRO RESERVA" type="E" read_only="true"/>
+				<FORM form_id="1013" name="REGISTRO RESERVA 2" type="E" read_only="true"/>
+				<FORM form_id="1008" name="STANDS / PUBLICIDAD 1" type="E" read_only="false"/>
+				<FORM form_id="1009" name="STANDS / PUBLICIDAD 2" type="E" read_only="false"/>
+				<FORM form_id="1010" name="STANDS / PUBLICIDAD 3" type="E" read_only="false"/>
+				<FORM form_id="1011" name="STANDS / PUBLICIDAD 4" type="E" read_only="false"/>
+				<FORM form_id="1012" name="STANDS / PUBLICIDAD 5" type="E" read_only="false"/>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="1005" name="JUNTA DIRECTIVA"></POOL>
+			</POOLS>
+			<EVENTS>
+				<EVENT event_id="10" class_id="1032" class_name="UPDATE_STOCK" event_name="ONCOMPLETE" order="1"/>
+				<EVENT event_id="18" class_id="1032" class_name="UPDATE_STOCK" event_name="ONSAVE" order="1"/>
+			</EVENTS>
+		</TASK>
+<DESIGN y="303" x="396"/>		<DEPENDENCY id="1004" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1014" pro_ele_id="1014" type="T">		<TASK task_id="1004" name="RESERVA A AUTORIZAR POR EL DIRECTOR DEL PRADO">
+			<FORMS>
+				<FORM form_id="1017" name="RSV_AJU_ACEPTAR" type="E" read_only="false"/>
+				<FORM form_id="1006" name="REGISTRO RESERVA" type="E" read_only="true"/>
+				<FORM form_id="1013" name="REGISTRO RESERVA 2" type="E" read_only="false"/>
+				<FORM form_id="1008" name="STANDS / PUBLICIDAD 1" type="E" read_only="false"/>
+				<FORM form_id="1009" name="STANDS / PUBLICIDAD 2" type="E" read_only="false"/>
+				<FORM form_id="1010" name="STANDS / PUBLICIDAD 3" type="E" read_only="false"/>
+				<FORM form_id="1011" name="STANDS / PUBLICIDAD 4" type="E" read_only="false"/>
+				<FORM form_id="1012" name="STANDS / PUBLICIDAD 5" type="E" read_only="false"/>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="1004" name="DIRECTOR PRADO"></POOL>
+			</POOLS>
+			<EVENTS>
+				<EVENT event_id="10" class_id="1032" class_name="UPDATE_STOCK" event_name="ONCOMPLETE" order="1"/>
+				<EVENT event_id="18" class_id="1032" class_name="UPDATE_STOCK" event_name="ONSAVE" order="1"/>
+			</EVENTS>
+		</TASK>
+<DESIGN y="186" x="391"/>		<DEPENDENCY id="1006" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1015" pro_ele_id="1015" type="T">		<TASK task_id="1003" name="REGISTRAR FIRMA DE LA RESERVA">
+			<FORMS>
+				<FORM form_id="1022" name="RSV_FIRMA_RESERVA" type="E" read_only="false"/>
+				<FORM form_id="1006" name="REGISTRO RESERVA" type="E" read_only="true"/>
+				<FORM form_id="1013" name="REGISTRO RESERVA 2" type="E" read_only="true"/>
+				<FORM form_id="1008" name="STANDS / PUBLICIDAD 1" type="E" read_only="true"/>
+				<FORM form_id="1009" name="STANDS / PUBLICIDAD 2" type="E" read_only="true"/>
+				<FORM form_id="1010" name="STANDS / PUBLICIDAD 3" type="E" read_only="true"/>
+				<FORM form_id="1011" name="STANDS / PUBLICIDAD 4" type="E" read_only="true"/>
+				<FORM form_id="1012" name="STANDS / PUBLICIDAD 5" type="E" read_only="true"/>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="1003" name="VENDEDORES"></POOL>
+			</POOLS>
+			<EVENTS>
+				<EVENT event_id="6" class_id="1046" class_name="RSV_WARN_CAN" event_name="ONWARNING" order="1"/>
+				<EVENT event_id="7" class_id="1039" class_name="RSV_CANC_TIMEOUT" event_name="ONOVERDUE" order="1"/>
+				<EVENT event_id="10" class_id="1049" class_name="VALIDARFECHAS" event_name="ONCOMPLETE" order="1"/>
+			</EVENTS>
+		</TASK>
+<DESIGN y="225" x="242"/>		<DEPENDENCY id="1008" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1016" pro_ele_id="1016" type="T">		<TASK task_id="1002" name="COMPLETAR REGISTRO DE RESERVA">
+			<FORMS>
+				<FORM form_id="1006" name="REGISTRO RESERVA" type="E" read_only="false"/>
+				<FORM form_id="1008" name="STANDS / PUBLICIDAD 1" type="E" read_only="false"/>
+				<FORM form_id="1009" name="STANDS / PUBLICIDAD 2" type="E" read_only="false"/>
+				<FORM form_id="1010" name="STANDS / PUBLICIDAD 3" type="E" read_only="false"/>
+				<FORM form_id="1011" name="STANDS / PUBLICIDAD 4" type="E" read_only="false"/>
+				<FORM form_id="1012" name="STANDS / PUBLICIDAD 5" type="E" read_only="false"/>
+				<FORM form_id="1013" name="REGISTRO RESERVA 2" type="E" read_only="false"/>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="1003" name="VENDEDORES"></POOL>
+			</POOLS>
+			<EVENTS>
+				<EVENT event_id="10" class_id="1041" class_name="RSV_VALIDAR_COMPLETITUD" event_name="ONCOMPLETE" order="1"/>
+				<EVENT event_id="10" class_id="1034" class_name="RSV_GEN_RES" event_name="ONCOMPLETE" order="3"/>
+			</EVENTS>
+		</TASK>
+<DESIGN y="110" x="239"/>		<DEPENDENCY id="1015" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1017" pro_ele_id="1017" type="T">		<TASK task_id="1001" name="REGISTRO DE RESERVA">
+			<FORMS>
+				<FORM form_id="1006" name="REGISTRO RESERVA" type="E" read_only="false"/>
+				<FORM form_id="1008" name="STANDS / PUBLICIDAD 1" type="E" read_only="false"/>
+				<FORM form_id="1009" name="STANDS / PUBLICIDAD 2" type="E" read_only="false"/>
+				<FORM form_id="1010" name="STANDS / PUBLICIDAD 3" type="E" read_only="false"/>
+				<FORM form_id="1011" name="STANDS / PUBLICIDAD 4" type="E" read_only="false"/>
+				<FORM form_id="1012" name="STANDS / PUBLICIDAD 5" type="E" read_only="false"/>
+				<FORM form_id="1013" name="REGISTRO RESERVA 2" type="E" read_only="false"/>
+				<FORM form_id="1016" name="RSV_COMPLETA" type="E" read_only="false"/>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="1003" name="VENDEDORES"></POOL>
+			</POOLS>
+			<EVENTS>
+				<EVENT event_id="10" class_id="1041" class_name="RSV_VALIDAR_COMPLETITUD" event_name="ONCOMPLETE" order="1"/>
+				<EVENT event_id="10" class_id="1035" class_name="RSV_COPY_PARAM" event_name="ONCOMPLETE" order="2"/>
+				<EVENT event_id="10" class_id="1034" class_name="RSV_GEN_RES" event_name="ONCOMPLETE" order="3"/>
+			</EVENTS>
+		</TASK>
+<DESIGN y="187" x="85"/>		<DEPENDENCY id="1009" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1018" pro_ele_id="1018" type="E">		<END_MARK/>
+<DESIGN y="142" x="716"/>	</ELEMENT>
+	<ELEMENT id="1019" pro_ele_id="1019" type="I">		<INIT_MARK/>
+<DESIGN y="128" x="37"/>		<DEPENDENCY id="1017" ></DEPENDENCY>
+	</ELEMENT>
+			<EVENTS>
+				<EVENT event_id="13" class_id="1037" class_name="RSV_ANULAR_RES" event_name="ONCOMPLETE" order="1"/>
+			</EVENTS>
+</PROCESS_DEFINITION>

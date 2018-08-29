@@ -1,0 +1,68 @@
+
+/*------------------TABS TABLE-[Holds the tab images & buttons]------------------------*/
+.tblForTabs{
+	WIDTH:100%;
+	BORDER-COLLAPSE:collapse;
+	TABLE-LAYOUT:fixed;
+	MARGIN-TOP:4px;
+	MARGIN-BOTTOM:0px;
+}
+.tblForTabs .tabTitle{
+	WIDTH:100%;
+	background-image:url(../../gradient.jsp?height=20&width=1&colors=F79221;EFEF94&type=v);
+	background-repeat:repeat-x;
+	background-color:#EFEF94;
+	/*color:#1B4D80;*/
+	color:black;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	FONT-SIZE: 8pt;
+	BORDER:1px solid black;
+	MARGIN:0px;
+	LETTER-SPACING:1px;
+	PADDING-LEFT:3px;
+	PADDING-BOTTOM:1px;
+	PADDING-TOP:1px;
+	PADDING-RIGHT:0px;
+}
+
+.tblForTabs THEAD{
+}
+.tblForTabs THEAD TR{
+}
+.tblForTabs THEAD TR TD{
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:0px;
+	PADDING-RIGHT:0px;
+	PADDING-LEFT:8px;
+	MARGIN:0px;
+}
+
+.tblForTabs THEAD TR TD BUTTON{
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	FONT-SIZE:8pt;
+	color:black;
+	LETTER-SPACING:1px;
+	TEXT-ALIGN: center;
+	PADDING-TOP: 3px;
+	MARGIN:0px;
+	BORDER:none;
+	BACKGROUND-COLOR:transparent;
+	BACKGROUND-REPEAT: no-repeat;
+	WIDTH:94px;
+	HEIGHT:19px;
+	CURSOR: pointer;
+	CURSOR:hand;
+	FILTER:alpha(opacity = 30);
+}
+.tblForTabs THEAD TR TD BUTTON IMG{
+
+}
+.tblForTabs TBODY{
+	
+}
+.tblForTabs TBODY TR{	
+}
+.tblForTabs TBODY TR TD{
+	PADDING:0px;
+}
+/*-----------------------------   END TAB CLASSES ------------------------*/

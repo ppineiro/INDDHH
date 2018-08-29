@@ -1,0 +1,216 @@
+
+BODY{
+	MARGIN-TOP: 0px;								
+	MARGIN-BOTTOM:0px;
+	MARGIN-LEFT: 0px;
+	MARGIN-RIGHT: 0px;
+	background-color:#FFFFFF;
+	cursor:pointer;
+	cursor:default;
+}
+
+#tocContainer{
+    SCROLLBAR-FACE-COLOR: #eeebeb; 
+    SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+    SCROLLBAR-SHADOW-COLOR: #C0C0C0;
+    SCROLLBAR-ARROW-COLOR: #808080;
+    SCROLLBAR-DARKSHADOW-COLOR: #808080;
+    SCROLLBAR-BASE-COLOR: #808080;
+    scrollbar-3d-light-color: #808080;
+}
+
+.tocHolder{
+	FONT-FAMILY: arial;
+    FONT-SIZE: 8pt;
+    MARGIN:0px;
+    OVERFLOW-Y:auto;
+    OVERFLOW-X:hidden;
+	HEIGHT:100%; 
+    SCROLLBAR-FACE-COLOR: #eeebeb; 
+    SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+    SCROLLBAR-SHADOW-COLOR: #C0C0C0;
+    SCROLLBAR-ARROW-COLOR: #808080;
+    SCROLLBAR-DARKSHADOW-COLOR: #808080;
+    SCROLLBAR-BASE-COLOR: #808080;
+    scrollbar-3d-light-color: #808080;
+	border-bottom: 1px solid #D8D8E5;  
+	border-left: 1px solid #D8D8E5;  
+	border-top: 1px solid #D8D8E5;  
+}
+#tocContainerBack{
+    border-right: 1px solid #D8D8E5; 
+	FONT-FAMILY: arial;
+    FONT-SIZE: 8pt;
+    MARGIN:0px;
+    OVERFLOW:hidden;
+    WIDTH: 100%;
+    HEIGHT:100%;
+}
+
+.tocTop{
+	BORDER-COLLAPSE:collapse;
+	background-color : #ffffff;
+	WIDTH: 100%;
+	MARGIN:0px;
+	PADDING-top:20px;
+	FONT-FAMILY: arial;
+    FONT-SIZE: 8pt;
+    COLOR:gray;
+    DISPLAY:none;
+}
+.tocTop TR{
+	HEIGHT:4px;
+}
+.tocTop TR TD{
+	TEXT-ALIGN:left;
+	PADDING-top:5px;
+	MARGIN:0px;
+	LETTER-SPACING: 2px;
+	TEXT-TRANSFORM: uppercase;
+}
+IMG{
+    MARGIN-RIGHT: 2px;
+    MARGIN-LEFT:4px;
+    POSITION: static;
+    TOP: 4px;
+    CURSOR: default;
+}
+
+LI.clsFolder{
+    color: #1C267D;
+    list-style: none outside none;
+}
+
+LI.clsFolder UL LI{
+    font-weight:normal;
+}
+
+LI.clsFolder UL LI:hover{
+   /*border-bottom:1px solid #808080;*/
+}
+
+.tblAcord {
+	FONT-FAMILY:arial;
+    FONT-SIZE: 8pt;
+    MARGIN: 0px;
+	WIDTH : 100%;
+    PADDING: 0px;
+    color : #293450;
+	/*border-bottom:1px solid #7c7c94;*/
+  	border-collapse:collapse;
+}
+
+.tblAcord TR {
+    MARGIN:0px;
+    PADDING:0px;
+}
+
+.tdTitleAcord {
+  
+    
+}
+span{
+	cursor:pointer;
+	cursor:hand;
+	vertical-align: middle;
+	white-space:nowrap;
+}
+.tocHolder LI UL {
+	padding-top:3px;
+	vertical-align:top;
+	DISPLAY: none;
+	TEXT-ALIGN:left;
+	/*TEXT-TRANSFORM: uppercase;*/
+	cursor:pointer;
+	cursor:default;
+	position:static;
+    line-style:none;
+}
+
+
+#tocContainer{
+}
+
+.tdTitleAcord TD{
+    CURSOR: hand;
+	padding-top :0px;
+    MARGIN:0px;
+    margin-left:0px;
+	padding-left :0px;
+    PADDING-bottom:0px;
+	FONT-FAMILY: arial;
+    FONT-SIZE: 8pt;
+    font-weight : bold;
+  	background-image:url(../../gradient.jsp?height=10&width=400&colors=95b2c0;02466b&type=h);
+	background-repeat:repeat-y;
+	background-color:#02466b;
+    color  : #e4e6eb;
+    vertical-align:bottom;
+}
+
+.tdBodyAcord {
+	padding-left :0px;
+    MARGIN:1px;
+    PADDING-left:0px;    
+    PADDING-top:1px;        
+    PADDING-bottom:2px;
+    DISPLAY: none;
+    color : #293450;
+}
+
+.tdInnerTitleAcord{
+	background-image: url("../../gradient.jsp?height=30&width=6&colors=D8973D;D8973D&type=v");
+    background-position: left center;
+    background-repeat: no-repeat;
+	background-color: #909090;
+	border-right: 3px solid D8973D;
+    border-bottom: 2px solid white;
+    color: #FFFFFF;
+    font-family: arial;
+    font-size: 8pt;
+    font-weight: bold;
+    height: 27px;
+    margin: 0 0 0 10px;
+    padding-bottom: 0;
+    padding-left: 10px;
+    padding-top: 0;
+	_padding-top: 3px;
+	*padding-top: 3px;
+    text-align: left;
+  	border-collapse:collapse;
+}
+
+.tdBodyAcord TD { 
+	FONT-FAMILY: arial;
+    FONT-SIZE: 8pt;
+    color: #1C267D;
+    border: 0px;
+    MARGIN: 0px;
+    PADDING: 0px;
+	background-repeat:repeat-y;
+	background-color:#FFFFFF;
+}
+
+LI UL{
+	padding-left:15px;
+}
+UL{	
+	align:left;
+	LIST-STYLE: none;
+	position:static;
+	padding-left:5px;
+	margin-left:0px;
+}
+LI{
+	white-space:nowrap;
+	LIST-STYLE: none;
+	position:static;
+	padding-top: 6px;
+	margin-left:0px;
+}
+
+/*prueba hover*/
+LI:hover{
+	/*color:#808080;*/
+	
+}

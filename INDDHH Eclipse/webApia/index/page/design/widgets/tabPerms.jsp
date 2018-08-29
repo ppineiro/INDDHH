@@ -1,0 +1,2 @@
+<div class="aTab"><div class="tab" id="tabPerms"><system:label show="text" label="tabWidPer" /></div><div class="contentTab"><div class="fieldGroup"><div class="title"><system:label show="text" label="sbtPerAccWid" /></div><div class="field extendedSize " ><div class="modalOptionsContainer" id="divPools"><div helper="true" id="prmAddPool" class="element docAddDocument"><div class="option optionAdd"><system:label show="text" label="btnAgr" /></div><input type="hidden" name="paramCount" id="paramCount" value="0"></div></div></div></div></div></div>
+

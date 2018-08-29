@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<elements>
+	<group name="">
+		<element label="Input" color="0xC9E2BA" name="input" icon="toolIcons.InputIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.InputField"/>
+		<!--elementClass="view.elements.InputElement"-->
+		<element label="Listbox" color="0xC9E2BA" name="listbox" icon="toolIcons.ListboxIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.ListboxField"/>
+		<element label="Combobox" color="0xC9E2BA" name="combobox" icon="toolIcons.ComboboxIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.ComboboxField"/>
+		<element label="Checkbox" color="0xC9E2BA" name="checkbox" icon="toolIcons.CheckboxIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.CheckboxField"/>
+		<element label="Password" color="0xC9E2BA" name="password" icon="toolIcons.PasswordIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.PasswordField"/>
+		<element label="Option" color="0xC9E2BA" name="option" icon="toolIcons.OptionIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.RadiobuttonField"/>
+		<element label="Textarea" color="0xC9E2BA" name="textarea" icon="toolIcons.TextareaIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.TextareaField"/>
+		<element label="Label" color="0xC9E2BA" name="label" icon="toolIcons.LabelIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.LabelField"/>
+		<element label="Button" color="0xC9E2BA" name="button" icon="toolIcons.ButtonIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.ButtonField"/>
+		<element label="Title" color="0xC9E2BA" name="title" icon="toolIcons.TitleIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.TitleField"/>
+		<element label="Fileinput" color="0xC9E2BA" name="file" icon="toolIcons.FileIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.FileField"/>
+		<element label="Hidden" color="0xC9E2BA" name="hidden" icon="toolIcons.HiddenIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.HiddenField"/>
+		<element label="Image" color="0xC9E2BA" name="image" icon="toolIcons.ImageIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.ImageField"/>
+		<element label="Grid" color="0xC9E2BA" name="grid" icon="toolIcons.GridIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.GridField" attUrl="attributes.xml"/>
+		<element label="Link" color="0xC9E2BA" name="link" icon="toolIcons.LinkIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.LinkField"/>
+		<element label="Editor" color="0xFFFFFF" name="editor" icon="toolIcons.EditorIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.EditorField"/>	
+		
+		<element label="" color="0xFFFFFF" name="separator1" icon="" className="view.tools.Separator" group="events" elementClass=""/>
+		
+		<element label="Editar area de trabajo" color="0xFFFFFF" name="editWorkarea" icon="toolIcons.AddColumnTool" className="view.tools.Press" group="events" pressGroup="pressGroup1" elementClass="view.tools.toolAction.EditWorkareaAction"/>
+		
+		<!--element label="" color="0xFFFFFF" name="separator2" icon="" className="view.tools.Separator" group="events" elementClass=""/-->
+		
+		<element label="Propiedades del formulario" color="0xFFFFFF" name="formProperties" icon="toolIcons.PropertyTool" className="view.tools.Click" group="events" elementClass="view.tools.toolAction.FormProperties"/>
+		<element label="Limpiar formulario" color="0xFFFFFF" name="clearForm" icon="toolIcons.CloseTool" className="view.tools.Click" group="events" elementClass="view.tools.toolAction.ClearForm" />
+	</group>
+	<!--group name="Jojo">
+		<element label="Editor" color="0xFFFFFF" name="editor" icon="toolIcons.EditorIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.EditorField"/>	
+	</group-->
+	<!--group name="BPMN Elements">
+		<element label="Start Event" color="0xC9E2BA" name="startevent" icon="toolIcons.StartEventToolIcon" className="view.tools.DragNDrop" group="events" elementClass="view.elements.events.StartEventElement" />
+		<element label="Intermediate Event" color="0xF1F0B1" name="middleevent" icon="toolIcons.MiddleEventToolIcon" className="view.tools.DragNDrop" group="events" elementClass="view.elements.events.MiddleEventElement" />
+		<element label="End Event" color="0xE9BABA" name="endevent" icon="toolIcons.EndEventToolIcon" className="view.tools.DragNDrop" group="events" elementClass="view.elements.events.EndEventElement" />
+
+		<element label="Task" color="0xEBF4FF" name="task" icon="toolIcons.TaskToolIcon" className="view.tools.DragNDrop" elementClass="view.elements.activities.TaskElement" />
+		<element label="Collapsed Sub-Process" color="0xEBF4FF" name="csubflow" icon="toolIcons.CSubFlowToolIcon" className="view.tools.DragNDrop" elementClass="view.elements.activities.CSubFlowElement" />
+		<element label="" name="" icon="" className="" elementClass="" />
+		
+		<element label="Sequence Flow" name="sflow" direction="from" icon="toolIcons.SFlowToolIcon" className="view.tools.Connector" group="events" lineType="" />
+		<element label="Association" name="association" direction="none" icon="toolIcons.AssosiationToolIcon" className="view.tools.Connector" group="events" lineType="dotted" />
+		<element label="" name="" icon="" className="" elementClass="" />
+		
+		<element label="Gateway" color="0xFFEED6" name="gateway" icon="toolIcons.GatewayToolIcon" className="view.tools.DragNDrop" group="events" elementClass="view.elements.gateways.GatewayElement" />
+		<element label="" name="" icon="" className="" elementClass="" />
+		<element label="" name="" icon="" className="" elementClass="" />
+
+		<element label="Pool" name="pool" icon="toolIcons.PoolToolIcon" className="view.tools.DragNDrop" classNameOld="view.tools.SquareDraw" group="events" elementClass="view.elements.lanes.PoolLane" />
+		<element label="Lane" name="swimlane" icon="toolIcons.LaneToolIcon" className="view.tools.DragNDropIn" elementClass="view.elements.lanes.SwimLane" />
+		<element label="" name="" icon="" className="" elementClass="" />
+
+		<element label="Group" name="group" icon="toolIcons.GroupToolIcon" className="view.tools.DragNDrop" classNameOld="view.tools.SquareDraw" group="events" elementClass="view.elements.lanes.GroupLane" />
+		<element label="Data Object" name="dataobject" icon="toolIcons.DataObjectToolIcon" className="view.tools.DragNDrop" group="artifacts" elementClass="view.elements.artifacts.DataObject" />
+		<element label="Text Annotation" name="textannotation" icon="toolIcons.TextAnnotationToolIcon" className="view.tools.DragNDrop" group="artifacts" elementClass="view.elements.artifacts.TextAnnotation" />
+	</group-->
+</elements>

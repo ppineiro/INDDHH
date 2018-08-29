@@ -1,0 +1,140 @@
+<?xml version="1.0" ?>
+<forms>	
+	<values>
+		<value>
+			<level name="id" value="4456" />
+			<level name="label" value="CAMPO8" />
+		</value>
+		<value>
+			<level name="id" value="3548" />
+			<level name="label" value="ATT1" />
+		</value>
+		<value>
+			<level name="id" value="3549" />
+			<level name="label" value="ATT2" />
+		</value>
+		<value>
+			<level name="id" value="1242" />
+			<level name="label" value="GG_STRING" />
+		</value>
+		<value>
+			<level name="id" value="3550" />
+			<level name="label" value="ATT3" />
+		</value>
+		<value>
+			<level name="id" value="3551" />
+			<level name="label" value="ATT4" />
+		</value>
+		<value>
+			<level name="id" value="3552" />
+			<level name="label" value="ATT5" />
+		</value>
+		<value>
+			<level name="id" value="4445" />
+			<level name="label" value="ATT6" />
+		</value>
+		<value>
+			<level name="id" value="4446" />
+			<level name="label" value="ATT7" />
+		</value>
+		<value>
+			<level name="id" value="4447" />
+			<level name="label" value="ATT8" />
+		</value>
+		<value>
+			<level name="id" value="4448" />
+			<level name="label" value="ATT9" />
+		</value>
+		<value>
+			<level name="id" value="4455" />
+			<level name="label" value="CAMPO7" />
+		</value>
+		<value>
+			<level name="id" value="4454" />
+			<level name="label" value="CAMPO6" />
+		</value>
+		<value>
+			<level name="id" value="4453" />
+			<level name="label" value="CAMPO5" />
+		</value>
+		<value>
+			<level name="id" value="4452" />
+			<level name="label" value="CAMPO4" />
+		</value>
+		<value>
+			<level name="id" value="4451" />
+			<level name="label" value="CAMPO3" />
+		</value>
+		<value>
+			<level name="id" value="4450" />
+			<level name="label" value="CAMPO2" />
+		</value>
+		<value>
+			<level name="id" value="4449" />
+			<level name="label" value="CAMPO1" />
+		</value>
+		<value>
+			<level name="id" value="4457" />
+			<level name="label" value="PAGINADO1" />
+		</value>
+		<value>
+			<level name="id" value="4458" />
+			<level name="label" value="PAGINADO2" />
+		</value>
+		<value>
+			<level name="id" value="4558" />
+			<level name="label" value="A_FILE_99" />
+		</value>
+		<value>
+			<level name="id" value="4421" />
+			<level name="label" value="GG7" />
+		</value>
+		<value>
+			<level name="id" value="4517" />
+			<level name="label" value="BIND2" />
+		</value>
+		<value>
+			<level name="id" value="4516" />
+			<level name="label" value="BIND1" />
+		</value>
+		<value>
+			<level name="id" value="4548" />
+			<level name="label" value="MODAL_RESULT" />
+		</value>
+		<value>
+			<level name="id" value="4557" />
+			<level name="label" value="MODAL_RESULT_2" />
+		</value>
+		<value>
+			<level name="id" value="4555" />
+			<level name="label" value="RO4" />
+		</value>
+		<value>
+			<level name="id" value="4554" />
+			<level name="label" value="RO3" />
+		</value>
+		<value>
+			<level name="id" value="4553" />
+			<level name="label" value="RO2" />
+		</value>
+		<value>
+			<level name="id" value="4552" />
+			<level name="label" value="RO1" />
+		</value>
+		<value>
+			<level name="id" value="4556" />
+			<level name="label" value="RO5" />
+		</value>
+		
+		<value>
+			<level name="id" value="1017" />
+			<level name="label" value="NOM_PERSONA" />
+		</value>
+		
+		<value>
+			<level name="id" value="1019" />
+			<level name="label" value="DOM_PERSONA" />
+		</value>
+		
+	</values>
+</forms>

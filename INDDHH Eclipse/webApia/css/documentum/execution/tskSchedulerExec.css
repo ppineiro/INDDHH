@@ -1,0 +1,180 @@
+@CHARSET "ISO-8859-1";
+
+.schedNavButton {
+    background-color: white;
+    border: 1px solid #777777;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 3px 7px;
+    
+    -webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	
+	margin-right: 5px;
+}
+
+#menuMas {
+	background-color: white;
+	/*
+    border: 1px solid #AAAAAA;   
+    padding-top: 10px;
+    */
+    border: 1px solid #DDDDDD;
+    padding: 10px;
+    width: 250px;
+    
+    -moz-box-shadow: 1px 1px 2px #909090;
+	-webkit-box-shadow: 1px 1px 2px #909090;
+	box-shadow: 1px 1px 2px #909090;
+}
+
+#menuMas .title {
+    border-bottom: 1px solid;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#menuMas .check {
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+#menuMas button {
+    float: right;
+}
+
+/*
+#menuMas hr {
+	border-color: #C0C0C0;
+}
+
+.menuOptionMas {
+	background-color: white;
+    padding: 3px 10px;
+    cursor: pointer;
+    
+    -webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+*/
+/*
+.menuOptionMas:hover {
+	background-color: #DDDDDD;
+}
+*/
+/*
+.menuOptionMas .check {
+    margin-right: 10px;
+}
+
+#menuMas div.menuButtonMas {
+	background-color: #e6e6e6;
+	height: 33px;
+    width: 100%;
+}
+	
+#menuMas button {
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+*/
+
+#toolsDiv {
+
+}
+
+#schedulerDiv {
+	margin: 10px;
+}
+
+#schedulerDiv table thead {
+	display: block;
+	margin-bottom: 5px;
+}
+
+#schedulerDiv table tbody {
+	display: block;
+	height: 400px;
+	overflow: auto;
+}
+	
+#schedulerDiv table tbody tr{
+	height: 22px;	
+}
+
+#schedulerDiv table tr th {
+	width: 90px;
+	text-align: center;
+	font-weight: normal;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#schedulerDiv table tr td {
+	border: 1px solid #EEEEEE;
+	text-align: center;
+	cursor: pointer;
+	
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	
+	width: 90px;
+}
+
+.td_selected {
+	background-position: center center;
+	background-repeat: no-repeat;	
+}
+
+.tr_selected {
+	background-color: #f2f2f5;/*#f5fee1;*/
+}
+
+.show_disponibility .td_selected {
+	background-image: url(../img/schedulerRed.png);
+}
+
+.hide_disponibility .td_selected {
+	background-image: url(../img/schedulerBlackOk.png);
+	box-shadow: 0px 0px 2px #000000;
+}
+
+.td_disabled {
+	background-color: #b2c0cf;/*#C0C0C0;/*#999999;*/
+	cursor: default !important;
+}
+
+.td_blocked {
+	background-color: #b2c0cf;/*#ffe5e5;*/
+	color: grey;
+	cursor: default !important;
+}
+
+.td_overassign {
+	background-color: #FFFFC0;/*#FFFFED;*/
+}
+
+#schedContainer {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.tskSchedTable {
+	margin-left: auto;
+	margin-right: auto;
+}

@@ -1,0 +1,21 @@
+div.warning label{
+	color:orange;
+	font-weight:bold;
+	display:block;
+	height: 100px;
+	width: 300px;
+}
+
+label.message{
+	color: black;
+	display:block;
+	height: 100px;
+	width: 300px;
+}
+
+label.error{
+	color:red;
+	display:block;
+	height: 100px;
+	width: 300px;
+}

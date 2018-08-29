@@ -1,0 +1,116 @@
+#tabContainer{
+	height:20;
+	border: 0;
+	margin: 0; 
+	padding: 0; 
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#tabContainer td{
+	padding-left:1px;
+	padding-right:1px;
+}
+
+#tabContainer td.here{
+}
+
+#tabContainer tr{
+}
+
+#tabBottom{
+	height:5px;
+	font-size:1px;
+	margin-left: 6px; 
+	background-color: #4c60a1;
+	margin-top: 2px;
+	//margin-top: 0; /*para IE*/
+	padding: 0;
+	border: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*tab sin seleccionar*/
+#tabContainer a{
+    padding: 0.4em 10px 0.6em;
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	font-size:14px;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+    color:#ffffff;	
+	background-image: url("../images/tab_transparent.png");
+    background-position: right center;
+	background-repeat: no-repeat;
+	}
+
+/*tab con el cursor arriba*/
+#tabContainer a:hover{
+	color:#ffffff;
+	background-image: url("../images/tab.png");
+	background-repeat: no-repeat;
+    background-position: right center;
+	font-size: 14px;
+}
+
+/*tab seleccionada*/
+#tabContainer td.here a{
+    padding: 0.4em 10px 0.6em;
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	font-size: 14px;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+	color: #ffffff;
+	background-image: url("../images/tab.png");
+    background-position: right center;
+	background-repeat: no-repeat;
+}
+
+/*tab sin seleccionar para IE*/
+#tabContainer span{
+    padding: 0.2em 10px 0.6em;
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	font-size: 9px;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+	color:#ffffff;
+	background-image: url("../images/tab_transparent.png");
+    background-position: right center;
+	background-repeat: no-repeat;
+	}
+
+/*tab con el cursor arriba para IE*/
+#tabContainer span.hover{
+    padding: 0.2em 10px 0.6em;
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	font-size: 9px;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+	color:#ffffff;	
+	background-image: url("../images/tab.png");
+    background-position: right center;
+	background-repeat: no-repeat;
+}
+
+/*tab seleccionada para IE*/
+#tabContainer td.here span{
+    padding: 0.2em 10px 0.6em;
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	font-size: 9px;
+	color:#ffffff;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+	background-image: url("../images/tab.png");
+    background-position: right center;
+	background-repeat: no-repeat;
+}

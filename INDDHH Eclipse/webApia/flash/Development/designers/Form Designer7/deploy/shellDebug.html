@@ -1,0 +1,89 @@
+<!-- saved from url=(0013)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><title>shell</title></head><body bgcolor="#efefef" style="overflow:hidden"><!------------------------------------------><!--- 		FLASH V 7.0		 ---><!------------------------------------------><table border=0 width="100%" height="100%"><tr><td align="center"><!------- USE W/ LOCAL XML FILES -DEBUG VERSION-----><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"  
+	 codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" 
+		WIDTH="100%" 
+		HEIGHT="100%" 
+		style="/*border:1px solid red*/"
+		id="shell" ALIGN="center" VALIGN="middle"><param name="allowScriptAccess" value="sameDomain" /><param name="movie" value="shell.swf" /><param name="FlashVars" value="SWF_OBJ_PATH="/><param name="quality" value="high" /><param name="menu" value="false"><param name="bgcolor" value="#efefef" /></object><!-------------------------------------------------></td></tr></table><!---------------------------------------------><button onclick="getFlashOutput()">Output</button><button onclick="getFlashInput()">Input</button></body></html><script>
+function getFlashOutput(){
+	document.all.shell.SetVariable("call", "getOutputXML");
+}
+function getFlashInput(){
+	document.all.shell.SetVariable("call", "getInputXML");
+}
+function reloadFlash(){
+	document.all.shell.SetVariable("call", "reload");
+}
+function setAuto(){
+	document.all.shell.SetVariable("call", "setAuto");
+}
+function setManual(){
+	document.all.shell.SetVariable("call", "setManual");
+}
+function setEntity(){
+	document.all.shell.SetVariable("call", "setEntity,param=value");
+	//("call",flash_method,string_value)
+}
+//////////////////////////////////////////////////
+//	FSCommand
+/////////////////////////////////////////////////
+// Handles all the FSCommand messages in a Flash movie
+function shell_DoFSCommand(command, args) {
+	if (command == "outputXML") {
+	alert("SHOWOUTPUT:" + args)
+		showXML(args,"1")
+		setClipBoard(args);
+	}
+	if(command == "inputXML") {
+		//alert(args)
+		showXML(args,"2")
+	}
+	
+	if (command == "isReady") {
+		//alert("isREADY")
+		flashLoaded = true;
+	}
+	if (command == "reload") {
+		//alert("reloaded: " + args);
+	}
+	if (command == "auto") {
+		//alert("auto: " + args);
+	}
+	if (command == "manual") {
+		//alert("manual: " + args);
+	}
+	if (command == "largalo") {
+		alert("" + args);
+	}
+}
+
+
+
+//////////////////////////////////
+//	DEBUG
+//////////////////////////////
+function showHTML(html,winName){
+var w = window.open("",winName,"height=480,width=680,resizable=yes,scrollbars=yes");
+	w.document.open();
+    w.document.write(html);
+    w.document.close();
+    w.focus();
+}		
+function showXML(doc,winName){
+	var oXML = new ActiveXObject("Microsoft.XMLDOM");
+	oXML.loadXML(doc);
+    var tempdoc = new ActiveXObject("Microsoft.XMLDOM");
+    tempdoc.async = false;
+    if (!tempdoc.load("mimedefault.xsl")){
+		//showHTML(reportParseError(tempdoc.parseError));
+		alert("ERROR loading XSL")
+	}else{
+   	 	var html = oXML.transformNode(tempdoc);
+    	showHTML(html,winName);
+    }
+}
+</script><SCRIPT LANGUAGE="VBScript">
+'Catch FS Commands in IE, and pass them to the corresponding JavaScript function.
+Sub shell_FSCommand(ByVal command, ByVal args)
+    call shell_DoFSCommand(command, args)
+end sub
+</SCRIPT>

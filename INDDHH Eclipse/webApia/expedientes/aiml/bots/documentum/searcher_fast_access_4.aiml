@@ -1,0 +1,90 @@
+<?xml version = "1.0" encoding = "utf-8" standalone = "yes"?>
+<aiml>
+
+	<category>
+		<pattern>ACCESO RAPIDO 4 *</pattern>
+		<template>4VAR_USR<star/></template>
+	</category>
+	
+	<category>
+		<pattern>LOS EXPEDIENTES DE *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>LO EXPEDIENTES DE *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>LOS EXPEDIENTE DE *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>LOS EXPEDIENTES QUE TIENE *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>LOS EXPEDIENTES TOMADOS POR *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EL EXPEDIENTE TOMADO POR *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES TOMADOS POR *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>LOS EXPEDIENTES TOMADOS POR *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>LOS EXPEDIENTES DEL USUARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>LAS TAREAS DE *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>LA TAREA *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>LAS TAREAS DEL USUARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>LA TAREAS DE *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>LAS TAREAS QUE TIENE EL USUARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIETNES QUE POSEE *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIETNES QUE POSEE EL USUARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIETNE QUE POSEE *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIETNE QUE POSEE EL USUARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EN PODER DE *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>QUE TIENE *</pattern>
+		<template><srai>ACCESO RAPIDO 4</srai> <star/></template>
+	</category>
+
+</aiml>

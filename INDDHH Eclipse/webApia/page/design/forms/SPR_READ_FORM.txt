@@ -1,0 +1,45 @@
+////YA IMPACTADO EN SCRIPT DE CREACION
+
+CREATE PROCEDURE [SPR_READ_FORM]
+@p_where VARCHAR(2000),
+@p_order_by VARCHAR(2000),
+@from_row INT,
+@rows_per_page INT
+AS
+DECLARE
+  @total INT,
+  @aux_sql VARCHAR(1500) 
+
+SET NOCOUNT ON
+
+CREATE TABLE #tmp_table (
+    id INT IDENTITY (1,1),
+     env_id int,
+     frm_id_auto int,
+     frm_name varchar(255),
+     frm_title varchar(255),
+     frm_desc varchar(255),
+	 prj_id int,
+     reg_user varchar(20),
+     reg_status int,
+     reg_date datetime,
+     frm_fires_ajax int,
+     frm_updated_by_ajax int,
+     frm_ajax_readonly int,   
+     frm_father int,
+     FRM_FLAGS varchar(20),
+	 FRM_UNIQUE_ID  varchar(255),
+     prj_name VARCHAR(50)
+)
+SET @aux_sql = 'INSERT INTO #tmp_table (env_id,frm_id_auto,frm_name,frm_title,frm_desc,prj_id,reg_user,reg_status,reg_date,frm_fires_ajax,frm_updated_by_ajax,frm_ajax_readonly,frm_father,FRM_FLAGS,FRM_UNIQUE_ID,prj_name) '
+SET @aux_sql = @aux_sql + ' select f.*,prj_name from form f left outer join project p on f.env_id=p.env_id and f.prj_id=p.prj_id_auto and f.reg_status=p.reg_status where f.reg_status=0 and f.frm_id_auto > 1000 '
+IF (@p_where IS NOT NULL) SET @aux_sql = @aux_sql + ' AND ' + @p_where
+IF (@p_order_by IS NOT NULL) SET @aux_sql = @aux_sql + ' ORDER BY ' + @p_order_by
+set @total = @from_row + @rows_per_page
+set rowcount @total
+EXEC(@aux_sql)
+set rowcount @rows_per_page
+SELECT * FROM #tmp_table WHERE id BETWEEN @from_row AND (@from_row + @rows_per_page - 1)
+DROP TABLE #tmp_table
+set rowcount 0
+--

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<application xmlns="http://ns.adobe.com/air/application/1.5">
+	
+	<id>facilisBPMN</id> 
+	<version>2.2.1</version> 
+	<filename>facilisBPMN</filename> 
+	
+	<name>Apia Facilis</name> 
+	<description>Apia Facilis BPMN Designer</description> 
+	<copyright>STATUM</copyright> 
+	
+	<initialWindow> 
+		<title>Apia Facilis</title> 
+		<content>AIRMobileDesigner.swf</content>
+		<!-- <content>Main.html</content>
+		<systemChrome>none</systemChrome> -->
+		<systemChrome>standard</systemChrome>
+		<transparent>false</transparent> 
+		<visible>true</visible> 
+		<minimizable>true</minimizable> 
+		<maximizable>true</maximizable> 
+		<resizable>true</resizable> 		
+	</initialWindow> 
+	<icon>
+        <image16x16>icons/smallIcon.png</image16x16>
+        <image32x32>icons/mediumIcon.png</image32x32>
+        <image48x48>icons/bigIcon.png</image48x48>
+        <image128x128>icons/biggestIcon.png</image128x128> 
+    </icon>
+	<fileTypes>
+		<fileType>
+			<name>FileAssociationExample.Image</name>
+			<extension>xpdl</extension>
+			<description>Air Designer File (XPDL)</description>
+			<contentType>text/xml</contentType>
+		</fileType>
+	</fileTypes>
+	<!-- 
+	More options:
+	http://livedocs.adobe.com/flex/3/html/File_formats_1.html#1043413
+	-->
+</application>
+
+<!-- <application xmlns="http://ns.adobe.com/air/application/1.5">
+	
+	<id>facilisBPMN</id> 
+	<version>2.1.0</version> 
+	<filename>facilisBPMN</filename> 
+	
+	<name>Apia Facilis</name> 
+	<description>Apia Facilis BPMN Designer</description> 
+	<copyright>STATUM</copyright> 
+	
+	<initialWindow> 
+		<title>Apia Facilis</title> 
+		<content>AIRDesigner.swf</content>-->
+		<!-- <content>Main.html</content>
+		<systemChrome>none</systemChrome> -->
+		<!-- <systemChrome>standard</systemChrome>
+		<transparent>false</transparent> 
+		<visible>true</visible> 
+		<minimizable>true</minimizable> 
+		<maximizable>true</maximizable> 
+		<resizable>true</resizable> 
+	</initialWindow> 
+	<icon>
+        <image16x16>icons/smallIcon.png</image16x16>
+        <image32x32>icons/mediumIcon.png</image32x32>
+        <image48x48>icons/bigIcon.png</image48x48>
+        <image128x128>icons/biggestIcon.png</image128x128> 
+    </icon>
+	<fileTypes>
+		<fileType>
+			<name>FileAssociationExample.Image</name>
+			<extension>xpdl</extension>
+			<description>Air Designer File (XPDL)</description>
+			<contentType>text/xml</contentType>
+		</fileType>
+	</fileTypes>
+	<supportedProfiles>desktop</supportedProfiles>
+	<versionNumber>2.5</versionNumber>-->
+	<!--More options:
+	http://livedocs.adobe.com/flex/3/html/File_formats_1.html#1043413-->
+	<!--
+	<id>facilisBPMN</id>
+	<versionNumber>2.1.0</versionNumber> 
+	<supportedProfiles>mobileDevice</supportedProfiles>
+	<filename>facilisBPMN</filename> 
+	
+	<name>Apia Facilis</name> 
+	<description>Apia Facilis BPMN Designer</description> 
+	<copyright>STATUM</copyright>
+	
+	<android>
+		<manifestAdditions><![CDATA[
+			
+			<manifest android:installLocation="auto">
+				<uses-permission android:name="android.permission.INTERNET"/>
+				<uses-feature android:required="true" android:name="android.hardware.touchscreen.multitouch"/>
+			</manifest>
+			
+		]]></manifestAdditions>
+	</android>
+	
+	<initialWindow> 
+		<content>bin/AIRDesigner.swf</content>
+		<visible>true</visible>
+	</initialWindow> 
+	<icon>
+        <image16x16>bin/icons/smallIcon.png</image16x16>
+        <image32x32>bin/icons/mediumIcon.png</image32x32>
+        <image48x48>bin/icons/bigIcon.png</image48x48>
+        <image128x128>bin/icons/biggestIcon.png</image128x128> 
+    </icon>
+	
+	</application>
+	-->
+	
+	
+	
+	
+	
+	

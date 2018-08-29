@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<ROWSET>
+	<ROW>
+		<ID_NODE>1002</ID_NODE>
+		<NAME>BOFFICE</NAME>
+		<POOL_DESC>Grupo de usuários Backoffice</POOL_DESC>
+		<POOL_ALL_ENVS>1</POOL_ALL_ENVS>
+		<POOL_ENV_COUNT>1</POOL_ENV_COUNT>
+	</ROW>
+	<ROW>
+		<ID_NODE>1003</ID_NODE>
+		<NAME>BOFFICE</NAME>
+		<POOL_DESC>Grupo de usuários Backoffice</POOL_DESC>
+		<POOL_ALL_ENVS>0</POOL_ALL_ENVS>
+		<POOL_ENV_COUNT>20</POOL_ENV_COUNT>
+	</ROW>
+	<ROW>
+		<ID_NODE>1004</ID_NODE>
+		<NAME>BOFFICE</NAME>
+		<POOL_DESC>Grupo de usuários Backoffice</POOL_DESC>
+		<POOL_ALL_ENVS>0</POOL_ALL_ENVS>
+		<POOL_ENV_COUNT>1</POOL_ENV_COUNT>
+	</ROW>
+</ROWSET>

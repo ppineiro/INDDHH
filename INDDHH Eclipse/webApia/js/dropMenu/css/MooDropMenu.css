@@ -1,0 +1,82 @@
+div.panel ul.dropMenu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	cursor: pointer;
+}
+
+div.panel ul.dropMenu>li {
+	
+}
+
+div.panel ul.dropMenu>li:hover {
+	background: #005071;
+	color: #ffffff;
+}
+
+div.panel ul.dropMenu>li span:active  {
+	background: #005071;
+	color: #ffffff;
+}
+
+div.panel ul.dropMenu li {
+	position: relative;
+	float: left;
+	padding: 10px 15px 10px 15px;
+	border-radius: 3px;
+}
+
+div.panel ul.dropMenu li span {
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+div.panel ul.dropMenu ul {
+	position: absolute;
+	top: 38px;
+	left: 0px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: auto;
+	background: #ffffff;
+	border-top: 1px solid #ebebeb;
+	border-left: 1px solid #ebebeb;
+	border-right: 1px solid #ebebeb;
+}
+
+div.panel ul.dropMenu .open {
+	display: block;
+}
+
+div.panel ul.dropMenu .close {
+	display: none;
+}
+
+div.panel ul.dropMenu ul li {
+	float: none;
+	padding: 0;
+}
+
+div.panel ul.dropMenu ul li span {
+	width: 130px;
+	_width: 127px;
+	padding: 8px;
+	display: block;
+	_float: left;
+	font-weight: normal;
+	text-transform: none;
+	font-size: 12px;
+	color: #6b6b6b;
+	border-bottom: 1px solid #ebebeb;
+}
+
+div.panel ul.dropMenu ul li span:hover {
+	background: #f0f0f0;
+}
+
+div.panel ul.dropMenu ul ul {
+	left: 146px; 
+	_left: 0;
+	top: 0;
+}

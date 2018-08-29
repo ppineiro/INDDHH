@@ -1,0 +1,106 @@
+#tabContainer{
+	height:20;
+	border: 0;
+	margin: 0; 
+	padding: 0; 
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#tabContainer td{
+	padding-left:1px;
+	padding-right:1px;
+}
+
+#tabContainer td.here{
+}
+
+#tabContainer tr{
+}
+
+#tabBottom{
+	height:2px;
+	font-size:1px;
+	margin-left: 7px; 
+	background-color: #45628A;
+	margin-top: 3px;
+	//margin-top: 0; /*para IE*/
+	padding: 0;
+	border: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*tab sin seleccionar*/
+#tabContainer a{
+	padding: 0.1em 10px 0.5em 10px;
+	font-family:Tahoma, Courier, mono;
+	font-size:8pt;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+	background: url("../../gradient.jsp?height=30&width=400&colors=dde4ed;ffffff&type=v") repeat scroll 0 0 transparent;
+    color: #29363F;
+	background-color:#dde4ed; 
+}
+
+/*tab con el cursor arriba*/
+#tabContainer a:hover{
+	color:#29363F;
+	background-color:#d1dbe9; 
+	background: url("../../gradient.jsp?height=30&width=400&colors=d1dbe9;ffffff&type=v") repeat scroll 0 0 transparent;
+}
+
+/*tab seleccionada*/
+#tabContainer td.here a{
+	padding: 0.1em 10px 0.5em 10px;
+	font-family:Tahoma, Courier, mono;
+	font-size:8pt;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+	background: url("../../gradient.jsp?height=100&width=400&colors=45628a;ffffff&type=v") repeat scroll 0 0 transparent;
+    border: 1px solid #45628A;
+	color: #FFFFFF;
+}
+
+/*tab con el cursor arriba para IE*/
+#tabContainer span{
+	padding: 0.1em 10px 0.5em 10px;
+	font-family:Tahoma, Courier, mono;
+	font-size:8pt;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+	color:#29363F;
+	background: url("../../gradient.jsp?height=30&width=400&colors=d1dbe9;ffffff&type=v") repeat scroll 0 0 transparent;
+	}
+
+/*tab sin seleccionar para IE*/
+#tabContainer span.hover{
+	padding: 0.1em 10px 0.5em 10px;
+	font-family:Tahoma, Courier, mono;
+	font-size:8pt;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+	color:#29363F;	
+	background: url("../../gradient.jsp?height=30&width=400&colors=dde4ed;ffffff&type=v") repeat scroll 0 0 transparent;
+}
+
+/*tab seleccionada para IE*/
+#tabContainer td.here span{
+	padding: 0.1em 10px 0.5em 10px;
+	font-family:Tahoma, Courier, mono;
+	font-size:8pt;
+	color:#ffffff;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+	background: url("../../gradient.jsp?height=100&width=400&colors=45628a;ffffff&type=v") repeat scroll 0 0 transparent;
+}

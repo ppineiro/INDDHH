@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<elements>
+	<!-- <group name="events"> -->
+	<group name="BPMN Elements">
+		<element label="Start Event" color="0xC9E2BA" name="startevent" icon="toolIcons.StartEventToolIcon" className="view.tools.DragNDrop" group="events" elementClass="view.elements.events.StartEventElement" />
+		<element label="End Event" color="0xE9BABA" name="endevent" icon="toolIcons.EndEventToolIcon" className="view.tools.DragNDrop" group="events" elementClass="view.elements.events.EndEventElement" />
+		<element label="Intermediate Event" color="0xF1F0B1" name="middleevent" icon="toolIcons.MiddleEventToolIcon" className="view.tools.DragNDrop" group="events" elementClass="view.elements.events.MiddleEventElement" />
+	<!-- </group>
+	<group name="gateways"> -->
+		<element label="Gateway" color="0xFFEED6" name="gateway" icon="toolIcons.GatewayToolIcon" className="view.tools.DragNDrop" group="events" elementClass="view.elements.gateways.GatewayElement" />
+		<!--element label="" name="" icon="" className="" elementClass="" />
+		<element label="" name="" icon="" className="" elementClass="" /-->
+	<!-- </group>
+	<group name="flow objects"> -->
+		<element label="Task" color="0xEBF4FF" name="task" icon="toolIcons.TaskToolIcon" className="view.tools.DragNDrop" elementClass="view.elements.activities.TaskElement" />
+		<element label="Collapsed Sub-Process" color="0xEBF4FF" name="csubflow" icon="toolIcons.CSubFlowToolIcon" className="view.tools.DragNDrop" elementClass="view.elements.activities.CSubFlowElement" />
+		<!--element label="" name="" icon="" className="" elementClass="" /-->
+		<!-- <element label="Expanded SubProcess" name="esubflow" icon="toolIcons.ESubFlowToolIcon" className="view.tools.DragNDrop" elementClass="view.elements.activities.ESubFlowElement" container="true" /> -->
+	<!-- </group>
+	<group name="connector"> -->
+		<element label="Sequence Flow" name="sflow" direction="from" icon="toolIcons.SFlowToolIcon" className="view.tools.Connector" group="events" lineType="" />
+		<element label="Association" name="association" direction="none" icon="toolIcons.AssosiationToolIcon" className="view.tools.Connector" group="events" lineType="dotted" />
+		<!--element label="" name="" icon="" className="" elementClass="" /-->
+		<!-- <element label="Message Flow" name="mflow" direction="from" icon="toolIcons.MFlowToolIcon" className="view.tools.Connector" group="events" lineType="dashed" /> -->
+	<!-- </group>
+	<group name="lanes"> -->
+		<element label="Pool" name="pool" icon="toolIcons.PoolToolIcon" className="view.tools.DragNDrop" classNameOld="view.tools.SquareDraw" group="events" elementClass="view.elements.lanes.PoolLane" />
+		<!-- <element label="Swimlane" name="swimlane" icon="toolIcons.LaneToolIcon" className="view.tools.SquareDraw" group="events" elementClass="view.elements.lanes.SwimLane" /> -->
+		<element label="Lane" name="swimlane" icon="toolIcons.LaneToolIcon" className="view.tools.DragNDropIn" elementClass="view.elements.lanes.SwimLane" />
+		<!--element label="" name="" icon="" className="" elementClass="" /-->
+	<!-- </group>
+	<group name="artifacts"> -->
+		<element label="Group" name="group" icon="toolIcons.GroupToolIcon" className="view.tools.DragNDrop" classNameOld="view.tools.SquareDraw" group="events" elementClass="view.elements.lanes.GroupLane" />
+		<element label="Text Annotation" name="textannotation" icon="toolIcons.TextAnnotationToolIcon" className="view.tools.DragNDrop" group="artifacts" elementClass="view.elements.artifacts.TextAnnotation" />
+		<element label="Data Object" name="dataobject" icon="toolIcons.DataObjectToolIcon" className="view.tools.DragNDrop" group="artifacts" elementClass="view.elements.artifacts.DataObject" />
+		<element label="Data Store" name="datastore" icon="toolIcons.DataStoreToolIcon" className="view.tools.DragNDrop" group="artifacts" elementClass="view.elements.artifacts.DataStore" />
+		<element label="Data Input" name="datainput" icon="toolIcons.DataInputToolIcon" className="view.tools.DragNDrop" group="artifacts" elementClass="view.elements.artifacts.DataInput" />
+		<element label="Data Output" name="dataoutput" icon="toolIcons.DataOutputToolIcon" className="view.tools.DragNDrop" group="artifacts" elementClass="view.elements.artifacts.DataOutput" />
+	</group>
+</elements>

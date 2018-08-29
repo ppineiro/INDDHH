@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:apia="http://www.apiasolutions.com/WebServices/Data" targetNamespace="http://www.apiasolutions.com/WebServices/Data" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<complexType name="User">
+		<sequence>
+			<element name="name" type="string" nillable="false"/>
+		</sequence>
+	</complexType>
+	<complexType name="Creator">
+		<sequence>
+			<element name="User" type="apia:User"/>
+		</sequence>
+	</complexType>
+	<complexType name="Attribute">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="name" type="string" use="required"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<complexType name="Attributes">
+		<sequence>
+			<element name="attribute" type="apia:Attribute" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="Identifier">
+		<simpleContent>
+			<extension base="int">
+				<attribute name="prefix" type="string" use="optional"/>
+				<attribute name="postfix" type="string" use="optional"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<complexType name="Entity">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="name" type="string" use="required"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<complexType name="EntInstance">
+		<sequence>
+			<element name="attributes" type="apia:Attributes" minOccurs="0"/>
+			<element name="entity" type="apia:Entity"/>
+			<element name="identifier" type="apia:Identifier"/>
+			<element name="creator" type="apia:Creator" minOccurs="0"/>
+			<element name="createDate" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="Process">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="name" type="string" use="required"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<complexType name="ProInstance">
+		<sequence>
+			<element name="attributes" type="apia:Attributes" minOccurs="0"/>
+			<element name="process" type="apia:Process"/>
+			<element name="identifier" type="apia:Identifier"/>
+			<element name="creator" type="apia:Creator" minOccurs="0"/>
+			<element name="createDate" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="UserData">
+		<sequence>
+			<element name="usrLogin" type="string"/>
+			<element name="password" type="string"/>
+		</sequence>
+	</complexType>
+	<complexType name="Parameter">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="name" type="string" use="required"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<complexType name="Parameters">
+		<sequence>
+			<element name="parameter" type="apia:Parameter" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="RowHeader">
+		<sequence>
+			<element name="Col" type="string" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="Row">
+		<sequence>
+			<element name="Col" type="string" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="QueryResult">
+		<sequence>
+			<element name="Header" type="apia:RowHeader"/>
+			<element name="Row" type="apia:Row" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="ResultData">
+		<sequence>
+			<element name="proInstance" type="apia:ProInstance" minOccurs="0"/>
+			<element name="entInstance" type="apia:EntInstance" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="Result">
+		<sequence>
+			<element name="resultCode" type="int"/>
+			<element name="resultMessage" type="string"/>
+			<element name="resultData" type="apia:ResultData" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<element name="EntInstance" type="apia:EntInstance"/>
+	<element name="ProInstance" type="apia:ProInstance"/>
+	<element name="Params" type="apia:Parameters"/>
+</schema>

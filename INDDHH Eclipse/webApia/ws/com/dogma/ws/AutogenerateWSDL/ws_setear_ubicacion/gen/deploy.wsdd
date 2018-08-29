@@ -1,0 +1,54 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ApiaWSInterfaceService WSDL service -->
+
+  <service name="ApiaWSws_setear_ubicacion" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://www.apiasolutions.com/WebServices"/>
+      <parameter name="wsdlServiceElement" value="ApiaWSInterfaceService"/>
+      <parameter name="schemaQualified" value="http://www.apiasolutions.com/WebServices"/>
+      <parameter name="wsdlServicePort" value="ApiaWSws_setear_ubicacion"/>
+      <parameter name="className" value="com.dogma.ws.AutogenerateWSDL.ws_setear_ubicacion.gen.ws_setear_ubicacionImpl"/>
+      <parameter name="wsdlPortType" value="ApiaWSInterface"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="ws_setear_ubicacion" qname="ws_setear_ubicacion" returnQName="retNS:ExecResult" xmlns:retNS="http://www.apiasolutions.com/WebServices" returnType="rtns:ExecResultType" xmlns:rtns="http://www.apiasolutions.com/WebServices" soapAction="apiaAction" >
+        <parameter qname="pns:ApiaWSInput" xmlns:pns="http://www.apiasolutions.com/WebServices" type="tns:ApiaWSInputType" xmlns:tns="http://www.apiasolutions.com/WebServices"/>
+      </operation>
+      <parameter name="allowedMethods" value="ws_setear_ubicacion"/>
+      <parameter name="scope" value="Application"/>
+
+      <typeMapping
+        xmlns:ns="http://www.apiasolutions.com/WebServices"
+        qname="ns:Parameter"
+        type="java:com.dogma.ws.AutogenerateWSDL.ws_setear_ubicacion.gen.Parameter"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.apiasolutions.com/WebServices"
+        qname="ns:ExecResultType"
+        type="java:com.dogma.ws.AutogenerateWSDL.ws_setear_ubicacion.gen.ExecResultType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.apiasolutions.com/WebServices"
+        qname="ns:ApiaWSInputType"
+        type="java:com.dogma.ws.AutogenerateWSDL.ws_setear_ubicacion.gen.ApiaWSInputType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

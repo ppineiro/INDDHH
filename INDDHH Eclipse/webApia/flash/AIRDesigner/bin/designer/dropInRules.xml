@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<rules>
+	<rule from="pool">
+		<element drop="swimlane" />
+	</rule>
+	<!-- <rule from="back">
+		<element drop="swimlane" />
+	</rule> -->
+</rules>

@@ -1,0 +1,103 @@
+body {
+	PADDING-top:0px;
+	/*border-top : 1px solid red;*/
+	background:transparent;
+	/*background-image:url(../itil_back.png);*/
+}
+div {
+}
+.copyrightTxt{
+	color: #666666;
+    font-family: verdana;
+    font-size: 9px;
+}
+#divContent{
+	BORDER: 0px;
+	HEIGHT:95%;
+	WIDTH:100%;
+    OVERFLOW: auto;
+    MARGIN: 0px;
+    PADDING-LEFT:4px;
+    PADDING-RIGHT:4px;
+    FONT-FAMILY: Verdana; 
+    FONT-SIZE: 8pt;
+    SCROLLBAR-FACE-COLOR: #eeebeb; /*#DFDFDF;*/
+    SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+    SCROLLBAR-SHADOW-COLOR: #C0C0C0;
+    SCROLLBAR-ARROW-COLOR: #808080;
+    SCROLLBAR-DARKSHADOW-COLOR: #808080;
+    SCROLLBAR-BASE-COLOR: #808080;
+    scrollbar-3d-light-color: #808080;
+}
+
+
+.usuMsg{
+	POSITION:relative;
+	 right: 30px;
+	  top: 80px;
+	background-color: #F1F1F1;
+    border: 1px solid #96BCD7;
+	width: 350px;
+}
+
+.usuMsg THEAD TR{
+	WIDTH:100%;
+	WHITE-SPACE :normal;
+	background-image:url(../images/bg_menu.png);
+	background-repeat:repeat-x;
+	color: white;
+	font-size : 9pt; 
+}
+
+.usuMsg THEAD TH{
+	FONT-FAMILY:Verdana;
+	FONT-SIZE:14px;
+	FONT-WEIGHT:bold;
+	color:white;
+	WIDTH:100%;
+	text-align:center;
+}
+.usuMsg TBODY TD{
+	FONT-FAMILY: Verdana;
+	FONT-SIZE:8pt;
+	padding:4px;
+	text-align:center;
+	WHITE-SPACE :normal;
+}
+
+.usuMsg li{
+	WHITE-SPACE :normal; 
+	WIDTH:320px;
+	color: #333333;
+	text-align: left;
+	display: list-item;
+	_font-size: 6pt;
+	*font-size: 6pt;
+}
+
+
+
+.logoArea{
+	margin-top:10px;
+
+}
+.clsTitle{
+	width:90%;
+	FONT-FAMILY: Verdana;
+	FONT-SIZE:18px;
+	font-weight:bold;
+	text-align:right;
+	padding-right:10px;
+	 color: #808080;
+}
+.clsLogo{
+	padding-right:10px;
+}
+
+.listBody > #divContent > #samplesTab {
+	height: 100%;
+}
+
+.listBody > #divContent > #samplesTab > div {
+	height: 100%;
+}

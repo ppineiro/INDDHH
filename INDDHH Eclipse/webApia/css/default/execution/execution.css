@@ -1,0 +1,82 @@
+div.fieldGroup td.visibility-none div.visibility-hidden {	display: 	none;}
+
+.inputTitle label {
+	display: none;
+}
+
+.inputTitle span {
+	color: #002776;
+	font-size: 20px; 
+}
+
+/*POSICIONAR ETIQUETA DE DIGITO VERIFICADOR*/
+.digito-verificador > div {
+	padding-top: 0px;
+    margin-top: -10px;
+    margin-left: 233px;
+    font-style: italic;
+}
+
+/*POSICIONAR ETIQUETA DE RESULTADO FIRMA*/
+.resultado-firma > div {
+	padding-top: 0px;
+    margin-top: -10px;
+    margin-left: 233px;
+}
+
+/* Posicionar CheckBox */
+.alinear_checkbox > div {
+	margin-left: 232px !important;
+}
+@media screen and (max-width: 640px) {
+	.alinear_checkbox > div {
+		margin-left: 0px !important;
+	}
+	/*
+	div.TRM_FRM_EMAIL_USUARIO>table>tbody>tr>td>div.field>label>input {
+		display:block;
+		margin_left:0px;
+	}
+		
+	.captcha_input > div > label > input  {
+		display:block;
+		margin_left:0px;
+	}	
+	*/
+}
+.fileinput_ancho > div.gridContainer {
+	width: 100% !important;
+}
+
+body.mobileNonExec .digito-verificador > div {
+	margin-left: 0px !important;
+}
+
+div.formContainer.TRM_TITULO > table > tbody > tr > td > div.exec_field {
+	padding: 0px;
+	margin: 0px;
+	width:100%;
+}
+
+/*
+div.TRM_FRM_EMAIL_USUARIO>table>tbody>tr>td>div.exec_field>label>input {
+	display:block;
+	margin-left:232px;
+	
+}
+
+
+.captcha_input >div > label > input  {
+	display:block;
+	margin-left:232px;
+	
+}
+*/
+.modalContent {
+	position: absolute !important;
+}
+
+/* PARA QUE DIALOGBOX NO SALGA DESCENTRADO */
+.LBL_DIALOGBOX > div.exec_field {
+	width: 100% !important;
+}

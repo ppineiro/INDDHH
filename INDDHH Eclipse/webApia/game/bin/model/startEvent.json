@@ -1,0 +1,430 @@
+{
+   "name": "startevent",
+   "attGroup": [
+      {
+         "name": "",
+         "attribute": [
+            {
+               "name": "documentation",
+               "label": "Documentation",
+               "modalclass": "view.modal.Condition",
+               "modalwidth": "310",
+               "modalheight": "300",
+               "use": "optional",
+               "dataType": "string"
+            },
+            {
+               "label": "Name",
+               "name": "name",
+               "change": "setName",
+               "use": "required",
+               "dataType": "string"
+            },
+            {
+               "name": "eventtype",
+               "label": "EventType",
+               "value": "Start",
+               "hidden": "true"
+            },
+            {
+               "name": "eventdetailtype",
+               "label": "EventDetailType",
+               "change": "typeChange,setFirstTaskType",
+               "value": "None",
+               "values": [
+                  {
+                     "label": "None",
+                     "value": "None",
+                     "disable": "message,timer,conditional,signal,multiple,trigger"
+                  },
+                  {
+                     "label": "Message",
+                     "value": "Message",
+                     "enable": "trigger,message",
+                     "disable": "timer,conditional,signal,multiple"
+                  },
+                  {
+                     "label": "Timer",
+                     "value": "Timer",
+                     "enable": "trigger,timer",
+                     "disable": "message,conditional,signal,multiple"
+                  }
+               ]
+            },
+            {
+               "label": "Message",
+               "name": "message",
+               "disabled": "true",
+               "attributes": [
+                  {
+                     "name": "wsname",
+                     "label": "Web Service Name"
+                  },
+                  {
+                     "name": "processattributes",
+                     "label": "Process Attributes",
+                     "modalwidth": "340",
+                     "modalheight": "330",
+                     "modalclass": "view.modal.ObjectAdder",
+                     "modalUrl": "/Apia2.3/administration.BPMNAction.do?type=attributes",
+                     "oneCheckedInRow": "true",
+                     "data": [
+                        {
+                           "width": "0",
+                           "name": "id",
+                           "label": "id",
+                           "hidden": "true"
+                        },
+                        {
+                           "width": "100",
+                           "name": "name",
+                           "label": "name"
+                        },
+                        {
+                           "width": "40",
+                           "name": "uk",
+                           "label": "correl."
+                        },
+                        {
+                           "width": "40",
+                           "name": "multivalued",
+                           "label": "multival."
+                        }
+                     ]
+                  },
+                  {
+                     "name": "entityattributes",
+                     "label": "Entity Attributes",
+                     "modalwidth": "340",
+                     "modalheight": "330",
+                     "modalclass": "view.modal.ObjectAdder",
+                     "modalUrl": "/Apia2.3/administration.BPMNAction.do?type=attributes",
+                     "oneCheckedInRow": "true",
+                     "data": [
+                        {
+                           "width": "0",
+                           "name": "id",
+                           "label": "id",
+                           "hidden": "true"
+                        },
+                        {
+                           "width": "100",
+                           "name": "name",
+                           "label": "name"
+                        },
+                        {
+                           "width": "40",
+                           "name": "uk",
+                           "label": "correl."
+                        },
+                        {
+                           "width": "40",
+                           "name": "multivalued",
+                           "label": "multival."
+                        }
+                     ]
+                  },
+                  {
+                     "label": "Implementation",
+                     "name": "implementation",
+                     "value": "WebService",
+                     "hidden": "true"
+                  }
+               ]
+            },
+            {
+               "name": "timer",
+               "label": "Timer",
+               "disabled": "true",
+               "attributes": [
+                  {
+                     "label": "TimeDate",
+                     "name": "timedate",
+                     "attributes": [
+                        {
+                           "label": "Init Date",
+                           "name": "initdate",
+                           "use": "optional",
+                           "dataType": "mask",
+                           "mask": "nnnn'/'nn'/'nn' 'nn':'nn':'nn"
+                        },
+                        {
+                           "label": "End Date",
+                           "name": "enddate",
+                           "use": "optional",
+                           "dataType": "mask",
+                           "mask": "nnnn'/'nn'/'nn' 'nn':'nn':'nn"
+                        }
+                     ]
+                  },
+                  {
+                     "label": "TimeCycle",
+                     "name": "timecycle",
+                     "attributes": [
+                        {
+                           "label": "Time Measurement Unit",
+                           "name": "unit",
+                           "value": "Milliseconds",
+                           "values": [
+                              {
+                                 "label": "Milliseconds",
+                                 "value": "Milliseconds"
+                              },
+                              {
+                                 "label": "Seconds",
+                                 "value": "Seconds"
+                              },
+                              {
+                                 "label": "Minutes",
+                                 "value": "Minutes"
+                              },
+                              {
+                                 "label": "Hours",
+                                 "value": "Hours"
+                              },
+                              {
+                                 "label": "Days",
+                                 "value": "Days"
+                              },
+                              {
+                                 "label": "Weeks",
+                                 "value": "Weeks"
+                              }
+                           ]
+                        },
+                        {
+                           "label": "Value",
+                           "name": "value",
+                           "use": "optional",
+                           "dataType": "int"
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "label": "Multiple",
+               "name": "multiple",
+               "disabled": "true",
+               "attributes": [
+                  {
+                     "label": "Message",
+                     "name": "message",
+                     "attributes": [
+                        {
+                           "name": "wsname",
+                           "label": "Web Service Name"
+                        },
+                        {
+                           "name": "processattributes",
+                           "label": "Process Attributes",
+                           "modalwidth": "340",
+                           "modalheight": "330",
+                           "modalclass": "view.modal.ObjectAdder",
+                           "modalUrl": "/Apia2.3/administration.BPMNAction.do?type=attributes",
+                           "oneCheckedInRow": "true",
+                           "data": [
+                              {
+                                 "width": "0",
+                                 "name": "id",
+                                 "label": "id",
+                                 "hidden": "true"
+                              },
+                              {
+                                 "width": "100",
+                                 "name": "name",
+                                 "label": "name"
+                              },
+                              {
+                                 "width": "40",
+                                 "name": "uk",
+                                 "label": "correl."
+                              },
+                              {
+                                 "width": "40",
+                                 "name": "multivalued",
+                                 "label": "multival."
+                              }
+                           ]
+                        },
+                        {
+                           "name": "entityattributes",
+                           "label": "Entity Attributes",
+                           "modalwidth": "340",
+                           "modalheight": "330",
+                           "modalclass": "view.modal.ObjectAdder",
+                           "modalUrl": "/Apia2.3/administration.BPMNAction.do?type=attributes",
+                           "oneCheckedInRow": "true",
+                           "data": [
+                              {
+                                 "width": "0",
+                                 "name": "id",
+                                 "label": "id",
+                                 "hidden": "true"
+                              },
+                              {
+                                 "width": "100",
+                                 "name": "name",
+                                 "label": "name"
+                              },
+                              {
+                                 "width": "40",
+                                 "name": "uk",
+                                 "label": "correl."
+                              },
+                              {
+                                 "width": "40",
+                                 "name": "multivalued",
+                                 "label": "multival."
+                              }
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "name": "timer",
+                     "label": "Timer",
+                     "modalclass": "view.modal.LevelAdder",
+                     "modalwidth": "310",
+                     "modalheight": "330",
+                     "single": "true",
+                     "data": [
+                        {
+                           "width": "50%",
+                           "label": "TimeDate",
+                           "name": "timedate",
+                           "modalclass": "view.modal.ComplexElementModal",
+                           "modalwidth": "310",
+                           "modalheight": "330",
+                           "modalUrl": "subProcess.xml",
+                           "data": [
+                              {
+                                 "width": "50%",
+                                 "name": "value",
+                                 "label": "Value"
+                              }
+                           ],
+                           "values": [
+                              {
+                                 "label": "Init Date",
+                                 "name": "initdate",
+                                 "use": "optional",
+                                 "dataType": "mask",
+                                 "mask": "nnnn'/'nn'/'nn' 'nn':'nn':'nn"
+                              },
+                              {
+                                 "label": "End Date",
+                                 "name": "enddate",
+                                 "use": "optional",
+                                 "dataType": "mask",
+                                 "mask": "nnnn'/'nn'/'nn' 'nn':'nn':'nn"
+                              }
+                           ]
+                        },
+                        {
+                           "width": "50%",
+                           "label": "TimeCycle",
+                           "name": "timecycle",
+                           "modalclass": "view.modal.ComplexElementModal",
+                           "modalwidth": "310",
+                           "modalheight": "330",
+                           "modalUrl": "subProcess.xml",
+                           "data": [
+                              {
+                                 "width": "50%",
+                                 "name": "value",
+                                 "label": "Value"
+                              }
+                           ],
+                           "values": [
+                              {
+                                 "label": "Time Measurement Unit",
+                                 "name": "unit",
+                                 "value": "Milliseconds",
+                                 "values": [
+                                    {
+                                       "label": "Milliseconds",
+                                       "value": "Milliseconds"
+                                    },
+                                    {
+                                       "label": "Seconds",
+                                       "value": "Seconds"
+                                    },
+                                    {
+                                       "label": "Minutes",
+                                       "value": "Minutes"
+                                    },
+                                    {
+                                       "label": "Hours",
+                                       "value": "Hours"
+                                    },
+                                    {
+                                       "label": "Days",
+                                       "value": "Days"
+                                    },
+                                    {
+                                       "label": "Weeks",
+                                       "value": "Weeks"
+                                    }
+                                 ]
+                              },
+                              {
+                                 "label": "Value",
+                                 "name": "value",
+                                 "use": "optional",
+                                 "dataType": "int"
+                              }
+                           ]
+                        }
+                     ]
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name": "User Defined Attributes",
+         "id": "userproperties",
+         "notShown": "true",
+         "attribute": {
+            "label": "User Attributes",
+            "name": "userattributes",
+            "modalwidth": "310",
+            "modalheight": "330",
+            "modalclass": "view.modal.LevelAdder",
+            "data": [
+               {
+                  "width": "30%",
+                  "label": "Name",
+                  "name": "name"
+               },
+               {
+                  "width": "30%",
+                  "label": "Type",
+                  "name": "type",
+                  "value": "String",
+                  "values": [
+                     {
+                        "label": "String",
+                        "value": "String"
+                     },
+                     {
+                        "label": "Numeric",
+                        "value": "Numeric"
+                     },
+                     {
+                        "label": "Boolean",
+                        "value": "Boolean"
+                     }
+                  ]
+               },
+               {
+                  "width": "30%",
+                  "label": "Value",
+                  "name": "value"
+               }
+            ]
+         }
+      }
+   ]
+}

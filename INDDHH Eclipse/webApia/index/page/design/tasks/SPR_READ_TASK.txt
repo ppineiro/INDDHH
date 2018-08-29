@@ -1,0 +1,46 @@
+////YA IMPACTADO EN SCRIPT DE CREACION
+
+CREATE PROCEDURE [SPR_READ_TASK]
+@p_where VARCHAR(2000),
+@p_order_by VARCHAR(2000),
+@from_row INT,
+@rows_per_page INT
+AS
+DECLARE
+  @total INT,
+  @aux_sql VARCHAR(3000) 
+
+SET NOCOUNT ON
+
+CREATE TABLE #tmp_table (
+    id INT IDENTITY (1,1),
+     env_id int,
+     tsk_id_auto int,
+     tsk_name varchar(70),
+     tsk_desc varchar(350),
+     tsk_max_duration int,
+     tsk_alert_duration int,
+     tsk_alert_type varchar(1),
+     reg_user varchar(20),
+     reg_status int,
+     reg_date datetime,
+     tsk_flags varchar(10),
+     tsk_exe_template varchar(100),
+     tsk_title varchar(255),
+     prj_id int,
+     tsk_gru_reasign int,
+     img_path varchar(20),
+	 tsk_unique_id varchar (255)
+)
+SET @aux_sql = 'INSERT INTO #tmp_table (img_path,env_id,tsk_id_auto,tsk_name,tsk_desc,tsk_max_duration,tsk_alert_duration,tsk_alert_type,reg_user,reg_status,reg_date,tsk_flags,tsk_exe_template,tsk_title,prj_id,tsk_gru_reasign,tsk_unique_id) '
+SET @aux_sql = @aux_sql + ' SELECT t.img_path,t.env_id,t.tsk_id_auto,t.tsk_name,t.tsk_desc,t.tsk_max_duration,t.tsk_alert_duration,t.tsk_alert_type,t.reg_user,t.reg_status,t.reg_date,t.tsk_flags,t.tsk_exe_template,t.tsk_title,t.prj_id,t.tsk_gru_reasign,t.tsk_unique_id FROM task t LEFT OUTER JOIN project p ON (t.env_id=p.env_id and t.prj_id=p.prj_id_auto and t.reg_status=p.reg_status) WHERE t.reg_status = 0'
+IF (@p_where IS NOT NULL) SET @aux_sql = @aux_sql + ' AND ' + @p_where
+IF (@p_order_by IS NOT NULL) SET @aux_sql = @aux_sql + ' ORDER BY ' + @p_order_by
+set @total = @from_row + @rows_per_page
+set rowcount @total
+EXEC(@aux_sql)
+set rowcount @rows_per_page
+SELECT * FROM #tmp_table WHERE id BETWEEN @from_row AND (@from_row + @rows_per_page - 1)
+DROP TABLE #tmp_table
+set rowcount 0
+--

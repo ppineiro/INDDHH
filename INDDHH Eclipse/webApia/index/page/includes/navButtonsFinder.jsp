@@ -1,0 +1,1 @@
+<div><div id="navRefresh" class="btnRefresh"></div><div class="navSeparator"></div><div><a id="clearFilters" href="#"><system:label show="text" label="btnClearFilter" /></a></div></div>

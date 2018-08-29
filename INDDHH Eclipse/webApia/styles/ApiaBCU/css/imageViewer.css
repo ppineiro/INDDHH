@@ -1,0 +1,101 @@
+.imageBrowser{
+	border:1px solid black;
+	border-top:1px solid #666666;
+	border-left:1px solid #666666;
+	background-color:#FAFAFA;
+}
+
+.imageViewIcon{
+	padding:10px;
+	position:absolute;
+	width:150px;
+	height:60px;
+	cursor:pointer;
+	cursor:hand;
+}
+
+.imageViewIconImage{
+	position:relative;
+	width:50px;
+	height:50px;
+	position:relative;
+	cursor:pointer;
+	cursor:hand;	
+}
+
+.imageViewIconImage img{
+	cursor:pointer;
+	cursor:hand;	
+}
+
+.imageViewIconName{
+	position:relative;
+	font-weight:bold;
+	/*top:-60px;*/
+	margin-left:5px;
+	cursor:pointer;
+	cursor:hand;	
+}
+
+.imageViewIconDetail{
+	position:relative;
+	width:100px;
+	height:40px;
+	margin-left:5px;
+	cursor:pointer;
+	cursor:hand;
+}
+
+#uploadModal{
+	border:1px solid black;
+	border-top:1px solid #666666;
+	border-left:1px solid #666666;
+}
+
+#uploadModal iframe{
+	border:0px solid black;
+}
+
+.modalBody{
+	padding:3px;
+	margin:0px;
+	overflow:hidden;
+	BACKGROUND-COLOR:#EFEFEF;
+}
+
+.modalBody td{
+	FONT-FAMILY:Tahoma, Verdana, Arial; 
+	FONT-SIZE:11px;
+}
+
+.buttonBar{
+	TABLE-LAYOUT:fixed;
+	BACKGROUND-COLOR:#DFDFDF;
+	border:1px solid #DFA960;
+	padding:3px;
+}
+
+.buttonBar BUTTON{
+	background-image:url(../../gradient.jsp?height=20&width=1&colors=FAFAFA;BDBDBD&type=v);
+	background-repeat:repeat-x;
+	background-color:#FFFFFF;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+    BORDER: 1px solid #666666;
+    FONT-SIZE: 8pt;
+    color:#000000;
+}
+
+.modalTitle{
+	BORDER:#416D94 1px solid;
+    BACKGROUND-COLOR:#303588;
+    color:#FFFFFF;
+    FONT-FAMILY: Arial,Helvetica,sans;
+ 	FONT-SIZE: 16px;
+ 	FONT-WEIGHT:900;
+    MARGIN:0px;
+    WIDTH: 100%; 
+}
+
+.buttonBar BUTTON[disabled]{
+	color:#000000;
+}

@@ -1,0 +1,70 @@
+.copyrightTxt{
+	font-family:verdana;
+	font-size:9px;
+	padding-right:6px;
+	color:#000000;
+}
+
+#divContent{
+	/*BORDER:1px solid red;*/
+	HEIGHT:95%;
+	WIDTH:100%;
+    OVERFLOW: auto;
+    MARGIN: 0px;
+    PADDING-LEFT:4px;
+    PADDING-RIGHT:4px;
+    FONT-FAMILY: Tahoma, Verdana, Arial; 
+    FONT-SIZE: 8pt;
+    SCROLLBAR-FACE-COLOR: #F7C35A;
+	SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+	SCROLLBAR-SHADOW-COLOR: #C0C0C0;
+	SCROLLBAR-ARROW-COLOR: #000000;
+	SCROLLBAR-DARKSHADOW-COLOR: #808080;
+	SCROLLBAR-BASE-COLOR: #808080;
+	scrollbar-3d-light-color: #808080;
+}
+
+.usuMsg{
+	WIDTH:320px;
+	POSITION:relative;
+	TOP:90px;
+	border:1px solid #D6E3E9;
+}
+.usuMsg THEAD TD{
+	background-image:url(../../gradient.jsp?height=20&width=1&colors=C7DFE3;ffffff&type=v);
+	background-repeat:repeat-x;
+	background-color:#FFFFFF;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	FONT-SIZE:16px;
+	color:#1B4D80;
+	text-align:center;
+}
+.usuMsg TBODY TD{
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	FONT-SIZE:12px;
+	padding:4px;
+}
+
+.logoArea{
+	margin-top:10px;
+}
+.clsTitle{
+	width:90%;
+	FONT-FAMILY: Arial, Verdana;
+	FONT-SIZE:18px;
+	font-weight:bold;
+	text-align:right;
+	padding-right:10px;
+	color:#000000;
+}
+.clsLogo{
+	padding-right:10px;
+}
+
+.listBody > #divContent > #samplesTab {
+	height: 100%;
+}
+
+.listBody > #divContent > #samplesTab > div {
+	height: 100%;
+}

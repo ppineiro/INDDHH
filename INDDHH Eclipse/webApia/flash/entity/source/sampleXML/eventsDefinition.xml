@@ -1,0 +1,6 @@
+<ENTITY_DEFINITION>	<EVENTS>
+		<EVENT event_id="17" class_id="1080" class_name="TEST" event_name="ONCREATE" bnd_id="0" order="0"/>
+		<EVENT event_id="21" class_id="1081" class_name="TEST2" event_name="ONUPDATE" bnd_id="0" order="2"/>
+		<EVENT event_id="22" class_id="1082" class_name="TEST3" event_name="ONDELETE" bnd_id="0" order="1"/>
+	</EVENTS>
+</ENTITY_DEFINITION>

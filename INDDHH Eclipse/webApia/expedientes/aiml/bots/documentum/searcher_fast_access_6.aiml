@@ -1,0 +1,74 @@
+<?xml version = "1.0" encoding = "utf-8" standalone = "yes"?>
+<aiml>
+
+	<category>
+		<pattern>ACCESO RAPIDO 6 *</pattern>
+		<template>6VAR_USR<star/></template>
+	</category>
+	
+	<category>
+		<pattern>EXPEDIENTES PARA SER TRABAJADOS POR EL FUNCIONARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 6</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE PARA SER TRABAJADOS POR EL FUNCIONARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 6</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES PARA SER TRABAJADOS POR EL USUARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 6</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE PARA SER TRABAJADOS POR EL USUARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 6</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES LIBRES DE *</pattern>
+		<template><srai>ACCESO RAPIDO 6</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES LIBRE DE *</pattern>
+		<template><srai>ACCESO RAPIDO 6</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE LIBRE DE *</pattern>
+		<template><srai>ACCESO RAPIDO 6</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES LIBRES DEL USUARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 6</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES LIBRE DEL USUARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 6</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE LIBRES DEL USUARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 6</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES PARA TRABAJAR DEL USUARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 6</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE PARA TRABAJAR DEL USUARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 6</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES PARA SER TRABAJADOS POR *</pattern>
+		<template><srai>ACCESO RAPIDO 6</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE PARA SER TRABAJADOS POR *</pattern>
+		<template><srai>ACCESO RAPIDO 6</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES PARA SER TRABAJADOS POR EL FUNCIONARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 6</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE PARA SER TRABAJADOS POR EL FUNCIONARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 6</srai> <star/></template>
+	</category>
+	
+</aiml>

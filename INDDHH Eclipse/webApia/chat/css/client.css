@@ -1,0 +1,57 @@
+html		{ height: 100%; }
+body		{ font-family: Arial,Helvetica,sans-serif; font-size: 10px; color: #303030; margin: 0px; height: 100%; border: 0px; padding: 0; overflow: hidden;}
+input, select { font-family: Arial,Helvetica,sans-serif; font-size: 10px; }
+
+.hide { display: none !important; }
+
+/** loading **/
+.bodyLoading {}
+
+/** start **/
+.bodyStart .header { border-bottom: 1px solid lightgray; font-size: 19px; font-weight: bold; padding-bottom: 3px; text-align: center; }
+.bodyStart .fields { margin-top: 5px;}
+.bodyStart .field * { box-sizing: border-box; }
+.bodyStart .field { margin-bottom: 5px; }
+.bodyStart .field label { display: inline-block; margin-left: 1%; padding-right: 5px; text-align: right; white-space: pre; width: 24%; }
+.bodyStart .field input, .field select { width: 74%; }
+.bodyStart .required label { font-weight: bold; }
+.bodyStart .required label::before { color: #cc0000; content: " * "; font-weight: bold; }
+.bodyStart .required span.requiredMsg { color: red; display: inline-block; font-size: 11px; font-weight: bold; margin-bottom: 5px; margin-top: 2px; padding: 3px; text-align: center; width: 100%; }
+.bodyStart .buttons { padding-left: 25%; }
+.bodyStart .progress { border-top: 1px solid lightgray; color: darkgray; margin-top: 5px; padding-top: 5px; text-align: center; }
+
+/** chat **/
+.chatHeader { border-bottom: 1px solid lightgray; font-size: 19px; font-weight: bold; padding-bottom: 3px; text-align: center; box-sizing: border-box; width: 100%; height: 30px; }
+.chatMessagesContainer { position: relative; margin-bottom: 5px; margin-top: 5px; }
+.chatMessages { height: 100%; width: 100%; overflow: auto; position: absolute; top: 0; left: 0; padding-top: 5px; box-sizing: border-box; }
+.chatMessages .aMessage { background-color: #dcf8c6; border-radius: 7px; float: left; margin-bottom: 10px; margin-left: 5px; margin-right: 5px; padding: 5px; width: 75%; }
+.chatMessages .aMessage.fromMe { background-color: #e2eafe; float: right; text-align: right; }
+.chatMessages .aMessage.fromSystem { background-color: #f4f4f4; box-sizing: inherit; font-weight: bold; margin-left: 5%; padding-left: 20px; padding-right: 20px; text-align: center; width: 90%; }
+.chatMessages .aMessage .from { display: flex; font-weight: bold; }
+.chatMessages .aMessage .time { font-size: 8px; float: right; position: relative; bottom: -5px; }
+.chatMessages .aMessage.fromMe .from { display: none; }
+.chatMessages .aMessage.fromMe .time { margin-left: 5px; }
+.chatMessages .aMessage.fromSystem .from { display: none; }
+.chatMessages .aMessage.continue { margin-top: -7px; }
+.chatMessages .aMessage.continue .from { display: none; }
+.chatMessages .aMessage .message .button { border-color: #999999; border-image: none; border-radius: 4px; border-style: solid; border-width: 1px; cursor: pointer; margin-left: 5px; padding: 2px; display: inline-block; }
+.chatMessages .aMessage .message .button.disabled { color: #999999; cursor: not-allowed; }
+
+.chatOptions { background-color: #dcdcdc; height: 50px; width: 100%; }
+.chatOptions form.file { float: left; padding: 0px; margin: 0px; }
+.chatOptions input.file { background-color: #dcdcdc; border: medium none; cursor: pointer; position: absolute; margin-top: 5px; height: 25px; background-size: 25px; background-position: center center; margin-left: 5px; }
+.chatOptions .exit { background-position: center center; background-size: 100% auto; cursor: pointer; float: right; height: 25px; margin-top: 5px;  width: 25px; }
+.chatOptions .messageContainer { box-sizing: border-box; padding: 5px 35px; }
+.chatOptions .messageContainer .input { color: black; height: 100%; line-height: 18px; vertical-align: middle; width: 100%; background-color: white; max-height: 40px; overflow-x: hidden; overflow-y: auto; }
+.chatOptions .messageContainer .placeholder { color: darkgrey; float: left; pointer-events: none; position: absolute; }
+
+.chatOptions.disableSend .file { display: none; }
+.chatOptions.disableSend .messageContainer { display: none; }
+
+@media only screen and (max-width: 360px) {
+	.bodyStart .field { padding-left: 5px; padding-right: 5px; }
+	.bodyStart .field input, .field select { width: 100%; }
+	.bodyStart .field label { text-align: left; }
+	.bodyStart .buttons { padding-left: 5px; padding-right: 5px; }
+	.bodyStart .buttons > input { width: 100%; }
+}

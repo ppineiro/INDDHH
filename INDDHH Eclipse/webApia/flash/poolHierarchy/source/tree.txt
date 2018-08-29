@@ -1,0 +1,97 @@
+El XML va aca abajo, los que tienen FATHER = 0 son nodos raiz, es decir sin padre.
+el tag <STYLE> puede valer B, I, N que significa Bold, Italic y Negrita... es el tipo de letra que debe tener cada uno.
+
+el tag DELETE puede valer Y o N  si tiene N no podes borrar el nodo.
+
+creo que eso es todo.
+
+despues te mando los xml para los modals que te mostre
+
+
+los que tienen el tag DELETE con valor N además de no poder borrarse, no pueden moverse de lugar con drag an
+drop ni pueden utilizarse para recibir un drag and drop
+
+
+
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<ROWSET>
+<ROW>
+<ID>-1</ID>
+<FATHER>0</FATHER>
+<NAME>Root</NAME>
+<DELETE>N</DELETE>
+<GLOBAL>true</GLOBAL>
+<STYLE>N</STYLE>
+</ROW>
+<ROW>
+<ID>1012</ID>
+<FATHER>-1</FATHER>
+<NAME>TRANSFERENCIA</NAME>
+<DELETE>Y</DELETE>
+<GLOBAL>false</GLOBAL>
+<STYLE>N</STYLE>
+</ROW>
+<ROW>
+<ID>1080</ID>
+<FATHER>-1</FATHER>
+<NAME>A</NAME>
+<DELETE>Y</DELETE>
+<GLOBAL>true</GLOBAL>
+<STYLE>B</STYLE></ROW>
+<ROW><ID>1017</ID>
+<FATHER>1012</FATHER>
+<NAME>CS</NAME>
+<DELETE>Y</DELETE>
+<GLOBAL>false</GLOBAL>
+<STYLE>N</STYLE>
+</ROW>
+<ROW>
+<ID>1081</ID>
+<FATHER>1080</FATHER>
+<NAME>B</NAME>
+<DELETE>Y</DELETE>
+<GLOBAL>true</GLOBAL>
+<STYLE>B</STYLE>
+</ROW>
+</ROWSET>
+
+
+
+
+el formato seria así:
+
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<ROWSET>
+	<ROW>
+		<ID_NODE>1002</ID_NODE>
+		<NAME>BOFFICE</NAME>
+		<POOL_DESC>Grupo de usuários Backoffice</POOL_DESC>
+		<POOL_ALL_ENVS>0</POOL_ALL_ENVS>
+		<POOL_ENV_COUNT>1</POOL_ENV_COUNT>
+	</ROW>
+</ROWSET>
+
+
+para los textos el comportamiento seria asi:
+
+if (POOL_ALL_ENVS = 1 ) {
+	Va con negrita
+} else if (POOL_ENV_COUNT > 1) {
+	Va con italica
+} else {
+	texto Normal
+}
+
+no. ese que te mande es para el modal.
+capaz me explique mal.....
+el modal se carga con el xml que te mande... en el modal solo mostra el nombre del grupo. pero cuando
+selecciones uno, al momento de agregarlo al tree, los formatos del texto van a estar determinados por
+la reglita que te agregue
+
+
+para cargar el modal: 
+security.GroupHierarchyAction.do?action=xmlPools&name=(aca va lo que escriba el usuario en el filtro)
+
+para traer el xml original:
+security.GroupHierarchyAction.do?action=xmlTree
+

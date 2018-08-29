@@ -1,0 +1,111 @@
+/* Div General */
+#menuContainer { position: absolute; width: 310px; height: 600px; display: inline-block; float: right; right: 0px; z-index: 1; background-color: #FFF; }
+			
+/* Panel de la tarea */	
+#taskInfoContainer { position: absolute; width: 310px; height: 125px; }
+#taskTitleContainer { position: absolute; top: 0%; }
+#taskContent { position: absolute; top: 20%; width: 300px; height: 60px; }
+#imgTask { position: absolute; top: 10%; left: 5%; background: url(../../templates/img/realizar_actuacion.png); background-size: 45px; background-repeat: no-repeat; width: 45px; height: 46px; } 
+#descTask{ position: absolute; top: 25%; left: 25%; width: 190px; font-size: 12px; }
+div.titImage{ display: inline; }
+div.proTitle{ display: inline; font-weight: bold; font-size: 12px; }
+div.taskTitle{ display: inline; font-weight: bold; font-size: 12px; }
+#imgFavorite { cursor: pointer; background-size: 12px; background-repeat: no-repeat; width: 12px; height: 12px; position: relative; left: 95%; top: 20%; }
+#imgHelpVideo { cursor: pointer; width: 12px; height: 12px; position: relative; left: 90%; top: 40%; }
+
+/* Expediente */
+#expedienteContainer { position: absolute; top: 15%; height: 175px; width: 310px; }
+#dowloadContainer { position: absolute; top: 15%; left: 1%; height: 70px; width: 300px; }
+
+#dowloadRef { position: absolute; left: 52.5%; top: 50%; display: none;}
+div.download { width: 24px; height: 25px; border: 0px solid blue; cursor: pointer; }
+#imgDownload { background: url(../../expedientes/iconos/download.png); background-repeat: no-repeat; width: 32px; height: 26px; background-size: 32px;}
+
+#downModalRef { position: absolute; left: 70%; top: 16%; }
+div.downModal { width: 65px; height: 65px; border: 0px solid blue; cursor: pointer; }
+div.downModal:hover{ color: #0679B8; }
+#imgDownModal { background: url(../../expedientes/iconos/download.png); background-repeat: no-repeat; width: 32px; height: 26px; background-size: 32px; position: relative; left: 24%;}
+span.sp_down_1 { position: absolute; top: 47%; left: 12%; }
+span.sp_down_2 { position: absolute; left: 10%; top: 67%; }
+
+#previewRef { position: absolute; left: 39%; top: 7.75%; }
+div.preview { width: 65px; height: 65px; border: 0px solid blue; cursor: pointer; }
+div.preview:hover{ color: #0679B8; }
+#imgPreview { background: url(../../expedientes/iconos/preview.png); background-size: 28px; background-repeat: no-repeat; width: 28px; height: 33px; position: relative; left: 29%; }
+span.sp_preview_1 { position: absolute; top: 56%; left: 2%; }
+span.sp_preview_2 { position: absolute; left: 8%; top: 76%; }
+			
+#arbolRef { position: absolute; left: 10%; top: 10%; }
+div.arbol { width: 65px; height: 65px; border: 0px solid blue; cursor: pointer; }
+div.arbol:hover{ color: #0679B8; }
+#imgArbol { background: url(../../expedientes/iconos/arbol.png); background-size: 30px; background-repeat: no-repeat; width: 30px; height: 30px; position: relative; left: 25%; }
+span.sp_arbol_1 { position: absolute; left: 16%; top: 52%; }
+span.sp_arbol_2 { position: absolute; top: 73%; left: 7%; }
+
+/* Menu de funcionalidades */
+#tabMenuContainer { position: absolute; top: 32%; width: 310px; height: 150px; }
+#menuTabTable { position: absolute; top: 20%; width: 300px; height: 140px; }
+div.title{border-bottom: 1px solid #CCCCCC; color: #464646; font-size: 12px; line-height: 20px; margin: 0; padding-left: 5px; padding-right: 2px; font-weight: bold; }
+			
+div.actuar { position: absolute; width: 60px; height: 60px; top: 0%; left: 3%; border: 0px solid blue; cursor: pointer; }
+div.actuar:hover{ color: #0679B8; }
+#imgActuar { position: absolute; left: 34%; top: 15%; background: url(../../expedientes/iconos/tabsbuttons/actuar.png); background-size: 24px; background-repeat: no-repeat; width: 24px; height: 25px;}
+span.actuar { position: absolute; top: 64%; left: 21%; }
+			
+div.modf_cara { position: absolute; width: 60px; height: 60px; top: 0%; left: 27%; border: 0px solid blue; cursor: pointer; }
+div.modf_cara:hover{ color: #0679B8; }
+#imgModCar { position: absolute; left: 28%; top: 5%; background: url(../../expedientes/iconos/tabsbuttons/cambio_caratula.png); background-size: 24px; background-repeat: no-repeat; width: 24px; height: 24px; }			
+span.modf_cara1 { position: absolute; top: 51%; left: 7%; }
+span.modf_cara2 { position: absolute; top: 74%; left: 11%; }
+	
+div.elem_fisc { position: absolute; width: 60px; height: 60px; top: 0%; left: 52%; border: 0px solid blue; cursor: pointer; }
+div.elem_fisc:hover{ color: #0679B8; }
+#imgElemFisc { position: absolute; left: 28%; top: 5%; background: url(../../expedientes/iconos/tabsbuttons/elemfisc.png); background-size: 24px; background-repeat: no-repeat; width: 24px; height: 24px; }
+span.elem_fisc1 { position: absolute; top: 47%; left: 0%; }
+span.elem_fisc2 { position: absolute; top: 74%; left: 20%; }
+	
+div.acc_rest { position: absolute; width: 60px; height: 60px; top: 0%; left: 78%; border: 0px solid blue; cursor: pointer; }
+div.acc_rest:hover{ color: #0679B8; }
+#imgAccRest { position: absolute; left: 26%; top: 2%; background: url(../../expedientes/iconos/tabsbuttons/accrestr.png); background-size: 27px; background-repeat: no-repeat; width: 24px; height: 24px; }
+span.acc_rest1 { position: absolute; top: 47%; left: 16%; }
+span.acc_rest2 { position: absolute; top: 74%; left: 0%; }
+			
+div.hist { position: absolute; width: 60px; height: 60px; top: 55%; left: 3%; border: 0px solid blue; cursor: pointer; }
+div.hist:hover{ color: #0679B8; }
+#imgHist { position: absolute; left: 28%; top: 5%;  background: url(../../expedientes/iconos/tabsbuttons/history.png); background-size: 24px; background-repeat: no-repeat; width: 24px; height: 24px; }
+span.hist1 { position: absolute; top: 47%; left: -3%; width: 64px; }
+span.hist2 { position: absolute; top: 74%; left: -6%; }
+		
+div.acords { position: absolute; width: 60px; height: 60px; top: 55%; left: 27%; border: 0px solid blue; cursor: pointer; }
+div.acords:hover{ color: #0679B8; }
+#imgAcord { position: absolute; left: 28%; top: 5%; background: url(../../expedientes/iconos/tabsbuttons/acordonado.png); background-size: 24px; background-repeat: no-repeat; width: 24px; height: 24px; }
+span.acords { position: relative; top: 57%; left: -3%; }
+		
+div.relads { position: absolute; width: 60px; height: 60px; top: 55%; left: 52%; border: 0px solid blue; cursor: pointer; }
+div.relads:hover{ color: #0679B8; }
+#imgRelac { position: absolute; left: 28%; top: 5%; background: url(../../expedientes/iconos/tabsbuttons/relacionado.png); background-size: 24px; background-repeat: no-repeat; width: 24px; height: 24px; }
+span.relads { position: relative; top: 57%; left: -4%; }
+			
+div.incorporados { position: absolute; width: 60px; height: 60px; top: 55%; left: 78%; border: 0px solid blue; cursor: pointer; }
+div.incorporados:hover{ color: #0679B8; }
+#imgIncPar { position: absolute; left: 28%; top: 0%; background: url(../../expedientes/iconos/tabsbuttons/incorporados.png); background-size: 24px; background-repeat: no-repeat; width: 24px; height: 27px; }
+span.incorporados1 { position: absolute; top: 47%; left: -3%; width: 64px; }
+span.incorporados2 { position: absolute; top: 74%; left: -12%; }			
+		
+/* Menu de acciones */
+#buttonsActions{ position: absolute ; top: 62%; width: 310px; }
+div.options { position: absolute; top: 80%; }
+			
+/* Estilo de elementos */			
+div#hmenu ul { list-style: none; margin: 5; padding: 0; list-style-type: none; }			
+div#hmenu ul li { margin: 0; padding: 0; display: inline; }			
+div#hmenu ul a:link{ margin: 0; padding: .3em .4em .3em .4em; text-decoration: none; font-weight: bold; font-size: medium; } 
+div#hmenu ul a:visited{ margin: 0; padding: .3em .4em .3em .4em; text-decoration: none; font-weight: bold; font-size: medium; } 
+div#hmenu ul a:active{ margin: 0; padding: .3em .4em .3em .4em; text-decoration: none; font-weight: bold; font-size: medium; } 
+div#hmenu ul a:hover{ margin: 0; padding: .3em .4em .3em .4em; text-decoration: none; font-weight: bold; font-size: medium; }
+div.titImage { display: none !important; }
+#area_E_1045_41_ifr { height: 150px !important; } /* TAMAÑO IFRAME DE ACTUACION */
+
+/* Ocultar menu */
+#pinHidden { position: absolute; top: 0%; left: 98%; width: 20px; height: 20px; background-image: url("../../templates/img/pinHide.png"); background-repeat: no-repeat; background-position: 0% 0%; cursor:pointer; z-index: 2; }
+#pinShow { position: absolute; top: 0%; left: 98%; display: block; cursor: pointer; width: 20px; height: 20px; background-image: url("../../templates/img/pinShow.png"); background-repeat: no-repeat; background-position: 0% 0%; z-index: 2; }

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://principal" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax21="http://principal/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://principal">
+    <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax22="http://principal/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://principal">
+            <xs:import namespace="http://principal/xsd"/>
+            <xs:element name="devolverTitular">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="nombreTit" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="CI" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="devolverTitularResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax21:Titular"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="decirHola">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="decirHolaResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://principal/xsd">
+            <xs:complexType name="Titular">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="ciTit" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dirTit" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="emailTit" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nombreTit" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="devolverTitularRequest">
+        <wsdl:part name="parameters" element="ns:devolverTitular"/>
+    </wsdl:message>
+    <wsdl:message name="devolverTitularResponse">
+        <wsdl:part name="parameters" element="ns:devolverTitularResponse"/>
+    </wsdl:message>
+    <wsdl:message name="decirHolaRequest">
+        <wsdl:part name="parameters" element="ns:decirHola"/>
+    </wsdl:message>
+    <wsdl:message name="decirHolaResponse">
+        <wsdl:part name="parameters" element="ns:decirHolaResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="HolaPortType">
+        <wsdl:operation name="devolverTitular">
+            <wsdl:input message="ns:devolverTitularRequest" wsaw:Action="urn:devolverTitular"/>
+            <wsdl:output message="ns:devolverTitularResponse" wsaw:Action="urn:devolverTitularResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="decirHola">
+            <wsdl:input message="ns:decirHolaRequest" wsaw:Action="urn:decirHola"/>
+            <wsdl:output message="ns:decirHolaResponse" wsaw:Action="urn:decirHolaResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="HolaSoap11Binding" type="ns:HolaPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="devolverTitular">
+            <soap:operation soapAction="urn:devolverTitular" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="decirHola">
+            <soap:operation soapAction="urn:decirHola" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="HolaSoap12Binding" type="ns:HolaPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="devolverTitular">
+            <soap12:operation soapAction="urn:devolverTitular" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="decirHola">
+            <soap12:operation soapAction="urn:decirHola" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="HolaHttpBinding" type="ns:HolaPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="devolverTitular">
+            <http:operation location="devolverTitular"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="decirHola">
+            <http:operation location="decirHola"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="Hola">
+        <wsdl:port name="HolaHttpSoap11Endpoint" binding="ns:HolaSoap11Binding">
+            <soap:address location="http://localhost:8191/WebServiceUno/services/Hola.HolaHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="HolaHttpSoap12Endpoint" binding="ns:HolaSoap12Binding">
+            <soap12:address location="http://localhost:8191/WebServiceUno/services/Hola.HolaHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="HolaHttpEndpoint" binding="ns:HolaHttpBinding">
+            <http:address location="http://localhost:8191/WebServiceUno/services/Hola.HolaHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

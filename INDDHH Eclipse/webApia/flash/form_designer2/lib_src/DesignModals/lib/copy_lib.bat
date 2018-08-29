@@ -1,0 +1,1 @@
+copy "..\..\DesignComponents\src\designComponentsLib.swc" . /y

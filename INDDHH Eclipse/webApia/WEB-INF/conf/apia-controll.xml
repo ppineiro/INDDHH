@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<data-sources />
+
+	<form-beans></form-beans>
+
+	<global-exceptions />
+
+	<action-mappings>
+		<action path="/apia.control.ProcessesPriorityAction" scope="request" type="biz.statum.apia.web.action.control.ProcessesPriorityAction" parameter="action">
+			<forward name="list"					path="/page/control/processes/priority/list.jsp"/>
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.control.ProcessesSuspendAction" scope="request" type="biz.statum.apia.web.action.control.ProcessesSuspendAction" parameter="action">
+			<forward name="list"					path="/page/control/processes/suspend/list.jsp"/>
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.control.ProcessesRollbackAction" scope="request" type="biz.statum.apia.web.action.control.ProcessesRollbackAction" parameter="action">
+			<forward name="list"					path="/page/control/processes/rollback/list.jsp"/>
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="task"					path="/page/control/processes/rollback/task.jsp"/>
+		</action>
+		
+		<action path="/apia.control.ReleaseTasksAction" scope="request" type="biz.statum.apia.web.action.control.ReleaseTasksAction" parameter="action">
+			<forward name="list"					path="/page/control/tasks/release/list.jsp"/>
+			<forward name="list_hierarchy"			path="/page/control/tasks/release/list.jsp?hierarchy=true"/>
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.control.ProcessesAdhocAction" scope="request" type="biz.statum.apia.web.action.control.ProcessesAdhocAction" parameter="action">
+			<forward name="list"					path="/page/control/processes/adhoc/list.jsp"/>
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="task"					path="/page/control/processes/adhoc/task.jsp"/>
+		</action> 
+		
+		<action path="/apia.control.ReasignTasksAction" scope="request" type="biz.statum.apia.web.action.control.ReasignTasksAction" parameter="action">
+			<forward name="list"					path="/page/control/tasks/reasign/list.jsp"/>
+			<forward name="list_hierarchy"			path="/page/control/tasks/reasign/list.jsp?hierarchy=true"/>
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.control.UsersSubstituteAction" scope="request" type="biz.statum.apia.web.action.control.UsersSubstituteAction" parameter="action">
+			<forward name="list"					path="/page/control/tasks/substitution/list.jsp"/>
+			<forward name="list_hierarchy"			path="/page/control/tasks/substitution/list.jsp?hierarchy=true"/>
+			<forward name="edit"					path="/page/control/tasks/substitution/edit.jsp"/>
+			<forward name="edit_hierarchy"			path="/page/control/tasks/substitution/edit.jsp?hierarchy=true"/>
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.control.AuditTskSchedulerAction" scope="request" type="biz.statum.apia.web.action.control.AuditTskSchedulerAction" parameter="action">
+			<forward name="audit"					path="/page/control/tskSchedulers/audit/audit.jsp"/>
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />			
+		</action>
+		
+		<action path="/apia.control.QryRescheduleTskSchedulerAction" scope="request" type="biz.statum.apia.web.action.control.QryRescheduleTskSchedulerAction" parameter="action">
+			<forward name="query"					path="/page/control/tskSchedulers/qryReschedule/query.jsp"/>
+			<forward name="reschedule"				path="/page/control/tskSchedulers/qryReschedule/reschedule.jsp"/>
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />			
+		</action>
+		
+		<action path="/apia.control.ReasignRolesAction" scope="request" type="biz.statum.apia.web.action.control.ReasignRolesAction" parameter="action">
+			<forward name="list"					path="/page/control/processes/reasign/roles/list.jsp"/>
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		
+		<action path="/apia.control.LogAnalyzerAction" scope="request" type="biz.statum.apia.web.action.control.LogAnalyzerAction" parameter="action">
+			<forward name="init"					path="/page/control/logAnalyzer/init.jsp"/>
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="download"				path="/page/control/logAnalyzer/download.jsp"/>
+		</action>
+		
+	</action-mappings>
+
+	<controller />
+
+	<message-resources parameter="com.sastock.web.resources.GeneralResources" />
+
+</struts-config>

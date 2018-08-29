@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><informationXS xmlns="http://www.com.uy/st/xml">
+  <entitiesXS>
+    <entityXS name="EXPEDIENTE">
+      <attributesXS>
+        <attributeXS isFile="false" name="INDDHH_BARRIOS_MDEO_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_CASO_ORBITA_JUSTICIA_STR">
+          <valueXS index="0">2</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_DEPARTAMENTO_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_DERECHO_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_DOMICILIO_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_EDAD_NUM">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_EMAIL_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_ESPECIFICACION_GENERO_IDENTIFICA_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_ESPECIFICACION_GENERO_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_FECHA_FIN_HECHOS_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_FECHA_INICIO_HECHOS_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_LOCALIDAD_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_LUGAR_PROCEDENCIA_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_NACIONALIDAD_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_NOMBRE_ORGANIZACION_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_ORG_INCISO_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_ORG_INCISO_TABLA_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_ORG_UNIDAD_EJECUTORA_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_ORG_UNIDAD_EJECUTORA_TABLA_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_OTRO_ORGANISMO_CONCURRIO_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_OTRO_ORGANISMO_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_OTRO_ORGANISMO_TABLA_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_PAIS_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_PERSONA_FISICA_DOC_IMAGEN_1_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_PERSONA_FISICA_DOC_IMAGEN_2_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_PERSONA_FISICA_DOC_NUMERO_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_PERSONA_FISICA_DOC_TIPO_STR">
+          <valueXS index="0">1</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_PERSONA_GENERO_IDENTIFICA_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_PERSONA_GENERO_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_PROBLEMA_PERSONA_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_RECOMENDACION_CONCURRIR_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_SELECCIONAR_OTRO_ORG_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_SELECCIONAR_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_TELEFONO_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_TIPO_DENUNCIA_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_TIPO_PERSONA_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+        <attributeXS isFile="false" name="INDDHH_VIA_INICIO_STR">
+          <valueXS index="0"/>
+        </attributeXS>
+      </attributesXS>
+    </entityXS>
+  </entitiesXS>
+</informationXS>

@@ -1,0 +1,356 @@
+  <?xml version="1.0" encoding="ISO-8859-1" ?> 
+  <PROCESS_DEFINITION>
+  <ELEMENT id="1677" pro_ele_id="1677" type="T">
+  <TASK task_id="1029" name="ADVISE_CUST_NOT_ELIGIBLE">
+  <FORMS>
+  <STEP>
+  <FORM form_id="1017" name="CUSTOMER_SO" type="E" read_only="true" /> 
+  <FORM form_id="1020" name="QUALIFICATION_TEST_SO" type="E" read_only="true" /> 
+  <FORM form_id="1021" name="ASSIGN_TECHNICIAN_SO" type="E" read_only="true" /> 
+  <FORM form_id="1027" name="DYNATEL_TEST_RESULT_SO" type="E" read_only="true" /> 
+  </STEP>
+  </FORMS>
+  <POOLS>
+  <POOL pool_id="1077" name="SALES" /> 
+  </POOLS>
+  <EVENTS /> 
+  <STATES /> 
+  </TASK>
+  <DESIGN y="128" x="829" /> 
+  <DEPENDENCY id="1692" /> 
+  </ELEMENT>
+  <ELEMENT id="1678" pro_ele_id="1678" type="T">
+  <TASK task_id="1028" name="PERFORM_JUMPERING">
+  <FORMS>
+  <STEP>
+  <FORM form_id="1017" name="CUSTOMER_SO" type="E" read_only="true" /> 
+  <FORM form_id="1020" name="QUALIFICATION_TEST_SO" type="E" read_only="true" /> 
+  <FORM form_id="1021" name="ASSIGN_TECHNICIAN_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1027" name="DYNATEL_TEST_RESULT_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1023" name="MODEM_INFORMATION_SO" type="E" read_only="true" /> 
+  <FORM form_id="1026" name="CREDIT_ASSESSMENT_SO" type="E" read_only="true" /> 
+  <FORM form_id="1028" name="CONFIGURATION_SO" type="E" read_only="true" /> 
+  <FORM form_id="1029" name="LITESPAN_SO" type="E" read_only="true" /> 
+  </STEP>
+  </FORMS>
+  <POOLS>
+  <POOL pool_id="1086" name="FIELD_FORCES" /> 
+  </POOLS>
+  <EVENTS /> 
+  <STATES /> 
+  </TASK>
+  <DESIGN y="547" x="845" /> 
+  <DEPENDENCY id="1696" /> 
+  </ELEMENT>
+  <ELEMENT id="1679" pro_ele_id="1679" type="T">
+  <TASK task_id="1025" name="VERIFY_CUSTOMER_SATISFACTION">
+  <FORMS>
+  <STEP>
+  <FORM form_id="1017" name="CUSTOMER_SO" type="E" read_only="true" /> 
+  <FORM form_id="1020" name="QUALIFICATION_TEST_SO" type="E" read_only="true" /> 
+  <FORM form_id="1021" name="ASSIGN_TECHNICIAN_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1027" name="DYNATEL_TEST_RESULT_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1023" name="MODEM_INFORMATION_SO" type="E" read_only="true" /> 
+  <FORM form_id="1026" name="CREDIT_ASSESSMENT_SO" type="E" read_only="true" /> 
+  <FORM form_id="1028" name="CONFIGURATION_SO" type="E" read_only="true" /> 
+  <FORM form_id="1029" name="LITESPAN_SO" type="E" read_only="true" /> 
+  </STEP>
+  </FORMS>
+  <POOLS>
+  <POOL pool_id="1083" name="SDG_DISPATCH" /> 
+  </POOLS>
+  <EVENTS /> 
+  <STATES /> 
+  </TASK>
+  <DESIGN y="273" x="939" /> 
+  <DEPENDENCY id="1685" /> 
+  </ELEMENT>
+  <ELEMENT id="1680" pro_ele_id="1680" type="T">
+  <TASK task_id="1027" name="INSTALL_MODEM_AT_CUSTOMER_PREMISE">
+  <FORMS>
+  <STEP>
+  <FORM form_id="1017" name="CUSTOMER_SO" type="E" read_only="true" /> 
+  <FORM form_id="1020" name="QUALIFICATION_TEST_SO" type="E" read_only="true" /> 
+  <FORM form_id="1021" name="ASSIGN_TECHNICIAN_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1027" name="DYNATEL_TEST_RESULT_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1023" name="MODEM_INFORMATION_SO" type="E" read_only="true" /> 
+  <FORM form_id="1026" name="CREDIT_ASSESSMENT_SO" type="E" read_only="true" /> 
+  <FORM form_id="1028" name="CONFIGURATION_SO" type="E" read_only="true" /> 
+  <FORM form_id="1029" name="LITESPAN_SO" type="E" read_only="true" /> 
+  </STEP>
+  </FORMS>
+  <POOLS>
+  <POOL pool_id="1086" name="FIELD_FORCES" /> 
+  </POOLS>
+  <EVENTS /> 
+  <STATES /> 
+  </TASK>
+  <DESIGN y="377" x="820" /> 
+  <DEPENDENCY id="1679" /> 
+  </ELEMENT>
+  <ELEMENT id="1681" pro_ele_id="1681" type="T">
+  <TASK task_id="1024" name="DMO_CHANGES_CUSTOMER_CARD">
+  <FORMS>
+  <STEP>
+  <FORM form_id="1017" name="CUSTOMER_SO" type="E" read_only="true" /> 
+  <FORM form_id="1020" name="QUALIFICATION_TEST_SO" type="E" read_only="true" /> 
+  <FORM form_id="1021" name="ASSIGN_TECHNICIAN_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1027" name="DYNATEL_TEST_RESULT_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1023" name="MODEM_INFORMATION_SO" type="E" read_only="true" /> 
+  <FORM form_id="1026" name="CREDIT_ASSESSMENT_SO" type="E" read_only="true" /> 
+  <FORM form_id="1028" name="CONFIGURATION_SO" type="E" read_only="true" /> 
+  <FORM form_id="1029" name="LITESPAN_SO" type="E" read_only="true" /> 
+  </STEP>
+  </FORMS>
+  <POOLS>
+  <POOL pool_id="1084" name="SDG_DMO" /> 
+  </POOLS>
+  <EVENTS /> 
+  <STATES /> 
+  </TASK>
+  <DESIGN y="520" x="763" /> 
+  <DEPENDENCY id="1678" /> 
+  </ELEMENT>
+  <ELEMENT id="1682" pro_ele_id="1682" type="T">
+  <TASK task_id="1023" name="DISPATCH_SO_TO_TECHNICIAN">
+  <FORMS>
+  <STEP>
+  <FORM form_id="1017" name="CUSTOMER_SO" type="E" read_only="true" /> 
+  <FORM form_id="1020" name="QUALIFICATION_TEST_SO" type="E" read_only="true" /> 
+  <FORM form_id="1021" name="ASSIGN_TECHNICIAN_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1027" name="DYNATEL_TEST_RESULT_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1023" name="MODEM_INFORMATION_SO" type="E" read_only="true" /> 
+  <FORM form_id="1026" name="CREDIT_ASSESSMENT_SO" type="E" read_only="true" /> 
+  <FORM form_id="1028" name="CONFIGURATION_SO" type="E" read_only="true" /> 
+  <FORM form_id="1029" name="LITESPAN_SO" type="E" read_only="true" /> 
+  </STEP>
+  </FORMS>
+  <POOLS>
+  <POOL pool_id="1083" name="SDG_DISPATCH" /> 
+  </POOLS>
+  <EVENTS /> 
+  <STATES /> 
+  </TASK>
+  <DESIGN y="493" x="627" /> 
+  <DEPENDENCY id="1697" /> 
+  </ELEMENT>
+  <ELEMENT id="1683" pro_ele_id="1683" type="T">
+  <TASK task_id="1022" name="ACTIVATE_INTERNET_SERVICE">
+  <FORMS>
+  <STEP>
+  <FORM form_id="1017" name="CUSTOMER_SO" type="E" read_only="true" /> 
+  <FORM form_id="1020" name="QUALIFICATION_TEST_SO" type="E" read_only="true" /> 
+  <FORM form_id="1021" name="ASSIGN_TECHNICIAN_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1027" name="DYNATEL_TEST_RESULT_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1023" name="MODEM_INFORMATION_SO" type="E" read_only="true" /> 
+  <FORM form_id="1026" name="CREDIT_ASSESSMENT_SO" type="E" read_only="true" /> 
+  <FORM form_id="1028" name="CONFIGURATION_SO" type="E" read_only="true" /> 
+  <FORM form_id="1029" name="LITESPAN_SO" type="E" read_only="true" /> 
+  </STEP>
+  </FORMS>
+  <POOLS>
+  <POOL pool_id="1082" name="ISO" /> 
+  </POOLS>
+  <EVENTS /> 
+  <STATES /> 
+  </TASK>
+  <DESIGN y="403" x="478" /> 
+  <DEPENDENCY id="1693" /> 
+  </ELEMENT>
+  <ELEMENT id="1684" pro_ele_id="1684" type="T">
+  <TASK task_id="1028" name="PERFORM_JUMPERING">
+  <FORMS>
+  <STEP>
+  <FORM form_id="1017" name="CUSTOMER_SO" type="E" read_only="true" /> 
+  <FORM form_id="1020" name="QUALIFICATION_TEST_SO" type="E" read_only="true" /> 
+  <FORM form_id="1021" name="ASSIGN_TECHNICIAN_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1027" name="DYNATEL_TEST_RESULT_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1023" name="MODEM_INFORMATION_SO" type="E" read_only="true" /> 
+  <FORM form_id="1026" name="CREDIT_ASSESSMENT_SO" type="E" read_only="true" /> 
+  <FORM form_id="1028" name="CONFIGURATION_SO" type="E" read_only="true" /> 
+  <FORM form_id="1029" name="LITESPAN_SO" type="E" read_only="false" /> 
+  </STEP>
+  </FORMS>
+  <POOLS>
+  <POOL pool_id="1081" name="EXCH" /> 
+  </POOLS>
+  <EVENTS /> 
+  <STATES /> 
+  </TASK>
+  <DESIGN y="381" x="390" /> 
+  <DEPENDENCY id="1683" /> 
+  </ELEMENT>
+  <ELEMENT id="1685" pro_ele_id="1685" type="T">
+  <TASK task_id="1026" name="PERFORM_FINAL_SIGN_OFF">
+  <FORMS>
+  <STEP>
+  <FORM form_id="1017" name="CUSTOMER_SO" type="E" read_only="true" /> 
+  <FORM form_id="1020" name="QUALIFICATION_TEST_SO" type="E" read_only="true" /> 
+  <FORM form_id="1021" name="ASSIGN_TECHNICIAN_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1027" name="DYNATEL_TEST_RESULT_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1023" name="MODEM_INFORMATION_SO" type="E" read_only="true" /> 
+  <FORM form_id="1026" name="CREDIT_ASSESSMENT_SO" type="E" read_only="true" /> 
+  <FORM form_id="1028" name="CONFIGURATION_SO" type="E" read_only="true" /> 
+  <FORM form_id="1029" name="LITESPAN_SO" type="E" read_only="true" /> 
+  </STEP>
+  </FORMS>
+  <POOLS>
+  <POOL pool_id="1085" name="SDG_FINAL_SIGN_OFF" /> 
+  </POOLS>
+  <EVENTS /> 
+  <STATES /> 
+  </TASK>
+  <DESIGN y="183" x="1028" /> 
+  <DEPENDENCY id="1692" /> 
+  </ELEMENT>
+  <ELEMENT id="1686" pro_ele_id="1686" type="T">
+  <TASK task_id="1020" name="PERFORM_DYNATEL_AND_SEND_RESULTS_TO_SALES">
+  <FORMS>
+  <STEP>
+  <FORM form_id="1017" name="CUSTOMER_SO" type="E" read_only="true" /> 
+  <FORM form_id="1020" name="QUALIFICATION_TEST_SO" type="E" read_only="true" /> 
+  <FORM form_id="1021" name="ASSIGN_TECHNICIAN_SO" type="E" read_only="true" /> 
+  <FORM form_id="1027" name="DYNATEL_TEST_RESULT_SO" type="E" read_only="false" /> 
+  </STEP>
+  </FORMS>
+  <POOLS /> 
+  <EVENTS /> 
+  <STATES /> 
+  <ROL rol_id="0" name="TECHNICIAN" /> 
+  </TASK>
+  <DESIGN y="165" x="322" /> 
+  <DEPENDENCY id="1694" /> 
+  </ELEMENT>
+  <ELEMENT id="1687" pro_ele_id="1687" type="T">
+  <TASK task_id="1019" name="UPDATE_CIS_NMS">
+  <FORMS>
+  <STEP>
+  <FORM form_id="1017" name="CUSTOMER_SO" type="E" read_only="true" /> 
+  <FORM form_id="1020" name="QUALIFICATION_TEST_SO" type="E" read_only="true" /> 
+  <FORM form_id="1021" name="ASSIGN_TECHNICIAN_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1027" name="DYNATEL_TEST_RESULT_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1023" name="MODEM_INFORMATION_SO" type="E" read_only="true" /> 
+  <FORM form_id="1026" name="CREDIT_ASSESSMENT_SO" type="E" read_only="true" /> 
+  <FORM form_id="1028" name="CONFIGURATION_SO" type="E" read_only="false" /> 
+  </STEP>
+  </FORMS>
+  <POOLS>
+  <POOL pool_id="1079" name="SOC_ASS" /> 
+  </POOLS>
+  <EVENTS /> 
+  <STATES /> 
+  </TASK>
+  <DESIGN y="358" x="300" /> 
+  <DEPENDENCY id="1684" /> 
+  </ELEMENT>
+  <ELEMENT id="1688" pro_ele_id="1688" type="T">
+  <TASK task_id="1018" name="DISPATCH_TECHNICIAN">
+  <FORMS>
+  <STEP>
+  <FORM form_id="1017" name="CUSTOMER_SO" type="E" read_only="true" /> 
+  <FORM form_id="1020" name="QUALIFICATION_TEST_SO" type="E" read_only="true" /> 
+  <FORM form_id="1021" name="ASSIGN_TECHNICIAN_SO" type="E" read_only="false" /> 
+  </STEP>
+  </FORMS>
+  <POOLS>
+  <POOL pool_id="1078" name="SOC_RSB" /> 
+  </POOLS>
+  <EVENTS>
+  <EVENT event_id="10" class_id="1022" class_name="SET_TECHNICIAN_ROLE" event_name="ONCOMPLETE" order="0" /> 
+  </EVENTS>
+  <STATES /> 
+  </TASK>
+  <DESIGN y="132" x="248" /> 
+  <DEPENDENCY id="1686" /> 
+  </ELEMENT>
+  <ELEMENT id="1689" pro_ele_id="1689" type="T">
+  <TASK task_id="1017" name="SIGN_OFF_SERVICE_ORDER">
+  <FORMS>
+  <STEP>
+  <FORM form_id="1017" name="CUSTOMER_SO" type="E" read_only="true" /> 
+  <FORM form_id="1020" name="QUALIFICATION_TEST_SO" type="E" read_only="true" /> 
+  <FORM form_id="1021" name="ASSIGN_TECHNICIAN_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1027" name="DYNATEL_TEST_RESULT_SO" type="E" read_only="true">ent_att('QUALIF_TEST')=2</FORM> 
+  <FORM form_id="1023" name="MODEM_INFORMATION_SO" type="E" read_only="false" /> 
+  <FORM form_id="1026" name="CREDIT_ASSESSMENT_SO" type="E" read_only="false" /> 
+  </STEP>
+  </FORMS>
+  <POOLS>
+  <POOL pool_id="1077" name="SALES" /> 
+  </POOLS>
+  <EVENTS /> 
+  <STATES /> 
+  </TASK>
+  <DESIGN y="314" x="217" /> 
+  <DEPENDENCY id="1687" /> 
+  </ELEMENT>
+  <ELEMENT id="1690" pro_ele_id="1690" type="T">
+  <TASK task_id="1016" name="PERFORM_LOOP_QUALIFICATION">
+  <FORMS>
+  <STEP>
+  <FORM form_id="1017" name="CUSTOMER_SO" type="E" read_only="false" /> 
+  <FORM form_id="1033" name="SERVICE_PACKAGE_SO" type="E" read_only="false" /> 
+  <FORM form_id="1020" name="QUALIFICATION_TEST_SO" type="E" read_only="false" /> 
+  </STEP>
+  </FORMS>
+  <POOLS>
+  <POOL pool_id="1077" name="SALES" /> 
+  </POOLS>
+  <EVENTS /> 
+  <STATES /> 
+  </TASK>
+  <DESIGN y="91" x="94" /> 
+  <DEPENDENCY id="1695" /> 
+  </ELEMENT>
+  <ELEMENT id="1691" pro_ele_id="1691" type="I">
+  <INIT_MARK /> 
+  <DESIGN y="87" x="25" /> 
+  <DEPENDENCY id="1690" /> 
+  </ELEMENT>
+  <ELEMENT id="1692" pro_ele_id="1692" type="E">
+  <END_MARK /> 
+  <DESIGN y="87" x="1055" /> 
+  </ELEMENT>
+  <ELEMENT id="1693" pro_ele_id="1693" type="O">
+  <OPERATOR ope_id="2" /> 
+  <DESIGN y="410" x="568" /> 
+  <DEPENDENCIES>
+  <DEPENDENCY id="1682">ent_att('LITESPAN')=1 or (ent_att('LITESPAN')=2 and ent_att('MODEM_INSTALLATION')=1)</DEPENDENCY> 
+  <DEPENDENCY id="1685">ent_att('LITESPAN')=2 and ent_att('MODEM_INSTALLATION')=2</DEPENDENCY> 
+  </DEPENDENCIES>
+  </ELEMENT>
+  <ELEMENT id="1694" pro_ele_id="1694" type="O">
+  <OPERATOR ope_id="2" /> 
+  <DESIGN y="197" x="394" /> 
+  <DEPENDENCIES>
+  <DEPENDENCY id="1677">ent_att('DYNATEL_RESULT')=2</DEPENDENCY> 
+  <DEPENDENCY id="1689">ent_att('DYNATEL_RESULT')=1</DEPENDENCY> 
+  </DEPENDENCIES>
+  </ELEMENT>
+  <ELEMENT id="1695" pro_ele_id="1695" type="O">
+  <OPERATOR ope_id="2" /> 
+  <DESIGN y="90" x="165" /> 
+  <DEPENDENCIES>
+  <DEPENDENCY id="1688">ent_att('GOS')=1 and ent_att('QUALIF_TEST')=2</DEPENDENCY> 
+  <DEPENDENCY id="1689">ent_att('GOS')=1 and ent_att('QUALIF_TEST')=1</DEPENDENCY> 
+  <DEPENDENCY id="1692">ent_att('GOS')=2</DEPENDENCY> 
+  </DEPENDENCIES>
+  </ELEMENT>
+  <ELEMENT id="1696" pro_ele_id="1696" type="O">
+  <OPERATOR ope_id="2" /> 
+  <DESIGN y="480" x="880" /> 
+  <DEPENDENCIES>
+  <DEPENDENCY id="1680">ent_att('MODEM_INSTALLATION')=1</DEPENDENCY> 
+  <DEPENDENCY id="1685">ent_att('MODEM_INSTALLATION')=2</DEPENDENCY> 
+  </DEPENDENCIES>
+  </ELEMENT>
+  <ELEMENT id="1697" pro_ele_id="1697" type="O">
+  <OPERATOR ope_id="2" /> 
+  <DESIGN y="491" x="696" /> 
+  <DEPENDENCIES>
+  <DEPENDENCY id="1680">ent_att('LITESPAN')=2</DEPENDENCY> 
+  <DEPENDENCY id="1681">ent_att('LITESPAN')=1</DEPENDENCY> 
+  </DEPENDENCIES>
+  </ELEMENT>
+  <EVENTS /> 
+  </PROCESS_DEFINITION>

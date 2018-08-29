@@ -1,0 +1,14 @@
+div.back {
+	position:fixed; 
+	top:70px; 
+	left:0px; 
+	border: 1px solid #A0A0A0; 
+	background-image: url(back.jpg);
+	height: 40px; width: 40px;
+	border-radius: 0px 8px 8px 0px;
+    box-shadow: 2px 2px 6px #888888;
+    background-color: #FFFFFF;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-left: 0px;
+}

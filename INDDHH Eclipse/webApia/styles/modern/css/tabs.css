@@ -1,0 +1,116 @@
+#tabContainer{
+	height:20;
+
+}
+#tabContainer tr{
+	height:20;
+}
+#tabContainer td{
+	height:20;
+	padding-left:1px;
+	padding-right:1px;
+	filter:alpha(opacity=50);
+	opacity: 0.5;
+	-moz-opacity:0.5;
+}
+#tabContainer td.here{
+	height:20;
+	padding-left:1px;
+	padding-right:1px;
+	filter:alpha(opacity=100);
+	opacity: 1;
+	-moz-opacity:1;
+}
+#tabContainer a{
+	background: url(../images/liac.gif) top left no-repeat;
+	padding: 0.1em 10px 0.5em 10px;
+	font-family:Tahoma, Courier, mono;
+	font-size:8pt;
+	font-weight:bold;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+	color:#000000;
+	border-right:1px solid #706F91;
+}
+
+#tabContainer a:hover{
+	background: url(../images/liahoverc.gif) top left no-repeat;
+	padding: 0.1em 10px 0.5em 10px;
+	font-family:Tahoma, Courier, mono;
+	font-size:8pt;
+	font-weight:bold;
+	font-family:Tahoma, Courier, mono;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+	color:#000000;
+}
+
+#tabContainer td.here a{
+	background: url(../images/liaselectedc.gif) top left no-repeat;
+	padding: 0.1em 10px 0.5em 10px;
+	font-family:Tahoma, Courier, mono;
+	font-size:8pt;
+	font-weight:bold;
+	color:black;
+	font-family:Tahoma, Courier, mono;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+}
+
+#tabBottom{
+	background-repeat:repeat-x;
+	width:98%;
+	height:3px;
+	font-size:1px;
+	background-color:#f9f9f9;
+	BORDER:1px solid #706f91;
+	color:#000000;
+}
+
+#tabContainer span{
+	background: url(../images/liac.gif) top left no-repeat;
+	padding: 0.1em 10px 0.5em 10px;
+	font-family:Tahoma, Courier, mono;
+	font-size:8pt;
+	font-weight:bold;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+	color:#000000;
+	border-right:1px solid #706F91;
+}
+
+#tabContainer span.hover{
+	background: url(../images/liahoverc.gif) top left no-repeat;
+	padding: 0.1em 10px 0.5em 10px;
+	font-family:Tahoma, Courier, mono;
+	font-size:8pt;
+	font-weight:bold;
+	font-family:Tahoma, Courier, mono;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+	color:#000000;
+}
+
+#tabContainer td.here a{
+	background: url(../images/liaselectedc.gif) top left no-repeat;
+	padding: 0.1em 10px 0.5em 10px;
+	font-family:Tahoma, Courier, mono;
+	font-size:8pt;
+	font-weight:bold;
+	color:black;
+	font-family:Tahoma, Courier, mono;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+}

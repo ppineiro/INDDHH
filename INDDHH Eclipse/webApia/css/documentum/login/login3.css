@@ -1,0 +1,125 @@
+body {
+    background: #ffffff;
+    font-size: 9pt !important;
+    overflow: hidden;
+}
+
+.header {
+    background-color: white;
+    height: 47px !important;
+    padding: 1em 2%;
+    width: 96%;ipi
+}
+.header .logo {
+    display: inline-block;
+    padding: 5px;
+}
+
+button.genericBtn {	
+	padding-bottom: 1px !important; 
+	padding-top: 0px !important; 
+	height: 31px !important;	
+	width: 90% !important;	
+	color: #606060;	
+	border: 1px solid silver !important;	
+	border-radius: 3px !important;	
+	cursor: pointer;
+}
+
+
+.wraper {
+    height: auto;
+    margin: 0 auto;
+    max-width: 1400px;
+    overflow: hidden;
+    position: relative;
+    top: 10px;
+    width: 100%;
+/*     padding-left: 10px; */
+/*     padding-right: 10px;  */
+}
+
+.row {
+    clear: both;
+    height: 250px;
+    overflow: hidden;
+/*     width: 100%; */
+}
+.container { 
+	display: inline-block;/*block;*/
+	height: 95%;
+}
+
+.boxWrapper { padding: 5px; }
+.box {
+    background-color: white;
+    border-radius: 0m;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    width: 50px;
+    height: 100%;
+    text-align:left !important;
+}
+
+.box form { margin-left: 20px; }
+
+div.body form { float: inherit !important; }
+
+.solution { text-align: center; }
+.solution img { max-height: 200px; }
+.ApiaDocumentum { text-align: center; }
+.ApiaDocumentum img { /*max-height: 40px;*/ }
+
+.client { text-align: center; }
+.client img { max-height: 200px; }
+
+div.theFooter {
+    background-color: white;
+    font-size: 10px;
+    padding: 10px;
+    width: 100%;
+    clear: both;
+    position: absolute;
+    bottom: 0;
+}
+
+.summary {}
+.summary p { padding-left: 10px; padding-right: 10px; }
+
+.campaing {     
+	color: #bcbcbc;
+    font-size: 20px;
+    line-height: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+div.section div.field {
+	display: inherit !important;
+	float: none !important;
+}
+
+#messageContainer {
+	margin-top: 10px;
+    border: 1px solid rgb(237, 201, 103);
+    background-color: rgb(249, 237, 184);
+    margin-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #707070;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    top: 15%;
+    left: -9.5%;
+    width: 258px;
+    text-align: center;
+}
+
+div.pnl_LOGIN {
+	/*width: auto !important;*/
+}
+div.loginContainer { padding-right: 0px; color: #6B6B6B; width: 150px !important; position: relative; left: 33%; }
+
+.login-panel { float: none !important; }

@@ -1,0 +1,47 @@
+### THIS IS THE CONTEXT DEFINED ON THE WEB SERVER
+rootPath=/Apia
+
+### THIS IS THE ABSOLUTE PATH OF APIA
+appPath=C:/ATOnABox/Apia/App/Apia
+
+### LOGGING AND TEMPORAL PARAMETERS FOR APIA
+logDir=C:/ATOnABox/Apia/App/logs
+debugLogFile=C:/ATOnABox/Apia/App/logs/debug.log
+dispatcherXMLDir=C:/ATOnABox/Apia/App/Dispatcher.xml
+tmpFileStorage=C:/ATOnABox/Apia/App/tmp
+port=8080
+ssl=false
+
+### THIS IS THE DATABASE TO USE
+Db.implementation=POSTGRES
+
+### THIS PARAMETERS MANAGE THE POOL SIZE
+Db.minConnections=5
+Db.maxConnections=20
+Db.maxIdleConnections=20
+Db.maxWaitTimeMilisec=1000
+Db.pool_implementation=JAKARTA
+Db.db2fori=false
+
+#Desarrollo POSTGRES
+
+Db.url=jdbc\:postgresql\://localhost\:5433/AT
+Db.usr=postgres
+Db.pwd=cG9zdGdyZXM\=
+
+Db.insusr=postgres
+Db.inspwd=cG9zdGdyZXM\=
+
+#Modulo BI
+BIDb.maxIdleConnections=20
+BIDb.inspwd=cG9zdGdyZXM\=
+BIDb.maxWaitTimeMilisec=1000
+BIDb.insusr=postgres
+BIDb.url=jdbc\:postgresql\://localhost\:5433/ApiaBI
+BIDb.implementation=POSTGRES
+BIDb.pwd=cG9zdGdyZXM\=
+BIDb.usr=postgres
+BIDb.maxConnections=20
+BIDb.pool_implementation=JAKARTA
+BIDb.db2fori=false
+BIDb.minConnections=5

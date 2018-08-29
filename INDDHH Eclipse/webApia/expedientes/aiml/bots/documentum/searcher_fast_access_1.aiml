@@ -1,0 +1,102 @@
+<?xml version = "1.0" encoding = "utf-8" standalone = "yes"?>
+<aiml>
+
+	<category>
+		<pattern>ACCESO RAPIDO 1</pattern>
+		<template>1</template>
+	</category>
+	
+	<category>
+		<pattern>MI EXPEDIENTE</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>MI EXPEDIENTES</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>MIS EXPEDIENTE</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>MIS EXPEDIENTES</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE TOMADO</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE TOMADOS</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES TOMADO</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES TOMADOS</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>MI TAREA</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>MI TAREAS</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>MIS TAREA</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>MIS TAREAS</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>MI PODER</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES EN MI PODER</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE EN MI PODER</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE EN MIS TAREAS</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES EN MIS TAREAS</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>QUE POSEO</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE QUE POSEO</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES QUE POSEO</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>QUE TENGO</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE QUE TENGO</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES QUE TENGO</pattern>
+		<template><srai>ACCESO RAPIDO 1</srai></template>
+	</category>
+
+</aiml>

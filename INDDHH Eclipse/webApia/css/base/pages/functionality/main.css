@@ -1,0 +1,13 @@
+.modalOptionsContainer .optionFunctionalities ul li {
+	display: list-item;
+	margin-top: 3px;
+}
+.modalOptionsContainer .optionFunctionalities.forceMaxHeight {
+	max-height: none !important;
+}
+.modalOptionsContainer .optionFunctionalities ul {
+	list-style: none;
+}
+.showChilds, .hideChilds {
+	margin: 2px 6px;
+}

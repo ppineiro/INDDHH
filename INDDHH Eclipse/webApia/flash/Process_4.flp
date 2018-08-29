@@ -1,0 +1,36 @@
+﻿<flash_project name="Process_VERSION 4" version="1">
+    <project_folder name="ELEMENTS" expanded="false">
+        <project_file path="./process_4/source/EndTask.as" filetype="as" />
+        <project_file path="./process_4/source/InitTask.as" filetype="as" />
+        <project_file path="./process_4/source/Operator.as" filetype="as" />
+        <project_file path="./process_4/source/Rol.as" filetype="as" />
+        <project_file path="./process_4/source/SubProcess.as" filetype="as" />
+        <project_file path="./process_4/source/Task.as" filetype="as" />
+    </project_folder>
+    <project_folder name="DIALOGS" expanded="false">
+        <project_file path="./process_4/source/EventModal.as" filetype="as" />
+        <project_file path="./process_4/source/ConditionModal.as" filetype="as" />
+        <project_file path="./process_4/source/FormModal.as" filetype="as" />
+        <project_file path="./process_4/source/GenericFinder.as" filetype="as" />
+        <project_file path="./process_4/source/IconCellRenderer.as" filetype="as" />
+        <project_file path="./process_4/source/NameModal.as" filetype="as" />
+        <project_file path="./process_4/source/PoolModal.as" filetype="as" />
+        <project_file path="./process_4/source/RolModal.as" filetype="as" />
+    </project_folder>
+    <project_folder name="SHARED CLASSES" expanded="false">
+        <project_file path="./classes/Aligner.as" filetype="as" />
+        <project_file path="./classes/WindowManager.as" filetype="as" />
+        <project_file path="./classes/ToolTipClass.as" filetype="as" />
+    </project_folder>
+    <project_file path="./process_4/source/ToolCursor.as" filetype="as" />
+    <project_file path="./process_4/source/Element.as" filetype="as" />
+    <project_file path="./process_4/source/Flow.as" filetype="as" />
+    <project_file path="./process_4/source/LineObj.as" filetype="as" />
+    <project_file path="./process_4/source/Model.as" filetype="as" />
+    <project_file path="./process_4/source/MouseCursor.as" filetype="as" />
+    <project_file path="./process_4/source/processDesigner.fla" filetype="fla" profile="" />
+    <project_file path="./process_4/source/shell.fla" filetype="fla" profile="" />
+    <project_file path="./process_4/source/TempLine.as" filetype="as" />
+    <project_file path="./process_4/source/ButtonBar.as" filetype="as" />
+    <project_file path="./process_4/source/Screen_Navigator.as" filetype="as" />
+</flash_project>

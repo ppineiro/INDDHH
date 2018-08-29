@@ -1,0 +1,74 @@
+BODY
+{
+    FONT-FAMILY: Tahoma;
+    FONT-SIZE: 8pt;
+    MARGIN: 4px 0px 6px 4px
+}
+UL
+{
+    MARGIN-BOTTOM: 0px;
+    MARGIN-LEFT: 0px;
+    WHITE-SPACE:nowrap;
+}
+LI UL
+{
+    DISPLAY: none;
+    MARGIN-LEFT: 16px;
+    WHITE-SPACE:nowrap;
+}
+LI
+{
+    CURSOR: default;
+    LIST-STYLE: none;
+    WHITE-SPACE:nowrap;
+}
+LI.clsHasKids
+{
+    CURSOR: hand;
+    LIST-STYLE: none;
+    WHITE-SPACE:nowrap;
+}
+A:link
+{
+    COLOR: navy;
+    FONT-WEIGHT: normal
+}
+A:visited
+{
+    COLOR: navy;
+    FONT-WEIGHT: normal
+}
+A:active
+{
+    COLOR: navy;
+    FONT-WEIGHT: normal
+}
+A:hover
+{
+    TEXT-DECORATION: none
+}
+IMG
+{
+    POSITION: relative;
+    TOP: 4px
+}
+
+#oPrimaryTOC{
+	padding:8px;
+}
+
+#oPrimaryTOCUsr{
+	padding:8px;
+	top: -10%;
+    position: relative;
+}
+
+font{
+	WHITE-SPACE:nowrap;
+}
+
+#imgFoto{
+	top: 50px;
+    width: 135px;
+    height: 135px;
+}

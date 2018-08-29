@@ -1,0 +1,76 @@
+body{
+	background-color:#EFEFEF;
+	overflow:hidden;
+	margin:0px;
+	padding:0px;
+	font-family:Arial;
+	font-size:9px;
+}
+
+.loadingDiv{
+	background-color:#EFEFEF;
+}
+
+input{
+	font-size:9px;
+}
+
+select{
+	font-size:9px;
+}
+
+#loginHandle{
+	background-image:url(../images/login/loginTop.gif);
+	background-repeat:no-repeat;
+}
+
+#loginContent{
+	background-image:url(../images/login/loginContent.gif);
+	background-repeat:repeat-y;
+}
+
+#loginBottom{
+	background-image:url(../images/login/loginBottom.gif);
+	background-repeat:no-repeat;
+}
+
+.apiaLogo{
+	background-image:url(../images/login/loginApia.png);
+	position:relative;
+	left:260px;
+	width:171px;
+	height:62px;
+}
+
+.keychain{
+	height:175px;
+	width:135px;
+	top:30px;
+	left:30px;
+	position:relative;
+	background-image:url(../images/login/keyChain.gif);
+	background-repeat:no-repeat;
+}
+
+#copyright{
+	color:#666666;
+}
+
+.loginText{
+	position:absolute;
+	color:#666666;
+	font-size:30px;
+	top:-35px;
+	left:10px;
+}
+
+button{
+	width:65px;
+	margin:2px;
+	font-size:9px;
+}
+
+a:link {color:#666666;}
+a:visited {color:#666666;}
+a:active {color:#666666;}
+a:hover {color:#666666;}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FORM_LAYOUT>
+	<FORM_FIELD  fieldId="31"  fieldLabel=""  fieldType="14"  attId="0"  attName="null"  x="0"  y="0" >
+		<FORM_FIELD_CHILD  fieldId="65"  fieldLabel="Descripción del caso de test"  fieldType="1"  attId="1968"  attName="CAM_ANA_CT_DESCRIPCION"  x="3"  y="0" >
+			<PROPERTY  prpId="2"  prpLabel="prpReadOnly"  value="true"  type="S" />
+			<PROPERTY  prpId="24"  prpLabel="prpColWidth"  value="300"  type="S" />
+		</FORM_FIELD_CHILD>
+		<FORM_FIELD_CHILD  fieldId="67"  fieldLabel="Módulo"  fieldType="1"  attId="1664"  attName="CAM_ANA_CT_MODULO"  x="3"  y="0" >
+			<PROPERTY  prpId="2"  prpLabel="prpReadOnly"  value="true"  type="S" />
+		</FORM_FIELD_CHILD>
+		<FORM_FIELD_CHILD  fieldId="68"  fieldLabel="Funcionalidad "  fieldType="1"  attId="1665"  attName="CAM_ANA_CT_FUNCIONALIDAD"  x="4"  y="0" >
+			<PROPERTY  prpId="2"  prpLabel="prpReadOnly"  value="true"  type="S" />
+		</FORM_FIELD_CHILD>
+		<FORM_FIELD_CHILD  fieldId="70"  fieldLabel="Id caso de test"  fieldType="1"  attId="2756"  attName="CAM_ANA_CT_ID"  x="2"  y="0" >
+			<PROPERTY  prpId="2"  prpLabel="prpReadOnly"  value="true"  type="S" />
+			<PROPERTY  prpId="10"  prpLabel="prpModal"  value="MODAL_CASOS_DE_TEST"  type="S" />
+			<EVENTS>
+				<EVENT  event_id="37"  event_name="ONMODALRETURN" order="0" class_id="1049" class_name="ENT_CASO_DE_TEST_ONMODALRETURN" bnd_id="5610">
+					<BINDING param_id="1201" param_name="form" param_type="S" att_type="V">CAM_ANA_ACT_CT_ALT</BINDING>
+					<BINDING param_id="1202" param_name="param1" param_type="S" att_type="V">cam_ana_ct_id</BINDING>
+					<BINDING param_id="1203" param_name="param2" param_type="S" att_type="V">cam_ana_ct_descripcion</BINDING>
+					<BINDING param_id="1204" param_name="param3" param_type="S" att_type="V">cam_ana_ct_modulo</BINDING>
+					<BINDING param_id="1205" param_name="param4" param_type="S" att_type="V">cam_ana_ct_funcionalidad</BINDING>
+					<BINDING param_id="1206" param_name="param5" param_type="S" att_type="null"></BINDING>
+				</EVENT>
+			</EVENTS>
+		</FORM_FIELD_CHILD>
+		<FORM_FIELD_CHILD  fieldId="71"  fieldLabel="Estado"  fieldType="1"  attId="2898"  attName="CAM_ESTADO_CT_ALTERAR"  x="6"  y="0" ><PROPERTY  prpId="2"  prpLabel="prpReadOnly"  value="true"  type="S" /></FORM_FIELD_CHILD>
+		<FORM_FIELD_CHILD  fieldId="72"  fieldLabel="Altera?"  fieldType="2"  attId="3730"  attName="CDT_ALTERAR"  x="5"  y="0" ><PROPERTY  prpId="11"  prpLabel="prpEntity"  value="RESOLUCIONES_GENERALES"  type="S" /></FORM_FIELD_CHILD>
+		<PROPERTY  prpId="8"  prpLabel="prpColSpan"  value="4"  type="N" /><PROPERTY  prpId="9"  prpLabel="prpRowSpan"  value="3"  type="N" />
+	</FORM_FIELD>
+	<FORM_PROPERTY  prpId="79"  value="4"  type="N" />
+	<FORM_PROPERTY  prpId="80"  value="15"  type="N" />
+	<FORM_PROPERTY  prpId="3"  value="true"  type="S" />
+	<EVENTS>
+		<EVENT  event_id="19"  event_name="ONRELOAD" order="0" class_id="1510" class_name="SET_REQUIRED_ALTERACION_CT" skip_cond="" bnd_id="6363">
+			<BINDING param_id="1456" param_name="form" param_type="S" att_type="V">CAM_ANA_ACT_CT_ALT</BINDING>
+			<BINDING param_id="1457" param_name="att" param_type="S" att_type="V">CDT_ALTERAR</BINDING>
+			<BINDING param_id="1458" param_name="att_id" param_type="S" att_type="V">CAM_ANA_CT_ID</BINDING>
+		</EVENT>
+	</EVENTS>
+</FORM_LAYOUT>

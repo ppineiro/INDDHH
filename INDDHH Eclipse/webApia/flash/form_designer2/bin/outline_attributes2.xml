@@ -1,0 +1,221 @@
+<?xml version="1.0" ?>
+<forms>
+	<data>
+		<level width="0%" name="id" label="id" type="label" hidden="true" />
+		<level width="9%" name="type" label="Type" type="label" />
+		<level width="0%" name="max" label="Max" type="label" hidden="true"/>
+		<level width="79%" name="name" label="Name" type="label" />
+		<level width="0%" name="label" label="Label" type="label" />
+		<level width="12%" name="details" label="Details" type="info"/>
+	</data>	
+	<values pages="10">
+		<value>
+			<level name="id" value="1101" />
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="CLIENT_NAME" />
+			<level name="label" value="Nombre del cliente" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1102" />
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="CLIENT_ADDRESS" />
+			<level name="label" value="Dirección" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1103" />
+			<level name="type" value="D" />
+			<level name="max" value="" />
+			<level name="name" value="CLIENT_BIRTH_DATE" />
+			<level name="label" value="Fecha de nacimiento" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1104" />
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="CLIENT_GENRE" />
+			<level name="label" value="Género" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1105" />
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="CLIENT_OBS" />
+			<level name="label" value="Observaciones" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1106" />
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="CLIENT_WEB" />
+			<level name="label" value="Página web" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1001" />
+			<level name="type" value="N" />
+			<level name="max" value="10" />
+			<level name="name" value="NUM_CLI" />
+			<level name="label" value="Numero1" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1002" />
+			<level name="type" value="N" />
+			<level name="max" value="11" />
+			<level name="name" value="NUM_2" />
+			<level name="label" value="Numero2" />
+			<level name="details"/>
+		</value>
+		<value>
+			<level name="id" value="1003" />
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="NOM_CLI_GIA" />
+			<level name="label" value="Nombre3" />
+			<level name="details"/>
+		</value>
+		<value>
+			<level name="id" value="1004" />
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="STRING_LARGO3456789012345678901234567890123456789A" />
+			<level name="label" value="Este es un string con nombre largo" />
+			<level name="details"/>
+		</value>
+		<value>
+			<level name="id" value="1005" />
+			<level name="type" value="D" />
+			<level name="max" value="" />
+			<level name="name" value="CAMPO_FECHA" />
+			<level name="label" value="Fecha" />
+			<level name="details"/>
+		</value>
+		<value>
+			<level name="id" value="1003" />
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="NOM_CLI_GIA" />
+			<level name="label" value="Nombre3" />
+			<level name="details"/>
+		</value>
+		<value>
+			<level name="id" value="1003" />
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="NOM_CLI_GIA" />
+			<level name="label" value="Nombre3" />
+			<level name="details"/>
+		</value>
+		<value>
+			<level name="id" value="1003" />
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="NOM_CLI_GIA" />
+			<level name="label" value="Nombre3" />
+			<level name="details"/>
+		</value>
+		<value>
+			<level name="id" value="1003" />
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="NOM_CLI_GIA" />
+			<level name="label" value="Nombre3" />
+			<level name="details"/>
+		</value>
+		<value>
+			<level name="id" value="1004" />
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="STRING_LARGO" />
+			<level name="label" value="Este es un string con nombre largo" />
+			<level name="details"/>
+		</value>
+		<value>
+			<level name="id" value="1005" />
+			<level name="type" value="D" />
+			<level name="max" value="" />
+			<level name="name" value="CAMPO_FECHA" />
+			<level name="label" value="Fecha" />
+			<level name="details"/>
+		</value>
+		<value>
+			<level name="id" value="1003" />
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="NOM_CLI_GIA" />
+			<level name="label" value="Nombre3" />
+			<level name="details"/>
+		</value>
+		<value>
+			<level name="id" value="1004" />
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="STRING_LARGO" />
+			<level name="label" value="Este es un string con nombre largo" />
+			<level name="details"/>
+		</value>
+		<value>
+			<level name="id" value="1005" />
+			<level name="type" value="D" />
+			<level name="max" value="" />
+			<level name="name" value="CAMPO_FECHA" />
+			<level name="label" value="Fecha" />
+			<level name="details"/>
+		</value>
+		<value>
+			<level name="id" value="1003" />
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="NOM_CLI_GIA" />
+			<level name="label" value="Nombre3" />
+			<level name="details"/>
+		</value>
+		<value>
+			<level name="id" value="1004" />
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="STRING_LARGO" />
+			<level name="label" value="Este es un string con nombre largo" />
+			<level name="details"/>
+		</value>
+		<value>
+			<level name="id" value="1005" />
+			<level name="type" value="D" />
+			<level name="max" value="" />
+			<level name="name" value="CAMPO_FECHA" />
+			<level name="label" value="Fecha" />
+			<level name="details"/>
+		</value>
+		<value>
+			<level name="id" value="1003" />
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="NOM_CLI_GIA" />
+			<level name="label" value="Nombre3" />
+			<level name="details"/>
+		</value>
+		<value>
+			<level name="id" value="1004" />
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="STRING_LARGO" />
+			<level name="label" value="Este es un string con nombre largo" />
+			<level name="details"/>
+		</value>
+		<value>
+			<level name="id" value="1005" />
+			<level name="type" value="D" />
+			<level name="max" value="" />
+			<level name="name" value="CAMPO_FECHA" />
+			<level name="label" value="Fecha" />
+			<level name="details"/>
+		</value>
+	</values>
+</forms>

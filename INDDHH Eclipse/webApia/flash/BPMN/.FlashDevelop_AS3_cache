@@ -1,0 +1,1199 @@
+
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\validation\rules\ConnectionRule.as
+package validation.rules{import flash.net.*;import flash.events.*;import flash.xml.*;import view.elements.AbstractElement;import view.elements.line.LineObject;import view.View;public class ConnectionRule extends AbstractRule{private static var connRules : XMLDocument;private static var rulesXML : String;public function ConnectionRule ();public function validate (els:Array) : Boolean;public function init () : void;private function loadXML (evt:Event) : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\TopLevel.as
+package{import flash.display.DisplayObject;import flash.display.MovieClip;import flash.display.Stage;intrinsic var super : Object;intrinsic var this : flash.display.MovieClip;/**
+* TopLevel class	 * have all document classes extend this	 * class instead of Sprite or MovieClip to	 * allow global stage and root access through	 * TopLevel.stage and TopLevel.root
+*/
+public class TopLevel extends MovieClip{public static var stage : Stage;public static var root : DisplayObject;public function TopLevel ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\lanes\AbstractLane.as
+package view.elements.lanes{import flash.display.MovieClip;import flash.text.*;import view.elements.DropInElement;import view.elements.SizableElement;import utils.LineUtils;import utils.LibraryManager;public class AbstractLane extends DropInElement{internal var _icon : MovieClip;internal var _width : Number;internal var _height : Number;private var txtName : TextField;private var FONT_COLOR : uint;private var FONT_SIZE : String;private var FONT_FACE : String;public function AbstractLane ();public function setSize (width:Number, height:Number);internal function redrawCube ();public function setName (name);internal function alignText ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\input\elements\Task.as
+package parsers.input.elements{import flash.xml.XMLNode;import parsers.input.ParseInUtils;public class Task extends ActivityElement{public function Task ();internal function getType ();internal function getFormsRef ();private function parseStep (step:XMLNode, data:XMLNode) : XMLNode;internal function getApiaTskPools ();internal function getApiaTskEvents ();private function parseEventClass (ApiaTskEvent:XMLNode, value:XMLNode);private function parseBindings (BusClaParBindings:XMLNode, node:XMLNode);internal function getRoleRef ();private function getValues (node:XMLNode);internal function getTaskService ();internal function getTaskReceive ();internal function getTaskSend ();internal function getTaskUser ();private function parseMessage (Message:XMLNode, msgNode:XMLNode);private function parseWebServiceOperation (WebServiceOperation:XMLNode, wsoperationNode:XMLNode);private function parseWebServiceFaultCatch (WebServiceFaultCatch:XMLNode, wsfaultcatch);private function parsePerformers (Performers:XMLNode, performers:XMLNode);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\output\elements\Transition.as
+package parsers.output.elements{import flash.xml.XMLNode;public class Transition extends ElementParser{public function Transition ();internal function startParse () : XMLNode;internal function getStartEnd ();internal function getId ();internal function getCondition ();internal function getVertexes ();internal function getName ();internal function getType ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\output\elements\Subflow.as
+package parsers.output.elements{import flash.xml.XMLNode;import parsers.output.ParseOutUtils;public class Subflow extends ActivityElement{public function Subflow ();internal function getImplementation ();internal function getIsTransaction ();internal function getIsAdhoc ();internal function getBlockActivity ();internal function getIsExpanded ();internal function getEndPoint ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\line\LineObject.as
+package view.elements.line{import com.bit101.components.ModalCollection;import flash.display.MovieClip;import flash.events.MouseEvent;import flash.events.Event;import flash.geom.Point;import flash.text.*;import flash.ui.Keyboard;import flash.utils.getTimer;import flash.xml.XMLNode;import view.elements.AbstractElement;import view.*;public class LineObject extends AbstractElement{private var NAME_FONT_FACE : String;private var NAME_FONT_COLOR : uint;private var NAME_FONT_SIZE : String;private var NAME_BG_COLOR : uint;private var NAME_BORDER_COLOR : uint;private var showForth : Boolean;private var showBack : Boolean;private var m_endPoint : Number;private var m_startPoint : Number;private var m_startElementMc : MovieClip;private var m_endElementMc : MovieClip;private var isLooped_back : Boolean;private var loop_mc : MovieClip;private var __conditionmc : MovieClip;private var __namemc : TextField;private var __wizmc : MovieClip;private var lineMC : MovieClip;private var vertexMC : MovieClip;private var arrowMC : MovieClip;private var arrowBackMC : MovieClip;private var startVertex : MovieClip;private var endVertex : MovieClip;private var lineVertexs : Array;private var lineSegments : Array;private var lastClick : Number;private var dblClickSpeed : Number;private var justDblClicked;private var isWizard;private var type : String;private var middlePoint : AbstractElement;private var initIcon : MovieClip;public static var lineColor : uint;private var data : XMLNode;private var txtName : TextField;private var FONT_COLOR : uint;private var FONT_SIZE : String;private var FONT_FACE : String;public function get lastElement ();public function get startElement ();public function get middle () : MovieClip;public function LineObject (s:MovieClip, e:MovieClip);private function onDoubleClick (evt:MouseEvent);public function setLineEvents ();public function remove ();public function addVertex (startEl, endEl, x, y);public function removeVertex (vertex);public function removeSegment (segment);public function onVertexClick (eventObj:Event) : void;public function onVertexMoved (eventObj:Event) : void;public function onVertexClicked (eventObj:Event) : void;public function onVertexRollOver (eventObj:Event) : void;public function onVertexRollOut (eventObj:Event) : void;public function onVertexDoubleClicked (eventObj:Event) : void;public function refreshWholeLine ();public function addSegment (startEl, endEl);public function getSegment (startEl, endEl) : MovieClip;private function onElementMoved (evt:Event);private function onElementDeleted (e:Event);public function setArrow ();public function createArrow (x, y);private function drawArrow (mc:MovieClip, x, y);public function getLastSegment ();public function updateArrowPos ();private function updateForthArrowPos ();private function updateBackArrowPos ();public function updateInitIconPos ();public function getMiddlePoint ();public function getVertexData ();public function setVertexData (data:String);public function setType (t:String);public function conditionChange (type);public function setCircle ();public function setData (d:XMLNode);public function getData () : XMLNode;private function getVertexs ();public function getStartElement ();public function getEndElement ();public function setName (name);private function alignText ();public function setBackArrow (to);public function setForthArrow (to);public function setDirection (to:String);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\output\elements\ElementParser.as
+package parsers.output.elements{import flash.xml.XMLDocument;import flash.xml.XMLNode;import parsers.output.ParseOutUtils;public class ElementParser{internal var parsedNode : XMLNode;internal var toParseNode : XMLNode;private var parseFunctions : Array;public static var APIA_NAMESPACE;public function ElementParser ();public function parse (node:XMLNode) : XMLNode;internal function getToParseSubNode (name:String) : XMLNode;internal function getParsedSubNode (name:String) : XMLNode;internal function getToParseSubNodeValue (name:String) : String;internal function getParsedSubNodeValue (name:String) : String;internal function callParseFunctions ();internal function startParse () : XMLNode;internal function getParsedNode (xmlStr) : XMLNode;internal function getValues (node:XMLNode);internal function addParseFunction (f:Function);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\ComboOption.as
+package com.bit101.components{import flash.display.MovieClip;import flash.filters.GlowFilter;import flash.text.TextField;import flash.text.*;import flash.events.*;public class ComboOption extends MovieClip{private var _value : String;private var _text : String;private var _minWidth : Number;private var FONT_COLOR : uint;private var FONT_SIZE : Number;private var FONT_FACE : String;private var _field : TextField;public static var CLICK;public function ComboOption ();public function setValue (val:String);public function setText (val:String);public function getValue () : String;public function getText () : String;public function setMinWidth (val:Number);public function drawBack ();private function onOver (e:MouseEvent);private function onOut (e:MouseEvent);private function onClick (e:MouseEvent);public function getTextWidth ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\Input.as
+package com.bit101.components{import flash.display.MovieClip;import flash.events.*;import flash.text.*;public class Input extends MovieClip{internal var _back : MovieClip;internal var _valueBox : MovieClip;internal var _text : TextField;internal var _width : Number;internal var _height : Number;internal var FONT_COLOR : uint;internal var FONT_SIZE : String;internal var FONT_FACE : String;public static var CHANGE;public function get value () : String;public function set value (v:String) : Void;public function set disabled (d:Boolean) : Void;public function Input ();private function draw ();private function onChange (e:Event);public function setSize (w, h);private function txtClicked (e:MouseEvent);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\input\elements\Pool.as
+package parsers.input.elements{import flash.xml.XMLNode;import parsers.input.ParserIn;import parsers.Parser;import view.ElementAttributeController;public class Pool extends Activity{public function Pool ();internal function getLanes ();internal function getProcess ();internal function getBoundary ();private function parseLanes (Lanes:XMLNode);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\output\elements\Task.as
+package parsers.output.elements{import flash.xml.XMLNode;import parsers.output.ParseOutUtils;public class Task extends ActivityElement{private var implementationNode : XMLNode;public function Task ();internal function getImplementation ();internal function getFormsRef ();private function parseStep (step:XMLNode);private function getFormRefs (type:String, stepNode:XMLNode, refs:XMLNode);private function getFormRef (form:XMLNode);internal function getApiaTskEvents ();private function parseEventClass (evtClass:XMLNode);private function parseBindings (node:XMLNode, parent:XMLNode);internal function getApiaTskPools ();internal function getRoleRef ();internal function getMultiply ();internal function getTaskService ();internal function getTaskReceive ();internal function getTaskSend ();internal function getTaskUser ();internal function getTaskManual ();private function getMessage (msg:XMLNode, name:String) : XMLNode;private function getWebServiceOperation (wsoperationNode:XMLNode) : XMLNode;private function getWebServiceFaultCatch (wsfaultcatch:XMLNode);private function getPerformers (performers:XMLNode) : XMLNode;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\validation\rules\DropInRule.as
+package validation.rules{import flash.net.*;import flash.events.*;import flash.xml.*;import view.elements.AbstractElement;import view.*;public class DropInRule extends AbstractRule{private static var dropRules : XMLDocument;private static var rulesXML : String;internal var overElement : AbstractElement;public function DropInRule ();public function validate (els:Array) : Boolean;public function init () : void;private function loadXML (evt:Event) : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\tools\DragNDropIn.as
+package view.tools{import flash.display.MovieClip;import flash.events.*;import flash.geom.Point;import flash.xml.XMLNode;import view.*;import view.elements.*;import validation.*;public class DragNDropIn extends Tool{private var clone : Tool;private var className : String;private var container : String;private var type : String;private var droppedInElement : DropInElement;private var dropped : Element;public function DragNDropIn ();private function onMouseDown (e:MouseEvent) : void;private function onDrag (e:MouseEvent) : void;private function onDrop (e:MouseEvent) : void;public function setClassName (cls:String);public function getClassName () : String;public function setAttributes (node:XMLNode);private function onDropIn (e:Event);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\input\ParserIn.as
+package parsers.input{import flash.xml.XMLNode;import parsers.AbstractParser;import parsers.input.elements.ElementParser;import utils.LibraryManager;import view.ElementAttributeController;public class ParserIn extends AbstractParser{internal var parsedXML : XMLNode;internal var toParseXML : XMLNode;public function ParserIn ();public function parse (node:XMLNode) : XMLNode;private function parsePools (poolsXML:XMLNode);private function parseWorkflow (pool:XMLNode);private function parseSubElements (xml:XMLNode, node:XMLNode);private function parseActivities (pool:XMLNode, activities:XMLNode);private function parseTransitions (pool:XMLNode, transitions:XMLNode);private function parseActivitySets (pool:XMLNode, activitySets:XMLNode);private function parseActivitySet (pool:XMLNode, activitySet:XMLNode);private function parseArtifacts (artifacts:XMLNode) : Array;private function parseAssociations (associations:XMLNode) : Array;private function parseMessageFlows (mFlows:XMLNode) : Array;public function getElementParser (type:String) : ElementParser;private function getElementType (node:XMLNode);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\View.as
+package view{import flash.filters.DropShadowFilter;import com.bit101.components.*;import flash.geom.Point;import flash.net.*;import flash.xml.*;import parsers.output.ParseOutUtils;import parsers.Parser;import view.elements.*;import view.elements.line.*;import view.tools.*;import flash.events.*;import utils.*;import flash.ui.Keyboard;import flash.display.*;import view.ElementAttributeController;import view.ElementAttributeController;public class View extends AbstractView{private static var allowInstantiation : Boolean;private static var _instance : View;private var workingTool : Tool;private var selectedElements : Array;private var selectedLines : Array;public var _stage : Sprite;private var wasMoving : Boolean;public static var VIEW_CLICK;public static var ON_SELECT;private var back : Sprite;internal var mainProcessData : XMLNode;private var _rootPath;private var _inApia : Boolean;private var _mainStage : Sprite;private var scroll : ScrollContent;internal var drop : Element;private var uid;public function get dispatcher ();public function get rootPath ();public function set rootPath (p) : Void;public function get inApia () : Boolean;public function set inApia (i:Boolean) : Void;public function get mainStage ();public function View ();public static function getInstance () : View;public function init (s);private function initBack ();private function stageClick (e:MouseEvent);private function onStageResize (e:Event);private function drawBack ();public function getStageWidth ();public function getStageHeight ();public function getElementView () : ElementView;public function getLineView () : LineView;public function getLaneView () : LaneView;public function setWorkingTool (t:Tool);public function zoom (z);private function onElementClicked (e:Event);private function onElementClick (e:Event);private function onLineClicked (e:Event);internal function dispatchOut (e:Event);private function onElementMoved (e:Event);private function onElementDrop (e:Event);private function onElementDropIn (e:Event) : void;private function onElementDropOut (e:Event) : void;private function isSelected (el:AbstractElement);private function select (el:AbstractElement);private function unselect (el:AbstractElement);private function unselectAll ();public function removeSelectedElements ();public function removeAnElement (el:AbstractElement);private function keyDown (e:Event);public function getSelectedElements ();public function getUniqueId ();/**
+public function getExportXML() { 			var mainPoolNode:XMLNode = new XMLNode(1, "mainPool");			var elementsNode:Array = (ElementView.getInstance() as AbstractView).getExportData() as Array;			var lanesNode:Array = (LaneView.getInstance() as AbstractView).getExportData() as Array;			for (var i = 0; i < elementsNode.length;i++ ) {				mainPoolNode.appendChild(elementsNode[i] as XMLNode);			}			i = 0;			for (i; i < lanesNode.length;i++ ) {				mainPoolNode.appendChild(lanesNode[i] as XMLNode);			}			return mainPoolNode;		}
+*/
+public function getExportXML ();public function getParsedModel ();private function getPoolDependencies (el:Element) : Array;private function getElementDepencencies (el:Element) : Array;public function getMainProcessData () : XMLNode;private function getMainProcessExportData () : XMLNode;public function loadModel (url:String);private function loadXML (evt:Event);public function loadModelString (str);private function onIOError (evt:IOErrorEvent);private function onSecurityError (evt:SecurityErrorEvent);public function jsCommand (comm);private function flashLoaded ();public function getBack () : Sprite;public function checkDrop (mc:MovieClip);public function clearAll ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\DropInElement.as
+package view.elements{import flash.display.MovieClip;public class DropInElement extends SizableElement{internal var innerElements : Array;internal var _innerElements : MovieClip;public function DropInElement ();public function addInnerElement (el:Element);public function addSubElement (el:Element);public function getInnerElements ();public function sortInnerElements ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\lanes\PoolLane.as
+package view.elements.lanes{import flash.display.MovieClip;import flash.filters.GlowFilter;import view.elements.*;import flash.events.*;import view.View;public class PoolLane extends AbstractLane{private var _subElements : MovieClip;private var subElements : Array;public function PoolLane ();internal function redrawCube ();public function sortInnerElements ();public function addSubElement (el:Element);private function selectSubElement (e:MouseEvent);private function elementDeleted (e:Event);private function unSelectSubElements (e:Event);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\tools\Connector.as
+package view.tools{import flash.display.MovieClip;import flash.events.*;import flash.filters.GlowFilter;import flash.geom.Point;import flash.xml.XMLNode;import view.elements.*;import view.*;import view.elements.line.LineObject;import validation.RuleManager;import utils.LibraryManager;public class Connector extends Tool{private var startElement : MovieClip;private var selected : Boolean;private var lineType : String;private var type : String;private var tempLine : MovieClip;private var dummy : MovieClip;private var dropIcon : MovieClip;private var direction : String;public function Connector ();private function onClick (e:MouseEvent);private function onElementClicked (e:Event);private function cancelLine (e:Event);private function onLineClicked (e:Event);public function unselectTool ();public function setLineType (s:String);public function setAttributes (node:XMLNode);private function updateDummy (e:MouseEvent);private function onElementOver (e:Event);private function removeDropIcon ();private function onElementOut (e:Event);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\AbstractElement.as
+package view.elements{import flash.display.MovieClip;import flash.events.Event;import flash.filters.BlurFilter;import flash.filters.GlowFilter;import flash.events.MouseEvent;import flash.utils.Dictionary;import flash.xml.XMLNode;import view.ElementAttributeController;import view.View;import caurina.transitions.*;public class AbstractElement extends MovieClip{private var _selected : Boolean;internal var data : XMLNode;internal var _elementType : String;public static var lineWidth;public static var color;public static var lineColor;public static var ELEMENT_CLICK;public static var ELEMENT_CLICKED;public static var ELEMENT_OVER;public static var ELEMENT_OUT;public static var ELEMENT_DROP;public static var ELEMENT_DROPIN;public static var ELEMENT_DROPOUT;public static var ELEMENT_MOVED;public static var ELEMENT_DELETED;public static var ELEMENT_DRAGGED;private var listeners : Dictionary;public function get selected () : Boolean;public function get elementType () : String;public function set elementType (s:String) : Void;public function AbstractElement ();public function remove ();public function select ();public function unselect ();internal function onMouseOver (e:MouseEvent);internal function onMouseOut (e:MouseEvent);internal function onClicked (e:MouseEvent);internal function onClick (e:MouseEvent);internal function onElementMoved (e:Event);public function hitTestMe (e:Event) : void;public function setData (d:XMLNode);public function getData () : XMLNode;public function getExportData () : XMLNode;public function getElement () : MovieClip;public function addEventListener (type:String, listener:Function, useCapture:Boolean = false, priority:int = 0, useWeakReference:Boolean = false) : void;public function removeEventListener (type:String, listener:Function, useCapture:Boolean = false) : void;public function removeEventListeners (type:String) : void;public function removeAllEventListeners () : void;private function addListener (type:String, listener:Function);private function removeListener (type:String, listener:Function);public function removeMe ();public function appear ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\modal\AttributeFinder.as
+package view.modal{import com.bit101.components.grid.*;import com.bit101.components.*;import flash.xml.XMLNode;import flash.events.*;public class AttributeFinder extends AbstractModal{internal var okBtn : Button;internal var cancelBtn : Button;internal var adder : AdderFinder;internal var objectModel : XMLNode;internal var objectUrl : String;internal var selectedNode : XMLNode;public function set returns (ret:XMLNode) : Void;public function AttributeFinder ();private function okPressed (e:Event);private function cancelPressed (e:Event);private function processValues ();private function onSelected (e:Event);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\modal\ElementChoose.as
+package view.modal{import com.bit101.components.grid.*;import com.bit101.components.*;import flash.xml.XMLNode;import flash.events.*;public class ElementChoose extends AbstractModal{internal var grid : DataGrid;internal var okBtn : Button;internal var cancelBtn : Button;internal var adder : AdderFinder;internal var selectedText : Input;internal var objectModel : XMLNode;internal var objectUrl : String;internal var selectedNode : XMLNode;public function set returns (ret:XMLNode) : Void;public function ElementChoose ();private function okPressed (e:Event);private function cancelPressed (e:Event);private function processValues ();private function onSelected (e:Event);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\modal\EntityBinding.as
+package view.modal{import com.bit101.components.grid.*;import com.bit101.components.*;import flash.display.MovieClip;import flash.events.Event;import flash.filters.BlurFilter;import flash.xml.*;import flash.net.*;public class EntityBinding extends AbstractModal{private var grid : DataGrid;private var valTypeRadio : RadioButton;private var attTypeRadio : RadioButton;private var entRadio : RadioButton;private var prcRadio : RadioButton;private var attMdl : ModalInput;private var okBtn : Button;private var cancelBtn : Button;private var radioGroup : MovieClip;private var valueGroup : MovieClip;private var attributeGroup : MovieClip;private var valueTxt : Input;private var objectUrl : String;private var attributesUrl : String;private var model : XMLNode;private var selectedRow : Row;private var values : XMLNode;private var clsId;private var valDisabler : MovieClip;private var attDisabler : MovieClip;public function set returns (ret:XMLNode) : Void;public function EntityBinding ();private function okPressed (e:Event);private function cancelPressed (e:Event);private function processValues ();private function attTypeRadioClicked (e:Event);private function valTypeRadioClicked (e:Event);private function entRadioHandler (e:Event);private function prcRadioHandler (e:Event);private function setValueDisable (to:Boolean);private function setAttributeDisable (to:Boolean);private function setModel (m:XMLNode);private function setValues (values:XMLNode);private function setNodeValues ();public function addObject (o:XMLNode);private function getNamedNode (node:XMLNode, name:String);public function loadUrl (url:String);private function loadXML (evt:Event);private function valueTxtChange (e:Event);private function attMdlChange (e:Event);private function rowSelected (e:Event);private function setAttMdlData ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\Element.as
+package view.elements{import flash.display.MovieClip;import flash.events.*;import flash.filters.GlowFilter;import flash.geom.Point;import flash.utils.getDefinitionByName;import flash.xml.XMLNode;import utils.LibraryManager;import view.AbstractView;import validation.RuleManager;import view.ElementAttributeController;import view.*;public class Element extends Sizable{private var _sizableEnabled : Boolean;private var container : Element;private var contents : Array;public function Element (className:String);public function hitTestMe (e:Event) : void;public function hitTest (el:Element) : Boolean;public function isInsideMe (el:Element) : Boolean;public function remove ();private function onResizeDrop (e:Event);private function onDrop (e:Event);public function isParentContained (el:Element);public function setContainer (el:Element);private function updateFromContainer (e:Event);public function getContainer () : Element;public function addContent (el:Element);public function removeContent (el:Element);public function containsContent (el:Element);internal function setAlpha (a:Number) : void;internal function onElementMoved (e:Event);private function onOut (e:Event);public function getData () : XMLNode;public function setData (d:XMLNode);public function getExportData () : XMLNode;public function getSubExportData () : XMLNode;public function getContents () : Array;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\grid\Body.as
+package com.bit101.components.grid{import com.bit101.components.ScrollPane;import flash.events.Event;import flash.filters.GlowFilter;import utils.Key;import flash.ui.Keyboard;public class Body extends ScrollPane{public static var ROW_SELECTED;private var rows : Array;private var selectedRows : Array;private var rowColors : Array;private var selectedColor : uint;public var multiselect : Boolean;public function Body ();public function addRow (r:Row);public function removeRow (r:Row);private function sortRows ();private function onRowClicked (e:Event);public function unselectAll ();public function unselect (r:Row);public function getSelectedRows ();public function isSelected (r:Row);private function getGlowFilter ();public function getRows ();public function moveUp ();public function moveDown ();public function updateCellsWidth (widths:Array);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\TextArea.as
+package com.bit101.components{import flash.display.MovieClip;import flash.events.*;import flash.text.*;public class TextArea extends ScrollPane{internal var _text : TextField;internal var txtContainer : MovieClip;internal var FONT_COLOR : uint;internal var FONT_SIZE : String;internal var FONT_FACE : String;public function set value (val) : Void;public function get value ();public function set disabled (val:Boolean) : Void;public function get disabled () : Boolean;public function TextArea ();public function setSize (width:Number, height:Number) : void;private function onChange (e:Event);private function clicked (e:Event);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\DragelDef.as
+package{import view.elements.*;public class DragelDef extends SizableElement{public function DragelDef ();public function setSize (width:Number, height:Number);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\ElementData.as
+package{import flash.display.Loader;import flash.net.URLLoader;import flash.net.URLRequest;import flash.events.*;import flash.xml.*;public class ElementData{private var elements : Array;private static var allowInstantiation : Boolean;private static var _instance : ElementData;private var data : XMLNode;private var loading : Boolean;private var loaded : Boolean;public function ElementData ();public static function getInstance () : ElementData;public function loadModel (url:String);private function loadXML (evt:Event);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\MainTest.as
+package{import com.bit101.components.*;import flash.display.MovieClip;import flash.display.Sprite;import flash.events.Event;import navigation.Accordion;import view.*;import utils.*;import view.elements.Element;import view.tree.*;import view.tools.*;import validation.*;public class MainTest extends Sprite{/**
+var loader = new ClassLoader();loader.addEventListener(ClassLoader.CLASS_LOADED,												function (e:Event):void {							//var runtimeClassRef:Class = loader.getClass("TaskElement");							//var greeter:Object = new runtimeClassRef();							var tsk=new Element("EventElement");							stage.addChild(tsk);							var tsk1=new Element("TaskElement");							stage.addChild(tsk1);							var tsk2=new Element("GatewayElement");							stage.addChild(tsk2);							//tsk.hideSizers();						}						);loader.addEventListener(ClassLoader.CLASS_LOADED,function (e:Event):void {trace("ERROR");});loader.load("Library.swf");
+*/
+public function MainTest ();internal function init ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\caurina\transitions\AuxFunctions.as
+package caurina.transitions{/**
+* Generic, auxiliary functions	 *	 * @author		Zeh Fernando	 * @version		1.0.0	 * @private
+*/
+public class AuxFunctions{/**
+* Gets the R (xx0000) bits from a number		 *		 * @param		p_num				Number		Color number (ie, 0xffff00)		 * @return							Number		The R value
+*/
+public static function numberToR (p_num:Number) : Number;/**
+* Gets the G (00xx00) bits from a number		 *		 * @param		p_num				Number		Color number (ie, 0xffff00)		 * @return							Number		The G value
+*/
+public static function numberToG (p_num:Number) : Number;/**
+* Gets the B (0000xx) bits from a number		 *		 * @param		p_num				Number		Color number (ie, 0xffff00)		 * @return							Number		The B value
+*/
+public static function numberToB (p_num:Number) : Number;/**
+* Checks whether a string is on an array		 *		 * @param		p_string			String		String to search for		 * @param		p_array				Array		Array to be searched		 * @return							Boolean		Whether the array contains the string or not
+*/
+public static function isInArray (p_string:String, p_array:Array) : Boolean;/**
+* Returns the number of properties an object has		 *		 * @param		p_object			Object		Target object with a number of properties		 * @return							Number		Number of total properties the object has
+*/
+public static function getObjectLength (p_object:Object) : uint;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\caurina\transitions\Equations.as
+package caurina.transitions{public class Equations{/**
+* There's no constructor.		 * @private
+*/
+public function Equations ();/**
+* Registers all the equations to the Tweener class, so they can be found by the direct string parameters.		 * This method doesn't actually have to be used - equations can always be referenced by their full function		 * names. But "registering" them make them available as their shorthand string names.
+*/
+public static function init () : void;/**
+* Easing equation function for a simple linear tweening, with no easing.		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeNone (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a quadratic (t^2) easing in: accelerating from zero velocity.		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeInQuad (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a quadratic (t^2) easing out: decelerating to zero velocity.		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeOutQuad (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a quadratic (t^2) easing in/out: acceleration until halfway, then deceleration.		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeInOutQuad (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a quadratic (t^2) easing out/in: deceleration until halfway, then acceleration.		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeOutInQuad (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a cubic (t^3) easing in: accelerating from zero velocity. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeInCubic (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a cubic (t^3) easing out: decelerating from zero velocity. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeOutCubic (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a cubic (t^3) easing in/out: acceleration until halfway, then deceleration. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeInOutCubic (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a cubic (t^3) easing out/in: deceleration until halfway, then acceleration. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeOutInCubic (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a quartic (t^4) easing in: accelerating from zero velocity. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeInQuart (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a quartic (t^4) easing out: decelerating from zero velocity. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeOutQuart (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a quartic (t^4) easing in/out: acceleration until halfway, then deceleration. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeInOutQuart (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a quartic (t^4) easing out/in: deceleration until halfway, then acceleration. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeOutInQuart (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a quintic (t^5) easing in: accelerating from zero velocity. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeInQuint (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a quintic (t^5) easing out: decelerating from zero velocity. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeOutQuint (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a quintic (t^5) easing in/out: acceleration until halfway, then deceleration. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeInOutQuint (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a quintic (t^5) easing out/in: deceleration until halfway, then acceleration. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeOutInQuint (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a sinusoidal (sin(t)) easing in: accelerating from zero velocity. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeInSine (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a sinusoidal (sin(t)) easing out: decelerating from zero velocity. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeOutSine (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a sinusoidal (sin(t)) easing in/out: acceleration until halfway, then deceleration. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeInOutSine (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a sinusoidal (sin(t)) easing out/in: deceleration until halfway, then acceleration. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeOutInSine (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for an exponential (2^t) easing in: accelerating from zero velocity. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeInExpo (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for an exponential (2^t) easing out: decelerating from zero velocity. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeOutExpo (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for an exponential (2^t) easing in/out: acceleration until halfway, then deceleration. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeInOutExpo (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for an exponential (2^t) easing out/in: deceleration until halfway, then acceleration. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeOutInExpo (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a circular (sqrt(1-t^2)) easing in: accelerating from zero velocity. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeInCirc (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a circular (sqrt(1-t^2)) easing out: decelerating from zero velocity. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeOutCirc (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a circular (sqrt(1-t^2)) easing in/out: acceleration until halfway, then deceleration. 		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeInOutCirc (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a circular (sqrt(1-t^2)) easing out/in: deceleration until halfway, then acceleration.		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeOutInCirc (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for an elastic (exponentially decaying sine wave) easing in: accelerating from zero velocity.		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @param a		Amplitude.		 * @param p		Period.		 * @return		The correct value.
+*/
+public static function easeInElastic (t:Number, b:Number, c:Number, d:Number, a:Number = Number.NaN, p:Number = Number.NaN) : Number;/**
+* Easing equation function for an elastic (exponentially decaying sine wave) easing out: decelerating from zero velocity.		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @param a		Amplitude.		 * @param p		Period.		 * @return		The correct value.
+*/
+public static function easeOutElastic (t:Number, b:Number, c:Number, d:Number, a:Number = Number.NaN, p:Number = Number.NaN) : Number;/**
+* Easing equation function for an elastic (exponentially decaying sine wave) easing in/out: acceleration until halfway, then deceleration.		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @param a		Amplitude.		 * @param p		Period.		 * @return		The correct value.
+*/
+public static function easeInOutElastic (t:Number, b:Number, c:Number, d:Number, a:Number = Number.NaN, p:Number = Number.NaN) : Number;/**
+* Easing equation function for an elastic (exponentially decaying sine wave) easing out/in: deceleration until halfway, then acceleration.		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @param a		Amplitude.		 * @param p		Period.		 * @return		The correct value.
+*/
+public static function easeOutInElastic (t:Number, b:Number, c:Number, d:Number, a:Number = Number.NaN, p:Number = Number.NaN) : Number;/**
+* Easing equation function for a back (overshooting cubic easing: (s+1)*t^3 - s*t^2) easing in: accelerating from zero velocity.		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @param s		Overshoot ammount: higher s means greater overshoot (0 produces cubic easing with no overshoot, and the default value of 1.70158 produces an overshoot of 10 percent).		 * @return		The correct value.
+*/
+public static function easeInBack (t:Number, b:Number, c:Number, d:Number, s:Number = Number.NaN) : Number;/**
+* Easing equation function for a back (overshooting cubic easing: (s+1)*t^3 - s*t^2) easing out: decelerating from zero velocity.		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @param s		Overshoot ammount: higher s means greater overshoot (0 produces cubic easing with no overshoot, and the default value of 1.70158 produces an overshoot of 10 percent).		 * @return		The correct value.
+*/
+public static function easeOutBack (t:Number, b:Number, c:Number, d:Number, s:Number = Number.NaN) : Number;/**
+* Easing equation function for a back (overshooting cubic easing: (s+1)*t^3 - s*t^2) easing in/out: acceleration until halfway, then deceleration.		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @param s		Overshoot ammount: higher s means greater overshoot (0 produces cubic easing with no overshoot, and the default value of 1.70158 produces an overshoot of 10 percent).		 * @return		The correct value.
+*/
+public static function easeInOutBack (t:Number, b:Number, c:Number, d:Number, s:Number = Number.NaN) : Number;/**
+* Easing equation function for a back (overshooting cubic easing: (s+1)*t^3 - s*t^2) easing out/in: deceleration until halfway, then acceleration.		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @param s		Overshoot ammount: higher s means greater overshoot (0 produces cubic easing with no overshoot, and the default value of 1.70158 produces an overshoot of 10 percent).		 * @return		The correct value.
+*/
+public static function easeOutInBack (t:Number, b:Number, c:Number, d:Number, s:Number = Number.NaN) : Number;/**
+* Easing equation function for a bounce (exponentially decaying parabolic bounce) easing in: accelerating from zero velocity.		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeInBounce (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a bounce (exponentially decaying parabolic bounce) easing out: decelerating from zero velocity.		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeOutBounce (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a bounce (exponentially decaying parabolic bounce) easing in/out: acceleration until halfway, then deceleration.		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeInOutBounce (t:Number, b:Number, c:Number, d:Number) : Number;/**
+* Easing equation function for a bounce (exponentially decaying parabolic bounce) easing out/in: deceleration until halfway, then acceleration.		 *		 * @param t		Current time (in frames or seconds).		 * @param b		Starting value.		 * @param c		Change needed in value.		 * @param d		Expected easing duration (in frames or seconds).		 * @return		The correct value.
+*/
+public static function easeOutInBounce (t:Number, b:Number, c:Number, d:Number) : Number;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\caurina\transitions\PropertyInfoObj.as
+package caurina.transitions{/**
+* PropertyInfoObj	 * An object containing the updating info for a given property (its starting value, and its final value)	 *	 * @author		Zeh Fernando	 * @version		1.0.0	 * @private
+*/
+public class PropertyInfoObj{public var valueStart : Number;public var valueComplete : Number;public var hasModifier : Boolean;public var modifierFunction : Function;public var modifierParameters : Array;/**
+* Initializes the basic PropertyInfoObj.		 * 		 * @param	p_valueStart		Number		Starting value of the tweening (null if not started yet)		 * @param	p_valueComplete		Number		Final (desired) property value
+*/
+internal function PropertyInfoObj (p_valueStart:Number, p_valueComplete:Number, p_modifierFunction:Function, p_modifierParameters:Array);/**
+* Clones this property info and returns the new PropertyInfoObj		 *		 * @param	omitEvents		Boolean			Whether or not events such as onStart (and its parameters) should be omitted		 * @return 					TweenListObj	A copy of this object
+*/
+public function clone () : PropertyInfoObj;/**
+* Returns this object described as a String.		 *		 * @return 					String		The description of this object.
+*/
+public function toString () : String;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\caurina\transitions\SpecialPropertiesDefault.as
+package caurina.transitions{import flash.filters.BitmapFilter;import flash.filters.BlurFilter;import flash.geom.ColorTransform;import flash.media.SoundTransform;/**
+* SpecialPropertiesDefault	 * List of default special properties for the Tweener class	 * The function names are strange/inverted because it makes for easier debugging (alphabetic order). They're only for internal use (on this class) anyways.	 *	 * @author		Zeh Fernando, Nate Chatellier	 * @version		1.0.1	 * @private
+*/
+public class SpecialPropertiesDefault{/**
+* There's no constructor.
+*/
+public function SpecialPropertiesDefault ();/**
+* Registers all the special properties to the Tweener class, so the Tweener knows what to do with them.
+*/
+public static function init () : void;/**
+* Splits the _color parameter into specific color variables		 *		 * @param		p_value				Number		The original _color value		 * @return							Array		An array containing the .name and .value of all new properties
+*/
+public static function _color_splitter (p_value:*) : Array;/**
+* Splits the _colorTransform parameter into specific color variables		 *		 * @param		p_value				Number		The original _colorTransform value		 * @return							Array		An array containing the .name and .value of all new properties
+*/
+public static function _colorTransform_splitter (p_value:*) : Array;public static function _scale_splitter (p_value:Number) : Array;/**
+* Splits the _filter, _blur, etc parameter into specific filter variables		 *		 * @param		p_value				BitmapFilter	A BitmapFilter instance		 * @return							Array			An array containing the .name and .value of all new properties
+*/
+public static function _filter_splitter (p_value:BitmapFilter) : Array;/**
+* Returns the current frame number from the movieclip timeline		 *		 * @param		p_obj				Object		MovieClip object		 * @return							Number		The current frame
+*/
+public static function frame_get (p_obj:Object) : Number;/**
+* Sets the timeline frame		 *		 * @param		p_obj				Object		MovieClip object		 * @param		p_value				Number		New frame number
+*/
+public static function frame_set (p_obj:Object, p_value:Number) : void;/**
+* Returns the current sound volume		 *		 * @param		p_obj				Object		Sound object		 * @return							Number		The current volume
+*/
+public static function _sound_volume_get (p_obj:Object) : Number;/**
+* Sets the sound volume		 *		 * @param		p_obj				Object		Sound object		 * @param		p_value				Number		New volume
+*/
+public static function _sound_volume_set (p_obj:Object, p_value:Number) : void;/**
+* Returns the current sound pan		 *		 * @param		p_obj				Object		Sound object		 * @return							Number		The current pan
+*/
+public static function _sound_pan_get (p_obj:Object) : Number;/**
+* Sets the sound volume		 *		 * @param		p_obj				Object		Sound object		 * @param		p_value				Number		New pan
+*/
+public static function _sound_pan_set (p_obj:Object, p_value:Number) : void;/**
+* _color_*		 * Generic function for the ra/rb/ga/gb/ba/bb/aa/ab components of the colorTransform object
+*/
+public static function _color_property_get (p_obj:Object, p_parameters:Array) : Number;public static function _color_property_set (p_obj:Object, p_value:Number, p_parameters:Array) : void;/**
+* Returns the current alpha		 *		 * @param		p_obj				Object		MovieClip or Textfield object		 * @return							Number		The current alpha
+*/
+public static function _autoAlpha_get (p_obj:Object) : Number;/**
+* Sets the current autoAlpha 		 *		 * @param		p_obj				Object		MovieClip or Textfield object		 * @param		p_value				Number		New alpha
+*/
+public static function _autoAlpha_set (p_obj:Object, p_value:Number) : void;/**
+* (filters)		 * Generic function for the properties of filter objects
+*/
+public static function _filter_property_get (p_obj:Object, p_parameters:Array) : Number;public static function _filter_property_set (p_obj:Object, p_value:Number, p_parameters:Array) : void;/**
+* Given the parameter object passed to this special property, return an array listing the properties that should be modified, and their parameters		 *		 * @param		p_obj				Object		Parameter passed to this property		 * @return							Array		Array listing name and parameter of each property
+*/
+public static function _bezier_modifier (p_obj:*) : Array;/**
+* Given tweening specifications (beging, end, t), applies the property parameter to it, returning new t		 *		 * @param		b					Number		Beginning value of the property		 * @param		e					Number		Ending (desired) value of the property		 * @param		t					Number		Current t of this tweening (0-1), after applying the easing equation		 * @param		p					Array		Array of parameters passed to this specific property		 * @return							Number		New t, with the p parameters applied to it
+*/
+public static function _bezier_get (b:Number, e:Number, t:Number, p:Array) : Number;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\caurina\transitions\SpecialProperty.as
+package caurina.transitions{/**
+* SpecialProperty	 * A kind of a getter/setter for special properties	 *	 * @author		Zeh Fernando	 * @version		1.0.0	 * @private
+*/
+public class SpecialProperty{public var getValue : Function;public var setValue : Function;public var parameters : Array;/**
+* Builds a new special property object.		 * 		 * @param		p_getFunction		Function	Reference to the function used to get the special property value		 * @param		p_setFunction		Function	Reference to the function used to set the special property value
+*/
+public function SpecialProperty (p_getFunction:Function, p_setFunction:Function, p_parameters:Array = null);/**
+* Converts the instance to a string that can be used when trace()ing the object
+*/
+public function toString () : String;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\caurina\transitions\SpecialPropertyModifier.as
+package caurina.transitions{/**
+* SpecialPropertyModifier	 * A special property which actually acts on other properties	 *	 * @author		Zeh Fernando	 * @version		1.0.0	 * @private
+*/
+public class SpecialPropertyModifier{public var modifyValues : Function;public var getValue : Function;/**
+* Builds a new special property modifier object.		 * 		 * @param		p_modifyFunction		Function		Function that returns the modifider parameters.
+*/
+public function SpecialPropertyModifier (p_modifyFunction:Function, p_getFunction:Function);/**
+* Converts the instance to a string that can be used when trace()ing the object
+*/
+public function toString () : String;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\caurina\transitions\SpecialPropertySplitter.as
+package caurina.transitions{/**
+* SpecialPropertySplitter	 * A proxy setter for special properties	 *	 * @author		Zeh Fernando	 * @version		1.0.0	 * @private
+*/
+public class SpecialPropertySplitter{public var splitValues : Function;/**
+* Builds a new group special property object.		 * 		 * @param		p_splitFunction		Function	Reference to the function used to split a value
+*/
+public function SpecialPropertySplitter (p_splitFunction:Function);/**
+* Converts the instance to a string that can be used when trace()ing the object
+*/
+public function toString () : String;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\caurina\transitions\Tweener.as
+package caurina.transitions{import flash.display.*;import flash.events.Event;import flash.utils.getTimer;public class Tweener{private static var __tweener_controller__ : MovieClip;private static var _engineExists : Boolean;private static var _inited : Boolean;private static var _currentTime : Number;private static var _tweenList : Array;private static var _timeScale : Number;private static var _transitionList : Object;private static var _specialPropertyList : Object;private static var _specialPropertyModifierList : Object;private static var _specialPropertySplitterList : Object;/**
+* There's no constructor.		 * @private
+*/
+public function Tweener ();/**
+* Adds a new tweening.		 *		 * @param		(first-n param)		Object				Object that should be tweened: a movieclip, textfield, etc.. OR an array of objects		 * @param		(last param)		Object				Object containing the specified parameters in any order, as well as the properties that should be tweened and their values		 * @param		.time				Number				Time in seconds or frames for the tweening to take (defaults 2)		 * @param		.delay				Number				Delay time (defaults 0)		 * @param		.useFrames			Boolean				Whether to use frames instead of seconds for time control (defaults false)		 * @param		.transition			String/Function		Type of transition equation... (defaults to "easeoutexpo")		 * @param		.onStart			Function			* Direct property, See the TweenListObj class		 * @param		.onUpdate			Function			* Direct property, See the TweenListObj class		 * @param		.onComplete			Function			* Direct property, See the TweenListObj class		 * @param		.onOverwrite		Function			* Direct property, See the TweenListObj class		 * @param		.onStartParams		Array				* Direct property, See the TweenListObj class		 * @param		.onUpdateParams		Array				* Direct property, See the TweenListObj class		 * @param		.onCompleteParams	Array				* Direct property, See the TweenListObj class		 * @param		.onOverwriteParams	Array				* Direct property, See the TweenListObj class		 * @param		.rounded			Boolean				* Direct property, See the TweenListObj class		 * @param		.skipUpdates		Number				* Direct property, See the TweenListObj class		 * @return							Boolean				TRUE if the tween was successfully added, FALSE if otherwise
+*/
+public static function addTween (p_arg1:Object = null, p_arg2:Object = null) : Boolean;/**
+* Adds a new caller tweening.		 *		 * @param		(first-n param)		Object that should be tweened: a movieclip, textfield, etc.. OR an array of objects		 * @param		(last param)		Object containing the specified parameters in any order, as well as the properties that should be tweened and their values		 * @param		.time				Number				Time in seconds or frames for the tweening to take (defaults 2)		 * @param		.delay				Number				Delay time (defaults 0)		 * @param		.count				Number				Number of times this caller should be called		 * @param		.transition			String/Function		Type of transition equation... (defaults to "easeoutexpo")		 * @param		.onStart			Function			Event called when tween starts		 * @param		.onUpdate			Function			Event called when tween updates		 * @param		.onComplete			Function			Event called when tween ends		 * @param		.waitFrames			Boolean				Whether to wait (or not) one frame for each call		 * @return							<code>true</code> if the tween was successfully added, <code>false</code> if otherwise.
+*/
+public static function addCaller (p_arg1:Object = null, p_arg2:Object = null) : Boolean;/**
+* Remove an specified tweening of a specified object the tweening list, if it conflicts with the given time.		 *		 * @param		p_scope				Object						List of objects affected		 * @param		p_properties		Object 						List of properties affected (PropertyInfoObj instances)		 * @param		p_timeStart			Number						Time when the new tween starts		 * @param		p_timeComplete		Number						Time when the new tween ends		 * @return							Boolean						Whether or not it actually deleted something
+*/
+public static function removeTweensByTime (p_scope:Object, p_properties:Object, p_timeStart:Number, p_timeComplete:Number) : Boolean;/**
+* Remove tweenings from a given object from the tweening list.		 *		 * @param		p_tween				Object		Object that must have its tweens removed		 * @param		(2nd-last params)	Object		Property(ies) that must be removed		 * @return							Boolean		Whether or not it successfully removed this tweening
+*/
+public static function removeTweens (p_scope:Object, ...args) : Boolean;/**
+* Remove all tweenings from the engine.		 *		 * @return					<code>true</code> if it successfully removed any tweening, <code>false</code> if otherwise.
+*/
+public static function removeAllTweens () : Boolean;/**
+* Pause tweenings for a given object.		 *		 * @param		p_scope				Object that must have its tweens paused		 * @param		(2nd-last params)	Property(ies) that must be paused		 * @return					<code>true</code> if it successfully paused any tweening, <code>false</code> if otherwise.
+*/
+public static function pauseTweens (p_scope:Object, ...args) : Boolean;/**
+* Pause all tweenings on the engine.		 *		 * @return					<code>true</code> if it successfully paused any tweening, <code>false</code> if otherwise.		 * @see #resumeAllTweens()
+*/
+public static function pauseAllTweens () : Boolean;/**
+* Resume tweenings from a given object.		 *		 * @param		p_scope				Object		Object that must have its tweens resumed		 * @param		(2nd-last params)	Object		Property(ies) that must be resumed		 * @return							Boolean		Whether or not it successfully resumed something
+*/
+public static function resumeTweens (p_scope:Object, ...args) : Boolean;/**
+* Resume all tweenings on the engine.		 *		 * @return <code>true</code> if it successfully resumed any tweening, <code>false</code> if otherwise.		 * @see #pauseAllTweens()
+*/
+public static function resumeAllTweens () : Boolean;/**
+* Do some generic action on specific tweenings (pause, resume, remove, more?)		 *		 * @param		p_function			Function	Function to run on the tweenings that match		 * @param		p_scope				Object		Object that must have its tweens affected by the function		 * @param		p_properties		Array		Array of strings that must be affected		 * @return							Boolean		Whether or not it successfully affected something
+*/
+private static function affectTweens (p_affectFunction:Function, p_scope:Object, p_properties:Array) : Boolean;/**
+* Splits a tweening in two		 *		 * @param		p_tween				Number		Object that must have its tweens split		 * @param		p_properties		Array		Array of strings containing the list of properties that must be separated		 * @return							Number		The index number of the new tween
+*/
+public static function splitTweens (p_tween:Number, p_properties:Array) : uint;/**
+* Updates all existing tweenings.		 *		 * @return							Boolean		FALSE if no update was made because there's no tweening (even delayed ones)
+*/
+private static function updateTweens () : Boolean;/**
+* Remove a specific tweening from the tweening list.		 *		 * @param		p_tween				Number		Index of the tween to be removed on the tweenings list		 * @return							Boolean		Whether or not it successfully removed this tweening
+*/
+public static function removeTweenByIndex (i:Number, p_finalRemoval:Boolean = false) : Boolean;/**
+* Pauses a specific tween.		 *		 * @param		p_tween				Number		Index of the tween to be paused		 * @return							Boolean		Whether or not it successfully paused this tweening
+*/
+public static function pauseTweenByIndex (p_tween:Number) : Boolean;/**
+* Resumes a specific tween.		 *		 * @param		p_tween				Number		Index of the tween to be resumed		 * @return							Boolean		Whether or not it successfully resumed this tweening
+*/
+public static function resumeTweenByIndex (p_tween:Number) : Boolean;/**
+* Updates a specific tween.		 *		 * @param		i					Number		Index (from the tween list) of the tween that should be updated		 * @return							Boolean		FALSE if it's already finished and should be deleted, TRUE if otherwise
+*/
+private static function updateTweenByIndex (i:Number) : Boolean;/**
+* Initiates the Tweener--should only be ran once.
+*/
+public static function init (p_object:* = null) : void;/**
+* Adds a new function to the available transition list "shortcuts".		 *		 * @param		p_name				String		Shorthand transition name		 * @param		p_function			Function	The proper equation function
+*/
+public static function registerTransition (p_name:String, p_function:Function) : void;/**
+* Adds a new special property to the available special property list.		 *		 * @param		p_name				Name of the "special" property.		 * @param		p_getFunction		Function that gets the value.		 * @param		p_setFunction		Function that sets the value.
+*/
+public static function registerSpecialProperty (p_name:String, p_getFunction:Function, p_setFunction:Function, p_parameters:Array = null) : void;/**
+* Adds a new special property modifier to the available modifier list.		 *		 * @param		p_name				Name of the "special" property modifier.		 * @param		p_modifyFunction	Function that modifies the value.		 * @param		p_getFunction		Function that gets the value.
+*/
+public static function registerSpecialPropertyModifier (p_name:String, p_modifyFunction:Function, p_getFunction:Function) : void;/**
+* Adds a new special property splitter to the available splitter list.		 *		 * @param		p_name				Name of the "special" property splitter.		 * @param		p_splitFunction		Function that splits the value.
+*/
+public static function registerSpecialPropertySplitter (p_name:String, p_splitFunction:Function) : void;/**
+* Starts the Tweener class engine. It is supposed to be running every time a tween exists.
+*/
+private static function startEngine () : void;/**
+* Stops the Tweener class engine.
+*/
+private static function stopEngine () : void;/**
+* Gets a property value from an object.		 *		 * @param		p_obj				Object		Any given object		 * @param		p_prop				String		The property name		 * @return							Number		The value
+*/
+private static function getPropertyValue (p_obj:Object, p_prop:String) : Number;/**
+* Sets the value of an object property.		 *		 * @param		p_obj				Object		Any given object		 * @param		p_prop				String		The property name		 * @param		p_value				Number		The new value
+*/
+private static function setPropertyValue (p_obj:Object, p_prop:String, p_value:Number) : void;/**
+* Updates the time to enforce time grid-based updates.
+*/
+public static function updateTime () : void;/**
+* Ran once every frame. It's the main engine; updates all existing tweenings.
+*/
+public static function onEnterFrame (e:Event) : void;/**
+* Sets the new time scale.		 *		 * @param		p_time				Number		New time scale (0.5 = slow, 1 = normal, 2 = 2x fast forward, etc)
+*/
+public static function setTimeScale (p_time:Number) : void;/**
+* Finds whether or not an object has any tweening.		 *		 * @param		p_scope		Target object.		 * @return					<code>true</code> if there's a tweening occuring on this object (paused, delayed, or active), <code>false</code> if otherwise.
+*/
+public static function isTweening (p_scope:Object) : Boolean;/**
+* Returns an array containing a list of the properties being tweened for this object.		 *		 * @param		p_scope		Target object.		 * @return					Total number of properties being tweened (including delayed or paused tweens).
+*/
+public static function getTweens (p_scope:Object) : Array;/**
+* Returns the number of properties being tweened for a given object.		 *		 * @param		p_scope		Target object.		 * @return					Total number of properties being tweened (including delayed or paused tweens).
+*/
+public static function getTweenCount (p_scope:Object) : Number;/**
+* Returns the current tweener version.		 * @return					The identification string of the current Tweener version, composed of an identification of the platform version ("AS2", "AS2_FL7", or "AS3") followed by space and then the version number.		 * @example The following code returns the current used version of Tweener:		 * <listing version="3.0">		 * import caurina.transitions.Tweener;		 *		 * var tVersion:String = Tweener.getVersion();		 * trace ("Using Tweener version " + tVersion + "."); // Outputs: "Using Tweener version AS3 1.24.47."</listing>
+*/
+public static function getVersion () : String;/**
+* Lists all existing tweenings.		 *		 * @return					A string containing the list of all tweenings that currently exist inside the engine.
+*/
+public static function debug_getList () : String;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\caurina\transitions\TweenListObj.as
+package caurina.transitions{/**
+* The tween list object. Stores all of the properties and information that pertain to individual tweens.	 *	 * @author		Nate Chatellier, Zeh Fernando	 * @version		1.0.4	 * @private
+*/
+public class TweenListObj{public var scope : Object;public var properties : Object;public var auxProperties : Object;public var timeStart : Number;public var timeComplete : Number;public var useFrames : Boolean;public var transition : Function;public var onStart : Function;public var onUpdate : Function;public var onComplete : Function;public var onOverwrite : Function;public var onStartParams : Array;public var onUpdateParams : Array;public var onCompleteParams : Array;public var onOverwriteParams : Array;public var rounded : Boolean;public var isPaused : Boolean;public var timePaused : Number;public var isCaller : Boolean;public var count : Number;public var timesCalled : Number;public var waitFrames : Boolean;public var skipUpdates : Number;public var updatesSkipped : Number;public var hasStarted : Boolean;/**
+* Initializes the basic TweenListObj.		 * 		 * @param	p_scope				Object		Object affected by this tweening		 * @param	p_timeStart			Number		Time when this tweening should start		 * @param	p_timeComplete		Number		Time when this tweening should end		 * @param	p_useFrames			Boolean		Whether or not to use frames instead of time		 * @param	p_transition		Function	Equation to control the transition animation
+*/
+internal function TweenListObj (p_scope:Object, p_timeStart:Number, p_timeComplete:Number, p_useFrames:Boolean, p_transition:Function);/**
+* Clones this tweening and returns the new TweenListObj		 *		 * @param	omitEvents		Boolean			Whether or not events such as onStart (and its parameters) should be omitted		 * @return 					TweenListObj	A copy of this object
+*/
+public function clone (omitEvents:Boolean) : TweenListObj;/**
+* Returns this object described as a String.		 *		 * @return 					String		The description of this object.
+*/
+public function toString () : String;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\Button.as
+package com.bit101.components{import flash.display.MovieClip;import flash.display.Sprite;import flash.filters.DropShadowFilter;import flash.filters.GlowFilter;import flash.geom.Point;import flash.text.TextField;import flash.events.*;import flash.text.TextFormat;public class Button extends MovieClip{private var _back : Sprite;private var _face : Sprite;private var _label : TextField;private var _labelText : String;private var _width : Number;private var _height : Number;private var _down : Boolean;public static var BUTTON_RELEASE;private var FONT_COLOR : uint;private var FONT_SIZE : String;private var FONT_FACE : String;private var icon : MovieClip;private var iconMask : MovieClip;public function Button (xpos:Number = 0, ypos:Number = 0, label:String = "");private function draw ();protected function getShadow (dist:Number, knockout:Boolean = false) : DropShadowFilter;protected function getGlow () : GlowFilter;public function setSize (w:Number, h:Number);private function onMouseDown (e:MouseEvent);private function onMouseup (e:MouseEvent);private function onMouseOver (e:MouseEvent);private function onMouseOut (e:MouseEvent);private function onClick (e:MouseEvent);public function setLabel (txt:String);public function setIcon (i:MovieClip);private function alginIcon ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\CheckBox.as
+package com.bit101.components{import flash.display.DisplayObjectContainer;import flash.display.Sprite;import flash.events.MouseEvent;public class CheckBox extends Component{private var _back : Sprite;private var _button : Sprite;private var _label : Label;private var _labelText : String;private var _selected : Boolean;/**
+* Sets / gets the label text shown on this CheckBox.
+*/
+public function set label (str:String) : Void;public function get label () : String;/**
+* Sets / gets the selected state of this CheckBox.
+*/
+public function set selected (s:Boolean) : Void;public function get selected () : Boolean;/**
+* Constructor
+		 * @param parent The parent DisplayObjectContainer on which to add this CheckBox.
+		 * @param xpos The x position to place this component.
+		 * @param ypos The y position to place this component.
+		 * @param label String containing the label for this component.
+		 * @param defaultHandler The event handling function to handle the default event for this component (click in this case).
+*/
+public function CheckBox (parent:DisplayObjectContainer = null, xpos:Number = 0, ypos:Number = 0, label:String = "", defaultHandler:Function = null);/**
+* Initializes the component.
+*/
+protected function init () : void;/**
+* Creates the children for this component
+*/
+protected function addChildren () : void;/**
+* Draws the visual ui of the component.
+*/
+public function draw () : void;/**
+* Internal click handler.
+		 * @param event The MouseEvent passed by the system.
+*/
+private function onClick (event:MouseEvent) : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\ColorChooser.as
+package com.bit101.components{import flash.display.DisplayObjectContainer;import flash.display.Sprite;import flash.events.Event;public class ColorChooser extends Component{private var _input : InputText;private var _swatch : Sprite;private var _value : uint;/**
+* Gets / sets the color value of this ColorChooser.
+*/
+public function set value (n:uint) : Void;public function get value () : uint;/**
+* Constructor
+		 * @param parent The parent DisplayObjectContainer on which to add this ColorChooser.
+		 * @param xpos The x position to place this component.
+		 * @param ypos The y position to place this component.
+		 * @param value The initial color value of this component.
+		 * @param defaultHandler The event handling function to handle the default event for this component (change in this case).
+*/
+public function ColorChooser (parent:DisplayObjectContainer = null, xpos:Number = 0, ypos:Number = 0, value:uint = 0xff0000, defaultHandler:Function = null);/**
+* Initializes the component.
+*/
+protected function init () : void;protected function addChildren () : void;/**
+* Draws the visual ui of the component.
+*/
+public function draw () : void;/**
+* Internal change handler.
+		 * @param event The Event passed by the system.
+*/
+private function onChange (event:Event) : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\ComboBox.as
+package com.bit101.components{import flash.display.MorphShape;import flash.display.MovieClip;import flash.filters.GlowFilter;import flash.geom.Point;import flash.text.TextField;import flash.events.*;import flash.text.TextFormat;public class ComboBox extends MovieClip{private var _back : MovieClip;private var _valueBox : MovieClip;private var _button : MovieClip;private var _options : MovieClip;private var _text : TextField;private var options : Array;private var _width : Number;private var _height : Number;private var _buttonWidth : Number;private var _radius : Number;private var values : MovieClip;private var FONT_COLOR : uint;private var FONT_SIZE : String;private var FONT_FACE : String;private var _selectedItem : ComboOption;private var selectedIndex : Number;public static var CHANGE;public function get selectedItem () : ComboOption;public function ComboBox ();public function addOption (text, value);private function draw ();private function handleClick (e:MouseEvent);public function selectIndex (index);public function selectItem (opt:ComboOption);private function closeOptions (e:MouseEvent);private function valuesDown (e:MouseEvent);private function onOptionClick (e:Event);public function setSelectedValue (val:String);public function setSize (w, h);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\Component.as
+package com.bit101.components{import flash.display.DisplayObjectContainer;import flash.display.Sprite;import flash.display.Stage;import flash.display.StageAlign;import flash.display.StageScaleMode;import flash.events.Event;import flash.filters.DropShadowFilter;public class Component extends Sprite{private var Ronda : Class;protected var _width : Number;protected var _height : Number;public static const DRAW : String;/**
+* Sets/gets the width of the component.
+*/
+public function set width (w:Number) : Void;public function get width () : Number;/**
+* Sets/gets the height of the component.
+*/
+public function set height (h:Number) : Void;public function get height () : Number;/**
+* Overrides the setter for x to always place the component on a whole pixel.
+*/
+public function set x (value:Number) : Void;/**
+* Overrides the setter for y to always place the component on a whole pixel.
+*/
+public function set y (value:Number) : Void;/**
+* Constructor
+		 * @param parent The parent DisplayObjectContainer on which to add this component.
+		 * @param xpos The x position to place this component.
+		 * @param ypos The y position to place this component.
+*/
+public function Component (parent:DisplayObjectContainer = null, xpos:Number = 0, ypos:Number = 0);/**
+* Initilizes the component.
+*/
+protected function init () : void;/**
+* Overriden in subclasses to create child display objects.
+*/
+protected function addChildren () : void;/**
+* DropShadowFilter factory method, used in many of the components.
+		 * @param dist The distance of the shadow.
+		 * @param knockout Whether or not to create a knocked out shadow.
+*/
+protected function getShadow (dist:Number, knockout:Boolean = false) : DropShadowFilter;/**
+* Marks the component to be redrawn on the next frame.
+*/
+protected function invalidate () : void;/**
+* Utility method to set up usual stage align and scaling.
+*/
+public static function initStage (stage:Stage) : void;/**
+* Moves the component to the specified position.
+		 * @param xpos the x position to move the component
+		 * @param ypos the y position to move the component
+*/
+public function move (xpos:Number, ypos:Number) : void;/**
+* Sets the size of the component.
+		 * @param w The width of the component.
+		 * @param h The height of the component.
+*/
+public function setSize (w:Number, h:Number) : void;/**
+* Abstract draw function.
+*/
+public function draw () : void;/**
+* Called one frame after invalidate is called.
+*/
+private function onInvalidate (event:Event) : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\HScroll.as
+package com.bit101.components{import flash.display.DisplayObjectContainer;public class HScroll extends Scroll{/**
+* Constructor
+		 * @param parent The parent DisplayObjectContainer on which to add this HSlider.
+		 * @param xpos The x position to place this component.
+		 * @param ypos The y position to place this component.
+		 * @param defaultHandler The event handling function to handle the default event for this component.
+*/
+public function HScroll (parent:DisplayObjectContainer = null, xpos:Number = 0, ypos:Number = 0, defaultHandler:Function = null);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\HSlider.as
+package com.bit101.components{import flash.display.DisplayObjectContainer;public class HSlider extends Slider{/**
+* Constructor
+		 * @param parent The parent DisplayObjectContainer on which to add this HSlider.
+		 * @param xpos The x position to place this component.
+		 * @param ypos The y position to place this component.
+		 * @param defaultHandler The event handling function to handle the default event for this component.
+*/
+public function HSlider (parent:DisplayObjectContainer = null, xpos:Number = 0, ypos:Number = 0, defaultHandler:Function = null);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\HUISlider.as
+package com.bit101.components{import flash.display.DisplayObjectContainer;import flash.events.Event;public class HUISlider extends UISlider{/**
+* Constructor
+		 * @param parent The parent DisplayObjectContainer on which to add this HUISlider.
+		 * @param xpos The x position to place this component.
+		 * @param ypos The y position to place this component.
+		 * @param label The string to use as the label for this component.
+		 * @param defaultHandler The event handling function to handle the default event for this component.
+*/
+public function HUISlider (parent:DisplayObjectContainer = null, x:Number = 0, y:Number = 0, label:String = "", defaultEventHandler:Function = null);/**
+* Initializes the component.
+*/
+protected function init () : void;/**
+* Centers the label when label text is changed.
+*/
+protected function positionLabel () : void;/**
+* Draws the visual ui of this component.
+*/
+public function draw () : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\InputText.as
+package com.bit101.components{import flash.display.DisplayObjectContainer;import flash.display.Sprite;import flash.events.Event;import flash.text.TextField;import flash.text.TextFieldType;import flash.text.TextFormat;public class InputText extends Component{private var _back : Sprite;private var _password : Boolean;private var _text : String;private var _tf : TextField;/**
+* Gets / sets the text shown in this InputText.
+*/
+public function set text (t:String) : Void;public function get text () : String;/**
+* Gets / sets the list of characters that are allowed in this TextInput.
+*/
+public function set restrict (str:String) : Void;public function get restrict () : String;/**
+* Gets / sets the maximum number of characters that can be shown in this InputText.
+*/
+public function set maxChars (max:int) : Void;public function get maxChars () : int;/**
+* Gets / sets whether or not this input text will show up as password (asterisks).
+*/
+public function set password (b:Boolean) : Void;public function get password () : Boolean;/**
+* Constructor
+		 * @param parent The parent DisplayObjectContainer on which to add this InputText.
+		 * @param xpos The x position to place this component.
+		 * @param ypos The y position to place this component.
+		 * @param text The string containing the initial text of this component.
+		 * @param defaultHandler The event handling function to handle the default event for this component (change in this case).
+*/
+public function InputText (parent:DisplayObjectContainer = null, xpos:Number = 0, ypos:Number = 0, text:String = "", defaultHandler:Function = null);/**
+* Initializes the component.
+*/
+protected function init () : void;/**
+* Creates and adds child display objects.
+*/
+protected function addChildren () : void;/**
+* Draws the visual ui of the component.
+*/
+public function draw () : void;/**
+* Internal change handler.
+		 * @param event The Event passed by the system.
+*/
+private function onChange (event:Event) : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\Label.as
+package com.bit101.components{import flash.display.DisplayObjectContainer;import flash.text.TextField;import flash.text.TextFieldAutoSize;import flash.text.TextFormat;public class Label extends Component{private var _autoSize : Boolean;private var _text : String;private var _tf : TextField;/**
+* Gets / sets the text of this Label.
+*/
+public function set text (t:String) : Void;public function get text () : String;/**
+* Gets / sets whether or not this Label will autosize.
+*/
+public function set autoSize (b:Boolean) : Void;public function get autoSize () : Boolean;/**
+* Constructor		 * @param parent The parent DisplayObjectContainer on which to add this Label.		 * @param xpos The x position to place this component.		 * @param ypos The y position to place this component.		 * @param text The string to use as the initial text in this component.
+*/
+public function Label (parent:DisplayObjectContainer = null, xpos:Number = 0, ypos:Number = 0, text:String = "");/**
+* Initializes the component.
+*/
+protected function init () : void;/**
+* Creates and adds the child display objects of this component.
+*/
+protected function addChildren () : void;/**
+* Draws the visual ui of the component.
+*/
+public function draw () : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\ModalCollection.as
+package com.bit101.components{import flash.display.MovieClip;import flash.text.*;import flash.xml.XMLNode;import flash.events.*;import utils.LibraryManager;import view.modal.AbstractModal;import view.window.*;public class ModalCollection extends MovieClip{internal var _text : TextField;internal var _width : Number;internal var _height : Number;internal var FONT_COLOR : uint;internal var FONT_SIZE : String;internal var FONT_FACE : String;internal var modalIcon : MovieClip;internal var modalClass;internal var data : XMLNode;internal var modalWidth;internal var modalHeight;public function ModalCollection ();private function draw ();private function drawIcon ();public function setLabel (l:String);public function setModal (cls:String);public function iconClick (e:MouseEvent);public function setData (d:XMLNode);public function setSize (w, h);public function setModalSize (w, h);private function onModalClose (e:Event);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\ModalInput.as
+package com.bit101.components{import flash.display.MovieClip;import flash.text.*;import flash.xml.XMLNode;import flash.events.*;import utils.LibraryManager;import view.modal.AbstractModal;import view.window.*;public class ModalInput extends Input{internal var modalIcon : MovieClip;internal var modalClass;internal var modalWidth;internal var modalHeight;internal var data : XMLNode;public function ModalInput ();private function draw ();private function drawIcon ();public function iconClick (e:MouseEvent);public function setModal (cls:String);public function setModalName (n);public function setModalSize (w, h);private function onModalClose (e:Event);public function setData (d:XMLNode);public function setSize (w, h);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\Panel.as
+package com.bit101.components{import flash.display.DisplayObjectContainer;import flash.display.Shape;import flash.display.Sprite;public class Panel extends Component{private var _mask : Sprite;private var _background : Shape;private var _color : int;private var _shadow : Boolean;/**
+* Container for content added to this panel. This is masked, so best to add children to content, rather than directly to the panel.
+*/
+public var content : Sprite;/**
+* Gets / sets whether or not this Panel will have an inner shadow.
+*/
+public function set shadow (b:Boolean) : Void;public function get shadow () : Boolean;/**
+* Gets / sets the backgrond color of this panel.
+*/
+public function set color (c:int) : Void;public function get color () : int;/**
+* Constructor
+		 * @param parent The parent DisplayObjectContainer on which to add this Panel.
+		 * @param xpos The x position to place this component.
+		 * @param ypos The y position to place this component.
+*/
+public function Panel (parent:DisplayObjectContainer = null, xpos:Number = 0, ypos:Number = 0);/**
+* Initializes the component.
+*/
+protected function init () : void;/**
+* Creates and adds the child display objects of this component.
+*/
+protected function addChildren () : void;/**
+* Draws the visual ui of the component.
+*/
+public function draw () : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\ProgressBar.as
+package com.bit101.components{import flash.display.DisplayObjectContainer;import flash.display.Sprite;public class ProgressBar extends Component{private var _back : Sprite;private var _bar : Sprite;private var _value : Number;private var _max : Number;/**
+* Gets / sets the maximum value of the ProgressBar.
+*/
+public function set maximum (m:Number) : Void;public function get maximum () : Number;/**
+* Gets / sets the current value of the ProgressBar.
+*/
+public function set value (v:Number) : Void;public function get value () : Number;/**
+* Constructor
+		 * @param parent The parent DisplayObjectContainer on which to add this ProgressBar.
+		 * @param xpos The x position to place this component.
+		 * @param ypos The y position to place this component.
+*/
+public function ProgressBar (parent:DisplayObjectContainer = null, xpos:Number = 0, ypos:Number = 0);/**
+* Initializes the component.
+*/
+protected function init () : void;/**
+* Creates and adds the child display objects of this component.
+*/
+protected function addChildren () : void;/**
+* Updates the size of the progress bar based on the current value.
+*/
+private function update () : void;/**
+* Draws the visual ui of the component.
+*/
+public function draw () : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\PushButton.as
+package com.bit101.components{import flash.display.DisplayObjectContainer;import flash.display.Sprite;import flash.events.MouseEvent;public class PushButton extends Component{private var _back : Sprite;private var _face : Sprite;private var _label : Label;private var _labelText : String;private var _over : Boolean;private var _down : Boolean;/**
+* Sets / gets the label text shown on this Pushbutton.
+*/
+public function set label (str:String) : Void;public function get label () : String;/**
+* Constructor
+		 * @param parent The parent DisplayObjectContainer on which to add this PushButton.
+		 * @param xpos The x position to place this component.
+		 * @param ypos The y position to place this component.
+		 * @param label The string to use for the initial label of this component.
+ 		 * @param defaultHandler The event handling function to handle the default event for this component (click in this case).
+*/
+public function PushButton (parent:DisplayObjectContainer = null, xpos:Number = 0, ypos:Number = 0, label:String = "", defaultHandler:Function = null);/**
+* Initializes the component.
+*/
+protected function init () : void;/**
+* Creates and adds the child display objects of this component.
+*/
+protected function addChildren () : void;/**
+* Draws the visual ui of the component.
+*/
+public function draw () : void;/**
+* Internal mouseOver handler.
+		 * @param event The MouseEvent passed by the system.
+*/
+private function onMouseOver (event:MouseEvent) : void;/**
+* Internal mouseOut handler.
+		 * @param event The MouseEvent passed by the system.
+*/
+private function onMouseOut (event:MouseEvent) : void;/**
+* Internal mouseOut handler.
+		 * @param event The MouseEvent passed by the system.
+*/
+private function onMouseDown (event:MouseEvent) : void;/**
+* Internal mouseUp handler.
+		 * @param event The MouseEvent passed by the system.
+*/
+private function onMouseup (event:MouseEvent) : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\RadioButton.as
+package com.bit101.components{import flash.display.DisplayObjectContainer;import flash.display.Sprite;import flash.events.MouseEvent;public class RadioButton extends Component{private var _back : Sprite;private var _button : Sprite;private var _selected : Boolean;private var _label : Label;private var _labelText : String;private static var buttons : Array;/**
+* Sets / gets the selected state of this CheckBox.
+*/
+public function set selected (s:Boolean) : Void;public function get selected () : Boolean;/**
+* Sets / gets the label text shown on this CheckBox.
+*/
+public function set label (str:String) : Void;public function get label () : String;/**
+* Constructor
+		 * @param parent The parent DisplayObjectContainer on which to add this RadioButton.
+		 * @param xpos The x position to place this component.
+		 * @param ypos The y position to place this component.
+		 * @param label The string to use for the initial label of this component.
+		 * @param defaultHandler The event handling function to handle the default event for this component (click in this case).
+*/
+public function RadioButton (parent:DisplayObjectContainer = null, xpos:Number = 0, ypos:Number = 0, label:String = "", checked:Boolean = false, defaultHandler:Function = null);/**
+* Static method to add the newly created RadioButton to the list of buttons in the group.
+		 * @param rb The RadioButton to add.
+*/
+private static function addButton (rb:RadioButton) : void;/**
+* Unselects all RadioButtons in the group, except the one passed.
+		 * This could use some rethinking or better naming.
+		 * @param rb The RadioButton to remain selected.
+*/
+private static function clear (rb:RadioButton) : void;/**
+* Initializes the component.
+*/
+protected function init () : void;/**
+* Creates and adds the child display objects of this component.
+*/
+protected function addChildren () : void;/**
+* Draws the visual ui of the component.
+*/
+public function draw () : void;/**
+* Internal click handler.
+		 * @param event The MouseEvent passed by the system.
+*/
+private function onClick (event:MouseEvent) : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\Scroll.as
+package com.bit101.components{import flash.display.DisplayObjectContainer;import flash.display.Sprite;import flash.events.Event;import flash.events.MouseEvent;import flash.geom.Rectangle;public class Scroll extends Component{protected var _handle : Sprite;private var _back : Sprite;private var _backClick : Boolean;protected var _value : Number;protected var _max : Number;protected var _min : Number;protected var _orientation : String;public static const HORIZONTAL : String;public static const VERTICAL : String;/**
+* Sets / gets whether or not a click on the background of the scroll will move the handler to that position.
+*/
+public function set backClick (b:Boolean) : Void;public function get backClick () : Boolean;/**
+* Sets / gets the current value of this scroll.
+*/
+public function set value (v:Number) : Void;public function get value () : Number;/**
+* Gets / sets the maximum value of this scroll.
+*/
+public function set maximum (m:Number) : Void;public function get maximum () : Number;/**
+* Gets / sets the minimum value of this scroll.
+*/
+public function set minimum (m:Number) : Void;public function get minimum () : Number;/**
+* Constructor
+		 * @param parent The parent DisplayObjectContainer on which to add this Scroll.
+		 * @param xpos The x position to place this component.
+		 * @param ypos The y position to place this component.
+		 * @param defaultHandler The event handling function to handle the default event for this component (change in this case).
+*/
+public function Scroll (orientation:String = Scroll.HORIZONTAL, parent:DisplayObjectContainer = null, xpos:Number = 0, ypos:Number = 0, defaultHandler:Function = null);/**
+* Initializes the component.
+*/
+protected function init () : void;/**
+* Creates and adds the child display objects of this component.
+*/
+protected function addChildren () : void;/**
+* Draws the back of the scroll.
+*/
+protected function drawBack () : void;/**
+* Draws the handle of the scroll.
+*/
+protected function drawHandle () : void;/**
+* Adjusts value to be within minimum and maximum.
+*/
+private function correctValue () : void;/**
+* Adjusts position of handle when value, maximum or minimum have changed.
+		 * TODO: Should also be called when scroll is resized.
+*/
+protected function positionHandle () : void;/**
+* Draws the visual ui of the component.
+*/
+public function draw () : void;/**
+* Convenience method to set the three main parameters in one shot.
+		 * @param min The minimum value of the scroll.
+		 * @param max The maximum value of the scroll.
+		 * @param value The value of the scroll.
+*/
+public function setScrollParams (min:Number, max:Number, value:Number) : void;/**
+* Handler called when user clicks the background of the scroll, causing the handle to move to that point. Only active if backClick is true.
+		 * @param event The MouseEvent passed by the system.
+*/
+private function onBackClick (event:MouseEvent) : void;/**
+* Internal mouseDown handler. Starts dragging the handle.
+		 * @param event The MouseEvent passed by the system.
+*/
+protected function onDrag (event:MouseEvent) : void;/**
+* Internal mouseUp handler. Stops dragging the handle.
+		 * @param event The MouseEvent passed by the system.
+*/
+protected function onDrop (event:MouseEvent) : void;/**
+* Internal mouseMove handler for when the handle is being moved.
+		 * @param event The MouseEvent passed by the system.
+*/
+protected function onSlide (event:MouseEvent) : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\ScrollPane.as
+package com.bit101.components{import com.bit101.components.HScroll;import com.bit101.components.Panel;import com.bit101.components.VScroll;import flash.display.DisplayObjectContainer;import flash.display.Shape;import flash.events.Event;import flash.display.MovieClip;public class ScrollPane extends Component{private var pane : Panel;private var hScroll : HScroll;private var vScroll : VScroll;private var _background : Shape;private var _color : int;private var _margin : Number;private var _scrollWidth : Number;private var _elements : Array;public static var ON_SCROLL;public function get contentWidth () : Number;public function get contentHeight () : Number;public function get scrollLeft ();public function get scrolltop ();public function set scrollLeft (val:Number) : Void;public function set scrolltop (val:Number) : Void;public function get maxScrollLeft ();public function get maxScrollTop ();public function get minScrollLeft ();public function get minScrollTop ();public function ScrollPane (parent:DisplayObjectContainer = null, xpos:Number = 0, ypos:Number = 0);public function addElement (el:MovieClip) : void;public function removeElement (el:MovieClip) : void;public function setSize (width:Number, height:Number) : void;private function setScrolls () : void;private function onVScroll (e:Event) : void;private function onHScroll (e:Event) : void;public function draw () : void;protected function addChildren () : void;public function getElements () : Array;public function updateScrolls ();public function setMargin (num:Number);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\Slider.as
+package com.bit101.components{import flash.display.DisplayObjectContainer;import flash.display.Sprite;import flash.events.Event;import flash.events.MouseEvent;import flash.geom.Rectangle;public class Slider extends Component{protected var _handle : Sprite;private var _back : Sprite;private var _backClick : Boolean;protected var _value : Number;protected var _max : Number;protected var _min : Number;protected var _orientation : String;public static const HORIZONTAL : String;public static const VERTICAL : String;/**
+* Sets / gets whether or not a click on the background of the slider will move the handler to that position.
+*/
+public function set backClick (b:Boolean) : Void;public function get backClick () : Boolean;/**
+* Sets / gets the current value of this slider.
+*/
+public function set value (v:Number) : Void;public function get value () : Number;/**
+* Gets / sets the maximum value of this slider.
+*/
+public function set maximum (m:Number) : Void;public function get maximum () : Number;/**
+* Gets / sets the minimum value of this slider.
+*/
+public function set minimum (m:Number) : Void;public function get minimum () : Number;/**
+* Constructor
+		 * @param parent The parent DisplayObjectContainer on which to add this Slider.
+		 * @param xpos The x position to place this component.
+		 * @param ypos The y position to place this component.
+		 * @param defaultHandler The event handling function to handle the default event for this component (change in this case).
+*/
+public function Slider (orientation:String = Slider.HORIZONTAL, parent:DisplayObjectContainer = null, xpos:Number = 0, ypos:Number = 0, defaultHandler:Function = null);/**
+* Initializes the component.
+*/
+protected function init () : void;/**
+* Creates and adds the child display objects of this component.
+*/
+protected function addChildren () : void;/**
+* Draws the back of the slider.
+*/
+protected function drawBack () : void;/**
+* Draws the handle of the slider.
+*/
+protected function drawHandle () : void;/**
+* Adjusts value to be within minimum and maximum.
+*/
+private function correctValue () : void;/**
+* Adjusts position of handle when value, maximum or minimum have changed.
+		 * TODO: Should also be called when slider is resized.
+*/
+protected function positionHandle () : void;/**
+* Draws the visual ui of the component.
+*/
+public function draw () : void;/**
+* Convenience method to set the three main parameters in one shot.
+		 * @param min The minimum value of the slider.
+		 * @param max The maximum value of the slider.
+		 * @param value The value of the slider.
+*/
+public function setSliderParams (min:Number, max:Number, value:Number) : void;/**
+* Handler called when user clicks the background of the slider, causing the handle to move to that point. Only active if backClick is true.
+		 * @param event The MouseEvent passed by the system.
+*/
+private function onBackClick (event:MouseEvent) : void;/**
+* Internal mouseDown handler. Starts dragging the handle.
+		 * @param event The MouseEvent passed by the system.
+*/
+protected function onDrag (event:MouseEvent) : void;/**
+* Internal mouseUp handler. Stops dragging the handle.
+		 * @param event The MouseEvent passed by the system.
+*/
+protected function onDrop (event:MouseEvent) : void;/**
+* Internal mouseMove handler for when the handle is being moved.
+		 * @param event The MouseEvent passed by the system.
+*/
+protected function onSlide (event:MouseEvent) : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\Style.as
+package com.bit101.components{public class Style{public static var BACKGROUND : uint;public static var BUTTON_FACE : uint;public static var INPUT_TEXT : uint;public static var LABEL_TEXT : uint;public static var DROPSHADOW : uint;public static var PANEL : uint;public static var PROGRESS_BAR : uint;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\Text.as
+package com.bit101.components{import flash.display.DisplayObjectContainer;import flash.text.TextField;import flash.text.TextFieldType;import flash.text.TextFormat;public class Text extends Component{private var _tf : TextField;private var _text : String;private var _editable : Boolean;private var _panel : Panel;/**
+* Gets / sets the text of this Label.
+*/
+public function set text (t:String) : Void;public function get text () : String;/**
+* Gets / sets whether or not this text component will be editable.
+*/
+public function set editable (b:Boolean) : Void;public function get editable () : Boolean;/**
+* Constructor		 * @param parent The parent DisplayObjectContainer on which to add this Label.		 * @param xpos The x position to place this component.		 * @param ypos The y position to place this component.		 * @param text The initial text to display in this component.
+*/
+public function Text (parent:DisplayObjectContainer = null, xpos:Number = 0, ypos:Number = 0, text:String = "");/**
+* Initializes the component.
+*/
+protected function init () : void;/**
+* Creates and adds the child display objects of this component.
+*/
+protected function addChildren () : void;/**
+* Draws the visual ui of the component.
+*/
+public function draw () : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\UISlider.as
+package com.bit101.components{import flash.display.DisplayObjectContainer;import flash.events.Event;public class UISlider extends Component{protected var _label : Label;protected var _valueLabel : Label;protected var _slider : Slider;private var _precision : int;protected var _sliderClass : Class;private var _labelText : String;/**
+* Sets / gets the current value of this slider.
+*/
+public function set value (v:Number) : Void;public function get value () : Number;/**
+* Gets / sets the maximum value of this slider.
+*/
+public function set maximum (m:Number) : Void;public function get maximum () : Number;/**
+* Gets / sets the minimum value of this slider.
+*/
+public function set minimum (m:Number) : Void;public function get minimum () : Number;/**
+* Gets / sets the number of decimals to format the value label.
+*/
+public function set labelPrecision (decimals:int) : Void;public function get labelPrecision () : int;/**
+* Gets / sets the text shown in this component's label.
+*/
+public function set label (str:String) : Void;public function get label () : String;/**
+* Constructor
+		 * @param parent The parent DisplayObjectContainer on which to add this UISlider.
+		 * @param xpos The x position to place this component.
+		 * @param ypos The y position to place this component.
+		 * @param label The initial string to display as this component's label.
+		 * @param defaultHandler The event handling function to handle the default event for this component (change in this case).
+*/
+public function UISlider (parent:DisplayObjectContainer = null, x:Number = 0, y:Number = 0, label:String = "", defaultEventHandler:Function = null);/**
+* Creates and adds the child display objects of this component.
+*/
+protected function addChildren () : void;/**
+* Formats the value of the slider to a string based on the current level of precision.
+*/
+protected function formatValueLabel () : void;/**
+* Positions the label when it has changed. Implemented in child classes.
+*/
+protected function positionLabel () : void;/**
+* Draws the visual ui of this component.
+*/
+public function draw () : void;/**
+* Convenience method to set the three main parameters in one shot.
+		 * @param min The minimum value of the slider.
+		 * @param max The maximum value of the slider.
+		 * @param value The value of the slider.
+*/
+public function setSliderParams (min:Number, max:Number, value:Number) : void;/**
+* Handler called when the slider's value changes.
+		 * @param event The Event passed by the slider.
+*/
+private function onSliderChange (event:Event) : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\VScroll.as
+package com.bit101.components{import flash.display.DisplayObjectContainer;public class VScroll extends Scroll{/**
+* Constructor
+		 * @param parent The parent DisplayObjectContainer on which to add this Slider.
+		 * @param xpos The x position to place this component.
+		 * @param ypos The y position to place this component.
+		 * @param defaultHandler The event handling function to handle the default event for this component.
+*/
+public function VScroll (parent:DisplayObjectContainer = null, xpos:Number = 0, ypos:Number = 0, defaultHandler:Function = null);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\VSlider.as
+package com.bit101.components{import flash.display.DisplayObjectContainer;public class VSlider extends Slider{/**
+* Constructor
+		 * @param parent The parent DisplayObjectContainer on which to add this Slider.
+		 * @param xpos The x position to place this component.
+		 * @param ypos The y position to place this component.
+		 * @param defaultHandler The event handling function to handle the default event for this component.
+*/
+public function VSlider (parent:DisplayObjectContainer = null, xpos:Number = 0, ypos:Number = 0, defaultHandler:Function = null);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\VUISlider.as
+package com.bit101.components{import flash.display.DisplayObjectContainer;import flash.events.Event;public class VUISlider extends UISlider{public function get width () : Number;/**
+* Constructor
+		 * @param parent The parent DisplayObjectContainer on which to add this VUISlider.
+		 * @param xpos The x position to place this component.
+		 * @param ypos The y position to place this component.
+		 * @param label The string to use as the label for this component.
+		 * @param defaultHandler The event handling function to handle the default event for this component.
+*/
+public function VUISlider (parent:DisplayObjectContainer = null, x:Number = 0, y:Number = 0, label:String = "", defaultEventHandler:Function = null);/**
+* Initializes this component.
+*/
+protected function init () : void;public function draw () : void;protected function positionLabel () : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\grid\Cell.as
+package com.bit101.components.grid{import flash.display.InteractiveObject;import flash.display.MovieClip;import flash.display.Sprite;import flash.events.Event;import flash.events.MouseEvent;import flash.text.TextField;import flash.text.TextFormat;public class Cell extends MovieClip{private var _width : Number;private var _mask : Sprite;private var _cell : MovieClip;private var _minHeight : Number;public static var CELL_CLICK;public static var CELL_RESIZED;private var FONT_COLOR : uint;private var FONT_SIZE : String;private var FONT_FACE : String;public function Cell ();public function setWidth (w:Number);public function getWidth () : Number;private function draw ();public function getContent ();public function addContent (content);public function setContent (content);private function onClick (e:MouseEvent);public function setText (text:String);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\grid\DataGrid.as
+package com.bit101.components.grid{import flash.display.MovieClip;import flash.display.Sprite;import flash.text.TextField;import com.bit101.components.ScrollPane;import flash.events.*;public class DataGrid extends MovieClip{private var rows : Array;private var body : Body;private var header : Header;private var headerMask : Sprite;private var top : Sprite;private var _width : Number;private var _height : Number;private var headerHeight;private var cellWidths : Array;private var parsedCellWidths : Array;private var rowColors : Array;public static var ROW_SELECTED;internal var _grid : MovieClip;public function set multiSelect (m:Boolean) : Void;public function DataGrid ();public function setSize (w:Number, h:Number);private function draw ();public function setCols (cols:Array);public function getNewRow ();private function onScroll (e:Event);public function removeSelectedRows ();public function getRows ();public function getSelectedRows ();public function moveUp ();public function moveDown ();private function processCells ();private function getProcessedCells ();private function upDateGrid ();public function clear ();private function rowSelected (e:Event);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\grid\Header.as
+package com.bit101.components.grid{import flash.display.MovieClip;import flash.events.Event;import flash.filters.BevelFilter;public class Header extends Row{public function Header ();public function addCell (c:Cell);private function moveSizer (e:Event);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\com\bit101\components\grid\Row.as
+package com.bit101.components.grid{import flash.display.MovieClip;import flash.events.Event;public class Row extends MovieClip{private var _width : Number;private var _color : uint;internal var cells : Array;internal var cellWidths : Array;internal var totalWidth : Number;public static var ROW_CLICKED;public function Row ();private function draw ();public function removeCell (c:Cell);public function addCell (c:Cell);internal function sortCells ();public function setColor (col:uint);public function setCellsWidths (wths:Array);public function getCellsWidths () : Array;private function onCellClick (e:Event);public function getCells () : Array;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\navigation\Accordion.as
+package navigation{import flash.display.*;import flash.geom.*;import flash.events.*;import caurina.transitions.Tweener;public class Accordion extends MovieClip{private var mywidth;private var myheight;private var navW;private var navH;private var panelN;private var panelW;private var panelH;private var panelWithBtnWidth;private var panelWithBtnHeight;public var currpanel : Number;private var vertical : Boolean;private var _panels : Array;private var msk : Sprite;public static const EVENT_ON_CHANGE;public function Accordion ($width:Number, $height:Number, panelNumber:Number = 0, navWidth:Number = 0, navHeight:Number = 0, allignment:Boolean = false);public function setSize (w:Number, h:Number);private function sizePanels ();public function openPanel (pNumber:Number) : void;public function addPanel (btnBackground:MovieClip, contMovie:MovieClip);public function getPanelContentsAt (i:int) : MovieClip;private function handleOpenClick (evt:Event);private function getBtnBase () : MovieClip;private function getContentBase () : MovieClip;private function draw () : void;public function defaultPanel (pNumber:Number) : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\AbstractParser.as
+package parsers{import flash.xml.XMLNode;public class AbstractParser{public function AbstractParser ();public function parse (xml:XMLNode) : XMLNode;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\Parser.as
+package parsers{import flash.xml.XMLNode;import utils.LibraryManager;import view.elements.AbstractElement;public class Parser{internal var outParser : AbstractParser;internal var inParser : AbstractParser;private static var allowInstantiation : Boolean;private static var _instance : Parser;public function Parser ();public static function getInstance () : Parser;public function parseOut (nodes:XMLNode) : XMLNode;public function parseIn (nodes:XMLNode) : XMLNode;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\input\ParseInUtils.as
+package parsers.input{import flash.xml.*;public class ParseInUtils{public function ParseInUtils ();public static function getParsedNode (xmlStr) : XMLNode;public static function getSubNodeValue (n:XMLNode, name:String);public static function getSubNode (n:XMLNode, name:String) : XMLNode;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\input\elements\Activity.as
+package parsers.input.elements{import flash.xml.*;import parsers.input.*;public class Activity extends ElementParser{public function Activity ();internal function startParse () : XMLNode;internal function getNodeGraphicsInfo ();internal function getName ();internal function getId ();internal function getDocumentation ();internal function getWsPublications ();private function parseWSAttribute (dataXML:XMLNode, WsPublicationAttribute:XMLNode);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\input\elements\ActivityElement.as
+package parsers.input.elements{import flash.xml.XMLNode;public class ActivityElement extends Activity{public function ActivityElement ();internal function getLoopType ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\input\elements\Artifact.as
+package parsers.input.elements{import flash.xml.XMLNode;public class Artifact extends Activity{public function Artifact ();internal function startParse () : XMLNode;internal function getTextAnnotation ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\input\elements\ElementParser.as
+package parsers.input.elements{import flash.xml.XMLDocument;import flash.xml.XMLNode;import parsers.input.ParseInUtils;public class ElementParser{internal var parsedNode : XMLNode;internal var toParseNode : XMLNode;internal var parseFunctions : Array;public function ElementParser ();public function parse (node:XMLNode) : XMLNode;public function setParsedNode (node:XMLNode);internal function getToParseSubNode (name:String) : XMLNode;internal function getParsedSubNode (name:String) : XMLNode;internal function getToParseSubNodeValue (name:String) : String;internal function getParsedSubNodeValue (name:String) : String;internal function callParseFunctions ();internal function startParse () : XMLNode;internal function getParsedNode (xmlStr) : XMLNode;internal function setParsedSubNodeValue (name, value);internal function getData (node:XMLNode) : XMLNode;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\input\elements\Event.as
+package parsers.input.elements{import flash.xml.XMLNode;public class Event extends Activity{public function Event ();internal function getEvent ();internal function getTrigger ();internal function getAttached ();internal function getTriggerResultMessage ();internal function getTriggerTimer ();internal function getResultError ();internal function getResultCompensation ();internal function getTriggerConditional ();internal function getTriggerResultSignal ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\input\elements\Gateway.as
+package parsers.input.elements{import flash.xml.XMLNode;public class Gateway extends Activity{public function Gateway ();internal function getRoute ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\input\elements\Subflow.as
+package parsers.input.elements{import flash.xml.XMLNode;import parsers.output.ParseOutUtils;public class Subflow extends ActivityElement{public function Subflow ();internal function getImplementation ();internal function getIsTransaction ();internal function getIsAdhoc ();internal function getBlockActivity ();internal function getIsExpanded ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\input\elements\Transition.as
+package parsers.input.elements{import flash.xml.XMLNode;public class Transition extends Line{public function Transition ();internal function getConditionType ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\output\ParseOutUtils.as
+package parsers.output{import flash.xml.*;public class ParseOutUtils{public function ParseOutUtils ();public static function getParsedNode (xmlStr) : XMLNode;public static function getSubNodeValue (n:XMLNode, name:String);public static function getSubNode (n:XMLNode, name:String) : XMLNode;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\output\ParserOut.as
+package parsers.output{import flash.xml.XMLDocument;import flash.xml.XMLNode;import parsers.AbstractParser;import parsers.output.elements.ElementParser;import utils.LibraryManager;import view.View;public class ParserOut extends AbstractParser{private var xmlOut : XMLNode;private var poolsXML : XMLNode;private var processes : XMLNode;private var artifactsXML : XMLNode;private var associationsXML : XMLNode;private var messageFlowsXML : XMLNode;public function ParserOut ();public function parse (xml:XMLNode) : XMLNode;private function getPools (xml:XMLNode);private function getProcesses (xml:XMLNode);private function getProcess (xml:XMLNode) : XMLNode;public function parseProcessElements (subElements:XMLNode, el:XMLNode);private function parseWorkFlowElements (xml:XMLNode, workflowEl:XMLNode);private function getTransitions (xml:XMLNode) : XMLNode;public static function getElementParser (type:String) : ElementParser;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\output\elements\Activity.as
+package parsers.output.elements{import flash.xml.*;public class Activity extends ElementParser{public function Activity ();internal function startParse () : XMLNode;internal function getNodeGraphicsInfo ();internal function getName ();internal function getId ();internal function getDocumentation ();internal function getInOutPutSets ();internal function getWsPublications ();private function parseWSAttributes (attsXML:XMLNode, WsPublicationAttributes:XMLNode, type:String);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\output\elements\ActivityElement.as
+package parsers.output.elements{import flash.xml.XMLNode;public class ActivityElement extends Activity{public function ActivityElement ();internal function getLoopType ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\output\elements\ActivitySet.as
+package parsers.output.elements{import flash.xml.XMLNode;import parsers.output.ParserOut;import parsers.Parser;public class ActivitySet extends ElementParser{public function ActivitySet ();internal function startParse () : XMLNode;internal function getName ();internal function getId ();internal function getSubElements ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\output\elements\Artifact.as
+package parsers.output.elements{import flash.xml.*;public class Artifact extends ElementParser{public function Artifact ();internal function startParse () : XMLNode;internal function getNodeGraphicsInfo ();internal function getId ();internal function getTextAnnotation ();internal function getGroup ();internal function getArtifactType ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\output\elements\Association.as
+package parsers.output.elements{import flash.xml.XMLNode;public class Association extends ElementParser{public function Association ();internal function startParse () : XMLNode;internal function getStartEnd ();internal function getId ();internal function getVertexes ();internal function getName ();internal function getDirection ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\output\elements\DataObject.as
+package parsers.output.elements{import flash.xml.XMLNode;public class DataObject extends Artifact{public function DataObject ();internal function getDocumentation ();internal function getDataObject ();internal function getLoopType ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\output\elements\Event.as
+package parsers.output.elements{import flash.xml.XMLNode;import parsers.output.ParseOutUtils;public class Event extends Activity{public function Event ();internal function getEvent ();internal function getTrigger ();internal function getResult ();internal function getAttached (node:XMLNode);internal function getTriggerResultMessage ();internal function getTriggerTimer ();internal function getResultError ();internal function getResultCompensation ();internal function getTriggerConditional ();internal function getTriggerResultSignal ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\output\elements\Gateway.as
+package parsers.output.elements{import flash.xml.XMLNode;public class Gateway extends Activity{public function Gateway ();internal function getRoute ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\output\elements\Lane.as
+package parsers.output.elements{import flash.xml.XMLNode;public class Lane extends Activity{public function Lane ();internal function startParse () : XMLNode;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\output\elements\MessageFlow.as
+package parsers.output.elements{import flash.xml.XMLNode;public class MessageFlow extends ElementParser{public function MessageFlow ();internal function startParse () : XMLNode;internal function getStartEnd ();internal function getId ();internal function getVertexes ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\output\elements\Pool.as
+package parsers.output.elements{import flash.xml.XMLNode;import parsers.output.ParserOut;public class Pool extends Activity{public function Pool ();internal function startParse () : XMLNode;public function getLanes ();internal function getProcess ();internal function getOrientation ();internal function getBoundary ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\utils\ClassLoader.as
+package utils{import flash.display.Loader;import flash.errors.IllegalOperationError;import flash.events.Event;import flash.events.EventDispatcher;import flash.events.IOErrorEvent;import flash.events.SecurityErrorEvent;import flash.net.URLRequest;import flash.system.ApplicationDomain;import flash.system.LoaderContext;import flash.utils.getDefinitionByName;public class ClassLoader extends EventDispatcher{public static var CLASS_LOADED : String;public static var LOAD_ERROR : String;private var loader : Loader;private var swfLib : String;private var request : URLRequest;private var loadedClass : Class;public function get libraryName ();public function ClassLoader ();public function load (lib:String) : void;public function getClass (className:String) : Class;private function completeHandler (e:Event) : void;private function ioErrorHandler (e:Event) : void;private function securityErrorHandler (e:Event) : void;public function getLoader () : Loader;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\utils\Key.as
+package utils{import flash.display.Stage;import flash.events.Event;import flash.events.EventDispatcher;import flash.events.KeyboardEvent;public class Key extends EventDispatcher{private static var initialized : Boolean;private static var keysDown : Object;private static var allowInstantiation : Boolean;private static var _instance : Key;public static var KEY_DOWN;public static var KEY_UP;public function ElementView ();public static function getInstance () : Key;public static function initialize (stage:Stage);public static function isDown (keyCode:uint) : Boolean;private static function keyPressed (event:KeyboardEvent) : void;private static function keyReleased (event:KeyboardEvent) : void;private static function clearKeys (event:Event) : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\utils\LibraryManager.as
+package utils{import flash.display.Loader;import flash.display.MovieClip;import flash.events.Event;import flash.events.*;import flash.utils.getDefinitionByName;public class LibraryManager extends EventDispatcher{public static var LIBRARIES_LOADED : String;public static var LOAD_ERROR : String;private static var allowInstantiation : Boolean;private static var _instance : LibraryManager;private var libraries : Array;private var urlsArray : Array;private var mcLoaded : MovieClip;public function LibraryManager ();public static function getInstance () : LibraryManager;public function loadClasses (urls:Array) : void;private function loadNext () : void;private function classLoaded (e:Event) : void;private function ioErrorHandler (e:Event) : void;public function getClass (clsName:String) : Class;public function getInstancedObject (clsName:String) : Object;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\utils\LineUtils.as
+package utils{import flash.display.MovieClip;public class LineUtils{public function LineUtils ();public static function dashTo (mc:MovieClip, startx:Number, starty:Number, endx:Number, endy:Number, len:Number, gap:Number) : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\utils\QuickRect.as
+package utils{import flash.display.*;public class QuickRect{public static function rect (bg:uint, w:Number, h:Number) : Sprite;public static function rectM (bg:uint, w:Number, h:Number) : MovieClip;public static function tri (bg:int, len:Number) : Sprite;public static function circ (color:uint, radius:Number);public static function dottedLine (color:uint, len:Number, lh:Number, space:Number);public static function countDuplicate (myarray:Array);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\utils\Tooltip.as
+package utils{import flash.display.MovieClip;import flash.events.*;import flash.filters.DropShadowFilter;import flash.geom.Point;import flash.text.*;import flash.utils.Timer;import view.View;import caurina.transitions.Tweener;public class Tooltip extends MovieClip{private var toolTip : MovieClip;private var text : TextField;private var FONT_COLOR : uint;private var FONT_SIZE : String;private var FONT_FACE : String;private static var allowInstantiation : Boolean;private static var _instance : Tooltip;internal var interval : Timer;private var isOver : Boolean;public function Tooltip ();public static function getInstance () : Tooltip;public function setToolTip (mc, text);private function toolTipOver (e:MouseEvent);private function toolTipOut (e:MouseEvent);private function followMouse (e:MouseEvent);private function showTooltip (e:TimerEvent);private function hideTooltip ();private function moveToolTipOut ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\validation\RuleManager.as
+package validation{import flash.events.Event;import flash.events.EventDispatcher;import validation.rules.AbstractRule;import utils.LibraryManager;public class RuleManager extends EventDispatcher{private var rules : Array;private static var allowInstantiation : Boolean;private static var _instance : RuleManager;private var dropRules : AbstractRule;private var dropInRules : AbstractRule;private var connectionRules : AbstractRule;internal var dropRulesReady : Boolean;internal var dropInRulesReady : Boolean;internal var connectionRulesReady : Boolean;public static var RULES_LOADED : String;public function RuleManager ();public static function getInstance () : RuleManager;public function checkDropRule (atts:Array) : Boolean;public function checkDropInRule (atts:Array) : Boolean;public function checkConnectRule (atts:Array);public function init ();public function getConnectionRules () : AbstractRule;public function getDropRules () : AbstractRule;public function getDropInRules () : AbstractRule;private function dropReady (e:Event);private function dropInReady (e:Event);private function connectionReady (e:Event);private function tryRulesReady ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\validation\rules\AbstractRule.as
+package validation.rules{import flash.events.EventDispatcher;public class AbstractRule extends EventDispatcher{public static var RULE_LODADED : String;public function init () : void;public function validate (els:Array) : Boolean;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\validation\rules\DropRule.as
+package validation.rules{import flash.net.*;import flash.events.*;import flash.xml.*;import view.elements.AbstractElement;import view.*;public class DropRule extends AbstractRule{private static var dropRules : XMLDocument;private static var rulesXML : String;internal var overElement : AbstractElement;public function DropRule ();public function validate (els:Array) : Boolean;public function init () : void;private function loadXML (evt:Event) : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\AbstractView.as
+package view{import flash.display.MovieClip;import flash.events.Event;import flash.xml.XMLNode;import view.elements.AbstractElement;public class AbstractView extends MovieClip{internal var elements : Array;internal var dispatcherElement : AbstractElement;public function get dispatcher ();public function AbstractView ();public function addElement (el:AbstractElement) : void;public function removeElement (el:AbstractElement) : void;internal function dispatchOut (e:Event);public function getElements ();public function getExportData () : Array;public function scale (ratio:Number);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\ElementAttributeController.as
+package view{import flash.display.Loader;import flash.events.*;import flash.net.*;import flash.xml.*;public class ElementAttributeController extends EventDispatcher{public static var LOADED : String;public static var LOAD_ERROR : String;private var loader : URLLoader;private var request : URLRequest;private var elements : Array;private static var allowInstantiation : Boolean;private static var _instance : ElementAttributeController;public function ElementAttributeController ();public static function getInstance () : ElementAttributeController;public function loadAttributes (url:String);private function loadXML (evt:Event);public function getElementAttributes (name:String);private function onIOError (evt:IOErrorEvent);private function onSecurityError (evt:SecurityErrorEvent);public function setEntity (entity);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\ElementView.as
+package view{import flash.display.MovieClip;import flash.events.*;import flash.geom.Point;import flash.xml.XMLNode;import view.elements.AbstractElement;import view.elements.Element;public class ElementView extends AbstractView{private static var allowInstantiation : Boolean;private static var _instance : ElementView;public var _stage;public function ElementView ();public static function getInstance () : ElementView;private function appendMe () : void;public function getExportData () : Array;public function clear ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\LaneView.as
+package view{import flash.display.MovieClip;import flash.events.*;import flash.geom.Point;import flash.xml.XMLNode;import view.elements.AbstractElement;import view.elements.Element;public class LaneView extends AbstractView{private static var allowInstantiation : Boolean;private static var _instance : LaneView;public var _stage;public function LaneView ();public static function getInstance () : LaneView;private function appendMe () : void;public function getExportData () : Array;public function clear ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\LineView.as
+package view{import flash.display.MorphShape;import flash.display.MovieClip;import flash.events.Event;import view.elements.AbstractElement;import view.elements.line.LineObject;public class LineView extends AbstractView{private static var allowInstantiation : Boolean;private static var _instance : LineView;private var _stage;public function LineView ();public function addLine (s:MovieClip, e:MovieClip);private function isValidLine (s:MovieClip, e:MovieClip) : Boolean;private function appendMe () : void;public static function getInstance () : LineView;public function getLinesOf (e:MovieClip) : Array;public function getLinesStartingIn (e:MovieClip) : Array;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\ModelDrawer.as
+package view{import flash.events.Event;import flash.xml.XMLNode;import view.elements.*;import view.elements.line.LineObject;public class ModelDrawer{internal var elements : Array;public function ModelDrawer ();public function drawModel (el:XMLNode);public function drawElements (el:XMLNode, parent);public function drawTransitions (el:XMLNode);private function drawElement (el:XMLNode, parent:Element);private function drawTransition (el:XMLNode);private function setLineVertexes (line:LineObject, vertexes:XMLNode);private function drawSubEvents ();public function getClassName (name);private function getElement (id);private function setValues (el:AbstractElement);private function parseAttribute (el:AbstractElement, att:XMLNode);private function setDisable (disabled:Array, value, el);private function getSubNode (n:XMLNode, name:String) : XMLNode;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\Drag.as
+package view.elements{import flash.display.*;import flash.events.*;import view.elements.AbstractElement;public class Drag extends AbstractElement{private var moving : Boolean;private var _startX : Number;private var _startY : Number;public static var DRAG_EVENT;public static var STOP_EVENT;public function get movedX ();public function get movedY ();public function set x (_x:Number) : Void;public function set y (_y:Number) : Void;public function Drag ();private function onMouseDown (e:Event) : void;private function onMouseUp (e:Event) : void;private function mouseMove (e:MouseEvent) : void;public function moveX (_x:Number) : void;public function moveY (_y:Number) : void;public function resetStart ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\Sizable.as
+package view.elements{import flash.display.*;import flash.events.*;import flash.geom.Point;import caurina.transitions.*;public class Sizable extends Drag{private var sizeNW : Sizer;private var sizeNE : Sizer;private var sizeSW : Sizer;private var sizeSE : Sizer;private var sizers : MovieClip;private var _width : Number;private var _height : Number;private var _xDifference : Number;private var _yDifference : Number;private var _xStart : Number;private var _yStart : Number;private var _sizing : Boolean;private var _sizableElement : MovieClip;public static var RESIZE_EVENT;public function Sizable ();public function setSizableElement (toSize:MovieClip);public function getElement () : MovieClip;private function startSizers ();private function initSizers ();private function onSizerDrag (e:Event);private function onSizerStop (e:Event);private function updateSizerPos (sizer);private function updateSizablePosition ();private function positionSizer (sizer:Sizer, x:Number, y:Number);private function changeSize (width:Number, height:Number);public function showSizers ();public function hideSizers ();public function setSize (w:Number, h:Number);private function enableSizers (e:Event);private function disableSizers (e:Event);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\SizableElement.as
+package view.elements{import flash.display.MovieClip;import flash.geom.Matrix;import flash.display.*;public class SizableElement extends MovieClip{internal var _width : Number;internal var _height : Number;public function setSize (width:Number, height:Number);public function makeDegree (mc:MovieClip);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\Sizer.as
+package view.elements{import flash.display.MovieClip;public class Sizer extends Drag{public function Sizer ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\activities\ActivityElement.as
+package view.elements.activities{import flash.display.MovieClip;import flash.text.*;import view.elements.SizableElement;import utils.LibraryManager;import view.elements.AbstractElement;public class ActivityElement extends SizableElement{internal var _icon : MovieClip;internal var _width : Number;internal var _height : Number;internal var radius : Number;private var subIcons : MovieClip;private var topIcons : MovieClip;private var iconSize : Number;private var loopIcon : MovieClip;private var typeIcon : MovieClip;private var txtName : TextField;private var FONT_COLOR : uint;private var FONT_SIZE : String;private var FONT_FACE : String;internal var lineWidth;internal var color;internal var lineColor;public function ActivityElement ();public function setSize (width:Number, height:Number);internal function redrawCube ();internal function positionIcons ();public function addSubIcon (icon:MovieClip);public function addTopIcon (icon:MovieClip);public function removeSubicon (icon:MovieClip);public function removeTopIcon (icon:MovieClip);public function loopTypeChange (loopType:String);public function typeChange (type:String);public function setName (name);private function alignText ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\activities\CSubFlowElement.as
+package view.elements.activities{import flash.display.MovieClip;import flash.events.ActivityEvent;import utils.LibraryManager;public class CSubFlowElement extends FlowElement{public var _hitArea : MovieClip;public var sizable;public function CSubFlowElement ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\activities\ESubFlowElement.as
+package view.elements.activities{import flash.display.MovieClip;import flash.events.ActivityEvent;import utils.LibraryManager;public class ESubFlowElement extends FlowElement{public function ESubFlowElement ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\activities\FlowElement.as
+package view.elements.activities{import flash.display.MovieClip;import utils.LibraryManager;import view.elements.AbstractElement;public class FlowElement extends ActivityElement{private var typeIcon : MovieClip;private var adhocIcon : MovieClip;internal var transactionIcon : MovieClip;internal var transaction : Boolean;public function FlowElement ();public function transactionChange (trans:String);public function typeChange (type:String);public function adhocChange (adhoc:String);internal function redrawCube ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\activities\TaskElement.as
+package view.elements.activities{import flash.display.MovieClip;import flash.events.ActivityEvent;import view.View;import utils.LibraryManager;public class TaskElement extends ActivityElement{public var _hitArea : MovieClip;public var sizable;private var typeIcon : MovieClip;public function TaskElement ();public function typeChange (type:String);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\artifacts\DataObject.as
+package view.elements.artifacts{import flash.display.MovieClip;import flash.text.*;import view.elements.SizableElement;import view.elements.AbstractElement;public class DataObject extends SizableElement{private var _icon : MovieClip;internal var _width : Number;internal var _height : Number;internal var radius : Number;public var sizable;private var txtName : TextField;private var FONT_COLOR : uint;private var FONT_SIZE : String;private var FONT_FACE : String;internal var lineWidth;internal var color;internal var lineColor;public function DataObject ();public function setSize (width:Number, height:Number);private function redrawCube ();private function drawSheet ();public function setName (name);private function alignText ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\artifacts\TextAnnotation.as
+package view.elements.artifacts{import flash.display.MovieClip;import flash.text.*;import view.elements.SizableElement;public class TextAnnotation extends SizableElement{private var _icon : MovieClip;internal var _width : Number;internal var _height : Number;internal var radius : Number;public var sizable;private var txtText : TextField;private var FONT_COLOR : uint;private var FONT_SIZE : String;private var FONT_FACE : String;public function TextAnnotation ();public function setSize (width:Number, height:Number);private function redrawCube ();public function setText (text);private function alignText ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\events\EndEventElement.as
+package view.elements.events{public class EndEventElement extends EventElement{public function EndEventElement ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\events\EventElement.as
+package view.elements.events{import flash.display.MovieClip;import flash.text.*;import view.elements.SizableElement;import view.elements.AbstractElement;import utils.LibraryManager;public class EventElement extends SizableElement{private var _icon : MovieClip;private var _width : Number;private var _height : Number;internal var icons : MovieClip;internal var typeIcon : MovieClip;internal var backColor : uint;internal var topLineAlpha : uint;internal var topColor : uint;private var txtName : TextField;private var FONT_COLOR : uint;private var FONT_SIZE : String;private var FONT_FACE : String;internal var lineWidth;internal var color;internal var lineColor;public var sizable;public function EventElement ();public function setSize (width:Number, height:Number);internal function redrawCube ();public function typeChange (type);private function positionIcon ();public function setName (name);private function alignText ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\events\MiddleEventElement.as
+package view.elements.events{public class MiddleEventElement extends EventElement{public function MiddleEventElement ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\events\StartEventElement.as
+package view.elements.events{public class StartEventElement extends EventElement{public function StartEventElement ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\gateways\GatewayElement.as
+package view.elements.gateways{import flash.display.MovieClip;import flash.text.*;import view.elements.SizableElement;import view.elements.AbstractElement;import utils.LibraryManager;public class GatewayElement extends SizableElement{private var _icon : MovieClip;private var _width : Number;private var _height : Number;public var sizable;internal var icons : MovieClip;internal var typeIcon : MovieClip;private var txtName : TextField;internal var lineWidth;internal var color;internal var lineColor;private var FONT_COLOR : uint;private var FONT_SIZE : String;private var FONT_FACE : String;public function GatewayElement ();public function setSize (width:Number, height:Number);private function redrawCube ();public function typeChange (type);private function positionIcon ();public function setName (name);private function alignText ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\lanes\GroupLane.as
+package view.elements.lanes{import flash.display.MovieClip;import flash.text.*;import view.elements.SizableElement;import utils.LineUtils;public class GroupLane extends AbstractLane{private var txtText : TextField;private var FONT_COLOR : uint;private var FONT_SIZE : String;private var FONT_FACE : String;public function GroupLane ();public function setName (name);internal function alignText ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\lanes\SwimLane.as
+package view.elements.lanes{public class SwimLane extends AbstractLane{public var sizable;public function SwimLane ();internal function redrawCube ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\line\LineSegment.as
+package view.elements.line{import flash.display.MovieClip;import flash.geom.Point;import utils.LineUtils;public class LineSegment extends MovieClip{private var lineStyle : String;private var lineWidth : Number;private var lineColor : uint;private var thinLine : MovieClip;private var backLine : MovieClip;private var startPoint : MovieClip;private var endPoint : MovieClip;private var type : String;public function LineSegment (s:MovieClip, e:MovieClip);public function updateSegment () : void;public function getStartElement () : MovieClip;public function getEndElement () : MovieClip;public function setStartElement (point:MovieClip) : void;public function setEndElement (point:MovieClip) : void;public function setType (t:String) : void;private function drawLineFromTo (mc:MovieClip, startx:Number, starty:Number, endx:Number, endy:Number) : void;internal function remove () : void;internal function getLength () : Number;internal function getSegmentPoint (length:Number) : Point;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\elements\line\LineVertex.as
+package view.elements.line{import flash.display.MovieClip;import flash.events.MouseEvent;import flash.events.Event;import flash.geom.Point;import flash.filters.GlowFilter;import flash.utils.getTimer;import view.elements.Drag;import caurina.transitions.*;public class LineVertex extends Drag{private var lastElement : MovieClip;private var nextElement : MovieClip;private var lastClick : Number;private var dblClickSpeed : Number;private var __allowMoving : Boolean;private var mouseListener : Object;public static var CLICK;public static var MOVED;public static var CLICKED;public static var DOUBLE_CLICKED;public static var OVER;public static var OUT;public static var DELETED;public function LineVertex ();private function onRelease (evt:Event);private function onVertexMove (evt:Event);private function onRollOver (evt:MouseEvent);private function onRollOut (evt:MouseEvent);public function remove ();public function setLastElement (el:MovieClip);public function setNextElement (el:MovieClip);public function getLastElement ();public function getNextElement ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\modal\AbstractModal.as
+package view.modal{import flash.display.MovieClip;import flash.events.Event;import flash.xml.XMLNode;public class AbstractModal extends MovieClip{public static var ON_CLOSE;internal var _returns : XMLNode;public function get returns ();public function set returns (re:XMLNode) : Void;public function AbstractModal ();public function close ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\modal\AdderFinder.as
+package view.modal{import com.bit101.components.Button;import com.bit101.components.grid.Cell;import com.bit101.components.grid.DataGrid;import com.bit101.components.grid.Row;import com.bit101.components.Input;import flash.display.MovieClip;import flash.events.Event;import flash.xml.*;import flash.net.*;import utils.LibraryManager;import view.View;public class AdderFinder extends MovieClip{private var txt : Input;private var finderGrid : DataGrid;private var addBtn : Button;private var findBtn : Button;private var _width;private var _height;private var addFindUrl;internal var adderModel : XMLNode;public static var ELEMENT_SELECTED;public function set multiSelect (b:Boolean) : Void;public function AdderFinder ();private function draw ();public function setSize (w, h);public function setAddFindUrl (url);public function loadUrl (url:String);private function loadXML (evt:Event);public function setModel (model:XMLNode);private function setValues (values:XMLNode);public function addFound (found:XMLNode);public function getSelected ();private function addElement (e:Event);private function findElement (e:Event);private function onRowSelected (e:Event);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\modal\CellRenderer.as
+package view.modal{import caurina.transitions.AuxFunctions;import com.bit101.components.*;import com.bit101.components.grid.Cell;import flash.display.MovieClip;import flash.events.*;import flash.text.TextField;import flash.text.TextFormat;import flash.xml.XMLNode;public class CellRenderer extends MovieClip{internal var component;internal var dataNode : XMLNode;internal var _name;private var _value;internal var check : CheckBox;internal var _width : Number;internal var type;internal var parentCell : Cell;private var FONT_COLOR : uint;private var FONT_SIZE : String;private var FONT_FACE : String;public function set value (val) : Void;public function get value ();public function CellRenderer (c:Cell);public function setWidth (w:Number);public function setData (n:XMLNode);public function checkBoxChange (e:Event);public function comboBoxChange (e:Event);public function inputChange (e:Event);public function modalChange (e:Event);public function getData () : XMLNode;private function onCellResize (e:Event);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\modal\ComboAdder.as
+package view.modal{import com.bit101.components.Button;import com.bit101.components.ComboBox;import com.bit101.components.ComboOption;import com.bit101.components.grid.*;import flash.events.Event;import flash.net.*;import flash.xml.*;import flash.display.MovieClip;import utils.LibraryManager;public class ComboAdder extends AbstractModal{internal var grid : DataGrid;internal var okBtn : Button;internal var cancelBtn : Button;internal var addBtn : Button;internal var removeBtn : Button;internal var upBtn : Button;internal var downBtn : Button;internal var evtCombo : ComboBox;internal var clsCombo : ComboBox;internal var objectModel : XMLNode;internal var evtUrl : String;internal var clsUrl : String;public function set returns (ret:XMLNode) : Void;public function ComboAdder ();public function setLevelModel (model:XMLNode);public function addObject (o:XMLNode);private function isAdded (o:XMLNode) : Boolean;private function addPressed (e:Event);private function removePressed (e:Event);private function upPressed (e:Event);private function downPressed (e:Event);private function okPressed (e:Event);private function cancelPressed (e:Event);private function processValues ();private function setValues (values:XMLNode);private function loadXMLs ();public function loadUrl (url:String, f);private function loadEvtXML (evt:Event);private function loadClsXML (evt:Event);private function loadOptions (cmb:ComboBox, options:XMLNode);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\modal\Condition.as
+package view.modal{import com.bit101.components.*;import flash.events.*;import flash.xml.XMLNode;public class Condition extends AbstractModal{internal var okBtn : Button;internal var cancelBtn : Button;internal var levelModel : XMLNode;internal var txtArea : TextArea;internal var infoArea : TextArea;public function set returns (ret:XMLNode) : Void;public function Condition ();private function okPressed (e:Event);private function cancelPressed (e:Event);private function processValues ();private function setValue (val:XMLNode);private function setInfo (val:XMLNode);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\modal\LevelAdder.as
+package view.modal{import com.bit101.components.Button;import com.bit101.components.grid.Cell;import com.bit101.components.grid.DataGrid;import com.bit101.components.grid.Row;import flash.display.MovieClip;import flash.events.Event;import flash.xml.XMLNode;public class LevelAdder extends AbstractModal{internal var grid : DataGrid;internal var okBtn : Button;internal var cancelBtn : Button;internal var addBtn : Button;internal var removeBtn : Button;internal var levelModel : XMLNode;public function set returns (ret:XMLNode) : Void;public function LevelAdder ();public function setLevelModel (model:XMLNode);private function addNewLevel ();private function addLevel (lev:XMLNode);private function okPressed (e:Event);private function cancelPressed (e:Event);private function addPressed (e:Event);private function removePressed (e:Event);private function setValues (values:XMLNode);private function processValues ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\modal\ObjectAdder.as
+package view.modal{import com.bit101.components.Button;import com.bit101.components.grid.*;import flash.events.Event;import flash.xml.XMLNode;import flash.display.MovieClip;import utils.LibraryManager;public class ObjectAdder extends AbstractModal{internal var grid : DataGrid;internal var okBtn : Button;internal var cancelBtn : Button;internal var addBtn : Button;internal var removeBtn : Button;internal var upBtn : Button;internal var downBtn : Button;internal var adder : AdderFinder;internal var objectModel : XMLNode;internal var objectUrl : String;public function set returns (ret:XMLNode) : Void;public function ObjectAdder ();public function setLevelModel (model:XMLNode);public function addObject (o:XMLNode);private function isAdded (o:XMLNode) : Boolean;private function addPressed (e:Event);private function removePressed (e:Event);private function upPressed (e:Event);private function downPressed (e:Event);private function okPressed (e:Event);private function cancelPressed (e:Event);private function processValues ();private function setValues (values:XMLNode);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\tools\DragNDrop.as
+package view.tools{import flash.display.MovieClip;import flash.events.*;import flash.geom.Point;import flash.xml.XMLNode;import view.*;import view.elements.Element;import view.elements.AbstractElement;import validation.*;public class DragNDrop extends Tool{private var clone : Tool;private var className : String;private var container : String;private var type : String;public function DragNDrop ();private function onMouseDown (e:MouseEvent) : void;private function onDrag (e:MouseEvent) : void;private function onDrop (e:MouseEvent) : void;public function setClassName (cls:String);public function getClassName () : String;public function setAttributes (node:XMLNode);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\tools\SquareDraw.as
+package view.tools{import flash.display.MovieClip;import flash.display.Stage;import flash.filters.GlowFilter;import flash.geom.Point;import flash.xml.XMLNode;import view.elements.Element;import view.View;import flash.events.*;import view.elements.AbstractElement;public class SquareDraw extends Tool{private var toolFill : uint;private var toolLine : uint;private var startPoint : Point;private var drawing : Boolean;private var selected : Boolean;private var drawMC : MovieClip;private var _stage : Stage;private var className : String;private var type : String;public function SquareDraw ();private function onClick (e:MouseEvent);public function unselectTool ();private function startDraw (e:MouseEvent);private function drawUpdate (e:MouseEvent);private function stopDraw (e:MouseEvent);public function setAttributes (node:XMLNode);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\tools\Tool.as
+package view.tools{import flash.display.MovieClip;import flash.events.MouseEvent;import flash.xml.XMLNode;public class Tool extends MovieClip{internal var icon : MovieClip;internal var top : MovieClip;public function Tool ();public function unselectTool ();public function draw ();public function addIcon (i:MovieClip);internal function getIcon ();internal function getTop ();public function setAttributes (node:XMLNode);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\tools\ToolBar.as
+package view.tools{import flash.display.MorphShape;import flash.display.MovieClip;import flash.display.GradientType;import flash.geom.Matrix;import flash.net.*;import flash.text.*;import flash.xml.*;import navigation.Accordion;import flash.events.*;import flash.utils.getDefinitionByName;import utils.Tooltip;import view.View;import view.window.Window;public class ToolBar extends Window{private var _accordion : Accordion;private var _width : Number;private var _height : Number;private var _margin : Number;private var _panels : Array;private var _handleWidth : Number;private var _top : MovieClip;internal var win : Window;public function ToolBar ();public function loadTools (url:String) : void;private function stopMousePropagation (e:MouseEvent);private function loadXML (evt:Event) : void;private function addPanel (panel:ToolSet) : void;public function setSize (w:Number, h:Number) : void;private function sizePanels () : void;private function dragBarDown (e:MouseEvent);private function dragBarUp (e:MouseEvent);private function onAccordionChange (e:Event);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\tools\ToolSet.as
+package view.tools{import com.bit101.components.ScrollPane;import flash.display.MovieClip;public class ToolSet extends MovieClip{private var _pannel : ScrollPane;private var _width : Number;private var _height : Number;private var _margin : Number;private var _name : String;public function ToolSet ();public function addTool (tool:Tool) : void;public function setSize (w:Number, h:Number) : void;private function sortElements () : void;public function setName (n:String);public function getName () : String;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\tree\AbstractTree.as
+package view.tree{import flash.display.MovieClip;public class AbstractTree extends MovieClip{internal var _width : Number;internal var _height : Number;public function AbstractTree ();public function getBranch () : AbstractTree;public function setBranch (t:AbstractTree);public function removeElement (t:AbstractTree);public function addElement (t:TreeElement);public function setSiblings (sib:Array);public function setWidth (w:Number);public function draw ();public function setSize (w:Number, h:Number);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\tree\AttributeCell.as
+package view.tree{import com.bit101.components.CheckBox;import com.bit101.components.ComboBox;import com.bit101.components.Input;import com.bit101.components.ModalCollection;import com.bit101.components.ModalInput;import flash.display.MovieClip;import flash.events.*;import flash.xml.XMLNode;public class AttributeCell extends MovieClip{private var _value : String;internal var component : MovieClip;public static var CHANGE;private var _calledFunction : String;private var _name : String;public var value : String;private var dataNode : XMLNode;private var check : CheckBox;private var enable : Array;private var disable : Array;public function AttributeCell ();public function setType (type:String);public function checkBoxChange (e:Event);public function comboBoxChange (e:Event);public function inputChange (e:Event);public function modalChange (e:Event);public function setCalledFunction (f:String);public function getCalledFunction () : String;public function setName (n:String);public function getName () : String;public function getValue () : String;public function setValue (v:String);public function setDataNode (n:XMLNode);private function enableDisableOnChange ();private function enableDisableOnCheck ();public function getEnabledFields ();public function getDisabledFields ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\tree\AttributeElement.as
+package view.tree{import flash.display.MovieClip;import flash.events.*;import flash.geom.Rectangle;import view.tree.*;public class AttributeElement extends TreeElement{private var _modal : AttributesModal;private var label : MovieClip;private var cell : AttributeCell;private var _cellAWidth : Number;private var _cellBWidth : Number;private var _cellSizer : MovieClip;private var hPosition : Number;private var moving : Boolean;public function AttributeElement ();private function drawCell ();public function draw ();private function getHPosition ();private function updateSize ();public function setCellAWidth (w:Number);public function setCellBWidth (w:Number);private function sizerDown (e:MouseEvent);private function sizerUp (e:MouseEvent);private function sizerMove (e:MouseEvent);private function getSizerPos () : Number;public function getCell () : AttributeCell;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\tree\AttributesModal.as
+package view.tree{import com.bit101.components.CheckBox;import com.bit101.components.ComboBox;import com.bit101.components.Input;import com.bit101.components.ModalInput;import com.bit101.components.ScrollPane;import com.bit101.components.Text;import flash.display.MovieClip;import flash.events.Event;import flash.geom.Matrix;import flash.text.TextField;import flash.text.TextFormat;import flash.text.TextFieldType;import flash.xml.XMLNode;import navigation.Accordion;import view.tree.*;import view.window.Window;import view.*;import flash.display.GradientType;import view.elements.AbstractElement;public class AttributesModal extends Window{private var accordion : Accordion;private var _width : Number;private var _height : Number;private var _margin : Number;private var _handleWidth : Number;private var _cellAWidth : Number;private var _cellBWidth : Number;private var actualElement : AbstractElement;public function AttributesModal ();public function loadAttributes (atts:XMLNode, panelNum:Number = 1);public function clear ();private function addAccordionPanel (name, panel);private function loadSubAttributes (atts:XMLNode, father:AbstractTree);private function cellChange (e:Event);private function onElementClicked (e:Event);private function setDisable (disabled:Array, value);private function getSubNode (n:XMLNode, name:String) : XMLNode;private function viewClick (e:Event);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\tree\Tree.as
+package view.tree{import com.bit101.components.ScrollPane;import flash.display.MovieClip;import flash.events.*;public class Tree extends AbstractTree{private var _panel : ScrollPane;private var childrenArray : Array;public function Tree ();public function addElement (el:TreeElement);public function removeElement (el:AbstractTree);private function sortChildren ();private function nodeOpen (e:Event);private function nodeClose (e:Event);private function nodeAdded (e:Event);private function onChange (e:Event);public function draw ();public function clear ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\tree\TreeElement.as
+package view.tree{import flash.accessibility.AccessibilityProperties;import flash.display.InteractiveObject;import flash.display.MovieClip;import flash.events.*;import caurina.transitions.Tweener;import flash.text.TextField;import flash.text.TextFormat;public class TreeElement extends AbstractTree{internal var thisNode : MovieClip;internal var opener : MovieClip;internal var children : MovieClip;internal var childrenArray : Array;internal var _mask : MovieClip;internal var _back : MovieClip;internal var _textContainer : MovieClip;internal var open : Boolean;internal var _margin : Number;internal var _labelWidth;internal var siblings : Array;internal var _label : String;internal var _text : TextField;private var FONT_COLOR : uint;private var FONT_SIZE : String;private var FONT_FACE : String;private var branch : AbstractTree;public function TreeElement ();private function onClick (e:MouseEvent);public function addElement (el:TreeElement);private function sortChildren ();private function joinChildren ();public function openNode ();public function closeNode ();private function nodeOpened ();private function nodeClosed ();private function subNodeOpen (e:Event);private function subNodeClose (e:Event);private function nodeAdded (e:Event);private function onChange (e:Event);public function getNodeHeight () : Number;private function setChildrenVisibility (to:Boolean) : void;public function draw ();internal function drawIcon ();public function setBranch (t:AbstractTree);public function getBranch () : AbstractTree;public function setWidth (w:Number);public function parentUpdate (parent);public function removeElement (el:AbstractTree);public function setLabel (lbl:String);public function setSiblings (sib:Array);public function getSiblings () : Array;public function remove ();public function sizeText ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\window\Window.as
+package view.window{import flash.display.MovieClip;import flash.events.*;import com.bit101.components.*;import flash.filters.BevelFilter;import flash.filters.DropShadowFilter;import flash.geom.ColorTransform;import flash.text.*;import utils.LibraryManager;import view.modal.AbstractModal;public class Window extends MovieClip{private var _width : Number;private var _height : Number;private var _margin : Number;private var _dragHeight : Number;private var dragBar : MovieClip;private var dragBarBack : MovieClip;private var content : MovieClip;private var back : MovieClip;private var masker : MovieClip;private var title : TextField;private var _returns;private var closeButton : MovieClip;private var backColor : uint;private var FONT_COLOR : uint;private var FONT_SIZE : String;private var FONT_FACE : String;public static var CLOSE_PRESSED;public function get returns ();public function Window ();private function winMouseEvents (e:MouseEvent);private function draw ();public function addContent (con:MovieClip);private function abstractModalClose (e:Event);private function drawMask ();public function setSize (w:Number, h:Number) : void;private function dragBarDown (e:MouseEvent);private function dragBarUp (e:MouseEvent);public function removeClose ();private function closeButtonClick (e:MouseEvent);private function closeButtonOver (e:MouseEvent);private function closeButtonPress (e:MouseEvent);private function closeButtonNormal (e:MouseEvent);public function setTitle (tit);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\window\WindowManager.as
+package view.window{import flash.display.Bitmap;import flash.display.BitmapData;import flash.display.MovieClip;import flash.events.Event;import flash.events.MouseEvent;import flash.filters.*;import view.*;import view.modal.AbstractModal;public class WindowManager extends MovieClip{private var windows : Array;private static var allowInstantiation : Boolean;private static var _instance : WindowManager;private var windowContainer : MovieClip;private var modalContainer : MovieClip;private var modalBlocker : MovieClip;public function WindowManager ();public static function getInstance () : WindowManager;private function appendMe () : void;internal function init ();internal function hidePreviousModals ();public function openWindow (atts:Array);public function block ();public function openModal (atts);public function closeWindow (e:Event);public function closeModal (e:Event);public function addWindow (win);}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\utils\FirebugTarget.as
+package classes{}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\ScrollContent.as
+package view{import flash.display.*;import flash.events.*;import flash.geom.*;import view.elements.AbstractElement;public class ScrollContent extends Sprite{private var _content : Sprite;private var _scrollBarV : Sprite;private var _scrollBarH : Sprite;public var scrollFactor : Number;public var useVertical : Boolean;public var useHorizontal : Boolean;private var isDragging : Boolean;private var lastPos : Point;private var firstPos : Point;private var firstPanelPos : Point;private var diff : Point;private var inertia : Point;private var min : Point;private var max : Point;private var touchX : Number;private var touchY : Number;private var panelWidth : Number;private var panelHeight : Number;private var _mask : Shape;public function ScrollContent ();public function getContent () : Sprite;public function updateSize ();private function updateMask ();private function setEvents () : void;/**
+* Listener for mouse movement		 * @param e information for mouse
+*/
+private function handleMouseMove (e:MouseEvent) : void;/**
+* Listener for mouse up action		 * @param e information for mouse
+*/
+private function handleMouseUp (e:MouseEvent) : void;/**
+* Listener for mouse down		 * @param e information for mouse
+*/
+private function handleMouseDown (e:MouseEvent) : void;/**
+* Listener for enter frame event		 * @param e event information
+*/
+private function handleEnterFrame (e:Event) : void;}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\view\ZoomScroll.as
+package view{import flash.display.*;import flash.events.*;import flash.geom.Rectangle;public class ZoomScroll extends Sprite{private var back : Sprite;private var handle : Sprite;private var _width : Number;private var _height : Number;public function ZoomScroll ();private function drawBack ();private function drawHandle ();private function onHandleDown (e:MouseEvent);private function onHandleUp (e:MouseEvent);private function handleMove (e:MouseEvent);private function onResize (e:Event);public function positionMe ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\input\elements\Association.as
+package parsers.input.elements{import flash.xml.*;import parsers.input.ParseInUtils;public class Association extends Line{public function Association ();internal function getDirection ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\input\elements\Line.as
+package parsers.input.elements{import flash.xml.XMLNode;public class Line extends ElementParser{public function Line ();internal function startParse () : XMLNode;internal function getId ();internal function getStartEnd ();internal function getVertexes ();internal function getName ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\input\elements\MessageFlow.as
+package parsers.input.elements{import flash.xml.XMLNode;public class MessageFlow extends Line{public function MessageFlow ();internal function getConditionType ();}}
+#file-cache C:\Development\Workspaces\workspace\Apia2.3\Dogma2.0\flash\BPMN\parsers\input\elements\Lane.as
+package parsers.input.elements{import flash.xml.XMLNode;public class Lane extends Activity{public function Lane ();}}

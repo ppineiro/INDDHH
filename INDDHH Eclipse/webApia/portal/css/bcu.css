@@ -1,0 +1,50 @@
+/* cotizaciones */ 
+#list_cotizaciones{
+	width: 175px;
+	font-family: verdana;
+	margin:  0 auto;
+	padding: 0px;
+	border: none;
+	overflow:hidden;
+}
+#list_cotizaciones p {
+	margin-bottom : 10px;
+	border: none;
+	color: #0c449b;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 10px;
+	margin: 0px;
+	padding: 10px;
+
+	overflow: hidden;
+	height: 10em;	
+}
+#list_cotizaciones h3 {
+	cursor:pointer;
+	display:block;
+	padding:4px;
+	margin:0px;
+	margin-top: 0;
+	text-decoration: none;
+	font-weight: bold !important;
+	font-size: 11px;
+	color: white;
+	background-image: url("/Recursos/Img/tit_acordeon.png");
+	background-repeat: no-repeat;
+	background-position: right top;
+	letter-spacing:-0.08em;
+}
+#list_cotizaciones h3:hover {
+	/*color: #666;*/
+	color: #1c267d;
+	background-position: right -22px;
+}
+#list_cotizaciones h3.selected {
+	color: white;
+		background-position: right -22px;
+
+}
+#list_cotizaciones .ui-icon{
+				display:none;
+}

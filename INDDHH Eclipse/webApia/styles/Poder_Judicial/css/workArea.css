@@ -1,0 +1,636 @@
+
+BODY {
+	BACKGROUND-COLOR:#ffffff;
+    OVERFLOW: hidden;
+    MARGIN:0px;
+	PADDING:2px;
+}
+/*------------------------------*/
+/*			CONTENT 			*/
+/*------------------------------*/
+#divContent{
+	/*BORDER:1px solid red;*/
+	HEIGHT:100px;
+	WIDTH:100%;
+    OVERFLOW: auto;
+    MARGIN: 0px;
+    PADDING-LEFT:4px;
+    PADDING-RIGHT:4px;
+    FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+    FONT-SIZE: 8pt;
+    SCROLLBAR-FACE-COLOR: #eeebeb; /*#DFDFDF;*/
+    SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+    SCROLLBAR-SHADOW-COLOR: #C0C0C0;
+    SCROLLBAR-ARROW-COLOR: #808080;
+    SCROLLBAR-DARKSHADOW-COLOR: #808080;
+    SCROLLBAR-BASE-COLOR: #808080;
+    scrollbar-3d-light-color: #808080;
+    align:center;
+}
+
+/*------------------------------*/
+/*			Page Title 			*/
+/*------------------------------*/
+.pageTop{
+	margin-bottom: 5px;
+    //margin: 0px; 
+    color: #ffffff;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+	background-image: url("../images/h3.jpg");
+	padding: 5px; 
+	/*background: url("../images/h3.jpg");
+    background-repeat: repeat-x;
+    border: medium none;
+    color: #2E5B9C;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    padding-left: 3%;
+    padding-top: 10px;
+    width: 100%;
+    text-shadow: 1px 1px #FFFFFF;
+    font-weight: bold;*/
+}
+.pageTop TD{
+	PADDING-LEFT:4px;
+	PADDING-RIGHT:4px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:0px;
+}
+.pageTop .col1{
+	background:transparent;
+}
+.pageTop .col2{
+	background:transparent;
+	text-align:right;
+}
+/*------------------------------*/
+/*		CONTENT AREA			*/
+/*------------------------------*/
+
+
+
+/*------------------------------*/
+/*			Page Bar 			*/
+/*------------------------------*/
+.pageBottom{
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	FONT-SIZE:11px;
+	background-image: url("../images/h3.jpg");
+    WIDTH:100%;
+	white-space:nowrap;
+	padding: 5px; 
+	/*background: url("../images/h3.jpg") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    color: #2E5B9C;
+    font-size: 100%;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    padding-left: 3%;
+    padding-top: 10px;
+    text-shadow: 1px 1px #FFFFFF;
+    width: 100%;
+	*/
+	
+	}
+.pageBottom TD{
+	PADDING-LEFT:4px;
+	PADDING-RIGHT:0px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:0px;
+}
+.pageBottom .col1{}
+.pageBottom .col2{
+	text-align:right;
+}
+
+/*.pageBottom BUTTON{
+	background-color:#FFFFFF;
+	BORDER: 1px solid #aeaeae;
+	color:#222222;
+	PADDING-LEFT:2px;
+	PADDING-RIGHT:2px;
+	PADDING-TOP:1px;
+	PADDING-BOTTOM:1px;
+}*/
+
+.pageBottom BUTTON{
+ 	margin-left: 10px; 
+ 	border: none;  
+    text-transform: uppercase;
+    background: url("../images/boton.gif") repeat-x scroll 0 0 #999999;
+    border-radius: 8px;
+    color: #000000;
+    font-size: 70%;
+    height: 20px;
+    padding: 2px 4px 4px;
+    text-align: center;
+    vertical-align: middle;
+}
+.pageBottom BUTTON:hover{
+	color: #ffffff;
+	background-image: none;
+	background-color: #9B1716; 
+	text-shadow: 1px 1px #000000;
+}
+
+
+
+
+
+
+/*------------------------------*/
+/*			Page Sub Title 		*/
+/*------------------------------*/
+.subTit{
+	border-bottom: 1px solid #868686;
+    color: #222222;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    margin: 10px 0 6px;
+    text-align: left;
+}
+
+.frmSubTit{
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	TEXT-ALIGN:left;
+	MARGIN-TOP:10px;
+	MARGIN-BOTTOM:6px;
+	MARGIN-LEFT:0px;
+	MARGIN-RIGHT:0px;
+	PADDING-LEFT:3px;
+	PADDING-RIGHT:0px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:0px;		
+	width : 99%;
+	border-bottom: 1px solid #000000;
+    color: #222222;
+}
+
+.frmSubTit TD {
+	margin : 0px;
+	padding : 0px;
+	padding-LEFT : 3px;	
+	border : 0px;
+}
+
+.frmSubTit TD IMG{
+	margin : 0px;
+	padding : 0px;
+	border : 0px;
+}
+
+/*------------------------------*/
+/*		FORM LAYOUT GRID 		*/
+/*------------------------------*/
+.tblFormLayout{
+	TABLE-LAYOUT:fixed;
+	BORDER-COLLAPSE:collapse;
+	FONT-FAMILY:Verdana,Arial,Helvetica,sans-serif;
+	FONT-SIZE:8pt;
+	MARGIN:4px;
+	PADDING : 4px;
+	width:97%;
+}
+
+.tblFormLayout .col1{
+	WIDTH:20%;
+	TEXT-ALIGN:right;
+	COLOR:#222222;
+}
+.tblFormLayout .col2{
+	WIDTH:30%;
+}
+.tblFormLayout .col3{
+	WIDTH:20%;
+	TEXT-ALIGN:right;
+	COLOR:#222222;
+}
+.tblFormLayout .col4{
+	WIDTH:30%;
+}
+.tblFormLayout TR{
+}
+.tblFormLayout TD{
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+	PADDING:2px;
+}
+.tblFormLayout .readOnly{
+    BORDER-BOTTOM:1px solid #EFEFEF;
+   
+    FONT-SIZE: 8pt;
+    COLOR: black;
+    CURSOR: default;
+   
+}
+
+.tblFormLayout ul li{
+	margin-left:30pt;
+}
+.tblFormLayout ul li{
+	LIST-STYLE-TYPE: disc;
+}
+
+.tblDataGrid{
+	BORDER-BOTTOM :	1px solid gray;
+	BORDER-COLLAPSE:collapse;
+	TABLE-LAYOUT:fixed;
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	FONT-SIZE:11px;
+}
+
+
+.tblDataGrid THEAD TD{
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	FONT-SIZE:11px;
+	TEXT-ALIGN:center;
+	BACKGROUND-COLOR:#DFDFDF;
+	border:1px outset;
+}
+.tblDataGrid THEAD TD A{
+	COLOR:black;
+}
+.tblDataGrid TBODY TR{
+	BACKGROUND-COLOR:#ffffff;
+}
+
+.tblDataGrid TBODY TD{
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	FONT-SIZE:11px;
+	PADDING-LEFT:2px;
+	PADDING-RIGHT:2px;
+	PADDING-TOP:2px;
+	PADDING-BOTTOM:5px;
+	BORDER-BOTTOM:1px solid #CACACA;
+    BORDER-LEFT:1px solid #CACACA;
+	WORD-WRAP:break-word;
+}
+
+.tblDataGrid .trOdd{
+    BACKGROUND-COLOR:#F0F7FD;
+}
+
+.tblDataGrid .trSelected{
+    BACKGROUND-COLOR: skyblue;
+}
+
+.tblDataGrid .tdRed{
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+    COLOR:red;
+}
+
+.tblDataGrid .tdProLat{
+	FONT-WEIGHT:bold;
+	COLOR:#ff0000;
+}
+
+.tblDataGrid .tdProInAle{
+	COLOR:#880000;
+}
+
+.tblDataGrid .tdDisable{
+	COLOR:#aaaaaa;
+}
+
+.oHeadExtended{
+	background-color = #DADADA;
+	border-left = 1px solid gray;
+	border-right = 1px solid gray;
+	border-top = 1px solid gray;
+}
+
+.oHeadExtendedExpr{
+}
+
+.navBar{
+	TABLE-LAYOUT:fixed;
+	background-color: #EFEFEF;
+	width:100%;
+	
+	margin:0px;
+	position:relative;
+	border: medium none;
+}
+.navBar .col1{
+	width:40%;
+    FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+    FONT-SIZE: 8pt;
+}
+.navBar .col2{
+    FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+    FONT-SIZE: 8pt;
+	width:60%;
+	text-align:right;
+}
+
+.navBar .colM{
+    FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+    FONT-SIZE: 8pt;
+	width:30%;
+	text-align:right;
+}
+
+.navBar .colM2{
+    FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+    FONT-SIZE: 8pt;
+	text-align:right;
+}
+
+/*.navBar BUTTON{
+	background-color:#FFFFFF;
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+    BORDER: 1px solid #aeaeae;
+    FONT-SIZE: 8pt;
+    PADDING:1px;
+    MARGIN:1px;
+    color:#222222;
+}*/
+
+.navBar BUTTON{
+ 	margin-left: 10px; 
+ 	border: none;  
+    text-transform: uppercase;
+    background: url("../images/boton.gif") repeat-x scroll 0 0 #999999;
+    border-radius: 8px;
+    color: #000000;
+    font-size: 70%;
+    height: 20px;
+    padding: 2px 4px 4px;
+    text-align: center;
+    vertical-align: middle;
+}
+.navBar BUTTON:hover{
+	color: #ffffff;
+	background-image: none;
+	background-color: #9B1716; 
+	text-shadow: 1px 1px #000000;
+}
+
+/*------------------------------*/
+/*		FORM ELEMENTS	 		*/
+/*------------------------------*/
+INPUT{
+	font-size:11px;
+   	font-family:Verdana,Arial,Helvetica,sans-serif;
+}
+
+INPUT.txtReadOnly{
+	BACKGROUND-COLOR: gainsboro;
+    BORDER: 1px inset;
+    COLOR: dimgray;
+    CURSOR: default;
+    FONT-SIZE: 8pt;
+}
+
+TEXTAREA{
+	font-size:11px;
+   	font-family:Verdana,Arial,Helvetica,sans-serif;
+}
+
+TEXTAREA.txtReadOnly{
+	BACKGROUND-COLOR: gainsboro;
+    BORDER: 1px inset;
+    COLOR: dimgray;
+    CURSOR: default;
+    FONT-SIZE: 8pt;
+}
+
+PRE{
+	font-size:11px;
+   	font-family:Verdana,Arial,Helvetica,sans-serif;
+}
+
+SELECT{
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	FONT-SIZE: 8pt;
+}
+
+SELECT.txtReadOnly{
+	BACKGROUND-COLOR: gainsboro;
+    BORDER: 1px inset;
+    COLOR: dimgray;
+    CURSOR: default;
+    FONT-SIZE: 8pt;
+}
+
+LABEL{
+	FONT-FAMILY:Verdana,Arial,Helvetica,sans-serif;
+    FONT-SIZE: 8pt;
+}
+LABEL.required{
+	FONT-STYLE:italic;
+}
+
+/*BUTTON{
+	background-color:#FFFFFF;
+	BORDER: 1px solid #aeaeae;
+	color:#222222;
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+    FONT-SIZE: 8pt;
+    MARGIN:2px;
+}*/
+
+BUTTON{
+ 	margin-left: 10px; 
+ 	border: none;  
+    text-transform: uppercase;
+    background: url("../images/boton.gif") repeat-x scroll 0 0 #999999;
+    border-radius: 8px;
+    color: #000000;
+    font-size: 70%;
+    height: 20px;
+    padding: 2px 4px 4px;
+    text-align: center;
+    vertical-align: middle;
+}
+BUTTON:hover{
+	color: #ffffff;
+	background-image: none;
+	background-color: #9B1716; 
+	text-shadow: 1px 1px #000000;
+}
+
+FORM{
+}
+
+.hiddenBottom BUTTON{
+	PADDING-LEFT:0px;
+	PADDING-RIGHT:0px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:0px;
+}
+
+/* OTHER */
+.salame {
+	BORDER-LEFT :				1px solid #777777;
+	BORDER-RIGHT :				1px solid #777777;
+	BORDER-BOTTOM :				1px solid #777777;
+	BACKGROUND-COLOR:			#CFCFCF;
+	OVERFLOW:					auto;
+	SCROLLBAR-FACE-COLOR: #DFDFDF;SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;SCROLLBAR-SHADOW-COLOR: #C0C0C0;SCROLLBAR-ARROW-COLOR: #808080;SCROLLBAR-DARKSHADOW-COLOR: #808080;SCROLLBAR-BASE-COLOR: #808080;scrollbar-3d-light-color: #808080;
+}
+
+.liDep {
+	list-style-type : square;
+	
+}
+
+A:visited { color: black;}
+
+.tblComment {
+    FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+    FONT-SIZE: 8pt;
+    WIDTH : 100%;
+}
+
+.tblComment PRE {
+    FONT-FAMILY:Verdana,Arial,Helvetica,sans-serif;
+    FONT-SIZE: 8pt;
+}
+
+.tblComment #trHead{
+	BACKGROUND-COLOR : #CFCFCF;
+}
+
+
+.tblFilter {
+	width:100%;
+	border-bottom: 1px solid #868686;
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+    FONT-SIZE: 7pt;
+}
+
+#listFilterArea{
+	background-color:#EFEFEF;
+	border-top:1px solid #AEAEAE;
+	border-left:1px solid #AEAEAE;
+	border-right:1px solid #969696;
+	border-bottom:1px solid #969696;
+}
+
+#printDiv{
+	BACKGROUND-COLOR:#EFEFEF;
+	POSITION:absolute;
+	TOP:0px;						
+	LEFT:0px;
+	WIDTH:102%;
+    HEIGHT:100%;
+
+	TEXT-ALIGN:center;
+
+    FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+    FONT-SIZE: 8pt;
+}
+
+.txtRequired {
+	color: "navy";
+}
+
+/*------------------------------*/
+/*		TEST LAYOUT GRID 		*/
+/*------------------------------*/
+.testToolbarLayout{
+	FONT-FAMILY:Verdana,Arial,Helvetica,sans-serif;
+	FONT-SIZE: 12px;
+}
+
+INPUT[readonly]{
+	BACKGROUND-COLOR: gainsboro;
+    BORDER: 1px inset;
+    COLOR: dimgray;
+    CURSOR: default;
+    FONT-SIZE: 8pt;
+}
+
+INPUT[disabled]{
+	color:#666666;
+
+}
+INPUT[disabled]{
+	color:#666666;
+	
+} 
+
+INPUT[disabled]{
+	-moz-opacity:0.3;
+	opacity:0.6;
+} 
+
+.pageTop BUTTON[disabled]{
+
+ background: url("../images/boton.gif") repeat-x scroll 0 0 #999999;
+	color:#666666;
+
+
+}
+
+.pageBottom BUTTON[disabled]{
+	color:#666666;
+	 background: url("../images/boton.gif") repeat-x scroll 0 0 #999999;
+}
+
+
+.navBar BUTTON[disabled]{
+	color:#666666;
+	 background: url("../images/boton.gif") repeat-x scroll 0 0 #999999;
+}
+
+
+
+BUTTON[disabled]{
+	color:#666666;
+	 background: url("../images/boton.gif") repeat-x scroll 0 0 #999999;
+}
+
+
+
+/*------------------------------*/
+/*		SCHEDULER TASK   		*/
+/*------------------------------*/
+.sched_day_available{/* Text color for available day IN HEADER */
+	FONT-FAMILY:Verdana,Arial,Helvetica,sans-serif;
+	COLOR: #00000; 
+}
+.sched_day_unavailable{/* Text color for unavailable day IN HEADER*/
+	FONT-FAMILY:Verdana,Arial,Helvetica,sans-serif;
+	color:#A4A4A4; 
+}
+.sched_actualday{/* Text props for actual day */
+	font-weight:bold; 
+}
+.scheduler_cell_available{/* Background color for available cells */
+	background-color:#EFEFEF; /*#d1e2f3*/
+}
+.scheduler_cell_unavailable{/* Background color for unavailable cells */
+	background-color:#D8D8D8; /*#b9d3ee*/
+}
+.sched_disp_available{/* Text color for available disponibility */
+	font-weight:bold; 
+	COLOR: #00000;
+}
+.sched_disp_unavailable{/* Text color for unavailable disponibility */
+	font-weight:bold;
+	color:#A4A4A4;
+}
+.sched_background {/* Background color for scheduler */
+	BACKGROUND-COLOR: transparent;
+}
+.sched_header_background {/* Background color for scheduler header */
+	BACKGROUND-COLOR: #FFFFFF;
+}
+.sched_hours_background {/* Background color for scheduler hour column */
+	BACKGROUND-COLOR: #FFFFFF;
+}
+td .sched_name{/* Scheduler name */
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT:bold; 
+    COLOR: #00000;
+    ALIGN: LEFT;
+}

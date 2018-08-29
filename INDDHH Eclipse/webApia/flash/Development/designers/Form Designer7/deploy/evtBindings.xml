@@ -1,0 +1,36 @@
+
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<ROWSET>
+<!--
+<ROW>
+  <COL>param_id</COL>
+  <COL>param_name</COL>
+  <COL>param_type</COL>
+  <COL>In</COL>
+</ROW>
+-->
+<ROW>
+  <COL>1</COL>
+  <COL>DatawareConnection</COL>
+  <COL>S</COL>
+  <COL>Out</COL>
+</ROW>
+<ROW>
+  <COL>2</COL>
+  <COL>ApiaConnection</COL>
+  <COL>S</COL>
+  <COL>In/Out</COL>
+</ROW>
+<ROW>
+  <COL>3</COL>
+  <COL>ForceReload</COL>
+  <COL>S</COL>
+  <COL>Out</COL>
+</ROW>
+<ROW>
+  <COL>4</COL>
+  <COL>ReloadLabels</COL>
+  <COL>S</COL>
+  <COL>In/Out</COL>
+</ROW>
+</ROWSET>

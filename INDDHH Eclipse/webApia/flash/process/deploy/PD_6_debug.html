@@ -1,0 +1,103 @@
+
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><title>ProcessDesigner_6</title></head><body bgcolor="#FFFFFF" style="margin:4px;overflow:hidden"><button onclick="getFlashOutput()" id=button1 name=button1>Output</button><button onclick="getFlashInput()" id=button2 name=button2>Input</button><button onclick="reloadFlash()" id=button3 name=button3>Reload</button><button onclick="setEntity()" id=button4 name=button4>Entity</button><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" 
+	WIDTH="100%" 
+	HEIGHT="100%" 
+	style="/*border:1px solid blue*/"
+	id="_PD6" 
+	align="middle"><param name="allowScriptAccess" value="sameDomain" /><param name="movie" value="ProcessDesigner6.swf" /><param name="menu" value="false" /><param name="quality" value="high" /><param name="bgcolor" value="#EFEFEF" /></object></body></html><script language="javascript">
+var viewSubProcess = false;
+
+
+function getFlashOutput(){
+	document.all._PD6.SetVariable("call", "getOutputXML");
+}
+function getFlashInput(){
+	document.all._PD6.SetVariable("call", "getInputXML");
+}
+function reloadFlash(){
+	document.all._PD6.SetVariable("call", "reload");
+}
+function setAuto(){
+	document.all._PD6.SetVariable("call", "setAuto");
+}
+function setManual(){
+	document.all._PD6.SetVariable("call", "setManual");
+}
+function setEntity(){
+	document.all._PD6.SetVariable("call", "setEntity,param=value");
+	//("call",flash_method,string_value)
+}
+//////////////////////////////////////////////////
+//	FSCommand
+/////////////////////////////////////////////////
+// Handles all the FSCommand messages in a Flash movie
+function shell_DoFSCommand(command, args) {
+	if (command == "outputXML") {
+		if(viewSubProcess){
+			alert("SUBPROCESS");
+			showXML(args,"1");
+		}else{
+			showXML(args,"1");
+		}
+	}
+	if(command == "inputXML") {
+		//alert(args)
+		showXML(args,"2")
+	}
+	
+	if (command == "isReady") {
+		flashLoaded = true;
+	}
+	if (command == "reload") {
+		//alert("reloaded: " + args);
+	}
+	if (command == "auto") {
+		//alert("auto: " + args);
+	}
+	if (command == "manual") {
+		//alert("manual: " + args);
+	}
+	
+	//VIEW SUBPROCESS
+	if (command == "viewProcess") {
+		//alert("viewProcess: " + args);
+		if(confirm("Guardar cambios?")){
+			viewSubProcess = true;
+			document.all.shell.SetVariable("call", "getOutputXML");
+		}
+	}
+	
+}
+
+
+
+//////////////////////////////////
+//	DEBUG
+//////////////////////////////
+function showHTML(html,winName){
+var w = window.open("",winName,"height=480,width=680,resizable=yes,scrollbars=yes");
+	w.document.open();
+    w.document.write(html);
+    w.document.close();
+    w.focus();
+}		
+function showXML(doc,winName){
+	var oXML = new ActiveXObject("Microsoft.XMLDOM");
+	oXML.loadXML(doc);
+    var tempdoc = new ActiveXObject("Microsoft.XMLDOM");
+    tempdoc.async = false;
+    if (!tempdoc.load("../xml/mimedefault.xsl")){
+		//showHTML(reportParseError(tempdoc.parseError));
+		alert("ERROR loading XSL")
+	}else{
+   	 	var html = oXML.transformNode(tempdoc);
+    	showHTML(html,winName);
+    }
+}
+</script><SCRIPT LANGUAGE="VBScript">
+'Catch FS Commands in IE, and pass them to the corresponding JavaScript function.
+Sub shell_FSCommand(ByVal command, ByVal args)
+    call shell_DoFSCommand(command, args)
+end sub
+</SCRIPT>

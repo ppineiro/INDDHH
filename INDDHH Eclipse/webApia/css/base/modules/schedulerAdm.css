@@ -1,0 +1,170 @@
+#schedTableContainer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 712px;
+	height: 425px;
+}
+
+table.tskSchedTable {
+	border-collapse: collapse;
+}
+	
+.schedNavButton {
+    background-color: #FFFFFF;
+    border: 1px solid #777777;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 3px 7px;
+    
+    -webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	
+	margin: 0px 3px;
+}
+
+#menuMas {
+	background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    padding: 10px;
+    width: 270px;
+    
+    -moz-box-shadow: 1px 1px 2px #909090;
+	-webkit-box-shadow: 1px 1px 2px #909090;
+	box-shadow: 1px 1px 2px #909090;
+}
+
+#menuMas .title {
+    border-bottom: 1px solid;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#menuMas .check {
+    margin-right: 10px;
+    margin-top: 3px;
+    vertical-align: middle;
+}
+
+#toolsDiv {
+
+}
+
+#schedulerDiv {
+	margin: 10px;
+}
+
+#schedulerDiv table > thead {
+	display: block;
+	margin-bottom: 5px;
+	float: left;
+	width: 100%;
+}
+
+#schedulerDiv table > tbody {
+	display: block;
+	height: 400px;
+	overflow: auto;
+	float: left;
+	width: 100%;
+}
+	
+#schedulerDiv table > tbody tr{
+	height: 20px;	
+}
+
+#schedulerDiv table tr th {
+	width: 90px;
+	text-align: center;
+	font-weight: normal;
+}
+
+#schedulerDiv table tr td {
+	border: 1px solid #EEEEEE;
+	text-align: center;
+	cursor: pointer;
+	
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	
+	width: 90px;
+}
+
+#modalDiv {
+	position: absolute;
+	width: 320px;
+	
+	background-color: #FFFFFF;
+   	border: 1px solid #DDDDDD;
+   	
+   	padding: 10px;
+   	
+   	-moz-box-shadow: 1px 1px 2px #909090;
+	-webkit-box-shadow: 1px 1px 2px #909090;
+	box-shadow: 1px 1px 2px #909090;
+}
+
+#cantModal {
+	margin-top: 6px;
+}
+
+#modalDiv .title {
+    border-bottom: 1px solid;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#modalDiv .check {
+    margin-right: 10px;
+}
+
+.td_selected {
+	background-color: #5980C6;
+	color: #FFFFFF;	
+}
+
+.td_disabled {
+	background-color: #DDDDDD;
+	cursor: default !important;
+}
+
+.td_blocked {
+	background-color: #FDF3C5;
+	cursor: default !important;
+}
+
+.right-float {
+	float: right;
+	height: 27px;
+}
+
+#acceptMas {
+	width: 90px;
+	display: inline-block;
+}
+
+#cancelMas {
+	width: 90px;
+	display: inline-block;
+	margin-left: 5px;
+}
+
+#acceptModal {
+	width: 95px;
+	display: inline-block;
+}
+
+#cancelModal {
+	width: 95px;
+	display: inline-block;
+	margin-left: 5px;
+}
+	

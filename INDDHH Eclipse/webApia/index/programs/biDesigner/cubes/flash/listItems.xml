@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<columns>
+<column name="columna 1" nameColumn="col.1" uniqueMembers="false" />
+<column name="columna 2" nameColumn="col.2" uniqueMembers="false" />
+<column name="columna 3" nameColumn="col.3" uniqueMembers="true" />
+<column name="columna 4" nameColumn="col.4" uniqueMembers="false" />
+<column name="columna 5" nameColumn="col.5" uniqueMembers="true" />
+<column name="columna 6" nameColumn="col.6" uniqueMembers="false" />
+<column name="columna 7" nameColumn="col.7" uniqueMembers="true" />
+<column name="columna 8" nameColumn="col.8" uniqueMembers="true" />
+<column name="columna 9" nameColumn="col.9" uniqueMembers="false" />
+<column name="columna 10" nameColumn="col.10" uniqueMembers="false" />
+</columns>

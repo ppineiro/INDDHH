@@ -1,0 +1,12 @@
+html, body { 	 }
+
+body { margin: 0px; padding: 0px; font-family: Tahoma, Verdana, Arial; font-size: 75%; }
+
+div.divContent {width: 100%}
+div.subTit {color: red; font-weight: bold; padding-bottom: 10px; padding-left: 10px; padding-top: 10px; text-align: left;}
+div.stack {clear:both;}
+div.section{clear:both;}
+div.section div.dataTit{clear:right; font-weight: bold; padding-top: 5px;}
+div.section div.data{margin-right: 10px; width: 500px; margin-bottom: 5px;}
+
+ 

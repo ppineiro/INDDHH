@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><title>Untitled</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="language" content="en" /><meta name="description" content="" /><meta name="keywords" content="" /><link rel="stylesheet" href="html/js/jxlib/assets/themes/delicious/jxtheme.css" type="text/css" media="screen" charset="utf-8"><!-- <script language="javascript" src="js/mootools.js" charset="utf-8"></script><script language="javascript" src="js/mootools-more.js" charset="utf-8"></script> --><script language="javascript" src="html/js/jxlib/jxlib.uncompressed.js" charset="utf-8"></script><script src="AIRDesigner.swf" type="application/x-shockwave-flash"></script><script> 
+	function showSWF(urlString){ 
+		document.body.appendChild(createSWFObject(urlString,650,650)); 
+	} 
+	function createSWFObject(urlString, width, height){ 
+		var SWFObject = document.createElement("object"); 
+		SWFObject.setAttribute("type","application/x-shockwave-flash"); 
+		SWFObject.setAttribute("width","100%"); 
+		SWFObject.setAttribute("height","100%");
+		/*SWFObject.setAttribute("width",width); 
+		SWFObject.setAttribute("height",height);*/
+		var movieParam = document.createElement("param"); 
+		movieParam.setAttribute("name","movie"); 
+		movieParam.setAttribute("value",urlString); 
+		SWFObject.appendChild(movieParam); 
+		return SWFObject; 
+	}
+	function bodyShowSWF(urlString){ 
+		document.body.appendChild(createSWFObject(urlString,650,650)); 
+	}
+	</script><script language="javascript">
+	
+	window.addEvent('load', function() {
+	
+		//bodyShowSWF("AIRDesigner.swf");
+		var mainObject = new window.runtime.Main();
+		alert(" mainObject "+mainObject);
+		window.nativeWindow.stage.addChildAt(mainObject,0); 
+		/*document.body.appendChild(mainObject);
+		
+		//mainObject.onAddedToStage(null);
+		
+		//showSWF("AIRDesigner.swf")
+	
+		//var swfUrl="../../../Monitor/bin/Monitor.swf";
+		//var swfUrl="html/test.swf";
+		/*var tabBox = new Jx.TabBox({parent: 'tabArea'});
+		
+		var panel = new Jx.Panel({
+			label: 'Panel in a Tab',
+			collapse: false,
+			//content: 'ESTE ESE EL CONTENIDO DEL PANEL'
+			content: '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" WIDTH="500px" HEIGHT="500px" id="shell" ALIGN="center" VALIGN="middle"><param name="allowScriptAccess" value="sameDomain" /><param name="movie" value="'+swfUrl+'" /><param name="quality" value="high" /><param name="menu" value="false"><param name="bgcolor" value="#EFEFEF" /><param name="WMODE" value="transparent" /><embed wmode="transparent" menu="false" allowScriptAccess="sameDomain" src="'+swfUrl+'" quality="high" bgcolor="#efefef" width="100%" height="450" swLiveConnect="true" id="shell" name="shell" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /></object>'
+		});
+		
+		//panel.innerHTML='<embed src="AIRDesigner.swf" quality="high" bgcolor="#ffffff" width="100%" height="100%" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />';
+		
+		tabBox.add(
+			new Jx.Button.Tab({
+				label: 'Embedded Panel',
+				content: panel
+			}),
+			new Jx.Button.Tab({
+				label: 'Embedded Panel',
+				content: panel
+			})
+		);*/
+		
+		//document.body.innerHTML='<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" WIDTH="500px" HEIGHT="500px" id="shell" ALIGN="center" VALIGN="middle"><param name="allowScriptAccess" value="sameDomain" /><param name="movie" value="'+swfUrl+'" /><param name="quality" value="high" /><param name="menu" value="false"><param name="bgcolor" value="#EFEFEF" /><param name="WMODE" value="transparent" /><embed wmode="transparent" menu="false" allowScriptAccess="sameDomain" src="'+swfUrl+'" quality="high" bgcolor="#efefef" width="100%" height="450" swLiveConnect="true" id="shell" name="shell" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /></object>';
+		
+	});
+	
+	</script></head><body><li id="tabArea"></li></body></html>

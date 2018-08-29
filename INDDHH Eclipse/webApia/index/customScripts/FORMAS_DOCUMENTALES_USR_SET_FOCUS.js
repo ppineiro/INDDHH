@@ -1,0 +1,1 @@
+function fnc_1001_11(evtSource) { window.focus(); return true; }

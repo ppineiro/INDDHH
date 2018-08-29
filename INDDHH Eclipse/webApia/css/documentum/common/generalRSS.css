@@ -1,0 +1,399 @@
+body {
+    line-height: 1;
+    margin: 0;
+}
+/*html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    border: 0 none;
+    font: inherit;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    vertical-align: baseline;
+}*/
+ul, ol, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+}
+ol, ul {
+    list-style: none outside none;
+}
+/*
+a {
+    outline: medium none;
+    text-decoration: none;
+    color: #0097C8;
+}
+a:hover {
+    color: #000000;
+}
+*/
+a img {
+    border: medium none;    
+}
+form {
+    margin: 0;
+}
+fieldset {
+    border: medium none;
+    margin: 0;
+    padding: 0;
+}
+legend {
+    padding: 0;
+}
+input, textarea, select {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 1em;
+    outline: medium none;
+}
+input[type="search"] {
+}
+object {
+    display: block;
+    outline: medium none;
+}
+address {
+    font-style: normal;
+}
+sub, sup {
+    line-height: 1px;
+}
+.stretch:after {
+    clear: both;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+}
+* html .stretch {
+}
+:first-child + html .stretch {
+}
+.contenedor_principal {
+    background-color: #FFFFFF;
+    border-left: 1px solid #CECECE;
+    border-right: 1px solid #CECECE;
+    clear: both;
+    margin: 0 auto;
+    width: 85%;
+}
+.oculto {
+    display: none;
+}
+strong strong {
+    font-weight: bold;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: none;
+}
+ins {
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+strong {
+    font-weight: bold;
+}
+.stretch:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.stretch {
+    display: block;
+}
+* html .stretch {
+    height: 1px;
+}
+.oculto {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+.centrar {
+    margin: 0 auto;
+}
+.contenedor_principal .header {
+    border-bottom: 1px solid #333333;
+    margin-bottom: 10px;
+}
+.contenido_principal .col-i a {
+    color: #00CCFF;
+}
+.contenido_principal .col-i a:hover {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+.contenido_principal {
+    padding: 0 10px;
+}
+.col {
+	width: 100%;	
+}
+.col-i {
+    float: left;
+    width: 100%
+}
+.header-home-rss {
+    border: 1px solid #239DC5;
+    margin: 0 0 1px;
+    margin-top: 5px; 
+	background: linear-gradient(rgb(0, 84, 157), rgb(42, 70, 122)) repeat scroll 0px 0px transparent;
+    height: 55px
+    
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#00549D) to(#2A467A)); /*old webkit*/
+    background: -webkit-linear-gradient( #00549D, #2A467A); /*new webkit*/
+    background: -moz-linear-gradient( #00549D, #2A467A); /*gecko*/
+    background: -ms-linear-gradient( #00549D, #2A467A); /*IE10*/
+    background: -o-linear-gradient( #00549D, #2A467A); /*opera 11.10+*/
+    background: linear-gradient( #00549D, #2A467A); /*future CSS3 browsers*/
+}
+.header-home-rss .rss-logo {
+    background-image: url("../img/rss/rss_logo.png");
+    display: inline-block;
+    float: right;
+    height: 50px;
+    margin-right: 3px;
+    margin-top: 3px;
+    width: 50px;         
+}
+.header-home-rss .rss-title {
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 20pt;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-top: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+div.title {
+	color: #FF9148;
+    font-size: 14px;
+    font-weight: bold;    
+    padding-top: 10px;
+}
+div.rss-off {
+	font-weight: bold; 
+	font-size: 15px; 
+	margin-bottom: 10px; 
+	color: #333333;
+	padding-top: 30px;	
+}
+.list-img {
+    margin-left: -10px;
+}
+.list-img li {
+    background: none repeat scroll 0 0 #EFEFEF;
+    border-radius: 3px;
+    box-shadow: 1px 1px 0 0 #A5A5A5;
+    float: left;
+    margin: 0 0 40px 10px;
+    padding: 10px 0 30px;
+    position: relative;
+    text-align: center;
+    width: 129px;
+    z-index: 50;
+}
+.list-img li img {
+    display: block;
+    margin: 0 auto;
+}
+.list-img li a:hover img {
+    opacity: 0.7;
+}
+.list-img li p {
+    color: #474747;
+    font: 11px/13px Tahoma,Arial,Geneva,sans-serif;
+}
+.list-img li p a {
+}
+.list-img li.marcado {
+    background: none repeat scroll 0 0 #CCCCCC;
+}
+.list-img li.marcado p {
+    color: #000000;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #FFFFFF;
+}
+.list-img li h3 {
+    font: bold 11px/12px Tahoma,Arial,sans-serif;
+    margin-bottom: 7px;
+}
+.list-img li h3 a {
+    color: #000000;
+    text-shadow: 1px 1px 0 #FFFFFF;
+}
+.list-hor {
+    padding: 0 5px 10px;
+}
+.list-hor li {
+    float: left;
+    font: 12px/20px Arial,Helvetica,sans-serif;
+    margin: 0 5px 0 0;
+}
+.list-hor a {
+    border-bottom: 1px solid #333333;
+    color: #333333;
+}
+.list-hor a:hover {
+    border-bottom: 0 none;
+}
+.mod-texto {
+    background: none repeat scroll 0 0 #F5F5F5;
+}
+.rss .col-i {
+    width: 560px;
+}
+.rss .col-i a, .rss .col-d a {
+    border-bottom: 1px solid #00CCFF;
+    color: #00CCFF;
+}
+.rss .col-i a:hover, .rss .col-d a:hover {
+    border-bottom: solid;
+    color: #00CCFF;
+}
+.m-intro a {
+    font-weight: bold;
+}
+.m-intro abbr {
+    font-weight: bold;
+}
+.m-rss {
+    border-top: 3px solid #E0E0E0;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.m-rss .interior {
+    background: none repeat scroll 0 0 #F7F7F7;
+    border-top: 2px solid #EDEDED;
+}
+.m-rss h2 {
+    border-bottom: 3px solid #E0E0E0;
+    font: bold 16px/120% Arial,Helvetica,sans-serif;
+    margin: 0;
+    padding: 7px 0 7px 20px;
+    cursor: pointer;
+}
+.m-rss h2.open {
+	background: url('../img/rss/rss_open.png') no-repeat scroll 3px 14px rgba(0, 0, 0, 0);	
+}
+.m-rss h2.close {
+	background: url('../img/rss/rss_close.png') no-repeat scroll 5px 10px rgba(0, 0, 0, 0);	
+}
+.m-rss .interior .col {
+    float: left;
+    padding: 17px 0 0 20px;
+}
+.m-rss .interior li {
+    background: url('../img/rss/rss.gif') no-repeat scroll 0 2px rgba(0, 0, 0, 0);
+    clear: left;
+    display: block;
+    float: left;
+    margin-left: 20px;
+    padding: 0 0 5px 17px;
+    width: 90%;
+}
+.m-rss .interior .type_section {
+    margin-left: 0;
+    padding-bottom: 12px !important;
+}
+.m-rss .interior li.type_section a {
+    border-bottom: 1px solid #F7F7F7;
+    color: #000000;
+    float: left;
+    font: 12px/14px Arial,Helvetica,sans-serif;
+    margin-left: 10px;
+}
+.m-rss .interior a {
+    border-bottom: 1px solid #F7F7F7;
+    color: #000000;
+    float: left;
+    font: 12px/14px Arial,Helvetica,sans-serif;
+    margin-left: 0px;
+}
+.m-rss .interior a:hover {
+    border-bottom: 1px solid #000000;
+    color: #000000;
+}
+.m-rss .interior a.hover {
+	border-bottom: 1px solid #000000;
+    color: #000000;	
+}
+.m-rss .interior li.type_section a:hover {
+    border-bottom: 1px solid #000000;
+    color: #000000;
+}
+.m-rss .interior li.type_section a.hover {
+    border-bottom: 1px solid #000000;
+    color: #000000;
+}
+.m-rss .interior strong {
+    text-transform: uppercase;
+}
+.m-rss .interior ul.type_sectiones a {
+    font-weight: bold;
+}
+.m-lectores-rss {
+    float: right;
+}
+.m-rss .interior .icons {
+    float: right;
+    margin: 0;
+    width: 275px;
+}
+.m-rss .interior .type_section .icons {
+    left: 10px;
+    position: relative;
+}
+.m-rss .interior .icons li:first-child {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.m-rss .interior .icons li a {
+    display: block;
+    float: none;
+    height: 17px;
+    overflow: hidden;
+    position: static;
+    text-indent: -9999px;
+    width: 16px;
+    cursor: pointer;
+}
+.m-rss .interior .icons li a:hover {
+    background-position: 0 -17px;
+    border: medium none;
+}
+.m-rss .interior .icons .i_copy a {
+    background: url("../img/rss/rss_copy.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.type_section {
+	background-repeat: no-repeat;
+	width: 9px;
+	height: 9px;
+	cursor: pointer;	
+	padding-bottom: 10px;	
+}
+
+.type_section.open {
+	background-image: url('../img/rss/rss_minus.png') !important;
+	background-position: 0px 2px !important;		
+}
+
+.type_section.close {
+	background-image: url('../img/rss/rss_plus.png') !important;
+	background-position: 0px 2px !important;		
+}
+
+.modalContent.modalRSS {
+	width: 560px !important;
+}

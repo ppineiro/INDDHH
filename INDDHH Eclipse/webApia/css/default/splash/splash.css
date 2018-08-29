@@ -1,0 +1,52 @@
+div.planelContainer {
+	padding: 0px;
+}
+
+div.planelContainer div.panel {
+	margin-bottom: 0px;
+}
+
+/* div.pnl_GET_USR_TASKS_COUNT,  */
+div.planelContainerHorizontalTop-FourSections  {
+    margin: 30px !important;
+    min-height: 100px !important;
+	padding: 5px !important;
+}
+
+
+div.pnl_TRAMITES {
+	margin: 5px !important;
+	padding: 10px;
+}
+
+div.pnl_YOUR_TASKS {
+	min-height: 150px;
+}
+
+div.pnl_AGESIC_LOGO .title, div.pnl_LOGO .title, div.pnl_APIA_LOGO .title {
+	height: 0px !important;
+    border-bottom: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+div.pnlId_1_1008_1463Content{ /* 	div.pnl_Lista_de_tareas_de_trámites */
+	min-height: 100px !important;
+}
+
+.pnl_GET_USR_TASKS_COUNT, .pnl_INICIAR_TRAMITE_NOMINADO {
+	padding: 0px 10px;
+	box-sizing: border-box;
+}
+
+.pnl_APIA_LOGO {
+	padding-bottom: 10px;
+}
+
+.pnl_APIA_LOGO .title {
+	display: none;
+}
+
+.splashLayout div.panelContainerVerticalRight-SevenSections {
+	margin: 0px;
+}
+	

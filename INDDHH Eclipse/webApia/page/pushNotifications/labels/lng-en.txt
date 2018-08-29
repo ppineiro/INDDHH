@@ -1,0 +1,115 @@
+{
+   "idioma": "lng-en",
+   "label": [
+       {
+           "idLabel": "titulo-home",
+           "value": "Environments"
+       },
+       {
+           "idLabel": "titulo-nuevo-amb",
+           "value": "New environment"
+       },
+       {
+           "idLabel": "titulo-mensajes",
+           "value": "Messages"
+       },
+       { 
+           "idLabel": "titulo-ajustes", 
+           "value": "Settings" 
+       },
+       {
+           "idLabel": "titulo-app",
+           "value": "APIA Notifications"
+       },
+       {
+           "idLabel": "labelTitulo",
+           "value": "Title"
+       },
+       {
+           "idLabel": "labelUrl",
+           "value": "Url"
+       },
+       {
+           "idLabel": "labelUsuario",
+           "value": "User"
+       },
+       {
+           "idLabel": "labelClave",
+           "value": "Password"
+       },
+       {
+           "idLabel": "labelNotificaciones",
+           "value": "Notifications"
+       },
+       {
+           "idLabel": "labelErrorAutent",
+           "value": "Authemtication error"
+       },
+       {
+           "idLabel": "labelErrorConexion",
+           "value": "Error getting connection, try again later"
+       },
+       {
+           "idLabel": "labelCompletarTodo",
+           "value": "All ids must be completed"
+       },
+       {
+           "idLabel": "labelCargando",
+           "value": "Authenticating user"
+       },
+       {
+           "idLabel": "labelNoAmbientes",
+           "value": "No environments to show"
+       },
+       {
+           "idLabel": "labelNoMensajes",
+           "value": "No messages to show"
+       },
+       {
+           "idLabel": "labelBorrarAmbiente",
+           "value": "Delete environment?"
+       },
+       {
+           "idLabel": "labelBorrarMensaje",
+           "value": "Delete message?"
+       },
+       {
+           "idLabel": "btn-ir-url",
+           "value": "Go to web"
+       },
+       {
+           "idLabel": "btn-ajustes",
+           "value": "Settings"
+       },
+       {
+           "idLabel": "btn-ir-tarea",
+           "value": "Go to task"
+       },
+       {
+           "idLabel": "btn-guardar-ambiente",
+           "value": "Save"
+       },
+       {
+           "idLabel": "btn-aceptar",
+           "value": "Confirm"
+       },
+	   {
+           "idLabel": "sinConexion",
+           "value": "No hay conexion a internet"
+       },
+       {
+           "idLabel": "labelErrorConectarAmbiente",
+           "value": "Could not connect to server"
+       },
+       {
+           "idLabel": "labelCargandoMensajes",
+           "value": "Loading messages"
+       },
+       {
+			"idLabel": "labelBorrandoMensajes",
+			"value": "Deleting messages"
+		}
+       
+       
+   ]
+}

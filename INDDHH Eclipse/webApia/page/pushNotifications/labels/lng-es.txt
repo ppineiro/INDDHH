@@ -1,0 +1,115 @@
+{
+   "idioma": "lng-es",
+   "label": [
+       {
+           "idLabel": "titulo-home",
+           "value": "Ambientes"
+       },
+       {
+           "idLabel": "titulo-nuevo-amb",
+           "value": "Nuevo Ambiente"
+       },
+       {
+           "idLabel": "titulo-mensajes",
+           "value": "Mensajes"
+       },
+       { 
+           "idLabel": "titulo-ajustes", 
+           "value": "Ajustes" 
+       },
+       {
+           "idLabel": "titulo-app",
+           "value": "APIA Notificaciones"
+       },
+       {
+           "idLabel": "labelTitulo",
+           "value": "Título"
+       },
+       {
+           "idLabel": "labelUrl",
+           "value": "Url"
+       },
+       {
+           "idLabel": "labelUsuario",
+           "value": "Usuario"
+       },
+       {
+           "idLabel": "labelClave",
+           "value": "Clave"
+       },
+       {
+           "idLabel": "labelNotificaciones",
+           "value": "Notificaciones"
+       },
+       {
+           "idLabel": "labelErrorAutent",
+           "value": "Error el autentificar"
+       },
+       {
+           "idLabel": "labelErrorConexion",
+           "value": "Error en la conexión, pruebe nuevamente más tarde"
+       },
+       {
+           "idLabel": "labelCompletarTodo",
+           "value": "Debe completar todos los campos"
+       },
+       {
+           "idLabel": "labelCargando",
+           "value": "Autentificando Usuario"
+       },
+       {
+           "idLabel": "labelNoAmbientes",
+           "value": "No hay ambientes para mostrar"
+       },
+       {
+           "idLabel": "labelNoMensajes",
+           "value": "No hay mensajes para mostrar"
+       },
+       {
+           "idLabel": "labelBorrarAmbiente",
+           "value": "Borrar Ambiente?"
+       },
+       {
+           "idLabel": "labelBorrarMensaje",
+           "value": "Borrar Mensaje?"
+       },
+       {
+           "idLabel": "btn-ir-url",
+           "value": "Ir a Web"
+       },
+       {
+           "idLabel": "btn-ajustes",
+           "value": "Ajustes"
+       },
+       {
+           "idLabel": "btn-ir-tarea",
+           "value": "Ir a tarea"
+       },
+       {
+           "idLabel": "btn-guardar-ambiente",
+           "value": "Guardar"
+       },
+       {
+           "idLabel": "btn-aceptar",
+           "value": "Aceptar"
+       },
+	   {
+           "idLabel": "sinConexion",
+           "value": "No hay conexion a internet"
+       },
+       {
+           "idLabel": "labelErrorConectarAmbiente",
+           "value": "No se pudo conectar con el servidor"
+       },
+       {
+           "idLabel": "labelCargandoMensajes",
+           "value": "Cargando mensajes"
+       },
+       {
+			"idLabel": "labelBorrandoMensajes",
+			"value": "Borrando mensajes"
+		}
+       
+    ]
+}
+

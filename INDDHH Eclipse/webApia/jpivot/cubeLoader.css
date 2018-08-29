@@ -1,0 +1,98 @@
+.divTable{
+		width:100%;
+	}
+	.divTable td{
+/*		border:1px solid blue;*/
+	}
+	
+	.navigatorTd div{
+		position:relative;
+	}
+	.toolbar table{
+/*		background-image:url(gradient.jsp?colors=F3F3F3;DFDFDF&height=60&width=1&type=v);*/
+		background-repeat:repeat-x;
+		padding:2px;
+		/*padding-left:6px;
+		padding-right:6px;*/
+		border:2px solid #ADADAD;
+		border-top:2px solid #DEDEDE;
+		border-left:2px solid #DEDEDE;
+		background-color:FEFEFE;
+	}	
+	/*div{border:1px solid blue;}*/
+	#editors{
+		height:100px;
+		overflow:auto;
+		position:relative;
+		border:1px solid #E3E3E3;
+		border-right:1px solid #999999;
+		border-bottom:1px solid #999999;
+		background-color:FEFEFE;
+	}
+	#editors div table{
+		width:100%;
+		font-family:tahoma;
+		font-size:10px;
+		background-color:#FFFFFF;
+	}
+	#editors div select{
+		font-family:tahoma;
+		font-size:10px;
+	}
+	#editors div option{
+		font-family:tahoma;
+		font-size:10px;
+	}
+	#editors div table tr td{
+		/*text-align:center;*/
+	}
+	#editors div input{
+		font-family:tahoma;
+		font-size:10px;
+	}
+	#mainTabs{
+		overflow:auto;
+		height:300px;
+		position:relative;
+		width:100%;
+		border:1px solid #E3E3E3;
+		border-right:1px solid #999999;
+		border-bottom:1px solid #999999;
+		background-color:#FFFFFF;
+	}
+	#mainTabs div{
+		background-color:#FFFFFF;
+	}
+	#viewsBrowser{
+		position:absolute;
+		width:300px;
+		height:260px;
+		border:1px solid #BBBBBB;
+		border-bottom:#666666;
+		border-right:#666666;
+		z-index:999999;
+		background-color:white;
+		padding:5px;
+	}
+	#viewsBrowser img{
+		cursor:pointer;
+		cursor:hand;
+	}
+	#browserBlock{
+		position:absolute;
+		width:100%;
+		height:100%;
+		background-color:black;
+		z-index:999990;
+		filter:alpha(opacity=50);
+		opacity: 0.5;
+		-moz-opacity:0.5;
+		top:0px;
+		left:0px;
+	}
+	.selectedView{
+		background-color:#E3FFD6;
+	}
+	BODY{
+		background-color:#F3F3F3;
+	}

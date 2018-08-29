@@ -1,0 +1,27 @@
+<simulator>
+	<design>
+	  <elements>
+		<element id="4001" />
+		<element id="4003" />
+		<element compValue="" queueType="LIFO" id="4002" compType="After" compValue1="">
+		  <pools>
+			<pool id="1" prob="aaa" />
+			<pool id="21" prob="aaaaaa" />
+			<pool id="2" prob="aaaa" />
+		  </pools>
+		  <multipliers>
+			<multiplier value="sadsad" prob="asdasdsad" />
+			<multiplier value="asdasdasd" prob="asdasdsd" />
+		  </multipliers>
+		</element>
+		<element compValue="" queueType="LIFO" id="4000" compType="After" compValue1="">
+		  <pools />
+		</element>
+	  </elements>
+	  <dependencies>
+		<dependency from="4003" to="4002" prob="" />
+		<dependency from="4002" to="4000" prob="" />
+		<dependency from="4000" to="4001" prob="" />
+	  </dependencies>
+	</design>
+  </simulator>

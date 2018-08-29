@@ -1,0 +1,62 @@
+<Schema name="New Schema1">
+	<Cube name="PANP" cache="true" enabled="true">
+		<Table name="DW_PROCESS" alias="TablaHechos">
+		</Table>
+		<Dimension type="StandardDimension" foreignKey="PRO_ID" name="Process">
+			<Hierarchy name="Process" hasAll="true" allMemberName="Proceso" primaryKey="PRO_ID" primaryKeyTable="COD_PROCESS">
+				<Table name="COD_PROCESS">
+				</Table>
+				<Level name="Name" table="COD_PROCESS" column="PRO_NAME" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+				</Level>
+			</Hierarchy>
+		</Dimension>
+		<Dimension type="StandardDimension" foreignKey="POOL_ID" name="Pool">
+			<Hierarchy name="Pool" hasAll="true" allMemberName="Grupo" primaryKey="POOL_ID" primaryKeyTable="COD_POOL">
+				<Table name="COD_POOL">
+				</Table>
+				<Level name="Pool" column="POOL_NAME" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+				</Level>
+			</Hierarchy>
+		</Dimension>
+		<Dimension type="StandardDimension" foreignKey="PRO_CREATE_DATE" name="Process_Date">
+			<Hierarchy name="Process_Date" hasAll="true" allMemberName="Date" primaryKey="Fecha" primaryKeyTable="DIMENSIONFECHA">
+				<Table name="DIMENSIONFECHA">
+				</Table>
+				<Level name="Year" table="DIMENSIONFECHA" column="Ano" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+				</Level>
+				<Level name="Quarter" table="DIMENSIONFECHA" column="Trimestre" type="Integer" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+				</Level>
+				<Level name="Month" table="DIMENSIONFECHA" column="Mes" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+				</Level>
+			</Hierarchy>
+		</Dimension>
+		<Dimension type="StandardDimension" foreignKey="PRO_CREATE_USER" name="User">
+			<Hierarchy name="User" hasAll="true" allMemberName="Usuario" primaryKey="USR_LOGIN" primaryKeyTable="COD_USER">
+				<Table name="COD_USER">
+				</Table>
+				<Level name="User" table="COD_USER" column="USR_NAME" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+				</Level>
+			</Hierarchy>
+		</Dimension>
+		<Dimension type="StandardDimension" foreignKey="PRO_DUR_STATUS_ID" name="Process_Delay_Status">
+			<Hierarchy name="Process_Delay_Status" hasAll="true" allMemberName="Status" primaryKey="DUR_STATUS_ID" primaryKeyTable="COD_DUR_STATUS">
+				<Table name="COD_DUR_STATUS">
+				</Table>
+				<Level name="Process_Delay_Status" table="COD_DUR_STATUS" column="DUR_STATUS" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+				</Level>
+			</Hierarchy>
+		</Dimension>
+		<Measure name="Cantidad" column="PRO_INST_ID" aggregator="count" visible="true">
+		</Measure>
+		<Measure name="Promedio Tiempo" column="PRO_TIME" datatype="Integer" formatString="#,###.0" aggregator="avg" visible="true">
+		</Measure>
+		<Measure name="Days_to_Warning" column="PRO_EST_ALARM_REMAIN" formatString="#,###" aggregator="avg" visible="true">
+		</Measure>
+		<Measure name="Days_to_End" column="PRO_END_REMAIN" formatString="#,###" aggregator="avg" visible="true">
+		</Measure>
+		<Measure name="Days_Running" column="PRO_CONSEC_DAYS" formatString="#,###" aggregator="avg" visible="true">
+		</Measure>
+		<CalculatedMember name="Prom en Dias" formula="[Measures].[Promedio Tiempo] / (86400)" dimension="Measures" visible="true">
+		</CalculatedMember>
+	</Cube>
+</Schema>

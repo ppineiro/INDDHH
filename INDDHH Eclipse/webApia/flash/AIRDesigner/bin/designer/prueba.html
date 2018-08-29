@@ -1,0 +1,26 @@
+<html><head><script language="javascript">
+function getFlashMovie(movieName) {   
+	var isIE = navigator.appName.indexOf("Microsoft") != -1;   
+	return (isIE) ? window[movieName] : document[movieName];  
+}
+
+function setEntity(){
+	getFlashMovie("Designer").setEntity(2);
+}
+
+function setModel(){
+	var str=document.getElementById("txtMap").value; 
+	alert(getFlashMovie("Designer"));
+	getFlashMovie("Designer").setModel(str);
+}
+
+function flashReady(){
+
+}
+
+</script></head><body><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"  id="Designer" 
+	 codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" 
+	WIDTH="98%" 
+	HEIGHT="500px" 
+	style="/*border:1px solid blue*/"
+	ALIGN="center" VALIGN="middle"><param name="allowScriptAccess" value="always" /><param name="movie" value="Designer.swf" /><param name="FlashVars" value=""/><param name="quality" value="high" /><param name="menu" value="false"><param name="bgcolor" value="#EFEFEF" /><param name="WMODE" value="transparent" /><embed wmode="transparent" id="Designer" name="Designer" menu="false" allowScriptAccess="always" src="Designer.swf" flashVars="" quality="high" bgcolor="#efefef" width="98%" height="450" swLiveConnect="true"   align="middle" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /></object><button onclick="setEntity();">RUEDA</button><button onclick="setModel();">RUEDA2</button><TEXTAREA name="txtMap" id="txtMap" cols="100" rows="30"></TEXTAREA></body></html>

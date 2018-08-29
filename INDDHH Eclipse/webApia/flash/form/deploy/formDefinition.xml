@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FORM_LAYOUT>
+<FORM_FIELD  fieldId="0"  fieldLabel="ID"  fieldType="1"  attId="1048"  attName="ID"  x="0"  y="0" >
+<PROPERTY  prpId="16"  prpLabel="prpDefault"  value="&lt;CURRENT_PROCESS_IDENTIFIER&gt;"  type="S" />
+</FORM_FIELD>
+<FORM_FIELD  fieldId="1"  fieldLabel="INPUT"  fieldType="1"  attId="1025"  attName="INPUT"  x="0"  y="1" >
+<PROPERTY  prpId="16"  prpLabel="prpDefault"  value="&lt;CURRENT_ENTITY_IDENTIFIER&gt;"  type="S" />
+</FORM_FIELD>
+
+
+
+<FORM_PROPERTY  prpId="28"  value="false"  type="S" />
+<FORM_PROPERTY value="false" prpId="3" type="S" />
+
+<EVENTS></EVENTS></FORM_LAYOUT>

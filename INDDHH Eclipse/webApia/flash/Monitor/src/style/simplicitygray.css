@@ -1,0 +1,390 @@
+/*@namespace s "library://ns.adobe.com/flex/spark";*/
+@namespace mx "library://ns.adobe.com/flex/mx";
+
+mx|WindowedApplication, mx|Application {
+   /*backgroundColor: #869ca7;
+   backgroundGradientColors: #7f766f, #ada6a6;*/
+   backgroundColor: #FFFFFF;
+   backgroundAlpha:0;
+   backgroundGradientColors: #AAAAAA, #DDDDDD;
+   fontFamily:Tahoma;
+   themeColor: #999999;
+   backgroundGradientAlphas:0,0;
+}
+
+mx|Alert
+{
+	backgroundColor: #B1B1B1;
+	cornerRadius: 7;
+	borderColor: #949494;
+}
+
+mx|Accordion {
+   themeColor: #cccccc;
+   borderColor: #666666;
+   textRollOverColor: #333333;
+   textSelectedColor: #333333;
+   dropShadowEnabled: true;
+   shadowDistance: 1;
+   headerStyleName: "myaccordionHeader";
+}
+
+.myaccordionHeader {
+   color: #333333;
+}
+
+mx|ApplicationControlBar {
+   borderStyle: solid;
+   borderColor: #666666;
+   cornerRadius: 2;
+   dropShadowEnabled: true;
+   shadowDistance: 0;
+   dropShadowColor: #000000;
+}
+
+mx|Button {
+   cornerRadius: 7;
+   color: #333333;
+   textRollOverColor: #333333;
+   textSelectedColor: #333333;
+   borderColor: #757A97;
+   themeColor: #999999;
+}
+
+mx|ColorPicker
+{
+	borderColor: #333333;
+}
+
+mx|ButtonBar {
+   buttonStyleName: "mybuttonBarButtonStyle";
+   firstButtonStyleName: "mybuttonBarFirstButtonStyle";
+   lastButtonStyleName: "mybuttonBarLastButtonStyle";
+}
+
+.mybuttonBarButtonStyle {
+   color: #333333;
+   textRollOverColor: #333333;
+   textSelectedColor: #333333;
+   borderColor: #666666;
+   themeColor: #999999;
+}
+
+.mybuttonBarFirstButtonStyle {
+   cornerRadius: 0;
+}
+
+.mybuttonBarLastButtonStyle {
+   cornerRadius: 1;
+}
+
+mx|CheckBox {
+   borderColor: #666666;
+   iconColor: #333333;
+   disabledIconColor: #666666;
+   color: #333333;
+   textSelectedColor: #666666;
+   textRollOverColor: #171717;
+   themeColor: #999999;
+	/*selectedUpIcon: Embed(source="icons2/symbol_check.gif");
+	selectedOverIcon: Embed(source="icons2/symbol_check.gif");
+	selectedDownIcon: Embed(source="icons2/symbol_check.gif");
+	selectedDisabledIcon: Embed(source="icons2/symbol_check.gif");
+	upIcon: Embed(source="icons2/symbol_multiplication.gif");
+	overIcon: Embed(source="icons2/symbol_multiplication.gif");
+	downIcon: Embed(source="icons2/symbol_multiplication.gif");
+	disabledIcon: Embed(source="icons2/symbol_multiplication.gif");*/
+}
+
+mx|ComboBox {
+   cornerRadius: 2;
+   color: #333333;
+   borderColor: #b7babc;
+   iconColor: #333333;
+   selectionColor: #cccccc;
+   textSelectedColor: #333333;
+   rollOverColor: #cccccc;
+   textRollOverColor: #666666;
+   themeColor: #cccccc;
+}
+
+mx|DataGrid {
+	/*[0xFFFFFF, 0xF4EBFF]
+	rollOverColor: #e8dfdf;*/
+	rollOverColor: #EEFFEE;
+	textRollOverColor: #333333;
+	borderColor: #666666;
+	/*selectionColor: #cccccc;*/
+	selectionColor:#DDFFDD;
+	color: #333333;
+	textSelectedColor: #333333;
+	dropShadowEnabled: true;
+	shadowDistance: 0;
+	headerStyleName: "mydataGridHeaderStyle";
+}
+
+.mydataGridHeaderStyle {
+   color: #333333;
+}
+
+mx|DateChooser {
+	borderThickness: 2;
+	todayColor: #818181;
+	rollOverColor: #cccccc;
+	selectionColor: #999999;
+	color: #333333;
+	themeColor: #cccccc;
+	dropShadowEnabled: true;
+	focusSkin: Embed(source="icons/page_white.png");
+	prevMonthSkin: Embed(source="icons2/control_reverse.gif");
+	nextMonthSkin: Embed(source="icons2/control_play.gif");
+	selectionIndicatorSkin: Embed(source="icons/page_white.png");
+}
+
+mx|DateField
+{
+	upSkin: Embed(source="icons/date.png");
+	downSkin: Embed(source="icons/date.png");
+	disabledSkin: Embed(source="icons/date.png");
+	overSkin: Embed(source="icons/date.png");
+}
+
+mx|HRule {
+   strokeColor: #cccccc;
+   strokeWidth: 2;
+}
+
+mx|HScrollBar {
+   cornerRadius: 0;
+   themeColor: #cccccc;
+   borderColor: #666666;
+   thumbOffset: 0;
+}
+
+mx|HSlider {
+   tickColor: #333333;
+   invertThumbDirection: false;
+   borderColor: #666666;
+   themeColor: #cccccc;
+   labelStyleName: "myhSliderLabelStyle";
+}
+
+.myhSliderLabelStyle {
+   color: #333333;
+}
+
+mx|LinkBar {
+   separatorColor: #ffffff;
+   rollOverColor: #cccccc;
+   selectionColor: #cccccc;
+   color: #333333;
+   textRollOverColor: #333333;
+   textSelectedColor: #333333;
+   disabledColor: #e0e0e0;
+}
+
+mx|LinkButton {
+   rollOverColor: #cccccc;
+   selectionColor: #cccccc;
+   color: #333333;
+   textRollOverColor: #333333;
+   textSelectedColor: #333333;
+	icon: Embed(source="icons/link.png");
+	overIcon: Embed(source="icons/link_break.png");
+}
+
+mx|List {
+   rollOverColor: #cccccc;
+   textRollOverColor: #171717;
+   borderThickness: 1;
+   borderColor: #666666;
+   selectionColor: #cccccc;
+   color: #333333;
+   textSelectedColor: #333333;
+   dropShadowEnabled: true;
+   shadowDistance: 1;
+}
+
+mx|MenuBar {
+   borderColor: #666666;
+   rollOverColor: #e5e1e1;
+   selectionColor: #cccccc;
+   color: #333333;
+   textRollOverColor: #333333;
+   textSelectedColor: #999999;
+   themeColor: #cccccc;
+	cornerRadius: 7;
+}
+
+mx|NumericStepper {
+   cornerRadius: 0;
+   color: #333333;
+   themeColor: #cccccc;
+	downArrowSkin: Embed(source="icons/bullet_arrow_bottom.png");
+	upArrowSkin: Embed(source="icons/bullet_arrow_top.png");
+	upArrowOverSkin: Embed(source="icons/bullet_arrow_up.png");
+	downArrowOverSkin: Embed(source="icons/bullet_arrow_down.png");
+}
+
+mx|Panel {
+   borderStyle: solid;
+   borderColor: #555555;
+   titleStyleName: "mypanelTitle";
+	cornerRadius: 7;
+	borderThickness: 2;
+}
+
+.mypanelTitle {
+   color: #333333;
+   fontSize:12;
+}
+
+mx|PopUpButton {
+   cornerRadius: 7;
+   fillColors: #ffffff, #cccccc, #ffffff, #cccccc;
+   color: #333333;
+   textRollOverColor: #333333;
+   textSelectedColor: #333333;
+   borderColor: #666666;
+   themeColor: #cccccc;
+}
+
+mx|ProgressBar {
+   borderColor: #666666;
+   barColor: #999999;
+   color: #333333;
+}
+
+mx|RadioButton {
+   borderColor: #666666;
+   color: #333333;
+   textSelectedColor: #333333;
+   textRollOverColor: #232222;
+   themeColor: #cccccc;
+   disabledColor: #666666;
+}
+
+mx|TabNavigator {
+	/*borderColor: #666666;*/
+
+	borderStyle: solid;
+	borderColor: #555555;
+	/*borderThickness: 2;*/
+	color: #333333;
+	dropShadowEnabled: true;
+	shadowDistance: 1;
+	tabStyleName: "myTabs";
+	firstTabStyleName: "myTabs";
+	lastTabStyleName: "myTabs";
+	selectedTabTextStyleName: "mySelectedTabs";
+}
+
+mx|TabBar{
+	fontSize:12;
+	fontWeight:normal;
+}
+
+.myTabs {
+   cornerRadius: 7;
+   borderColor: #555555;
+   borderThickness: 2;
+   color: #333333;
+   textRollOverColor: #333333;
+   themeColor: #cccccc;
+	fontWeight:normal;
+}
+
+.mySelectedTabs {
+	borderStyle: solid;
+	borderColor: #555555;
+	borderThickness: 2;
+	color: #333333;
+	textRollOverColor: #333333;
+}
+
+mx|TextArea {
+   color: #333333;
+   borderColor: #666666;
+   borderThickness: 1;
+   dropShadowEnabled: true;
+}
+
+mx|TextInput {
+   borderColor: #666666;
+   color: #333333;
+   dropShadowEnabled: true;
+   shadowDistance: 1;
+}
+
+mx|ToggleButtonBar {
+   buttonStyleName: "mytoggleButtonBarButtonStyle";
+   firstButtonStyleName: "mytoggleButtonBarFirstButtonStyle";
+   lastButtonStyleName: "mytoggleButtonBarLastButtonStyle";
+   selectedButtonTextStyleName: "mytoggleButtonBarSelectedButtonStyle";
+}
+
+.mytoggleButtonBarButtonStyle {
+   color: #333333;
+   cornerRadius:2;
+   textRollOverColor: #333333;
+   textSelectedColor: #333333;
+   borderColor: #666666;
+   themeColor: #cccccc;
+}
+
+.mytoggleButtonBarFirstButtonStyle {
+   cornerRadius: 7;
+}
+
+.mytoggleButtonBarLastButtonStyle {
+   cornerRadius: 7;
+}
+
+.mytoggleButtonBarSelectedButtonStyle {
+   color: #333333;
+}
+
+mx|ToolTip {
+   cornerRadius: 4;
+   backgroundColor: #cccccc;
+   color: #333333;
+}
+
+mx|Tree {
+   textRollOverColor: #0e0e0e;
+   borderColor: #666666;
+   selectionColor: #cccccc;
+   color: #333333;
+   textSelectedColor: #333333;
+   openDuration: 350;
+   dropShadowEnabled: true;
+	folderClosedIcon: Embed(source="icons/folder.png");
+	folderOpenIcon: Embed(source="icons/folder_page_white.png");
+	disclosureOpenIcon: Embed(source="icons/bullet_toggle_minus.png");
+	disclosureClosedIcon: Embed(source="icons/bullet_toggle_plus.png");
+	defaultLeafIcon: Embed(source="icons2/document.gif");
+}
+
+mx|TitleWindow
+{
+}
+
+mx|VRule {
+   strokeColor: #cccccc;
+}
+
+mx|VScrollBar {
+   themeColor: #cccccc;
+   borderColor: #666666;
+}
+
+mx|VSlider {
+   borderColor: #666666;
+   themeColor: #cccccc;
+   labelStyleName: "myvSliderLabelStyle";
+}
+
+.myvSliderLabelStyle {
+   color: #333333;
+}
+

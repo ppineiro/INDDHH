@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions 
+	targetNamespace="http://bps.gub.uy/atyr/certificados/services/v1"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" 
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" 
+	xmlns:ns0="http://bps.gub.uy/atyr/certificados/services/v1"
+	xmlns:ns1="http://v1.services.certificados.atyr.bps.gub.uy/">
+	
+	<wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+		<xsd:schema>
+			<xsd:import schemaLocation="WsCertificadosConsultas.xsd1.xsd" namespace="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="GeneralFault">
+		<wsdl:part name="GeneralFault" element="xsns:GeneralFault" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="IWsCertificadosConsultas_ObtCertificadoComun">
+		<wsdl:part name="paramObtCertificadoComun" element="xsns:paramObtCertificadoComun" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="IWsCertificadosConsultas_ObtCertificadoComunResponse">
+		<wsdl:part name="resultObtCertificadoComun" element="xsns:resultObtCertificadoComunVigente" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="IWsCertificadosConsultas_ObtCertificadoComunVigente">
+		<wsdl:part name="paramObtReporteVerificacionCert" element="xsns:paramObtCertificadoComunVigente" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="IWsCertificadosConsultas_ObtCertificadoComunVigenteResponse">
+		<wsdl:part name="resultObtReporteVerificacionCert" element="xsns:resultObtCertificadoComunVigente" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="IWsCertificadosConsultas_ObtCodigoEstadoCertificado">
+		<wsdl:part name="paramObtCodigoEstadoCertificado" element="xsns:paramObtCodigoEstadoCertificado" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="IWsCertificadosConsultas_ObtCodigoEstadoCertificadoResponse">
+		<wsdl:part name="resultObtCodigoEstadoCertificado" element="xsns:resultObtCodigoEstadoCertificado" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="IWsCertificadosConsultas_ObtenerEstadoCC">
+		<wsdl:part name="paramObtenerEstadoCC" element="xsns:paramObtenerEstadoCC" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="IWsCertificadosConsultas_ObtenerEstadoCCResponse">
+		<wsdl:part name="resultObtenerEstadoCC" element="xsns:resultObtenerEstadoCC" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="IWsCertificadosConsultas_ObtenerEstadoCCyCE">
+		<wsdl:part name="ParamObtenerEstadoCCyCE" element="xsns:ParamObtenerEstadoCCyCE" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="IWsCertificadosConsultas_ObtenerEstadoCCyCEResponse">
+		<wsdl:part name="ResultObtenerEstadoCCyCE" element="xsns:ResultObtenerEstadoCCyCE" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="IWsCertificadosConsultas_ObtReporteCertComun">
+		<wsdl:part name="paramObtReporteCertComun" element="xsns:paramObtReporteCertComun" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="IWsCertificadosConsultas_ObtReporteCertComunResponse">
+		<wsdl:part name="resultObtReporteCertComun" element="xsns:resultObtReporteCertComun" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="IWsCertificadosConsultas_ObtReporteVerificacionCert">
+		<wsdl:part name="paramObtReporteVerificacionCert" element="xsns:paramObtReporteVerificacionCert" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="IWsCertificadosConsultas_ObtReporteVerificacionCertResponse">
+		<wsdl:part name="resultObtReporteVerificacionCert" element="xsns:resultObtReporteVerificacionCert" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="IWsCertificadosConsultas_ObtValidacionClave">
+		<wsdl:part name="paramObtValidacionClave" element="xsns:paramObtValidacionClave" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="IWsCertificadosConsultas_ObtValidacionClaveResponse">
+		<wsdl:part name="resultObtValidacionClave" element="xsns:resultObtValidacionClave" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="IWsCertificadosConsultas_ObtVersion" />
+	<wsdl:message name="IWsCertificadosConsultas_ObtVersionResponse">
+		<wsdl:part name="resultObtVersion" element="xsns:resultObtVersion" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="IWsCertificadosConsultas_ValidarSolicitudWebCC">
+		<wsdl:part name="ParamValidarSolicitudWebCC" element="xsns:ParamValidarSolicitudWebCC" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="IWsCertificadosConsultas_ValidarSolicitudWebCCResponse">
+		<wsdl:part name="ResultValidarSolicitudWebCC" element="xsns:ResultValidarSolicitudWebCC" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:message name="ValidacionesFault">
+		<wsdl:part name="ValidacionesFault" element="xsns:ValidacionesFault" xmlns:xsns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" />
+	</wsdl:message>
+	<wsdl:portType name="IWsCertificadosConsultas">
+		<wsdl:operation name="ObtCertificadoComun" parameterOrder="paramObtCertificadoComun">
+			<wsdl:input name="ObtCertificadoComunRequest" message="ns0:IWsCertificadosConsultas_ObtCertificadoComun" />
+			<wsdl:output name="ObtCertificadoComunResponse" message="ns0:IWsCertificadosConsultas_ObtCertificadoComunResponse" />
+			<wsdl:fault name="GeneralFault" message="ns0:GeneralFault" />
+			<wsdl:fault name="ValidacionesFault" message="ns0:ValidacionesFault" />
+		</wsdl:operation>
+		<wsdl:operation name="ObtCertificadoComunVigente" parameterOrder="paramObtReporteVerificacionCert">
+			<wsdl:input name="ObtCertificadoComunVigenteRequest" message="ns0:IWsCertificadosConsultas_ObtCertificadoComunVigente" />
+			<wsdl:output name="ObtCertificadoComunVigenteResponse" message="ns0:IWsCertificadosConsultas_ObtCertificadoComunVigenteResponse" />
+			<wsdl:fault name="GeneralFault" message="ns0:GeneralFault" />
+			<wsdl:fault name="ValidacionesFault" message="ns0:ValidacionesFault" />
+		</wsdl:operation>
+		<wsdl:operation name="ObtCodigoEstadoCertificado" parameterOrder="paramObtCodigoEstadoCertificado">
+			<wsdl:input name="ObtCodigoEstadoCertificadoRequest" message="ns0:IWsCertificadosConsultas_ObtCodigoEstadoCertificado" />
+			<wsdl:output name="ObtCodigoEstadoCertificadoResponse" message="ns0:IWsCertificadosConsultas_ObtCodigoEstadoCertificadoResponse" />
+			<wsdl:fault name="GeneralFault" message="ns0:GeneralFault" />
+			<wsdl:fault name="ValidacionesFault" message="ns0:ValidacionesFault" />
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerEstadoCC" parameterOrder="paramObtenerEstadoCC">
+			<wsdl:input name="ObtenerEstadoCCRequest" message="ns0:IWsCertificadosConsultas_ObtenerEstadoCC" />
+			<wsdl:output name="ObtenerEstadoCCResponse" message="ns0:IWsCertificadosConsultas_ObtenerEstadoCCResponse" />
+			<wsdl:fault name="GeneralFault" message="ns0:GeneralFault" />
+			<wsdl:fault name="ValidacionesFault" message="ns0:ValidacionesFault" />
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerEstadoCCyCE" parameterOrder="ParamObtenerEstadoCCyCE">
+			<wsdl:input name="ObtenerEstadoCCyCERequest" message="ns0:IWsCertificadosConsultas_ObtenerEstadoCCyCE" />
+			<wsdl:output name="ObtenerEstadoCCyCEResponse" message="ns0:IWsCertificadosConsultas_ObtenerEstadoCCyCEResponse" />
+			<wsdl:fault name="GeneralFault" message="ns0:GeneralFault" />
+			<wsdl:fault name="ValidacionesFault" message="ns0:ValidacionesFault" />
+		</wsdl:operation>
+		<wsdl:operation name="ObtReporteCertComun" parameterOrder="paramObtReporteCertComun">
+			<wsdl:input name="ObtReporteCertComunRequest" message="ns0:IWsCertificadosConsultas_ObtReporteCertComun" />
+			<wsdl:output name="ObtReporteCertComunResponse" message="ns0:IWsCertificadosConsultas_ObtReporteCertComunResponse" />
+			<wsdl:fault name="GeneralFault" message="ns0:GeneralFault" />
+			<wsdl:fault name="ValidacionesFault" message="ns0:ValidacionesFault" />
+		</wsdl:operation>
+		<wsdl:operation name="ObtReporteVerificacionCert" parameterOrder="paramObtReporteVerificacionCert">
+			<wsdl:input name="ObtReporteVerificacionCertRequest" message="ns0:IWsCertificadosConsultas_ObtReporteVerificacionCert" />
+			<wsdl:output name="ObtReporteVerificacionCertResponse" message="ns0:IWsCertificadosConsultas_ObtReporteVerificacionCertResponse" />
+			<wsdl:fault name="GeneralFault" message="ns0:GeneralFault" />
+			<wsdl:fault name="ValidacionesFault" message="ns0:ValidacionesFault" />
+		</wsdl:operation>
+		<wsdl:operation name="ObtValidacionClave" parameterOrder="paramObtValidacionClave">
+			<wsdl:input name="ObtValidacionClaveRequest" message="ns0:IWsCertificadosConsultas_ObtValidacionClave" />
+			<wsdl:output name="ObtValidacionClaveResponse" message="ns0:IWsCertificadosConsultas_ObtValidacionClaveResponse" />
+			<wsdl:fault name="GeneralFault" message="ns0:GeneralFault" />
+			<wsdl:fault name="ValidacionesFault" message="ns0:ValidacionesFault" />
+		</wsdl:operation>
+		<wsdl:operation name="ObtVersion">
+			<wsdl:input name="ObtVersionRequest" message="ns0:IWsCertificadosConsultas_ObtVersion" />
+			<wsdl:output name="ObtVersionResponse" message="ns0:IWsCertificadosConsultas_ObtVersionResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ValidarSolicitudWebCC" parameterOrder="ParamValidarSolicitudWebCC">
+			<wsdl:input name="ValidarSolicitudWebCCRequest" message="ns0:IWsCertificadosConsultas_ValidarSolicitudWebCC" />
+			<wsdl:output name="ValidarSolicitudWebCCResponse" message="ns0:IWsCertificadosConsultas_ValidarSolicitudWebCCResponse" />
+			<wsdl:fault name="GeneralFault" message="ns0:GeneralFault" />
+			<wsdl:fault name="ValidacionesFault" message="ns0:ValidacionesFault" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="IWsCertificadosConsultasBinding" type="ns0:IWsCertificadosConsultas">
+		<soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+		<wsdl:operation name="ObtCertificadoComun">
+			<soap11:operation soapAction="ObtCertificadoComun" style="document" />
+			<wsdl:input name="ObtCertificadoComunRequest">
+				<soap11:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ObtCertificadoComunResponse">
+				<soap11:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="GeneralFault">
+				<soap11:fault name="GeneralFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ValidacionesFault">
+				<soap11:fault name="ValidacionesFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtCertificadoComunVigente">
+			<soap11:operation soapAction="ObtCertificadoComunVigente" style="document" />
+			<wsdl:input name="ObtCertificadoComunVigenteRequest">
+				<soap11:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ObtCertificadoComunVigenteResponse">
+				<soap11:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="GeneralFault">
+				<soap11:fault name="GeneralFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ValidacionesFault">
+				<soap11:fault name="ValidacionesFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtCodigoEstadoCertificado">
+			<soap11:operation soapAction="ObtCodigoEstadoCertificado" style="document" />
+			<wsdl:input name="ObtCodigoEstadoCertificadoRequest">
+				<soap11:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ObtCodigoEstadoCertificadoResponse">
+				<soap11:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="GeneralFault">
+				<soap11:fault name="GeneralFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ValidacionesFault">
+				<soap11:fault name="ValidacionesFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerEstadoCC">
+			<soap11:operation soapAction="ObtenerEstadoCC" style="document" />
+			<wsdl:input name="ObtenerEstadoCCRequest">
+				<soap11:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ObtenerEstadoCCResponse">
+				<soap11:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="GeneralFault">
+				<soap11:fault name="GeneralFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ValidacionesFault">
+				<soap11:fault name="ValidacionesFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerEstadoCCyCE">
+			<soap11:operation soapAction="ObtenerEstadoCCyCE" style="document" />
+			<wsdl:input name="ObtenerEstadoCCyCERequest">
+				<soap11:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ObtenerEstadoCCyCEResponse">
+				<soap11:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="GeneralFault">
+				<soap11:fault name="GeneralFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ValidacionesFault">
+				<soap11:fault name="ValidacionesFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtReporteCertComun">
+			<soap11:operation soapAction="ObtReporteCertComun" style="document" />
+			<wsdl:input name="ObtReporteCertComunRequest">
+				<soap11:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ObtReporteCertComunResponse">
+				<soap11:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="GeneralFault">
+				<soap11:fault name="GeneralFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ValidacionesFault">
+				<soap11:fault name="ValidacionesFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtReporteVerificacionCert">
+			<soap11:operation soapAction="ObtReporteVerificacionCert" style="document" />
+			<wsdl:input name="ObtReporteVerificacionCertRequest">
+				<soap11:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ObtReporteVerificacionCertResponse">
+				<soap11:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="GeneralFault">
+				<soap11:fault name="GeneralFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ValidacionesFault">
+				<soap11:fault name="ValidacionesFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtValidacionClave">
+			<soap11:operation soapAction="ObtValidacionClave" style="document" />
+			<wsdl:input name="ObtValidacionClaveRequest">
+				<soap11:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ObtValidacionClaveResponse">
+				<soap11:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="GeneralFault">
+				<soap11:fault name="GeneralFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ValidacionesFault">
+				<soap11:fault name="ValidacionesFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtVersion">
+			<soap11:operation soapAction="ObtVersion" style="document" />
+			<wsdl:input name="ObtVersionRequest">
+				<soap11:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ObtVersionResponse">
+				<soap11:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ValidarSolicitudWebCC">
+			<soap11:operation soapAction="ValidarSolicitudWebCC" style="document" />
+			<wsdl:input name="ValidarSolicitudWebCCRequest">
+				<soap11:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ValidarSolicitudWebCCResponse">
+				<soap11:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="GeneralFault">
+				<soap11:fault name="GeneralFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ValidacionesFault">
+				<soap11:fault name="ValidacionesFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="WsCertificadosConsultasService">
+		<wsdl:port name="WsCertificadosConsultasPort" binding="ns0:IWsCertificadosConsultasBinding">
+			<soap11:address location="http://localhost:15858/WsCertificadosConsultas/WsCertificadosConsultas" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

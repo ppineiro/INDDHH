@@ -1,0 +1,13 @@
+<!--This file defines for each process or entity, wich users can create an instance using open.jsp -->
+ 
+<EXTERNAL_ACCESS>
+
+	<PROCESS environment="DEFAULT" process="RETOMAR_TRAMITE" user="guest" password="tol.guest" />
+<PROCESS environment="DEFAULT" process="CONSULTAR_EXPEDIENTES" user="guest" password="tol.guest"/>
+<PROCESS environment="DEFAULT" process="TRAMITE_PORTAL" user="guest" password="tol.guest" />
+<WORK_TASK  environment="DEFAULT" user="guest" password="tol.guest"/>
+<QUERY  environment="DEFAULT" user="guest" password="tol.guest"/>
+
+
+</EXTERNAL_ACCESS> 
+ 

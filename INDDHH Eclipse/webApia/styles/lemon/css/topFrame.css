@@ -1,0 +1,94 @@
+BODY{
+   /*BORDER-TOP:1px solid #727a84;   
+   BORDER-RIGHT:1px solid #7c7c94;   */
+   MARGIN-TOP:1px;
+   MARGIN-LEFT:0px;
+   MARGIN-RIGHT:0px;
+   MARGIN-BOTTOM:0px;
+   OVERFLOW: hidden;
+}
+.spanLogged{
+	WIDTH:30px;
+	HEIGHT: 18px;
+	color:#00005A;
+	PADDING:2px;
+	FONT-SIZE: 8pt;
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: Arial;
+}
+
+.spanName{
+	HEIGHT: 18px;
+	color:#00005A;
+	PADDING:2px;
+	FONT-SIZE: 8pt;
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: Arial;
+}
+
+.spanMenu{
+	HEIGHT: 18px;
+	color:#00005A;
+	PADDING:2px;
+	FONT-SIZE: 8pt;
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: Arial;
+}
+
+.spanLogout{
+	HEIGHT: 18px;
+	color:#00005A;
+	PADDING:2px;
+	FONT-SIZE: 8pt;
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	MARGIN-RIGHT:10px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: Arial;
+}
+
+
+.btn{
+	/*BORDER:1px solid #416D94;*/
+	color:#1B4D80;
+    HEIGHT: 18px;
+    WIDTH: 18px;
+    MARGIN-LEFT: 1px;
+    margin-right:2px;
+	 margin-bottom:3px;
+    PADDING: 0px;
+    TEXT-ALIGN: center;
+}
+.btn IMG{
+	FILTER:alpha(opacity=40);
+}    
+
+.degree {
+	margin : 1px;
+	/*background-color : red;*/
+}
+.degree1 {
+	background-color:#00005A;
+	/*filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#181EA5', endColorStr='#FFFFFF', gradientType='1');*/
+}
+.degree2 {
+	background-image:url(../../gradient.jsp?height=1&width=500&colors=00005A;D0F500);
+	background-repeat:repeat-y;
+	background-color:#D0F500;
+}
+.degree3 {
+}
+SELECT{
+	FONT-FAMILY: Arial;
+	FONT-SIZE: 8pt;
+}

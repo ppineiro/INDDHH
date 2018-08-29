@@ -1,0 +1,42 @@
+En css/base/administration.css:
+
+a los controles input, select y textarea se le coloca background-color:white
+se agregan las clases:
+.document .queryDownload {float: left;}
+.document  {text-decoration: none; color: black;}
+.document: visited {color: black; text-decoration: none;}
+button.genericBtn.largeText {min-height: 29px; height: auto; width: 100%;}
+.autocomplete-search { 
+               width: 16px;  height: 16px;  
+               position: absolute;    
+               top: 0px;
+    		   right: 4px;       
+               cursor:pointer; 
+               background-size: 14px !important; 
+               background: url('img/lupa.gif'); 
+               background-repeat: no-repeat; 
+               background-position: 98% 50%;
+               padding: 2px;
+}
+se altera la clase .elementImage para tener widht:30%
+se alteran las siguientes clases:
+.elementImage div.imgName { font-weight: bold; width: 100%; word-break: break-all; }
+.elementImage div.imgPath { width:100%; word-break: break-all; }
+.elementImage div.imgDescription { word-break: break-all; }
+
+Se reemplaza:
+div.dataContainerOffscreen div.flashContainer div {
+               height: 100%;
+}
+Por
+div.dataContainerOffscreen div.flashContainer div.contentTab, div.fieldFull {
+               height: 100%;
+}
+
+En css/base/common.css:
+
+Se altera el background-image de input.autocompleter-loading
+
+En css/base/login.css:
+
+al control input se le coloca background-color:white

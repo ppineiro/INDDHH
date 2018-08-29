@@ -1,0 +1,118 @@
+BODY
+{
+BACKGROUND-COLOR: gainsboro;
+}
+.tblCalen
+{
+    BACKGROUND-COLOR: gainsboro;
+    /*BORDER-BOTTOM: 1px solid;
+    BORDER-LEFT: 1px solid;
+    BORDER-RIGHT: 1px solid;
+    BORDER-TOP: 1px solid;*/
+    FONT-FAMILY: 'MS Sans Serif';
+    FONT-SIZE: 9pt;
+    MARGIN: 0px;
+    PADDING-BOTTOM: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-RIGHT: 0px;
+    PADDING-TOP: 0px
+}
+INPUT.inpCalen
+{
+    BACKGROUND-COLOR: gainsboro;
+    BORDER-BOTTOM: 1px;
+    BORDER-LEFT: 1px;
+    BORDER-RIGHT: 1px;
+    BORDER-TOP: 1px;
+    CURSOR: hand;
+    FONT-FAMILY: 'MS Sans Serif';
+    FONT-SIZE: 9pt;
+    MARGIN: 0px;
+    PADDING-BOTTOM: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-RIGHT: 0px;
+    PADDING-TOP: 0px;
+    TEXT-ALIGN: right
+}
+.prueba
+{
+    BORDER-BOTTOM: black 1px solid;
+    HEIGHT: 3px;
+    MARGIN: 0px;
+    PADDING-BOTTOM: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-RIGHT: 0px;
+    PADDING-TOP: 0px
+}
+.tdSep
+{
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    FONT-FAMILY: 'Small Fonts';
+    FONT-SIZE: 7pt;
+    FONT-WEIGHT: bolder;
+    MARGIN: 0px;
+    PADDING-BOTTOM: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-RIGHT: 0px;
+    PADDING-TOP: 0px;
+    TEXT-ALIGN: center
+}
+.trSep
+{
+    BACKGROUND-COLOR: black;
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    MARGIN: 0px;
+    PADDING-BOTTOM: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-RIGHT: 0px;
+    PADDING-TOP: 0px
+}
+.title
+{
+    BACKGROUND-COLOR: beige;
+    BORDER-BOTTOM: 1px outset;
+    BORDER-LEFT: 1px outset;
+    BORDER-RIGHT: 1px outset;
+    BORDER-TOP: 1px outset;
+    FONT-FAMILY: 'MS Sans Serif';
+    FONT-SIZE: 7pt;
+    LEFT: 0px;
+    POSITION: absolute;
+    TOP: 0px
+}
+.tdDias
+{
+    MARGIN: 0px;
+    PADDING-BOTTOM: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-RIGHT: 0px;
+    PADDING-TOP: 0px;
+    TEXT-ALIGN: right
+}
+.inpDias
+{
+    BACKGROUND-COLOR: gainsboro;
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    CURSOR: hand;
+    FONT-FAMILY: 'MS Sans Serif';
+    FONT-SIZE: 9pt;
+    TEXT-ALIGN: right;
+    WIDTH: 18px
+}
+TR
+{
+    MARGIN: 0px;
+    PADDING-BOTTOM: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-RIGHT: 0px;
+    PADDING-TOP: 0px
+}

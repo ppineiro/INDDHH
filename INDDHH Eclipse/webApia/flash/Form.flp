@@ -1,0 +1,34 @@
+﻿<flash_project name="form Dogma 2.0" version="1">
+    <project_folder name="FORM ELEMENTS" expanded="false">
+        <project_file path="./form/source/Form_Input.as" filetype="as" />
+        <project_file path="./form/source/Form_Button.as" filetype="as" />
+        <project_file path="./form/source/Form_File.as" filetype="as" />
+        <project_file path="./form/source/Form_Checkbox.as" filetype="as" />
+        <project_file path="./form/source/Form_ComboBox.as" filetype="as" />
+        <project_file path="./form/source/Form_Label.as" filetype="as" />
+        <project_file path="./form/source/Form_ListBox.as" filetype="as" />
+        <project_file path="./form/source/Form_Radio.as" filetype="as" />
+        <project_file path="./form/source/Form_SubTitle.as" filetype="as" />
+        <project_file path="./form/source/Form_TextArea.as" filetype="as" />
+        <project_file path="./form/source/Form_Hidden.as" filetype="as" />
+    </project_folder>
+    <project_folder name="PROP INSPECTOR" expanded="false">
+        <project_file path="./form/source/propertyValueCell.as" filetype="as" />
+        <project_file path="./form/source/PropBar.fla" filetype="fla" profile="" />
+    </project_folder>
+    <project_folder name="DIALOGS" expanded="false">
+        <project_file path="./form/source/AttModal.as" filetype="as" />
+        <project_file path="./form/source/EvtModal.as" filetype="as" />
+    </project_folder>
+    <project_folder name="SHARED CLASSES" expanded="false">
+        <project_file path="./classes/ToolTipClass.as" filetype="as" />
+        <project_file path="./classes/WindowManager.as" filetype="as" />
+        <project_file path="./classes/Aligner.as" filetype="as" />
+    </project_folder>
+    <project_file path="./form/source/form.fla" filetype="fla" profile="" def_file="true" />
+    <project_file path="./form/source/Grid_Area.as" filetype="as" />
+    <project_file path="./form/source/ToolBar.as" filetype="as" />
+    <project_file path="./form/source/ControlPoints.as" filetype="as" />
+    <project_file path="./form/source/Element.as" filetype="as" />
+    <project_file path="./form/source/shell.fla" filetype="fla" profile="" />
+</flash_project>

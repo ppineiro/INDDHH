@@ -1,0 +1,116 @@
+html, head, body, div{
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	font-weight: normal;
+	font-size: 13px;
+	font-family: Arial, Helvetica, sans-serif;
+	overflow: hidden;
+}
+
+.dialog-box {
+	width: 100%;
+	box-sizing: border-box;
+	border-width: 1px;
+	border-style: solid;
+	margin: 0 auto;
+	margin-bottom: 25px;
+	border-radius: 2px;
+}
+
+.dialog-success {
+	border-color: #c1e0b4;
+	background: #ecf6e8;
+}
+
+.dialog-warning {
+	border-color: #e7e2c5;
+	background: #fbf8ea;
+}
+
+.dialog-error {
+	border-color: #e3c4c4;
+	background: #ffeded;
+}
+
+.dialog-info {
+	border-color: #cecece;
+	background: #F5F5F5;
+}
+
+.dialog-center {
+	display: table;
+	margin: 0 auto;
+}
+
+.dialog-data {
+	display: table-cell;
+	padding: 20px;
+	padding-left: 0;
+}
+
+.dialog-data ul, .dialog-data ol {
+	list-style-position: inside;
+	padding: 0;
+}
+
+.dialog-title {
+	display: block;
+	font-weight: normal;
+	font-size: 1.25em;
+	margin-bottom: 5px;
+	line-height: 1.1;
+}
+
+.dialog-icon {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0 35px;
+	padding-right: 30px;
+}
+
+.dialog-icon .icn {
+	width: 51px;
+	height: 51px;
+	display: inline-block;
+}
+
+.dialog-box ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.dialog-box ul li {
+	margin-bottom: 0;
+	margin-top: 2px;
+}
+
+.dialog-box ul li:first-child {
+	margin-top: 0;
+}
+
+/*	Íconos	*/
+.icn-circle-info-lg {
+	background: url(../../images/icn-circle-info-lg.png) no-repeat;
+	width: 46px;
+	height: 46px;
+}
+
+.icn-circle-success-lg {
+	background: url(../../images/icn-circle-success-lg.png) no-repeat;
+	width: 46px;
+	height: 46px;
+}
+
+.icn-circle-error-lg {
+	background: url(../../images/icn-circle-error-lg.png) no-repeat;
+	width: 46px;
+	height: 46px;
+}
+
+.icn-warning-lg {
+	background: url(../../images/icn-warning-lg.png) no-repeat;
+	width: 51px;
+	height: 46px;
+}

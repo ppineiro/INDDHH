@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE document PUBLIC "-//UJAC.org//Print Document//EN" "http://ujac.sourceforge.net/ujac-print-document.dtd">
+
+<document size="A4" margin-left="25" margin-right="25" margin-top="25" margin-bottom="25" rotate="true">
+	<font-def name="body" family="Verdana" style="normal" size="8"/>
+	<font-def name="title" family="Verdana" style="normal" size="10"/>
+	
+	<header>
+		<header-part halign="left">${titQry}: ${consultaNombre}</header-part>
+		<header-part halign="right">Page ${pageNumber} of ${pageCount}</header-part>
+	</header>
+
+	<font font-def="body">
+		<paragraph font="title"><b><u>${sbtQryInfo}</u></b></paragraph>
+		<table columns="2" widths="20,80" border-width="0" padding="-5" padding-top="-5">
+			<cell halign="right" valign="middle">${lblNom}:</cell>
+			<cell halign="left">${consultaNombre}</cell>
+			<cell halign="right" valign="middle">${lblDes}:</cell>
+			<cell halign="left">${consultaDescripcion}</cell>
+		</table>
+		
+
+		<paragraph font="title"><b><u>${sbtFil}</u></b></paragraph>
+		<table columns="2" widths="20,80">
+			<foreach sequence="${filtros}" loop-variable="filtro">
+				<cell halign="right">${filtro.nombre}:</cell>
+				<cell>${filtro.valor}</cell>
+			</foreach>
+		</table>
+
+		<if cond="${ columns == null}">
+			<paragraph halign="center">{noData}</paragraph>
+		</if>
+		<else>
+			<paragraph font="title"><b><u>${sbtRes}</u></b></paragraph>
+			<table columns="${columns}" width="100" border-width="1" border-style="top|bottom|left|right">
+				<table-header border-style="top|bottom|left|right"  border-width="1" padding-top="-5" bgcolor="gray">
+					<foreach sequence="${headers}" loop-variable="header">
+						<cell halign="center" valign="middle">${header}</cell>
+					</foreach>
+				</table-header>
+				<foreach sequence="${celdas}" loop-variable="celda">
+					<cell valign="middle">${celda}</cell>
+				</foreach>
+			</table>
+		
+			<paragraph halign="center">
+				<br />
+				${moreData}
+			</paragraph>
+		</else>
+	</font>
+</document>

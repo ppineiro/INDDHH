@@ -1,0 +1,105 @@
+
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><title>shell</title></head><body bgcolor="#ffffff" style="/*overflow:hidden*/" topmargin=1 leftmargin=1 rightmargin=1 bottommargin=1><!------------------------------------------><!--- 			 FLASH V 7.0			 ---><!------------------------------------------><TABLE WIDTH="100%" HEIGHT="100%" BORDER=0><TR><TD VALIGN="middle" ALIGN="center"><!------- USE W/ LOCAL XML FILES -DEBUG VERSION-----><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"  
+	 codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" 
+		WIDTH="100%" 
+		HEIGHT="100%" 
+		style="/*border:1px solid red*/"
+		id="shell" ALIGN="center" VALIGN="middle"><param name="allowScriptAccess" value="sameDomain" /><param name="movie" value="shell.swf" /><param name="FlashVars" value="SWF_OBJ_PATH="/><param name="quality" value="high" /><param name="bgcolor" value="#FFFFFF" /><!--<param name="movie" value="../flash/process/shell.swf" />--><!--<param name="movie" value="<%=Parameters.ROOT_PATH%>/flash/process/shell.swf" />--><!--<param name="FlashVars" value="SWF_OBJ_PATH=<%=Parameters.ROOT_PATH%>/flash/process/"/>--><!--<param name="FlashVars" value="SWF_OBJ_PATH=../flash/process/"/>--><!--<param name="scale" value="exactfit" />--><!--DONT USE SCALE WHEN 100%--><!--<param name="menu" value="false">--></object></TD></TR></TABLE><!---------------------------------------------><!--
+<button onclick="getFlashOutput()">Output</button><button onclick="getFlashInput()">Input</button><button onclick="reloadFlash()">Reload</button><button onclick="setManual()">Manual</button><button onclick="setAuto()">Auto</button><button onclick="setEntity()">Entity</button>
+--></body></html><script>
+var viewSubProcess = false;
+
+
+function getFlashOutput(){
+	document.all.shell.SetVariable("call", "getOutputXML");
+}
+function getFlashInput(){
+	document.all.shell.SetVariable("call", "getInputXML");
+}
+function reloadFlash(){
+	document.all.shell.SetVariable("call", "reload");
+}
+function setAuto(){
+	document.all.shell.SetVariable("call", "setAuto");
+}
+function setManual(){
+	document.all.shell.SetVariable("call", "setManual");
+}
+function setEntity(){
+	document.all.shell.SetVariable("call", "setEntity,param=value");
+	//("call",flash_method,string_value)
+}
+//////////////////////////////////////////////////
+//	FSCommand
+/////////////////////////////////////////////////
+// Handles all the FSCommand messages in a Flash movie
+function shell_DoFSCommand(command, args) {
+	if (command == "outputXML") {
+		if(viewSubProcess){
+			alert("SUBPROCESS");
+			showXML(args,"1");
+		}else{
+			showXML(args,"1");
+		}
+	}
+	if(command == "inputXML") {
+		//alert(args)
+		showXML(args,"2")
+	}
+	
+	if (command == "isReady") {
+		flashLoaded = true;
+	}
+	if (command == "reload") {
+		//alert("reloaded: " + args);
+	}
+	if (command == "auto") {
+		//alert("auto: " + args);
+	}
+	if (command == "manual") {
+		//alert("manual: " + args);
+	}
+	
+	//VIEW SUBPROCESS
+	if (command == "viewProcess") {
+		//alert("viewProcess: " + args);
+		if(confirm("Guardar cambios?")){
+			viewSubProcess = true;
+			document.all.shell.SetVariable("call", "getOutputXML");
+		}
+	}
+	
+}
+
+
+
+//////////////////////////////////
+//	DEBUG
+//////////////////////////////
+function showHTML(html,winName){
+var w = window.open("",winName,"height=480,width=680,resizable=yes,scrollbars=yes");
+	w.document.open();
+    w.document.write(html);
+    w.document.close();
+    w.focus();
+}		
+function showXML(doc,winName){
+	var oXML = new ActiveXObject("Microsoft.XMLDOM");
+	oXML.loadXML(doc);
+    var tempdoc = new ActiveXObject("Microsoft.XMLDOM");
+    tempdoc.async = false;
+    if (!tempdoc.load("../xml/mimedefault.xsl")){
+		//showHTML(reportParseError(tempdoc.parseError));
+		alert("ERROR loading XSL")
+	}else{
+   	 	var html = oXML.transformNode(tempdoc);
+    	showHTML(html,winName);
+    }
+}
+</script><SCRIPT LANGUAGE="VBScript">
+'Catch FS Commands in IE, and pass them to the corresponding JavaScript function.
+Sub shell_FSCommand(ByVal command, ByVal args)
+    call shell_DoFSCommand(command, args)
+end sub
+</SCRIPT>

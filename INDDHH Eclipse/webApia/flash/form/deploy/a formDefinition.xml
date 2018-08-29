@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<FORM_LAYOUT>
+<FORM_FIELD attName="null" attId="0" y="6" x="0" fieldType="7" fieldLabel="Untitled" fieldId="12">
+<PROPERTY value="3" type="N" prpId="8" />
+<PROPERTY type="S" value="aaaaaaaaa" prpId="6" />
+<PROPERTY type="S" value="right" prpId="15" />
+</FORM_FIELD>
+<FORM_FIELD attName="Untitled" y="1" x="1" fieldType="5" fieldLabel="Untitled" fieldId="13">
+<EVENTS>
+<EVENT class_name="GET GIA CLIENT" class_id="1001" order="0" event_name="ONCHANGE" event_id="1">
+<BINDING att_type="P" att_name="NUM_CLI" att_label="Numero De Cliente" att_id="1002" param_type="S" param_name="DatawareConnection" param_id="1">
+</BINDING>
+<BINDING param_type="S" param_name="ApiaConnection" param_id="2" />
+<BINDING param_type="S" param_name="ForceReload" param_id="3" />
+<BINDING param_type="S" param_name="ReloadLabels" param_id="4" />
+</EVENT>
+</EVENTS>
+</FORM_FIELD>
+<EVENTS />
+</FORM_LAYOUT>

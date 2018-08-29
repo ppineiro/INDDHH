@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions 
+	name="CVA_WS" 
+	targetNamespace="http://cva.dgi.gub.uy"
+	xmlns:tns="http://cva.dgi.gub.uy" 
+	xmlns:wsdlns="http://cva.dgi.gub.uy"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:tns2="WS_CVA"
+	xmlns:tns1="CVA_WS_BE" 
+	xmlns:dgi="CVA_FE">
+	<types>
+		<schema 
+			targetNamespace="CVA_FE" 
+			elementFormDefault="qualified"
+			xmlns="http://www.w3.org/2001/XMLSchema" 
+			xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+			<import namespace="WS_CVA" />
+			<import namespace="CVA_WS_BE" />
+			<element name="CVA_WS.Execute">
+				<complexType>
+					<sequence>
+						<element name="Ruc" type="xsd:string" />
+					</sequence>
+				</complexType>
+			</element>
+			<element name="CVA_WS.ExecuteResponse">
+				<complexType>
+					<sequence>
+						<element minOccurs="1" maxOccurs="1" name="Retornotxt" type="xsd:string" />
+					</sequence>
+				</complexType>
+			</element>
+		</schema>
+	</types>
+	<message name="CVA_WS.ExecuteSoapIn">
+		<part name="parameters" element="dgi:CVA_WS.Execute" />
+	</message>
+	<message name="CVA_WS.ExecuteSoapOut">
+		<part name="parameters" element="dgi:CVA_WS.ExecuteResponse" />
+	</message>
+	<portType name="CVA_WSSoapPort">
+		<operation name="Execute">
+			<input message="wsdlns:CVA_WS.ExecuteSoapIn" />
+			<output message="wsdlns:CVA_WS.ExecuteSoapOut" />
+		</operation>
+	</portType>
+	<binding name="CVA_WSSoapBinding" type="wsdlns:CVA_WSSoapPort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="Execute">
+			<soap:operation soapAction="CVA_FEaction/ACVA_WS.Execute" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="CVA_WS">
+		<port name="CVA_WSSoapPort" binding="wsdlns:CVA_WSSoapBinding">
+			<soap:address location="http://localhost:15858/CVA_WS/servlet/acva_ws" />
+		</port>
+	</service>
+</definitions>

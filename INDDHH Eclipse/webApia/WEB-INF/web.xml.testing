@@ -1,0 +1,151 @@
+<?xml version="1.0" ?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<!-- Copyright (c) 2002 by ObjectLearn. All Rights Reserved. -->
+<web-app>
+
+	<context-param>
+		<param-name>ServletType</param-name>
+		<param-value>TEST</param-value>
+	</context-param>
+	<context-param>
+		<param-name>PathTestFile</param-name>
+		<param-value>\\Stsdesa01\doc\ST\APIA\Testing\Test Projects\gtabacco\xml</param-value>
+	</context-param>
+	<context-param>
+		<param-name>PathDatabaseFile</param-name>
+		<param-value>\\Stsdesa01\doc\ST\APIA\Testing\Test Projects\gtabacco\db</param-value>
+	</context-param>
+	<context-param>
+		<param-name>optionBean</param-name>
+		<param-value>dBean.qBean</param-value>
+	</context-param>
+	<context-param>
+		<param-name>optionDate</param-name>
+		<param-value>regDate</param-value>
+	</context-param>
+	<context-param>
+		<param-name>ignoreFields</param-name>
+		<param-value>REG_DATE</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>org.apache.axis.transport.http.AxisHTTPSessionListener</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>AxisServlet</servlet-name>
+		<display-name>Apache-Axis Servlet</display-name>
+		<servlet-class>org.apache.axis.transport.http.AxisServlet</servlet-class>
+	</servlet>
+
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <display-name>Axis Admin Servlet</display-name>
+        <servlet-class>org.apache.axis.transport.http.AdminServlet</servlet-class>
+        <load-on-startup>100</load-on-startup>
+    </servlet>
+
+	<servlet>
+		<servlet-name>DispatcherStarter</servlet-name>
+		<servlet-class>com.dogma.controller.DispatcherStarter</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>BPMNTimerStarter</servlet-name>
+		<servlet-class>com.dogma.controller.BPMNTimerStarter</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	
+    <servlet>
+        <servlet-name>SOAPMonitorService</servlet-name>
+        <display-name>SOAPMonitorService</display-name>
+        <servlet-class>org.apache.axis.monitor.SOAPMonitorService</servlet-class>
+        <init-param>
+            <param-name>SOAPMonitorPort</param-name>
+            <param-value>5001</param-value>
+        </init-param>
+        <load-on-startup>100</load-on-startup>
+    </servlet>	
+
+	<servlet>                                           
+		<servlet-name>TestActionServlet</servlet-name>            
+		<servlet-class>com.dogma.testing.web.controller.TestActionServlet</servlet-class> 
+    </servlet>                                          
+
+	<servlet>                                           
+		<servlet-name>TestServlet</servlet-name>            
+		<servlet-class>com.dogma.test.ExecTestActionServlet</servlet-class> 
+    </servlet>                                               
+
+	<!-- Mapping for TestServlet -->
+	<servlet-mapping>                                   
+		<servlet-name>TestServlet</servlet-name>        
+		<url-pattern>*.test</url-pattern>            
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>DispatcherStarter</servlet-name>
+		<url-pattern>*.Dispatcher.Starter</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>BPMNTimerStarter</servlet-name>
+		<url-pattern>*.BPMNTimer.Starter</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>/services/*</url-pattern>
+	</servlet-mapping>	
+
+    <servlet-mapping>
+        <servlet-name>AxisServlet</servlet-name>
+        <url-pattern>/servlet/AxisServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+       <servlet-name>SOAPMonitorService</servlet-name>
+       <url-pattern>/SOAPMonitor</url-pattern>
+    </servlet-mapping>
+
+	<servlet-mapping>                                   
+		<servlet-name>TestActionServlet</servlet-name>        
+		<url-pattern>*.do</url-pattern>            
+	</servlet-mapping>
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+	
+	<mime-mapping>
+		<extension>wsdl</extension>
+		<mime-type>text/xml</mime-type>
+	</mime-mapping>
+  
+	<mime-mapping>
+		<extension>xsd</extension>
+		<mime-type>text/xml</mime-type>
+	</mime-mapping>	
+	
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+    <error-page>
+	    <error-code>500</error-code>
+	    <location>/components/dogmaErrorPage.jsp</location>
+    </error-page>
+  	
+  	<error-page>
+	    <error-code>404</error-code>
+	    <location>/components/dogmaErrorPage.jsp</location>
+	</error-page>
+	
+	<taglib>
+      	<taglib-uri>regions</taglib-uri>
+    	<taglib-location>/WEB-INF/regions.tld</taglib-location>
+  	</taglib>
+  	
+</web-app>

@@ -1,0 +1,351 @@
+
+
+
+BODY {
+	BACKGROUND-COLOR:#DFDFDF;
+/*    OVERFLOW: hidden; */
+    
+    MARGIN:0px;
+    PADDING:2px;
+}
+/*------------------------------*/
+/*			Page Title 			*/
+/*------------------------------*/
+.pageTop{
+    BORDER:navy 1px solid;
+    /*BACKGROUND-COLOR: #3A6EA5;*/
+     BACKGROUND-COLOR:#3399CC;
+    COLOR: white;
+    FONT-FAMILY: Verdana, Arial;
+    FONT-SIZE: 18px;
+    FONT-WEIGHT:bold;
+	/*LETTER-SPACING:1px;*/
+	/*text-transform:uppercase;*/
+    MARGIN:0px;
+    WIDTH: 100%; 
+}
+.pageTop TD{
+	PADDING-LEFT:4px;
+	PADDING-RIGHT:4px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:0px;
+}
+.pageTop .col1{}
+.pageTop .col2{
+	text-align:right;
+}
+/*------------------------------*/
+/*		CONTENT AREA			*/
+/*------------------------------*/
+#divContent{
+	WIDTH:100%;
+/*    OVERFLOW: auto; */
+    MARGIN: 0px;
+    PADDING-LEFT:4px;
+    PADDING-RIGHT:4px;
+    FONT-FAMILY: Tahoma, Verdana, Arial; 
+    FONT-SIZE: 8pt;
+    SCROLLBAR-FACE-COLOR: #DFDFDF;SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;SCROLLBAR-SHADOW-COLOR: #C0C0C0;SCROLLBAR-ARROW-COLOR: #808080;SCROLLBAR-DARKSHADOW-COLOR: #808080;SCROLLBAR-BASE-COLOR: #808080;scrollbar-3d-light-color: #808080; 
+
+}
+/*------------------------------*/
+/*			Page Bar 			*/
+/*------------------------------*/
+.pageBottom{
+ 	DISPLAY:none;
+	BORDER:navy 1px solid;
+    BACKGROUND-COLOR:#3399CC;
+    WIDTH:100%;
+	MARGIN:0px;
+}
+.pageBottom TD{
+	PADDING-LEFT:					4px;
+	PADDING-RIGHT:					0px;
+	PADDING-TOP:					0px;
+	PADDING-BOTTOM:					0px;
+}
+.pageBottom .col1{
+}
+.pageBottom .col2{
+	text-align:right;
+}
+
+.pageBottom BUTTON{
+	/*filter:progid:DXImageTransform.Microsoft.gradient(enabled=true, startColorstr=#ff3399CC, endColorstr=#ffeaeaea);*/
+	BORDER: 1px solid #000099;
+	PADDING-LEFT:2px;
+	PADDING-RIGHT:2px;
+	
+	PADDING-TOP:1px;
+	PADDING-BOTTOM:1px;
+}
+
+
+
+/*------------------------------*/
+/*			Page Sub Title 		*/
+/*------------------------------*/
+.subTit{
+	FONT-FAMILY: Verdana, Arial; 
+	FONT-SIZE: 11px;
+	/*COLOR:#666666;*/
+	COLOR:#003399;
+	FONT-WEIGHT:bold;
+	TEXT-ALIGN:left;
+	BORDER-BOTTOM:1px solid #CCCCCC;
+	MARGIN-TOP:10px;
+	MARGIN-BOTTOM:6px;
+	MARGIN-LEFT:0px;
+	MARGIN-RIGHT:0px;
+}
+/*------------------------------*/
+/*		FORM LAYOUT GRID 		*/
+/*------------------------------*/
+.tblFormLayout{
+	TABLE-LAYOUT:fixed;
+	BORDER-COLLAPSE:collapse;
+	FONT-FAMILY:Tahoma, Verdana, Arial; 
+	FONT-SIZE:12px;
+	MARGIN:4px;
+	PADDING : 4px;
+	width:100%;
+}
+
+.tblFormLayout .col1{
+	WIDTH:20%;
+	TEXT-ALIGN:right;
+	COLOR:#333333;
+}
+.tblFormLayout .col2{
+	WIDTH:30%;
+}
+.tblFormLayout .col3{
+	WIDTH:20%;
+	TEXT-ALIGN:right;
+	COLOR:#333333;
+}
+.tblFormLayout .col4{
+	WIDTH:30%;
+}
+.tblFormLayout TR{
+}
+.tblFormLayout TD{
+	FONT-FAMILY:Tahoma, Verdana, Arial;
+	FONT-SIZE:12px;
+	PADDING:2px;
+}
+.tblFormLayout .readOnly{
+	/*BACKGROUND-COLOR: #EFEFEF;*/
+    BORDER-BOTTOM:1px solid #EFEFEF;
+    FONT-WEIGHT:bold;
+    FONT-SIZE: 8pt;
+    PADDING-LEFT:2px;
+    
+    COLOR: black;
+    CURSOR: default;
+   
+}
+
+.tblDataGrid{
+	BORDER-BOTTOM :	1px solid gray;
+	BORDER-COLLAPSE:collapse;
+	/*TABLE-LAYOUT:fixed;*/
+	FONT-FAMILY: Verdana,Arial,sans-serif;
+	FONT-SIZE:11px;
+    WIDTH: 100%;
+}
+
+
+.tblDataGrid THEAD TD{
+	FONT-FAMILY: Verdana,Arial,sans-serif;
+	FONT-SIZE:11px;
+	TEXT-ALIGN:center;
+	BACKGROUND-COLOR:#CCCCCC;
+	BORDER:1px solid outset;
+}
+.tblDataGrid THEAD TD A{
+	COLOR:black;
+}
+.tblDataGrid TBODY TR{
+	BACKGROUND-COLOR:#DFDFDF;
+	/*BACKGROUND-COLOR:#EDF3FE*/
+}
+
+.tblDataGrid TBODY TD{
+	FONT-FAMILY: Verdana,Arial,sans-serif;
+	FONT-SIZE:11px;
+	PADDING-LEFT:2px;
+	PADDING-RIGHT:2px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:0px;
+	BORDER-BOTTOM:1px solid #CACACA;
+    BORDER-LEFT:1px solid #CACACA;
+	WORD-WRAP:break-word;
+}
+
+.tblDataGrid .trOdd{
+    BACKGROUND-COLOR:#eeeeee;
+    /*BACKGROUND-COLOR:#efefef;*/
+}
+
+.tblDataGrid .tdRed{
+	FONT-FAMILY: Verdana,Arial,sans-serif;
+    COLOR:red;
+}
+
+.tblDataGrid .tdProLat{
+	FONT-WEIGHT:bold;
+	COLOR:#ff0000;
+}
+
+.tblDataGrid .tdProInAle{
+	COLOR:#880000;
+}
+
+.tblDataGrid .tdDisable{
+	COLOR:#aaaaaa;
+}
+
+.oHeadExtended{
+}
+
+/*------------------------------*/
+/*			NAV BAR		 		*/
+/*------------------------------*/
+.navBar{
+	border:1px outset;
+ 	DISPLAY:none;
+    width: 100%;
+}
+.navBar .col1{
+	width:50%;
+    FONT-FAMILY: Tahoma, Verdana, Arial; 
+    FONT-SIZE: 8pt;
+}
+.navBar .col2{
+    FONT-FAMILY: Tahoma, Verdana, Arial; 
+    FONT-SIZE: 8pt;
+	width:50%;
+	text-align:right;
+}
+
+.navBar .colM{
+    FONT-FAMILY: Tahoma, Verdana, Arial; 
+    FONT-SIZE: 8pt;
+	width:30%;
+	text-align:right;
+}
+
+.navBar BUTTON{
+	BACKGROUND-COLOR:#EAEAEA;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+    BORDER: 1px solid #666666;
+    FONT-SIZE: 8pt;
+    PADDING-LEFT:2px;
+    PADDING-RIGHT:2px;
+    MARGIN-LEFT:1px;
+    MARGIN-RIGHT:1px;
+}
+
+
+/*------------------------------*/
+/*		FORM ELEMENTS	 		*/
+/*------------------------------*/
+INPUT{
+	font-size:11px;
+   	font-family:Tahoma, Verdana, Arial;
+
+}
+INPUT.txtReadOnly{
+	BACKGROUND-COLOR: gainsboro;
+    BORDER: 1px inset;
+    COLOR: dimgray;
+    CURSOR: default;
+    FONT-SIZE: 8pt;
+}
+TEXTAREA{
+	font-size:11px;
+   	font-family:Tahoma, Verdana, Arial;
+
+}
+LABEL{
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+    FONT-SIZE: 8pt;
+}
+LABEL.required{
+	FONT-STYLE:italic;
+}
+SELECT{
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	FONT-SIZE: 8pt;
+
+}
+BUTTON{
+ 	DISPLAY:none;
+	BACKGROUND-COLOR:#EAEAEA;
+    BORDER: 1px solid #666666;
+	background-image:url(../../gradient.jsp?height=20&width=1&colors=C0C0C0;eaeaea&type=v);
+	background-repeat:repeat-x;
+	background-color:#eaeaea;
+	
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+    FONT-SIZE: 8pt;
+    MARGIN-LEFT:2px;
+    MARGIN-RIGHT:2px;
+    
+}
+FORM{
+}
+.txtDate {
+
+}
+.txtNumeric {
+
+}
+
+/* OTHER */
+.salame {
+	BORDER-LEFT :				1px solid #777777;
+	BORDER-RIGHT :				1px solid #777777;
+	BORDER-BOTTOM :				1px solid #777777;
+	BACKGROUND-COLOR:			#CFCFCF;
+/*	OVERFLOW:					auto;*/
+	SCROLLBAR-FACE-COLOR: #DFDFDF;SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;SCROLLBAR-SHADOW-COLOR: #C0C0C0;SCROLLBAR-ARROW-COLOR: #808080;SCROLLBAR-DARKSHADOW-COLOR: #808080;SCROLLBAR-BASE-COLOR: #808080;scrollbar-3d-light-color: #808080;
+}
+
+.liDep {
+	list-style-type : square;
+}
+
+#printDiv{
+ 	DISPLAY:none;
+	POSITION:absolute;
+	TOP:0px;						
+	LEFT:0px;
+	WIDTH:100%;
+    HEIGHT:100%;
+	
+	BORDER-LEFT:1px solid #416D94; 
+	BORDER-BOTTOM:1px solid #416D94;
+}
+
+.txtRequired {
+	color: "navy";
+}
+
+div#printContent div.divFrm {
+	width: 100% !important;
+}
+
+table.horizontalPrintGrid img.cellsizer{
+	width: 90px !important;
+}
+
+table.horizontalPrintGrid TD {
+	padding: 0px !important;
+}
+
+table.horizontalPrintGrid tbody > tr > td > span {
+	padding-left: 5px;
+	padding-right: 5px;
+}

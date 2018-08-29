@@ -1,0 +1,608 @@
+@page { 
+/*size: 4.18in 6.88in;*/ 
+margin: 0.8in;
+-fs-flow-top: "header";
+-fs-flow-bottom: "footer";
+-fs-flow-left: "left";
+-fs-flow-right: "right";
+/*border: thin solid black;
+padding: 1em;*/
+}
+
+#header {
+font: bold serif;
+position: absolute; top: 0; left: 0; 
+-fs-move-to-flow: "header";
+}
+
+#footer {
+font-size: 90%; font-style: italic; 
+position: absolute; top: 0; left: 0;
+-fs-move-to-flow: "footer";
+}
+
+#pageBreak
+{
+  /*page-break-before: always;*/
+  page-break-after: always;
+}
+
+#pagenumber:before {
+content: counter(page); 
+}
+
+#pagecount:before {
+content: counter(pages);  
+}
+
+.tblData{
+width:100%;
+}
+
+.tdSmall{
+width:20%;
+border-top:solid black 1pt;
+border-left:solid black 1pt;
+border-bottom:solid black 1pt;
+border-right:solid black 1pt;
+}
+
+.tdNormal{
+border-top:solid black 1pt;
+border-left:solid black 1pt;
+border-bottom:solid black 1pt;
+border-right:solid black 1pt;
+}
+
+.thSmall{
+background-color:#ABABAB;
+width:20%;
+border-top:solid black 1pt;
+border-left:solid black 1pt;
+border-bottom:solid black 1pt;
+border-right:solid black 1pt;
+}
+
+.thNormal{
+background-color:#ABABAB;
+border-top:solid black 1pt;
+border-left:solid black 1pt;
+border-bottom:solid black 1pt;
+border-right:solid black 1pt;
+}
+
+
+
+
+
+
+.clsH1{
+	color:blue;	
+}
+
+.clsH3{
+	color:#365f91;	
+}
+.clsH4{
+	color:#c0c0c0;	
+}
+
+
+
+ 
+#divContent{
+	 
+}
+
+/*------------------------------*/
+/*			Page Title 			*/
+/*------------------------------*/
+.pageTop{
+    
+}
+.pageTop TD{
+	 
+}
+.pageTop .col1{}
+.pageTop .col2{
+	 
+}
+/*------------------------------*/
+/*		CONTENT AREA			*/
+/*------------------------------*/
+
+
+
+/*------------------------------*/
+/*			Page Bar 			*/
+/*------------------------------*/
+.pageBottom{
+	 
+}
+.pageBottom TD{
+	 
+}
+.pageBottom .col1{}
+.pageBottom .col2{
+	 
+}
+
+.pageBottom BUTTON{
+	 
+}
+
+
+/*------------------------------*/
+/*			Page Sub Title 		*/
+/*------------------------------*/
+.subTit{
+	 BORDER-BOTTOM:1px solid #D4DFE5;
+}
+
+.frmSubTit{
+	 BORDER-BOTTOM:1px solid #000000;
+	 width:600px;
+}
+
+.frmSubTit TD {
+ 
+}
+
+.frmSubTit TD IMG{
+	 
+}
+
+/*------------------------------*/
+/*		FORM LAYOUT GRID 		*/
+/*------------------------------*/
+.tblFormLayout{
+	 BORDER:1px solid #c0c0c0;
+	 width:600px;
+}
+
+.tblFormLayout .col1{
+	WIDTH:20%;
+}
+.tblFormLayout .col2{
+	WIDTH:30%;
+}
+.tblFormLayout .col3{
+	WIDTH:20%;
+}
+.tblFormLayout .col4{
+	WIDTH:30%;
+}
+.tblFormLayout TR{
+}
+.tblFormLayout TD{
+	 
+}
+.tblFormLayout .readOnly{
+    
+   
+}
+
+.tblFormLayout ul li{
+	 
+}
+.tblFormLayout ul li{
+	 
+}
+
+.tblDataGrid{
+	 
+}
+
+
+.tblDataGrid THEAD TD{
+	 
+}
+.tblDataGrid THEAD TD A{
+	 
+}
+.tblDataGrid TBODY TR{
+	 
+}
+
+.tblDataGrid TBODY TD{
+	 
+}
+
+.tblDataGrid .trOdd{
+    
+}
+
+.tblDataGrid .trSelected{
+    
+}
+
+.tblDataGrid .tdRed{
+}
+
+.tblDataGrid .tdProLat{
+}
+
+.tblDataGrid .tdProInAle{
+}
+
+.tblDataGrid .tdDisable{
+}
+
+.oHeadExtended{
+}
+
+.oHeadExtendedExpr{
+}
+
+.navBar{
+}
+.navBar .col1{
+}
+.navBar .col2{
+}
+
+.navBar .colM{
+}
+
+.navBar .colM2{
+}
+
+.navBar BUTTON{
+}
+
+/*------------------------------*/
+/*		FORM ELEMENTS	 		*/
+/*------------------------------*/
+INPUT{
+	BORDER:1px solid black;
+}
+
+INPUT.txtReadOnly{
+}
+
+TEXTAREA{
+	
+}
+
+TEXTAREA.txtReadOnly{
+	
+}
+
+PRE{
+}
+
+SELECT{
+}
+
+LABEL{
+	BORDER:1px solid black;
+}
+LABEL.required{
+}
+
+BUTTON{
+	BORDER:1px solid black;
+}
+.btn_std{
+	BORDER:1px solid #c0c0c0;
+}
+
+.clsBorderS{
+	color  : #ffffff;
+	background-color  : #ffffff;
+	background-image:url(../images/inputS.jpg);
+	background-repeat: no-repeat; 
+}
+.clsBorderN{
+	color  : #ffffff;
+	background-color  : #ffffff;
+	background-image:url(../images/inputN.jpg);
+	background-repeat: no-repeat; 
+}
+.clsBorderD{
+	color  : #ffffff;
+	background-color  : #ffffff;
+	background-image:url(../images/inputD.jpg);
+	background-repeat: no-repeat; 
+}
+.clsBorderReqS{
+	color  : #ffffff;
+	background-color  : #ffffff;
+	background-image:url(../images/inputReqS.jpg);
+	background-repeat: no-repeat; 
+}
+.clsBorderReqN{
+	color  : #ffffff;
+	background-color  : #ffffff;
+	background-image:url(../images/inputReqN.jpg);
+	background-repeat: no-repeat; 
+}
+.clsBorderReqD{
+	color  : #ffffff;
+	background-color  : #ffffff;
+	background-image:url(../images/inputReqD.jpg);
+	background-repeat: no-repeat; 
+}
+
+.clsBorderSelectS{
+	color  : #ffffff;
+	background-color  : #ffffff;
+	background-image:url(../images/comboS.jpg);
+	background-repeat: no-repeat; 
+}
+.clsBorderSelectN{
+	color  : #ffffff;
+	background-color  : #ffffff;
+	background-image:url(../images/comboN.jpg);
+	background-repeat: no-repeat; 
+}
+.clsBorderSelectD{
+	color  : #ffffff;
+	background-color  : #ffffff;
+	background-image:url(../images/comboD.jpg);
+	background-repeat: no-repeat; 
+}
+.clsBorderSelectReqS{
+	color  : #ffffff;
+	background-color  : #ffffff;
+	background-image:url(../images/comboReqS.jpg);
+	background-repeat: no-repeat; 
+}
+.clsBorderSelectReqN{
+	color  : #ffffff;
+	background-color  : #ffffff;
+	background-image:url(../images/comboReqN.jpg);
+	background-repeat: no-repeat; 
+}
+.clsBorderSelectReqD{
+	color  : #ffffff;
+	background-color  : #ffffff;
+	background-image:url(../images/comboReqD.jpg);
+	background-repeat: no-repeat; 
+}
+.clsBorderRadio{
+	color  : #ffffff;
+	background-color  : #ffffff;
+	background-image:url(../images/radio.jpg);
+	background-repeat: no-repeat;
+}
+.clsBorderCheck{
+	color  : #ffffff;
+	background-color  : #ffffff;
+	background-image:url(../images/check.jpg);
+	background-repeat: no-repeat; 
+}
+.clsBorderArea{
+	BORDER:1px solid #c0c0c0;	
+	width:140px;
+	height:50px;
+	
+}
+
+.clsGrid{
+	BORDER:1px solid #c0c0c0;	
+}
+.gridHeader{
+	BORDER:1px solid #c0c0c0;	
+	background-color  : #eeeeee;
+}
+	
+FORM{
+}
+
+.hiddenBottom BUTTON{
+}
+
+ 
+
+.liDep {
+	
+}
+
+A:visited { color: black;}
+
+.tblComment {
+}
+
+.tblComment PRE {
+}
+
+.tblComment #trHead{
+}
+
+
+.tblFilter {
+}
+
+#listFilterArea{
+}
+
+#printDiv{
+}
+
+.txtRequired {
+}
+
+ 
+.pageTop BUTTON[disabled]{
+}
+
+.pageBottom BUTTON[disabled]{
+}
+
+.navBar BUTTON[disabled]{
+}
+
+BUTTON[disabled]{
+}
+
+#tabContainer{
+
+}
+#tabContainer tr{
+}
+#tabContainer td{
+ 
+}
+#tabContainer td.here{
+ 
+}
+#tabContainer a{
+ 
+}
+
+#tabContainer a:hover{
+ 
+}
+
+#tabContainer td.here a{
+ 
+}
+
+#tabBottom{
+ 
+}
+
+#tabContainer span{
+ 
+}
+
+#tabContainer span.hover{
+ 
+}
+
+#tabContainer td.here span{
+ 
+}
+
+
+
+table.ApiaGrid {
+}
+
+table.ApiaGridTitle {
+}
+
+table.ApiaGridTitle tr {  
+}
+
+table.ApiaGridTitle tr td {
+}
+
+table.ApiaGrid thead .ApiaGridHeaderSearch {
+}
+
+table.ApiaGrid thead tr {
+}
+
+table.ApiaGrid thead tr th {
+}
+
+table.ApiaGrid tbody {
+	
+}
+
+table.ApiaGrid tbody.scrollContent {  
+}
+
+table.ApiaGrid tbody tr {
+}
+
+table.ApiaGrid tbody tr td {
+}
+
+table.ApiaGrid tbody tr:hover {
+}
+
+table.ApiaGrid tbody tr.selected {
+}
+
+table.ApiaGrid .ApiaGridCheckbox {
+}
+
+table.ApiaGrid tfoot tr {
+}
+
+table.ApiaGrid tfoot tr td img.ApiaGridNavButton {
+}
+
+table.ApiaGrid thead tr th img.ApiaHeaderSearchImage {
+}
+
+div.divApiaGridContainer {  
+}
+
+div.divApiaGrid td.tdDisable {
+}   
+div.divApiaGrid {
+}
+
+div.divApiaGrid td.tdDisable {
+}
+
+
+ 
+ 
+
+
+/* ----- Scrolling Table ----- */
+.dataGridHeader {
+}
+
+ 
+.dataGridContent {
+}
+
+.dataGridHeader thead tr {
+}
+.dataGridContent thead tr th {
+}
+.dataGridContent thead tr th span{
+}
+u{
+}
+.dataGridHeader table thead tr th, .dataGridHeader table tbody tr td { 
+}
+
+table.scrolltablestyle{
+}
+
+table.scrolltablestyle tbody tr td{
+}
+
+table.scrolltablestyle thead tr{
+}
+
+table.scrolltablestyle thead tr th{
+}
+
+table.scrolltablestyle thead tr th a:visited{
+}
+
+table.scrolltablestyle thead tr th a:hover{
+}
+
+table.scrolltablestyle tbody tr td{
+}
+
+table.scrolltablestyle tbody tr.even td{
+}
+
+table.scrolltablestyle tbody tr.ruled td{
+}
+table.scrolltablestyle .trOdd{
+}
+#selected td{
+}
+
+/* CSS Document */
+#contextMenu{
+}
+tr.hoverEmulate{
+}
+#contextMenu tr{
+}
+#contextMenu tr:hover{
+}
+#contextMenu td{
+}

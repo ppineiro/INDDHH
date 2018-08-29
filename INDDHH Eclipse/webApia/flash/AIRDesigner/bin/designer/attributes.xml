@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<forms>
+	<data>
+		<level width="0" name="id" label="id" type="label" hidden="true" />
+		<level width="30%" name="name" label="Name" type="label" />
+		<level width="40%" name="label" label="Label" type="label" />
+		<level width="20%" name="type" label="Type" type="label" />
+		<level width="10%" name="max" label="Max" type="label" />
+	</data>	
+	<values>
+		<value>
+			<level name="id" value="0" />
+			<level name="name" value="NUM_CLI" />
+			<level name="label" value="Numero de cliente" />
+			<level name="type" value="numeric" />
+			<level name="max" value="10" />
+		</value>
+		<value>
+			<level name="id" value="1" />
+			<level name="name" value="NUM_CLI_GIA" />
+			<level name="label" value="Numero de cliente" />
+			<level name="type" value="numeric" />
+			<level name="max" value="10" />
+		</value>
+		<value>
+			<level name="id" value="1" />
+			<level name="name" value="NOM_CLI_GIA" />
+			<level name="label" value="Nombre de cliente" />
+			<level name="type" value="string" />
+			<level name="max" value="10" />
+		</value>
+	</values>
+</forms>

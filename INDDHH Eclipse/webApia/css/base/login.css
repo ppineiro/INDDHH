@@ -1,0 +1,158 @@
+html { height: 100%; }
+
+body {
+	overflow: auto; /*Correcci�n de scrollbar vertical en IE*/
+	height: 100%;
+}
+
+div.spinner {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+body { margin: 0px; padding: 0px; color:#0679B8}
+input, select { border: 1px solid #C0C0C0;  border-radius: 2px 2px 2px 2px; color: #606060; width: 130px; background-color: white;}
+
+.hidden { display: none; visibility: hidden; }
+.center { text-align: center; }
+
+div.loginContainer { padding-right: 25px; color: #6B6B6B; width: 280px;}
+
+div.section { clear: both; padding-top: 5px;}
+div.section div.field { display: inline-table; float: left; margin-right: 10px; }
+div.section div.field label { display: block; margin-bottom: 4px; }
+div.section div.required label:before {content:'*'} 
+div.section div.required label { font-weight: bold; }
+div.section div.field div.button{float:right;}
+div.header { height: 10%;}
+div.header div.languages { float: right; margin-top: 15px; }
+span.language { padding-right: 10px; }
+span.language a { color:#6B6B6B; }
+span.currentLanguage a { color:#0679B8; }
+
+div.message{float:right; padding-right: 70px;}
+
+div.body { height: 70%; }
+div.body form { float: right; }
+
+div.footer { height: 5%; vertical-align: bottom;}
+div.footer div.version { text-align: right; font-weight: bold; color: #CCCCCC; }
+
+div.theFooter { padding-left: 10px; }
+
+.divImage{ height: 15%; width:100%; }
+
+.logoA { float: right; background-image: url(img/cabezal.jpg); background-repeat: no-repeat; width: 560px; height: 75px; margin-right: -1px; background-size: 560px 75px; }
+.logoB { 
+	float: right;
+	background-image: url(img/logo-apia.jpg);
+	background-repeat: no-repeat;
+	width: 188px;
+	height: 75px;
+	background-size: contain;
+}
+
+div.loginRemember { margin-top: 25px; text-align: center; }
+div.loginRemember A{color:#0679B8}
+
+div.fatalError { color: #FF0000; margin-bottom: 10px; text-align: center; }
+	 
+A:link {text-decoration: none}
+A:visited {text-decoration: none}
+A:active {text-decoration: none}
+A:hover {text-decoration: underline; }
+
+div.fncPanel .button button.genericBtn {font-weight: bold;}
+button.genericBtn {	padding-bottom: 1px; height: 31px;	width: 100%;	color: #606060;	border: 1px solid silver;	border-radius: 3px;	cursor: pointer;}
+.cssgradients button.genericBtn {	
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#0063b6) to(#315390));
+	background: -webkit-linear-gradient( #0063b6, #315390);
+	background: -moz-linear-gradient( #0063b6, #315390);
+	background: -ms-linear-gradient( #0063b6, #315390);
+	background: -o-linear-gradient( #0063b6, #315390);
+	background: linear-gradient( #0063b6, #315390);
+	color: white;
+	border-color: #244f9d;
+}
+.cssgradients button.genericBtn:hover {	
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#315390) to(#2b497e));
+	background: -webkit-linear-gradient( #315390, #2b497e);
+	background: -moz-linear-gradient( #315390, #2b497e);
+	background: -ms-linear-gradient( #315390, #2b497e);
+	background: -o-linear-gradient( #315390, #2b497e);
+	background: linear-gradient( #315390, #2b497e);
+	color: white;
+	border-color: #244f9d;
+}
+.no-cssgradients button.genericBtn {
+	border:none;
+	background-image: url("img/button/back_button_blue.gif");
+/* 	background-position: 0px 24px; */
+	color: white;
+/* 	background-size: 100% 46px; */
+}
+
+.no-cssgradients button.genericBtn:hover {
+    background-position: 0px 31px;
+    color: white;
+}
+
+/* button.genericBtn {	padding-bottom: 1px; height: 31px;	width: 100%;	color: #ffffff;	border: 1px solid #244f9d;	border-radius: 3px;	cursor: pointer;} */
+/* .cssgradients button.genericBtn {		background: -webkit-gradient(linear, 0 0, 0 100%, from(#0063b6) to(#315390));	background: -webkit-linear-gradient( #0063b6, #315390);	background: -moz-linear-gradient( #0063b6, #315390);	background: -ms-linear-gradient( #0063b6, #315390);	background: -o-linear-gradient( #0063b6, #315390);	background: linear-gradient( #0063b6, #315390);	} */
+
+/* .cssgradients button.genericBtn:hover {	background: -webkit-gradient(linear, 0 0, 0 100%, from(#315390) to(#2b497e));	background: -webkit-linear-gradient( #315390, #2b497e);	background: -moz-linear-gradient( #315390, #2b497e);	background: -ms-linear-gradient( #315390, #2b497e);	background: -o-linear-gradient( #315390, #2b497e);	background: linear-gradient( #315390, #2b497e); } */
+
+/* .no-cssgradients button.genericBtn { background-image: url("img/button/back_button_blue.gif");	color: #ffffff; border-color: #244f9d;} */
+/* .no-cssgradients button.genericBtn:hover {	background-position: 0px 32px;} */
+
+.boxshadow button.genericBtn {	-moz-box-shadow: 0 1px 2px #C0C0C0;	-webkit-box-shadow: 0 0.1em 0.2em #C0C0C0;	box-shadow: 0 0.1em 0.2em #C0C0C0; }
+
+div.section.loginBtn > div, div.section.genPassBtn > div {
+	width: 100%;
+}
+
+div.campaign {
+	margin-top: 10px;
+}
+
+#messageContainer {
+	margin-top: 10px;
+	border: 1px solid rgb(237, 201, 103);
+	background-color: rgb(249, 237, 184);
+	margin-right: 30px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	color: #707070;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.sec3 div.field {
+	padding-top: 25px;
+}
+
+.fieldCaptcha {
+	padding-top: 10px;
+}
+
+.fieldCaptcha img {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.fieldCaptcha img, .fieldCaptcha input {
+	width: 100%;
+}
+
+div.section div.fieldEnvironment {
+	width: 100%;
+	margin-top: 5px;
+}
+
+div.section div.fieldEnvironment select, div.section div.fieldEnvironment input {
+	width: 100%;
+}
+
+div.section div.fieldLast {
+	margin-right: -5px;
+}

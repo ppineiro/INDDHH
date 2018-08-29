@@ -1,0 +1,2981 @@
+@charset "utf-8";
+
+/* ==========================================================================
+
+   Guía completa y organizada de trámites e información del Estado
+
+   ========================================================================== */
+/**
+ * Paleta de colores:
+ *  AZUL OSCURO: #155E92;
+ *  AZUL LUZ: #0071CE;
+ *  GRIS CLARO: #f6f6f6;
+ *  GRIS MEDIO: #c4c4c4;
+ *  GRIS TXT : #515151;
+ *  AMARILLO: #F8B334;
+ */
+
+/* ==========================================================================
+   Normalize
+   ========================================================================== */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+[hidden],
+template {
+    display: none;
+}
+
+body {
+    margin: 0;
+}
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, img, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0; padding: 0; border: 0; font-weight: 300; font-style: normal; font-size: 100%; font-family: inherit;
+}
+
+ul li {
+    list-style:none;
+}
+
+b,
+strong {
+    font-weight:bold;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+nav,
+header,
+footer {
+	margin:0;
+}
+
+img {
+    height: auto;
+    border:0;
+}
+
+img,
+object,
+embed {
+    max-width: 100%;
+}
+
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+   color: #7F7F7F;  
+}
+
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+a:focus {
+	outline: thin dotted #333;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+a:hover,
+a:active {
+	outline: 0;
+}
+
+/* Agregamos comportamiento para el foco en botones */
+.submit:focus,
+button:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus {
+    outline: thin dotted #333;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+
+a {
+    background: transparent;
+	color: #104CAD;
+	text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+	color:#104CAD;
+}
+
+a:active {
+	color: #DD931D;
+}
+
+/* ==========================================================================
+   Encabezados
+   ========================================================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0 18px 0;
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1em;
+  color: inherit;
+}
+
+h1 {font-size: 2.6em; letter-spacing:-1px;}
+h2 {font-size: 1.8em; letter-spacing:-1px;}
+h3 {font-size: 1.65em; font-weight:bold; letter-spacing:-0.5px;}
+h4 {font-size: 1.15em;}
+h5 {font-size: 1em;}
+h6 {font-size: 0.9em;}
+
+
+/* ==========================================================================
+   Clases genericas
+   ========================================================================== */
+p.tip {
+    background:transparent url('http://tramites.gub.uy/wps/wcm/connect/43b88a0040f3b30db199ffff29651486/tip-icon.png?MOD=AJPERES&ContentCache=NONE&CACHEID=43b88a0040f3b30db199ffff29651486') no-repeat 0 2px;
+    color:#515151;
+    padding-left:24px;
+    margin:16px 0;
+} 
+p.lead {
+    font-size:1.4em;
+}
+.left {
+    float:left;
+}
+.right {
+    float:right;
+}
+
+.tac {
+    text-align:center;
+}
+
+.clear {
+    clear: both;
+}
+.clearfix:after {
+    clear: both;
+    content: ' ';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+.clearfix {
+    display: inline-block;
+}
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+
+.group:after, .main {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.bullet li {
+	background:transparent url('/Apia/portal/img/2.png') no-repeat 0 8px;
+	padding-left:15px;
+}
+
+/* Clases para accesibilidad */
+.hide-text {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.hidden {
+    position: absolute;
+    top: -9999px;
+    left: -9999px; 
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+body {
+	font-size:93.75%; /* 15px % 16px */
+	line-height:1.3em;
+	font-weight:normal;
+	color:#000;
+    background: #f3f3f3 none repeat scroll 0 0 !important;
+}
+
+
+/* ==========================================================================
+   Estructura
+   ========================================================================== */
+.headers_group {
+    z-index:9999;
+}
+
+body.m_open .headers_group {
+    position:relative;
+    top:0;
+}
+
+body.m_open #contenido {
+    padding-top:0;
+}
+
+/* Contenedor */
+.container, .main {
+	max-width:1080px;
+	margin:0 auto;
+}
+.container:before,
+.container:after {
+  display: table;
+  content: " ";
+}
+.container:after {
+  clear: both;
+}
+
+/* Filas */
+.row:before,
+.row:after {
+  display: table;
+  content: " ";
+}
+.row:after
+{
+  clear: both;
+}
+
+/* Columnas */
+.col {
+	float:left;
+	margin-right:2%;
+}
+.row .col:last-child,
+.last {
+	margin-right:0;
+}
+
+/* Columnas con altura fija */
+.fixed-height .col {
+    position:relative;
+    height:320px;
+    margin-bottom:20px;
+}
+
+.fixed-height .col .box {
+    height:100%;
+}
+
+/* Fracciones */
+.full {width:100%;}
+.mitad {width:49%;}
+.tercio {width:32%;}
+.cuarto {width:23.5%;}
+.dos-tercios {width:66%;}
+.tres-cuartos {width:74.5%;}
+
+/* Corrige columnas en wcm */
+.main > .layoutColumn:nth-child(2) > .layoutRow:first-child {
+	width:66%!important;
+    float:left!important;
+    margin-right:2%!important;
+}
+.main > .layoutColumn:nth-child(2) > .layoutRow:last-child {
+	width:32%!important;
+    float:left!important;
+    margin-right:0!important;
+}
+
+footer {
+	width:100%;
+	height:200px;
+}
+
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+header.peu {
+	width:100%;
+	background:#155E92;
+	margin-bottom:1.5%;
+	float:left;
+	color:#fff;
+	background: rgb(0,111,170); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(0,111,170,1) 0%, rgba(21,94,146,1) 50%, rgba(18,80,124,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,111,170,1)), color-stop(50%,rgba(21,94,146,1)), color-stop(100%,rgba(18,80,124,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(0,111,170,1) 0%,rgba(21,94,146,1) 50%,rgba(18,80,124,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(0,111,170,1) 0%,rgba(21,94,146,1) 50%,rgba(18,80,124,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(0,111,170,1) 0%,rgba(21,94,146,1) 50%,rgba(18,80,124,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(0,111,170,1) 0%,rgba(21,94,146,1) 50%,rgba(18,80,124,1) 100%); /* W3C */
+}
+
+.home-header .logo {
+    float:left;
+    max-width:130px;
+    width:70%;
+    font-weight:bold;
+    color:#fff; 
+    font-size:70%; 
+    padding-top:2px;
+}
+
+.home-header .logo img {
+    float:left; margin:8px 0;
+}
+
+.home-header h1 {
+    margin:0;
+}
+
+.home-header .descripcion {
+    float:right;
+    text-align:right;
+    font-size:0.85em; 
+    margin-top:5px;
+}
+
+.home-header .descripcion span {
+    font-size:0.9em;
+    display:block;
+    margin-top:-3px;
+}
+
+.btn-menu {
+    float:left;
+    display:none;
+}
+
+.btn-menu span {
+    cursor:pointer;
+    width:18px; 
+    height:18px; 
+    float:left;
+    display:block; 
+    background:url('http://tramites.gub.uy/wps/wcm/connect/14b3858040e797a799d2dfff29651486/btn-menu.png?MOD=AJPERES&ContentCache=NONE&CACHEID=14b3858040e797a799d2dfff29651486') no-repeat center center; 
+    margin-right:4px; 
+    padding:20px;
+}
+
+.btn-menu span.menu_open {
+    background-color:rgba(0,0,0,0.3);
+}
+.menu_open {background:rgba(0,0,0,0.5);}
+
+
+/* ==========================================================================
+   Navegacion
+   ========================================================================== */
+nav {
+	background:#013B69; 
+    -webkit-box-shadow: inset 0px 2px 2px 0px #003556;
+    box-shadow: inset 0px 2px 2px 0px #003556;
+}
+nav a {
+    color:#fff;
+    text-decoration:none;
+}
+nav a:hover {
+    color:#fff;
+}
+nav ul > li {
+    padding:10px 5px 10px 4px;
+    display:block;
+    float:left;
+    width:16.666666666666667%;
+    text-align:center;
+    line-height:0.95em;
+    position:relative;
+    margin-left:-1px;
+}
+nav ul li.una-linea {
+    padding:17px 0;
+}
+nav ul li div#menu2Col {
+    width:28em;
+}
+nav ul li div#menu2Col .left,
+nav ul li div#menu2Col .right {
+    width:14em;
+}
+nav ul > li:hover {
+    cursor:pointer;
+    background:#002D51;
+}
+.no-js nav ul li:hover ul.subnav,
+.no-js nav ul li:hover div.subnav {
+    display:block;
+}
+nav ul li ul.subnav,
+nav ul li div.subnav {
+    display:none;
+    position:absolute;
+    background:#002D51;
+    top:47px;
+    left:0;
+    width:100%;
+    z-index:5000;
+}
+nav ul li ul.subnav li,
+nav ul li div.subnav li {
+    text-align:left;
+    float:none;
+    width:auto;
+    padding:0;
+}
+nav ul li ul.subnav li a,
+nav ul li div.subnav li a {
+    padding:8px 20px;
+    display:block;
+    font-size:0.9em; 
+    border-bottom:1px dotted #3379A8;
+}
+nav ul li ul.subnav li:last-child a {
+    border-bottom:0;
+}
+nav ul li ul.subnav li a:hover,
+nav ul li div.subnav li a:hover {
+    background-color:#005492;
+}
+nav ul .menuItem:first-child span {
+    text-transform:uppercase;
+}
+nav ul li ul.subnav {
+    border-radius:0 0 6px 6px;
+}
+nav ul.topnav {
+    background:url('http://tramites.gub.uy/wps/wcm/connect/a44dd080481110a7add3af9ca4a28e71/linea-menu.gif?MOD=AJPERES&CACHEID=a44dd080481110a7add3af9ca4a28e71') no-repeat 0 center;
+}
+nav ul li {
+    background:url('http://tramites.gub.uy/wps/wcm/connect/a44dd080481110a7add3af9ca4a28e71/linea-menu.gif?MOD=AJPERES&CACHEID=a44dd080481110a7add3af9ca4a28e71') no-repeat right center;
+}
+nav ul li ul li {
+    background-image:none;
+}
+nav ul > li.subhover {
+    background:#002D51 url('http://tramites.gub.uy/wps/wcm/connect/f559930048260562b24abb9ca4a28e71/linea-menu-hover.gif?MOD=AJPERES&CACHEID=f559930048260562b24abb9ca4a28e71') no-repeat 0 center;
+    border-right:1px solid #fff;
+}
+
+
+/* ==========================================================================
+   Estilo del contenedor
+   ========================================================================== */
+.box, .contenedor {
+	border:1px solid #cfcfcf;
+	background:#fff;
+	color:inherit;
+	border-radius:3px;
+	padding:25px 25px;
+	margin-bottom:1.25em;
+	box-shadow:1px 1px 2px #cfcfcf;
+	width:100%;
+	float:left;
+}
+
+
+/* ==========================================================================
+   Contenedores especificos
+   ========================================================================== */
+
+/* Contenedor cabezal de subhome */
+.subhome a {
+    float:left;
+}
+.subhome .box {
+    padding:18px 25px 14px 25px;
+}
+.subhome a img {
+    float:left;
+    /* max-width:250px; */
+}
+.subhome h1 {
+    margin:0;
+}
+
+/* Accesos rapidos */
+.accesos ul {
+    margin-left:1em;
+}
+.accesos ul li {
+    list-style:none;
+    margin:14px 0;
+}
+
+/* contenedor de temas no tiene class */
+.contenedor .bullet {
+    margin-left:1em;
+}
+.contenedor .bullet li {
+    margin:14px 0 ;
+}
+
+/* el contenedor de categorias es h4 y no h3 revisar */
+.main .layoutRow .layoutColumn:nth-child(2) .layoutRow:last-child .contenedor .contenido h4 {
+	font-size: 1.65em;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+
+/* Lista de categorias */
+.listaCategorias ul {
+    margin-left:1em;
+}
+.listaCategorias ul li {
+    list-style:none;
+    margin:14px 0 ;
+}
+
+/* buscadorTramites - Mas consultados (tiene una clase que no corresponde con el contenido) */
+.buscadorTramites ol {
+    margin-left:2.5em;
+}
+.buscadorTramites ol li {
+    margin:14px 0 ;
+}
+
+/* Tramites online */
+.tramites_online h3 {
+    font-size:2em;
+    letter-spacing:-1px;
+    font-weight:normal;
+    color:#0A59A0;
+    text-decoration:underline;
+}
+.tramites_online h4 {
+    text-transform:uppercase;
+    font-weight:bold; 
+    font-size:0.85em; 
+    margin-top:2em;
+}
+.tramites_online img {
+    float:left;
+    margin:10% 10% 10% 0;
+    width:100%;
+}
+.tramites_online .wrap_img {
+    width:32%;
+    float:left; 
+    margin-right:3%;
+}
+.tramites_online ul li {
+    list-style:none;
+    margin-bottom:6px;
+}
+.tramites_online ul li a {
+    color:#000;
+}
+.wrap_media {
+    overflow:hidden;
+}
+
+/* Lista de tramites (mas consultados y destacados) */
+.lista_tramites ul {
+    margin-left:0.65em;
+}
+.lista_tramites ul li {
+    list-style:none;
+    margin:18px 0 ;
+}
+.lista_tramites ul li a {
+    color:#000;
+    font-size:1.15em;
+}
+
+/* Temas relacionados */
+.temas .listadoFotos li {
+	width:23%;
+    margin:0 1% 2.5em 1%;
+	text-align:center;
+	overflow:auto;
+	float:left;
+}
+.listadoFotos li img {
+    float:left; 
+    padding:2px;
+    border:1px solid #e5e5e5;
+}
+.listadoFotos a {
+    margin-left:10px;
+}
+
+/* Paginado alfabetico */
+.paginadoAlfa {
+    float:left;
+}
+.paginadoAlfa li {
+	float:left;
+	list-style:none;
+	margin:3px;
+	padding:4px 9px;
+	border-radius:2px;
+	background-color:#F3f3f3;
+}
+.paginadoAlfa li:last-child {
+    margin-right:0;
+}
+.paginadoAlfa li.pagInhabilitada {
+	background-color:#f9f9f9;
+	color:#999;
+}
+.indiceAlfa {
+    position:relative;
+}
+.indiceAlfa .right {
+    position:absolute;
+    top:2.5em; 
+    right:2em;
+}
+
+/* Contenedor Ayudenos a mejorar */
+.btn_ayudenos p.lead {
+	text-align:center;
+	margin-bottom:1em;	
+	margin-top:0.5em;
+	font-size:1.45em;
+}
+.btn_ayudenos .btn {font-size:1.25em;}
+
+/* Contenedor destacado2inter */
+.destacado2inter h3 a {
+    color:#000;
+}
+.destacado2inter img {
+    padding:2px;
+    border:1px solid #e5e5e5;
+}
+
+/* Contenedor Formato Completo */
+.formCompleto h3 a {
+    color:#000;
+}
+.formCompleto p a {
+    text-decoration:none;
+    color:#000;
+}
+.formCompleto img {
+    padding: 2px;
+    border:1px solid #E5E5E5
+}
+
+/* Contenedor Galeria de imagenes */
+.galeria .listadoFotos li {
+	width:23%;
+    margin:0 5% 2.5em 5%;
+	text-align:center;
+	/* overflow:auto;  */
+	float:left;
+}
+.galeria .listadoFotos li a img {
+     float:none;
+}
+.galeria .listadoFotos a {
+    margin-left:0;
+}
+.galeria .tituloGaleria {
+    float:left;
+    margin-top:8px;
+}
+
+/* Destacado 3 */
+.destacado3 .listadoLinea li {
+    padding-bottom:20px;
+    margin:20px;
+    border-bottom:1px solid #dedede;
+}
+
+/* Contenedor Noticias */
+.noticias .listadoLinea li p a {
+    color:#000;
+    text-decoration:none;
+}
+.noticias .listadoLinea li div {
+    margin-right:12px;
+}
+.noticias .listadoLinea li {
+    overflow:hidden;
+    padding-bottom:14px;
+    margin-bottom:14px;
+    border-bottom:1px solid #e5e5e5;
+}
+.noticias img {
+    padding:2px;
+    border:1px solid #e5e5e5;
+}
+
+/* Link de RSS al pie de los Contenedores */
+.pieContenedorRss {
+    float:right;
+}
+.pieContenedorRss a {
+    background: url("http://tramites.gub.uy/wps/wcm/connect/87009d004866773b820a9f52e5248a5c/rss.png?MOD=AJPERES&ContentCache=NONE&CACHEID=87009d004866773b820a9f52e5248a5c") no-repeat scroll 0 8px rgba(0, 0, 0, 0);
+    display: block;
+    padding: 8px 0 8px 24px;
+}
+.pieContenedorRss a span {
+    height: 1px;
+    left: -10000px;
+    overflow: hidden;
+    position: absolute;
+    top: auto;
+    width: 1px;
+}
+
+/* Destacado 1 */
+.destacado1 img {
+    padding: 2px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    margin-right: 20px;
+}
+.destacado1 h3 a {
+    color: #000;
+}
+.destacado1 p a {
+    color: #000;
+    text-decoration: none;
+}
+.destacado1 .pieDestacado1 {
+    text-align: right;
+    margin-top: 0.75em;
+}
+.destacado1 .pieDestacado1 .fuente {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 420px){
+    .destacado1 img {
+        width: 100%!important;
+        height: auto!important;
+        float: none!important;
+        margin-right: 0;
+        margin-bottom: 0.5em;
+    }
+    .destacado1 .contenido > div > div {float: none!important;}
+}
+
+/* Para todos los contenedores */
+.fuente {
+    font-size:0.935em;
+    margin-bottom:2em;
+}
+.contenedor h3 {
+    line-height: 1.1em;
+}
+
+/* ==========================================================================
+   Formularios
+   ========================================================================== */
+
+/* Inputs */
+.form input[type="text"],
+.form input[type="search"],
+.form .search {
+	border:1px solid;
+	border-color:#d9d9d9;
+    border-top-color:#c0c0c0;
+	padding:8px 12px;
+	border-radius:2px;
+	font-family:inherit;
+	font-size:inherit;
+}
+.form input[type="search"],
+.form .search {
+	-webkit-appearance: textfield;
+}
+
+.form input[type="text"]:hover,
+.form input[type="search"]:hover,
+.form .search:hover {
+	border-color:#b9b9b9;
+    border-top-color:#a0a0a0;
+}
+
+.form input[type="text"]:focus,
+.form input[type="search"]:focus,
+.form .search:focus {
+	border-color:#3498db;
+	-webkit-box-shadow: inset 1px 1px 2px 0px #D5D9DB;
+	        box-shadow: inset 1px 1px 2px 0px #D5D9DB;
+}
+
+/* Botones */
+.form input[type="submit"],
+form input[type="button"],
+.form button,
+a.btn,
+.submit {
+    -webkit-appearance: none;
+    
+    cursor:pointer;
+	font-family:inherit;
+	font-size:inherit;
+	font-weight:normal;
+    color: #fff;
+    background: #0B72B5;
+	border: 0;
+	padding: 0.35em 1.25em;
+	border-radius: 3px;
+	position:relative;
+    
+	box-shadow: 0 2px 0 #0B72B5;
+ 	text-shadow: 1px 1px 0px #02547F;
+    
+	-webkit-transition: background 0.5s ease 0s;
+	   -moz-transition: background 0.5s ease 0s;
+	     -o-transition: background 0.5s ease 0s;
+            transition: background 0.5s ease 0s;
+}
+
+/* Transition en los inputs */
+.form input[type="text"],
+.form input[type="search"],
+.form textarea {
+	 transition: all 0.5s ease 0s;
+	 -webkit-transition: all 0.5s ease 0s;
+	 -moz-transition: all 0.5s ease 0s;
+	 -o-transition: all 0.5s ease 0s;
+}
+
+.form input[type="submit"]:hover,
+form input[type="button"]:hover,
+.form button:hover,
+a.btn:hover,
+.submit:hover {
+	background:#1E8AC6;
+	box-shadow: 0 2px 0 #02547F;
+}
+
+.form input[type="submit"]:active, 
+form input[type="button"]:active,
+.form button:active,
+a.btn:active,
+.submit:active {
+	box-shadow: 0 1px 0 #02547F;
+	top: 1px;
+}
+
+/* Buscador */
+.buscador .form input {
+    font-size:1.5em;
+}
+.buscador .form input[type="search"],
+.buscador .form .search {
+    width:78%; 
+    margin-right:2%;
+    float:left;
+    padding:14px 16px 14px 55px; 
+    background:url('http://tramites.gub.uy/wps/wcm/connect/740e958040f3b7f1b206ffff29651486/ico_search.png?MOD=AJPERES&ContentCache=NONE&CACHEID=740e958040f3b7f1b206ffff29651486') no-repeat 14px center;
+}
+.buscador .form input[type="submit"],
+.buscador .form .submit {
+    width:20%;
+    float:left;
+    text-transform:uppercase; 
+    padding:14px 16px 10px 16px;
+}
+
+/* Buscador de Tramites y PEU en cabezal subhome */
+#Buscar,
+#BuscarTram {
+	font-weight:normal;
+	text-decoration:none;
+	border: 0;
+	
+	transition: background 0.75s ease 0s, color 0.75s ease 0s, box-shadow 0.5s ease 0s;
+	-webkit-transition: background 0.75s ease 0s, color 0.75s ease 0s, box-shadow 0.5s ease 0s;
+	-moz-transition: background 0.75s ease 0s, color 0.75s ease 0s, box-shadow 0.5s ease 0s;
+	-o-transition: background 0.75s ease 0s, color 0.75s ease 0s, box-shadow 0.5s ease 0s;
+	
+	position:relative;
+	padding: 0.35em 1.25em;
+	border-radius: 3px;
+	
+	color: #333;
+	border:1px solid #ccc;
+	border-bottom: 1px solid #adadad;
+	background: #f3f3f3;
+	box-shadow:
+		0 1px 1px #ccc,
+		inset 0px 1px 1px 0px #fff;
+	-webkit-box-shadow:
+		0 1px 1px #ccc,
+		inset 0px 1px 1px 0px #fff;
+ 	text-shadow: 1px 1px 0px #fff;
+	
+	cursor:pointer; 
+}
+
+#Buscar:hover,
+#BuscarTram:hover {
+	color:#000;
+	background:#fff;
+	box-shadow: 0 1px 2px #ccc;
+}
+
+#Buscar:active,
+#BuscarTram:active {
+	-webkit-box-shadow: inset 0px 1px 1px 0px #cccccc;
+	box-shadow: inset 0px 1px 1px 0px #cccccc; 
+	top: 1px;
+}
+
+/* Boton generico */
+.btn {
+	font-family:inherit;
+	font-size:inherit;
+	font-weight:normal;
+	cursor:pointer;
+	border: 0;
+	padding: 0.55em 1.45em;
+	color: #fff;
+	text-decoration:none;
+	background: #0B72B5;
+	border-radius: 3px;
+	display:block;
+	text-align:center;
+	position:relative;
+	box-shadow: 0 4px 0 #02547F;
+	text-shadow: 1px 1px 0px #02547F;
+}
+.btn:active {
+	box-shadow: 0 2px 0 #02547F;
+	top: 2px;
+}
+.btn:active,
+.btn:focus {
+    color:#fff;
+}
+.btn:hover {
+    text-decoration:none; 
+    color:#fff;
+}
+
+
+/* ==========================================================================
+   Contenedor de categorias
+   ========================================================================== */
+.categorias ul li {
+	list-style:none;
+	width:8%;
+	margin-right:1%;
+	float:left;
+	margin-bottom:0.5em;
+}
+.categorias ul li:last-child {
+    margin-right:0;
+}
+.categorias ul li a .i {
+	background:transparent url('/Apia/portal/img/1.png') center 0;
+	background-repeat:no-repeat;
+	display:block;
+	margin-bottom:8px;
+}
+.categorias ul li a {
+    padding:0.8em 0.5em;
+    border:1px solid #fff;     
+    text-align:center;
+	display:block;
+	color:#000;
+	text-decoration:none;
+}
+.categorias ul li a:hover {
+	border-radius:8px;
+	background:#f9f9f9;
+    color:#104CAD; 
+    text-decoration:underline;
+}
+
+.categorias li.cat6 a .i {background-position:center -100px;}
+.categorias li.cat5 a .i {background-position:center -197px;}
+.categorias li.cat3 a .i {background-position:center -290px;}
+.categorias li.cat1 a .i {background-position:center -384px;}
+.categorias li.cat2 a .i {background-position:center -480px;}
+.categorias li.cat7 a .i {background-position:center -576px;}
+.categorias li.cat8 a .i {background-position:center -671px;}
+.categorias li.cat4 a .i {background-position:center -7px;}
+
+.categorias .layout1 {margin-top:2em;}
+
+.overlay {
+    float:left;
+    width:100%;
+}
+.overlay_h {
+    font-size:1.25em; 
+    margin-bottom:1.5em;
+}
+.overlay_title {
+    font-weight:bold;
+    margin-left:1em;
+    background:url('http://tramites.gub.uy/wps/wcm/connect/94b8b18040f3b4b8b1aaffff29651486/breadcrumb.png?MOD=AJPERES&ContentCache=NONE&CACHEID=94b8b18040f3b4b8b1aaffff29651486') no-repeat 0 5px;
+    padding-left:26px;
+}
+.subcategoria {
+    padding:12px 30px;
+    border:1px solid #cecece;
+    border-radius:4px; 
+    font-size:1.45em;
+    text-decoration:none;
+    margin:0 8px; 
+    float:left;
+    margin-bottom:20px;
+}
+.subcategoria:hover {
+    background:#f9f9f9;
+}
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+/**
+ * Heredan las propiedades desde escritorio hasta movil.
+ *
+ * En 1080px tiene un tope para escritorio.
+ * Hasta 1024px se ajusta normalmente. Menos de 1024px colapsa el menu de
+ * navegacion, la barra de subhome mantiene la apariencia.
+ * 
+ * Menos de 768px la barra de subhome se pega al cabezal azul.
+ */
+
+/* Menos de 1130
+   ========================================================================== */
+@media (max-width: 1130px) { 	
+	
+    .main > .layoutRow > .layoutColumn:first-child {
+        margin:0;
+    }
+	
+	header.peu {
+        margin-bottom:3%;
+    }
+    
+	#contenido {
+        padding-left:2%;
+        padding-right:2%;
+    }
+    
+	.main > .layoutColumn:nth-child(2), .main > .layoutColumn:last-child, .subhome {
+        padding:0 2%;
+    }
+
+}
+
+/* Corrige padding de cabezales
+   ========================================================================== */
+@media (min-width: 1024px) and (max-width:1080px) {
+	
+    .headers_group {
+        padding-left:2%; 
+        padding-right:2%;
+    }
+    
+}
+
+/* Menos de 1024px
+   ========================================================================== */
+@media (max-width: 1023px) {
+	/* Oculto */
+    nav,
+    .descripcion {
+		display:none;
+	}
+    /* Muestro */
+    .btn-menu {
+        display:block;
+    }
+    
+    /* Eliminar fondo al 100 cuando se fijan los cabezales */
+	body {background:#f6f6f6;}
+    
+    /* Menu de navegacion */
+	nav span {
+        margin-bottom:0.5em;
+        float:left;
+        width:100%;
+        font-weight:bold;
+    }
+	nav ul li {
+        width:100%;
+        text-align:left;
+        font-size:1.25em;
+    }
+	nav ul li ul.subnav,
+    nav ul li div.subnav {
+        display:none; 
+        position:static;
+        font-size:0.7em;
+        margin-bottom:0.5em;
+        float:left;
+        background:transparent;
+    }
+	nav ul li:hover {
+        background:transparent;
+    }
+	nav ul li ul.subnav li {
+        width:48%; 
+        float:left;
+        margin-right:2%;
+    }
+	nav .container {
+        padding:0 1.5em;
+    }
+	nav ul li,
+    nav ul li.subhover,
+    nav ul div.subhover,
+    nav ul.topnav,
+    .menuItem {
+        background:none;
+    }
+	nav ul li.subhover {
+        border:none;
+    }
+	nav ul li.una-linea {
+        padding:10px 5px;
+    }
+	.topnav {
+        margin-top:14px;
+    }
+    
+    /* Ajustes en logos */
+	.home-header .logo {
+        padding:0;
+    }
+	.home-header .logo img {
+        margin-top:8px;
+    }
+	.home-header {
+        padding:0!important;
+    }
+	header.subhome img,
+    .home-header h1 a img {
+        width:80%;
+    }
+	
+	/* Ajustar categorias linea de 8 iconos */
+	.categorias ul li { 
+        width:24.25%; /* 2 lineas de 4 */
+        margin-right:1%;
+    }
+	.categorias ul li:nth-child(4n+0) {
+        margin-right:0; /* el cuarto y el octavo no llevan margen */
+    }
+	.categorias ul li a {        
+    }
+
+	/* Corregir tramites en ampliado */
+    #contenido,
+	.main > .layoutColumn:nth-child(2),
+    .main > .layoutColumn:last-child,
+    .subhome {
+        padding:0 2%;
+    }
+	
+	/* Solucionar montado de fixed-height */
+	.fixed-height .col {
+        height:auto;
+        margin-bottom:auto;
+    }
+	
+    /* Ajuste en contenedor Tramites en linea */
+	.tramites_online h3 {
+        font-size:1.65em!important; 
+        font-weight:bold!important;
+    }
+	
+    /* Alineacion de contenedor de Temas relacionados */
+	.listadoFotos li img {
+        width:95%;
+    }
+	.listadoFotos a {
+        margin:0.25em 0 0;
+        width:100%;
+    }
+	
+	/* Corrige botones de imprimir y redes sociales en pantallas chicas */
+	.detalleTramite h3,
+    .detalleTramite .block {
+        width:100%!important;
+    }
+	.btns_sm {
+        position:static!important;
+        margin:12px 0!important;
+    }
+	.itemsTramites {
+        margin-top:3.5em!important;
+    }
+}
+
+/* Menos de 768px
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Ajuste encabezados contenedores */
+    h3 {
+        font-size:1.45em!important; 
+        font-weight:bold;
+        letter-spacing:-1px;
+    }
+    
+    .indiceAlfa .right {
+        display:none;
+    }
+    
+    /* Las columnas pasan a ocupar el ancho total de la pantalla */
+	.mitad,
+    .tercio,
+    .cuarto,
+    .dos-tercios,
+    .tres-cuartos {
+		width:100%;
+	}
+	
+	/* Asigna comportamiento de columna al layoutRow */
+    .main > .layoutColumn:nth-child(2) > .layoutRow:first-child,
+    .main > .layoutColumn:nth-child(2) > .layoutRow:last-child {
+        width:100%!important;
+	}
+	
+	.main .layoutColumn:last-child .layoutRow {
+        padding:0 2%;
+    }
+	
+	.fixed-height .col .box {
+		height:auto;
+	}
+	
+    /* Cambia apariencia del subheader de Suhome, se fija contra la barra azul */
+	header.peu {
+        margin-bottom:0!important;
+    }
+	header.subhome {
+        width:100%;
+        padding:0; 
+        z-index:9999;
+    }
+	header.subhome .box {
+		background: rgb(255,255,255); /* Old browsers */
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.9) 0%, rgba(244,244,244,0.9) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.9)), color-stop(100%,rgba(244,244,244,0.9))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.9) 0%,rgba(244,244,244,0.9) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(255,255,255,0.9) 0%,rgba(244,244,244,0.9) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(255,255,255,0.9) 0%,rgba(244,244,244,0.9) 100%); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%,rgba(244,244,244,0.9) 100%); /* W3C */
+	}
+	header.subhome img {
+        width:60%;
+    }
+	header.peu img {
+        width:80%;
+    }
+	header.subhome .box {
+        border-width:0 0 1px 0;
+        border-radius:0; 
+        padding:9px 15px 7px;
+    }
+	.headers_group {
+        position:fixed;
+        width:100%;
+        left:0;
+        top:0;
+    }
+	
+	/* Padding para la barra fija 
+	.main > .layoutRow > .layoutColumn:nth-child(2) {
+        padding-top:7em;
+    }*/
+	#contenido {
+        padding-top:6.25em;
+    }
+	/*.main > .layoutColumn:nth-child(2) > .layoutRow:first-child > .layoutColumn {
+        padding-top:6.25em!important;
+    }*/
+	
+	/* Ajustes para el tramite ampliado */
+	.detalleTramite h4 {
+        font-size:1.25em;
+    }
+	.detalleTramite ul li p,
+    .detalleTramite ul li font  {
+        font-size:1.25em!important;
+    }
+	.itemsTramites li {
+        margin-bottom:1.5em;
+    }	
+
+}
+
+/* Menos de 680px
+   ========================================================================== */
+@media (max-width: 680px) { 
+	nav ul li ul.subnav li {
+        width:100%; 
+        float:left;
+    }
+	.categorias ul li {
+        width:48%; /* cambiar la lista de categorias por 2, 2, 2, 2 */
+        margin-right:2%;
+    }
+	.categorias ul li:nth-child(2n+0) {
+        margin-right:0; /* el segundo, cuarto y sexto no llevan margen */
+    } 
+	.formConsultaTramites legend {
+        font-size:1.1em!important;
+    }
+    
+    /* Contenedor subcategorias */
+	.subcategoria {
+        font-size:85%;
+        width:100%;
+    }
+	.overlay_h {
+        font-size:75%;
+    }
+    
+}
+@media (max-width: 480px) { 
+	.tramites_online .wrap_img {width:100%;}
+	.tramites_online .wrap_media {overflow:visible;}
+	.menu > .container > ul > li .submenu.tramites .tercio #atencion-web span{font-size: 85%;}
+	.temas .listadoFotos li {width:48%;}
+	
+	/* Se supone que esto lo hereda */
+    .categorias ul li {
+        width:48%;
+        margin-right:2%;
+    }
+	.categorias ul li:nth-child(2n+0) {
+        margin-right:0;
+    }
+    
+    .buscador .form input[type="submit"] {
+        display:none;
+    }
+	.buscador .form input[type="search"] {
+        width:100%; 
+        padding:8px 16px 8px 40px;
+        font-size:1.2em; 
+        background-size:16px;
+    }
+	
+	/* Ajustar margenes */
+	.box, .contenedor {
+        margin-bottom:0.85em;
+    }
+
+}
+
+
+/* ==========================================================================
+   Slider
+   ========================================================================== */
+.slide_stats {
+	text-align:center;
+	
+}
+.slide_stats .swiper-slide span{
+	font-size:4em; 
+    display:block;
+    font-weight:normal; 
+    letter-spacing:-1px;
+    margin:0.75em 0;
+	text-shadow: 1px 1px 0px #707070;
+}
+.swiper-main {padding:16px;}
+/* Swiper Styles */
+.swiper-container {
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+	-ms-backface-visibility:hidden;
+	-o-backface-visibility:hidden;
+	backface-visibility:hidden;
+	/* Fix of Webkit flickering */
+	z-index:1;
+}
+.swiper-wrapper {
+	position:relative;
+	width:100%;
+	-webkit-transition-property:-webkit-transform;
+	-webkit-transition-duration:0s;
+	-webkit-transform:translate3d(0px,0,0);
+	-webkit-transition-timing-function:ease;
+	
+	-moz-transition-property:-moz-transform;
+	-moz-transition-duration:0s;
+	-moz-transform:translate3d(0px,0,0);
+	-moz-transition-timing-function:ease;
+	
+	-o-transition-property:-o-transform;
+	-o-transition-duration:0s;
+	-o-transform:translate3d(0px,0,0);
+	-o-transition-timing-function:ease;
+	
+	-ms-transition-property:-ms-transform;
+	-ms-transition-duration:0s;
+	-ms-transform:translate3d(0px,0,0);
+	-ms-transition-timing-function:ease;
+	
+	transition-property:transform;
+	transition-duration:0s;
+	transform:translate3d(0px,0,0);
+	transition-timing-function:ease;
+	
+}
+.swiper-slide {
+	float:left;
+	-webkit-transform:translate3d(0,0,0);
+	-o-transform:translate3d(0,0,0);
+	-moz-transform:translate3d(0,0,0);
+	-ms-transform:translate3d(0,0,0);
+	transform:translate3d(0,0,0);
+}
+
+/* IE10 Windows Phone 8 Fixes */
+.swiper-wp8-horizontal {
+	-ms-touch-action: pan-y;
+}
+.swiper-wp8-vertical {
+	-ms-touch-action: pan-x;
+}
+
+/* Specify Swiper's Size:  */
+.swiper-container, .swiper-slide {
+	width: 100%;
+	height:auto/*220px*/;
+}
+
+.home-device {
+	position:relative;
+}
+.home-device .arrow-left {
+	background:url('http://tramites.gub.uy/wps/wcm/connect/62629080413773d79a9e9f103cdefaf8/slider_arrows.png?MOD=AJPERES&ContentCache=NONE&CACHEID=62629080413773d79a9e9f103cdefaf8') no-repeat left top;
+	position:absolute;
+	left:-10px;
+	top:50%;
+	margin-top:-15px;
+	width:17px;
+	height:30px;
+	z-index:1000;
+}
+.home-device .arrow-right {
+	background:url('http://tramites.gub.uy/wps/wcm/connect/62629080413773d79a9e9f103cdefaf8/slider_arrows.png?MOD=AJPERES&ContentCache=NONE&CACHEID=62629080413773d79a9e9f103cdefaf8') no-repeat left bottom;
+	position:absolute;
+	right:-10px;
+	top:50%;
+	margin-top:-15px;
+	width:17px;
+	height:30px;
+	z-index:1000;
+}
+
+/* ==========================================================================  
+   FOOTER  2014-11
+   ========================================================================== */
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+#pie {
+  background: #e6e6e6;
+  font-size: 90%;
+  height: auto;
+  /* TODO: corregir */
+}
+#pie a {
+    color: #000;
+}
+#pie h3 {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-family: 'Open Sans', sans-serif;
+}
+#pie ul li {
+  margin-bottom: 6px;
+}
+#pie .lista-split ul {width:100%; height:20em;}
+#pie .lista-split ul li {width:50%; float:left;}
+#pie .top-footer {
+  background: #095383;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 3px 3px 0 0;
+}
+#pie .top-footer p {
+  float: left;
+  font-size: 100%;
+  margin-top: 5px;
+}
+#pie .top-footer a {
+  color: #fff;
+}
+#pie .top-footer .fl a {
+  display: block;
+  float: left;
+  margin-right: 30px;
+}
+#pie .top-footer img {
+  float: left;
+}
+#pie .top-footer ul {
+  margin: 4px 0 0 0;
+  padding: 0;
+}
+#pie .top-footer ul li {
+  float: left;
+  margin: 0 10px;
+}
+#pie .inner-footer {
+  padding: 30px;
+}
+#pie .inner-footer a {
+  text-decoration: none;
+}
+#pie .inner-footer a:hover {
+  text-decoration: underline;
+}
+#pie .inner-footer > div:last-child {
+  border-left: 1px solid #cecece;
+  padding-left: 29px;
+    padding-top: 44px;
+}
+#pie .inner-footer > div:last-child a {
+  color: #000;
+  font-size: 1.05em;
+}
+#pie .inner-footer > div:last-child img {
+  margin: 16px 0;
+}
+#pie .inner-footer > div:first-child a {
+  text-transform: lowercase;
+  font-size: 1.05em;
+}
+#pie .inner-footer .mitad {
+    padding-left: 30px;
+}
+#pie .inner-footer .mitad a {
+  text-transform: lowercase;
+  font-size: 1.2em;
+}
+#pie .inner-footer .mitad ul {
+  float: left;
+}
+#pie .inner-footer .mitad ul li {
+  margin-bottom: 10px;
+}
+#pie .inner-footer .mitad ul.first-col {
+  margin-right: 70px;
+}
+#pie .inner-footer .mitad h3 {
+  color: #095383;
+}
+#pie .bottom-footer {
+  padding: 16px 0;
+  margin: 0 30px;
+  border-top: 1px solid #cecece;
+  font-size: 0.95em;
+}
+#pie .bottom-footer strong {
+  float: left;
+}
+#pie .bottom-footer ul {
+  float: left;
+}
+#pie .bottom-footer ul li {
+  float: left;
+  margin-left: 12px;
+}
+#pie .bottom-footer .mail span {
+  background: url(/wps/wcm/connect/92a6688046683156b02df16d575befd1/sprite-footer.png?MOD=AJPERES&ContentCache=NONE&CACHEID=92a6688046683156b02df16d575befd1) -16px 5px no-repeat;
+  display: block;
+  width: 20px;
+  height: 16px;
+  float: left;
+}
+#pie .bottom-footer .rss span {
+  background: url(/wps/wcm/connect/92a6688046683156b02df16d575befd1/sprite-footer.png?MOD=AJPERES&ContentCache=NONE&CACHEID=92a6688046683156b02df16d575befd1) 0 5px no-repeat;
+  display: block;
+  width: 16px;
+  height: 16px;
+  float: left;
+}
+#pie .bottom-footer .mail a {
+  margin-left: 6px;
+}
+/* ==========================================================================  
+   FOOTER Responsive 2014-11
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  #pie .tercio,
+  #pie .mitad,
+  #pie .cuarto {
+    width: 100%;
+    padding: 0;
+  }
+  #pie .inner-footer > div:last-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+  #pie .top-footer .fr {
+    float: left;
+  }
+  #pie .top-footer .fr ul li {
+    margin-left: 0;
+    margin-right: 20px;
+  }
+  #pie .bottom-footer .fr {
+    float: left;
+  }
+  #pie .bottom-footer .fr ul li {
+    margin: 0 10px 0 0;
+  }
+  #pie .bottom-footer ul li.mail {
+    margin-top: 10px;
+  }
+  #pie .bottom-footer ul li.mail strong {
+    display: none;
+  }
+  #pie .inner-footer .mitad {
+      padding-left: 0;
+  }
+}
+
+/* ==========================================================================
+   VARIOS
+   ========================================================================== */
+/**
+ * Existen clases box en contenedor de wcm, si contenedor emula
+ * un box es necesario que si hay un box dentro de un contenedor
+ * no tenga estilos
+ */
+.contenedor .box {
+	border:none;
+	background:transparent;
+	color:inherit;
+	border-radius:0;
+	padding:0;
+	margin-bottom:0;
+	box-shadow:none;
+	width:100%;
+	float:left;
+}
+
+.contenedor .right {width:100%; text-align:right;}
+
+/* Botones social media e impresion en Tramite ampliado */
+.btns_sm li {
+    float:left;
+    margin:0 6px;
+}
+.btns_sm li a {
+    width:24px; 
+    height:24px;
+    text-indent:-9999px;
+}
+.fb-btn a, .tw-btn a, .print-btn a, .google-btn a, .linkedin-btn a {
+    background:url('http://tramites.gub.uy/wps/wcm/connect/8f22a6804069cc099a86dfff29651486/sprite_sm.png?MOD=AJPERES&ContentCache=NONE&CACHEID=8f22a6804069cc099a86dfff29651486') no-repeat 0 0; 
+    display:block;
+}
+.fb-btn a {background-position: 0 0; background-color: #3B5A98;}
+.tw-btn a {background-position: 0 -24px; background-color: #60C6EC;}
+.print-btn a {background-position: 0 -48px; background-color: #6E6E6E;}
+.google-btn a {background-position: 0 -72px; background-color: #D23B2F;}
+.linkedin-btn a {background-position: 0 -96px; background-color: #007AB9;}
+
+/* Tramite ampliado
+   ========================================================================== */
+.detalleTramite h3,
+.detalleTramite .block {
+    clear:both; width:100%;
+}
+
+.tramiteAmpl {
+    position:relative;
+}
+
+.tramiteAmpl h3 {
+    color: #0468AC;
+}
+
+/* Corregir problema con listas y bullets */
+.tramiteAmpl ul li {
+    list-style: disc;
+}
+.tramiteAmpl ul,
+.tramiteAmpl ol {
+    margin:10px 28px;
+}
+.tramiteAmpl ol li {
+    list-style: decimal;
+    margin: 0 10px;
+}
+.tramiteAmpl .btns_sm{
+    margin:0;
+}
+.tramiteAmpl .itemsTramites {
+    margin:20px 0 0 0;
+}
+
+.tramiteAmpl .btns_sm li,
+.tramiteAmpl .itemsTramites > li {
+    list-style: none;
+}
+.tramiteAmpl .itemsTramites .bullet li {
+    list-style: none;
+}
+.itemsDepende {
+    list-style: none;
+}
+
+/* Corregir tamaño de texto en trámite ampliado */
+.tramiteAmpl .detalleTramite .itemsTramites li p,
+.tramiteAmpl .detalleTramite .itemsTramites li font {
+    font-size:1em!important; /* Puppo - cambio 14px por 1em para que no cambie el tamaño del texto - 20150102 */
+    text-align:left;
+}
+	
+.itemsTramites {margin-top:1.5em;}
+.itemsTramites li {margin-bottom:2.5em;}
+.itemsTramites li h4 {margin-bottom:0.5em;}
+.itemsTramites li ul li {margin-bottom:0;}
+	
+/* Lista de direcciones en tramites */
+ul.listaDirecciones {
+    margin-top:1.5em;
+}
+ul.listaDirecciones ul {
+    margin:5px 0 10px;
+}
+ul.listaDirecciones ul li {
+    padding:2px 0;
+}
+.dirTitle {
+    font-weight:bold;
+    font-size:1.15em;
+}
+.itemDireccion {
+    padding:0; margin-left:20px;
+}
+ul.listaDirecciones ul.direcciones2nivel {
+    margin-left:24px;
+    margin-bottom:10px;
+}
+
+/* Boton ayudenos a mejorar en tramite ampliado
+   ========================================================================== */
+.btnv1 {
+    text-align:center;
+}
+.btnv1 a {
+    margin:10px 0; 
+    padding:10px 30px;
+    display:block; 
+    font-weight:normal;
+    font-size:1.35em;
+    letter-spacing:-1px;
+    text-decoration:none;
+}
+.btnv1 p.lead {
+    font-size:1.4em;
+}
+
+/* Formulario de consulta en Tramite ampliado
+   ========================================================================== */
+.formConsultaTramites {
+    margin-top:40px;
+}
+.formConsultaTramites p {
+    margin-bottom:14px;
+}
+.formConsultaTramites label {
+    display:block; 
+    margin-top:4px;
+    font-weight:bold;
+    margin-bottom:2px;
+}
+.formConsultaTramites small {
+    display:block;
+    font-size:0.85em;
+}
+.formConsultaTramites .block {
+    margin-bottom:18px;
+    display:block;
+}
+.formConsultaTramites input.text {
+    padding:6px;
+    width:100%;
+    border:1px solid #999;
+    border-radius: 4px; 
+    max-width:400px;
+}
+.formConsultaTramites textarea {
+    padding:6px;  
+    max-width:400px;
+    font-family:inherit;
+    width:100%; 
+    font-size:1.055em;
+    border:1px solid #999;
+    border-radius: 4px;
+    resize:vertical;
+}
+.formConsultaTramites legend {
+    font-size:1.4em;
+    padding:0 10px;
+    display:block;
+}
+.formConsultaTramites form p {
+    color:#666;
+}
+.formConsultaTramites fieldset {
+    padding:18px; 
+    border:1px solid #CCC; 
+    border-radius: 4px;
+}
+.formConsultaTramites .error {
+    background-color:#FFE6E9;
+    background-image:url("/wps/wcm/connect/baa36100486fb15d97129f52e5248a5c/iconoError.png?MOD=AJPERES&ContentCache=NONE&CACHEID=baa36100486fb15d97129f52e5248a5c"); 
+    background-repeat:no-repeat; 
+    background-position: 275px center;
+    padding: 6px 10px;
+}
+.formConsultaTramites .error input.text,
+.error textarea {
+    border-color:#E0091D;
+}
+.formConsultaTramites .error .ErrorEncabezadoFormulario_visible {
+    margin:3px 0;
+    display:block;
+    color:#E0091D;
+    font-weight:normal!important;
+}
+#envioOk {
+    background:url('http://tramites.gub.uy/wps/wcm/connect/a5aa80004a5b6fa59f919fa0fea628d8/okConsulta.gif?MOD=AJPERES&ContentCache=NONE&CACHEID=a5aa80004a5b6fa59f919fa0fea628d8') no-repeat;
+    display:block; 
+    padding-left:50px;
+}
+.formConsultaTramites .ErrorEncabezadoFormulario {
+    display:none;
+}
+.formConsultaTramites input[type="text"], .formConsultaTramites textarea {
+	border:1px solid;
+	border-color:#d9d9d9;
+    border-top-color:#c0c0c0;
+	padding:8px 12px;
+	border-radius:2px;
+	font-family:inherit;
+	font-size:inherit;
+}
+.formConsultaTramites input[type="text"]:hover, .formConsultaTramites textarea:hover{
+	border-color:#b9b9b9;
+    border-top-color:#a0a0a0;
+}
+.formConsultaTramites input[type="text"]:focus, .formConsultaTramites textarea:focus{
+	border-color:#3498db;
+	-webkit-box-shadow: inset 1px 1px 2px 0px #D5D9DB;
+	box-shadow: inset 1px 1px 2px 0px #D5D9DB;
+}
+
+
+/* Colapsables en Tramite ampliado
+   ========================================================================== */
+/**
+ * Los colapsables funcionan con javascript, solamente cuando el
+ * tamaño de la pantalla es menor de 768px.
+ * 
+ * Los titulos de cada item del tramite pasan a ser clickeables
+ * y expanden el contenido interior.
+ *  
+ * El li de cada item pasa a ser .cerrado y .abierto al clickear.
+ */
+.colapsable {
+		cursor:pointer;
+		border-bottom:1px solid #ececec;
+		padding-bottom:10px;
+		padding-top:10px;
+		margin-top:22px;
+		margin-bottom:10px;
+	}
+.colapsable {
+    padding-left:1.5em; 
+    background:url(/wps/wcm/connect/dbbfc7804137752c9aa69f103cdefaf8/colapsable.png?MOD=AJPERES&ContentCache=NONE&CACHEID=dbbfc7804137752c9aa69f103cdefaf8) no-repeat 0 16px;
+}
+.abierto .colapsable {
+		background:url(/wps/wcm/connect/2c324f8041378bd59af79f103cdefaf8/colapsableAbierto.png?MOD=AJPERES&ContentCache=NONE&CACHEID=2c324f8041378bd59af79f103cdefaf8) no-repeat 0 16px;
+}
+.cerrado p,
+.cerrado ul, 
+.cerrado ol, 
+.cerrado div {
+    display:none;
+}
+/**
+ * Ojo: la lista de direcciones no debe ocultarse con la declaracion anterior
+*/
+.itemDireccion p,
+.itemDireccion ul, 
+.itemDireccion ol, 
+.itemDireccion div {
+    display:block;
+}
+
+/* Estilos de encuesta sobre información del trámite
+   ========================================================================== */
+.encuestaTramite form fieldset label {
+    float:left;
+    width:100%;
+    margin-bottom:8px;
+}
+.encuestaTramite form fieldset {
+    border:0; 
+    margin-left:8%;
+}
+.encuestaTramite form fieldset .submit {
+    margin-left:22px; 
+    margin-top:10px;
+}
+.encuestaTramite form fieldset input {
+    overflow:hidden;
+}
+	
+/* Boton Quiero que este tramite se pueda hacer en linea
+   ========================================================================== */
+.btnTramiteLinea {
+    position:relative;
+    background:#fff url('http://tramites.gub.uy/wps/wcm/connect/a00bfb0041004a168ffadfff29651486/bgBtnTramite.png?MOD=AJPERES&ContentCache=NONE&CACHEID=a00bfb0041004a168ffadfff29651486') no-repeat 0 0; 
+    border:1px solid #d0d0d0; 
+    padding:12px 10px 10px 65px;
+    width:19em;
+    display:block; 
+    border-radius:4px;
+    text-decoration:none; 
+    color:#000;
+    font-weight:bold;
+    font-size:85%;
+    line-height:1.2em;
+}
+.btnTramiteLinea:hover {
+    border:1px solid #aeaeae;
+}
+.btnTramiteLinea:active {
+    top:1px;
+}
+
+/* Mensajes de exito y error para formularios en Tramite ampliado
+   ========================================================================== */
+.msg {
+    border-radius:3px;
+    padding:12px 14px 12px 38px;
+    font-size:0.9em;
+    margin:20px 0; 
+    line-height:1.3em;
+    border:1px solid #f3f3f3;
+}
+.exito {
+    background:#F0F4DD url(/wps/wcm/connect/cc517300413a40c49d649f103cdefaf8/exito.png?MOD=AJPERES&ContentCache=NONE&CACHEID=cc517300413a40c49d649f103cdefaf8) no-repeat 10px center;
+    color:#004E1A;
+    border-color:#C4D8A3;
+}
+.encuestaTramite .msg {
+    font-size:1.2em;
+}
+#eleccion_error3 {
+    display:block; 
+    width:100%; 
+    background:#FFE6E9;
+    color:#E0091D;
+    padding:12px 20px;
+    margin-top:14px;
+    border-radius:3px;
+}
+
+/* Buscador en Tramite ampliado
+   ========================================================================== */
+.buscador-head {
+	float:right;
+	width:45%;
+}
+.buscador-head {
+    font-size:80%;
+}
+.buscador-head #q {
+    width:100%;
+    margin-bottom:0.5em;
+}
+.subhome_ampliado h1 img{
+	padding-top:12px
+}
+.btn-buscador {
+    display:none;
+    width:26px;
+    height:26px; 
+    float:right;
+    background:transparent url("'http://tramites.gub.uy/wps/wcm/connect/740e958040f3b7f1b206ffff29651486/ico_search.png?MOD=AJPERES&ContentCache=NONE&CACHEID=740e958040f3b7f1b206ffff29651486") no-repeat center;
+    background-size:26px 26px;
+}
+
+/* Ocultar y mostrar el buscador segun el tamaño de pantalla */
+@media (max-width: 768px) { 
+	.buscador-head {
+        display:none;
+        float:left; 
+        width:100%;
+        margin-top:1em;
+    }
+	.btn-buscador {
+        display:block;
+    }
+	.subhome_ampliado h1 img {
+        padding-top:0;
+    }
+}
+
+
+/* Resultados de busqueda
+   ========================================================================== */
+.resultadosContenido {
+    background:#fff!important;
+    margin:0 17px 0 0!important;
+    clear:left;
+}
+
+.paginado {
+    background:#fff!important;
+    clear: both;
+    margin: 0 auto;
+    text-align: center;
+    padding:10px;
+    margin-right:17px; 
+}
+.paginado ul {
+    color: #000000;
+    margin: 0 0 0 15px;
+}
+.paginado ul li {
+    display: inline;
+    padding: 0 8px 0 0;
+}
+.paginado ul li a {
+    color: #104CAD;
+}
+.resultadosListado a {
+    color:#1111cc;
+    text-decoration:underline;
+}
+.resultadosListado p {padding:0; margin:0;}
+.resultadosListado h2 {
+    font-size:1.3em!important;
+    padding:0; 
+    margin:14px 0 0 0;
+    letter-spacing:normal;
+    margin-top:1.5em;
+}
+.resultadosListado h2 a {
+    font-size:0.85em;
+}
+.resultadosListado h2 a b {
+    font-weight:bold;
+}
+.buscadorResultados a {
+    color:#104CAD;
+}
+
+/* =========================
+Estilos accesibilidad 09092014
+========================= */
+.resultadosListado h4 {
+    font-size:1.3em!important;
+    padding:0; 
+    margin:14px 0 0 0;
+    letter-spacing:normal;
+    margin-top:1.5em;
+}
+.resultadosListado h4 a {
+    font-size:0.85em;
+}
+.resultadosListado h4 a b {
+    font-weight:bold;
+}
+/* =========================
+Fin estilos accesibilidad 09092014
+========================= */
+
+
+/* ==========================================================================
+   Estilos para impresion
+   ========================================================================== */
+@media print {
+    body {
+        background:#fff;
+        color:#000;
+        font-size:9pt;
+    }
+    
+    /* Ocultar */
+	.peu, /* Cabezal azul */
+    .buscador-head, /* Buscador */
+    .btnTramiteLinea, /* Boton de Quiero este tramite en linea */
+    #formEnviarConsulta, /* Formulario de consulta */
+    .encuestaTramite,
+    .btn-direcciones,
+    .btn-gris,
+    .main > .layoutColumn:nth-child(3),
+    .main > .layoutColumn:nth-child(2) > .layoutRow:last-child > .layoutColumn {
+        display:none;
+    }
+    
+    .listaDirecciones  {
+        display: block;
+    }
+    
+    
+	.main > .layoutColumn:nth-child(2) > .layoutRow:first-child > .layoutColumn {
+        width:100%!important;
+    }
+    
+    /* Sacar estilo a los contenedores */
+	.contenedor,
+    .box {
+        border:none; 
+        box-shadow:0px 0px 0px #fff;
+    }
+    
+    /* Imprimir la url completa de los links */
+	.tramiteAmpl a:link:after, 
+	.tramiteAmpl a:visited:after { 
+		content: " (" attr(href) ") "; 
+		font-size: 100%; 
+	}
+	.tramiteAmpl a[href^="/"]:after { 
+		content: " (http://www.tramites.gub.uy" attr(href) ") "; 
+	}
+	
+    /* Agregar nota al pie */
+	.detalleTramite:after {
+        font-size:8pt;
+        font-style:italic;
+        content: "De acuerdo al decreto 177/013 “El organismo no podrá exigir al interesado el cumplimiento de requisitos adicionales a los previstos en la publicación referida”. Si usted encuentra diferencias de información entre lo publicado en tramites.gub.uy y lo que el organismo le informa, solicitamos se comunique a tramites@agesic.gub.uy";
+    }
+}
+
+.tramiteAmpliadoBtns {
+	margin-top:14px;
+}
+.tramiteAmpliadoBtns .btn {
+    float:right;
+    font-size:0.8em;
+    background-image:url('http://tramites.gub.uy/wps/wcm/connect/38ec24804222c8cfa5e1ef0d977438df/enlinea.jpg?MOD=AJPERES&ContentCache=NONE&CACHEID=38ec24804222c8cfa5e1ef0d977438df')!important;
+    background-repeat:no-repeat!important;
+    background-position:10px 5px!important;
+    padding-left:32px!important;
+}
+.tramiteAmpliadoBtns .btn-gris {
+	font-weight:normal;
+        
+	text-decoration:none;
+	border: 0;
+	
+	transition: background 0.75s ease 0s, color 0.75s ease 0s, box-shadow 0.5s ease 0s;
+	-webkit-transition: background 0.75s ease 0s, color 0.75s ease 0s, box-shadow 0.5s ease 0s;
+	-moz-transition: background 0.75s ease 0s, color 0.75s ease 0s, box-shadow 0.5s ease 0s;
+	-o-transition: background 0.75s ease 0s, color 0.75s ease 0s, box-shadow 0.5s ease 0s;
+	
+	position:relative;
+	padding: 0.35em 1.25em;
+	border-radius: 3px;
+	
+	color: #333;
+	border:1px solid #ccc;
+	border-bottom: 1px solid #adadad;
+	background: #f3f3f3;
+	box-shadow:
+		0 1px 1px #ccc,
+		inset 0px 1px 1px 0px #fff;
+	-webkit-box-shadow:
+		0 1px 1px #ccc,
+		inset 0px 1px 1px 0px #fff;
+ 	text-shadow: 1px 1px 0px #fff;
+}
+.tramiteAmpliadoBtns .btn-gris:hover {
+	color:#000;
+	background:#fff;
+	box-shadow: 0 1px 2px #ccc;
+}
+
+.tramiteAmpliadoBtns .btn-gris:active {
+	-webkit-box-shadow: inset 0px 1px 1px 0px #cccccc;
+	box-shadow: inset 0px 1px 1px 0px #cccccc; 
+	top: 1px;
+}
+.tramiteAmpliadoBtns .msg{
+	float:right;
+	margin:0;
+	font-size:0.8em;
+    padding:6px 14px 6px 38px
+}
+
+/* Colapsar listado de direcciones */
+.btn-direcciones {
+	margin-top:20px;
+	text-align:left!important;
+	background:none!important;
+	color:#104CAD!important;
+	text-shadow:none!important;
+	box-shadow:none!important;
+	padding:0!important;
+	text-decoration:underline!important; 	
+}
+ul.listaDirecciones {display:none;}
+.no-js .btn-direcciones {display:none;}
+.no-js ul.listaDirecciones {display:block;}
+
+@media (max-width: 540px) {
+	.tramiteAmpliadoBtns .btn {
+		float:left;
+		margin-top:20px;
+	}
+}
+/* SKIP */
+.skip, .skip li {
+    margin:0;
+    padding:0;
+  }
+.skip a {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+} 
+
+.skip a:focus {
+    position:absolute;
+    top:0;
+    left:60%;
+    background:#fff;
+    width:auto;
+    height:auto;
+    padding:10px;
+    z-index: 9999;
+ } 
+nav a:focus {
+     color:#fff;
+     text-decoration:underline;
+}
+.uppercase {
+   text-transform: uppercase;
+}
+.urlBusqueda {
+   color: #008000;
+   font-size: 0.85em;
+}
+
+.ErrorEncuesta{
+	display:none !important;
+}	
+.ErrorEncuesta_visible{
+	display:inline;
+}
+
+/* ==========================================================================  
+    Formato documento
+   ========================================================================== */
+.tituloFD {
+    font-size: 2em;
+    margin: 20px 0;
+}
+.FDtexto p {
+    margin: 0 0 16px 0;
+}
+.FDtexto h4 {
+    margin: 30px 0 10px 0 !important;
+}
+
+/* ==========================================================================  
+   CSS NUEVO PARA CABEZAL
+   TODO: Revisar estilos anteriores que son innecesarios
+   ========================================================================== */
+/* HEADER HOME 
+   ========================================================================== */
+.main-header {
+  background: #f8f8f8;
+  width: 100%;
+  border-bottom: 1px solid #CFCFCF;
+}
+.main-header #main-logo {
+  float: left;
+}
+.main-header #main-logo a {
+  padding: 24px 0;
+  float: left;
+}
+.main-header #main-logo:hover {
+  opacity: 0.8;
+}
+.main-header #agesic-logo {
+  float: right;
+  margin-right: 11em;
+  margin-top: 2.5em;
+}
+.main-header .container {
+  height: 7em;
+}
+#sublogo {
+  width: 160px;
+  margin-right: 20px;
+  float: left;
+}
+#sublogo a {
+  display: block;
+}
+#sublogo img {
+  width: 100%;
+  margin-top: 12px;
+}
+/* MENU 
+   ========================================================================== */
+.menu {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  font-size: 0.85em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  letter-spacing: -1px;
+  z-index: 8888;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+.menu ul {
+  margin: 0;
+  position: relative;
+}
+.menu > .container > ul > li {
+  float: left;
+  padding: 0;
+}
+.menu h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.menu > .container > ul > li.hover .item,
+.menu > .container > ul > li:hover .item {
+  background: #e6e6e6;
+}
+.menu > .container > ul > li .item {
+  display: block;
+  padding: 14px 22px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+.menu > .container > ul > li .submenu {
+  opacity: 0;
+  left: -9999px;
+  width: 100%;
+  position: absolute;
+  background: #e6e6e6;
+  font-size: 1.3em;
+  top: 47px;
+  z-index: 8888;
+  padding: 20px 30px 20px;
+  border-bottom: 2px solid #ccc;
+  -webkit-transition: opacity 0.45s;
+  -moz-transition: opacity 0.45s;
+  -o-transition: opacity 0.45s;
+  transition: opacity 0.45s;
+}
+
+.menu > .container > ul > li.hover .submenu,
+.menu > .container > ul > li:hover .submenu {
+  left: 0;
+  opacity: 1 !important;
+}
+
+
+.no-js .menu ul li:hover .submenu {
+    display: block;
+}
+
+/* NOTE: No hay hover en dispositivos chicos */
+@media screen and (min-width:768px){
+   /* .menu > .container > ul > li a:focus + .submenu,
+    .menu > .container > ul > li a + .submenu > li a:focus,
+    .menu > .container > ul > li:hover .submenu {
+      height: auto;
+      max-height: 700px;
+      visibility: visible;
+    }*/
+}
+@media screen and (max-width:768px){
+    .menu > .container > ul > li:hover .submenu {
+        max-height: 100%;      
+        visibility: visible!important;
+        display: block!important;
+        left: 0!important;
+        opacity: 1 !important;
+        height: auto!important;
+    }
+}
+
+.menu > .container > ul > li .submenu ul {
+  float: left;
+  margin-bottom: 20px;
+}
+.menu > .container > ul > li .submenu ul:last-child {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.menu > .container > ul > li .submenu ul li {
+  float: left;
+  width: 100%;
+  margin: 5px 0;
+}
+.menu > .container > ul > li .submenu ul li a {
+  padding: 2px 18px;
+  font-weight: 400;
+  color: #4D4D4D;
+  text-decoration: none;
+  display: block;
+  border-radius: 3px;
+}
+.menu > .container > ul > li .submenu ul li a:hover {
+  background: #f3f3f3;
+}
+.menu > .container > ul > li .submenu .perfiles-destacados .titulo-lista {
+  color: #095383;
+}
+.menu > .container > ul > li .submenu .perfiles-destacados ul li a {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.menu > .container > ul > li .submenu .col {
+  border-right: 1px solid #cecece;
+  padding-right: 20px;
+}
+.menu > .container > ul > li .submenu .col:last-child {
+  border: 0;
+  padding-right: 0;
+}
+.menu > .container > ul > li .submenu.temas-perfiles .col {
+  min-height: 410px;
+}
+.menu > .container > ul > li .submenu.gobierno .col {
+  min-height: 236px;
+}
+.menu > .container > ul > li .submenu.gobierno ul {
+  float: left;
+  width: 48%;
+  margin-right: 2%;
+}
+
+.menu > .container > ul > li .submenu.gobierno .tercio .lista-split ul {width:100%;}
+.menu > .container > ul > li .submenu.gobierno .tercio .lista-split ul li {width:50%; float:left;}
+
+.menu > .container > ul > li .submenu.gobierno .dos-tercios-b .lista-split ul {width:100%; height:auto;}
+.menu > .container > ul > li .submenu.gobierno .dos-tercios-b .lista-split ul li {width:50%; float:left;}
+
+.menu > .container > ul > li .submenu.tramites .titulo-lista {
+  margin-top: 46px;
+  margin-bottom: 20px;
+}
+.menu > .container > ul > li .submenu.tramites .dos-tercios {
+  width: 60%;
+  margin-right: 4%;
+}
+.menu > .container > ul > li .submenu.tramites .tercio {
+  width: 36%;
+}
+.menu > .container > ul > li .submenu.tramites .tercio a {
+  text-decoration: none;
+  margin-bottom: 10px;
+  padding: 14px;
+  display: block;
+}
+.menu > .container > ul > li .submenu.tramites .tercio a strong {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #065382;
+}
+.menu > .container > ul > li .submenu.tramites .tercio #atencion-presencial {
+  border-radius: 3px;
+  display: block;
+  background: #ffffff url(/wps/wcm/connect/3284d5004630e70e9e81df6d575befd1/isotipo-ac.png?MOD=AJPERES&ContentCache=NONE&CACHEID=3284d5004630e70e9e81df6d575befd1) no-repeat 16px 42px;
+}
+.menu > .container > ul > li .submenu.tramites .tercio #atencion-presencial:hover {
+  background-color: #f3f3f3;
+}
+.menu > .container > ul > li .submenu.tramites .tercio #atencion-presencial span {
+  color: #333!important;
+  padding: 26px 0 16px 60px;
+  display: block;
+    font-weight: 600;
+}
+.menu > .container > ul > li .submenu.tramites .tercio #atencion-telefonica span {
+  font-weight: 400;
+  font-size: 1.45em;
+  color: #333;
+  display: block;
+  margin-left: 30px;
+}
+.menu > .container > ul > li .submenu.tramites .tercio #atencion-telefonica strong {
+    margin-bottom: 6px;
+}
+.menu > .container > ul > li .submenu.tramites .tercio #atencion-telefonica:hover {
+  background-color: #f3f3f3;
+}
+.menu > .container > ul > li .submenu.tramites .tercio #atencion-web {
+  margin-bottom: 0;
+}
+.menu > .container > ul > li .submenu.tramites .tercio #atencion-web:hover {
+  background: #f3f3f3;
+}
+.menu > .container > ul > li .submenu.tramites .tercio #atencion-web span {
+  color: #000;
+    font-weight:500;
+    letter-spacing: 0;
+  display: block;
+  margin-left: 30px;
+}
+.menu > .container > ul > li .submenu.tramites #link-tramites {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  float: left;
+}
+.menu > .container > ul > li .submenu.tramites #link-tramites img {
+  width: 11em;
+}
+.menu > .container > ul > li .submenu.tramites ul {
+  width: 50%;
+  line-height: 1em;
+}
+.menu > .container > ul > li .submenu.tramites ul li {
+  padding: 0;
+  margin-bottom: 4px;
+}
+.menu > .container > ul > li .submenu.tramites ul li a {
+  display: block;
+  float: left;
+  padding: 4px 10px;
+  width: 100%;
+    color: #000;
+}
+.menu > .container > ul > li .submenu.tramites ul li a span.title-cat {
+  float: left;
+  margin-top: 12px;
+}
+.menu > .container > ul > li .submenu.tramites ul li a span.title-cat.dos-lineas {
+  width: 78%;
+  margin-top: 4px;
+}
+.menu > .container > ul > li .submenu.tramites ul li a span.icon-cat {
+  display: block;
+  background: url('http://tramites.gub.uy/wps/wcm/connect/5520da804630e6899e79df6d575befd1/sprite_categorias_color.png?MOD=AJPERES&ContentCache=NONE&CACHEID=5520da804630e6899e79df6d575befd1') no-repeat;
+  background-size: 42px;  
+  width: 42px;
+  margin-right: 12px;
+  float: left;
+}
+.cat-1 {
+  background-position: 0 0px!important;
+}
+.cat-2 {
+  background-position: 0 -42px !important;
+}
+.cat-3 {
+  background-position: 0 -84px !important;
+}
+.cat-4 {
+  background-position: 0 -126px !important;
+}
+.cat-5 {
+  background-position: 0 -168px !important;
+}
+.cat-6 {
+  background-position: 0 -210px !important;
+}
+.cat-7 {
+  background-position: 0 -252px !important;
+}
+.cat-8 {
+  background-position: 0 -294px !important;
+}
+.titulo-lista {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #4D4D4D;
+  display: block;
+  margin: 10px 0 8px 0;
+}
+.responsive {
+    display: none;
+}
+.menu .responsive button {
+  margin-left: 8px;
+  background: transparent url('http://tramites.gub.uy/wps/wcm/connect/97f26a00463d4e0aac2fed6d575befd1/responsive-control.png?MOD=AJPERES&ContentCache=NONE&CACHEID=97f26a00463d4e0aac2fed6d575befd1') no-repeat 0 0;
+    text-indent: -9999px;
+}
+#abrirBuscador {
+    background-position: 12px center;
+}
+#abrirMenu {
+    background-position: -32px center;
+}
+/* ==========================================================================  
+   BUSCADOR 
+   ========================================================================== */
+form.buscador {
+  margin: 20px 0;
+}
+form.buscador input {
+  float: left;
+  font-family: 'Open Sans';
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  padding: 8px 16px;
+  border: 0;
+  font-weight: 200;
+  font-size: 0.9em;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+form.buscador input[type="text"] {
+  background: #fff;
+  width: 70%;
+  color: #000;
+  border-radius: 1px;
+}
+form.buscador input[type="text"]:focus {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), inset 0px 0px 1px rgba(0, 0, 0, 0.3);
+}
+form.buscador input[type="submit"] {
+  border-radius: 2px;
+  color: #fff;
+  margin-left: 2%;
+  width: 20%;
+  cursor: pointer;
+  background: #005a9c /*url("/wps/wcm/connect/ac4430804631214b9f9edf6d575befd1/buscar.png?MOD=AJPERES&ContentCache=NONE&CACHEID=ac4430804631214b9f9edf6d575befd1") no-repeat center 7px*/;
+  background-size: 20px;
+    font-weight: 400;
+}
+form.buscador input[type="submit"]:hover {
+  background-color: #0078C1;
+}
+/* ==========================================================================  
+   Subheader 
+   ========================================================================== */
+.subheader {
+  background: #0A5584;
+  color: #fff;
+  padding: 14px 20px;
+  margin-bottom: 22px;
+  margin-top: 0px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  border-radius:3px;
+}
+.subheader a {
+  float: left;
+    color: #fff;
+}
+.subheader h2{
+    margin: 0;
+    padding: 0;
+}
+.subheader a img {
+  float: left;
+  margin-top: 3px;
+}
+.subheader .buscador {
+  max-width: 400px;
+  width: 100%;
+  float: right;
+  margin: 7px 0;
+}
+.subheader .buscador input[type="submit"] {
+  background-color: #f3f3f3;
+    color: #000;
+    font-weight: 400;
+}
+.subheader .buscador input[type="submit"]:hover {
+    color: #fff;
+}
+
+/* ESTRUCTURA 
+   ========================================================================== */
+.tercio-b {
+  width: 16%;
+}
+.dos-tercios-b {
+  width: 48%;
+  margin-left: 30px;
+}
+
+/* ==========================================================================  
+   RESPONSIVE 2014-11 
+   ========================================================================== */
+.btn-search img {
+  width: 30px;
+  height: auto;
+}
+@media screen and (max-width: 1080px) {
+  .menu {
+    padding: 0 20px;
+  }
+  .container {
+    width: 96%;
+  }
+}
+@media screen and (max-width: 768px) {
+    .responsive {
+        display: block;
+    }
+  .menu ul {
+    display: none;
+  }
+  .menu ul li {
+    width: 100%;
+  }
+    .subheader {
+        margin-top: 0px;
+        border-radius:0;
+    }
+    .subheader .container a {
+        width: 120px;
+    }
+    .subheader .container a img {
+        max-width: 200px;
+        margin: 6px 0 4px 0;
+        
+    }
+    #contenido {
+        padding-top: 0;
+    }
+      .subheader .buscador {
+        display: none;
+        position: fixed;
+        width: 100%;
+        background: #0A5584;
+        left: 0;
+        padding-left: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        top:45px;  
+        max-width: none;
+      }
+      .subheader .buscador.open-buscador {
+        display: block;
+      }
+      #sublogo a {
+        float: left;
+        display: block;
+        margin-bottom: 6px;
+      }
+      #sublogo a img {
+        float: left;
+      }
+      .menu > .container > ul > li .submenu {
+        position: static;
+        display: none;
+      }
+      .menu {
+        padding: 4px 10px;
+      }
+      .menu button {
+        float: right;
+        cursor: pointer;
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin-top: 3px;
+        text-indent: -9999px;
+      }
+      .menu ul.open-menu {
+        display: block;
+        float: left;
+        margin-top: 10px;
+          width: 100%;
+        padding-bottom: 30px;
+      }
+      .menu ul .submenu.open-submenu {
+        display: block;
+        height: auto;
+        visibility: visible;
+      }
+      .subheader {
+        padding: 8px 20px;
+      }
+      .subheader a img {
+        margin-top: 10px;
+        max-width: 240px;
+      }
+    
+    .menu > .container > ul > li .submenu.tramites #link-tramites {
+        margin-bottom: 4px;
+        margin-top: 0;
+    }
+    .menu > .container > ul > li .submenu.tramites ul li a span.title-cat {
+        margin-top: 14px;
+    }
+    .menu > .container > ul > li .submenu ul {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    
+    .m_open .menu {
+        position: static;
+    }
+    .m_open .subheader {
+        margin-top: 0;
+    }
+    .submenu .tercio, .submenu .dos-tercios, .submenu .cuarto, .submenu .col ul, .submenu .dos-tercios-b {
+        width: 100%!important;
+        margin-left: 0!important;
+        margin-right: 0!important;
+        border-right: 0!important;
+        border-left: 0!important;
+    }
+    .menu > .container > ul > li .submenu.temas-perfiles .col {
+        min-height: 0;
+    }
+    .menu > .container > ul > li .submenu.tramites .tercio a {
+        float: left;
+        width: 100%;
+    }
+    .titulo-lista {
+        margin-top: 16px;
+        float: left;
+    }
+}
+
+/* ==========================================================================  
+   OPEN SANS 
+   ========================================================================== */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://fonts.gstatic.com/s/opensans/v10/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://fonts.gstatic.com/s/opensans/v10/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://fonts.gstatic.com/s/opensans/v10/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'), url(http://fonts.gstatic.com/s/opensans/v10/EInbV5DfGHOiMmvb1Xr-hnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+
+#links-idiomas {
+  	letter-spacing:0;
+    margin-top:16px;
+    float:right;
+  }
+  #links-idiomas a {
+  	margin-left:14px;
+    color:#666;
+  }
+
+@media screen and (max-width:820px){
+      #links-idiomas {
+            display:none;
+      }
+}
+.logo-unit {
+    float:left;
+    width:100%;
+    text-align:center;
+}
+.logo-unit img {
+    margin-top:14px;
+}
+
+/* Imagen 0800 oido responsive
+   ========================================================================== */
+.oido img {
+    width: 90%;
+}
+
+/* Decreto */
+.decreto {
+        background-color: rgb(228,236,237);
+        border: 1px solid rgb(11,40,153);
+        padding: 10px;
+        font-size: 0.8em;
+        margin: 15px 0 0 0;
+    }
+
+.accesos .bullet li a[href^="mailto"] {
+       word-wrap: break-word;
+}
+
+div.optionsInner {
+	display: none;
+}
+
+div.container {
+	margin-left: 10px;
+}

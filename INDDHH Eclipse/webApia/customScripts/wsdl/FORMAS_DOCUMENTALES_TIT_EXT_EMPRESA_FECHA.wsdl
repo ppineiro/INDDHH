@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://principal" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax23="http://principal/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://principal">
+    <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax24="http://principal/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://principal">
+            <xs:import namespace="http://principal/xsd"/>
+            <xs:element name="devolverTitular">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="nombreTit" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="CI" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="devolverTitularResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax23:Titular"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="devolverPlantelDeFutbolDos">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="nombreEquipo" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="pais" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="liga" type="xs:int"/>
+                        <xs:element minOccurs="0" name="arq" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="latDer" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="latIzq" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="centDer" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="centIzq" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="volDer" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="volIzq" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="volDer1" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="volDer2" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="eng" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="del1" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="del2" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="devolverPlantelDeFutbolDosResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax23:Equipo"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="devolverPlantelDeFutbol">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="nombreEquipo" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="pais" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="liga" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="devolverPlantelDeFutbolResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax23:Equipo"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="devolverEmpresaEmpresa">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="nroRut" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="nombreEmpresa" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="codDepartamento" type="xs:int"/>
+                        <xs:element minOccurs="0" name="fechaRegistro" nillable="true" type="xs:date"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="devolverEmpresaEmpresaResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax23:Empresa"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="devolverEmpresa">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="nroRut" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="nombreEmpresa" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="codDepartamento" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="devolverEmpresaResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax23:Empresa"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://principal/xsd">
+            <xs:complexType name="Titular">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="ciTit" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dirTit" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="emailTit" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nombreTit" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Equipo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="arquero" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="centralDerecho" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="centralIzquierdo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="delanteroArea" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="delanteroRetrasado" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lateralDerecho" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lateralIzquierdo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="liga" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nombreEquipo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pais" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="volanteCentral" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="volanteDerecho" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="volanteIzquierdo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="volanteOfensivo" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Empresa">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="RUT" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codigoDepartamento" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="esExtranjera" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="localidadSede" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nombreCanonico" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="devolverTitularRequest">
+        <wsdl:part name="parameters" element="ns:devolverTitular"/>
+    </wsdl:message>
+    <wsdl:message name="devolverTitularResponse">
+        <wsdl:part name="parameters" element="ns:devolverTitularResponse"/>
+    </wsdl:message>
+    <wsdl:message name="devolverEmpresaRequest">
+        <wsdl:part name="parameters" element="ns:devolverEmpresa"/>
+    </wsdl:message>
+    <wsdl:message name="devolverEmpresaResponse">
+        <wsdl:part name="parameters" element="ns:devolverEmpresaResponse"/>
+    </wsdl:message>
+    <wsdl:message name="devolverPlantelDeFutbolDosRequest">
+        <wsdl:part name="parameters" element="ns:devolverPlantelDeFutbolDos"/>
+    </wsdl:message>
+    <wsdl:message name="devolverPlantelDeFutbolDosResponse">
+        <wsdl:part name="parameters" element="ns:devolverPlantelDeFutbolDosResponse"/>
+    </wsdl:message>
+    <wsdl:message name="devolverPlantelDeFutbolRequest">
+        <wsdl:part name="parameters" element="ns:devolverPlantelDeFutbol"/>
+    </wsdl:message>
+    <wsdl:message name="devolverPlantelDeFutbolResponse">
+        <wsdl:part name="parameters" element="ns:devolverPlantelDeFutbolResponse"/>
+    </wsdl:message>
+    <wsdl:message name="devolverEmpresaEmpresaRequest">
+        <wsdl:part name="parameters" element="ns:devolverEmpresaEmpresa"/>
+    </wsdl:message>
+    <wsdl:message name="devolverEmpresaEmpresaResponse">
+        <wsdl:part name="parameters" element="ns:devolverEmpresaEmpresaResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="RegistroClientePortType">
+        <wsdl:operation name="devolverTitular">
+            <wsdl:input message="ns:devolverTitularRequest" wsaw:Action="urn:devolverTitular"/>
+            <wsdl:output message="ns:devolverTitularResponse" wsaw:Action="urn:devolverTitularResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="devolverEmpresa">
+            <wsdl:input message="ns:devolverEmpresaRequest" wsaw:Action="urn:devolverEmpresa"/>
+            <wsdl:output message="ns:devolverEmpresaResponse" wsaw:Action="urn:devolverEmpresaResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="devolverPlantelDeFutbolDos">
+            <wsdl:input message="ns:devolverPlantelDeFutbolDosRequest" wsaw:Action="urn:devolverPlantelDeFutbolDos"/>
+            <wsdl:output message="ns:devolverPlantelDeFutbolDosResponse" wsaw:Action="urn:devolverPlantelDeFutbolDosResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="devolverPlantelDeFutbol">
+            <wsdl:input message="ns:devolverPlantelDeFutbolRequest" wsaw:Action="urn:devolverPlantelDeFutbol"/>
+            <wsdl:output message="ns:devolverPlantelDeFutbolResponse" wsaw:Action="urn:devolverPlantelDeFutbolResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="devolverEmpresaEmpresa">
+            <wsdl:input message="ns:devolverEmpresaEmpresaRequest" wsaw:Action="urn:devolverEmpresaEmpresa"/>
+            <wsdl:output message="ns:devolverEmpresaEmpresaResponse" wsaw:Action="urn:devolverEmpresaEmpresaResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="RegistroClienteSoap11Binding" type="ns:RegistroClientePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="devolverTitular">
+            <soap:operation soapAction="urn:devolverTitular" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="devolverEmpresa">
+            <soap:operation soapAction="urn:devolverEmpresa" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="devolverPlantelDeFutbolDos">
+            <soap:operation soapAction="urn:devolverPlantelDeFutbolDos" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="devolverPlantelDeFutbol">
+            <soap:operation soapAction="urn:devolverPlantelDeFutbol" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="devolverEmpresaEmpresa">
+            <soap:operation soapAction="urn:devolverEmpresaEmpresa" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="RegistroClienteSoap12Binding" type="ns:RegistroClientePortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="devolverTitular">
+            <soap12:operation soapAction="urn:devolverTitular" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="devolverEmpresa">
+            <soap12:operation soapAction="urn:devolverEmpresa" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="devolverPlantelDeFutbolDos">
+            <soap12:operation soapAction="urn:devolverPlantelDeFutbolDos" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="devolverPlantelDeFutbol">
+            <soap12:operation soapAction="urn:devolverPlantelDeFutbol" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="devolverEmpresaEmpresa">
+            <soap12:operation soapAction="urn:devolverEmpresaEmpresa" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="RegistroClienteHttpBinding" type="ns:RegistroClientePortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="devolverTitular">
+            <http:operation location="devolverTitular"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="devolverEmpresa">
+            <http:operation location="devolverEmpresa"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="devolverPlantelDeFutbolDos">
+            <http:operation location="devolverPlantelDeFutbolDos"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="devolverPlantelDeFutbol">
+            <http:operation location="devolverPlantelDeFutbol"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="devolverEmpresaEmpresa">
+            <http:operation location="devolverEmpresaEmpresa"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="RegistroCliente">
+        <wsdl:port name="RegistroClienteHttpSoap11Endpoint" binding="ns:RegistroClienteSoap11Binding">
+            <soap:address location="http://stw113:8191/WebServiceUno/services/RegistroCliente.RegistroClienteHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="RegistroClienteHttpSoap12Endpoint" binding="ns:RegistroClienteSoap12Binding">
+            <soap12:address location="http://stw113:8191/WebServiceUno/services/RegistroCliente.RegistroClienteHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="RegistroClienteHttpEndpoint" binding="ns:RegistroClienteHttpBinding">
+            <http:address location="http://stw113:8191/WebServiceUno/services/RegistroCliente.RegistroClienteHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

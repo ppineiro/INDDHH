@@ -1,0 +1,154 @@
+<?xml version="1.0" ?>
+<rules>
+	<rule from="task" single="">
+		<element to="task" multi="sflow" valid="sflow" />
+		<element to="gateway" multi="sflow" valid="sflow" />
+		<element to="endevent"  multi="sflow" valid="sflow" />
+		<element to="middleevent" multi="" valid="sflow" />
+		<element to="csubflow" multi="sflow" valid="sflow" />
+		<element to="esubflow" multi="" valid="sflow" />
+		<element to="textannotation" multi="association" valid="association" />
+		<element to="dataobject" multi="association" valid="association" />
+		<element to="dataoutput" multi="association" valid="association" />
+		<element to="datastore" multi="association" valid="association" />
+	</rule>
+	<rule from="csubflow">
+		<element to="task" multi="sflow"  valid="sflow" />
+		<element to="gateway" multi="sflow"  valid="sflow" />
+		<element to="endevent"  multi="sflow"  valid="sflow" />
+		<element to="middleevent" multi=""  valid="sflow" />
+		<element to="csubflow" multi="sflow"  valid="sflow" />
+		<element to="esubflow" multi=""  valid="sflow" />
+		<element to="textannotation" multi="association" valid="association" />
+		<element to="dataobject" multi="association" valid="association" />
+		<element to="dataoutput" multi="association" valid="association" />
+		<element to="datastore" multi="association" valid="association" />
+	</rule>
+	<rule from="esubflow">
+		<element to="task" multi="" />
+		<element to="gateway" multi="sflow" />
+		<element to="endevent"  multi="sflow" />
+		<element to="middleevent" multi="" />
+		<element to="csubflow" multi="" />
+		<element to="esubflow" multi="" />
+		<element to="textannotation" multi="association" valid="association" />
+		<element to="dataobject" multi="association" valid="association" />
+		<element to="dataoutput" multi="association" valid="association" />
+		<element to="datastore" multi="association" valid="association" />
+	</rule>
+	<rule from="middleevent" single="sflow">
+		<element to="task" multi="sflow" valid="sflow" />
+		<element to="gateway" multi="sflow" valid="sflow" />
+		<element to="endevent" multi="sflow" valid="sflow" />
+		<element to="middleevent" valid="sflow" />
+		<element to="csubflow" multi="sflow" valid="sflow" />
+		<element to="esubflow" multi="sflow" valid="sflow" />
+		<element to="textannotation" multi="association" valid="association" />
+		<element to="dataobject" multi="association" valid="association" />
+		<element to="dataoutput" multi="association" valid="association" />
+	</rule>
+	<rule from="startevent" multi="sflow">
+		<element to="task" multi="sflow" valid="sflow" />
+		<element to="gateway" multi="sflow" valid="sflow" />
+		<element to="endevent" multi="sflow" valid="sflow" />
+		<element to="middleevent" multi="" valid="sflow" />
+		<element to="csubflow" valid="sflow" multi="sflow" />
+		<element to="esubflow" multi="" valid="sflow" />
+		<element to="textannotation" multi="association" valid="association" />
+		<element to="dataobject" multi="association" valid="association" />
+		<element to="dataoutput" multi="association" valid="association" />
+	</rule>
+	<rule from="endevent">
+	</rule>
+	<rule from="gateway" multi="sflow">
+		<element to="task" multi="sflow" valid="sflow" />
+		<element to="gateway" multi="sflow" valid="sflow" />
+		<element to="endevent" multi="sflow" valid="sflow" />
+		<element to="middleevent" multi="" valid="sflow" />
+		<element to="csubflow" multi="sflow" valid="sflow" />
+		<element to="esubflow" multi="" valid="sflow" />
+		<element to="textannotation" multi="association" valid="association" />
+		<element to="dataobject" multi="association" valid="association" />
+		<element to="dataoutput" multi="association" valid="association" />
+	</rule>
+	<rule from="group" multi="mflow">
+		<!-- <element to="task" multi="association,mflow" />
+		<element to="gateway" multi="association" />
+		<element to="endevent" multi="sflow,association" />
+		<element to="middleevent" multi="association" />
+		<element to="csubflow" multi="association" />
+		<element to="esubflow" multi="association" />
+		<element to="textannotation" multi="association" />
+		<element to="dataobject" multi="association" />
+		<element to="dataoutput" multi="association" valid="association" /-->
+	</rule>
+	<rule from="pool">
+		<!-- <element to="pool" multi="mflow" valid="mflow" />
+		<element to="task" multi="association" />
+		<element to="gateway" multi="association,sflow" />
+		<element to="endevent" multi="sflow" />
+		<element to="middleevent" multi="association" />
+		<element to="csubflow" multi="association" />
+		<element to="esubflow" multi="association" />
+		<element to="textannotation" multi="association" />
+		<element to="dataobject" multi="association" />
+		<element to="dataoutput" multi="association" valid="association" />-->
+	</rule>
+	<rule from="swimlane">
+		<!-- <element to="task" multi="association" />
+		<element to="gateway" multi="association" />
+		<element to="endevent" multi="sflow,association" />
+		<element to="middleevent" multi="association" />
+		<element to="csubflow" multi="association" />
+		<element to="esubflow" multi="association" />
+		<element to="textannotation" multi="association" />
+		<element to="dataobject" multi="association" />
+		<element to="dataoutput" multi="association" valid="association" />-->
+	</rule>
+	<rule from="textannotation">
+		<!-- <element to="pool" multi="association" valid="association" /> -->
+		<element to="task" multi="association" valid="association" />
+		<element to="gateway" multi="association" valid="association" />
+		<element to="endevent" multi="association" valid="association" />
+		<element to="startevent" multi="association" valid="association" />
+		<element to="middleevent" multi="association" valid="association" />
+		<element to="csubflow" multi="association" valid="association" />
+		<element to="esubflow" multi="association" valid="association" />
+		<!-- <element to="pool" multi="association" valid="association" /> -->
+		<!-- <element to="textannotation" multi="association" valid="association" />
+		<element to="dataobject" multi="association" valid="association" />
+		<element to="dataoutput" multi="association" valid="association" />-->
+	</rule>
+	<rule from="association">
+		<element to="dataobject" multi="association" />
+		<element to="dataoutput" multi="association" valid="association" />
+	</rule>
+	<rule from="dataobject">
+		<element to="task" multi="association" valid="association" />
+		<element to="gateway" multi="association" valid="association" />
+		<element to="endevent" multi="association" valid="association" />
+		<element to="startevent" multi="association" valid="association" />
+		<element to="middleevent" multi="association" valid="association" />
+		<element to="csubflow" multi="association" valid="association" />
+		<element to="esubflow" multi="association" valid="association" />
+		<element to="sflow" multi="association" valid="association" />
+		<!-- <element to="pool" multi="association" valid="association" /> -->
+	</rule>
+	<rule from="datainput">
+		<element to="task" multi="association" valid="association" />
+		<element to="gateway" multi="association" valid="association" />
+		<element to="endevent" multi="association" valid="association" />
+		<element to="startevent" multi="association" valid="association" />
+		<element to="middleevent" multi="association" valid="association" />
+		<element to="csubflow" multi="association" valid="association" />
+		<element to="esubflow" multi="association" valid="association" />
+		<element to="sflow" multi="association" valid="association" />
+		<!-- <element to="pool" multi="association" valid="association" /> -->
+	</rule>
+	<rule from="datastore">
+		<element to="task" multi="association" valid="association" />
+		<element to="csubflow" multi="association" valid="association" />
+		<element to="esubflow" multi="association" valid="association" />
+		<!-- <element to="pool" multi="association" valid="association" /> -->
+	</rule>
+</rules>

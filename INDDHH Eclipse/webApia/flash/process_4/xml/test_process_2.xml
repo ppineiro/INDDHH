@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by pp (pp) -->
+<!--<!DOCTYPE PROCESS_DEFINITION SYSTEM "\\stsdesa01\Documentacion\ST\DOGMA\XML\process\process.dtd">-->
+<PROCESS_DEFINITION maxId="8">
+
+	
+	<EVENTS>
+		<EVENT event_id="10000" event_name="onLoad" order="1" class_id="10000" class_name="com.st.events"/>
+	</EVENTS>
+
+
+	<ELEMENT id="1" type="I">
+		<DESIGN y="80" x="40"/>
+		<INIT_MARK/>
+		<DEPENDENCY id="4"/>
+	</ELEMENT>
+	<ELEMENT id="2" type="T">
+		<DESIGN y="107" x="251"/>
+		<TASK task_id="10000" name="Registro de la reserva">
+			<FORMS>
+				<FORM form_id="10000" read_only="false" type="P" name="form 10000p"/>
+				<FORM form_id="10001" read_only="false" type="E" name="form 10000e"/>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="10000" name="pool0"/>
+				<POOL pool_id="10001" name="pool1">DATA_1 + DATA_2 = 34</POOL>
+			</POOLS>
+			<EVENTS>
+				<EVENT event_id="10000" event_name="onLoad" order="1" class_id="10000" class_name="com.st.events"/>
+			</EVENTS>
+		</TASK>
+		<DEPENDENCY id="3" name="Completar Registro"/>
+	</ELEMENT>
+	<ELEMENT  id="3" type="E">
+		<DESIGN y="104" x="473"/>
+		<END_MARK/>
+	</ELEMENT>
+	<ELEMENT id="4" type="O">
+		<DESIGN y="106" x="140"/>
+		<OPERATOR ope_id="1"/>
+		<DEPENDENCIES>
+			<DEPENDENCY id="2">DATA_1 + DATA_2 = 34</DEPENDENCY>
+			<DEPENDENCY id="5" name="another description"/>
+		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="5" type="O">
+		<DESIGN y="241" x="140"/>
+		<OPERATOR ope_id="1"/>
+		<DEPENDENCIES>
+			<DEPENDENCY id="6"/>
+			<DEPENDENCY id="7"/>
+		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="6" type="T">
+		<DESIGN y="201" x="251"/>
+		<TASK task_id="10001" name="Registrar firma de la reserva">
+			<ROL rol_id="10001" name="rol 10001"/>
+			<FORMS>
+				<FORM form_id="10000" read_only="true" type="P" name="form 10000"/>
+				<FORM form_id="10001" read_only="false" type="P" name="form 10001"/>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="10000" name="pool0"/>
+				<POOL pool_id="10001" name="pool1">DATA_1 + DATA_2 = 34</POOL>
+			</POOLS>
+			<EVENTS>
+				<EVENT event_id="10000" event_name="onLoad" order="1" class_id="10000" class_name="com.st.events"/>
+				<EVENT event_id="10000" event_name="onLoad" order="2" class_id="10001" class_name="com.util.validate"/>
+				<EVENT event_id="10001" event_name="onClick" order="3" class_id="10001" class_name="com.util.validate"/>
+			</EVENTS>
+		</TASK>
+		<DEPENDENCY id="9"/>
+	</ELEMENT>
+	<ELEMENT id="7" type="T">
+		<DESIGN y="281" x="251"/>
+		<TASK task_id="10002" name="Reserva a autorizar por la junta directiva">
+			<FORMS>
+				<FORM form_id="10000" read_only="true" type="P" name="form 10000"/>
+				<FORM form_id="10001" read_only="true" type="P" name="form 10001"/>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="10000" name="pool0"/>
+				<POOL pool_id="10001" name="pool1">DATA_1 + DATA_2 = 34</POOL>
+			</POOLS>
+			<EVENTS>
+				<EVENT event_id="10000" event_name="onLoad" order="1" class_id="10000" class_name="com.st.events"/>
+			</EVENTS>
+		</TASK>
+		<DEPENDENCY id="8"/>
+	</ELEMENT>
+
+	<ELEMENT id="8" pro_ele_id="12" type="P">
+		<DESIGN y="314" x="473"/>
+		<PROCESS pro_id="21" iterate="true" name="Gestion de stands y publicidad">DATA_1 + DATA_2 = 34</PROCESS>
+		<DEPENDENCY id="9"/>
+	</ELEMENT>
+
+
+	<ELEMENT id="9" type="O">
+		<DESIGN y="243" x="353"/>
+		<OPERATOR ope_id="1"/>
+		<DEPENDENCY id="3"/>
+	</ELEMENT>
+</PROCESS_DEFINITION>

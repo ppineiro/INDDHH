@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/wsorg/Consultas" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/wsorg/Consultas" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/wsorg/Consultas">
+      <s:element name="ObtenerDatosTransaccion">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="pIdSolicitud" type="s:string" />
+            <s:element minOccurs="1" name="pIdTramite" type="s:int" />
+            <s:element name="pClave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDatosTransaccionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerDatosTransaccionResult" type="tns:Solicitud" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Solicitud">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdTransaccion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdSolicitud" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdEstado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Autorizacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdFormaPago" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaConciliacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MontoTotal" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTasa" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorTasa" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTramite" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImporteTasa1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImporteTasa2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImporteTasa3" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidades" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaVto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodDesglose" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MontoDesglose" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesRechazo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ventanilla" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Referencia" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Conciliacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="pFecha" type="s:string" />
+            <s:element name="pIdTramite" type="s:string" />
+            <s:element name="pClave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConciliacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConciliacionResult" type="tns:ResultadoConciliacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultadoConciliacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Conciliacion" type="tns:ArrayOfTransaccion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTransaccion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Transaccion" nillable="true" type="tns:Transaccion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Transaccion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdTransaccion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fecha" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdFormaPago" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaConciliada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MontoTotal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoOperacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdSolicitud" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaPago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Referencia" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerDesglosesAcreditados">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="pFecha" type="s:string" />
+            <s:element name="pIdTramite" type="s:string" />
+            <s:element name="pClave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDesglosesAcreditadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ObtenerDesglosesAcreditadosResult" type="tns:ResultadoObtenerDesglosesAcreditados" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultadoObtenerDesglosesAcreditados">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Acreditados" type="tns:ArrayOfDesglosesAcreditados" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDesglosesAcreditados">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DesglosesAcreditados" nillable="true" type="tns:DesglosesAcreditados" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DesglosesAcreditados">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdTransaccion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Monto" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdSolicitud" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaPagoProv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cuenta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Referencia" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TransaccionesXFechaConciliacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pFecha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pIdTramite" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pClave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransaccionesXFechaConciliacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TransaccionesXFechaConciliacionResult" type="tns:ResultadoConciliacionDGI" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultadoConciliacionDGI">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Conciliacion" type="tns:ArrayOfCTransaccionDGI" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCTransaccionDGI">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="cTransaccionDGI" nillable="true" type="tns:cTransaccionDGI" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="cTransaccionDGI">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdSolicitud" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodAutorizacionBco" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaTransaccion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Importe" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdEstado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MotivoRechazo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaConciliada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaPago" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TransaccionesXFechaPago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pFecha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pIdTramite" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pClave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransaccionesXFechaPagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TransaccionesXFechaPagoResult" type="tns:ResultadoConciliacionDGI" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransaccionesXFechaTransaccion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pFechaDesde" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pFechaHasta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pIdTramite" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pClave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransaccionesXFechaTransaccionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TransaccionesXFechaTransaccionResult" type="tns:ResultadoConciliacionDGI" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ObtenerDatosTransaccionSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosTransaccion" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatosTransaccionSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosTransaccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConciliacionSoapIn">
+    <wsdl:part name="parameters" element="tns:Conciliacion" />
+  </wsdl:message>
+  <wsdl:message name="ConciliacionSoapOut">
+    <wsdl:part name="parameters" element="tns:ConciliacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDesglosesAcreditadosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerDesglosesAcreditados" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDesglosesAcreditadosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerDesglosesAcreditadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransaccionesXFechaConciliacionSoapIn">
+    <wsdl:part name="parameters" element="tns:TransaccionesXFechaConciliacion" />
+  </wsdl:message>
+  <wsdl:message name="TransaccionesXFechaConciliacionSoapOut">
+    <wsdl:part name="parameters" element="tns:TransaccionesXFechaConciliacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransaccionesXFechaPagoSoapIn">
+    <wsdl:part name="parameters" element="tns:TransaccionesXFechaPago" />
+  </wsdl:message>
+  <wsdl:message name="TransaccionesXFechaPagoSoapOut">
+    <wsdl:part name="parameters" element="tns:TransaccionesXFechaPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransaccionesXFechaTransaccionSoapIn">
+    <wsdl:part name="parameters" element="tns:TransaccionesXFechaTransaccion" />
+  </wsdl:message>
+  <wsdl:message name="TransaccionesXFechaTransaccionSoapOut">
+    <wsdl:part name="parameters" element="tns:TransaccionesXFechaTransaccionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ConsultasSoap">
+    <wsdl:operation name="ObtenerDatosTransaccion">
+      <wsdl:input message="tns:ObtenerDatosTransaccionSoapIn" />
+      <wsdl:output message="tns:ObtenerDatosTransaccionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Conciliacion">
+      <wsdl:input message="tns:ConciliacionSoapIn" />
+      <wsdl:output message="tns:ConciliacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDesglosesAcreditados">
+      <wsdl:input message="tns:ObtenerDesglosesAcreditadosSoapIn" />
+      <wsdl:output message="tns:ObtenerDesglosesAcreditadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransaccionesXFechaConciliacion">
+      <wsdl:input message="tns:TransaccionesXFechaConciliacionSoapIn" />
+      <wsdl:output message="tns:TransaccionesXFechaConciliacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransaccionesXFechaPago">
+      <wsdl:input message="tns:TransaccionesXFechaPagoSoapIn" />
+      <wsdl:output message="tns:TransaccionesXFechaPagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransaccionesXFechaTransaccion">
+      <wsdl:input message="tns:TransaccionesXFechaTransaccionSoapIn" />
+      <wsdl:output message="tns:TransaccionesXFechaTransaccionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsultasSoap" type="tns:ConsultasSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerDatosTransaccion">
+      <soap:operation soapAction="http://tempuri.org/wsorg/Consultas/ObtenerDatosTransaccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Conciliacion">
+      <soap:operation soapAction="http://tempuri.org/wsorg/Consultas/Conciliacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDesglosesAcreditados">
+      <soap:operation soapAction="http://tempuri.org/wsorg/Consultas/ObtenerDesglosesAcreditados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransaccionesXFechaConciliacion">
+      <soap:operation soapAction="http://tempuri.org/wsorg/Consultas/TransaccionesXFechaConciliacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransaccionesXFechaPago">
+      <soap:operation soapAction="http://tempuri.org/wsorg/Consultas/TransaccionesXFechaPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransaccionesXFechaTransaccion">
+      <soap:operation soapAction="http://tempuri.org/wsorg/Consultas/TransaccionesXFechaTransaccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConsultasSoap12" type="tns:ConsultasSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerDatosTransaccion">
+      <soap12:operation soapAction="http://tempuri.org/wsorg/Consultas/ObtenerDatosTransaccion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Conciliacion">
+      <soap12:operation soapAction="http://tempuri.org/wsorg/Consultas/Conciliacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDesglosesAcreditados">
+      <soap12:operation soapAction="http://tempuri.org/wsorg/Consultas/ObtenerDesglosesAcreditados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransaccionesXFechaConciliacion">
+      <soap12:operation soapAction="http://tempuri.org/wsorg/Consultas/TransaccionesXFechaConciliacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransaccionesXFechaPago">
+      <soap12:operation soapAction="http://tempuri.org/wsorg/Consultas/TransaccionesXFechaPago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransaccionesXFechaTransaccion">
+      <soap12:operation soapAction="http://tempuri.org/wsorg/Consultas/TransaccionesXFechaTransaccion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Consultas">
+    <wsdl:port name="ConsultasSoap" binding="tns:ConsultasSoap">
+      <soap:address location="http://www.testing1.hg.com.uy/gw_wsorg_public/consultas.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConsultasSoap12" binding="tns:ConsultasSoap12">
+      <soap12:address location="http://www.testing1.hg.com.uy/gw_wsorg_public/consultas.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

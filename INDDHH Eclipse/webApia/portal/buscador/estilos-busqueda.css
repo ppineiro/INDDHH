@@ -1,0 +1,108 @@
+/* ==========================================================================  
+   Subheader 
+   ========================================================================== */
+.subheader {
+  background: #0A5584;
+  color: #fff;
+  padding: 14px 20px;
+  margin-bottom: 22px;
+  margin-top: 4px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  border-radius:3px;
+}
+.subheader a {
+  float: left;
+    color: #fff;
+}
+.subheader h2{
+    margin: 0;
+    padding: 0;
+}
+.subheader a img {
+  float: left;
+  margin-top: 3px;
+}
+.subheader .buscador {
+  max-width: 400px;
+  width: 100%;
+  float: right;
+  margin: 7px 0;
+}
+.subheader .buscador input[type="submit"] {
+  background-color: #f3f3f3;
+    color: #000;
+    font-weight: 400;
+}
+.subheader .buscador input[type="submit"]:hover {
+    color: #fff;
+}
+
+
+/* Contenedor */
+.container, .main {
+	max-width:1080px;
+	margin:0 auto;
+}
+.container:before,
+.container:after {
+  display: table;
+  content: " ";
+}
+.container:after {
+  clear: both;
+}
+
+/* Agregamos comportamiento para el foco en botones */
+.submit:focus,
+button:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus {
+    outline: thin dotted #333;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+
+/* ==========================================================================  
+   BUSCADOR 
+   ========================================================================== */
+form.buscador {
+  margin: 20px 0;
+}
+form.buscador input {
+  float: left;
+  font-family: 'Open Sans';
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  padding: 8px 16px;
+  border: 0;
+  font-weight: 200;
+  font-size: 0.9em;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+form.buscador input[type="text"] {
+  background: #fff;
+  width: 70%;
+  color: #000;
+  border-radius: 1px;
+}
+form.buscador input[type="text"]:focus {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), inset 0px 0px 1px rgba(0, 0, 0, 0.3);
+}
+form.buscador input[type="submit"] {
+  border-radius: 2px;
+  color: #fff;
+  margin-left: 2%;
+  width: 20%;
+  cursor: pointer;
+  background: #005a9c /*url("http://tramites.gub.uy/wps/wcm/connect/ac4430804631214b9f9edf6d575befd1/buscar.png?MOD=AJPERES&ContentCache=NONE&CACHEID=ac4430804631214b9f9edf6d575befd1") no-repeat center 7px*/;
+  background-size: 20px;
+    font-weight: 400;
+}
+form.buscador input[type="submit"]:hover {
+  background-color: #0078C1;
+}
+
+h5 {
+		color: #6b6b6b;
+	}

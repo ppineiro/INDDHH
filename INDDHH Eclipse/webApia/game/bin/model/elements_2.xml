@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+   <element name="task">
+      <attGroup name="BPMN">
+         <attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" />
+         <attribute label="Name" name="nameChooser" maxlength="70" type="text" change="setName" value="DEFAULT_TASK" />
+         <attribute label="Color" name="colorFill" type="colorPicker" change="setColor" value="" />
+         <attribute label="TaskType" name="taskType" type="combo" change="typeChange" value="User">
+            <values>
+               <value label="None" value="None" enable="forms,name,looptype,loopcondition,performers,onwarning,onoverdue,onacquire,onrelease,oncomplete,onsave,onstepchg,onreasign,onelevate,ondelegate,onwork,ondetail,onrollback" disable="service,receive,send,user" />
+               <value label="Service" value="Service" enable="service,name,onwarning,onoverdue,onacquire,onrelease,oncomplete,onsave,onstepchg,onreasign,onelevate,ondelegate,onwork,ondetail,onrollback" disable="forms,receive,send,user,performers,looptype,loopcondition" />
+               <value label="Receive" value="Receive" enable="receive,name,onwarning,onoverdue,onacquire,onrelease,oncomplete,onsave,onstepchg,onreasign,onelevate,ondelegate,onwork,ondetail,onrollback" disable="forms,service,send,user,looptype,loopcondition,performers" />
+               <value label="Send" value="Send" enable="send,name,looptype,loopcondition,onwarning,onoverdue,onacquire,onrelease,oncomplete,onsave,onstepchg,onreasign,onelevate,ondelegate,onwork,ondetail,onrollback" disable="forms,service,receive,user,performers" />
+               <value label="User" value="User" enable="forms,user,looptype,loopcondition,performers,onwarning,onoverdue,onacquire,onrelease,oncomplete,onsave,onstepchg,onreasign,onelevate,ondelegate,onwork,ondetail,onrollback" disable="service,receive,send,name" />
+               <value label="Manual" value="Manual" enable="forms,name,looptype,loopcondition,performers,onwarning,onoverdue,onacquire,onrelease,oncomplete,onsave,onstepchg,onreasign,onelevate,ondelegate,onwork,ondetail,onrollback" disable="service,send,user,receive" />
+               <value label="Script" value="Script" enable="name,looptype,loopcondition,events" disable="forms,events,service,send,user,receive,performers,performers,onwarning,onoverdue,onacquire,onrelease,oncomplete,onsave,onstepchg,onreasign,onelevate,ondelegate,onwork,ondetail,onrollback" />
+            </values>
+         </attribute>
+         <attribute label="LoopType" name="looptype" type="combo" change="loopTypeChange,setMultiInMsgs" value="None">
+            <values>
+               <value label="None" value="None" disable="testtime,mi_ordering,loopmaximum,loopcounter,mi_condition,mi_flowcondition,complexmi_flowcondition" enable="" />
+               <value label="MultiInstance" value="MultiInstance" enable="mi_ordering,mi_condition" disable="testtime,loopmaximum,mi_flowcondition,complexmi_flowcondition,loopcounter" />
+            </values>
+         </attribute>
+         <attribute label="MI_Condition" name="mi_condition" type="text" disabled="true" regExp="0-9" dataType="integer" />
+         <attribute label="Performers" name="performers" modalwidth="380" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+            <data>
+               <level name="perfname" type="text" maxlength="50" regExp="a-zA-Z0-9_." width="100%" label="Name" />
+            </data>
+         </attribute>
+         <attribute name="forms" label="Forms" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="320" modalheight="300" use="optional" dataType="string">
+            <data>
+               <level width="20%" name="step" label="Step" type="label" value="step" />
+               <level width="40%" name="stepformsp" label="Process Forms" type="modalArray" modalclass="view.modal.TaskFormModal" modalwidth="700" modalheight="300" use="optional" dataType="string" submodalwidth="400" submodalheight="300">
+                  <data>
+                     <level width="0" name="formId" label="Form Id" type="text" use="optional" dataType="string" />
+                  </data>
+               </level>
+               <level width="40%" name="stepformse" label="Entity Forms" type="modalArray" modalclass="view.modal.TaskFormModal" modalwidth="700" modalheight="300" use="optional" dataType="string" submodalwidth="400" submodalheight="300">
+                  <data>
+                     <level width="0" name="formId" label="Form Id" type="text" use="optional" dataType="string" />
+                  </data>
+               </level>
+            </data>
+         </attribute>
+         <attribute name="events" label="Events" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="500" modalheight="380" use="optional" dataType="string">
+            <data>
+               <level width="25%" name="evtName" label="Event Name" type="combo" use="optional" dataType="string" value="ONREADY">
+                  <values>
+                     <value label="ONREADY" value="ONREADY" name="onready" />
+                     <value label="ONWARNING" value="ONWARNING" name="onwarning" />
+                     <value label="ONOVERDUE" value="ONOVERDUE" name="onoverdue" />
+                     <value label="ONACQUIRE" value="ONACQUIRE" name="onacquire" />
+                     <value label="ONRELEASE" value="ONRELEASE" name="onrelease" />
+                     <value label="ONCOMPLETE" value="ONCOMPLETE" name="oncomplete" />
+                     <value label="ONSAVE" value="ONSAVE" name="onsave" />
+                     <value label="ONSTEPCHG" value="ONSTEPCHG" name="onstepchg" />
+                     <value label="ONREASIGN" value="ONREASIGN" name="onreasign" />
+                     <value label="ONELEVATE" value="ONELEVATE" name="onelevate" />
+                     <value label="ONDELEGATE" value="ONDELEGATE" name="ondelegate" />
+                     <value label="ONWORK" value="ONWORK" name="onwork" />
+                     <value label="ONDETAIL" value="ONDETAIL" name="ondetail" />
+                     <value label="ONROLLBACK" value="ONROLLBACK" name="onrollback" />
+                  </values>
+               </level>
+               <level width="25%" name="clsName" maxlength="50" label="Business Class" type="text" use="optional" dataType="string" regExp="a-zA-Z0-9_." />
+               <level width="50%" name="clsDesc" label="Business Class Description" type="text" use="optional" dataType="string" regExp="a-zA-Z0-9_." />
+            </data>
+         </attribute>
+         <attribute label="FirstTask" name="firsttask" type="text" use="optional" dataType="string" value="false" hidden="true" />
+      </attGroup>
+   </element>
+   <element name="csubflow">
+      <attGroup name="BPMN">
+         <attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" />
+         <attribute label="Name" maxlength="50" value="DEFAULT_PROCESS" change="setName" name="name" type="text" />
+         <attribute label="Color" name="colorFill" type="colorPicker" change="setColor" value="" />
+         <attribute label="SubProcessType" name="subprocesstype" type="combo" value="Embedded" use="required" change="typeChange">
+            <values>
+               <value label="Embedded" value="Embedded" disable="filename,execution,datamappings,processref,skipfirsttask,processforms,entityforms,entity" enable="" />
+               <value label="Reusable" value="Reusable" enable="filename,execution,datamappings,processref,skipfirsttask,processforms,entityforms,entity" disable="" />
+            </values>
+         </attribute>
+         <attribute label="LoopType" name="looptype" type="combo" change="loopTypeChange" value="None">
+            <values>
+               <value label="None" value="None" disable="testtime,mi_ordering,loopmaximum,loopcounter,loopcondition,mi_condition,mi_flowcondition,complexmi_flowcondition,loopdocumentation" />
+               <value label="Standard" value="Standard" disable="mi_ordering,mi_condition,mi_flowcondition,complexmi_flowcondition,loopmaximum,loopcounter" enable="testtime,loopcondition,loopdocumentation" />
+               <value label="MultiInstance" value="MultiInstance" enable="mi_ordering,mi_condition" disable="testtime,loopmaximum,loopcondition,loopdocumentation,mi_flowcondition,complexmi_flowcondition,loopcounter" />
+            </values>
+         </attribute>
+         <attribute label="LoopCondition" name="loopcondition" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+            <data>You can use natural language or the syntax rules described below: String: ''string'' | Number: number | Date: [date] | Null: null Entity Att.: ent_att(''attr_name'') | Process Att.: pro_att(''attr_name'') Arith. Operator: +, -, /,* Comp. Operator : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; Boolean Operator: and, or | Unary Operator: not(expression) currentUser</data>
+         </attribute>
+         <attribute label="MI_Condition" name="mi_condition" type="text" regExp="0-9" disabled="true" dataType="integer" />
+         <attribute label="TestTime" name="testtime" type="combo" disabled="true" value="After" dataType="string" hidden="true">
+            <values>
+               <value label="After" value="After" />
+               <value label="Before" value="Before" />
+            </values>
+         </attribute>
+         <attribute label="MI_Ordering" name="mi_ordering" type="combo" disabled="true" value="Parallel" dataType="string" hidden="true">
+            <values>
+               <value label="Parallel" value="Parallel" enable="mi_flowcondition" disable="complexmi_flowcondition" />
+               <value label="Sequential" value="Sequential" disable="mi_flowcondition,complexmi_flowcondition" />
+            </values>
+         </attribute>
+         <attribute label="MI_FlowCondition" name="mi_flowcondition" type="combo" disabled="true" value="All" dataType="string" hidden="true">
+            <values>
+               <value label="All" value="All" disable="complexmi_flowcondition" />
+               <value label="One" value="One" disable="complexmi_flowcondition" />
+               <value label="Complex" value="Complex" enable="complexmi_flowcondition" />
+            </values>
+         </attribute>
+      </attGroup>
+   </element>
+   <element name="esubflow">
+      <attGroup name="BPMN">
+         <attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" />
+         <attribute label="SubProcessType" name="subprocesstype" type="combo" value="Embedded" use="required">
+            <values>
+               <value label="Embedded" value="Embedded" disable="execution" />
+               <value label="Reusable" value="Reusable" enable="execution" />
+            </values>
+         </attribute>
+         <attribute label="Execution" name="execution" type="combo" value="Sync">
+            <values>
+               <value label="Synchronic" value="Sync" />
+               <value label="Asynchronic" value="Async" />
+            </values>
+         </attribute>
+         <attribute label="TransactionRef" name="transactionref" disabled="true">
+            <attributes>
+               <attribute label="TransactionId" name="transactionid" disabled="true" type="text" use="required" dataType="string" />
+            </attributes>
+         </attribute>
+         <attribute label="Name" name="name" type="text" change="setName" use="required" dataType="string" />
+         <attribute label="ActivityType" name="activitytype" type="label" value="Sub-Process" change="setDependencyProps" hidden="true" />
+         <attribute label="LoopType" name="looptype" type="combo" change="loopTypeChange" value="None">
+            <values>
+               <value label="None" value="None" disable="testtime,mi_ordering,loopmaximum,loopcounter,loopcondition,mi_condition,mi_flowcondition,complexmi_flowcondition" />
+               <value label="Standard" value="Standard" disable="mi_ordering,mi_condition,mi_flowcondition,complexmi_flowcondition" enable="testtime,loopmaximum,loopcounter,loopcondition" />
+               <value label="MultiInstance" value="MultiInstance" enable="mi_ordering,mi_condition" disable="testtime,loopmaximum,loopcondition,mi_flowcondition,complexmi_flowcondition,loopcounter" />
+            </values>
+         </attribute>
+         <attribute label="LoopCondition" name="loopcondition" type="text" disabled="true" use="required" dataType="string" />
+         <attribute label="MI_Condition" name="mi_condition" textenabled="true" type="modal" modalwidth="210" modalheight="220" modalUrl="attributes.xml" modalclass="view.modal.ElementChoose" title="attributes" />
+         <attribute label="LoopCounter" name="loopcounter" type="text" disabled="true" use="required" dataType="int" />
+         <attribute label="LoopMaximum" name="loopmaximum" type="text" disabled="true" use="optional" dataType="int" />
+         <attribute label="TestTime" name="testtime" type="combo" disabled="true" value="After" dataType="string" hidden="true">
+            <values>
+               <value label="After" value="After" />
+               <value label="Before" value="Before" />
+            </values>
+         </attribute>
+         <attribute label="MI_Ordering" name="mi_ordering" type="combo" disabled="true" value="Sequential" dataType="string" hidden="true">
+            <values>
+               <value label="Sequential" value="Sequential" disable="mi_flowcondition,complexmi_flowcondition" />
+               <value label="Parallel" value="Parallel" enable="mi_flowcondition" disable="complexmi_flowcondition" />
+            </values>
+         </attribute>
+         <attribute label="MI_FlowCondition" name="mi_flowcondition" type="combo" disabled="true" value="All" dataType="string" hidden="true">
+            <values>
+               <value label="One" value="One" disable="complexmi_flowcondition" />
+               <value label="All" value="All" disable="complexmi_flowcondition" />
+               <value label="Complex" value="Complex" enable="complexmi_flowcondition" />
+            </values>
+         </attribute>
+         <attribute label="ComplexMI_FlowCondition" name="complexmi_flowcondition" type="text" disabled="true" use="optional" dataType="string" />
+         <attribute label="Expanded" name="expanded" value="true" type="text" disabled="true" />
+      </attGroup>
+      <attGroup name="Apia Extensions">
+         <attribute name="iteratecondition" disabled="true" label="Iterate Condition" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300">
+            <data>You can use natural language or the syntax rules described below: String: ''string'' | Number: number | Date: [date] | Null: null Entity Att.: ent_att(''attr_name'') | Process Att.: pro_att(''attr_name'') Arith. Operator: +, -, /,* Comp. Operator : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; Boolean Operator: and, or | Unary Operator: not(expression) currentUser</data>
+         </attribute>
+         <attribute width="140" name="processforms" label="Process Forms" modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="forms.xml">
+            <data>
+               <level width="1" name="id" label="id" type="text" hidden="true" />
+               <level width="100" name="name" label="name" type="label" />
+               <level width="60" name="readonly" label="readonly" type="checkbox" />
+               <level width="60" name="multiple" label="multiple" type="checkbox" />
+            </data>
+         </attribute>
+         <attribute width="140" name="entityforms" label="Entity Forms" modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="forms.xml">
+            <data>
+               <level width="1" name="id" label="id" type="text" hidden="true" />
+               <level width="100" name="name" label="name" type="label" />
+               <level width="60" name="readonly" label="readonly" type="checkbox" />
+               <level width="60" name="multiple" label="multiple" type="checkbox" />
+            </data>
+         </attribute>
+      </attGroup>
+      <attGroup name="User Defined Attributes" id="userproperties">
+         <attribute label="User Attributes" name="userattributes" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+            <data>
+               <level width="30%" label="Name" name="name" type="text" />
+               <level width="30%" label="Type" name="type" type="combo" value="String">
+                  <values>
+                     <value label="String" value="String" />
+                     <value label="Numeric" value="Numeric" />
+                     <value label="Boolean" value="Boolean" />
+                  </values>
+               </level>
+               <level width="40%" label="Value" name="value" type="text" />
+            </data>
+         </attribute>
+      </attGroup>
+   </element>
+   <element name="startevent">
+      <attGroup name="BPMN">
+         <attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" />
+         <attribute label="Name" name="name" type="text" change="setName" use="required" dataType="string" />
+         <attribute name="eventtype" label="EventType" type="label" value="Start" hidden="true" />
+         <attribute name="eventdetailtype" label="EventDetailType" type="combo" change="typeChange,setFirstTaskType" value="None">
+            <values>
+               <value label="None" value="None" disable="message,timer,conditional,signal,multiple,trigger" />
+               <value label="Message" value="Message" enable="trigger,message" disable="timer,conditional,signal,multiple" />
+               <value label="Timer" value="Timer" enable="trigger,timer" disable="message,conditional,signal,multiple" />
+            </values>
+         </attribute>
+      </attGroup>
+   </element>
+   <element name="middleevent">
+      <attGroup name="BPMN">
+         <attribute name="attached" label="Attached" type="combo" value="TRUE" readonly="true" hidden="true" change="">
+            <values>
+               <value label="TRUE" value="TRUE" enable="messagecatch,multmessagecatch,errorcodeopt,inmessageref" disable="messagethrow,multmessagethrow,errorcodereq,catchthrow,outmessageref" />
+               <value label="FALSE" value="FALSE" disable="messagecatch,multmessagecatch,errorcodeopt" enable="messagethrow,multmessagethrow,errorcodereq,catchthrow" />
+            </values>
+         </attribute>
+         <attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" />
+         <attribute label="Name" name="name" type="text" change="setName" use="required" dataType="string" />
+         <attribute name="eventtype" label="EventType" type="label" value="Intermediate" hidden="true" />
+         <attribute name="eventdetailtype" label="EventDetailType" type="combo" change="typeChange" value="None">
+            <values>
+               <value label="None" value="None" disable="message,timer,error,conditional,signal,compensation,multiple,trigger,catchthrow" />
+               <value label="Message" value="Message" disable="timer,error,conditional,signal,compensation,multiple" enable="trigger,message,catchthrows" />
+               <value label="Timer" value="Timer" disable="message,error,conditional,signal,compensation,multiple,catchthrow" enable="trigger,timer" />
+               <value label="Multiple" value="Multiple" enable="trigger,multiple" disable="message,timer,error,compensation,conditional,signal" />
+            </values>
+         </attribute>
+         <attribute name="catchthrow" label="Catch/Throw" type="combo" change="catchThrowChange" value="CATCH">
+            <values>
+               <value label="Catch" value="CATCH" disable="" enable="" />
+               <value label="Throw" value="THROW" enable="" disable="" />
+            </values>
+         </attribute>
+      </attGroup>
+   </element>
+   <element name="endevent">
+      <attGroup name="BPMN">
+         <attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" />
+         <attribute label="Name" name="name" type="text" change="setName" use="required" dataType="string" />
+         <attribute name="eventtype" label="EventType" type="label" value="End" hidden="true" />
+         <attribute name="eventdetailtype" label="EventDetailType" type="combo" change="typeChange" value="None">
+            <values>
+               <value label="None" value="None" disable="message,error,compensation,signal,multiple,result" />
+               <value label="Message" value="Message" disable="error,compensation,signal,multiple" enable="result,message" />
+            </values>
+         </attribute>
+      </attGroup>
+   </element>
+   <element name="gateway">
+      <attGroup name="BPMN">
+         <attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" />
+         <attribute label="Name" name="name" type="text" change="setName" use="optional" dataType="string" />
+         <attribute name="exclusivetype" label="ExclusiveType" type="text" disabled="true" value="Data" readonly="true" hidden="true" />
+         <attribute name="gatewaytype" label="GatewayType" type="combo" change="typeChange,setDependencyProps" value="Exclusive">
+            <values>
+               <value label="Exclusive" value="Exclusive" enable="exclusivetype,executiontype" disable="incomingcondition,outgoingcondition,instantiate" />
+               <value label="Inclusive" value="Inclusive" enable="executiontype" disable="exclusivetype,incomingcondition,outgoingcondition,instantiate" />
+               <value label="Parallel" value="Parallel" disable="exclusivetype,incomingcondition,outgoingcondition,instantiate,executiontype" />
+            </values>
+         </attribute>
+         <attribute name="instantiate" label="Instantiate" type="checkbox" value="false" disabled="true" />
+      </attGroup>
+   </element>
+   <element name="mflow">
+      <attGroup name="BPMN">
+         <attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" />
+         <attribute label="Name" name="name" type="text" change="setName" use="optional" dataType="string" />
+      </attGroup>
+   </element>
+   <element name="association">
+      <attGroup name="BPMN">
+         <attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" />
+         <attribute label="Name" name="name" type="text" change="setName" use="optional" dataType="string" />
+         <attribute name="direction" label="Direction" type="combo" change="setDirection" value="None">
+            <values>
+               <value label="None" value="None" />
+               <value label="One" value="From" />
+               <value label="Both" value="Both" />
+            </values>
+         </attribute>
+      </attGroup>
+   </element>
+   <element name="sflow">
+      <attGroup name="BPMN">
+         <attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" />
+         <attribute label="Name" name="name" type="text" change="setName" use="optional" dataType="string" />
+         <attribute name="conditiontype" label="ConditionType" type="combo" change="conditionChange" value="None">
+            <values>
+               <value label="Expression" value="CONDITION" enable="conditionexpression,conditiondocumentation" />
+               <value label="None" value="None" disable="conditionexpression,conditiondocumentation" />
+            </values>
+         </attribute>
+         <attribute name="conditionexpression" label="ConditionExpression" disabled="true" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300">
+            <data>You can use natural language or the syntax rules described below: String: 'string' | Number: number | Date: [date] | Null: null Entity Att.: ent_att('attr_name') | Process Att.: pro_att('attr_name') Arith. Operator: +, -, /,* Comp. Operator: &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; Boolean Operator: and, or | Unary Operator: not(expression) currentUser</data>
+         </attribute>
+      </attGroup>
+   </element>
+   <element name="pool">
+      <attGroup name="BPMN">
+         <attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" />
+         <attribute label="Name" name="name" type="text" change="setName" use="required" dataType="string" />
+      </attGroup>
+   </element>
+   <element name="group">
+      <attGroup name="BPMN">
+         <attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" />
+         <attribute label="Name" name="name" type="text" change="setName" use="required" dataType="string" />
+         <attribute label="ArtifactType" name="artifacttype" type="label" value="Group" hidden="true" />
+      </attGroup>
+   </element>
+   <element name="swimlane">
+      <attGroup name="BPMN">
+         <attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" />
+         <attribute label="Name" name="name" type="text" change="setName" />
+      </attGroup>
+   </element>
+   <element name="textannotation">
+      <attGroup name="BPMN">
+         <attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" />
+         <attribute label="ArtifactType" name="artifacttype" type="label" value="Annotation" hidden="true" />
+         <attribute label="Text" name="text" type="text" change="setText" use="required" dataType="string" />
+      </attGroup>
+   </element>
+   <element name="dataobject">
+      <attGroup name="BPMN">
+         <attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" />
+         <attribute label="ArtifactType" name="artifacttype" type="label" value="DataObject" hidden="true" />
+         <attribute label="Name" name="name" type="text" change="setName" use="required" dataType="string" />
+         <attribute label="State" name="state" type="text" use="optional" change="setState" dataType="string" />
+      </attGroup>
+   </element>
+   <element name="back" x="0" y="0" height="0" width="0" mainpool="true">
+      <attGroup name="BPMN">
+         <attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" />
+         <attribute label="Name" name="name" type="text" use="required" dataType="string" />
+         <attribute name="events" label="Events" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="500" modalheight="300" use="optional" dataType="string">
+            <data>
+               <level width="25%" name="evtName" label="Event Name" type="combo" use="optional" dataType="string" value="ONCREATE">
+                  <values>
+                     <value label="ONCREATE" value="ONCREATE" />
+                     <value label="ONCOMPLETE" value="ONCOMPLETE" />
+                     <value label="ONCANCEL" value="ONCANCEL" />
+                     <value label="ONWARNING" value="ONWARNING" />
+                     <value label="ONOVERDUE" value="ONOVERDUE" />
+                     <value label="ONDETAIL" value="ONDETAIL" />
+                     <value label="ONSUSPEND" value="ONSUSPEND" />
+                     <value label="ONRESUME" value="ONRESUME" />
+                     <value label="ONROLLBACK" value="ONROLLBACK" />
+                     <value label="ONFINALIZE" value="ONFINALIZE" />
+                  </values>
+               </level>
+               <level width="25%" name="clsName" maxlength="50" label="Business Class" type="text" use="optional" dataType="string" regExp="a-zA-Z0-9_." />
+               <level width="50%" name="clsDesc" label="Business Class Description" type="text" use="optional" dataType="string" regExp="a-zA-Z0-9_." />
+            </data>
+         </attribute>
+         <attribute name="forms" label="Forms" type="modalArray" modalclass="view.modal.FormLevelAdder" modalwidth="680" modalheight="300" use="optional" dataType="string" hideArrows="true">
+            <data>
+               <level width="0" name="formId" regExp="a-zA-Z0-9_." label="Form Id" type="text" use="optional" dataType="string" />
+               <level width="30%" name="formName" regExp="a-zA-Z0-9_." label="Form Name" type="text" use="optional" dataType="string" />
+               <level width="40%" name="formDesc" label="Form Title" type="text" use="optional" dataType="string" />
+               <level width="14%" name="doc" label="Attributes" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="600" modalheight="330">
+                  <data>
+                     <level width="19%" name="fname" regExp="a-zA-Z0-9_." label="Name" type="text" />
+                     <level width="25%" name="description" label="Label" type="text" />
+                     <level width="14%" name="fieldtype" label="Field Type" value="Input" type="combo">
+                        <values>
+                           <value label="Input" value="Input" />
+                           <value label="ComboBox" value="ComboBox" />
+                           <value label="ListBox" value="ListBox" />
+                           <value label="CheckBox" value="CheckBox" />
+                           <value label="Radio Button" value="Radio Button" />
+                           <value label="Text Area" value="Text Area" />
+                           <value label="File Input" value="File Input" />
+                           <value label="Editor" value="Editor" />
+                           <value label="Password" value="Password" />
+                        </values>
+                     </level>
+                     <level width="10%" name="datatype" label="Data Type" type="combo" value="String">
+                        <values>
+                           <value label="String" value="String" />
+                           <value label="Number" value="Number" />
+                           <value label="Date" value="Date" />
+                        </values>
+                     </level>
+                     <level width="7%" name="grid" label="Grid" value="" type="combo">
+                        <values>
+                           <value label="" value="" enable="ListBox,Text Area,Editor,Radio Button" />
+                           <value label="1" value="1" disable="ListBox,Text Area,Editor,Radio Button" />
+                           <value label="2" value="2" disable="ListBox,Text Area,Editor,Radio Button" />
+                           <value label="3" value="3" disable="ListBox,Text Area,Editor,Radio Button" />
+                           <value label="4" value="4" disable="ListBox,Text Area,Editor,Radio Button" />
+                           <value label="5" value="5" disable="ListBox,Text Area,Editor,Radio Button" />
+                           <value label="6" value="6" disable="ListBox,Text Area,Editor,Radio Button" />
+                           <value label="7" value="7" disable="ListBox,Text Area,Editor,Radio Button" />
+                           <value label="8" value="8" disable="ListBox,Text Area,Editor,Radio Button" />
+                           <value label="9" value="9" disable="ListBox,Text Area,Editor,Radio Button" />
+                           <value label="10" value="10" disable="ListBox,Text Area,Editor,Radio Button" />
+                        </values>
+                     </level>
+                     <level width="25%" name="rules" label="Regular Expression" type="text" />
+                  </data>
+               </level>
+               <level width="14%" name="frmEvents" label="Events" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="500" modalheight="380" use="optional" dataType="string">
+                  <data>
+                     <level width="25%" name="evtName" label="Event Name" type="combo" use="optional" dataType="string" value="ONLOAD">
+                        <values>
+                           <value label="ONLOAD" value="ONLOAD" />
+                           <value label="ONSUBMIT" value="ONSUBMIT" />
+                           <value label="ONRELOAD" value="ONRELOAD" />
+                        </values>
+                     </level>
+                     <level width="25%" name="clsName" label="Business Class" type="text" use="optional" dataType="string" regExp="a-zA-Z0-9_." />
+                     <level width="50%" name="clsDesc" label="Business Class Description" type="text" use="optional" dataType="string" regExp="a-zA-Z0-9_." />
+                  </data>
+               </level>
+            </data>
+         </attribute>
+      </attGroup>
+   </element>
+</elements>

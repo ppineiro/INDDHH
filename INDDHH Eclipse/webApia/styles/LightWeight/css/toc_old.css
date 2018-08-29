@@ -1,0 +1,21 @@
+IMG{
+    MARGIN-RIGHT: 2px;
+    MARGIN-LEFT:4px;
+    POSITION: relative;
+    TOP: 4px;
+    CURSOR: default;
+}
+UL{
+    MARGIN: 0px;
+    WIDTH:1px;
+	HEIGHT:1px;
+}
+LI UL{
+    
+    MARGIN-LEFT: 15px;
+    MARGIN-RIGHT:0px;
+}
+LI{
+    LIST-STYLE: none;
+}
+

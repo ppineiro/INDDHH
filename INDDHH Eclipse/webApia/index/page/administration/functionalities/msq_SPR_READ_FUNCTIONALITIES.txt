@@ -1,0 +1,51 @@
+CREATE PROCEDURE [dbo].[SPR_READ_FUNCTIONALITIES]
+@p_where VARCHAR(2000),
+@p_order_by VARCHAR(2000),
+@from_row INT,
+@rows_per_page INT
+AS
+DECLARE
+  @total INT,
+  @aux_sql VARCHAR(1500) 
+
+SET NOCOUNT ON
+
+CREATE TABLE #tmp_table (
+     id INT IDENTITY (1,1),
+     fnc_id_auto int,
+	 env_id int,
+     fnc_name varchar(50),
+     fnc_id_father int,
+     fnc_order int,
+     fnc_tool_tip varchar(255),
+     fnc_type varchar(1),
+     fnc_url varchar(255),
+     fnc_all_env int,
+     fnc_desc  varchar(255),
+     fnc_group  int,
+     fnc_flags  varchar(20),
+     fnc_title varchar(255),                                                                                            
+	 father_title varchar(255),
+	 reg_user varchar(20),
+     reg_status int,
+     reg_date datetime
+)
+
+SET @aux_sql = 'INSERT INTO #tmp_table 
+(fnc_id_auto,env_id,fnc_name,fnc_id_father,fnc_order,fnc_tool_tip,fnc_type,fnc_url,fnc_all_env,fnc_desc,fnc_group,fnc_flags,fnc_title,father_title,reg_user,reg_status,reg_date) '
+SET @aux_sql = @aux_sql + ' SELECT 
+fnc.fnc_id_auto,fnc.env_id,fnc.fnc_name,fnc.fnc_id_father,fnc.fnc_order,fnc.fnc_tool_tip,fnc.fnc_type,fnc.fnc_url,fnc.fnc_all_env,fnc.fnc_desc,fnc.fnc_group,fnc.fnc_flags,fnc.fnc_title,fol.fnc_title AS father_title,fnc.reg_user,fnc.reg_status,fnc.reg_date 
+FROM functionality fnc LEFT OUTER JOIN functionality fol ON fnc.fnc_id_father = fol.fnc_id_auto WHERE fnc.reg_status = 0 '
+
+IF (@p_where IS NOT NULL) SET @aux_sql = @aux_sql + ' AND ' + @p_where
+IF (@p_order_by IS NOT NULL) SET @aux_sql = @aux_sql + ' ORDER BY ' + @p_order_by
+set @total = @from_row + @rows_per_page
+set rowcount @total
+EXEC(@aux_sql)
+set rowcount @rows_per_page
+SELECT * FROM #tmp_table WHERE id BETWEEN @from_row AND (@from_row + @rows_per_page - 1)
+DROP TABLE #tmp_table
+set rowcount 0
+--
+
+

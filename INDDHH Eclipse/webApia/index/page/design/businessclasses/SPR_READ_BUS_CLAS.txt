@@ -1,0 +1,56 @@
+
+////YA IMPACTADO EN SCRIPT DE CREACION
+
+ALTER PROCEDURE [SPR_READ_BUS_CLASS]
+@p_where VARCHAR(2000),
+@p_order_by VARCHAR(2000),
+@from_row INT,
+@rows_per_page INT
+AS
+DECLARE
+  @total INT,
+  @aux_sql VARCHAR(1500) 
+
+SET NOCOUNT ON
+
+CREATE TABLE #tmp_table (
+    id INT IDENTITY (1,1),
+    env_id  INT,
+    bus_cla_id_auto  INT,
+    bus_cla_name  VARCHAR(50),
+    bus_cla_desc  VARCHAR(255),
+    bus_cla_type  VARCHAR(1),
+    bus_cla_executable  VARCHAR(255),
+    db_con_id  INT,
+    bus_cla_view  VARCHAR(255),
+    bus_cla_url  VARCHAR(255),
+    prj_id INT,
+    reg_user  VARCHAR(20),
+    reg_status  INT,
+    reg_date  DATETIME,
+	bus_cla_flags varchar(10),
+	BUS_CLA_WSS_UT_USR VARCHAR(250),
+	BUS_CLA_WSS_UT_PWD VARCHAR(250),
+	BUS_CLA_AUTH_USR VARCHAR(250),
+	BUS_CLA_AUTH_PWD VARCHAR(250),
+	BUS_CLA_RULES_INPUT VARCHAR(255),
+	BUS_CLA_RULES_OUTPUT VARCHAR(255),
+	BUS_CLA_RULES_RULE_PATH VARCHAR(255),
+	BUS_CLA_RULES_ENGINE VARCHAR(255),
+    BUS_CLA_WS_STR_TAG	VARCHAR(255),
+    BUS_CLA_WS_NUM_TAG	VARCHAR(255),
+    BUS_CLA_WS_DTE_TAG VARCHAR(255),
+    prj_name VARCHAR(50)
+)
+SET @aux_sql = 'INSERT INTO #tmp_table (env_id,bus_cla_id_auto,bus_cla_name,bus_cla_desc,bus_cla_type,bus_cla_executable,db_con_id,bus_cla_view,bus_cla_url,prj_id,reg_user,reg_status,reg_date,bus_cla_flags,BUS_CLA_WSS_UT_USR,BUS_CLA_WSS_UT_PWD,BUS_CLA_AUTH_USR,BUS_CLA_AUTH_PWD,BUS_CLA_RULES_INPUT,BUS_CLA_RULES_OUTPUT,BUS_CLA_RULES_RULE_PATH,BUS_CLA_RULES_ENGINE,BUS_CLA_WS_STR_TAG,BUS_CLA_WS_NUM_TAG,BUS_CLA_WS_DTE_TAG,prj_name) '
+SET @aux_sql = @aux_sql + ' select b.*,prj_name from bus_class b left outer join project p on b.env_id=p.env_id and b.prj_id=p.prj_id_auto and b.reg_status=p.reg_status where b.reg_status=0 and b.bus_cla_id_auto > 1000 '
+IF (@p_where IS NOT NULL) SET @aux_sql = @aux_sql + ' AND ' + @p_where
+IF (@p_order_by IS NOT NULL) SET @aux_sql = @aux_sql + ' ORDER BY ' + @p_order_by
+set @total = @from_row + @rows_per_page
+set rowcount @total
+EXEC(@aux_sql)
+set rowcount @rows_per_page
+SELECT * FROM #tmp_table WHERE id BETWEEN @from_row AND (@from_row + @rows_per_page - 1)
+DROP TABLE #tmp_table
+set rowcount 0
+--

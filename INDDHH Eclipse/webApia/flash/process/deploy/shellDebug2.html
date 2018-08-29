@@ -1,0 +1,147 @@
+
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><title>shell</title><script language="javascript">
+
+
+
+var viewSubProcess = false;
+
+
+function getFlashOutput(){
+
+	getFlashObject("shell").SetVariable("call", "getOutputXML");
+}
+function getFlashInput(){
+	getFlashObject("shell").SetVariable("call", "getInputXML");
+}
+function reloadFlash(){
+	getFlashObject("shell").SetVariable("call", "reload");
+}
+function setAuto(){
+	getFlashObject("shell").SetVariable("call", "setAuto");
+}
+function setManual(){
+	getFlashObject("shell").SetVariable("call", "setManual");
+}
+function setEntity(){
+	getFlashObject("shell").SetVariable("call", "setEntity,param=value");
+	//("call",flash_method,string_value)
+}
+function setReadOnly(){
+	getFlashObject("shell").SetVariable("call", "setReadOnly");
+	//("call",flash_method,string_value)
+}
+function getProcessBitmap(){
+	getFlashObject("shell").SetVariable("call", "uploadProcessImage");
+}
+//////////////////////////////////////////////////
+//	FSCommand
+/////////////////////////////////////////////////
+// Handles all the FSCommand messages in a Flash movie
+function shell_DoFSCommand(command, args) {
+alert(213);
+	if (command == "outputXML") {
+		if(viewSubProcess){
+			//alert("SUBPROCESS");
+			showXML(args,"1");
+		}else{
+			showXML(args,"1");
+		}
+	}
+	if(command == "inputXML") {
+		//alert(args)
+		showXML(args,"2")
+	}
+	
+	if (command == "isReady") {
+		flashLoaded = true;
+		//alert("ready")
+	}
+	if (command == "reload") {
+		//alert("reloaded: " + args);
+	}
+	if (command == "auto") {
+		//alert("auto: " + args);
+	}
+	if (command == "manual") {
+		//alert("manual: " + args);
+	}
+	
+	if (command == "largalo") {
+		alert("llegoooooooooooooo "+args);
+	}
+	if (command == "largalo2") {
+		window.status=(args);
+	}
+	//VIEW SUBPROCESS
+	if (command == "viewProcess") {
+		alert("viewProcess: " + args);
+		if(confirm("Guardar cambios?")){
+			viewSubProcess = true;
+			getFlashObject("shell").SetVariable("call", "getOutputXML");
+		}
+	}
+	if (command == "changeColor") {
+		if(args!=""){
+			auxCol=document.all.shell.bgcolor;
+			getFlashObject("shell").bgcolor=args;		
+		}else{
+			getFlashObject("shell").bgcolor=auxCol;
+		}
+	}
+	
+}
+
+
+
+//////////////////////////////////
+//	DEBUG
+//////////////////////////////
+function showHTML(html,winName){
+var w = window.open("",winName,"height=480,width=680,resizable=yes,scrollbars=yes");
+	w.document.open();
+    w.document.write(html);
+    w.document.close();
+    w.focus();
+}	
+	
+function showXML(doc,winName){
+	var oXML = new ActiveXObject("Microsoft.XMLDOM");
+	oXML.loadXML(doc);
+    var tempdoc = new ActiveXObject("Microsoft.XMLDOM");
+    tempdoc.async = false;
+    if (!tempdoc.load("mimedefault.xsl")){
+		//showHTML(reportParseError(tempdoc.parseError));
+		alert("ERROR loading XSL")
+	}else{
+   	 	var html = oXML.transformNode(tempdoc);
+    	showHTML(html,winName);
+    }
+}
+
+
+function getFlashObject(movieName){
+	if (window.document[movieName]){
+		return window.document[movieName];
+	}
+	if (navigator.appName.indexOf("Microsoft Internet")==-1){
+		if (document.embeds && document.embeds[movieName]){
+			return document.embeds[movieName];
+		}
+	}else{ // if (navigator.appName.indexOf("Microsoft Internet")!=-1){
+		return document.getElementById(movieName);
+	}
+}
+
+
+</script></head><body bgcolor="#ffffff" style="/*overflow:hidden*/" topmargin=1 leftmargin=1 rightmargin=1 bottommargin=1><!------------------------------------------><!--- 			 FLASH V 7.0			 ---><!------------------------------------------><TABLE WIDTH="100%" HEIGHT="100%" BORDER=0><TR><TD VALIGN="middle" ALIGN="center"><!------- USE W/ LOCAL XML FILES -DEBUG VERSION-----><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"  
+				 codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" 
+					WIDTH="100%" 
+					HEIGHT="500px" 
+					style="/*border:1px solid blue*/"
+					id="shell" ALIGN="center" VALIGN="middle" name="shell"><param name="allowScriptAccess" value="sameDomain" /><param name="movie" value="shell.swf" /><param name="FlashVars" value="utf=false&SWF_OBJ_PATH="/><param name="quality" value="high" /><param name="bgcolor" value="#EFEFEF" /><embed wmode="transparent" menu="false" allowScriptAccess="sameDomain" src="shell.swf" quality="high" bgcolor="#efefef" width="100%" height="450" swLiveConnect="true" id="shell" name="shell" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashVars="utf=true&SWF_OBJ_PATH=" /></object></TD></TR></TABLE><!---------------------------------------------><button type="button" onclick="getFlashOutput()">Output</button><button type="button" onclick="getFlashInput()">Input</button><button type="button" onclick="reloadFlash()">Reload</button><button type="button" onclick="setEntity()">Entity</button><button type="button" onclick="setReadOnly()">Read Only</button><button type="button" onclick="getProcessBitmap()">Export Image</button></body></html><SCRIPT LANGUAGE="VBScript">
+'Catch FS Commands in IE, and pass them to the corresponding JavaScript function.
+Sub shell_FSCommand(ByVal command, ByVal args)
+    call shell_DoFSCommand(command, args)
+end sub
+</SCRIPT>

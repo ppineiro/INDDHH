@@ -1,0 +1,206 @@
+<SCHEMA name="SCHEMA-APIA">
+	<Dimension name="Process">
+		<Hierarchy name="Process" hasAll="true" allMemberName="All Process" primaryKey="PRO_ID" primaryKeyTable="COD_PROCESS">
+			<Table name="COD_PROCESS"/>
+			<Level name="Process Name" column="PRO_NAME" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension name="Process Create Pool">
+		<Hierarchy name="Pool" hasAll="true" allMemberName="All Pools" primaryKey="POOL_ID" primaryKeyTable="COD_POOL">
+			<Table name="COD_POOL"/>
+			<Level name="Pool Name" column="POOL_NAME" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension name="Process Create Date">
+		<Hierarchy name="Dates" hasAll="true" allMemberName="All Dates" primaryKey="FECHA" primaryKeyTable="COD_DATE">
+			<Table name="COD_DATE" alias="PROCREATEDATE" />
+			<Level name="Year" column="ANO" type="Integer" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"/>
+			<Level name="Quarter" column="TRIMESTRE" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"/>
+			<Level name="Month" column="MES" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension name="Process End Date">
+		<Hierarchy name="Dates" hasAll="true" allMemberName="All Dates" primaryKey="FECHA" primaryKeyTable="COD_DATE">
+			<Table name="COD_DATE" alias="PROENDDATE"/>
+			<Level name="Year" column="ANO" type="Integer" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"/>
+			<Level name="Quarter" column="TRIMESTRE" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"/>
+			<Level name="Month" column="MES" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension name="Task Create Date">
+		<Hierarchy name="Dates" hasAll="true" allMemberName="All Dates" primaryKey="FECHA" primaryKeyTable="COD_DATE">
+			<Table name="COD_DATE" alias="TSKCREATEDATE" />
+			<Level name="Year" column="ANO" type="Integer" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"/>
+			<Level name="Quarter" column="TRIMESTRE" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"/>
+			<Level name="Month" column="MES" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension name="Task End Date">
+		<Hierarchy name="Dates" hasAll="true" allMemberName="All Dates" primaryKey="FECHA" primaryKeyTable="COD_DATE">
+			<Table name="COD_DATE" alias="TSKENDDATE" />
+			<Level name="Year" column="ANO" type="Integer" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"/>
+			<Level name="Quarter" column="TRIMESTRE" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"/>
+			<Level name="Month" column="MES" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension name="Process Create User">
+		<Hierarchy name="User" hasAll="true" allMemberName="All Users" primaryKey="USR_LOGIN" primaryKeyTable="COD_USER">
+			<Table name="COD_USER" alias="PROCREUSER"/>
+			<Level name="User" column="USR_NAME" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension name="Task Acquired User">
+		<Hierarchy name="User" hasAll="true" allMemberName="All Users" primaryKey="USR_LOGIN" primaryKeyTable="COD_USER">
+			<Table name="COD_USER" alias="TSKACQUSER"/>
+			<Level name="User" column="USR_NAME" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension name="Process Task">
+		<Hierarchy name="Process Task" hasAll="true" allMemberName="All Process Task" primaryKey="PRO_ID" primaryKeyTable="COD_PROTASK">
+  			<Table name="COD_PROTASK" /> 
+			<Level name="Process" column="PRO_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" /> 
+  			<Level name="Task" column="TSK_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" /> 
+	  </Hierarchy>
+  	</Dimension>
+	<Cube name="PR_EN_EJ" cache="true" enabled="true">
+		<Table name="DW_PRO_EJ" alias="TablaHechos"/>
+		<DimensionUsage name="Process" source="Process" foreignKey="PRO_ID"/>
+		<DimensionUsage name="Process Create Pool" source="Process Create Pool" foreignKey="POOL_ID"/>
+		<DimensionUsage name="Process Create Date" source="Process Create Date" foreignKey="PRO_CREATE_DATE"/>
+		<DimensionUsage name="Process Create User" source="Process Create User" foreignKey="PRO_CREATE_USER"/>
+		<Dimension name="Process Delay Status">
+			<Hierarchy hasAll="true" allMemberName="All Status">
+				<Level name="Process Delay Status" column="PRO_DUR_STATUS" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"></Level>
+			</Hierarchy>
+		</Dimension>
+		<Dimension name="Process Priority">
+			<Hierarchy hasAll="true" allMemberName="All Priority">
+				<Level name="Process Priority" column="PRO_PRIORITY" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"></Level>
+			</Hierarchy>
+		</Dimension>
+		<Dimension type="StandardDimension" foreignKey="PRO_END_REMAIN" name="Pro_end_remain">
+			<Hierarchy name="Days_to_End" hasAll="true" allMemberName="Days_to_End" primaryKey="NUM_ID" primaryKeyTable="VW_DAYSTOEND">
+				<Table name="VW_DAYSTOEND"></Table>
+				<Level name="Number" table="VW_DAYSTOEND" column="NUM_NUM" type="Integer" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"></Level>
+			</Hierarchy>
+		</Dimension>
+		<Dimension type="StandardDimension" foreignKey="PRO_EST_ALARM_REMAIN" name="Pro_est_alarm_remain">
+			<Hierarchy name="Days_to_Warning" hasAll="true" allMemberName="Days_to_Warning" primaryKey="NUM_ID" primaryKeyTable="VW_DAYSTOWARN">
+				<Table name="VW_DAYSTOWARN"></Table>
+				<Level name="Number" table="VW_DAYSTOWARN" column="NUM_NUM" type="Integer" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"></Level>
+			</Hierarchy>
+		</Dimension>
+		<Dimension type="StandardDimension" foreignKey="PRO_CONSEC_DAYS" name="Pro_consec_days">
+			<Hierarchy name="Days_Running" hasAll="true" allMemberName="Days_Running" primaryKey="NUM_ID" primaryKeyTable="VW_DAYSRUNNING">
+				<Table name="VW_DAYSRUNNING"></Table>
+				<Level name="Number" table="VW_DAYSRUNNING" column="NUM_NUM" type="Integer" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"></Level>
+			</Hierarchy>
+		</Dimension>
+		<Measure name="Cantidad" column="PRO_INST_ID" aggregator="count" visible="true"></Measure>
+		<Measure name="PromedioTiempo" column="PRO_TIME" datatype="Integer" formatString="#,###.0" aggregator="avg" visible="true"></Measure> 
+		<CalculatedMember name="PromEnDias" formula="[Measures].[PromedioTiempo] / (86400)" dimension="Measures" visible="true"></CalculatedMember>
+	</Cube>
+	<Cube name="PR_COMP" cache="true" enabled="true"> 
+		<Table name="DW_PRO_COMP" alias="TablaHechos"/> 
+		<DimensionUsage name="Process" source="Process" foreignKey="PRO_ID"/>
+		<DimensionUsage name="Process Create Pool" source="Process Create Pool" foreignKey="POOL_ID"/>
+		<DimensionUsage name="Process Create Date" source="Process Create Date" foreignKey="PRO_CREATE_DATE"/>
+		<DimensionUsage name="Process End Date" source="Process End Date" foreignKey="PRO_END_DATE"/>
+		<DimensionUsage name="Process Create User" source="Process Create User" foreignKey="PRO_CREATE_USER"/>
+		<Dimension name="Execution Status"> 
+			<Hierarchy hasAll="true" allMemberName="All Status">
+				<Level name="Status" column="PRO_EXE_STATUS" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" /> 
+			</Hierarchy> 
+		</Dimension>
+		<Dimension name="Process Priority">
+			<Hierarchy hasAll="true" allMemberName="All Priority">
+				<Level name="Process Priority" column="PRO_PRIORITY" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"></Level>
+			</Hierarchy>
+		</Dimension>
+		<Dimension name="Process Status">
+			<Hierarchy hasAll="true" allMemberName="All Status">
+				<Level name="Process Status" column="PRO_STATUS" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"></Level>
+			</Hierarchy>
+		</Dimension>
+		<Measure name="Cantidad" column="PRO_INST_ID" aggregator="count" visible="true" /> 
+		<Measure name="Total_Time" column="PRO_TIME" datatype="Integer" formatString="#,###.0" aggregator="sum" visible="true" /> 
+		<Measure name="AvgExecution_Time" column="PRO_TIME" datatype="Integer" formatString="#,###.0" aggregator="avg" visible="true" /> 
+		<Measure name="MaxExecution_Time" column="PRO_TIME" datatype="Integer" formatString="#,###.0" aggregator="max" visible="true" /> 
+		<Measure name="MinExecution_Time" column="PRO_TIME" datatype="Integer" formatString="#,###.0" aggregator="min" visible="true" /> 
+	</Cube>
+	<Cube name="PR_TSK_EJ" cache="true" enabled="true">
+	<Table name="DW_PRO_TSK_EJ" alias="TablaHechos"/>
+	<DimensionUsage name="Process Create Date" source="Process Create Date" foreignKey="PRO_CREATE_DATE"/>
+	<DimensionUsage name="Task Create Date" source="Task Create Date" foreignKey="TSK_CREATE_DATE"/>
+	<DimensionUsage name="Process Task" source="Process Task" foreignKey="PRO_ID"/>
+	<Dimension name="Task Delay Status">
+		<Hierarchy hasAll="true" allMemberName="All Status">
+			<Level name="Task Delay Status" column="TSK_DUR_STATUS" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"></Level>
+		</Hierarchy>
+	</Dimension>
+	<Dimension name="Task Last Status">
+		<Hierarchy hasAll="true" allMemberName="All Status">
+			<Level name="Task Last Status" column="TSK_STATUS" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"></Level>
+		</Hierarchy>
+	</Dimension>
+	<Dimension name="Active/Finish">
+		<Hierarchy hasAll="true" allMemberName="All Active/Finish">
+			<Level name="Active/Finish" column="TSK_ACTIVE" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"/> 
+		</Hierarchy>
+	</Dimension>
+	<DimensionUsage name="Task Acquired User" source="Task Acquired User" foreignKey="TSK_ACQ_USER"/>
+	<Dimension name="Process Priority">
+			<Hierarchy hasAll="true" allMemberName="All Priority">
+				<Level name="Process Priority" column="PRO_PRIORITY" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"></Level>
+			</Hierarchy>
+		</Dimension>
+	<Measure name="QtyTask" column="TSK_ID" aggregator="count" visible="true"/>
+	<Measure name="Total Tsk Time" column="PRO_TSK_SPEND_TIME" aggregator="sum" visible="true"/>
+	<Measure name="Avg Time Tsk" column="PRO_TSK_SPEND_TIME" aggregator="avg" visible="true"/>
+	<Measure name="Max Time Tsk" column="PRO_TSK_SPEND_TIME" aggregator="max" visible="true"/>
+	<Measure name="Min Time Tsk" column="PRO_TSK_SPEND_TIME" aggregator="min" visible="true"/>
+	<Measure name="Total Inactive Time" column="PRO_TSK_INACTIVE_TIME" aggregator="sum" visible="true"/>
+	<Measure name="Avg Inactive Time" column="PRO_TSK_INACTIVE_TIME" aggregator="avg" visible="true"/>
+	<Measure name="Max Inactive Time" column="PRO_TSK_INACTIVE_TIME" aggregator="max" visible="true"/>
+	<Measure name="Min Inactive Time" column="PRO_TSK_INACTIVE_TIME" aggregator="min" visible="true"/>
+	<Measure name="Total Active Time" column="PRO_TSK_EFECTIVE_TIME" aggregator="sum" visible="true"/>
+	<Measure name="Avg Active Time" column="PRO_TSK_EFECTIVE_TIME" aggregator="avg" visible="true"/>
+	<Measure name="Max Active Time" column="PRO_TSK_EFECTIVE_TIME" aggregator="max" visible="true"/>
+	<Measure name="Min Active Time" column="PRO_TSK_EFECTIVE_TIME" aggregator="min" visible="true"/>
+</Cube>
+<Cube name="PR_TSK_COMP" cache="true" enabled="true">
+	<Table name="DW_PRO_TSK_COMP" alias="TablaHechos"/>
+	<DimensionUsage name="Process Task" source="Process Task" foreignKey="PRO_ID"/>
+	<DimensionUsage name="Task Create Date" source="Task Create Date" foreignKey="TSK_CREATE_DATE"/>
+	<DimensionUsage name="Task End Date" source="Task End Date" foreignKey="TSK_END_DATE"/>
+	<Dimension name="Task Delay Status">
+		<Hierarchy hasAll="true" allMemberName="All Status">
+			<Level name="Task Delay Status" column="TSK_DUR_STATUS" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"></Level>
+		</Hierarchy>
+	</Dimension>
+	<Dimension name="Task Last Status">
+		<Hierarchy hasAll="true" allMemberName="All Status">
+			<Level name="Task Last Status" column="TSK_STATUS" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"></Level>
+		</Hierarchy>
+	</Dimension>
+	<DimensionUsage name="Task Acquired User" source="Task Acquired User" foreignKey="TSK_ACQ_USER"/>
+	<DimensionUsage name="Process Create Pool" source="Process Create Pool" foreignKey="POOL_ID"/>
+	<Dimension name="Process Priority">
+		<Hierarchy hasAll="true" allMemberName="All Priority">
+			<Level name="Process Priority" column="PRO_PRIORITY" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never"></Level>
+		</Hierarchy>
+	</Dimension>
+	<Measure name="QtyTask" column="TSK_ID" aggregator="count" visible="true"></Measure>
+	<Measure name="Avg Time Tsk" column="PRO_TSK_SPEND_TIME" aggregator="avg" visible="true"></Measure>
+	<Measure name="Max Time Tsk" column="PRO_TSK_SPEND_TIME" aggregator="max" visible="true"></Measure>
+	<Measure name="Min Time Tsk" column="PRO_TSK_SPEND_TIME" aggregator="min" visible="true"></Measure>
+	<Measure name="Total Inactive Time" column="PRO_TSK_INACTIVE_TIME" aggregator="sum" visible="true"></Measure>
+	<Measure name="Avg Inactive Time" column="PRO_TSK_INACTIVE_TIME" aggregator="avg" visible="true"></Measure>
+	<Measure name="Max Inactive Time" column="PRO_TSK_INACTIVE_TIME" aggregator="max" visible="true"></Measure>
+	<Measure name="Min Inactive Time" column="PRO_TSK_INACTIVE_TIME" aggregator="min" visible="true"></Measure>
+	<Measure name="Total Active Time" column="PRO_TSK_EFECTIVE_TIME" aggregator="sum" visible="true"></Measure>
+	<Measure name="Avg Active Time" column="PRO_TSK_EFECTIVE_TIME" aggregator="avg" visible="true"></Measure>
+	<Measure name="Max Active Time" column="PRO_TSK_EFECTIVE_TIME" aggregator="max" visible="true"></Measure>
+	<Measure name="Min Active Time" column="PRO_TSK_EFECTIVE_TIME" aggregator="min" visible="true"></Measure>
+</Cube>
+</SCHEMA>

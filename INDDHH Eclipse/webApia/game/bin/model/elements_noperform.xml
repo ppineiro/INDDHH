@@ -1,0 +1,309 @@
+<?xml version="1.0" ?>
+<elements>
+	<element name="task">
+		<attGroup name="BPMN">
+			<attribute label="name" name="name" type="text" change="setName" />
+			<attribute label="description" name="description" type="text" />
+			<attribute label="duration" name="duration" type="text" numeric="true" />
+			<attribute label="alert duration" name="alertduration" type="text" numeric="true" />
+			<attribute label="alert type" name="alerttype" type="text" />
+			<attribute label="looptype" name="looptype" type="combo" change="loopTypeChange" value="">
+				<values>
+					<value label="" value="" disable="testtime,mi_ordering,loopmaximum" />
+					<value label="Standard" value="Standard" disable="mi_ordering" enable="testtime,loopmaximum" />
+					<value label="Multi-Instance" value="MultiInstance" enable="mi_ordering" disable="testtime,loopmaximum" />
+				</values>
+			</attribute>
+			<attribute label="test time" name="testtime" type="combo" disabled="true" value="After">
+				<values>
+					<value label="Before" value="Before" />
+					<value label="After" value="After" />
+				</values>
+			</attribute>
+			<attribute label="loop maximum" name="loopmaximum" value="1" type="text" numeric="true" disabled="true" />
+			<attribute label="loop counter" name="loopcounter" value="0" type="text" numeric="true" disabled="true" />
+			<attribute label="Mi Ordering" name="mi_ordering" type="combo" disabled="true" value="Sequential">
+				<values>
+					<value label="Sequential" value="Sequential" />
+					<value label="Parallel" value="Parallel" />
+				</values>
+			</attribute>
+			<attribute label="Task Type" name="taskType" type="combo" change="typeChange">
+				<values>
+					<value label="" value="" />
+					<value label="Service Task" value="TaskService" />
+					<value label="Send Task" value="TaskSend" />
+					<value label="Receive Task" value="TaskReceive" />
+					<value label="User Task" value="TaskUser" />
+					<value label="Script Task" value="TaskScript" />
+					<value label="Manual Task" value="TaskManual" />
+					<value label="Reference Task" value="TaskReference" />
+				</values>
+			</attribute>
+			<attribute label="start quantity" name="startquantity" type="text" numeric="true" />
+			<attribute label="completion quantity" name="completionquantity" type="text" numeric="true" />
+		</attGroup>
+		<attGroup name="Documentation">
+			<attribute label="Documents" name="documents" type="modal" />
+		</attGroup>
+		<attGroup name="Forms">
+			<attribute label="Forms" name="forms" type="modal" />
+			<attribute label="Forms" name="forms" type="modal" />
+			<attribute label="Forms" name="forms" type="modal" />
+		</attGroup>
+		
+	</element>
+	<element name="csubflow">
+		<attGroup name="BPMN">
+			<attribute label="name" name="name" type="text" change="setName" />
+			<attribute label="description" name="description" type="text" />
+			<attribute label="transaction" name="transaction" type="checkbox" change="transactionChange" value="false" />
+			<attribute name="adhoc" label="ad-hoc" type="checkbox" change="adhocChange" enable="adhocordering" value="false" />
+			<attribute label="adhoc ordering" name="adhocordering" type="combo" value="Sequential">
+				<values>
+					<value label="Sequential" value="Sequential" />
+					<value label="Parallel" value="Parallel" />
+				</values>
+			</attribute>
+			<attribute label="looptype" name="looptype" type="combo" change="loopTypeChange" value="">
+				<values>
+					<value label="" value="" disable="testtime,mi_ordering,loopmaximum" />
+					<value label="Standard" value="Standard" disable="mi_ordering" enable="testtime,loopmaximum" />
+					<value label="Multi-Instance" value="MultiInstance" enable="mi_ordering" disable="testtime,loopmaximum" />
+				</values>
+			</attribute>
+			<attribute label="test time" name="testtime" type="combo" disabled="true" value="Before">
+				<values>
+					<value label="Before" value="Before" />
+					<value label="After" value="After" />
+				</values>
+			</attribute>
+			<attribute label="loop maximum" name="loopmaximum" value="1" type="text" numeric="true" disabled="true" />
+			<attribute label="loop counter" name="loopcounter" value="0" type="text" numeric="true" disabled="true" />
+			<attribute label="Mi Ordering" name="mi_ordering" type="combo" disabled="true" value="Sequential">
+				<values>
+					<value label="Sequential" value="Sequential" />
+					<value label="Parallel" value="Parallel" />
+				</values>
+			</attribute>
+			<attribute name="processType" label="Process Type" type="combo" change="typeChange" value="Embedded">
+				<values>
+					<value label="Embedded sub-process" value="Embedded" />
+					<value label="Reusable sub-process" value="Reusable" />
+					<value label="Reference sub-process" value="Reference" />
+				</values>
+			</attribute>
+			<attribute label="start quantity" name="startquantity" type="text" numeric="true" />
+			<attribute label="completion quantity" name="completionquantity" type="text" numeric="true" />
+		</attGroup>
+		<attGroup name="Documentation">
+		</attGroup>
+		<attGroup name="Forms">
+		</attGroup>
+		<attGroup name="group3">
+		</attGroup>
+	</element>
+	<element name="esubflow">
+		<attGroup name="BPMN">
+			<attribute label="name" name="name" type="text" change="setName" />
+			<attribute label="description" name="description" type="text" />
+			<attribute label="transaction" name="transaction" type="checkbox" change="transactionChange" value="false" />
+			<attribute name="adhoc" label="ad-hoc" type="checkbox" change="adhocChange" enable="adhocordering" />
+			<attribute label="adhoc ordering" name="adhocordering" type="combo" value="Sequential">
+				<values>
+					<value label="Sequential" value="Sequential" />
+					<value label="Parallel" value="Parallel" />
+				</values>
+			</attribute>
+			<attribute label="looptype" name="looptype" type="combo" change="loopTypeChange" value="">
+				<values>
+					<value label="" value="" disable="testtime,mi_ordering,loopmaximum" />
+					<value label="Standard" value="Standard" disable="mi_ordering" enable="testtime,loopmaximum" />
+					<value label="Multi-Instance" value="MultiInstance" enable="mi_ordering" disable="testtime,loopmaximum" />
+				</values>
+			</attribute>
+			<attribute label="test time" name="testtime" type="combo" disabled="true" value="After">
+				<values>
+					<value label="Before" value="Before" />
+					<value label="After" value="After" />
+				</values>
+			</attribute>
+			<attribute label="loop maximum" name="loopmaximum" value="1" type="text" numeric="true" disabled="true" />
+			<attribute label="loop counter" name="loopcounter" value="0" type="text" numeric="true" disabled="true" />
+			<attribute label="Mi Ordering" name="mi_ordering" type="combo" disabled="true" value="Sequential">
+				<values>
+					<value label="Sequential" value="sequential" />
+					<value label="Parallel" value="parallel" />
+				</values>
+			</attribute>
+			<!-- <attribute name="processType" label="Process Type" type="combo" change="typeChange" value="embedded">
+				<values>
+					<value label="Embedded sub-process" value="embedded" />
+					<value label="Reusable sub-process" value="reusable" />
+					<value label="Reference sub-process" value="reference" />
+				</values>
+			</attribute> -->
+			<attribute label="start quantity" name="startquantity" type="text" numeric="true" />
+			<attribute label="completion quantity" name="completionquantity" type="text" numeric="true" />
+			<attribute label="expanded" name="expanded" value="true" type="text" disabled="true" />
+		</attGroup>
+		<attGroup name="Documentation">
+		</attGroup>
+		<attGroup name="Forms">
+		</attGroup>
+		<attGroup name="group3">
+		</attGroup>
+	</element>
+	<element name="startevent">
+		<attGroup name="BPMN">
+			<attribute label="name" name="name" type="text" change="setName" />
+			<attribute label="description" name="description" type="text" />
+			<attribute name="eventType" label="Event Type" type="combo" change="typeChange">
+				<values>
+					<value label="" value="" />
+					<value label="Message" value="Message" />
+					<value label="Timer" value="Timer" />
+					<value label="Conditional" value="Conditional" />
+					<value label="Signal" value="Signal" />
+					<value label="Multiple" value="Multiple" />
+				</values>
+			</attribute>
+		</attGroup>
+		<attGroup name="Documentation">
+		</attGroup>
+		<attGroup name="Forms">
+		</attGroup>
+		<attGroup name="group3">
+		</attGroup>
+	</element>
+	<element name="middleevent">
+		<attGroup name="BPMN">
+			<attribute label="name" name="name" type="text" change="setName" />
+			<attribute label="description" name="description" type="text" />
+			<attribute name="eventType" label="Event Type" type="combo" change="typeChange">
+				<values>
+					<value label="" value="" />
+					<value label="Message" value="Message" />
+					<value label="Compensate" value="Compensate" />
+					<value label="Conditional" value="Conditional" />
+					<value label="Link" value="Link" />
+					<value label="Signal" value="Signal" />
+					<value label="Multiple" value="Multiple" />
+				</values>
+			</attribute>
+		</attGroup>
+		<attGroup name="Documentation">
+		</attGroup>
+		<attGroup name="Forms">
+		</attGroup>
+		<attGroup name="group3">
+		</attGroup>
+	</element>
+	<element name="endevent">
+		<attGroup name="BPMN">
+			<attribute label="name" name="name" type="text" change="setName" />
+			<attribute label="description" name="description" type="text" />
+			<attribute name="eventType" label="Event Type" type="combo" change="typeChange">
+				<values>
+					<value label="" value="" />
+					<value label="Message" value="Message" />
+					<value label="Error" value="Error" />
+					<value label="Cancel" value="Cancel" />
+					<value label="Compensate" value="Compensate" />
+					<value label="Signal" value="Signal" />
+					<value label="Terminate" value="Terminate" />
+					<value label="Multiple" value="Multiple" />
+				</values>
+			</attribute>
+		</attGroup>
+		<attGroup name="Documentation">
+		</attGroup>
+		<attGroup name="Forms">
+		</attGroup>
+		<attGroup name="group3">
+		</attGroup>
+	</element>
+	<element name="gateway">
+		<attGroup name="BPMN">
+			<attribute name="gatewaytype" label="Gateway Type" type="combo" change="typeChange">
+				<values>
+					<value label="" value="" />
+					<value label="Event Based" value="EventBasedXOR" />
+					<value label="Inclusive" value="OR" />
+					<value label="Complex" value="Complex" />
+					<value label="Parallel" value="AND" />
+				</values>
+			</attribute>
+		</attGroup>
+		<attGroup name="Documentation">
+		</attGroup>
+		<attGroup name="Forms">
+		</attGroup>
+		<attGroup name="group3">
+		</attGroup>
+	</element>
+	<element name="mflow">
+		<attGroup name="BPMN" />
+	</element>
+	<element name="association">
+		<attGroup name="BPMN" />
+	</element>
+	<element name="sflow">
+		<attGroup name="BPMN">
+			<attribute name="conditiontype" label="Condition Type" type="combo" change="conditionChange">
+				<values>
+					<value label="" value="" />
+					<value label="Deafult" value="OTHERWISE" />
+					<value label="Expression" value="CONDITION" />
+				</values>
+			</attribute>
+		</attGroup>
+	</element>
+	<element name="pool">
+		<attGroup name="BPMN">
+			<attribute label="name" name="name" type="text" change="setName" />
+			<attribute label="description" name="description" type="text" required="true" />
+			<attribute label="boundaryvisible" name="boundaryvisible" type="text" value="true" disabled="true" />
+		</attGroup>
+	</element>
+	<element name="group">
+		<attGroup name="BPMN">
+			<attribute label="Text" name="name" type="text" change="setText" />
+		</attGroup>
+	</element>
+	<element name="swimlane">
+		<attGroup name="BPMN">
+			<attribute label="name" name="name" type="text" change="setName" />
+			<attribute label="description" name="description" type="text" required="true" />
+		</attGroup>
+	</element>
+	<element name="textannotation">
+		<attGroup name="BPMN">
+			<attribute label="Annotation" name="textannotation" type="text" change="setText" />
+		</attGroup>
+	</element>
+	<element name="dataobject">
+		<attGroup name="BPMN">
+			<attribute label="name" name="name" type="text" change="setName" />
+			<attribute label="description" name="description" type="text" />
+			<attribute label="state" name="state" type="text" />
+		</attGroup>
+	</element>
+	<element name="back" x="0" y="0" height="0" width="0">
+		<attGroup name="BPMN">
+			<attribute label="diagram" name="lala">
+				<attributes>
+					<attribute label="name" name="na,e" type="text" />
+					<attribute label="description" name="description" type="text" />
+				</attributes>
+			</attribute>
+			<attribute label="main process" name="lala">
+				<attributes>
+					<attribute label="text" name="text" type="text" />
+					<attribute label="description" name="description" type="text" />
+				</attributes>
+			</attribute>
+			<attribute label="boundaryvisible" name="boundaryvisible" type="text" value="false" disabled="true" />
+		</attGroup>
+	</element>
+</elements>

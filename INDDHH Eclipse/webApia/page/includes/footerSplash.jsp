@@ -1,0 +1,2 @@
+<%@ taglib prefix="system"	uri="/WEB-INF/system-tags.tld" %><div class="theFotterPrev"></div><div class="theFooter"><div class="version"><system:util show="currentNode" /><%if(! "false".equals(request.getParameter("includeLicence"))){ %><system:util show="licencedTo"/> - <%} %><system:util show="copyright"/><system:util show="customizationInfo"/></div></div>
+	

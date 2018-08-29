@@ -1,0 +1,62 @@
+<?xml version = "1.0" encoding = "utf-8" standalone = "yes"?>
+<aiml>
+
+	<category>
+		<pattern>ACCESO RAPIDO 3</pattern>
+		<template>3</template>
+	</category>
+	
+	<category>
+		<pattern>MIS EXPEDIENTES LIBRES</pattern>
+		<template><srai>ACCESO RAPIDO 3</srai></template>
+	</category>
+	<category>
+		<pattern>MIS EXPEDIENTES LIBRE</pattern>
+		<template><srai>ACCESO RAPIDO 3</srai></template>
+	</category>
+	<category>
+		<pattern>MIS EXPEDIENTE LIBRES</pattern>
+		<template><srai>ACCESO RAPIDO 3</srai></template>
+	</category>
+	<category>
+		<pattern>MI EXPEDIENTES LIBRES</pattern>
+		<template><srai>ACCESO RAPIDO 3</srai></template>
+	</category>
+	<category>
+		<pattern>MI EXPEDIENTES LIBRE</pattern>
+		<template><srai>ACCESO RAPIDO 3</srai></template>
+	</category>
+	<category>
+		<pattern>MI EXPEDIENTE LIBRES</pattern>
+		<template><srai>ACCESO RAPIDO 3</srai></template>
+	</category>
+	<category>
+		<pattern>MI EXPEDIENTE LIBRE</pattern>
+		<template><srai>ACCESO RAPIDO 3</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES PARA TRABAJAR POR MI</pattern>
+		<template><srai>ACCESO RAPIDO 3</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE PARA TRABAJAR POR MI</pattern>
+		<template><srai>ACCESO RAPIDO 3</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES PARA SER TRABAJADOS POR MI</pattern>
+		<template><srai>ACCESO RAPIDO 3</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE PARA SER TRABAJADOS POR MI</pattern>
+		<template><srai>ACCESO RAPIDO 3</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES QUE TENGO PARA TRABAJAR</pattern>
+		<template><srai>ACCESO RAPIDO 3</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE QUE TENGO PARA TRABAJAR</pattern>
+		<template><srai>ACCESO RAPIDO 3</srai></template>
+	</category>
+
+</aiml>

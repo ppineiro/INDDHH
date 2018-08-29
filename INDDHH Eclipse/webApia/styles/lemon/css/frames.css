@@ -1,0 +1,36 @@
+BODY {
+	MARGIN:4px;
+    BORDER:0px;
+    PADDING:0px;
+    OVERFLOW: hidden;
+    BACKGROUND-COLOR: #FFFFFF;
+}
+#topFrame {
+	WIDTH:100%; 
+	HEIGHT:52px;
+}
+#tocArea{
+	POSITION:absolute;
+	TOP:56px;	
+	LEFT:4px;
+	WIDTH:151px;
+	height:0px;
+}
+#workArea {
+	POSITION:absolute;
+	LEFT:158px;						/*(150 tocs width + the body margins 4 )*/
+	TOP:56px;					/*(30 the height of topframe + the body margins 4)*/
+	height:0px;
+}
+
+.feedBackFrame{
+	POSITION: absolute;
+	DISPLAY:none;
+	WIDTH:350px;
+	HEIGHT:201px;
+	OVERFLOW:hidden;
+}
+
+.closeButton{
+	background-image:url(../images/modalCloseBtn.png);
+}

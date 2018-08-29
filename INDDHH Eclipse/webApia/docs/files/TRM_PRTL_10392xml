@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><informationXS xmlns="http://www.com.uy/st/xml">
+  <entitiesXS>
+    <entityXS name="EXPEDIENTE">
+      <attributesXS>
+        <attributeXS isFile="false" name="EXP_TIPO_TITULAR_ENUM">
+          <valueXS index="0">6</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="EXP_TITULAR_DESCRIPCION_STR">
+          <valueXS index="0">Tipo documento: R.U.T. / Nro. documento: 111444222444 / Titular: SinTipoOp</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="EXP_APE_PER_JUR_STR">
+          <valueXS index="0">SinTipoOp</valueXS>
+        </attributeXS>
+      </attributesXS>
+    </entityXS>
+  </entitiesXS>
+</informationXS>

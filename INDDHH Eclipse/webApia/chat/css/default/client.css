@@ -1,0 +1,5 @@
+body		{  background-image: url("img/bg.jpg"); background-repeat: no-repeat; background-position: bottom right;}
+
+
+.chatOptions input.file { background-image: url("img/file.png");  }
+.chatOptions .exit { background-image: url("img/exit.png"); }

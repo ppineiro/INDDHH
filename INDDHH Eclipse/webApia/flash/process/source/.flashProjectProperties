@@ -1,0 +1,20 @@
+<projectDescription>
+  <id>1237811644405</id>
+  <name>projectDesigner</name>
+  <asVersion>1</asVersion>
+  <boundTemplate>file:///C|/Users/mleiva/AppData/Local/Adobe/Flash CS4/en/Configuration/Project/templates/boundClass_as2.as</boundTemplate>
+  <classTemplate>file:///C|/Users/mleiva/AppData/Local/Adobe/Flash CS4/en/Configuration/Project/templates/standardClass_as2.as</classTemplate>
+  <classPath>.</classPath>
+  <defaultApp/>
+  <rootURI>file:///C|/Development/Workspaces/workspace/Apia2.3_Produccion/Dogma2.0/flash/process/source/</rootURI>
+  <flexSDK/>
+  <sources editable="false"/>
+  <libraries editable="false"/>
+  <externalLibraries editable="false"/>
+  <compileList editable="false"/>
+  <recentFiles editable="false">
+    <uri label="shell.fla">file:///C|/Development/Workspaces/workspace/Apia2.3_Produccion/Dogma2.0/flash/process/source/shell.fla</uri>
+    <uri label="Process Designer 6.fla">file:///C|/Development/Workspaces/workspace/Apia2.3_Produccion/Dogma2.0/flash/process/source/Process Designer 6.fla</uri>
+  </recentFiles>
+  <locations editable="false"/>
+</projectDescription>

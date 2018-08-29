@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<data-sources />
+
+	<form-beans></form-beans>
+
+	<global-exceptions />
+
+	<action-mappings>
+		<action path="/apia.administration.UsersAction" scope="request" type="biz.statum.apia.web.action.administration.UsersAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/users/list.jsp"/>
+			<forward name="create"					path="/page/administration/users/edit.jsp"/>
+			<forward name="update"					path="/page/administration/users/edit.jsp"/>
+			<forward name="delete"					path="/page/ajax/returnXML.jsp" />
+			<forward name="clone"					path="/page/administration/users/clone.jsp"/>
+			<forward name="deps"					path="/page/administration/users/deps.jsp"/>
+			<forward name="downloadExcel"			path="/page/administration/users/downloadExcel.jsp"/>
+		</action>
+		
+		<action path="/apia.administration.LanguagesAction" scope="request" type="biz.statum.apia.web.action.administration.LanguagesAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/languages/list.jsp"/>
+			<forward name="create"					path="/page/administration/languages/edit.jsp"/>
+			<forward name="update"					path="/page/administration/languages/edit.jsp"/>
+			<forward name="delete"					path="/page/ajax/returnXML.jsp" />			
+			<forward name="deps"					path="/page/administration/languages/deps.jsp"/>
+			<forward name="downloadExcel"			path="/page/administration/languages/downloadExcel.jsp"/>
+		</action>
+		
+		<action path="/apia.administration.ProfilesAction" scope="request" type="biz.statum.apia.web.action.administration.ProfilesAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/profiles/list.jsp"/>
+			<forward name="update"					path="/page/administration/profiles/edit.jsp"/>			
+		</action>
+		
+		<action path="/apia.administration.GroupsAction" scope="request" type="biz.statum.apia.web.action.administration.GroupsAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/groups/list.jsp"/>
+			<forward name="create"					path="/page/administration/groups/edit.jsp"/>
+			<forward name="update"					path="/page/administration/groups/edit.jsp"/>
+			<forward name="delete"					path="/page/ajax/returnXML.jsp" />
+			<forward name="clone"					path="/page/administration/groups/clone.jsp"/>
+			<forward name="deps"					path="/page/administration/groups/deps.jsp"/>
+			<forward name="download"				path="/page/administration/groups/download.jsp"/>
+		</action>
+		
+		<action path="/apia.administration.BIAction" scope="request" type="biz.statum.apia.web.action.administration.BIAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp"/>
+			<forward name="pivotContainer"			path="/jpivot/pivotContainer.jsp"/>
+			<forward name="errorBI"					path="/jpivot/errorBI.jsp"/>
+			<forward name="biRedirect"				path="/jpivot/biRedirect.jsp"/>
+			<forward name="entityCubeReload"		path="/jpivot/entityCubeReload.jsp"/>
+		</action>
+		
+		<action path="/apia.administration.StylesAction" scope="request" type="biz.statum.apia.web.action.administration.StylesAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/styles/list.jsp"/>
+			<forward name="create"					path="/path/administration/styles/edit.jsp"/>
+			<forward name="update"					path="/page/administration/styles/edit.jsp"/>
+			<forward name="download"				path="/page/administration/styles/download.jsp"/>
+		</action>
+		
+		<action path="/apia.administration.UrlShortenerAction" scope="request" type="biz.statum.apia.web.action.administration.UrlShortenerAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/urlShortener/list.jsp"/>
+		</action>
+		
+		
+		<action path="/apia.administration.WebServicesAction" scope="request" type="biz.statum.apia.web.action.administration.WebServicesAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="wsList"					path="/page/administration/webservices/wsList.jsp"/>			
+		</action>
+		
+		<action path="/apia.administration.HierarchicalStructureAction" scope="request" type="biz.statum.apia.web.action.administration.HierarchicalStructureAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="tree"					path="/page/administration/hierarchicalStructure/structure.jsp"/>
+			<forward name="download"				path="/page/administration/hierarchicalStructure/download.jsp"/>
+		</action>
+		
+		<action path="/apia.administration.ImagesAction" scope="request" type="biz.statum.apia.web.action.administration.ImagesAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="imgList"					path="/page/administration/images/imgList.jsp"/>
+		</action>
+		
+		<action path="/apia.administration.EnvironmentsAction" scope="request" type="biz.statum.apia.web.action.administration.EnvironmentsAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/environments/list.jsp"/>
+			<forward name="update"					path="/page/administration/environments/edit.jsp"/>
+			<forward name="downloadDocument"			path="/page/generic/downloadDocument.jsp" />			
+		</action>
+		
+		<action path="/apia.administration.EnvironmentProjectsAction" scope="request" type="biz.statum.apia.web.action.administration.EnvironmentProjectsAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/envprojects/list.jsp"/>
+			<forward name="update"					path="/page/administration/envprojects/edit.jsp"/>			
+		</action>
+		
+		<action path="/apia.administration.GlobalParametersAction" scope="request" type="biz.statum.apia.web.action.administration.GlobalParametersAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="update"					path="/page/administration/globalParameters/edit.jsp"/>			
+		</action>
+		
+		<action path="/apia.administration.EnvironmentParametersAction" scope="request" type="biz.statum.apia.web.action.administration.EnvironmentParametersAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="update"					path="/page/administration/envparameters/edit.jsp"/>			
+		</action>
+		
+		<action path="/apia.administration.CalendarsAction" scope="request" type="biz.statum.apia.web.action.administration.CalendarsAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/calendars/list.jsp"/>
+			<forward name="update"					path="/page/administration/calendars/edit.jsp"/>			
+		</action>
+		
+		<action path="/apia.administration.LabelsAction" scope="request" type="biz.statum.apia.web.action.administration.LabelsAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/labels/list.jsp"/>
+			<forward name="create"					path="/page/administration/labels/edit.jsp"/>
+			<forward name="update"					path="/page/administration/labels/edit.jsp"/>
+			<forward name="delete"					path="/page/ajax/returnXML.jsp" />
+			<forward name="clone"					path="/page/administration/labels/clone.jsp"/>
+			<forward name="deps"					path="/page/administration/labels/deps.jsp"/>
+			<forward name="downloadExcel"			path="/page/administration/labels/downloadExcel.jsp"/>
+			<forward name="downloadTxt"				path="/page/administration/labels/downloadTxt.jsp"/>
+		</action>
+		
+		<action path="/apia.administration.FunctionalitiesAction" scope="request" type="biz.statum.apia.web.action.administration.FunctionalitiesAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/functionalities/list.jsp"/>
+			<forward name="update"					path="/page/administration/functionalities/edit.jsp"/>
+			<forward name="tree"					path="/page/administration/functionalities/tree.jsp"/>
+		</action>
+		
+		<action path="/apia.administration.MessagesAction" scope="request" type="biz.statum.apia.web.action.administration.MessagesAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/messages/list.jsp"/>
+			<forward name="list_environment"		path="/page/administration/messages/list.jsp?environment=true"/>
+			<forward name="update"					path="/page/administration/messages/edit.jsp"/>			
+			<forward name="update_environment"		path="/page/administration/messages/edit.jsp?environment=true"/>
+		</action>
+		
+		<action path="/apia.administration.CampaignsAction" scope="request" type="biz.statum.apia.web.action.administration.CampaignsAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/campaigns/list.jsp"/>
+			<forward name="update"					path="/page/administration/campaigns/edit.jsp"/>			
+			<forward name="simulate"				path="/page/administration/campaigns/simulate.jsp"/>			
+		</action>
+
+		<action path="/apia.administration.ResetPasswordAction" scope="request" type="biz.statum.apia.web.action.administration.ResetPasswordAction" parameter="action">
+			<forward name="dataDefault"				path="/page/administration/resetpassword/resetPwd.jsp"/>
+			<forward name="dataAuto"				path="/page/administration/resetpassword/resetPwd.jsp?autogenerate=true"/>
+			<forward name="dataSelf"				path="/page/administration/resetpassword/resetPwd.jsp?self=true"/>
+			<forward name="xml"						path="/page/ajax/returnXML.jsp" />
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.administration.SchedulerAction" scope="request" type="biz.statum.apia.web.action.administration.SchedulerAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/scheduler/list.jsp"/>
+			<forward name="update"					path="/page/administration/scheduler/edit.jsp"/>	
+			<forward name="liveView"				path="/page/administration/scheduler/liveView.jsp"/>		
+		</action>
+		
+		<action path="/apia.administration.DigitalCertificatesAction" scope="request" type="biz.statum.apia.web.action.administration.DigitalCertificatesAction" parameter="action">
+			<forward name="data"					path="/page/administration/digitalCertificates/digitalCertificates.jsp"/>
+			<forward name="xml"						path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.administration.DocumentTypeAction" scope="request" type="biz.statum.apia.web.action.administration.DocumentTypeAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/documentType/list.jsp"/>
+			<forward name="update"					path="/page/administration/documentType/edit.jsp"/>			
+		</action>
+		
+		<action path="/apia.administration.AuditSocialAction" scope="request" type="biz.statum.apia.web.action.administration.AuditSocialAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/auditSocial/list.jsp"/>						
+		</action>
+		
+		<action path="/apia.administration.CustomParametersAction" scope="request" type="biz.statum.apia.web.action.administration.CustomParametersAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/customParameters/list.jsp"/>
+			<forward name="update"					path="/page/administration/customParameters/edit.jsp"/>
+			<forward name="view"					path="/page/administration/customParameters/view.jsp"/>
+		</action>
+		
+		<action path="/apia.administration.OrganizationalUnitAction" scope="request" type="biz.statum.apia.web.action.administration.OrganizationalUnitAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/orgUnit/list.jsp"/>
+			<forward name="create"					path="/page/administration/orgUnit/edit.jsp"/>
+			<forward name="update"					path="/page/administration/orgUnit/edit.jsp"/>
+			<forward name="delete"					path="/page/ajax/returnXML.jsp" />			
+			<forward name="deps"					path="/page/administration/orgUnit/deps.jsp"/>
+			<forward name="downloadExcel"			path="/page/administration/orgUnit/downloadExcel.jsp"/>
+		</action>	
+		
+		<action path="/apia.administration.OrganizationalRoleAction" scope="request" type="biz.statum.apia.web.action.administration.OrganizationalRoleAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/orgRole/list.jsp"/>
+			<forward name="create"					path="/page/administration/orgRole/edit.jsp"/>
+			<forward name="update"					path="/page/administration/orgRole/edit.jsp"/>
+			<forward name="delete"					path="/page/ajax/returnXML.jsp" />			
+			<forward name="deps"					path="/page/administration/orgRole/deps.jsp"/>
+		</action>
+		
+		<action path="/apia.administration.DecentralizedAdministrationAction" scope="request" type="biz.statum.apia.web.action.administration.DecentralizedAdministrationAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/administration/decAdm/list.jsp"/>
+			<forward name="create"					path="/page/administration/decAdm/edit.jsp"/>
+			<forward name="update"					path="/page/administration/decAdm/edit.jsp"/>
+			<forward name="delete"					path="/page/ajax/returnXML.jsp" />
+			<forward name="clone"					path="/page/administration/decAdm/clone.jsp"/>
+			<forward name="deps"					path="/page/administration/decAdm/deps.jsp"/>
+			<forward name="downloadExcel"			path="/page/administration/decAdm/downloadExcel.jsp"/>
+		</action>
+		
+	</action-mappings>
+
+	<controller />
+
+	<message-resources parameter="com.sastock.web.resources.GeneralResources" />
+
+</struts-config>

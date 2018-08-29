@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<PROCESS_DEFINITION>
+	<ELEMENT id="33037" pro_ele_id="33037" type="T" color="R"><INFO title="ANALIZAR CAMBIO"><B>Estado Tarea: </B>Completa<BR/><B>Grupo Usuarios: </B>APROBADORES APIA<BR/><B>Usuario: </B>mcabanelas<BR/><BR/><B>Fecha Hab.: </B>26/04/2005 6:07 PM<BR/><B>Fecha Fin.: </B>07/06/2005 6:02 PM</INFO>		<TASK task_id="1229" name="ANALIZAR CAMBIO">
+<FORMS/><POOLS/><EVENTS/><STATES/><ROL rol_id="2" name="mcabanelas"/>		</TASK>
+<DESIGN y="286" x="238"/>		<DEPENDENCIES>
+		<DEPENDENCY id="33041" />		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="33042" pro_ele_id="33042" type="O">		<OPERATOR ope_id="2" />
+<DESIGN y="204" x="123"/>		<DEPENDENCIES>
+		<DEPENDENCY id="33037" />		<DEPENDENCY id="33040"  disabled="true" />		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="33039" pro_ele_id="33039" type="T" color="Y"><INFO title="ENVIAR CONTESTACION NEGATIVA"><B>Estado Tarea: </B>Completa<BR/><B>Grupo Usuarios: </B>TESTING<BR/><B>Usuario: </B>mcabanelas<BR/><BR/><B>Fecha Hab.: </B>07/06/2005 6:02 PM<BR/><B>Fecha Fin.: </B>07/06/2005 6:06 PM</INFO>		<TASK task_id="1221" name="ENVIAR CONTESTACION NEGATIVA">
+<FORMS/><POOLS/><EVENTS/><STATES/><ROL rol_id="2" name="mcabanelas"/>		</TASK>
+<DESIGN y="277" x="440"/>		<DEPENDENCIES>
+		<DEPENDENCY id="33036" />		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="33035" pro_ele_id="33035" type="I">		<INIT_MARK/>
+<DESIGN y="157" x="110"/>		<DEPENDENCIES>
+		<DEPENDENCY id="33033" />		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="33033" pro_ele_id="33033" type="T"><INFO title="SOLICITAR CAMBIO"><B>Estado Tarea: </B>Completa<BR/><B>Grupo Usuarios: </B>TESTING<BR/><B>Usuario: </B>null<BR/><BR/><B>Fecha Hab.: </B>26/04/2005 6:07 PM<BR/><B>Fecha Fin.: </B>26/04/2005 6:07 PM</INFO>		<TASK task_id="1226" name="SOLICITAR CAMBIO">
+<FORMS/><POOLS/><EVENTS/><STATES/><ROL rol_id="2" name="lsarni"/>		</TASK>
+<DESIGN y="156" x="195"/>		<DEPENDENCIES>
+		<DEPENDENCY id="33042" />		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="33038"  disabled="true" pro_ele_id="33038" type="P" color="R">		<PROCESS pro_id="1102" type="m" name="" >		</PROCESS>
+<DESIGN y="120" x="434"/>		<DEPENDENCIES>
+		<DEPENDENCY id="33036"  disabled="true" />		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="33041" pro_ele_id="33041" type="O">		<OPERATOR ope_id="2" />
+<DESIGN y="199" x="340"/>		<DEPENDENCIES>
+		<DEPENDENCY id="33039" />		<DEPENDENCY id="33040"  disabled="true" />		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="33040"  disabled="true" pro_ele_id="33040" type="T"><INFO title="ANALIZAR FUNCIONALMENTE"><B>Estado Tarea: </B>Salteada<BR/><B>Grupo Usuarios: </B><BR/><BR/><B>Usuario: </B>null<BR/><BR/><B>Fecha Hab.: </B><BR/><B>Fecha Fin.: </B>07/06/2005 6:02 PM</INFO>		<TASK task_id="1225" name="ANALIZAR FUNCIONALMENTE">
+<FORMS/><POOLS/><EVENTS/><STATES/><ROL rol_id="2" name="mcabanelas"/>		</TASK>
+<DESIGN y="120" x="234"/>		<DEPENDENCIES>
+		<DEPENDENCY id="33038"  disabled="true" />		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="33036" pro_ele_id="33036" type="E">		<END_MARK/>
+<DESIGN y="154" x="387"/>		<DEPENDENCIES>
+		</DEPENDENCIES>
+	</ELEMENT>
+<EVENTS/></PROCESS_DEFINITION>

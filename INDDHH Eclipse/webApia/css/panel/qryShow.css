@@ -1,0 +1,96 @@
+div.gridShow{
+	background: url("img/grid/fhbg.gif") repeat scroll center bottom #FAFAFA;
+    border-color: #CCCCCC;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;   
+    overflow-x:auto; 
+}
+
+div.gridShow table {
+    color: #6B6B6B;    
+}
+div.gridShow table thead tr th {
+    border-color: white;
+    border-style: solid solid none;
+    border-width: 1px 0 1px 1px;  
+    padding: 4px 5px;
+}
+div.gridShow table tbody tr td {
+    border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #DDDDDD;
+}
+div.gridShow table tbody tr td div {
+    margin: 4px 5px;
+}
+div.gridShow table tbody tr td.titiled {
+    background-image: url("img/titiled.gif");
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+div.gridShow table tbody tr.trOdd {
+    background-color: #F7F7F7;
+}
+div.gridShow table tbody.tableData {
+    color: #6B6B6B;
+}
+div.gridShow table tbody.tableData tr.info {
+    display: none;
+}
+div.gridShow table tbody.tableData tr.open {
+    display: table-row;
+    margin-bottom: 5px;
+}
+div.gridShow table tbody.tableData tr.selectableTR:hover {
+    background-color: #C3E9FD;
+    cursor: pointer;
+}
+div.gridShow table tbody.tableData tr.locked {
+    color: #C0C0C0;
+}
+div.gridShow table tbody.tableData tr.selectedTR {
+    background-color: #E0E0E0;
+}
+div.gridShow table tbody.tableData tr.selectedTR:hover {
+    background-color: #C3E9FD;
+    cursor: pointer;
+}
+div.gridShow table tbody.tableData tr.lastTr td {
+    border-bottom: 1px solid #DDDDDD;
+}
+div.gridShow table tbody.tableData tr td div.additionalInfo {
+    background-image: url("img/adtPlus.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 10px;
+    margin: 0 5px 0 0;
+    width: 10px;
+}
+div.gridShow table tbody.tableData tr td.additionalInfo {
+    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+}
+div.gridShow table tbody.tableData tr td div.open {
+    background-image: url("img/adtMinus.gif");
+}
+div.gridShow table tbody.tableData tr.info td div.container {
+    display: inline-block;
+    width: 49%;
+}
+div.gridShow table tbody.tableData tr.info td div.container div.title {
+    display: inline-block;
+    margin-right: 5px;
+    text-align: right;
+    width: 30%;
+}
+div.gridShow table tbody.tableData tr.info td div.container div.titleTop {
+    display: inline-block;
+    margin-right: 5px;
+    text-align: right;
+    vertical-align: top;
+    width: 30%;
+}
+div.gridShow table tbody.tableData tr.info td div.container div.content {
+    display: inline-block;
+    width: 65%;
+}

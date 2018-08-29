@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+ <globalConfiguration>
+  <parameter name="adminPassword" value="admin"/>
+  <parameter name="enableNamespacePrefixOptimization" value="true"/>
+  <parameter name="attachments.Directory" value="./attachments"/>
+  <parameter name="disablePrettyXML" value="true"/>
+  <parameter name="sendMultiRefs" value="true"/>
+  <parameter name="sendXsiTypes" value="true"/>
+  <parameter name="attachments.implementation" value="org.apache.axis.attachments.Attachments   "/>
+  <parameter name="sendXMLDeclaration" value="true"/>
+  <requestFlow>
+   <handler type="java:org.apache.axis.handlers.JWSHandler">
+    <parameter name="scope" value="session"/>
+   </handler>
+   <handler type="java:org.apache.axis.handlers.JWSHandler">
+    <parameter name="scope" value="request"/>
+    <parameter name="extension" value=".jwr"/>
+   </handler>
+  </requestFlow>
+ </globalConfiguration>
+ <handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <handler name="soapmonitor" type="java:org.apache.axis.handlers.SOAPMonitorHandler">
+  <parameter name="wsdlURL" value="/axis/SOAPMonitorService-impl.wsdl"/>
+  <parameter name="namespace" value="http://tempuri.org/wsdl/2001/12/SOAPMonitorService-impl.wsdl"/>
+  <parameter name="serviceName" value="SOAPMonitorService"/>
+  <parameter name="portName" value="Demo"/>
+ </handler>
+ <handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <service name="ApiaCommand" provider="java:RPC" style="document" use="literal">
+  <operation name="execute" qname="execute" returnQName="ns1:executeResponse" returnType="ns1:executeResponse" soapAction="http://statum.biz/ApiaCommand/execute" xmlns:ns1="http://statum.biz/ApiaCommand/">
+   <parameter qname="ns1:executeRequest" type="ns1:executeRequest"/>
+  </operation>
+  <parameter name="sendMultiRefs" value="false"/>
+  <parameter name="wsdlServicePort" value="ApiaCommand"/>
+  <parameter name="className" value="biz.statum.ApiaCommand.ApiaCommand_BindingImpl"/>
+  <parameter name="typeMappingVersion" value="1.2"/>
+  <parameter name="allowedMethods" value="execute"/>
+  <parameter name="wsdlServiceElement" value="ApiaCommand"/>
+  <parameter name="wsdlTargetNamespace" value="http://statum.biz/ApiaCommand/"/>
+  <parameter name="wsdlPortType" value="ApiaCommand"/>
+  <parameter name="sendXsiTypes" value="false"/>
+  <parameter name="schemaUnqualified" value="http://statum.biz/ApiaCommand/"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns2:&gt;executeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:biz.statum.ApiaCommand.ExecuteResponse" xmlns:ns2="http://statum.biz/ApiaCommand/"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns3:&gt;executeRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:biz.statum.ApiaCommand.ExecuteRequest" xmlns:ns3="http://statum.biz/ApiaCommand/"/>
+ </service>
+ <service name="AdminService" provider="java:MSG">
+  <parameter name="allowedMethods" value="AdminService"/>
+  <parameter name="enableRemoteAdmin" value="true"/>
+  <parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <namespace>http://xml.apache.org/axis/wsdd/</namespace>
+ </service>
+ <service name="Version" provider="java:RPC">
+  <parameter name="allowedMethods" value="getVersion"/>
+  <parameter name="className" value="org.apache.axis.Version"/>
+ </service>
+ <service name="ApiaWS" provider="java:RPC" style="wrapped" use="literal">
+  <wsdlFile>/com/ApiaWS.wsdl</wsdlFile>
+  <operation name="createEntity" qname="createEntity" returnQName="ns4:createEntityReturn" returnType="ns5:ExecResult" soapAction="" xmlns:ns4="http://www.apiasolutions.com/WebServices" xmlns:ns5="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns4:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns4:entity" type="ns5:EntInstance"/>
+   <parameter qname="ns4:userData" type="ns5:UserData"/>
+  </operation>
+  <operation name="createProcess" qname="createProcess" returnQName="ns6:createProcessReturn" returnType="ns7:ExecResult" soapAction="" xmlns:ns6="http://www.apiasolutions.com/WebServices" xmlns:ns7="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns6:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns6:process" type="ns7:ProInstance"/>
+   <parameter qname="ns6:entity" type="ns7:EntInstance"/>
+   <parameter qname="ns6:userData" type="ns7:UserData"/>
+  </operation>
+  <operation name="cancelProcess" qname="cancelProcess" returnQName="ns8:cancelProcessReturn" returnType="ns9:ExecResult" soapAction="" xmlns:ns8="http://www.apiasolutions.com/WebServices" xmlns:ns9="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns8:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns8:process" type="ns9:ProInstance"/>
+   <parameter qname="ns8:userData" type="ns9:UserData"/>
+  </operation>
+  <operation name="closeTask" qname="closeTask" returnQName="ns10:closeTaskReturn" returnType="ns11:ExecResult" soapAction="" xmlns:ns10="http://www.apiasolutions.com/WebServices" xmlns:ns11="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns10:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns10:taskName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns10:process" type="ns11:ProInstance"/>
+   <parameter qname="ns10:entity" type="ns11:EntInstance"/>
+   <parameter qname="ns10:userData" type="ns11:UserData"/>
+  </operation>
+  <operation name="updateEntity" qname="updateEntity" returnQName="ns12:updateEntityReturn" returnType="ns13:ExecResult" soapAction="" xmlns:ns12="http://www.apiasolutions.com/WebServices" xmlns:ns13="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns12:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns12:entity" type="ns13:EntInstance"/>
+   <parameter qname="ns12:userData" type="ns13:UserData"/>
+  </operation>
+  <operation name="removeEntity" qname="removeEntity" returnQName="ns14:removeEntityReturn" returnType="ns15:ExecResult" soapAction="" xmlns:ns14="http://www.apiasolutions.com/WebServices" xmlns:ns15="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns14:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns14:entity" type="ns15:EntInstance"/>
+   <parameter qname="ns14:userData" type="ns15:UserData"/>
+  </operation>
+  <operation name="executeQuery" qname="executeQuery" returnQName="ns16:executeQueryReturn" returnType="ns17:QueryResult" soapAction="" xmlns:ns16="http://www.apiasolutions.com/WebServices" xmlns:ns17="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns16:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns16:queryName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns16:parameters" type="ns17:Parameters"/>
+   <parameter qname="ns16:userData" type="ns17:UserData"/>
+  </operation>
+  <operation name="executeClass" qname="executeClass" returnQName="ns18:executeClassReturn" returnType="ns19:ClassResult" soapAction="" xmlns:ns18="http://www.apiasolutions.com/WebServices" xmlns:ns19="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns18:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns18:className" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns18:parameters" type="ns19:Parameters"/>
+   <parameter qname="ns18:userData" type="ns19:UserData"/>
+  </operation>
+  <operation name="createUser" qname="createUser" returnQName="ns20:createUserReturn" returnType="ns21:ExecResult" soapAction="" xmlns:ns20="http://www.apiasolutions.com/WebServices" xmlns:ns21="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns20:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns20:newUser" type="ns21:NewUser"/>
+   <parameter qname="ns20:userData" type="ns21:UserData"/>
+  </operation>
+  <operation name="removeUser" qname="removeUser" returnQName="ns22:removeUserReturn" returnType="ns23:ExecResult" soapAction="" xmlns:ns22="http://www.apiasolutions.com/WebServices" xmlns:ns23="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns22:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns22:usrLogin" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns22:userData" type="ns23:UserData"/>
+  </operation>
+  <operation name="updateUser" qname="updateUser" returnQName="ns24:updateUserReturn" returnType="ns25:ExecResult" soapAction="" xmlns:ns24="http://www.apiasolutions.com/WebServices" xmlns:ns25="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns24:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns24:newUser" type="ns25:NewUser"/>
+   <parameter qname="ns24:userData" type="ns25:UserData"/>
+  </operation>
+  <operation name="createGroup" qname="createGroup" returnQName="ns26:createGroupReturn" returnType="ns27:ExecResult" soapAction="" xmlns:ns26="http://www.apiasolutions.com/WebServices" xmlns:ns27="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns26:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns26:group" type="ns27:Group"/>
+   <parameter qname="ns26:userData" type="ns27:UserData"/>
+  </operation>
+  <operation name="removeGroup" qname="removeGroup" returnQName="ns28:removeGroupReturn" returnType="ns29:ExecResult" soapAction="" xmlns:ns28="http://www.apiasolutions.com/WebServices" xmlns:ns29="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns28:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns28:groupName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns28:userData" type="ns29:UserData"/>
+  </operation>
+  <operation name="updateGroup" qname="updateGroup" returnQName="ns30:updateGroupReturn" returnType="ns31:ExecResult" soapAction="" xmlns:ns30="http://www.apiasolutions.com/WebServices" xmlns:ns31="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns30:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns30:groupName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns30:group" type="ns31:Group"/>
+   <parameter qname="ns30:userData" type="ns31:UserData"/>
+  </operation>
+  <operation name="createProfile" qname="createProfile" returnQName="ns32:createProfileReturn" returnType="ns33:ExecResult" soapAction="" xmlns:ns32="http://www.apiasolutions.com/WebServices" xmlns:ns33="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns32:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns32:profile" type="ns33:Profile"/>
+   <parameter qname="ns32:userData" type="ns33:UserData"/>
+  </operation>
+  <operation name="removeProfile" qname="removeProfile" returnQName="ns34:removeProfileReturn" returnType="ns35:ExecResult" soapAction="" xmlns:ns34="http://www.apiasolutions.com/WebServices" xmlns:ns35="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns34:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns34:profileName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns34:userData" type="ns35:UserData"/>
+  </operation>
+  <operation name="updateProfile" qname="updateProfile" returnQName="ns36:updateProfileReturn" returnType="ns37:ExecResult" soapAction="" xmlns:ns36="http://www.apiasolutions.com/WebServices" xmlns:ns37="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns36:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns36:profileName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns36:profile" type="ns37:Profile"/>
+   <parameter qname="ns36:userData" type="ns37:UserData"/>
+  </operation>
+  <operation name="associateUserToGroup" qname="associateUserToGroup" returnQName="ns38:userToGroupReturn" returnType="ns39:ExecResult" soapAction="" xmlns:ns38="http://www.apiasolutions.com/WebServices" xmlns:ns39="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns38:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns38:usrLogin" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns38:groupName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns38:userData" type="ns39:UserData"/>
+  </operation>
+  <operation name="desassociateUserToGroup" qname="desassociateUserToGroup" returnQName="ns40:userNotInGroupReturn" returnType="ns41:ExecResult" soapAction="" xmlns:ns40="http://www.apiasolutions.com/WebServices" xmlns:ns41="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns40:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns40:usrLogin" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns40:groupName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns40:userData" type="ns41:UserData"/>
+  </operation>
+  <operation name="associateUserToProfile" qname="associateUserToProfile" returnQName="ns42:userToProfileReturn" returnType="ns43:ExecResult" soapAction="" xmlns:ns42="http://www.apiasolutions.com/WebServices" xmlns:ns43="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns42:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns42:usrLogin" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns42:profileName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns42:userData" type="ns43:UserData"/>
+  </operation>
+  <operation name="desassociateUserToProfile" qname="desassociateUserToProfile" returnQName="ns44:userNotInProfileReturn" returnType="ns45:ExecResult" soapAction="" xmlns:ns44="http://www.apiasolutions.com/WebServices" xmlns:ns45="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns44:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns44:usrLogin" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns44:profileName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns44:userData" type="ns45:UserData"/>
+  </operation>
+  <operation name="executeAcquiredTaskList" qname="executeAcquiredTaskList" returnQName="ns46:executeTaskListReturn" returnType="ns47:TaskListResult" soapAction="" xmlns:ns46="http://www.apiasolutions.com/WebServices" xmlns:ns47="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns46:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns46:filter" type="ns47:Filter"/>
+   <parameter qname="ns46:userData" type="ns47:UserData"/>
+  </operation>
+  <operation name="executeReadyTaskList" qname="executeReadyTaskList" returnQName="ns48:executeTaskListReturn" returnType="ns49:TaskListResult" soapAction="" xmlns:ns48="http://www.apiasolutions.com/WebServices" xmlns:ns49="http://www.apiasolutions.com/WebServices/Data">
+   <parameter qname="ns48:envName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <parameter qname="ns48:filter" type="ns49:Filter"/>
+   <parameter qname="ns48:userData" type="ns49:UserData"/>
+  </operation>
+  <parameter name="sendMultiRefs" value="false"/>
+  <parameter name="wsdlServicePort" value="ApiaWS"/>
+  <parameter name="className" value="com.dogma.ws.gen.ApiaWSImpl"/>
+  <parameter name="typeMappingVersion" value="1.2"/>
+  <parameter name="allowedMethods" value="desassociateUserToGroup updateProfile createEntity executeClass createProcess closeTask createProfile executeReadyTaskList updateEntity executeAcquiredTaskList associateUserToGroup updateGroup createGroup removeGroup executeQuery desassociateUserToProfile cancelProcess removeProfile removeEntity createUser removeUser associateUserToProfile updateUser"/>
+  <parameter name="wsdlServiceElement" value="ApiaWSInterfaceService"/>
+  <parameter name="wsdlTargetNamespace" value="http://www.apiasolutions.com/WebServices"/>
+  <parameter name="wsdlPortType" value="ApiaWSInterface"/>
+  <parameter name="sendXsiTypes" value="false"/>
+  <parameter name="scope" value="Application"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns50:TaskListResult" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.object.TaskListResult" xmlns:ns50="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns51:ClassResult" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.object.ClassResult" xmlns:ns51="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory" encodingStyle="" qname="ns52:NewUser" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory" type="java:com.dogma.ws.object.NewUser" xmlns:ns52="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory" encodingStyle="" qname="ns53:Process" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory" type="java:com.dogma.ws.object.Process" xmlns:ns53="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns54:EntInstance" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.object.EntInstance" xmlns:ns54="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory" encodingStyle="" qname="ns55:Attribute" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory" type="java:com.dogma.ws.object.Attribute" xmlns:ns55="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns56:Result" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.object.Result" xmlns:ns56="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns57:Filter" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.object.Filter" xmlns:ns57="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory" encodingStyle="" qname="ns58:Group" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory" type="java:com.dogma.ws.object.Group" xmlns:ns58="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory" encodingStyle="" qname="ns59:Profile" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory" type="java:com.dogma.ws.object.Profile" xmlns:ns59="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns60:ExecResult" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.object.ExecResult" xmlns:ns60="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns61:UserData" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.object.UserData" xmlns:ns61="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns62:Creator" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.object.Creator" xmlns:ns62="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns63:RowHeader" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.object.RowHeader" xmlns:ns63="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory" encodingStyle="" qname="ns64:Entity" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory" type="java:com.dogma.ws.object.Entity" xmlns:ns64="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns65:QueryData" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.object.QueryData" xmlns:ns65="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns66:QueryResult" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.object.QueryResult" xmlns:ns66="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns67:Parameters" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.object.Parameters" xmlns:ns67="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory" encodingStyle="" qname="ns68:Parameter" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory" type="java:com.dogma.ws.object.Parameter" xmlns:ns68="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns69:Row" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.object.Row" xmlns:ns69="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns70:ProInstance" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.object.ProInstance" xmlns:ns70="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns71:User" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.object.User" xmlns:ns71="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory" encodingStyle="" qname="ns72:Identifier" serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory" type="java:com.dogma.ws.object.Identifier" xmlns:ns72="http://www.apiasolutions.com/WebServices/Data"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns73:Attributes" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.object.Attributes" xmlns:ns73="http://www.apiasolutions.com/WebServices/Data"/>
+ </service>
+ <service name="SOAPMonitorService" provider="java:RPC">
+  <parameter name="allowedMethods" value="publishMessage"/>
+  <parameter name="className" value="org.apache.axis.monitor.SOAPMonitorService"/>
+  <parameter name="scope" value="Application"/>
+ </service>
+ <service name="ApiaWSmt_web_service_pass" provider="java:RPC" style="wrapped" use="literal">
+  <operation name="mt_web_service_pass" qname="mt_web_service_pass" returnQName="ns74:ExecResult" returnType="ns74:ExecResultType" soapAction="apiaAction" xmlns:ns74="http://www.apiasolutions.com/WebServices">
+   <parameter qname="ns74:ApiaWSInput" type="ns74:ApiaWSInputType"/>
+  </operation>
+  <parameter name="sendMultiRefs" value="false"/>
+  <parameter name="wsdlServicePort" value="ApiaWSmt_web_service_pass"/>
+  <parameter name="schemaQualified" value="http://www.apiasolutions.com/WebServices"/>
+  <parameter name="className" value="com.dogma.ws.AutogenerateWSDL.mt_web_service_pass.gen.mt_web_service_passImpl"/>
+  <parameter name="typeMappingVersion" value="1.2"/>
+  <parameter name="allowedMethods" value="mt_web_service_pass"/>
+  <parameter name="wsdlServiceElement" value="ApiaWSInterfaceService"/>
+  <parameter name="wsdlTargetNamespace" value="http://www.apiasolutions.com/WebServices"/>
+  <parameter name="wsdlPortType" value="ApiaWSInterface"/>
+  <parameter name="sendXsiTypes" value="false"/>
+  <parameter name="scope" value="Application"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns75:Parameter" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.AutogenerateWSDL.mt_web_service_pass.gen.Parameter" xmlns:ns75="http://www.apiasolutions.com/WebServices"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns76:ExecResultType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.AutogenerateWSDL.mt_web_service_pass.gen.ExecResultType" xmlns:ns76="http://www.apiasolutions.com/WebServices"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns77:ApiaWSInputType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.AutogenerateWSDL.mt_web_service_pass.gen.ApiaWSInputType" xmlns:ns77="http://www.apiasolutions.com/WebServices"/>
+ </service>
+ <service name="ApiaWSws_publicar_documentos" provider="java:RPC" style="wrapped" use="literal">
+  <operation name="ws_publicar_documentos" qname="ws_publicar_documentos" returnQName="ns78:ExecResult" returnType="ns78:ExecResultType" soapAction="apiaAction" xmlns:ns78="http://www.apiasolutions.com/WebServices">
+   <parameter qname="ns78:ApiaWSInput" type="ns78:ApiaWSInputType"/>
+  </operation>
+  <parameter name="wsdlServicePort" value="ApiaWSws_publicar_documentos"/>
+  <parameter name="schemaQualified" value="http://www.apiasolutions.com/WebServices"/>
+  <parameter name="className" value="com.dogma.ws.AutogenerateWSDL.ws_publicar_documentos.gen.ws_publicar_documentosImpl"/>
+  <parameter name="typeMappingVersion" value="1.2"/>
+  <parameter name="allowedMethods" value="ws_publicar_documentos"/>
+  <parameter name="wsdlServiceElement" value="ApiaWSInterfaceService"/>
+  <parameter name="wsdlTargetNamespace" value="http://www.apiasolutions.com/WebServices"/>
+  <parameter name="wsdlPortType" value="ApiaWSInterface"/>
+  <parameter name="scope" value="Application"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns79:Parameter" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.AutogenerateWSDL.ws_publicar_documentos.gen.Parameter" xmlns:ns79="http://www.apiasolutions.com/WebServices"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns80:ExecResultType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.AutogenerateWSDL.ws_publicar_documentos.gen.ExecResultType" xmlns:ns80="http://www.apiasolutions.com/WebServices"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns81:ApiaWSInputType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.dogma.ws.AutogenerateWSDL.ws_publicar_documentos.gen.ApiaWSInputType" xmlns:ns81="http://www.apiasolutions.com/WebServices"/>
+ </service>
+ <transport name="http">
+  <requestFlow>
+   <handler type="URLMapper"/>
+   <handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </requestFlow>
+  <parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </transport>
+ <transport name="local">
+  <responseFlow>
+   <handler type="LocalResponder"/>
+  </responseFlow>
+ </transport>
+</deployment>

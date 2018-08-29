@@ -1,0 +1,76 @@
+@CHARSET "ISO-8859-1";
+
+span.monitor-input {
+	word-wrap: break-word;
+	margin-left: 5px;
+}
+
+div.monitor-multiple {
+
+}
+
+span.monitor-select {
+	margin-left: 5px;
+}
+
+div.monitor-tree {
+
+}
+
+monitor-checkbox {
+	
+}
+
+span.monitor-password {
+	margin-left: 5px;
+}
+
+label.monitor-label div {
+
+}
+
+.cssgradients div.monitor-button button.genericBtn:hover {
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(white) to(#EFEFEF));
+	background: -webkit-linear-gradient( white, #EFEFEF);
+	background: -moz-linear-gradient( white, #EFEFEF);
+	background: -ms-linear-gradient( white, #EFEFEF);
+	background: -o-linear-gradient( white, #EFEFEF);
+	background: linear-gradient( white, #EFEFEF);
+	color: #606060;
+	border-color: silver;
+}
+/*Igual a .no-cssgradients button.genericBtn*/
+.no-cssgradients div.monitor-button button.genericBtn:hover {
+	background-image: url("img/button/back_button.png");
+	color: #06060;
+	border-color: silver;
+}
+
+div.monitor-area {
+	word-wrap: break-word;
+	margin-left: 5px;
+}
+
+a.monitor-href {
+	
+}
+
+div.monitor-fileinput > div.docData {
+	margin-left: 5px;
+}
+
+span.monitor-radio {
+	margin-left: 5px;
+}
+
+span.monitor-title {
+	
+}
+
+div.monitor-editor {
+	margin-left: 5px;
+}
+
+label.monitor-lbl {
+	font-weight: bold;
+}

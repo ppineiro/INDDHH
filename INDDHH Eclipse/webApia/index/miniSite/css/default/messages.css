@@ -1,0 +1,21 @@
+div.warning label{
+	color:orange;
+	font-weight:bold;
+	display:block;
+	text-align: center;
+	font-size: 25px;
+}
+
+label.message{
+	color: black;
+	display:block;
+	text-align: center;
+	font-size: 25px;
+}
+
+label.error{
+	color:red;
+	display:block;
+	text-align: center;
+	font-size: 25px;
+}

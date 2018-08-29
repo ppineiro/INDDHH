@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<data>
+<class name="CLASE1" id="1" ajax="true" />
+<class name="CLASE2" id="2" ajax="false" />
+<class name="CLASE3" id="3" ajax="true" />
+<class name="CLASE4" id="4" ajax="false" />
+<class name="CLASE5" id="5" ajax="true" />
+<class name="CLASE6" id="6" ajax="false" />
+<class name="OTRA_CLASE" id="7" ajax="true" />
+<class name="OTRA_CLASE_2" id="8" ajax="false" />
+<class name="CLASE TRUCHA" id="1008" ajax="true" />
+</data>

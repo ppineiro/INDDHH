@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes>
+	<node local="true" type="String" el_type="dimension" shared="true" description="gdfgfdgdf" primary="primary3" table="tablaZ" name="gfdgdf" label="gfdgdf">
+		<node local="true" type="String" el_type="hierarchy" shared="false" description="gdfgfdgdf" primary="primary3" table="tablaZ" name="gfdgdf" label="gfdgdf">
+			<node colName="aaaa" tableName="bbb" colId="aaa" label="bbb.aaaa" el_type="field">
+				<node colName="aaaa" tableName="bbb" colId="aaa" label="bbb.aaaa" el_type="field" />
+			</node>
+		</node>
+	</node>
+		
+	<node local="true" type="String" el_type="dimension" shared="true" description="gdfgfdgdf" primary="primary3" table="tablaZ" name="gfdgdf" label="gfdgdf" used="true">
+		<node local="true" type="String" el_type="hierarchy" shared="false" description="gdfgfdgdf" primary="primary3" table="tablaZ" name="gfdgdf" label="gfdgdf">
+		</node>
+	</node>
+	
+	
+	
+</nodes>
+

@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://www.apiasolutions.com/WebServices" xmlns:intf="http://www.apiasolutions.com/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"  targetNamespace="http://www.apiasolutions.com/WebServices">
+	<wsdl:types>
+		<schema elementFormDefault="qualified" targetNamespace="http://www.apiasolutions.com/WebServices" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://www.apiasolutions.com/WebServices" xmlns:apia="http://www.apiasolutions.com/WebServices/Data">
+			<import namespace="http://www.apiasolutions.com/WebServices/Data" schemaLocation="apia_web_services.xsd"/>
+			<element name="envName" type="xsd:string"/>
+			<element name="entity" type="apia:EntInstance"/>
+			<element name="process" type="apia:ProInstance"/>
+			<element name="userData" type="apia:UserData"/>
+			<element name="parameters" type="apia:Parameters"/>
+			<element name="taskName" type="xsd:string"/>
+			<element name="queryName" type="xsd:string"/>
+			<element name="className" type="xsd:string"/>
+			<element name="createEntityReturn" type="apia:ExecResult"/>
+			<element name="createProcessReturn" type="apia:ExecResult"/>
+			<element name="cancelProcessReturn" type="apia:ExecResult"/>
+			<element name="closeTaskReturn" type="apia:ExecResult"/>
+			<element name="updateEntityReturn" type="apia:ExecResult"/>
+			<element name="removeEntityReturn" type="apia:ExecResult"/>
+			<element name="createUserReturn" type="apia:ExecResult"/>
+			<element name="createGroupReturn" type="apia:ExecResult"/>
+			<element name="createProfileReturn" type="apia:ExecResult"/>
+			<element name="removeUserReturn" type="apia:ExecResult"/>
+			<element name="removeGroupReturn" type="apia:ExecResult"/>
+			<element name="userToGroupReturn" type="apia:ExecResult"/>
+			<element name="userToProfileReturn" type="apia:ExecResult"/>
+			<element name="userNotInGroupReturn" type="apia:ExecResult"/>
+			<element name="userNotInProfileReturn" type="apia:ExecResult"/>
+			<element name="removeProfileReturn" type="apia:ExecResult"/>
+			<element name="updateUserReturn" type="apia:ExecResult"/>
+			<element name="updateGroupReturn" type="apia:ExecResult"/>
+			<element name="updateProfileReturn" type="apia:ExecResult"/>
+			<element name="executeQueryReturn" type="apia:QueryResult"/>
+			<element name="executeClassReturn" type="apia:ClassResult"/>	
+			<element name="executeTaskListReturn" type="apia:TaskListResult"/>
+			<element name="newUser" type="apia:NewUser"/>
+			<element name="group" type="apia:Group"/>
+			<element name="filter" type="apia:Filter"/>
+			<element name="profile" type="apia:Profile"/>
+			<element name="profileName" type="xsd:string"/>
+			<element name="usrLogin" type="xsd:string"/>
+			<element name="groupName" type="xsd:string"/>
+		</schema>
+	</wsdl:types>
+	<wsdl:message name="closeTaskRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="taskName" element="impl:taskName"/>
+		<wsdl:part name="process" element="impl:process"/>
+		<wsdl:part name="entity" element="impl:entity"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="closeTaskResponse">
+		<wsdl:part name="closeTaskReturn" element="impl:closeTaskReturn"/>
+	</wsdl:message>
+	<wsdl:message name="removeEntityResponse">
+		<wsdl:part name="removeEntityReturn" element="impl:removeEntityReturn"/>
+	</wsdl:message>
+	<wsdl:message name="createUserResponse">
+		<wsdl:part name="createUserReturn" element="impl:createUserReturn"/>
+	</wsdl:message>
+	<wsdl:message name="createGroupResponse">
+		<wsdl:part name="creategroupReturn" element="impl:createGroupReturn"/>
+	</wsdl:message>
+	<wsdl:message name="createProfileResponse">
+		<wsdl:part name="createProfileReturn" element="impl:createProfileReturn"/>
+	</wsdl:message>
+	<wsdl:message name="userToGroupResponse">
+		<wsdl:part name="userToGroupReturn" element="impl:userToGroupReturn"/>
+	</wsdl:message>
+	<wsdl:message name="userToProfileResponse">
+		<wsdl:part name="userToProfileReturn" element="impl:userToProfileReturn"/>
+	</wsdl:message>
+	<wsdl:message name="userNotInGroupResponse">
+		<wsdl:part name="userNotInGroupReturn" element="impl:userNotInGroupReturn"/>
+	</wsdl:message>
+	<wsdl:message name="userNotInProfileResponse">
+		<wsdl:part name="userNotInProfileReturn" element="impl:userNotInProfileReturn"/>
+	</wsdl:message>
+	<wsdl:message name="updateUserResponse">
+		<wsdl:part name="updateUserReturn" element="impl:updateUserReturn"/>
+	</wsdl:message>
+	<wsdl:message name="updateGroupResponse">
+		<wsdl:part name="updateGroupReturn" element="impl:updateGroupReturn"/>
+	</wsdl:message>
+	<wsdl:message name="updateProfileResponse">
+		<wsdl:part name="updateProfileReturn" element="impl:updateProfileReturn"/>
+	</wsdl:message>
+	<wsdl:message name="removeUserResponse">
+		<wsdl:part name="removeUserReturn" element="impl:removeUserReturn"/>
+	</wsdl:message>
+	<wsdl:message name="removeGroupResponse">
+		<wsdl:part name="removeGroupReturn" element="impl:removeGroupReturn"/>
+	</wsdl:message>
+	<wsdl:message name="removeProfileResponse">
+		<wsdl:part name="removeProfileReturn" element="impl:removeProfileReturn"/>
+	</wsdl:message>
+	<wsdl:message name="createUserRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="newUser" element="impl:newUser"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="createGroupRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="group" element="impl:group"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="createProfileRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="profile" element="impl:profile"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="userToGroupRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="userLogin" element="impl:usrLogin"/>
+		<wsdl:part name="groupName" element="impl:groupName"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="userToProfileRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="userLogin" element="impl:usrLogin"/>
+		<wsdl:part name="profileName" element="impl:profileName"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="userNotInGroupRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="userLogin" element="impl:usrLogin"/>
+		<wsdl:part name="groupName" element="impl:groupName"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="userNotInProfileRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="userLogin" element="impl:usrLogin"/>
+		<wsdl:part name="profileName" element="impl:profileName"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="removeUserRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="usrLogin" element="impl:usrLogin"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="removeGroupRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="groupName" element="impl:groupName"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="removeProfileRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="profileName" element="impl:profileName"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="updateUserRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="newUser" element="impl:newUser"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="updateGroupRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="groupName" element="impl:groupName"/>
+		<wsdl:part name="newGroup" element="impl:group"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="updateProfileRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="profileName" element="impl:profileName"/>
+		<wsdl:part name="newProfile" element="impl:profile"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="updateEntityRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="entity" element="impl:entity"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="executeReadyTaskListRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="filter" element="impl:filter"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="executeAcquiredTaskListRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="filter" element="impl:filter"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="executeReadyTaskListResponse">
+		<wsdl:part name="executeTaskListReturn" element="impl:executeTaskListReturn"/>
+	</wsdl:message>
+	<wsdl:message name="executeAcquiredTaskListResponse">
+		<wsdl:part name="executeTaskListReturn" element="impl:executeTaskListReturn"/>
+	</wsdl:message>
+	<wsdl:message name="executeClassResponse">
+		<wsdl:part name="executeClassReturn" element="impl:executeClassReturn"/>
+	</wsdl:message>
+	<wsdl:message name="executeQueryResponse">
+		<wsdl:part name="executeQueryReturn" element="impl:executeQueryReturn"/>
+	</wsdl:message>
+	<wsdl:message name="cancelProcessRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="process" element="impl:process"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="createEntityResponse">
+		<wsdl:part name="createEntityReturn" element="impl:createEntityReturn"/>
+	</wsdl:message>
+	<wsdl:message name="removeEntityRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="entity" element="impl:entity"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="executeQueryRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="queryName" element="impl:queryName"/>
+		<wsdl:part name="parameters" element="impl:parameters"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="createProcessRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="process" element="impl:process"/>
+		<wsdl:part name="entity" element="impl:entity"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="createProcessResponse">
+		<wsdl:part name="createProcessReturn" element="impl:createProcessReturn"/>
+	</wsdl:message>
+	<wsdl:message name="createEntityRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="entity" element="impl:entity"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="executeClassRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="className" element="impl:className"/>
+		<wsdl:part name="parameters" element="impl:parameters"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="updateEntityResponse">
+		<wsdl:part name="updateEntityReturn" element="impl:updateEntityReturn"/>
+	</wsdl:message>
+	<wsdl:message name="cancelProcessResponse">
+		<wsdl:part name="cancelProcessReturn" element="impl:cancelProcessReturn"/>
+	</wsdl:message>
+	<wsdl:portType name="ApiaWSInterface">
+		<wsdl:operation name="createEntity" parameterOrder="envName entity userData">
+			<wsdl:input name="createEntityRequest" message="impl:createEntityRequest"/>
+			<wsdl:output name="createEntityResponse" message="impl:createEntityResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="createProcess" parameterOrder="envName process entity userData">
+			<wsdl:input name="createProcessRequest" message="impl:createProcessRequest"/>
+			<wsdl:output name="createProcessResponse" message="impl:createProcessResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="cancelProcess" parameterOrder="envName process userData">
+			<wsdl:input name="cancelProcessRequest" message="impl:cancelProcessRequest"/>
+			<wsdl:output name="cancelProcessResponse" message="impl:cancelProcessResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="closeTask" parameterOrder="envName taskName process entity userData">
+			<wsdl:input name="closeTaskRequest" message="impl:closeTaskRequest"/>
+			<wsdl:output name="closeTaskResponse" message="impl:closeTaskResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="updateEntity" parameterOrder="envName entity userData">
+			<wsdl:input name="updateEntityRequest" message="impl:updateEntityRequest"/>
+			<wsdl:output name="updateEntityResponse" message="impl:updateEntityResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="removeEntity" parameterOrder="envName entity userData">
+			<wsdl:input name="removeEntityRequest" message="impl:removeEntityRequest"/>
+			<wsdl:output name="removeEntityResponse" message="impl:removeEntityResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="executeQuery" parameterOrder="envName queryName parameters userData">
+			<wsdl:input name="executeQueryRequest" message="impl:executeQueryRequest"/>
+			<wsdl:output name="executeQueryResponse" message="impl:executeQueryResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="executeClass" parameterOrder="envName className parameters userData">
+			<wsdl:input name="executeClassRequest" message="impl:executeClassRequest"/>
+			<wsdl:output name="executeClassResponse" message="impl:executeClassResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="createUser" parameterOrder="envName newUser userData">
+			<wsdl:input name="createUserRequest" message="impl:createUserRequest"/>
+			<wsdl:output name="createUserResponse" message="impl:createUserResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="removeUser" parameterOrder="envName usrLogin userData">
+			<wsdl:input name="removeUserRequest" message="impl:removeUserRequest"/>
+			<wsdl:output name="removeUserResponse" message="impl:removeUserResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="removeGroup" parameterOrder="envName groupName userData">
+			<wsdl:input name="removeGroupRequest" message="impl:removeGroupRequest"/>
+			<wsdl:output name="removeGroupResponse" message="impl:removeGroupResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="updateUser" parameterOrder="envName newUser userData">
+			<wsdl:input name="updateUserRequest" message="impl:updateUserRequest"/>
+			<wsdl:output name="updateUserResponse" message="impl:updateUserResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="createGroup" parameterOrder="envName group userData">
+			<wsdl:input name="createGroupRequest" message="impl:createGroupRequest"/>
+			<wsdl:output name="createGroupResponse" message="impl:createGroupResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="updateGroup" parameterOrder="envName groupName newGroup userData">
+			<wsdl:input name="updateGroupRequest" message="impl:updateGroupRequest"/>
+			<wsdl:output name="updateGroupResponse" message="impl:updateGroupResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="createProfile" parameterOrder="envName profile userData">
+			<wsdl:input name="createProfileRequest" message="impl:createProfileRequest"/>
+			<wsdl:output name="createProfileResponse" message="impl:createProfileResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="updateProfile" parameterOrder="envName profileName newProfile userData">
+			<wsdl:input name="updateProfileRequest" message="impl:updateProfileRequest"/>
+			<wsdl:output name="updateProfileResponse" message="impl:updateProfileResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="removeProfile" parameterOrder="envName profileName userData">
+			<wsdl:input name="removeProfileRequest" message="impl:removeProfileRequest"/>
+			<wsdl:output name="removeProfileResponse" message="impl:removeProfileResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="associateUserToGroup" parameterOrder="envName userLogin groupName userData">
+			<wsdl:input name="userToGroupRequest" message="impl:userToGroupRequest"/>
+			<wsdl:output name="userToGroupResponse" message="impl:userToGroupResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="associateUserToProfile" parameterOrder="envName userLogin profileName userData">
+			<wsdl:input name="userToProfileRequest" message="impl:userToProfileRequest"/>
+			<wsdl:output name="userToProfileResponse" message="impl:userToProfileResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="desassociateUserToGroup" parameterOrder="envName userLogin groupName userData">
+			<wsdl:input name="userNotInGroupRequest" message="impl:userNotInGroupRequest"/>
+			<wsdl:output name="userNotInGroupResponse" message="impl:userNotInGroupResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="desassociateUserToProfile" parameterOrder="envName userLogin profileName userData">
+			<wsdl:input name="userNotInProfileRequest" message="impl:userNotInProfileRequest"/>
+			<wsdl:output name="userNotInProfileResponse" message="impl:userNotInProfileResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="executeAcquiredTaskList" parameterOrder="envName filter userData">
+			<wsdl:input name="impl:executeAcquiredTaskListRequest" message="impl:executeAcquiredTaskListRequest"/>
+			<wsdl:output name="impl:executeAcquiredTaskListResponse" message="impl:executeAcquiredTaskListResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="executeReadyTaskList" parameterOrder="envName filter userData">
+			<wsdl:input name="executeReadyTaskListRequest" message="impl:executeReadyTaskListRequest"/>
+			<wsdl:output name="executeReadyTaskListResponse" message="impl:executeReadyTaskListResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ApiaWSSoapBinding" type="impl:ApiaWSInterface">
+		<wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="createEntity">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="createProcess">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="cancelProcess">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="closeTask">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateEntity">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="removeEntity">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="executeQuery">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="executeClass">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="createUser">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="removeUser">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateUser">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="createGroup">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="removeGroup">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateGroup">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="createProfile">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="removeProfile">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateProfile">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="associateUserToGroup">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>	
+		<wsdl:operation name="desassociateUserToGroup">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>	
+		<wsdl:operation name="associateUserToProfile">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>	
+		<wsdl:operation name="desassociateUserToProfile">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="executeAcquiredTaskList">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="executeReadyTaskList">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ApiaWSInterfaceService">
+		<wsdl:port name="ApiaWS" binding="impl:ApiaWSSoapBinding">
+			<wsdlsoap:address location="http://LOCATION-TOKEN"/>
+		</wsdl:port>
+	</wsdl:service>
+	<!--WSDL created by Apache Axis version: 1.2RC3
+Built on Feb 28, 2005 (10:15:14 EST)-->
+</wsdl:definitions>

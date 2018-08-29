@@ -1,0 +1,53 @@
+
+BODY {
+	MARGIN:4px;
+    BORDER:0px;
+    PADDING:0px;
+    OVERFLOW: hidden;
+    BACKGROUND-COLOR: #FFFFFF;
+ /*  	background-image: url("../images/back3.gif");*/
+}
+#topFrame {
+	WIDTH:100%; 
+	HEIGHT:45px;
+}
+#tocArea{
+	POSITION:absolute;
+	TOP:55px;						/*(30 the height of topframe + 4 of the body margin)*/
+	LEFT:4px;
+	WIDTH:151px;
+	height:0px;
+/*	BORDER-LEFT:1px solid #416D94; */
+	BORDER-BOTTOM:0px;
+}
+#workArea {
+	POSITION:absolute;
+	LEFT:158px;						/*(150 tocs width + the body margins 4 )*/
+	TOP:55px;						/*(30 the height of topframe + the body margins 4)*/
+	BORDER-LEFT:0px;	
+	BORDER-BOTTOM:0px;		
+	height:0px;
+	BORDER-RIGHT:0px solid #416D94;
+}
+
+.feedBackFrame{
+	POSITION: absolute;
+	DISPLAY:none;
+	WIDTH:350px;
+	HEIGHT:200px;
+	OVERFLOW:hidden;
+}
+
+.modalWin{
+	border-top : 2px groove #838b99;
+    border-left : 2px solid #2c3340;
+    border-right : 2px solid #2c3340;
+	border-bottom : 2px solid #3c4655;
+	background-image:url(../../gradient.jsp?height=15&width=1&colors=495261;000000&type=v);
+	background-repeat:repeat-x;
+	background-color:#f1f1f1;
+}
+
+.closeButton{
+	background-image:url(../images/modalCloseBtn.png);
+}

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://www.apiasolutions.com/WebServices" xmlns:intf="http://www.apiasolutions.com/WebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"  targetNamespace="http://www.apiasolutions.com/WebServices">
+	<wsdl:types>
+		<schema elementFormDefault="qualified" targetNamespace="http://www.apiasolutions.com/WebServices" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://www.apiasolutions.com/WebServices" xmlns:apia="http://www.apiasolutions.com/WebServices/Data">
+			<import namespace="http://www.apiasolutions.com/WebServices/Data" schemaLocation="apia_web_services.xsd"/>
+			<element name="envName" type="xsd:string"/>
+			<element name="entity" type="apia:EntInstance"/>
+			<element name="process" type="apia:ProInstance"/>
+			<element name="userData" type="apia:UserData"/>
+			<element name="parameters" type="apia:Parameters"/>
+			<element name="taskName" type="xsd:string"/>
+			<element name="queryName" type="xsd:string"/>
+			<element name="className" type="xsd:string"/>
+			<element name="createEntityReturn" type="apia:Result"/>
+			<element name="createProcessReturn" type="apia:Result"/>
+			<element name="cancelProcessReturn" type="apia:Result"/>
+			<element name="closeTaskReturn" type="apia:Result"/>
+			<element name="updateEntityReturn" type="apia:Result"/>
+			<element name="removeEntityReturn" type="apia:Result"/>
+			<element name="executeQueryReturn" type="apia:QueryResult"/>
+			<element name="executeClassReturn" type="apia:Result"/>
+		</schema>
+	</wsdl:types>
+	<wsdl:message name="closeTaskRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="taskName" element="impl:taskName"/>
+		<wsdl:part name="process" element="impl:process"/>
+		<wsdl:part name="entity" element="impl:entity"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="closeTaskResponse">
+		<wsdl:part name="closeTaskReturn" element="impl:closeTaskReturn"/>
+	</wsdl:message>
+	<wsdl:message name="removeEntityResponse">
+		<wsdl:part name="removeEntityReturn" element="impl:removeEntityReturn"/>
+	</wsdl:message>
+	<wsdl:message name="updateEntityRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="entity" element="impl:entity"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="executeClassResponse">
+		<wsdl:part name="executeClassReturn" element="impl:executeClassReturn"/>
+	</wsdl:message>
+	<wsdl:message name="executeQueryResponse">
+		<wsdl:part name="executeQueryReturn" element="impl:executeQueryReturn"/>
+	</wsdl:message>
+	<wsdl:message name="cancelProcessRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="process" element="impl:process"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="createEntityResponse">
+		<wsdl:part name="createEntityReturn" element="impl:createEntityReturn"/>
+	</wsdl:message>
+	<wsdl:message name="removeEntityRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="entity" element="impl:entity"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="executeQueryRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="queryName" element="impl:queryName"/>
+		<wsdl:part name="parameters" element="impl:parameters"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="createProcessRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="process" element="impl:process"/>
+		<wsdl:part name="entity" element="impl:entity"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="createProcessResponse">
+		<wsdl:part name="createProcessReturn" element="impl:createProcessReturn"/>
+	</wsdl:message>
+	<wsdl:message name="createEntityRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="entity" element="impl:entity"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="executeClassRequest">
+		<wsdl:part name="envName" element="impl:envName"/>
+		<wsdl:part name="className" element="impl:className"/>
+		<wsdl:part name="parameters" element="impl:parameters"/>
+		<wsdl:part name="userData" element="impl:userData"/>
+	</wsdl:message>
+	<wsdl:message name="updateEntityResponse">
+		<wsdl:part name="updateEntityReturn" element="impl:updateEntityReturn"/>
+	</wsdl:message>
+	<wsdl:message name="cancelProcessResponse">
+		<wsdl:part name="cancelProcessReturn" element="impl:cancelProcessReturn"/>
+	</wsdl:message>
+	<wsdl:portType name="ApiaWSInterface">
+		<wsdl:operation name="createEntity" parameterOrder="envName entity userData">
+			<wsdl:input name="createEntityRequest" message="impl:createEntityRequest"/>
+			<wsdl:output name="createEntityResponse" message="impl:createEntityResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="createProcess" parameterOrder="envName process entity userData">
+			<wsdl:input name="createProcessRequest" message="impl:createProcessRequest"/>
+			<wsdl:output name="createProcessResponse" message="impl:createProcessResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="cancelProcess" parameterOrder="envName process userData">
+			<wsdl:input name="cancelProcessRequest" message="impl:cancelProcessRequest"/>
+			<wsdl:output name="cancelProcessResponse" message="impl:cancelProcessResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="closeTask" parameterOrder="envName taskName process entity userData">
+			<wsdl:input name="closeTaskRequest" message="impl:closeTaskRequest"/>
+			<wsdl:output name="closeTaskResponse" message="impl:closeTaskResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="updateEntity" parameterOrder="envName entity userData">
+			<wsdl:input name="updateEntityRequest" message="impl:updateEntityRequest"/>
+			<wsdl:output name="updateEntityResponse" message="impl:updateEntityResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="removeEntity" parameterOrder="envName entity userData">
+			<wsdl:input name="removeEntityRequest" message="impl:removeEntityRequest"/>
+			<wsdl:output name="removeEntityResponse" message="impl:removeEntityResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="executeQuery" parameterOrder="envName queryName parameters userData">
+			<wsdl:input name="executeQueryRequest" message="impl:executeQueryRequest"/>
+			<wsdl:output name="executeQueryResponse" message="impl:executeQueryResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="executeClass" parameterOrder="envName className parameters userData">
+			<wsdl:input name="executeClassRequest" message="impl:executeClassRequest"/>
+			<wsdl:output name="executeClassResponse" message="impl:executeClassResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ApiaWSSoapBinding" type="impl:ApiaWSInterface">
+		<wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="createEntity">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="createProcess">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="cancelProcess">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="closeTask">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateEntity">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="removeEntity">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="executeQuery">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="executeClass">
+			<wsdlsoap:operation/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ApiaWSInterfaceService">
+		<wsdl:port name="ApiaWS" binding="impl:ApiaWSSoapBinding">
+			<wsdlsoap:address location="http://LOCATION-TOKEN"/>
+		</wsdl:port>
+	</wsdl:service>
+	<!--WSDL created by Apache Axis version: 1.2RC3
+Built on Feb 28, 2005 (10:15:14 EST)-->
+</wsdl:definitions>

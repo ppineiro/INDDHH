@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<forms>
+  <data>
+    <level width="20%" name="id" label="id" type="label" hidden="true"/>
+    <level width="20%" name="name" label="Name" type="label"/>
+    <level width="20%" name="label" label="Label" type="label"/>
+    <level width="20%" name="name" label="Naasda1" type="label"/>
+	<level width="19%" name="name" label="Naasda2" type="label"/>
+  </data>
+  <values>
+    <value>
+      <level name="id" value="1001"/>
+      <level name="name" value="NUM_CLI"/>
+      <level name="label" value="Numero1"/>
+      <level name="name" value="NUM_CLI"/>
+      <level name="name" value="NUM_CLI"/>
+    </value>
+	<value>
+      <level name="id" value="1001"/>
+      <level name="name" value="NUM_CLI"/>
+      <level name="label" value="Numero1"/>
+      <level name="name" value="NUM_CLI"/>
+      <level name="name" value="NUM_CLI"/>
+    </value>
+	<value>
+      <level name="id" value="1001"/>
+      <level name="name" value="NUM_CLI"/>
+      <level name="label" value="Numero1"/>
+      <level name="name" value="NUM_CLI"/>
+      <level name="name" value="NUM_CLI"/>
+    </value>
+	<value>
+      <level name="id" value="1001"/>
+      <level name="name" value="NUM_CLI"/>
+      <level name="label" value="Numero1"/>
+      <level name="name" value="NUM_CLI"/>
+      <level name="name" value="NUM_CLI"/>
+    </value>
+	<value>
+      <level name="id" value="1001"/>
+      <level name="name" value="NUM_CLI"/>
+      <level name="label" value="Numero1"/>
+      <level name="name" value="NUM_CLI"/>
+      <level name="name" value="NUM_CLI"/>
+    </value>
+	<value>
+      <level name="id" value="1001"/>
+      <level name="name" value="NUM_CLI"/>
+      <level name="label" value="Numero1"/>
+      <level name="name" value="NUM_CLI"/>
+      <level name="name" value="NUM_CLI"/>
+    </value>
+	<value>
+      <level name="id" value="1001"/>
+      <level name="name" value="NUM_CLI"/>
+      <level name="label" value="Numero1"/>
+      <level name="name" value="NUM_CLI"/>
+      <level name="name" value="NUM_CLI"/>
+    </value>
+  </values>
+</forms>

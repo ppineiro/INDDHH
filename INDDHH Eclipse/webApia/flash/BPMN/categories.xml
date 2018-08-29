@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<categories>
+	<data>
+		<level width="0" name="id" label="id" type="label" hidden="true" />
+		<level width="100%" name="name" label="name" type="label" />
+	</data>	
+	<values>
+		<value>
+			<level name="id" value="0" />
+			<level name="name" value="category 1" />
+		</value>
+		<value>
+			<level name="id" value="1" />
+			<level name="name" value="category 2" />
+		</value>
+		<value>
+			<level name="id" value="2" />
+			<level name="name" value="category 3" />
+		</value>
+		<value>
+			<level name="id" value="3" />
+			<level name="name" value="category 4" />
+		</value>
+		<value>
+			<level name="id" value="4" />
+			<level name="name" value="category 5" />
+		</value>
+		<value>
+			<level name="id" value="5" />
+			<level name="name" value="category 6" />
+		</value>
+		<value>
+			<level name="id" value="6" />
+			<level name="name" value="category 7" />
+		</value>
+		<value>
+			<level name="id" value="7" />
+			<level name="name" value="category 8" />
+		</value>
+		<value>
+			<level name="id" value="8" />
+			<level name="name" value="category 9" />
+		</value>
+		<value>
+			<level name="id" value="10" />
+			<level name="name" value="category 1" />
+		</value>
+		<value>
+			<level name="id" value="11" />
+			<level name="name" value="category 2" />
+		</value>
+		<value>
+			<level name="id" value="12" />
+			<level name="name" value="category 3" />
+		</value>
+		<value>
+			<level name="id" value="13" />
+			<level name="name" value="category 4" />
+		</value>
+		<value>
+			<level name="id" value="14" />
+			<level name="name" value="category 5" />
+		</value>
+		<value>
+			<level name="id" value="15" />
+			<level name="name" value="category 6" />
+		</value>
+		<value>
+			<level name="id" value="16" />
+			<level name="name" value="category 7" />
+		</value>
+		<value>
+			<level name="id" value="17" />
+			<level name="name" value="category 8" />
+		</value>
+		<value>
+			<level name="id" value="18" />
+			<level name="name" value="category 9" />
+		</value>
+	</values>
+</categories>

@@ -1,0 +1,202 @@
+
+BODY{
+	MARGIN-TOP: 0px;								
+	MARGIN-BOTTOM:0px;
+	MARGIN-LEFT: 0px;
+	MARGIN-RIGHT: 0px;
+	background-color : #FFFFFF;
+}
+
+#tocContainer{
+    SCROLLBAR-FACE-COLOR: #00005A; 
+    SCROLLBAR-HIGHLIGHT-COLOR: #00005A;
+    SCROLLBAR-SHADOW-COLOR: #00005A;
+    SCROLLBAR-ARROW-COLOR: #D0F500;
+    SCROLLBAR-DARKSHADOW-COLOR: #F1F0EF;
+    SCROLLBAR-BASE-COLOR: #F1F0EF;
+    scrollbar-3d-light-color: #00005A;
+}
+
+.tocHolder{
+	/*BEHAVIOR:url("../../behaviors/toc/toc.htc");*/
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    MARGIN:0px;
+    OVERFLOW-Y:auto;
+    OVERFLOW-X:hidden;
+	HEIGHT:100%;
+    
+    SCROLLBAR-FACE-COLOR: #eeebeb; 
+    SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+    SCROLLBAR-SHADOW-COLOR: #C0C0C0;
+    SCROLLBAR-ARROW-COLOR: #808080;
+    SCROLLBAR-DARKSHADOW-COLOR: #808080;
+    SCROLLBAR-BASE-COLOR: #808080;
+    scrollbar-3d-light-color: #808080;
+
+}
+#tocContainerBack{
+	BORDER:1px solid #7c7c94;
+    background-color:#D0F500;
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    MARGIN:0px;
+    OVERFLOW:hidden;
+    WIDTH: 100%;
+    HEIGHT:100%;
+    BORDER:1px solid #7c7c94;
+}
+.tocTop{
+	BORDER-COLLAPSE:collapse;
+	background-color : #ffffff;
+	WIDTH: 100%;
+	MARGIN:0px;
+	PADDING-top:20px;
+/*	BORDER:1px solid #416D94;*/
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    COLOR:white;
+    DISPLAY:none;
+}
+.tocTop TR{
+	HEIGHT:4px;
+}
+.tocTop TR TD{
+	TEXT-ALIGN:left;
+	PADDING-top:5px;
+	MARGIN:0px;
+	LETTER-SPACING: 2px;
+	TEXT-TRANSFORM: uppercase;
+}
+IMG{
+    MARGIN-RIGHT: 2px;
+    MARGIN-LEFT:4px;
+    POSITION: static;
+    TOP: 4px;
+    CURSOR: default;
+}
+
+LI.clsFolder{
+	color : #00005A;
+    CURSOR: hand;
+    LIST-STYLE: none;
+}
+
+LI.clsFolder UL LI{
+    font-weight:normal;
+}
+
+.tblAcord {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    MARGIN: 0px;
+	WIDTH : 100%;
+    PADDING: 0px;
+    color : #FFFFFF;
+	border-bottom:1px solid #7c7c94;
+  	border-collapse:collapse;
+}
+
+.tblAcord TR {
+    MARGIN:0px;
+    PADDING:0px;
+}
+
+.tdTitleAcord {
+  
+    
+}
+span{
+	cursor:pointer;
+	cursor:default;
+	vertical-align:super;
+	white-space:nowrap;
+}
+.tocHolder LI UL {
+	padding-top:3px;
+	vertical-align:top;
+	DISPLAY: none;
+	TEXT-ALIGN:left;
+	/*TEXT-TRANSFORM: uppercase;*/
+	cursor:pointer;
+	cursor:default;
+	position:static;
+    line-style:none;
+}
+
+
+#tocContainer{
+	
+}
+
+.tdTitleAcord TD{
+    CURSOR: hand;
+	padding-top :0px;
+    MARGIN:0px;
+    margin-left:0px;
+	padding-left :0px;
+    PADDING-bottom:0px;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    font-weight : bold;
+    color  : #FFFFFF;
+    vertical-align:bottom;
+}
+
+.tdBodyAcord {
+	padding-left :0px;
+    border-top : 1px solid #7c7c94;
+	border-bottom:1px solid #7c7c94;
+    MARGIN:1px;
+    PADDING-left:0px;    
+    PADDING-top:1px;        
+    PADDING-bottom:2px;
+    DISPLAY: none;
+}
+
+.tdInnerTitleAcord{
+	height:27px;
+	CURSOR: hand;
+	padding-top :0px;
+    MARGIN:0px;
+    margin-left:10px;
+	padding-left :10px;
+    PADDING-bottom:0px;
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    font-weight : bold;
+	color  : #e4e6eb;
+    vertical-align:center;
+	background-color:#00005A;
+	text-align:left;
+	border-top : 1px solid #EFFBB3; 
+    border-left :2px solid #CAF100;
+    border-bottom : 1px solid #CAF100; 
+  	border-collapse:collapse;
+}
+
+.tdBodyAcord TD { 
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    color : #00005A;
+    border: 0px;
+    MARGIN: 0px;
+    PADDING: 0px;    
+}
+LI UL{
+	padding-left:15px;
+}
+UL{	
+	align:left;
+	LIST-STYLE: none;
+	position:static;
+	padding-left:5px;
+	margin-left:0px;
+}
+LI{
+	white-space:nowrap;
+	LIST-STYLE: none;
+	position:static;
+	padding-top:4px;
+	margin-left:0px;
+}

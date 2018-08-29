@@ -1,0 +1,83 @@
+@CHARSET "ISO-8859-1";
+
+span.monitor-input {
+	word-wrap: break-word;
+	margin-left: 5px;
+	font-size: 9pt;
+}
+
+div.monitor-multiple {
+	font-size: 9pt;
+}
+
+span.monitor-select {
+	margin-left: 5px;
+	font-size: 9pt;
+}
+
+div.monitor-tree {
+	font-size: 9pt;
+}
+
+monitor-checkbox {
+	
+}
+
+span.monitor-password {
+	font-size: 9pt;
+	margin-left: 5px;
+}
+
+label.monitor-label div {
+	font-size: 9pt;
+}
+
+.cssgradients div.monitor-button button.genericBtn:hover {
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(white) to(#EFEFEF));
+	background: -webkit-linear-gradient( white, #EFEFEF);
+	background: -moz-linear-gradient( white, #EFEFEF);
+	background: -ms-linear-gradient( white, #EFEFEF);
+	background: -o-linear-gradient( white, #EFEFEF);
+	background: linear-gradient( white, #EFEFEF);
+	color: #606060;
+	border-color: silver;
+}
+/*Igual a .no-cssgradients button.genericBtn*/
+.no-cssgradients div.monitor-button button.genericBtn:hover {
+	background-image: url("img/button/back_button.png");
+	color: #06060;
+	border-color: silver;
+}
+
+div.monitor-area {
+	word-wrap: break-word;
+	margin-left: 5px;
+	font-size: 9pt;
+}
+
+a.monitor-href {
+	
+}
+
+div.monitor-fileinput > div.docData {
+	margin-left: 5px;
+	font-size: 9pt;
+}
+
+span.monitor-radio {
+	margin-left: 5px;
+	font-size: 9pt;
+}
+
+span.monitor-title {
+	
+}
+
+div.monitor-editor {
+	margin-left: 5px;
+	font-size: 9pt;
+}
+
+label.monitor-lbl {
+	font-weight: bold;
+}

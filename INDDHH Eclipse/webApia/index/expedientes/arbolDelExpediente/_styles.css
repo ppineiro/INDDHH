@@ -1,0 +1,134 @@
+/* Just some base styles not needed for tree to function */
+
+body, ul, li{
+	margin: 0;
+	padding: 0;
+}
+
+img{
+	border: none;
+}
+	
+/* CSS Tree menu styles */
+ul.tree{
+	padding: 0 0 0 30px;
+	width: 600px; 
+}
+
+li.folder{
+	border: none;
+	background-color: transparent;
+	background-image: none;
+	color: #000000;
+	display: block;
+	font-family: Verdana,Arial,Tahoma;
+	font-size: 11.5pt;
+	height: auto;
+	letter-spacing: normal;
+	line-height: normal;
+	list-style: none;
+	margin: 0;
+	margin-left: -15px;
+	padding: 0;
+	position: relative;
+	text-transform: normal;
+	visibility: visible;
+	width: auto;
+	word-spacing: normal;
+	z-index: auto;
+}
+
+li.file{
+	border: none;
+	background-color: transparent; 
+	background-image: none;
+	color: #000000;
+	display: block;
+	font-family: Verdana,Arial,Tahoma;
+	font-size: 11.5pt;
+	height: auto;
+	letter-spacing: normal;
+	line-height: normal;
+	list-style: none;
+	margin: 0;
+	margin-left: -15px;
+	padding: 0;
+	position: relative;
+	text-transform: normal;
+	visibility: visible;
+	width: auto;
+	word-spacing: normal;
+	z-index: auto;
+	margin-left: -1px !important;
+} 
+
+li.folder li.file{
+	color: #000000;
+	margin-left: -1px !important;
+}
+
+li.file span{
+	background-image: url('../iconos/document.png');
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	padding-left: 21px;
+	text-decoration: none;
+	display: block; 
+} 
+
+li.folder label{
+	background-image: url('../iconos/folder-closed.png');
+	background-position: 15px 3px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	display: block;
+	padding-left: 37px; 
+} 
+
+li.folder input{
+	position: absolute;
+	left: 0;
+	margin-left: 0;
+	opacity: 0;
+	z-index: 2;
+	cursor: pointer;
+	height: 1em;
+	width: 1em;
+	top: 0; 
+} 
+
+li.folder input ~ ul{
+	background-image: url('../iconos/expand.png');
+	background-position: 40px -1px;
+	background-repeat: no-repeat;
+	margin: -0.938em 0 0 -44px;
+	height: 1em; 
+} 
+
+li.folder input ~ ul > li{
+	display: none;
+	margin-left: -14px !important;
+	padding-left: 1px; 
+} 
+
+li.folder input:checked ~ ul{
+	background-image: url('../iconos/contract.png');
+	background-position: 40px 4px;
+	background-repeat: no-repeat;
+	margin: -1.25em 0 0 -44px;
+	padding: 1.563em 0 0 80px;
+	height: auto; 
+} 
+
+li.folder input:checked ~ ul > li{
+	display: block;
+	margin: 0 0 0.125em;
+} 
+
+li.folder input:checked ~ ul > li:last-child{
+	margin: 0 0 0.063em;
+} 
+
+li.folder input:checked ~ label{
+	background-image: url('../iconos/folder-opened.png');
+} 

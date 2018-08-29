@@ -1,0 +1,71 @@
+body {font-size: 10pt;}
+
+table {font-size: 10pt;}
+
+div.fieldGroup div.title {	font-size: 15px; }
+
+div.dataContainer { padding-bottom: 20px;}
+
+div.fieldGroup td.visibility-none div.visibility-hidden {	display: none; }
+
+.inputTitle label {
+	display: none;
+}
+
+.inputTitle span {
+	color: #002776;
+	font-size: 20px; 
+}
+
+div.theFooter {
+	display: none;
+}
+
+.extendedSize > button.genericBtn {
+	width: 246px !important;
+}
+
+div.optionsContainer {
+	width: 260px;
+}
+
+.dataContainer {
+	padding-right: 305px;
+}
+
+
+.resizeMobile img {
+	width: 100%;
+}
+
+@media (min-width: 900px) {
+	.max75 img {
+		width: 80% !important;
+	}
+}
+
+/*POSICIONAR ETIQUETA DE DIGITO VERIFICADOR*/
+.digito-verificador > div {
+	padding-top: 0px;
+    margin-top: -10px;
+    margin-left: 233px;
+    font-style: italic;
+    width: auto !important;
+}
+
+body.mobileNonExec .digito-verificador > div {
+	margin-left: 0px !important;
+}
+
+.LBL_TITULO label {
+	margin-right: 0px !important;
+}
+
+.modalContent {
+	position: absolute !important;
+}
+
+/* PARA QUE DIALOGBOX NO SALGA DESCENTRADO */
+.LBL_DIALOGBOX > div.exec_field {
+	width: 100% !important;
+}

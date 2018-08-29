@@ -1,0 +1,274 @@
+<html><head><style type="text/css">
+pre,dl 	{ background-color:#eeeeee };
+dt		{ font-weight: 'bold' };
+</style></head><body><h1><a name="content"/>0 Content</h1><a href="#introduction">1 Introduction </a><br /><a href="#examples">2 Examples </a><br /><a href="#basicExamplesSingleFile">2.1 Basic examples, single file</a><br /><a href="#basicExamplesMultipleFiles">2.2 Basic examples, multiple files</a><br /><a href="#listeners">2.3 Displaying the loading progress</a><br /><a href="#targetSpecificListeners">2.4 Using targetspecific listeners</a><br /><a href="#errorHandling">2.5 Errorhandling</a><br /><a href="#queuemanagement">2.6 Queuemanagement</a><br /><a href="#miscellaneous">2.7 Miscellanous</a><br /><a href="#api">3 API</a><br /><a href="#constructor">3.1 Constructor </a><br /><a href="#constants">3.2 Static constants </a><br /><a href="#loading">3.3 Loading and observing targets</a><br /><a href="#managingQueue">3.4 Managing the queue</a><br /><a href="#managingListeners">3.5 Managing listeners  </a><br /><a href="#events">3.6 Events</a><br /><a href="#configuration">3.7 Configuration</a><br /><a href="#getters">3.8 Getters, getting information about the loading process</a><br /><a href="#faq">4 FAQ</a><br /><a href="#donations">5 Donations</a><br /><a href="#bugs">6 Bugs</a><br /><a href="#support">7 Support</a><br /><a href="#history">8 History</a><br /><a href="#status">9 Status and copyright</a><br /><a href="#licensing">10 License For Use</a><br /><h1><a name="introduction"/>1 Introduction</h1><p>As Colin Moock, the author of <a href="http://www.amazon.com/exec/obidos/ASIN/059600396X/helpqlodhelp-20">Actionscript - The Definitive Guide</a> stated lately: Preloading still is a major problem for a lot of flashers. The different interfaces to the different filetypes (SWF, XML, Text, Sound), the asynchronous behaviour of the loading process and the uncomplete errorhandling alltogether make preloading really hard to handle. This is why Colin started a <a href="http://www.moock.org/blog/archives/000010.html">petition</a> and proposed a new interface for preloading.<br />
+The LoaderClass is based on Colin's interface proposal. Some changes and additions had to be made, because of practical implications.</p><p>If you find the class useful and want to support further development, don't forget to <a href="#donations">donate</a>. 
+
+
+<h1><a name="examples"/>2 Examples</h1><h2><a name="basicExamplesSingleFile"/>2.1 Basic examples, single file</h2><p><a href="#content">back</a></p><h3>2.1.1 Loading a swf into a MovieClip given by its targetpath</h3><pre>
+#include "com.qlod.LoaderClass.as"
+
+myLoader = new com.qlod.LoaderClass();
+myLoader.load("target_mc", "myMovie.swf");
+</pre><p><a href="#content">back</a></p><h3>2.1.2 Loading a swf into a MovieClip given by reference</h3><pre>
+#include "com.qlod.LoaderClass.as"
+
+myLoader = new com.qlod.LoaderClass();
+myLoader.load( _root.mc.holder, "myMovie.swf");
+</pre><p><a href="#content">back</a></p><h3>2.1.3 Loading a swf into a level</h3><pre>
+#include "com.qlod.LoaderClass.as"
+
+myLoader = new com.qlod.LoaderClass();
+myLoader.load( 3, "myMovie.swf");
+</pre><p><a href="#content">back</a></p><h3>2.1.4 Loading a swf into a created MovieClip</h3><pre>
+#include "com.qlod.LoaderClass.as"
+
+myLoader = new com.qlod.LoaderClass();
+var mc = createEmptyMovieClip("myClip_mc", 1);
+myLoader.load( mc, "myMovie.swf");
+</pre><p><a href="#content">back</a></p><h3>2.1.5 Loading a xml file</h3><pre>
+#include "com.qlod.LoaderClass.as"
+
+myLoader = new com.qlod.LoaderClass();
+
+x = new XML();
+myLoader.load( x, "myXML.xml");
+</pre><p><a href="#content">back</a></p><h3>2.1.6 Loading a textfile</h3><pre>
+#include "com.qlod.LoaderClass.as"
+
+myLoader = new com.qlod.LoaderClass();
+
+lv = new LoadVars();
+myLoader.load( lv, "myText.txt");
+</pre><p><a href="#content">back</a></p><h3>2.1.7 Loading a sound</h3><pre>
+#include "com.qlod.LoaderClass.as"
+
+myLoader = new com.qlod.LoaderClass();
+
+snd = new Sound();
+myLoader.load( snd, "mySound.mp3");
+</pre><p><a href="#content">back</a></p><h3>2.1.8 Loading a streaming sound</h3><pre>
+#include "com.qlod.LoaderClass.as"
+
+myLoader = new com.qlod.LoaderClass();
+
+snd = new Sound();
+// the additional parameter (1)
+// is passed to Sound.load 
+myLoader.load( snd, "mySound.mp3", null, 1);
+</pre><p><a href="#content">back</a></p><h2><a name="basicExamplesMultipleFiles"/>2.2 Basic examples, multiple files</h2><p>When loading multiple files, the LoaderClass puts all of the requests into an internal queue and executes one by one. </p><p><a href="#content">back</a></p><h3>2.2.1 Loading multiple swfs into created MovieClips</h3><pre>
+#include "com.qlod.LoaderClass.as"
+
+myLoader = new com.qlod.LoaderClass();
+for( var i=0; i&lt;10; i++){
+                     var mc = createEmptyMovieClip("mc" + i, i);
+                     var url = "movie" + i + ".swf";
+	myLoader.load( mc, url);	
+}
+</pre><p><a href="#content">back</a></p><h3>2.2.2 Loading multiple files of mixed type</h3><pre>
+#include "com.qlod.LoaderClass.as"
+
+myLoader = new com.qlod.LoaderClass();
+myLoader.load("target_mc", "myMovie.swf");
+myLoader.load( _root.mc.holder, "myMovie.swf");
+myLoader.load( 3, "myMovie.swf");
+x = new XML();
+myLoader.load( x, "myXML.xml");
+lv = new LoadVars();
+myLoader.load( lv, "myText.txt");
+snd = new Sound();
+myLoader.load( snd, "mySound.mp3");
+</pre><p><a href="#content">back</a></p><h2><a name="listeners"/>2.3 Displaying the loading progress</h2><p>To display the progress you can add a listener object to the loader. The listener object provides methods to handle the events raised by the loader.</p><p><a href="#content">back</a></p><h3>2.3.1 Using a simple bar </h3><p>We use a simple bar, which is scaled horizontally, to show the loading progress. Since the scale of a MovieClip is a percentage value, we can directly assign the percentage of the loaded bytes.<br /> 
+Create a bar, place it on stage, name it bar_mc and set it to _xscale = 100. </p><pre>
+#include "com.qlod.LoaderClass.as"
+
+bar_mc.onLoadProgress = function( loaderObj){
+	this._xscale = loaderObj.getPercent();
+}
+
+myLoader = new com.qlod.LoaderClass();
+myLoader.addListener( bar_mc);
+myLoader.load("target_mc", "myMovie.swf");
+</pre><p><a href="#content">back</a></p><h3>2.3.2 Using a dynamic TextField </h3><p>We use a dynamic TextField to display the percentage, the bytesLoaded and the total number of bytes. <br />
+Create a dynamic TextField and set its instancename to progress_txt.</p><pre>
+#include "com.qlod.LoaderClass.as"
+
+progress_txt.onLoadProgress = function( loaderObj){
+	this.progress_txt = loaderObj.getPercent() + " - " + loaderObj.getBytesLoaded() + " - " + loaderObj.getBytesTotal();
+}
+
+myLoader = new com.qlod.LoaderClass();
+myLoader.addListener( progress_txt);
+myLoader.load("target_mc", "myMovie.swf");
+</pre><p><a href="#content">back</a></p><h3>2.3.3 Using multiple listeners, eg. a bar and a dynamic TextField </h3>
+We can use as much listener objects as we like. The following example sports both of the above listeners at once.
+<pre>
+#include "com.qlod.LoaderClass.as"
+
+progress_txt.onLoadProgress = function( loaderObj){
+	this.progress_txt = loaderObj.getPercent() + " - " + loaderObj.getBytesLoaded() + " - " + loaderObj.getBytesTotal();
+}
+
+bar_mc.onLoadProgress = function( loaderObj){
+	this._xscale = loaderObj.getPercent();
+}
+
+myLoader = new com.qlod.LoaderClass();
+myLoader.addListener( bar_mc);
+myLoader.addListener( progress_txt);
+myLoader.load("target_mc", "myMovie.swf");
+</pre><p><a href="#content">back</a></p><h2><a name="targetSpecificListeners"/>2.4 Using targetspecific listeners</h2>
+Sometimes you need a listener which listens to one specific loading process and not to all of them. This can be achieved by using the listener object as an additional parameter to load. The listener is automatically added when loading of the target starts and removed, after loading of the target is completed. The following example uses a plain object to handle the events. 
+
+<p><a href="#content">back</a></p><h3>2.4.1 Simple targetspecific listeners</h3><pre>
+#include "com.qlod.LoaderClass.as"
+
+myListener_obj = new Object();
+
+myListener_obj.onLoadStart = function( loaderObj){
+	trace("Loading of " + loaderObj.getTarget() + " has started");
+}
+
+myListener_obj.onLoadProgress = function( loaderObj){
+	trace("Percentage: " + loaderObj.getPercent());
+}
+
+myListener_obj.onLoadComplete = function( success, loaderObj){
+	trace("Loading of " + loaderObj.getTarget() + " is completed");
+	_root.gotoAndPlay("introduction");
+}
+
+myLoader = new com.qlod.LoaderClass();
+myLoader.load("target_mc", "myMovie.swf", myListener_obj);
+</pre><p><a href="#content">back</a></p><h3>2.4.2 Advanced targetspecific listeners</h3>
+The following example creates a page of thumbnails where every thumbnail shows its own loading bar. 
+<pre>
+#include "com.qlod.LoaderClass.as"
+
+myLoader = new com.qlod.LoaderClass();
+
+var depth = 0;
+var rows = 4;
+var cols = 5;
+for( var i=0; i&lt;rows; i++){
+	for( var j=0; j&lt;cols; j++){
+		++depth;
+		//
+		var thumbnail_mc = createEmptyMovieClip("thumbnail_mc" + depth, depth);
+		//
+		var bar_mc = thumbnail_mc.createEmptyMovieClip("bar_mc", 0);
+		bar_mc.onLoadProgress = function( loaderObj){
+			this.clear();
+			this.lineStyle(0, 0xff0000);
+			this.lineTo( loaderObj.getPercent(), 0);	
+		}
+		bar_mc.onLoadComplete = function( success, loaderObj){
+			this.removeMovieClip();
+		}
+		//
+		var img_mc = thumbnail_mc.createEmptyMovieClip("img_mc", 1);
+		//
+		myLoader.load( img_mc, "img" + depth + ".jpg", bar_mc);			
+	}
+}
+</pre><p><a href="#content">back</a></p><h2><a name="errorHandling"/>2.5 Errorhandling</h2>
+Some times a file cannot be loaded because the server is down, the url is incorrect or the file simply doesn't exist. The LoaderClass raises a onTimeout-event if this happens. Handling of this event works the same way as handling the other events. Here is a simple example:
+
+<pre>
+#include "com.qlod.LoaderClass.as"
+
+myErrorHandler_obj = new Object();
+
+myErrorHandler_obj.onTimeout = function( loaderObj){
+	trace("Timeout-Error: The file " + loaderObj.getUrl() + " could not be loaded.");
+}
+
+myLoader = new com.qlod.LoaderClass();
+myLoader.addListener( myErrorHandler_obj);
+myLoader.load("target_mc", "notExistent.swf");
+</pre><p><a href="#content">back</a></p>
+
+The default timeout interval is 10 (ten) seconds. You can change it through a call to myLoader.setTimeoutMs( newLengthMs). 
+
+<h2><a name="queuemanagement"/>2.6 Queuemanagement</h2><p>Think about a system consisting of a menue, which loads different swfs into a content area. If the user chooses an entry, the menue sends a request to our loader and the loader loads the swf into the content MovieClip. If the swfs are big enough, there is a chance, that the user suddenly wants to  visit another area than the currently loading one. To handle this, we need a notion of "breaking" the current loading process. The LoaderClass provides three methods for this: <br /><ul><li>clear() – removes all entries from the queue</li><li>removeCurrent() - removes just the currently loading entry</li><li>remove( id) – removes the entry idenitfied by id. The id has been returned by the former call to load.</li></ul>
+Create a mc named content_mc and two other mcs, named button1_mc and button2_mc. </p><pre>
+#include "com.qlod.LoaderClass.as"
+
+myLoader = new LoaderClass();
+
+function loadContent( url){
+	myLoader.clear();
+	myLoader.load( content_mc, url);
+}
+
+button1_mc.onRelease = function(){
+	loadContent("movie1.swf");
+}
+
+button2_mc.onRelease = function(){
+	loadContent("movie2.swf");
+}
+</pre><p><a href="#content">back</a></p><h2><a name="miscellaneous"/>2.7 Miscellanous</h2><p><a href="#content">back</a></p><h3>2.7.1 Delaying the progress events</h3>
+Sometimes loading happens so fast, that you can't see and control your loading animation. The following example shows you how to set the minimum number of steps your preloader shows. 
+Create a dynamic TextField and set its instancename to progress_txt.
+<pre>
+#include "com.qlod.LoaderClass.as"
+
+progress_txt.onLoadProgress = function( loaderObj){
+	this.progress_txt = loaderObj.getPercent() + " - " + loaderObj.getBytesLoaded() + " - " + loaderObj.getBytesTotal();
+}
+
+myLoader = new com.qlod.LoaderClass();
+
+// show 5 steps at least
+myLoader.setMinSteps( 5);
+myLoader.addListener( progress_txt);
+myLoader.load("target_mc", "myMovie.swf");
+</pre>
+
+If you delay the progress events, special care is needed, because your loaded movie starts playing automatically. A common approach is to add an empty frame to the loaded movie with just a stop action in it. Then you are able / have to start the movie explicitely in your onLoadComplete-handler (or later). If you don't want to change the movie, you can also set its alpha to zero onLoadStart and to 100 onLoadComplete. If your movie has more than one frame, you also have to take care of the correct frame. 
+ 
+<p><a href="#content">back</a></p><h3>2.7.2 Observing the main timeline</h3>
+If you wish to watch the main timeline loading, you can use observe instead of load.
+Create a dynamic TextField and set its instancename to progress_txt.
+<pre>
+#include "com.qlod.LoaderClass.as"
+
+progress_txt.onLoadProgress = function( loaderObj){
+	this.progress_txt = loaderObj.getPercent() + " - " + loaderObj.getBytesLoaded() + " - " + loaderObj.getBytesTotal();
+}
+
+myLoader = new com.qlod.LoaderClass();
+
+// show 5 steps at least
+myLoader.setMinSteps( 5);
+myLoader.addListener( progress_txt);
+myLoader.observe(this);
+</pre><p><a href="#content">back</a></p><h1><a name="api"/>3 API</h1><h2><a name="constructor"/>3.1 Constructor </h2>
+Creates an instance of the loader class. 
+<dl><dt>MyLoader = new com.qlod.LoaderClass( [piTimeOutMs [, piIntervalMs [, piMinSteps]]]);</dt><dd><dl><dt>param piTimeoutMs</dt><dd>	integer, optional, specifies the milliseconds until a timeoutError is raised, default 10000</dd></dl><br/ ><dl><dt>param piIntervalMs</dt><dd>	integer, optional, specifies the length of the interval which checks the loadingprogress, default 100</dd></dl><br/ ><dl><dt>param piMinSteps</dt><dd>	integer, optional, specifies the number of minimum steps, the loadingprocess is divided into, default 1</dd></dl><br/ ></dd></dl><br/ ><p><a href="#content">back</a></p><h2><a name="constants"/>3.2 Static constants </h2><dl><dt>com.qlod.LoaderClass .DEFAULT_TIMEOUT_MS</dt><dd>If setTimeoutMs() is called without a valid parameter, this value is taken instead</dd></dl><br/ ><dl><dt>com.qlod.LoaderClass .DEFAULT_INTERVAL_MS</dt><dd>If setIntervalMs() is called without a valid parameter, this value is taken instead</dd></dl><br/ ><dl><dt>com.qlod.LoaderClass .DEFAULT_MIN_STEPS</dt><dd>If setMinSteps() is called without a valid parameter, this value is taken instead</dd></dl><br/ ><p><a href="#content">back</a></p><h2><a name="loading"/>3.3 Loading and observing targets</h2><h3> 3.3.1 Loading</h3><dl><dt>id = myLoader.load( pLoc, psUrl [, poListener [, pAdditionalParameter ]]])</dt><dd>Start loading the swf at url into the given location loc.<br /><br /><dl><dt>param pLoc</dt><dd>		integer || string || object, specifies the level, path or object to load into </dd></dl><br/ ><dl><dt>param psUrl</dt><dd>		string, specifies the url to load from </dd></dl><br/ ><dl><dt>param poListener</dt><dd>	object, specifies a listener solely for this item. This listener is added automatically if the loading of the item starts and 		removed automatically, if the loading is completed.</dd></dl><br/ ><dl><dt>param pAdditionalParameter</dt><dd>	this and any more parameters are transparently passed to the load method of the item, e.g. you can use it to pass a stream parameter to a call of sound.load</dd></dl><br/ ><dl><dt>return integer</dt><dd>		returns an unique id </dd></dl><br/ ></dd></dl><br/ ><p><a href="#content">back</a></p><h3>3.3.2 Observing</h3><dl><dt>Id = myLoader.observe( pLoc [, psUrl [, poListener]] )</dt><dd>Start observing the given location loc. This works the same as load, but the thing to observe
+is already loading. You can use it to preload the main timeline for example. <br /><br /><dl><dt>param pLoc</dt><dd>		integer || string || object, specifies the level, path or object to load into</dd></dl><br/ ><dl><dt>param psUrl</dt><dd>		string, optional, specifies the url which is loaded from. If the url is not a string, the property pLoc._url is taken instead. </dd></dl><br/ ><dl><dt>param poListener</dt><dd>	object, specifies a listener solely for this item. This listener is added automatically if the loading of the item starts and 		removed automatically, if the loading is completed.</dd></dl><br/ ><dl><dt>return integer</dt><dd>		returns an unique id </dd></dl><br/ ></dd></dl><br/ ><p><a href="#content">back</a></p><h2><a name="managingQueue"/>3.4 Managing the queue</h2><h3>3.4.1 Clearing the queue completely</h3><dl><dt>myLoader.clear()</dt><dd>Clear the queue and stop the current loading process</dd></dl><p><a href="#content">back</a></p><h3>3.4.2 Remove a specific item</h3><dl><dt>myLoader.remove( pId)</dt><dd>Remove the item with the given id ( which was previously returned by load or observe)<br /><br /><dl><dt>param pId</dt><dd>		integer, specifies the item  to remove from the loading queue</dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.4.3 Remove the current item</h3><dl><dt>myLoader.removeCurrent()</dt><dd>Stop the currently loading item and head on to the next in the queue (if any)</dd></dl><p><a href="#content">back</a></p><h2><a name="managingListeners"/>3.5 Managing listeners </h2><h3>3.5.1 Adding listeners</h3><dl><dt>myLoader.addListener( pObj)</dt><dd>Add a listener object to our listeners list.<br /><br /><dl><dt>param pObj</dt><dd>object, the listener object handles the events raised by the loader</dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.5.2 Removing listeners</h3><dl><dt>myLoader.removeListener( pObj)</dt><dd>Remove a listener object from our listeners list.<br /><br /><dl><dt>param pObj</dt><dd>object, the listener object to remove</dd></dl></dd></dl><p><a href="#content">back</a></p><h2><a name="events"/>3.6 Events</h2>
+The following events are raised by the LoaderClass. 
+ 
+
+<h3>3.6.1 onQueueStart</h3><dl><dt>yourListener.onQueueStart( pLoaderObj)</dt><dd>This event is fired when loading of the items in the queue starts.<br /><br /><dl><dt>param pLoaderObj</dt><dd>	LoaderClass, the current LoaderClass instance. You can retrieve all the infos you need using the appropriate getter.</dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.6.2 onQueueStop</h3><dl><dt>yourListener.onQueueStop( pLoaderObj)</dt><dd>This event is fired when the queue exhausts.<br /><br /><dl><dt>param pLoaderObj</dt><dd>	LoaderClass, the current LoaderClass instance. You can retrieve all the infos you need using the appropriate getter.</dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.6.3 onLoadStart</h3><dl><dt>yourListener.onLoadStart( pLoaderObj)</dt><dd>This event is fired when loading starts. <br /><br /><dl><dt>param pLoaderObj</dt><dd>	LoaderClass, the current LoaderClass instance. You can retrieve all the infos you need using the appropriate getter.</dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.6.4 onLoadComplete</h3><dl><dt>yourListener.onLoadComplete( pSuccess, pLoaderObj)</dt><dd>This event is fired when loading is completed.<br /><br /><dl><dt>param pSuccess</dt><dd>	Boolean, true if loading succeded, false otherwise</dd></dl><dl><dt>param pLoaderObj</dt><dd>	LoaderClass, the current LoaderClass instance. You can retrieve all the infos you need using the appropriate getter.</dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.6.5 onLoadProgress</h3><dl><dt>yourListener.onLoadProgress( pLoaderObj)</dt><dd>This event is fired on every interval while the item is loading<br /><br /><dl><dt>param pLoaderObj</dt><dd>	LoaderClass, the current LoaderClass instance. You can retrieve all the infos you need using the appropriate getter.</dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.6.6 onLoadTimeout</h3><dl><dt>yourListener.onLoadTimeout( pLoaderObj)</dt><dd>This event is fired, when the webserver doesn't start sending within the timeout interval.<br /><br /><dl><dt>param pLoaderObj</dt><dd>	LoaderClass, the current LoaderClass instance. You can retrieve all the infos you need using the appropriate getter.</dd></dl></dd></dl><h2><a name="configuration"/>3.7 Configuration</h2><h3>3.7.1 setTimeoutMs</h3><dl><dt>myLoader.setTimeoutMs( [piMilliseconds])</dt><dd>Sets the actual length of the timeout. If the timeoutMs is not a number, the defaultvalue is set. <br /><br /><dl><dt>param piMilliseconds</dt><dd>integer, optional, specifies the new length of the timeout in milliseconds</dd></dl><dl><dt>return integer</dt><dd>returns the current value</dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.7.2 getTimeoutMs</h3><dl><dt>myLoader.getTimeoutMs()</dt><dd>Returns the actual length of the timeout interval<br /><br /><dl><dt>return integer</dt><dd>		returns the current value in milliseconds</dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.7.3 disableTimeout</h3><dl><dt>myLoader.disableTimeout()</dt><dd>Completely disable timeout handling</dd></dl><p><a href="#content">back</a></p><h3>3.7.4 enableTimeout</h3><dl><dt>myLoader.enableTimeout()</dt><dd>Enable timeouthandling. Timeouthandling is enabled by default. </dd></dl><p><a href="#content">back</a></p><h3>3.7.5 setIntervalMs</h3><dl><dt>myLoader.setIntervalMs( [piMilliseconds])</dt><dd>Sets the actual length of the checkinterval. If the intervalMs is not a number, the default value is set<br /><br /><dl><dt>param piMilliseconds</dt><dd>	integer, optional, specifies the new length of the interval in milliseconds</dd></dl><dl><dt>return integer</dt><dd>		returns the current value</dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.7.6 getIntervalMs</h3><dl><dt>myLoader.getIntervalMs()</dt><dd>Returns the actual length of the checkinterval.<br /><br /><dl><dt>return integer</dt><dd></dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.7.7 setMinSteps</h3><dl><dt>myLoader.setMinSteps( [piMinSteps])</dt><dd>Sets the minimum number of steps. Every preloading process takes at least this much steps. If the piMinSteps is not a number, the default value is set.<br /><br /><dl><dt>param piMinSteps</dt><dd>	integer, optional, specifies the new iMinSteps</dd></dl><dl><dt>return integer</dt><dd>		returns the current value</dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.7.8 getMinSteps</h3><dl><dt>myLoader.getMinSteps()</dt><dd>Returns the actual value of minSteps<br /><br /><dl><dt>return integer</dt><dd></dd></dl></dd></dl><h2><a name="getters"/>3.8 Getters, getting information about the loading process</h2>
+Inside your eventhandlers you can use the following methods to retrieve the information you need. Here is a small example which uses getPercent, getBytesLoaded and getBytesTotal to display some information in a dynamix TextField.
+
+<pre>
+#include "com.qlod.LoaderClass.as"
+
+progress_txt.onLoadProgress = function( loaderObj){
+	this.progress_txt = loaderObj.getPercent() + " - " + loaderObj.getBytesLoaded() + " - " + loaderObj.getBytesTotal();
+}
+
+myLoader = new com.qlod.LoaderClass();
+
+myLoader.addListener( progress_txt);
+myLoader.observe(this);
+</pre><p><a href="#content">back</a></p><h3>3.8.1 isLoading</h3><dl><dt>loaderObj.isLoading()</dt><dd>returns true if the loader is loading<br /><br /><dl><dt>return boolean</dt><dd></dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.8.2 getBytesLoaded</h3><dl><dt>loaderObj.getBytesLoaded()</dt><dd>returns the current bytes loaded or 0<br /><br /><dl><dt>return integer >= 0</dt><dd></dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.8.3 getBytesTotal</h3><dl><dt>loaderObj.getBytesTotal()</dt><dd>returns the current bytes total or 1<br /><br /><dl><dt>return integer >= 1</dt><dd></dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.8.4 getKBLoaded</h3><dl><dt>loaderObj.getKBLoaded()</dt><dd>returns the current bytes loaded or 0 in KB<br /><br /><dl><dt>return integer >= 0</dt><dd></dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.8.5 getKBTotal</h3><dl><dt>loaderObj.getKBTotal()</dt><dd>returns the current bytes total or 1 in KB<br /><br /><dl><dt>return integer >= 1</dt><dd></dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.8.6 getPercent</h3><dl><dt>loaderObj.getPercent()</dt><dd>returns the relation of loaded and total bytes in percent<br /><br /><dl><dt>return integer >= 0</dt><dd></dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.8.7 getDuration</h3><dl><dt>loaderObj.getDuration()</dt><dd>returns the current duration of the loading process in milliseconds<br /><br /><dl><dt>return integer >= 0</dt><dd></dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.8.8 getSpeed</h3><dl><dt>loaderObj.getSpeed()</dt><dd>returns the current downloadrate in bytes/second<br /><br /><dl><dt>return integer >= 0</dt><dd></dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.8.9 getEstimatedTotalTime</h3><dl><dt>loaderObj.getEstimatedTotalTime()</dt><dd>returns the estimated total download time for the current item in seconds<br /><br /><dl><dt>return integer >= 0</dt><dd></dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.8.10 getTarget</h3><dl><dt>loaderObj.getTarget()</dt><dd>returns the current target. If the target is a MovieClip, the targetpath is returned, otherwise the object is returned<br /><br /><dl><dt>return string | object</dt><dd></dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.8.11 getTargetObj</h3><dl><dt>loaderObj.getTargetObj()</dt><dd>returns the current target as object<br /><br /><dl><dt>return object</dt><dd></dd></dl></dd></dl><p><a href="#content">back</a></p><h3>3.8.12 getUrl</h3><dl><dt>loaderObj.getUrl()</dt><dd>returns the url of the current loading process<br /><br /><dl><dt>return string</dt><dd></dd></dl></dd></dl><p><a href="#content">back</a></p><h1><a name="faq"/>4 FAQ</h1>
+What are the frequently asked questions ? 
+<p><a href="#content">back</a></p><h1><a name="donations"/>5 Donations</h1><p>There have been 23 donations between 5 and 15 $ yet. Are you no. 24 ? Donate to <a href='mailto:paypal@helpqlodhelp.com'>paypal@helpqlodhelp.com</a>. 
+You can also use the direct link to <a href='https://www.paypal.com/xclick/business=paypal%40helpqlodhelp.com&item_name=LoaderClass&item_number=100042' target='_blank'>paypal</a></p><p><a href="#content">back</a></p><h1><a name="bugs"/>6 Bugs</h1>
+Please send bugs / possible improvements with detailed descriptions to <a href="components@helpqlodhelp.com">components@helpqlodhelp.com </a><p><a href="#content">back</a></p><h1><a name="support"/>7 Support</h1>
+We provide professional scripting support and freelancing programming services at reasonable rates. Contact us for the details at <a href="components@helpqlodhelp.com">components@helpqlodhelp.com </a><p><a href="#content">back</a></p><h1><a name="history"/>8 History</h1><dl style="background-color:#ffffff"><dt>  04/24/2003 v0.1</dt><dd> published </dd><dt>  04/24/2003 v0.2</dt><dd> Ms-bug removed </dd><dd>                  did some refactoring into smaller functions</dd><dd>                  added getPercentLoaded and getBytesPerSecond </dd><dt>  04/24/2003 v0.3</dt><dd> added parameters to constructor</dd><dd>                  added NO_INIT ( inheritance guard) to constructor	</dd><dd>                  added getters/setters for timeOutMs</dd><dd>                  added getters/setters for intervalMs    </dd><dd>                  moved default-settings into the setters </dd><dt>  04/24/2003 v0.4</dt><dd> added defaultProperties to the prototype </dd><dt>  04/25/2003 v0.5</dt><dd> added some documentation in javadoc style</dd><dt>  04/26/2003 v0.6</dt><dd> refactored locToTarget into smaller functions</dd><dd>                  added errorhandling for invalid location parameter</dd><dd>					added watch to allow for watching already loading timelines</dd><dd>					added example for using watch</dd><dt>  04/26/2003 v0.7</dt><dd> removed bug with sequential loading</dd><dd>					added support for waitUntil-function</dd><dt>  04/26/2003 v0.8</dt><dd> added onLoadTimeout event and example code       </dd><dd>					removed kb and bps parameters from onLoadProgress, </dd><dd>					added milliseconds parameter to onLoadProgress</dd><dt>  04/29/2003 v0.9</dt><dd> changed some things to make the class more universal</dd><dd>					now movieclips, xml, loadvars and sound can be loaded with the same interface</dd><dd>                  changed classname MovieClipLoader to Loader</dd><dd>					changed methodname loadClip to load </dd><dd>					changed methodname watchClip to watch</dd><dd>					added locIsLoadable-method</dd><dd>					changed locToTarget to allow for target objects</dd><dt>  05/01/2003 v0.9a</dt><dd> added transparent queueing</dd><dd>					added events onQueueStart</dd><dd>					added events onQueueStop	</dd><dd>					added method isLoading</dd><dt>  05/04/2003 v0.9b</dt><dd> changed default value for bytesTotal to 1, to make calculating percentage easier  </dd><dt>  05/04/2003 v0.9c</dt><dd> moved the waitUntil-function into the class and removed it from the interface</dd><dt>  05/05/2003 v0.9d</dt><dd> renamed internal method checkProgress to sendProgress</dd><dd>                  added call to broadcastProgress at the beginning of the loading process ( to reset displays)</dd><dd>					added property minSteps, with default, getters and setters</dd><dd>					removed getPercentLoaded and getBytesPerSecond </dd><dd>					changed defaultIntervalMs to 100 to make animations smoother</dd><dd>					changed defaultTimeoutMs to 10000, to make errorhandling faster</dd><dd>                  renamed watch to observe </dd><dt> 05/05/2003 v0.9e</dt><dd> added praefixes to variables </dd><dd>                  renamed Loader to LoaderClass  </dd><dd>					renamed sendProgress to broadcastProgress</dd><dd>					added checkIntGreaterZero</dd><dt> 05/07/2003 v0.9f</dt><dd> corrected minStep-bug </dd><dt> 05/07/2003 v0.9g</dt><dd> corrected currentStep-bug  </dd><dt> 05/09/2003 v0.9h</dt><dd> corrected initialisation of funcWaitUntil</dd><dd>                  changed timeout to work with an interval, which is probably less time consuming  </dd><dd>                  observe now retrieves the url from the object, if no url is given         </dd><dt> 05/09/2003 v0.9i</dt><dd> corrected some minor FlashDoc inconsistencies</dd><dt> 05/16/2003 v0.9jbeta</dt><dd><dd>                  added switch and constants to allow for changing the parameterstyle of the callbacks</dd><dd>                  added getters for bytesLoaded, bytesTotal, kbLoaded, kbTotal, percent</dd><dd>					added getters for time, speed, estimatedTotalTime, target, url, targetObj</dd><dd>                  added switch to enable/disable Timeout      </dd><dt> 05/17/2003 v0.9jbeta1</dt><dd><dd>					changed default properties to static constants</dd><dd>					added check for object to observe </dd><dd>					moved the api to the beginning of the file </dd><dt> 05/18/2003 v0.9jbeta2</dt><dd><dd>					delete o</dd><dd>					removed bug in locIsPath, now movieClips are rejected</dd><dd>					added locIsMovieClip, now movieClips are recognized	</dd><dt> 05/18/2003 v0.9k</dt><dd> moved beta to alpha because of latest corrections</dd><dt> 05/18/2003 v0.9l</dt><dd> bug in getStepPercent removed</dd><dt> 05/30/2003 v0.9mb</dt><dd> added support for additional parameters to load </dd><dt> 05/31/2003 v0.9mb1</dt><dd> added getStepKBLoaded</dd><dt> 06/01/2003 v0.9mb2</dt><dd> added clear, remove, removeCurrent</dd><dt> 06/01/2003 v0.9mb3</dt><dd> added namespace </dd><dd>                    moved class to com.qlod Domain</dd><dd>                    removed the ..Step.. methods       </dd><dd>					  removed the paramStyle switch  </dd><dd>					  corrected the docs of onLoadComplete</dd><dd>					  corrected the example code</dd><dt> 06/03/2003 v0.9mb4</dt><dd> changed getTime to getDuration</dd><dt> 06/05/2003 v0.9mb5</dt><dd> added support for specific listeners</dd><dt> 06/13/2003 v1.0</dt><dd>Added this documentation</dd><dd>					  removed api and history from as-file</dd><dt> 06/16/2003 v1.01</dt><dd>removed additional parameter bug </dd><dd>					  removed namespace bug</dd><dd>					  added doc for additional parameters (see load)</dd></dl><h1><a name="status"/>8 Status</h1><p>Written and copyright held by Ralf Bokelberg and Colin Moock.<br />
+Last change: June, Friday 13th, 2003 <br /></p><h1><a name="licensing"/>9 License For Use</h1><p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:<br /><ol><li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li><li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li><li>The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission.</li></ol></p><p>THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,    BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON  ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF  SUCH DAMAGE.</p><p><a href="#content">back</a></p></body></html>

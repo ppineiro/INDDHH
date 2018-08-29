@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns:xpdl="http://www.wfmc.org/2008/XPDL2.1" xmlns="http://www.statum.biz/2009/APIA.XPDL2.1"
+	Id="8">
+	<Participants>
+		<Participant Name="###POOL_NAME###" Id="###POOL_ID###"> <!-- ACA METER UN TOKEN PARA COLOCAR EL NOMBRE DEL GRUPO Y EL ID DEL GRUPO -->
+			<xpdl:ParticipantType Type="ROLE" />
+		</Participant>
+	</Participants>
+	<xpdl:Pools>
+		<xpdl:Pool Process="2" Id="1" Orientation="HORIZONTAL"
+			apia:ProEleDesignXML="DESIGN y=0 x=0" MainPool="true"
+			BoundaryVisible="false" xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1">
+			<xpdl:NodeGraphicsInfos>
+				<xpdl:NodeGraphicsInfo Width="0" Height="0">
+					<xpdl:Coordinates YCoordinate="0" XCoordinate="0" />
+				</xpdl:NodeGraphicsInfo>
+			</xpdl:NodeGraphicsInfos>
+		</xpdl:Pool>
+	</xpdl:Pools>
+	<WorkflowProcesses>
+		<WorkflowProcess Id="2" apia:ProAction="###PRO_ACTION###" xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1">
+			<xpdl:ProcessHeader />
+			<Activities>
+				<Activity apia:ProEleDesignXML="DESIGN y=43 x=243" Id="3"
+					xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1">
+					<Event>
+						<StartEvent Trigger="None" />
+					</Event>
+					<xpdl:NodeGraphicsInfos>
+						<xpdl:NodeGraphicsInfo Width="30" Height="30">
+							<xpdl:Coordinates YCoordinate="43" XCoordinate="243" />
+						</xpdl:NodeGraphicsInfo>
+					</xpdl:NodeGraphicsInfos>
+				</Activity>
+				<Activity xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1"
+					apia:ProEleDesignXML="DESIGN y=26 x=297" Id="4" Name="###TASK_NAME###">
+					<Implementation>
+						<Task>
+							<TaskUser />
+							<ApiaExtensions />
+							<FormsRef>
+								<FormRef ProEleFrmStepId="1" ProEleFrmOrder="0"
+									ProEleFrmReadOnly="false" FrmId="###FRM_ID###" ProEleFrmMultiply="false"
+									FrmType="E" FrmName="###FRM_NAME###" />
+							</FormsRef>
+							<ROLE_DEF/>
+						</Task>
+					</Implementation>
+					<Performers>
+						<Performer apia:PerfName="###POOL_NAME###" apia:PerfId="###POOL_ID###" />
+					</Performers>
+					<xpdl:NodeGraphicsInfos>
+						<xpdl:NodeGraphicsInfo Width="90" Height="60">
+							<xpdl:Coordinates YCoordinate="26.5"
+								XCoordinate="297.5" />
+						</xpdl:NodeGraphicsInfo>
+					</xpdl:NodeGraphicsInfos>
+				</Activity>
+				<Activity apia:ProEleDesignXML="DESIGN y=41 x=421" Id="5"
+					xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1">
+					<Event>
+						<EndEvent Result="None" />
+					</Event>
+					<xpdl:NodeGraphicsInfos>
+						<xpdl:NodeGraphicsInfo Width="30" Height="30">
+							<xpdl:Coordinates YCoordinate="41.5"
+								XCoordinate="421.5" />
+						</xpdl:NodeGraphicsInfo>
+					</xpdl:NodeGraphicsInfos>
+				</Activity>
+			</Activities>
+			<Transitions>
+				<Transition To="4" Id="6" apia:Type="N" From="3"
+					xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1">
+					<xpdl:ConnectorGraphicsInfos>
+						<xpdl:ConnectorGraphicsInfo>
+							<xpdl:Coordinates YCoordinate="58" XCoordinate="258" />
+							<xpdl:Coordinates YCoordinate="56.5"
+								XCoordinate="342.5" />
+						</xpdl:ConnectorGraphicsInfo>
+					</xpdl:ConnectorGraphicsInfos>
+				</Transition>
+				<Transition To="5" Id="7" apia:Type="N" From="4"
+					xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1">
+					<xpdl:ConnectorGraphicsInfos>
+						<xpdl:ConnectorGraphicsInfo>
+							<xpdl:Coordinates YCoordinate="56.5"
+								XCoordinate="342.5" />
+							<xpdl:Coordinates YCoordinate="56.5"
+								XCoordinate="436.5" />
+						</xpdl:ConnectorGraphicsInfo>
+					</xpdl:ConnectorGraphicsInfos>
+				</Transition>
+			</Transitions>
+		</WorkflowProcess>
+	</WorkflowProcesses>
+</Package>

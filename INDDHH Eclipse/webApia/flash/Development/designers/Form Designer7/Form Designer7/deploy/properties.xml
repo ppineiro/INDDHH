@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?> 
+<ROWSET>
+	<!--FORM-PROPERTIES-->
+	<PROPERTY id="3" field_type_id="0" name="FORM_INVISIBLE" type="S" scope="F" length="1" element_type="checkbox" />
+	
+	<!--INPUT-PROPERTIES-->
+	<PROPERTY id="1" field_type_id="1" name="SIZE" type="N" scope="I" length="3" element_type="input" /> 
+	<PROPERTY id="2" field_type_id="1" name="READONLY" type="S" scope="I" length="5" element_type="checkbox" /> 
+	<PROPERTY id="4" field_type_id="1" name="DISABLED" type="S" scope="I" length="5" element_type="checkbox" /> 
+	<PROPERTY id="7" field_type_id="1" name="REQUIRED" type="S" scope="I" length="10" element_type="checkbox" /> 
+	<PROPERTY id="10" field_type_id="1" name="MODAL" type="S" scope="I" length="1" element_type="modal" />
+	<PROPERTY id="28" field_type_id="1" name="COLOR" type="S" scope="I" length="1" element_type="color" />
+	  
+	<!--COMBOBOX-PROPERTIES-->
+	<PROPERTY id="1" field_type_id="2" name="SIZE" type="N" scope="I" length="3" element_type="input" /> 
+	<PROPERTY id="2" field_type_id="2" name="READONLY" type="S" scope="I" length="5" element_type="checkbox" /> 
+	<PROPERTY id="4" field_type_id="2" name="DISABLED" type="S" scope="I" length="5" element_type="checkbox" /> 
+	<PROPERTY id="7" field_type_id="2" name="REQUIRED" type="S" scope="I" length="10" element_type="checkbox" /> 
+	<PROPERTY id="11" field_type_id="2" name="ENTITY" type="S" scope="I" length="50" element_type="input" /> 
+	<PROPERTY id="12" field_type_id="2" name="ROWS" type="N" scope="I" length="2" element_type="input" /> 
+	  
+	<!--CHECKBOX-PROPERTIES-->
+	<PROPERTY id="2" field_type_id="3" name="READONLY" type="S" scope="I" length="5" element_type="checkbox" /> 
+	<PROPERTY id="4" field_type_id="3" name="DISABLED" type="S" scope="I" length="5" element_type="checkbox" /> 
+	<PROPERTY id="7" field_type_id="3" name="REQUIRED" type="S" scope="I" length="10" element_type="checkbox" /> 
+	  
+	<!--RADIO-PROPERTIES-->
+	<PROPERTY id="2" field_type_id="4" name="READONLY" type="S" scope="I" length="5" element_type="checkbox" /> 
+	<PROPERTY id="4" field_type_id="4" name="DISABLED" type="S" scope="I" length="5" element_type="checkbox" /> 
+	<PROPERTY id="7" field_type_id="4" name="REQUIRED" type="S" scope="I" length="10" element_type="checkbox" /> 
+	  
+	<!--BUTTON-PROPERTIES-->
+	<PROPERTY id="6" field_type_id="5" name="VALUE" type="S" scope="I" length="50" element_type="input" /> 
+	  
+	  
+	<!--TEXTAREA-PROPERTIES-->
+	<PROPERTY id="1" field_type_id="6" name="SIZE" type="N" scope="I" length="3" element_type="input" /> 
+	<PROPERTY id="2" field_type_id="6" name="READONLY" type="S" scope="I" length="5" element_type="checkbox" /> 
+	<PROPERTY id="4" field_type_id="6" name="DISABLED" type="S" scope="I" length="5" element_type="checkbox" /> 
+	<PROPERTY id="7" field_type_id="6" name="REQUIRED" type="S" scope="I" length="10" element_type="checkbox" /> 
+	<PROPERTY id="12" field_type_id="6" name="ROWS" type="N" scope="I" length="2" element_type="input" /> 
+	  
+	<!--LABEL-PROPERTIES-->
+	<PROPERTY id="6" field_type_id="7" name="VALUE" type="S" scope="I" length="50" element_type="input" /> 
+	<PROPERTY id="13" field_type_id="7" name="BOLD" type="S" scope="I" length="1" element_type="checkbox" /> 
+	<PROPERTY id="14" field_type_id="7" name="UNDERLINED" type="S" scope="I" length="1" element_type="checkbox" /> 
+	<PROPERTY id="15" field_type_id="7" name="ALIGN" type="S" scope="I" length="6" element_type="align" />
+	  
+	  
+	<!--SUBTITLE-PROPERTIES-->
+	<PROPERTY id="6" field_type_id="8" name="VALUE" type="S" scope="I" length="50" element_type="input" /> 
+	 
+	 
+	<!--FILEINPUT-PROPERTIES-->
+	<PROPERTY id="1" field_type_id="9" name="SIZE" type="N" scope="I" length="3" element_type="input" /> 
+	  
+	  
+	<!--LISTBOX-PROPERTIES-->
+	<PROPERTY id="1" field_type_id="10" name="SIZE" type="N" scope="I" length="3" element_type="input" /> 
+	<PROPERTY id="2" field_type_id="10" name="READONLY" type="S" scope="I" length="5" element_type="checkbox" /> 
+	<PROPERTY id="4" field_type_id="10" name="DISABLED" type="S" scope="I" length="5" element_type="checkbox" /> 
+	<PROPERTY id="7" field_type_id="10" name="REQUIRED" type="S" scope="I" length="10" element_type="checkbox" /> 
+	<PROPERTY id="12" field_type_id="10" name="ROWS" type="N" scope="I" length="2" element_type="input" /> 
+	 
+	
+	<!--PASSWORDINPUT-PROPERTIES-->
+	<PROPERTY id="1" field_type_id="12" name="SIZE" type="N" scope="I" length="3" element_type="input" /> 
+	<PROPERTY id="2" field_type_id="12" name="READONLY" type="S" scope="I" length="5" element_type="checkbox" /> 
+	<PROPERTY id="4" field_type_id="12" name="DISABLED" type="S" scope="I" length="5" element_type="checkbox" /> 
+	<PROPERTY id="7" field_type_id="12" name="REQUIRED" type="S" scope="I" length="10" element_type="checkbox" />
+	  
+	<!--IMAGE-PROPERTIES-->
+	<PROPERTY id="20" field_type_id="13" name="HEIGHT" type="N" scope="I" length="10" element_type="input" />
+	<PROPERTY id="21" field_type_id="13" name="WIDTH" type="N" scope="I" length="10" element_type="input" />
+	
+	<!--<PROPERTY id="22" field_type_id="13" name="URL" type="S" scope="I" length="100" element_type="input" />-->
+	
+	
+	<PROPERTY id="22" field_type_id="13" name="URL" type="S" scope="I" length="100" element_type="combobox">
+		<VALUE id="/imagenes/img1.swf" text="imagen logo apia"/>
+		<VALUE id="/imagenes/img2.swf" text="imagen1"/>
+	</PROPERTY>
+	
+
+	<!--GRID PROPERTIES-->
+  	<PROPERTY id="27" field_type_id="14" name="GRID HEIGHT" type="N" scope="I" length="100" element_type="input" />
+	<PROPERTY id="30" field_type_id="14" name="GRID HEIGHT" type="S" scope="I" length="100" element_type="checkbox" />
+	
+  
+</ROWSET>
+

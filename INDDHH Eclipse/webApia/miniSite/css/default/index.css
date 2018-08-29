@@ -1,0 +1,176 @@
+html{height: 100%;}
+body { 
+	overflow: auto; font-family: Tahoma,Verdana,Arial; font-size: 8pt; margin: 0;  padding: 0;  color:#666666;
+	padding-top: 40px;
+}
+input,select,password { border: 1px solid #CCCCCC; border-radius: 6px 6px 6px 6px; color:#666666; font-size: 18px; height: 32px}
+
+.hidden {display:none}
+div.spinner {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+/*
+div.header {height: 60px;border-bottom:1px solid #ddd;}
+div.header div.logo{background-image: url(header.jpg);display: block;float: right; height: 60px; width: 300px;}
+*/
+div.logo {
+	height: 83px;
+	width: 238px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	background-image: url("img/logo-small.png");
+	background-repeat: no-repeat;
+}
+
+div.content {}
+div.content div.login div.fieldset {
+	margin-top: 10px; margin-left: 10%; margin-right: 10%; font-size: 25px;
+	width: 80%;
+}
+#loginUsr, #loginPassword, #loginEnvironment {
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+#loginUsr {
+	background-image: url("img/login/username-light.png");
+	background-repeat: no-repeat;
+	background-position: 10px 10px;;
+}
+
+#loginPassword {
+	background-image: url("img/login/password-light.png");
+	background-repeat: no-repeat;
+	background-position: 8px 10px;;
+}
+
+#loginEnvironment {
+	background-image: url("img/login/hexa.png");
+	background-repeat: no-repeat;
+	background-position: 6px 6px;
+	padding-left: 26px;
+	padding-right: 5px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+#loginUsr, #loginPassword {
+	padding-left: 30px;
+	padding-right: 5px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+/* div.content div.login div.fieldset div.label{margin-left:auto;margin-right:auto;clear:both;font-weight: bold; } */
+div.fieldset label {
+/* 	font-weight: bold; */
+	font-size: 13px;
+}
+div.content div.login div.fieldset div.data{margin-left:auto;margin-right:auto;clear:both;}
+/* div.content div.login div.fieldset div.loginButton { margin-left:auto;margin-right:auto; box-shadow: 0 1px 0 #FFFFFF; text-align: center;  padding-top: 5px;  padding-bottom: 5px;  cursor: pointer;  background-color: #03476c;  background-image: linear-gradient(#03476c,#9cb7c5);  background-repeat: repeat-x;  border-color: #9cb7c5;   color: #FFFFFF;  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);  border-radius:6px;   } */
+
+#btnLogin {
+	width: 100%;
+	height: 60px;
+	background-color: #0159a6;
+	color: #ffffff;
+	text-align: center;
+	font-size: 27px;
+	position: fixed;
+	bottom: 0px;
+	line-height: 59px;
+	z-index: 3;
+	
+/* 	margin-left: 5%; */
+/* 	margin-right: 5%; */
+}   
+
+.remember {
+	text-align: center;
+	font-size: 11px;
+	font-weight: bold;
+	margin-top: 13px;
+} 
+ 
+#chkRemember {
+	height: auto;
+} 
+  
+.fullSite {
+	text-align: center; 
+	margin-top: 20px;
+/* 	position: absolute; */
+/* 	bottom: 70px; */
+	width: 100%;
+	margin-bottom: 68px;
+}
+
+.minisiteLanguages {
+	text-align: center;  
+	margin-top: 45px;
+/* 	position: absolute; */
+/* 	bottom: 100px; */
+	width: 100%;
+}
+
+div.warning {
+	margin-top: 10px;
+	border: 1px solid rgb(237, 201, 103);
+	background-color: rgb(249, 237, 184);
+	margin-left: 15px;
+	margin-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+div.warning label {
+	font-size: 14px !important;
+ 	color: #666666 !important; 
+}
+
+.required-failed {
+	background-color: rgb(255, 240, 240);
+	border-color: rgb(255, 171, 171);
+}
+
+#usrname-empty {
+	position: absolute;
+	top: 140px;
+	left: 40px;
+	font-size: 17px;
+	color: #c0c0c0;
+}
+
+#pass-empty {
+	position: absolute;
+	top: 180px;
+	left: 40px;
+	font-size: 17px;
+	color: #c0c0c0;
+}
+
+a {text-decoration: none; color:#666666; margin:10px;}
+a:visited{text-decoration: none; color:#666666; margin:10px;}
+
+/*
+.iPhoneCheckContainer {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 85px;
+	height: 27px;
+	cursor: pointer;
+	overflow: hidden;
+} 
+
+		.iPhoneCheckContainer input{position:absolute;top:5px;left:30px;}
+		.iPhoneCheckHandle{display:block;height:27px;width:39px;cursor:pointer;position:absolute;top:0;left:0;}
+		.iPhoneCheckHandle .iPhoneCheckHandleBG{position:absolute;width:5px;height:100%;top:0;left:0;z-index:1;}
+		.iPhoneCheckHandle .iPhoneCheckHandleSlider{position:absolute;top:0;left:0;height:27px;width:39px;background:url(iphone-slider.png) no-repeat;z-index:2;}
+		label.iPhoneCheckLabelOn,label.iPhoneCheckLabelOff{font-size:17px;line-height:17px;font-weight:bold;font-family:Helvetica Neue,Arial,Helvetica,sans-serif;cursor:pointer;display:block;height:22px;position:absolute;width:52px;top:0;}
+		label.iPhoneCheckLabelOn{color:#8B8B8B;background:url(iphone-on.png) no-repeat;text-shadow:0px 0px 2px rgba(255,255,255,0.6);left:0;padding:5px 0 0 8px;}
+		label.iPhoneCheckLabelOff{color:#8B8B8B;background:url(iphone-off.png) no-repeat right 0;text-shadow:0px 0px 2px rgba(255,255,255,0.6);text-align:right;right:0;padding:5px 8px 0 0;}
+*/

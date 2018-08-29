@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<xform style="manual" bundle="com.tonbeller.jpivot.chart.resources">
+<div id="chartProperties" class="panel">
+<table border="1" cellspacing="0" cellpadding="2">
+
+ <tr>
+  <th colspan="2" class="xform-title">
+   <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+     <th align="left" class="xform-title">fmt:chartpropertiesform.chartProperties</th>
+     <td align="right" class="xform-close-button">
+      <imgButton src="wcf/form/cancel.png" action="revert" label="Close" hide="true" handler="com.tonbeller.wcf.form.ButtonHandler"/>
+     </td>
+    </tr>
+   </table>
+  </th>
+ </tr>
+
+ <tr>
+  <td>fmt:chartpropertiesform.chartType</td>
+  <td>
+   <listBox1 type="int" modelReference="chartType">
+	<listItem value="1" label="fmt:chartpropertiesform.verticalBar"/>
+	<listItem value="2" label="fmt:chartpropertiesform.verticalBar3D"/>
+	<listItem value="3" label="fmt:chartpropertiesform.horizontalBar"/>
+	<listItem value="4" label="fmt:chartpropertiesform.horizontalBar3D"/>
+	<listItem value="5" label="fmt:chartpropertiesform.stackedverticalBar"/>
+	<listItem value="6" label="fmt:chartpropertiesform.stackedverticalBar3D"/>
+	<listItem value="7" label="fmt:chartpropertiesform.stackedhorizontalBar"/>
+	<listItem value="8" label="fmt:chartpropertiesform.stackedhorizontalBar3D"/>
+	<listItem value="9" label="fmt:chartpropertiesform.verticalLine"/>
+	<listItem value="10" label="fmt:chartpropertiesform.horizontalLine"/>
+	<listItem value="11" label="fmt:chartpropertiesform.verticalArea"/>
+	<listItem value="12" label="fmt:chartpropertiesform.horizontalArea"/>
+	<listItem value="13" label="fmt:chartpropertiesform.verticalStackedArea"/>
+	<listItem value="14" label="fmt:chartpropertiesform.horizontalStackedArea"/>
+	<listItem value="15" label="fmt:chartpropertiesform.pieChartsByColumn"/>
+	<listItem value="16" label="fmt:chartpropertiesform.pieChartsByRow"/>
+	<listItem value="17" label="fmt:chartpropertiesform.pieChartsByColumn3D"/>
+	<listItem value="18" label="fmt:chartpropertiesform.pieChartsByRow"/>
+   </listBox1>
+  </td>
+ </tr>
+ 
+ <tr>
+ <td>fmt:chartpropertiesform.enableDrillThrough</td>
+  <td>
+   <checkBox modelReference="drillThroughEnabled"/>
+  </td>
+ </tr>
+ <tr>
+  <td>fmt:chartpropertiesform.chartTitle</td>
+  <td>
+   <textField type="string" modelReference="chartTitle" size="30" title="fmt:chartpropertiesform.chartTitleTooltip"/>
+  </td>
+ </tr>
+ <tr>
+  <td>fmt:chartpropertiesform.chartTitleFont</td>
+  <td>
+   <listBox1 type="string" modelReference="fontName" label="Title font">
+  	<listItem value="SansSerif" label="SansSerif"/>
+	<listItem value="Serif" label="Serif"/>
+	<listItem value="Monospaced" label="Monospaced"/>
+   </listBox1>
+   <listBox1 type="int" modelReference="fontStyle" label="Title font style">
+  	<listItem value="0" label="Plain"/>
+	<listItem value="1" label="Bold"/>
+	<listItem value="2" label="Italic"/>
+	<listItem value="3" label="Bold Italic"/>
+   </listBox1>
+   <listBox1 type="int" modelReference="fontSize" label="Title font size">
+  	<listItem value="8" label="8"/>
+	<listItem value="10" label="10"/>
+	<listItem value="12" label="12"/>
+	<listItem value="14" label="14"/>
+	<listItem value="16" label="16"/>
+	<listItem value="18" label="18"/>
+	<listItem value="20" label="20"/>
+	<listItem value="22" label="22"/>
+	<listItem value="24" label="24"/>
+	<listItem value="26" label="26"/>
+	<listItem value="28" label="28"/>
+	<listItem value="30" label="30"/>
+	<listItem value="32" label="32"/>
+   </listBox1>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td>fmt:chartpropertiesform.chartHorAxisLabel</td>
+  <td>
+   <textField type="string" modelReference="horizAxisLabel" size="30" title="fmt:chartpropertiesform.chartHorAxisLabelTooltip"/>
+  </td>
+ </tr>
+ <tr>
+  <td>fmt:chartpropertiesform.chartVerAxisLabel</td>
+  <td>
+   <textField type="string" modelReference="vertAxisLabel" size="30" title="fmt:chartpropertiesform.chartVerAxisLabelTootlip"/>
+  </td>
+ </tr>
+ <tr>
+  <td>fmt:chartpropertiesform.chartAxesLabelFont</td>
+  <td>
+   <listBox1 type="string" modelReference="axisFontName">
+  	<listItem value="SansSerif" label="SansSerif"/>
+	<listItem value="Serif" label="Serif"/>
+	<listItem value="Monospaced" label="Monospaced"/>
+   </listBox1>
+   <listBox1 type="int" modelReference="axisFontStyle">
+  	<listItem value="0" label="Plain"/>
+	<listItem value="1" label="Bold"/>
+	<listItem value="2" label="Italic"/>
+	<listItem value="3" label="Bold Italic"/>
+   </listBox1>
+   <listBox1 type="int" modelReference="axisFontSize">
+  	<listItem value="8" label="8"/>
+	<listItem value="10" label="10"/>
+	<listItem value="12" label="12"/>
+	<listItem value="14" label="14"/>
+	<listItem value="16" label="16"/>
+	<listItem value="18" label="18"/>
+	<listItem value="20" label="20"/>
+	<listItem value="22" label="22"/>
+	<listItem value="24" label="24"/>
+	<listItem value="26" label="26"/>
+	<listItem value="28" label="28"/>
+	<listItem value="30" label="30"/>
+	<listItem value="32" label="32"/>
+   </listBox1>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td>fmt:chartpropertiesform.chartAxesTickLabelFont</td>
+  <td>
+   <listBox1 type="string" modelReference="axisTickFontName">
+  	<listItem value="SansSerif" label="SansSerif"/>
+	<listItem value="Serif" label="Serif"/>
+	<listItem value="Monospaced" label="Monospaced"/>
+   </listBox1>
+   <listBox1 type="int" modelReference="axisTickFontStyle">
+  	<listItem value="0" label="Plain"/>
+	<listItem value="1" label="Bold"/>
+	<listItem value="2" label="Italic"/>
+	<listItem value="3" label="Bold Italic"/>
+   </listBox1>
+   <listBox1 type="int" modelReference="axisTickFontSize">
+  	<listItem value="8" label="8"/>
+	<listItem value="10" label="10"/>
+	<listItem value="12" label="12"/>
+	<listItem value="14" label="14"/>
+	<listItem value="16" label="16"/>
+	<listItem value="18" label="18"/>
+	<listItem value="20" label="20"/>
+	<listItem value="22" label="22"/>
+	<listItem value="24" label="24"/>
+	<listItem value="26" label="26"/>
+	<listItem value="28" label="28"/>
+	<listItem value="30" label="30"/>
+	<listItem value="32" label="32"/>
+   </listBox1>
+   <listBox1 type="int" modelReference="tickLabelRotate">
+        <listItem value="0" label="0°"/>
+        <listItem value="30" label="30°"/>
+        <listItem value="45" label="45°"/>
+        <listItem value="90" label="90°"/>
+   </listBox1>
+  </td>
+ </tr>
+
+ <tr>
+  <td>fmt:chartpropertiesform.showLegend</td>
+  <td>
+   <checkBox modelReference="showLegend"/>
+   <listBox1 type="int" modelReference="legendPosition">
+  	<listItem value="1" label="Top"/>
+	<listItem value="3" label="Bottom"/>
+	<listItem value="0" label="Left"/>
+	<listItem value="2" label="Right"/>
+   </listBox1>
+  </td>
+ </tr>
+ <tr>
+  <td>fmt:chartpropertiesform.legendFont</td>
+  <td>
+   <listBox1 type="string" modelReference="legendFontName">
+  	<listItem value="SansSerif" label="SansSerif"/>
+	<listItem value="Serif" label="Serif"/>
+	<listItem value="Monospaced" label="Monospaced"/>
+   </listBox1>
+   <listBox1 type="int" modelReference="legendFontStyle">
+  	<listItem value="0" label="Plain"/>
+	<listItem value="1" label="Bold"/>
+	<listItem value="2" label="Italic"/>
+	<listItem value="3" label="Bold Italic"/>
+   </listBox1>
+   <listBox1 type="int" modelReference="legendFontSize">
+  	<listItem value="8" label="8"/>
+	<listItem value="10" label="10"/>
+	<listItem value="12" label="12"/>
+	<listItem value="14" label="14"/>
+	<listItem value="16" label="16"/>
+	<listItem value="18" label="18"/>
+	<listItem value="20" label="20"/>
+	<listItem value="22" label="22"/>
+	<listItem value="24" label="24"/>
+	<listItem value="26" label="26"/>
+	<listItem value="28" label="28"/>
+	<listItem value="30" label="30"/>
+	<listItem value="32" label="32"/>
+   </listBox1>
+  </td>
+ </tr>
+
+ <tr>
+  <td>fmt:chartpropertiesform.showSlicer</td>
+  <td>
+   <checkBox modelReference="showSlicer"/>
+   <listBox1 type="int" modelReference="slicerPosition" label="Slicer Position">
+  	<listItem value="0" label="fmt:chartpropertiesform.top"/>
+	<listItem value="1" label="fmt:chartpropertiesform.bottom"/>
+	<listItem value="3" label="fmt:chartpropertiesform.left"/>
+	<listItem value="2" label="fmt:chartpropertiesform.right"/>
+   </listBox1>
+   <listBox1 type="int" modelReference="slicerAlignment" label="Slicer Alignment">
+	<listItem value="3" label="fmt:chartpropertiesform.left"/>
+	<listItem value="2" label="fmt:chartpropertiesform.right"/>
+	<listItem value="4" label="fmt:chartpropertiesform.center"/>
+   </listBox1>
+  </td>
+ </tr>
+ <tr>
+  <td>fmt:chartpropertiesform.slicerFont</td>
+  <td>
+   <listBox1 type="string" modelReference="slicerFontName">
+  	<listItem value="SansSerif" label="SansSerif"/>
+	<listItem value="Serif" label="Serif"/>
+	<listItem value="Monospaced" label="Monospaced"/>
+   </listBox1>
+   <listBox1 type="int" modelReference="slicerFontStyle">
+  	<listItem value="0" label="Plain"/>
+	<listItem value="1" label="Bold"/>
+	<listItem value="2" label="Italic"/>
+	<listItem value="3" label="Bold Italic"/>
+   </listBox1>
+   <listBox1 type="int" modelReference="slicerFontSize">
+  	<listItem value="8" label="8"/>
+	<listItem value="10" label="10"/>
+	<listItem value="12" label="12"/>
+	<listItem value="14" label="14"/>
+	<listItem value="16" label="16"/>
+	<listItem value="18" label="18"/>
+	<listItem value="20" label="20"/>
+	<listItem value="22" label="22"/>
+	<listItem value="24" label="24"/>
+	<listItem value="26" label="26"/>
+	<listItem value="28" label="28"/>
+	<listItem value="30" label="30"/>
+	<listItem value="32" label="32"/>
+   </listBox1>
+  </td>
+ </tr>
+
+ <tr>
+  <td>fmt:chartpropertiesform.chartHeight</td>
+  <td>
+   <textField type="posint" modelReference="chartHeight" size="5" title="fmt:chartpropertiesform.chartHeightTooltip"/>
+   &#160;&#160;Ancho
+   <textField type="posint" modelReference="chartWidth" size="5" title="fmt:chartpropertiesform.chartWidthTooltip"/>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td>fmt:chartpropertiesform.background</td>
+  <td>
+   <textField type="posint" modelReference="bgColorR" size="4" title="fmt:chartpropertiesform.backgRedTooltip"/>
+   <textField type="posint" modelReference="bgColorG" size="4" title="fmt:chartpropertiesform.backgGreenTooltip"/>
+   <textField type="posint" modelReference="bgColorB" size="4" title="fmt:chartpropertiesform.backgBlueTooltip"/>
+  </td>
+ </tr>
+
+ <tr>
+  <td align="right" colspan="4">
+    <button action="validate" label="fmt:chartpropertiesform.okButton" handler="com.tonbeller.wcf.form.ButtonHandler" hide="true"/>
+    <button action="revert" label="fmt:chartpropertiesform.cancelButton" handler="com.tonbeller.wcf.form.ButtonHandler" hide="true"/>
+  </td>
+ </tr>
+
+</table>
+</div>
+</xform>

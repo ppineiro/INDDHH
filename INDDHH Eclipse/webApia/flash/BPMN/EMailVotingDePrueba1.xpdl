@@ -1,0 +1,708 @@
+<ApiaElements xmlns="http://www.statum.biz/2009/InternalSchema/APIA.XPDL2.1">
+  <Pools>
+    <Pool Id="2" Name="EmailVotingProcess" Orientation="HORIZONTAL" Process="1040" BoundaryVisible="true" MainPool="true">
+      <Lanes>
+        <Lane Id="0" Name="Lane-0"/>
+      </Lanes>
+      <NodeGraphicsInfo Height="1080.0" Width="1440.0" BorderColor="" FillColor="">
+        <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+      </NodeGraphicsInfo>
+    </Pool>
+    <Pool Id="159" Name="Discussion Cycle" Orientation="HORIZONTAL" Process="1038" BoundaryVisible="true" MainPool="false">
+      <Lanes>
+        <Lane Id="6" Name="Lane-6"/>
+      </Lanes>
+      <NodeGraphicsInfo Height="402.19998931884766" Width="1231.0" BorderColor="" FillColor="">
+        <Coordinates XCoordinate="20.400012969970703" YCoordinate="21.000022888183594"/>
+      </NodeGraphicsInfo>
+    </Pool>
+    <Pool Id="281" Name="Collect Votes" Orientation="HORIZONTAL" Process="1039" BoundaryVisible="true" MainPool="false">
+      <Lanes>
+        <Lane Id="8" Name="Lane-8"/>
+      </Lanes>
+      <NodeGraphicsInfo Height="529.0" Width="1185.0" BorderColor="" FillColor="">
+        <Coordinates XCoordinate="20.0" YCoordinate="436.0"/>
+      </NodeGraphicsInfo>
+    </Pool>
+  </Pools>
+  <Associations>
+    <Association Id="321" Source="291" Target="294" Name="" AssociationDirection="None">
+      <ConnectorGraphicsInfos>
+        <ConnectorGraphicsInfo BorderColor="" FillColor="">
+          <Coordinates XCoordinate="201.18382263183594" YCoordinate="862.5"/>
+          <Coordinates XCoordinate="201.0" YCoordinate="905.0"/>
+          <Coordinates XCoordinate="237.7903289794922" YCoordinate="906.1521606445312"/>
+        </ConnectorGraphicsInfo>
+      </ConnectorGraphicsInfos>
+    </Association>
+    <Association Id="322" Source="294" Target="292" Name="" AssociationDirection="From">
+      <ConnectorGraphicsInfos>
+        <ConnectorGraphicsInfo BorderColor="" FillColor="">
+          <Coordinates XCoordinate="276.5" YCoordinate="907.4835815429688"/>
+          <Coordinates XCoordinate="296.0" YCoordinate="908.0"/>
+          <Coordinates XCoordinate="295.0" YCoordinate="863.0"/>
+        </ConnectorGraphicsInfo>
+      </ConnectorGraphicsInfos>
+    </Association>
+    <Association Id="323" Source="292" Target="303" Name="" AssociationDirection="From">
+      <ConnectorGraphicsInfos>
+        <ConnectorGraphicsInfo BorderColor="" FillColor="">
+          <Coordinates XCoordinate="326.0" YCoordinate="862.0"/>
+          <Coordinates XCoordinate="330.0" YCoordinate="910.0"/>
+          <Coordinates XCoordinate="380.7903137207031" YCoordinate="909.0557861328125"/>
+        </ConnectorGraphicsInfo>
+      </ConnectorGraphicsInfos>
+    </Association>
+    <Association Id="320" Source="304" Target="296" Name="" AssociationDirection="From">
+      <ConnectorGraphicsInfos>
+        <ConnectorGraphicsInfo BorderColor="" FillColor="">
+          <Coordinates XCoordinate="194.01614379882812" YCoordinate="577.240478515625"/>
+          <Coordinates XCoordinate="219.0" YCoordinate="577.0"/>
+          <Coordinates XCoordinate="218.0" YCoordinate="526.0"/>
+        </ConnectorGraphicsInfo>
+      </ConnectorGraphicsInfos>
+    </Association>
+    <Association Id="216" Source="214" Target="159" Name="" AssociationDirection="None">
+      <ConnectorGraphicsInfos>
+        <ConnectorGraphicsInfo BorderColor="" FillColor="">
+          <Coordinates XCoordinate="797.6000366210938" YCoordinate="382.0000305175781"/>
+          <Coordinates XCoordinate="666.4000244140625" YCoordinate="420.0000305175781"/>
+        </ConnectorGraphicsInfo>
+      </ConnectorGraphicsInfos>
+    </Association>
+    <Association Id="205" Source="204" Target="171" Name="" AssociationDirection="From">
+      <ConnectorGraphicsInfos>
+        <ConnectorGraphicsInfo BorderColor="" FillColor="">
+          <Coordinates XCoordinate="128.62904357910156" YCoordinate="86.94915771484375"/>
+          <Coordinates XCoordinate="204.00001525878906" YCoordinate="88.00001525878906"/>
+          <Coordinates XCoordinate="215.45509338378906" YCoordinate="181.50003051757812"/>
+        </ConnectorGraphicsInfo>
+      </ConnectorGraphicsInfos>
+    </Association>
+    <Association Id="213" Source="212" Target="173" Name="" AssociationDirection="From">
+      <ConnectorGraphicsInfos>
+        <ConnectorGraphicsInfo BorderColor="" FillColor="">
+          <Coordinates XCoordinate="256.08709716796875" YCoordinate="345.3000183105469"/>
+          <Coordinates XCoordinate="335.20001220703125" YCoordinate="344.8000183105469"/>
+          <Coordinates XCoordinate="344.9074401855469" YCoordinate="316.5000305175781"/>
+        </ConnectorGraphicsInfo>
+      </ConnectorGraphicsInfos>
+    </Association>
+    <Association Id="218" Source="217" Target="180" Name="" AssociationDirection="None">
+      <ConnectorGraphicsInfos>
+        <ConnectorGraphicsInfo BorderColor="" FillColor="">
+          <Coordinates XCoordinate="962.4000244140625" YCoordinate="99.19999694824219"/>
+          <Coordinates XCoordinate="948.236328125" YCoordinate="175.50003051757812"/>
+        </ConnectorGraphicsInfo>
+      </ConnectorGraphicsInfos>
+    </Association>
+    <Association Id="210" Source="207" Target="171" Name="" AssociationDirection="None">
+      <ConnectorGraphicsInfos>
+        <ConnectorGraphicsInfo BorderColor="" FillColor="">
+          <Coordinates XCoordinate="212.40000915527344" YCoordinate="277.0000305175781"/>
+          <Coordinates XCoordinate="216.46339416503906" YCoordinate="231.50003051757812"/>
+        </ConnectorGraphicsInfo>
+      </ConnectorGraphicsInfos>
+    </Association>
+  </Associations>
+  <Artifacts>
+    <Artifact Id="204" Name="" ArtifactType="DataObject" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z">
+      <DataObject Id="204" Name="Issue Voting List [up to 5 issues]" State=""/>
+      <NodeGraphicsInfo LaneId="6" Height="69.4000015258789" Width="53.72903343939012" BorderColor="" FillColor="">
+        <Coordinates XCoordinate="74.40000915527344" YCoordinate="51.20001983642578"/>
+      </NodeGraphicsInfo>
+    </Artifact>
+    <Artifact Id="207" Name="" ArtifactType="Annotation" TextAnnotation="Allow 1 week for the discussion of the issues through e-mail or calls" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z">
+      <NodeGraphicsInfo LaneId="6" Height="44.0" Width="148.0" BorderColor="" FillColor="">
+        <Coordinates XCoordinate="64.4000129699707" YCoordinate="255.0000228881836"/>
+      </NodeGraphicsInfo>
+    </Artifact>
+    <Artifact Id="212" Name="" ArtifactType="DataObject" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z">
+      <DataObject Id="212" Name="Calendar" State=""/>
+      <NodeGraphicsInfo LaneId="6" Height="65.5999755859375" Width="50.78707787298387" BorderColor="" FillColor="">
+        <Coordinates XCoordinate="204.80001831054688" YCoordinate="312.0000305175781"/>
+      </NodeGraphicsInfo>
+    </Artifact>
+    <Artifact Id="214" Name="" ArtifactType="Annotation" TextAnnotation="The Sub-Process will repeat of the DiscussionOver variable is False" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z">
+      <NodeGraphicsInfo LaneId="6" Height="47.20001220703125" Width="138.39996337890625" BorderColor="" FillColor="">
+        <Coordinates XCoordinate="797.6000366210938" YCoordinate="358.4000244140625"/>
+      </NodeGraphicsInfo>
+    </Artifact>
+    <Artifact Id="217" Name="" ArtifactType="Annotation" TextAnnotation="This Task returns the value of the DiscussionOver to True or False" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z">
+      <NodeGraphicsInfo LaneId="6" Height="56.0" Width="95.199951171875" BorderColor="" FillColor="">
+        <Coordinates XCoordinate="962.4000244140625" YCoordinate="71.19999694824219"/>
+      </NodeGraphicsInfo>
+    </Artifact>
+    <Artifact Id="294" Name="" ArtifactType="DataObject" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z">
+      <DataObject Id="294" Name="Vote" State=""/>
+      <NodeGraphicsInfo LaneId="8" Height="50.0" Width="38.70967741935484" BorderColor="" FillColor="">
+        <Coordinates XCoordinate="237.29032258064518" YCoordinate="881.0"/>
+      </NodeGraphicsInfo>
+    </Artifact>
+    <Artifact Id="303" Name="" ArtifactType="DataObject" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z">
+      <DataObject Id="303" Name="Vote Tally" State=""/>
+      <NodeGraphicsInfo LaneId="8" Height="50.0" Width="38.70967741935484" BorderColor="" FillColor="">
+        <Coordinates XCoordinate="380.2903225806452" YCoordinate="883.0"/>
+      </NodeGraphicsInfo>
+    </Artifact>
+    <Artifact Id="304" Name="" ArtifactType="DataObject" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z">
+      <DataObject Id="304" Name="Calendar" State=""/>
+      <NodeGraphicsInfo LaneId="8" Height="61.0" Width="47.225806451612904" BorderColor="" FillColor="">
+        <Coordinates XCoordinate="146.29032258064518" YCoordinate="546.0"/>
+      </NodeGraphicsInfo>
+    </Artifact>
+  </Artifacts>
+  <BusinessClasses>
+    <BusinessClass BusClaId="1041" BusClaName="HOLA_APIA" BusClaDesc="" BusClaType="P" BusClaExec="com.misClasses.Hola_Apia" BusClaUrl="" BusClaView="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z">
+      <BusClaParams>
+        <BusClaParam BusClaId="1041" BusClaParId="1001" BusClaParName="par" BusClaParDesc="par" BusClaParIndex="1" BusClaParType="S" BusClaParInOut="I" Flags="" ReadOnly="false" Binding="false" ParInOutReadOnly="false" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z">
+          <BusClaParBinding BusClaParBndId="1601" BusClaParBndType="" BusClaParBndValue="11" BusClaParId="1001" BusClaParName="par" BusClaParType="S" AttName="" AttLabel=""/>
+        </BusClaParam>
+      </BusClaParams>
+    </BusinessClass>
+  </BusinessClasses>
+  <WorkflowProcesses>
+    <WorkflowProcess ProId="1040" ProVerId="1" ProVerComment="" ProName="EmailVotingProcess" ProTitle="" ProDesc="" ProType="A" ProAction="C" ProAlertType="" FirstStart="" Cycle="-1" ProInstIdePreFix="" ProInstIdeNum="-1" ProInstIdePosFix="" ProIdePre="" ProIdePreFix="" ProIdeNum="" ProIdePos="" ProIdePosFix="" ProExeTemplate="" ProFlags="" CustomMsg="" ImgPath="" ProFrontImage="" ProHeaderImage="" DateBindsOk="true" HasInstance="false" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z">
+      <Participants>
+        <Participant PartId="1011" PartName="pepe" PartGenerated="false" PartAllEnvs="false" HasCondition="false" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z"/>
+        <Participant PartId="1" PartName="admin" PartGenerated="true" PartAllEnvs="true" HasCondition="false" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z"/>
+      </Participants>
+      <DataFields/>
+      <Activities>
+        <Activity Id="6" Name="Start on Friday" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="6" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="E">
+          <BPMNEvent>
+            <StartEvent Trigger="Timer" Implementation="WebService"/>
+          </BPMNEvent>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="50.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="25.0" YCoordinate="25.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="9" Name="Receive Issues List" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="9" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="T">
+          <Task TskName="Receive Issues List" TskTitle="" TskDesc="" TskAlertType="" TskFlags="" TskExeTemplate="" ImgPath="" TskId="1003">
+            <TaskUser Implementation="Other">
+              <Performers>
+                <Performer ProEleId="9" PerfId="1" PerfName="admin" ProElePerfEvalCond="" ProElePerfEvalSql="" ProElePerfDoc=""/>
+              </Performers>
+            </TaskUser>
+            <FormsRef>
+              <Step>
+                <FormRef ProEleId="9" BusEntId="2162" FrmId="1153" FrmName="GET_ENTITY" FrmType="E" ProEleFrmStepId="1" ProEleFrmReadOnly="0" ProEleFrmMultiply="0" ProEleFrmEvalCond="1 = 1" ProEleFrmEvalSql="" ProEleFrmDoc="" ProId="1" ProVerId="1" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z">1 = 1</FormRef>
+              </Step>
+            </FormsRef>
+            <ApiaTskStates>
+              <ApiaTskState ProEleId="9" BusEntId="2162" EntStaId="1061" StaName="ESTADO_PRUEBA" EvtId="10" EvtName="ONCOMPLETE" ProEleBusEntStaEvalCond="" ProEleBusEntStaEvalSql="" ProEleBusEntStaDoc=""/>
+            </ApiaTskStates>
+            <ApiaTskEvents>
+              <ApiaTskEvent ProEleId="9" EvtId="30" EvtName="ONWORK" BusClaId="1004" BusClaName="HOLA_APIA" BusClaParBndId="1601" ProEleEvtBusClaExecOrder="0">
+                <BusClaParBindings>
+                  <BusClaParBinding BusClaParBndId="1601" BusClaParBndType="" BusClaParBndValue="11" BusClaParId="1002" BusClaParName="par" BusClaParType="S" AttName="" AttLabel=""/>
+                </BusClaParBindings>
+              </ApiaTskEvent>
+            </ApiaTskEvents>
+            <TskDocumentation TskUniqueId=""/>
+            <TskNotifications/>
+          </Task>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="75.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="125.0" YCoordinate="25.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="10" Name="Review Issues List" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="10" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="T">
+          <Task TskName="" TskTitle="" TskDesc="" TskAlertType="" TskFlags="" TskExeTemplate="" ImgPath="" TskId="1004">
+            <TaskUser Implementation="Other">
+              <Performers>
+                <Performer ProEleId="10" PerfId="1" PerfName="admin" ProElePerfEvalCond="" ProElePerfEvalSql="" ProElePerfDoc=""/>
+              </Performers>
+            </TaskUser>
+          </Task>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="75.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="125.0" YCoordinate="100.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="12" Name="Any Issues Ready?" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="12" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="G">
+          <Gateway GatewayType="Exclusive"/>
+          <NodeGraphicsInfo LaneId="0" Height="75.0" Width="75.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="125.0" YCoordinate="187.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="18" Name="" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="18" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="E">
+          <BPMNEvent>
+            <EndEvent Result="None" Implementation="WebService"/>
+          </BPMNEvent>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="50.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="25.0" YCoordinate="200.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="20" Name="Discussion Cycle" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="20" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="S">
+          <SubFlow ProIdRef="1038" Name="Discussion Cycle" Execution="SYNCHR" ProVerId="1"/>
+          <Loop LoopType="Standard">
+            <LoopStandard TestTime="Before">
+              <LoopCondition/>
+            </LoopStandard>
+          </Loop>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="75.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="250.0" YCoordinate="200.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="23" Name="Announce Issues" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="23" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="T">
+          <Task TskName="" TskTitle="" TskDesc="" TskAlertType="" TskFlags="" TskExeTemplate="" ImgPath="" TskId="1005">
+            <TaskUser Implementation="Other">
+              <Performers>
+                <Performer ProEleId="23" PerfId="1" PerfName="admin" ProElePerfEvalCond="" ProElePerfEvalSql="" ProElePerfDoc=""/>
+              </Performers>
+            </TaskUser>
+          </Task>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="75.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="375.0" YCoordinate="200.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="24" Name="Collect Votes" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="24" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="S">
+          <SubFlow ProIdRef="1039" Name="Collect Votes" Execution="SYNCHR" ProVerId="1"/>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="99.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="500.0" YCoordinate="199.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="25" Name="" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="25" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="E">
+          <BPMNEvent>
+            <EndEvent Result="None" Implementation="WebService"/>
+          </BPMNEvent>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="50.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="625.0" YCoordinate="200.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="26" Name="Prepare Results" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="26" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="T">
+          <Task TskName="" TskTitle="" TskDesc="" TskAlertType="" TskFlags="" TskExeTemplate="" ImgPath="" TskId="1006">
+            <TaskUser Implementation="Other">
+              <Performers>
+                <Performer ProEleId="26" PerfId="1" PerfName="admin" ProElePerfEvalCond="" ProElePerfEvalSql="" ProElePerfDoc=""/>
+              </Performers>
+            </TaskUser>
+          </Task>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="75.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="620.0" YCoordinate="275.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="27" Name="Post Results on Web Site" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="27" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="T">
+          <Task TskName="" TskTitle="" TskDesc="" TskAlertType="" TskFlags="" TskExeTemplate="" ImgPath="" TskId="1007">
+            <TaskUser Implementation="Other">
+              <Performers>
+                <Performer ProEleId="27" PerfId="1" PerfName="admin" ProElePerfEvalCond="" ProElePerfEvalSql="" ProElePerfDoc=""/>
+              </Performers>
+            </TaskUser>
+          </Task>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="75.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="575.0" YCoordinate="375.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="28" Name="E-Mail Results of Vote" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="28" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="T">
+          <Task TskName="" TskTitle="" TskDesc="" TskAlertType="" TskFlags="" TskExeTemplate="" ImgPath="" TskId="1008">
+            <TaskUser Implementation="Other">
+              <Performers>
+                <Performer ProEleId="28" PerfId="1" PerfName="admin" ProElePerfEvalCond="" ProElePerfEvalSql="" ProElePerfDoc=""/>
+              </Performers>
+            </TaskUser>
+          </Task>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="75.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="675.0" YCoordinate="375.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="35" Name="" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="35" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="E">
+          <BPMNEvent>
+            <IntermediateEvent Trigger="Timer" Implementation="WebService" Target="24"/>
+          </BPMNEvent>
+          <NodeGraphicsInfo LaneId="0" Height="30.0" Width="30.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="515.0" YCoordinate="234.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="41" Name="" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="41" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="G">
+          <Gateway GatewayType="Parallel" Instantiate="false"/>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="50.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="637.0" YCoordinate="446.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="82" Name="" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="82" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="G">
+          <Gateway GatewayType="Parallel" Instantiate="false"/>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="50.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="637.0" YCoordinate="330.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="45" Name="Did Enough Members Vote?" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="45" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="G">
+          <Gateway GatewayType="Exclusive"/>
+          <NodeGraphicsInfo LaneId="0" Height="61.0" Width="61.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="711.0" YCoordinate="474.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="47" Name="Issues with Majority?" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="47" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="G">
+          <Gateway GatewayType="Exclusive"/>
+          <NodeGraphicsInfo LaneId="0" Height="61.0" Width="61.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="801.0" YCoordinate="414.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="49" Name="Have the members been warned?" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="49" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="G">
+          <Gateway GatewayType="Exclusive"/>
+          <NodeGraphicsInfo LaneId="0" Height="61.0" Width="61.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="711.0" YCoordinate="614.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="51" Name="2nd time?" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="51" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="G">
+          <Gateway GatewayType="Exclusive"/>
+          <NodeGraphicsInfo LaneId="0" Height="61.0" Width="61.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="801.0" YCoordinate="304.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="53" Name="" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="53" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="G">
+          <Gateway GatewayType="Parallel" Instantiate="false"/>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="50.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="845.0" YCoordinate="207.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="54" Name="" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="54" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="G">
+          <Gateway GatewayType="Parallel" Instantiate="false"/>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="50.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="1010.0" YCoordinate="203.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="55" Name="Reduce to two solutions" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="55" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="T">
+          <Task TskName="" TskTitle="" TskDesc="" TskAlertType="" TskFlags="" TskExeTemplate="" ImgPath="" TskId="1009">
+            <TaskUser Implementation="Other">
+              <Performers>
+                <Performer ProEleId="55" PerfId="1" PerfName="admin" ProElePerfEvalCond="" ProElePerfEvalSql="" ProElePerfDoc=""/>
+              </Performers>
+            </TaskUser>
+          </Task>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="75.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="912.0" YCoordinate="145.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="56" Name="E-mail voters that have to change votes" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="56" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="T">
+          <Task TskName="" TskTitle="" TskDesc="" TskAlertType="" TskFlags="" TskExeTemplate="" ImgPath="" TskId="1010">
+            <TaskUser Implementation="Other">
+              <Performers>
+                <Performer ProEleId="56" PerfId="1" PerfName="admin" ProElePerfEvalCond="" ProElePerfEvalSql="" ProElePerfDoc=""/>
+              </Performers>
+            </TaskUser>
+          </Task>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="75.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="916.0" YCoordinate="253.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="67" Name="" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="67" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="E">
+          <BPMNEvent>
+            <EndEvent Result="None" Implementation="WebService"/>
+          </BPMNEvent>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="50.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="989.0" YCoordinate="419.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="71" Name="Reduce number of voting members and Recalculate vote" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="71" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="T">
+          <Task TskName="" TskTitle="" TskDesc="" TskAlertType="" TskFlags="" TskExeTemplate="" ImgPath="" TskId="1012">
+            <TaskUser Implementation="Other">
+              <Performers>
+                <Performer ProEleId="71" PerfId="1" PerfName="admin" ProElePerfEvalCond="" ProElePerfEvalSql="" ProElePerfDoc=""/>
+              </Performers>
+            </TaskUser>
+          </Task>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="97.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="809.0" YCoordinate="618.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+        <Activity Id="79" Name="Reannounce Vote with warning to voting members" Status="None" IsForCompensation="false" IsATransaction="false" ProEleId="79" ProId="1040" ProVerId="1" ProEleFlags="" MultiplierName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z" ElementType="T">
+          <Task TskName="" TskTitle="" TskDesc="" TskAlertType="" TskFlags="" TskExeTemplate="" ImgPath="" TskId="1013">
+            <TaskUser Implementation="Other">
+              <Performers>
+                <Performer ProEleId="79" PerfId="1" PerfName="admin" ProElePerfEvalCond="" ProElePerfEvalSql="" ProElePerfDoc=""/>
+              </Performers>
+            </TaskUser>
+          </Task>
+          <NodeGraphicsInfo LaneId="0" Height="50.0" Width="98.0" BorderColor="" FillColor="">
+            <Coordinates XCoordinate="810.0" YCoordinate="737.0"/>
+          </NodeGraphicsInfo>
+        </Activity>
+      </Activities>
+      <Transitions>
+        <Transition Id="14" From="9" To="10" Name="" LoopBack="false" TakeNext="false">
+          <Condition>
+            <Expression>&lt;xml-fragment xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1" xmlns:xpd="http://www.wfmc.org/2008/XPDL2.1">1 = 1&lt;/xml-fragment></Expression>
+          </Condition>
+          <Assignments>
+            <Assignment>
+              <Target>&lt;xml-fragment xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1" xmlns:xpd="http://www.wfmc.org/2008/XPDL2.1">varVal&lt;/xml-fragment></Target>
+              <Expression>&lt;xml-fragment xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1" xmlns:xpd="http://www.wfmc.org/2008/XPDL2.1">true&lt;/xml-fragment></Expression>
+            </Assignment>
+          </Assignments>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="163.42384338378906" YCoordinate="75.5"/>
+              <Coordinates XCoordinate="163.35617065429688" YCoordinate="100.5"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="42" From="27" To="41" Name="" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="612.0" YCoordinate="445.0"/>
+              <Coordinates XCoordinate="612.0" YCoordinate="480.0"/>
+              <Coordinates XCoordinate="637.0" YCoordinate="480.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="65" From="54" To="23" Name="yes" LoopBack="true" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="1060.0689697265625" YCoordinate="228.9310302734375"/>
+              <Coordinates XCoordinate="1092.0" YCoordinate="229.0"/>
+              <Coordinates XCoordinate="1091.0" YCoordinate="120.0"/>
+              <Coordinates XCoordinate="358.0" YCoordinate="125.0"/>
+              <Coordinates XCoordinate="359.0" YCoordinate="208.0"/>
+              <Coordinates XCoordinate="375.0" YCoordinate="209.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="61" From="53" To="55" Name="" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="871.671875" YCoordinate="208.671875"/>
+              <Coordinates XCoordinate="873.0" YCoordinate="171.0"/>
+              <Coordinates XCoordinate="912.5" YCoordinate="170.9901885986328"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="63" From="55" To="54" Name="" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="987.5" YCoordinate="170.0614013671875"/>
+              <Coordinates XCoordinate="1035.0" YCoordinate="169.0"/>
+              <Coordinates XCoordinate="1035.5" YCoordinate="203.5"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="62" From="53" To="56" Name="" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="869.95654296875" YCoordinate="256.9565124511719"/>
+              <Coordinates XCoordinate="869.0" YCoordinate="277.0"/>
+              <Coordinates XCoordinate="916.5" YCoordinate="278.05621337890625"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="64" From="56" To="54" Name="" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="991.5" YCoordinate="278.9601135253906"/>
+              <Coordinates XCoordinate="1035.0" YCoordinate="279.0"/>
+              <Coordinates XCoordinate="1035.5" YCoordinate="253.5"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="83" From="26" To="82" Name="" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="658.0" YCoordinate="325.0"/>
+              <Coordinates XCoordinate="658.0" YCoordinate="330.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="32" From="82" To="27" Name="" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="648.0" YCoordinate="380.0"/>
+              <Coordinates XCoordinate="647.0" YCoordinate="385.0"/>
+              <Coordinates XCoordinate="612.0" YCoordinate="385.0"/>
+              <Coordinates XCoordinate="612.0" YCoordinate="395.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="33" From="82" To="28" Name="" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="668.0" YCoordinate="380.0"/>
+              <Coordinates XCoordinate="669.0" YCoordinate="385.0"/>
+              <Coordinates XCoordinate="710.0" YCoordinate="385.0"/>
+              <Coordinates XCoordinate="710.0" YCoordinate="395.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="43" From="28" To="41" Name="" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="712.0" YCoordinate="445.0"/>
+              <Coordinates XCoordinate="712.0" YCoordinate="480.0"/>
+              <Coordinates XCoordinate="687.0" YCoordinate="480.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="29" From="20" To="23" Name="" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="325.5" YCoordinate="225.87350463867188"/>
+              <Coordinates XCoordinate="375.5" YCoordinate="225.8765106201172"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="31" From="24" To="25" Name="" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="599.5" YCoordinate="225.1372833251953"/>
+              <Coordinates XCoordinate="625.0001220703125" YCoordinate="225.06796264648438"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="30" From="23" To="24" Name="" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="450.5" YCoordinate="225.6228485107422"/>
+              <Coordinates XCoordinate="500.5" YCoordinate="225.28829956054688"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="81" From="79" To="24" Name="" LoopBack="true" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="908.5" YCoordinate="761.8552856445312"/>
+              <Coordinates XCoordinate="935.0" YCoordinate="761.0"/>
+              <Coordinates XCoordinate="933.0" YCoordinate="806.0"/>
+              <Coordinates XCoordinate="488.0" YCoordinate="807.0"/>
+              <Coordinates XCoordinate="485.0" YCoordinate="239.0"/>
+              <Coordinates XCoordinate="500.5" YCoordinate="236.01162719726562"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="77" From="71" To="47" Name="" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="857.8046875" YCoordinate="618.5"/>
+              <Coordinates XCoordinate="857.0" YCoordinate="579.0"/>
+              <Coordinates XCoordinate="830.0" YCoordinate="580.0"/>
+              <Coordinates XCoordinate="831.6660766601562" YCoordinate="475.1660461425781"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="68" From="47" To="67" Name="no" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="862.43310546875" YCoordinate="444.9331359863281"/>
+              <Coordinates XCoordinate="989.00048828125" YCoordinate="444.1539001464844"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="17" From="6" To="9" Name="" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="74.99925231933594" YCoordinate="50.192935943603516"/>
+              <Coordinates XCoordinate="125.5" YCoordinate="50.58268737792969"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="15" From="10" To="12" Name="" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="163.3721160888672" YCoordinate="150.5"/>
+              <Coordinates XCoordinate="163.43678283691406" YCoordinate="187.93678283691406"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="19" From="12" To="18" Name="No" LoopBack="false" TakeNext="false">
+          <Condition Type="OTHERWISE"/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="125.74788665771484" YCoordinate="225.2478790283203"/>
+              <Coordinates XCoordinate="74.99986267089844" YCoordinate="225.08181762695312"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="36" From="35" To="26" Name="Time Out [1 week]" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="530.0" YCoordinate="264.0"/>
+              <Coordinates XCoordinate="530.0" YCoordinate="300.0"/>
+              <Coordinates XCoordinate="620.5" YCoordinate="300.5"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="21" From="12" To="20" Name="yes" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="199.9873504638672" YCoordinate="225.5126495361328"/>
+              <Coordinates XCoordinate="250.5" YCoordinate="225.7196807861328"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="59" From="47" To="51" Name="yes" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="832.3057250976562" YCoordinate="414.80572509765625"/>
+              <Coordinates XCoordinate="832.302978515625" YCoordinate="365.197021484375"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="60" From="51" To="53" Name="no" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="832.1510009765625" YCoordinate="304.6510009765625"/>
+              <Coordinates XCoordinate="832.0" YCoordinate="234.0"/>
+              <Coordinates XCoordinate="846.75" YCoordinate="233.75"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="46" From="41" To="45" Name="" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="662.5" YCoordinate="496.5"/>
+              <Coordinates XCoordinate="662.0" YCoordinate="506.0"/>
+              <Coordinates XCoordinate="712.0648193359375" YCoordinate="505.5648193359375"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="48" From="45" To="47" Name="yes" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="772.1611328125" YCoordinate="504.6611022949219"/>
+              <Coordinates XCoordinate="786.0" YCoordinate="504.0"/>
+              <Coordinates XCoordinate="785.0" YCoordinate="448.0"/>
+              <Coordinates XCoordinate="803.635009765625" YCoordinate="447.135009765625"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="50" From="45" To="49" Name="no" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="742.1902465820312" YCoordinate="535.3097534179688"/>
+              <Coordinates XCoordinate="742.1915893554688" YCoordinate="614.6915893554688"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="75" From="49" To="71" Name="yes" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="772.42138671875" YCoordinate="645.07861328125"/>
+              <Coordinates XCoordinate="809.5" YCoordinate="644.6849365234375"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="80" From="49" To="79" Name="no" LoopBack="false" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="741.8739624023438" YCoordinate="675.3739624023438"/>
+              <Coordinates XCoordinate="741.0" YCoordinate="765.0"/>
+              <Coordinates XCoordinate="810.5" YCoordinate="763.7457885742188"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="57" From="51" To="20" Name="yes" LoopBack="true" TakeNext="false">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo BorderColor="" FillColor="">
+              <Coordinates XCoordinate="862.4464721679688" YCoordinate="335.0534973144531"/>
+              <Coordinates XCoordinate="1116.0" YCoordinate="335.0"/>
+              <Coordinates XCoordinate="1112.0" YCoordinate="84.0"/>
+              <Coordinates XCoordinate="235.0" YCoordinate="86.0"/>
+              <Coordinates XCoordinate="234.0" YCoordinate="208.0"/>
+              <Coordinates XCoordinate="250.5" YCoordinate="213.5841064453125"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+      </Transitions>
+      <BusEntProcess BusEntId="1" BusEntName="" ProId="1" ProVerId="1" ProName="" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z"/>
+      <ProDocumentation ProUniqueId=""/>
+      <ProNotifications/>
+    </WorkflowProcess>
+  </WorkflowProcesses>
+</ApiaElements>

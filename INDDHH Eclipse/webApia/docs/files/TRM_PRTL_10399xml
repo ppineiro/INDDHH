@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><informationXS xmlns="http://www.com.uy/st/xml">
+  <entitiesXS>
+    <entityXS name="EXPEDIENTE">
+      <attributesXS>
+        <attributeXS isFile="false" name="EXP_TIPO_TITULAR_ENUM">
+          <valueXS index="0">24</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="EXP_NRO_DOC_STR">
+          <valueXS index="0">215389710017</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="EXP_TITULAR_DESCRIPCION_STR">
+          <valueXS index="0">Tipo documento: R.U.T. / Nro. documento: 215389710017 / Titular: PAFINOL SOCIEDAD ANONIMA</valueXS>
+        </attributeXS>
+      </attributesXS>
+    </entityXS>
+  </entitiesXS>
+</informationXS>

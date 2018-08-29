@@ -1,0 +1,157 @@
+html, head, body, div {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	font-weight: normal;
+	font-size: 13px;
+	font-family: Arial, Helvetica, sans-serif;
+	overflow: hidden;
+	list-style-type: none;
+}
+
+.pBarContainer h2 {
+	cursor: auto !important;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+	font-family: inherit;
+	font-weight: 600;
+	line-height: 1.1;
+	color: inherit;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	font-size: 1.45em;
+	padding-top: 20px;
+}
+
+.progressBar {
+	height: 96%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background: #F5F5F5;
+	/*border: 1px solid #d9d8d8;*/
+}
+
+.progressBar li {
+	height: 100%;
+	position: relative;
+	display: table-cell;
+	float: left;
+	padding: 10px 0;
+	padding-left: 60px;
+	box-sizing: border-box;
+}
+
+.progressBar li:first-child {
+	padding-left: 25px;
+}
+
+.progressBar li:after {
+	content: " ";
+	display: block;
+	width: 0;
+	height: 0;
+	border-top: 50px solid transparent;
+	border-bottom: 50px solid transparent;
+	border-left: 30px solid #F5F5F5;
+	position: absolute;
+	top: 50%;
+	margin-top: -50px;
+	left: 100%;
+	z-index: 2;
+}
+
+.progressBar li:before {
+	content: " ";
+	display: block;
+	width: 0;
+	height: 0;
+	border-top: 50px solid transparent;
+	border-bottom: 50px solid transparent;
+	border-left: 30px solid #DCDCDC;
+	position: absolute;
+	top: 50%;
+	margin-top: -50px;
+	margin-left: 1px;
+	left: 100%;
+	z-index: 1;
+}
+
+.progressBar li a {
+	word-wrap: break-word;
+	text-decoration: none;
+	color: #231F20;
+}
+
+.progressBar li .stepNum {
+	display: block;
+	font-size: 1.7em;
+	font-weight: bold;
+	line-height: 1;
+	margin-bottom: 3px;
+}
+
+.progressBar li .stepTitle {
+	display: block;
+	line-height: 1.2;
+}
+
+.progressBar li.active .stepNum, .progressBar li.active .stepTitle {
+	color: #1A2F5A;
+	font-weight: bold;
+}
+
+.progressBar li.active {
+	background: #e2e9ef;
+}
+
+.progressBar li.active:after {
+	border-left: 30px solid #e2e9ef;
+}
+
+ul.progressBar li.complete span.stepNum{
+	background-image: url("../../images/check.png");
+	background-repeat:no-repeat;
+    background-position: 16px 2px;
+}
+
+/* --------------- |800| --------------- */
+@media screen and (max-width: 800px) {
+	.progressBar li {
+		padding-left: 15px;
+		padding-right: 15px;
+		border-left: 1px solid #E1E1E1;
+		padding-bottom: 100%;
+		margin-bottom: -100%;
+	}
+	.progressBar li:first-child {
+		border-left: none;
+		padding-left: 15px;
+	}
+	.progressBar li:after, .progressBar li:before, .progressBar li.active:after {
+		border: none;
+		display: none;
+	}
+}
+
+/* --------------- |480| --------------- */
+@media screen and (max-width: 480px) {
+	.progressBar {
+		background: #F5F5F5;
+	}
+	.progressBar li, .progressBar li:first-child {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.progressBar li .stepNum {
+		font-size: 1.3em;
+	}
+	
+	ul.progressBar li.complete span.stepNum{
+	    background-position: 16px -1px;
+	}
+}

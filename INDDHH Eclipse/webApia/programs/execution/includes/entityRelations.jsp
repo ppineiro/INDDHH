@@ -1,0 +1,8 @@
+			
+			<%//esto aca no es buena idea, ya que podria haber miles de relaciones y se mostraría un html demasiado grande
+			if (1==2 && entityBean.getEntityPossibleRelations() != null){
+				if (entityBean.getEntityPossibleRelations().size() > 0) {%><DIV class="subTit"><%=LabelManager.getName(labelSet,"sbtEjeEntVin")%></DIV><div type="grid" id="gridEntVin" style="height:70px"><table id="tblEntVin" width="500px" cellpadding="0" cellspacing="0"><thead><tr><th style="width:0px;display:none;" title="<%=LabelManager.getToolTip(labelSet,"lblSel")%>"></th><th style="width:33%" title="<%=LabelManager.getToolTip(labelSet,"lblEjeRolEnt")%>"><%=LabelManager.getName(labelSet,"lblEjeRolEnt")%></th><th style="width:33%" title="<%=LabelManager.getToolTip(labelSet,"lblEjeIdeEnt")%>"><%=LabelManager.getName(labelSet,"lblEjeIdeEnt")%></th><th style="width:34%" title="<%=LabelManager.getToolTip(labelSet,"lblEjeTipEnt")%>"><%=LabelManager.getName(labelSet,"lblEjeTipEnt")%></th></tr></thead><tbody></tbody></table></div><!-- <table class="navBar"><COL class="col1"><COL class="col2"><tr><TD></TD><td><button type="button" accesskey="<%=LabelManager.getAccessKey(labelSet,"btnCre")%>" title="<%=LabelManager.getToolTip(labelSet,"btnAgr")%>"><%=LabelManager.getNameWAccess(labelSet,"btnAgr")%></button><button type="button" accesskey="<%=LabelManager.getAccessKey(labelSet,"btnEli")%>" title="<%=LabelManager.getToolTip(labelSet,"btnEli")%>"><%=LabelManager.getNameWAccess(labelSet,"btnEli")%></button></td></tr></table>
+			   	 --><%}
+			}%><%
+dBean.setFormHasBeenDrawed(true);
+%>		

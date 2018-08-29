@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><informationXS xmlns="http://www.com.uy/st/xml">
+  <entitiesXS>
+    <entityXS name="EXPEDIENTE">
+      <attributesXS>
+        <attributeXS isFile="false" name="EXP_TIPO_TITULAR_ENUM">
+          <valueXS index="0">6</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="EXP_NRO_DOC_STR">
+          <valueXS index="0">44832883</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="EXP_RAZON_SOCIAL_STR">
+          <valueXS index="0">Perez , Adrian</valueXS>
+        </attributeXS>
+      </attributesXS>
+    </entityXS>
+  </entitiesXS>
+</informationXS>

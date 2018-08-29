@@ -1,0 +1,88 @@
+
+
+BODY{
+	/*background-color:#FFFFFF;
+	overflow:hidden;
+	margin:0px;
+	padding:0px;*/
+	background-image: url("../images/Poder_Judicial_login.gif");
+	overflow:hidden;
+	margin:0px;
+	padding:0px;
+}
+.box{
+	/*height:170px; 
+	width:400px;
+	background-color:#FFFFFF;
+	border:4px solid #EAEAEA;
+	font-family:verdana,tahoma;
+	font-size:11px;*/
+	height:200px; 
+	width:350px;
+	background-color:#FFFFFF;
+	 font-family: times new roman;
+    font-size: 14px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.box{
+		position: relative;
+    	top: 90px;
+	}	
+}
+
+.sysLogo{
+	text-align:right;
+	color: #706E60;
+	font-family: times new roman;
+	font-size:12px;
+	/*font-weight:bold;*/
+	padding-right:2px;
+	height:122px;
+}
+.links{
+	text-align:center;
+	
+}
+.links A{
+	font-family: times new roman;
+	font-size:12px;
+	text-decoration:none;
+	font-weight:bold;
+	COLOR:#666666;
+}
+.winInfo{
+	width:100%;
+	height:90px;
+	background-color:#FFFFFF;
+	border:0px solid #287BBA;
+}
+.title{
+	font-weight:bold;
+	font-family: times new roman;
+	font-size:34px;
+	color:white;
+}
+.subTitle{
+	font-family:verdana;
+	font-size:11px;
+	text-align:center;
+}
+.sysVer{
+	text-align:right;
+	color:#4266AE;
+	font-family: times new roman;
+	font-size:16px;
+	font-weight:bold;
+	padding-right:2px;
+	height:18px;
+}
+
+.copyrightTxt{
+	font-family: times new roman;
+	font-size:9px;
+	text-align:right;
+	padding-right:6px;
+	color:#666666;
+}
+

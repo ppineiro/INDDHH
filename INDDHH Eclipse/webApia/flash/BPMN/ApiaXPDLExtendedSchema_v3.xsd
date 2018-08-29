@@ -1,0 +1,2266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1" xmlns:xpdl="http://www.wfmc.org/2008/XPDL2.1" xmlns:deprecated="http://www.wfmc.org/2002/XPDL1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.statum.biz/2009/APIA.XPDL2.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- Must import the XPDL schema -->
+	<xs:import namespace="http://www.wfmc.org/2008/XPDL2.1" schemaLocation="http://www.wfmc.org/standards/bpmnxpdl_31.xsd"/>
+	<!-- Start Apia's XPDL extensions -->
+	<!-- (only include XPDL elements that will be extended) -->
+	<xs:element name="Package" type="apia:PackageType">
+		<xs:key name="ProcessIds.Package">
+			<xs:selector xpath=".//apia:WorkflowProcess | .//apia:ActivitySet"/>
+			<xs:field xpath="@Id"/>
+		</xs:key>
+		<xs:keyref name="PoolProcessIdRef.Package" refer="apia:ProcessIds.Package">
+			<xs:selector xpath=".//xpdl:Pool"/>
+			<xs:field xpath="@Process"/>
+		</xs:keyref>
+		<xs:key name="ProcessIdsTopLevel.Package">
+			<xs:selector xpath=".//apia:WorkflowProcess"/>
+			<xs:field xpath="@Id"/>
+		</xs:key>
+		<xs:keyref name="SubFlowIdRef.Package" refer="apia:ProcessIdsTopLevel.Package">
+			<xs:selector xpath=".//apia:SubFlow"/>
+			<xs:field xpath="@Id"/>
+		</xs:keyref>
+		<xs:key name="ActivitySetIds.Package">
+			<xs:selector xpath=".//apia:ActivitySet"/>
+			<xs:field xpath="@Id"/>
+		</xs:key>
+		<xs:keyref name="SubFlowStartActivitySetIdRef.Package" refer="apia:ActivitySetIds.Package">
+			<xs:selector xpath=".//apia:SubFlow"/>
+			<xs:field xpath="@StartActivitySetId"/>
+		</xs:keyref>
+		<xs:key name="ActivityIds.Package">
+			<xs:selector xpath=".//apia:Activity"/>
+			<xs:field xpath="@Id"/>
+		</xs:key>
+		<xs:keyref name="SubFlowStartActivityIdRef.Package" refer="apia:ActivityIds.Package">
+			<xs:selector xpath=".//apia:SubFlow"/>
+			<xs:field xpath="@StartActivityId"/>
+		</xs:keyref>
+		<xs:keyref name="TaskReferenceTaskRef.Package" refer="apia:ActivityIds.Package">
+			<xs:selector xpath=".//xpdl:TaskReference"/>
+			<xs:field xpath="@TaskRef"/>
+		</xs:keyref>
+		<xs:key name="LaneIds.Package">
+			<xs:selector xpath=".//xpdl:Lane"/>
+			<xs:field xpath="@Id"/>
+		</xs:key>
+		<xs:keyref name="NodeGraphicsInfoLaneIdRef.Package" refer="apia:LaneIds.Package">
+			<xs:selector xpath=".//xpdl:NodeGraphicsInfo"/>
+			<xs:field xpath="@LaneId"/>
+		</xs:keyref>
+		<xs:key name="PageIds.Package">
+			<xs:selector xpath=".//xpdl:Page"/>
+			<xs:field xpath="@Id"/>
+		</xs:key>
+		<xs:keyref name="GraphicsInfoPageIdRef.Package" refer="apia:PageIds.Package">
+			<xs:selector xpath=".//xpdl:NodeGraphicsInfo | .//xpdl:ConnectorGraphicsInfo"/>
+			<xs:field xpath="@PageId"/>
+		</xs:keyref>
+		<xs:key name="PoolAndActivityIds.Package">
+			<xs:selector xpath=".//xpdl:Pool | .//apia:Activity"/>
+			<xs:field xpath="@Id"/>
+		</xs:key>
+		<xs:keyref name="MessageFlowSourceRef.Package" refer="apia:PoolAndActivityIds.Package">
+			<xs:selector xpath=".//xpdl:MessageFlow"/>
+			<xs:field xpath="@Source"/>
+		</xs:keyref>
+		<xs:keyref name="MessageFlowTargetRef.Package" refer="apia:PoolAndActivityIds.Package">
+			<xs:selector xpath=".//xpdl:MessageFlow"/>
+			<xs:field xpath="@Target"/>
+		</xs:keyref>
+		<!-- checks that process id referred to by pool exists -->
+		<!-- checks that process id referred to by subflow exists (must be top-level, not an activityset) -->
+		<!-- checks that start activityset referred to by subflow exists (note: incomplete test, does not constrain to process specified by subflow) -->
+		<!-- checks that start activity referred to by subflow exists (note: incomplete test, does not constrain to process specified by subflow) -->
+		<!-- checks that activity referred to by taskreference exists (note: may be incomplete test, does not constrain to same process that contains the task) -->
+		<!-- checks that lane id referred to by nodegraphicsinfo exists -->
+		<!-- checks that page id referred to by grahicsinfo exists -->
+		<!-- checks that source and target referred to by messageflow exists (note: incomplete test, does check that source/target are, or are in, separate pools) -->
+	</xs:element>
+	<xs:complexType name="PackageType">
+		<xs:sequence>
+			<xs:element ref="xpdl:PackageHeader"/>
+			<xs:element ref="xpdl:RedefinableHeader" minOccurs="0"/>
+			<xs:element ref="xpdl:ConformanceClass" minOccurs="0"/>
+			<xs:element ref="xpdl:Script" minOccurs="0"/>
+			<xs:element ref="xpdl:ExternalPackages" minOccurs="0"/>
+			<xs:element ref="xpdl:TypeDeclarations" minOccurs="0"/>
+			<xs:element ref="apia:Participants" minOccurs="0"/>
+			<xs:element ref="xpdl:Applications" minOccurs="0"/>
+			<xs:element ref="apia:DataFields" minOccurs="0"/>
+			<xs:element ref="xpdl:PartnerLinkTypes" minOccurs="0"/>
+			<xs:element ref="xpdl:Pages" minOccurs="0"/>
+			<xs:element ref="xpdl:Pools" minOccurs="0"/>
+			<xs:element ref="xpdl:MessageFlows" minOccurs="0"/>
+			<xs:element ref="xpdl:Associations" minOccurs="0"/>
+			<xs:element ref="apia:Artifacts" minOccurs="0"/>
+			<xs:element ref="apia:WorkflowProcesses" minOccurs="0"/>
+			<xs:element ref="xpdl:ExtendedAttributes" minOccurs="0"/>
+			<!-- New Apia PackageType Elements -->
+			<xs:element name="ApiaExtensions"/>
+			<xs:element ref="apia:Forms" minOccurs="0"/>
+			<xs:element ref="apia:Roles" minOccurs="0"/>
+			<xs:element ref="apia:Entities" minOccurs="0"/>
+			<xs:element ref="apia:Classifications" minOccurs="0"/>
+			<xs:element ref="apia:Tasks" minOccurs="0"/>
+			<xs:element ref="apia:BusinessClasses" minOccurs="0"/>
+			<xs:element ref="apia:UserQueries" minOccurs="0"/>
+			<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="Id" type="xpdl:Id" use="required">
+			<xs:annotation>
+				<xs:documentation>BPMN: Corresponds to BPD identifier.  Target of @DiagramRef in Subflow.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Name" type="xs:string" use="optional"/>
+		<xs:attribute name="Language" type="xs:string" use="optional"/>
+		<xs:attribute name="QueryLanguage" type="xs:string" use="optional"/>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:element name="WorkflowProcesses">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:WorkflowProcess" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WorkflowProcess" type="apia:ProcessType">
+		<xs:key name="ActivitySetIds.WorkflowProcess">
+			<xs:selector xpath="./apia:ActivitySets/apia:ActivitySet"/>
+			<xs:field xpath="@Id"/>
+		</xs:key>
+		<xs:key name="ActivityIds.WorkflowProcess">
+			<xs:selector xpath="./apia:Activities/apia:Activity | ./apia:ActivitySets/apia:ActivitySet/apia:Activities/apia:Activity"/>
+			<xs:field xpath="@Id"/>
+		</xs:key>
+		<xs:key name="ActivityIdsTopLevel.WorkflowProcess">
+			<xs:selector xpath="./apia:Activities/apia:Activity"/>
+			<xs:field xpath="@Id"/>
+		</xs:key>
+		<xs:key name="TransitionIdsTopLevel.WorkflowProcess">
+			<xs:selector xpath="./apia:Transitions/apia:Transition"/>
+			<xs:field xpath="@Id"/>
+		</xs:key>
+		<xs:keyref name="DefaultStartActivitySetIdRef.WorkflowProcess" refer="apia:ActivitySetIds.WorkflowProcess">
+			<xs:selector xpath="."/>
+			<xs:field xpath="@DefaultStartActivitySetId"/>
+		</xs:keyref>
+		<xs:keyref name="DefaultStartActivityIdRef.WorkflowProcess" refer="apia:ActivityIds.WorkflowProcess">
+			<xs:selector xpath="."/>
+			<xs:field xpath="@DefaultStartActivityId"/>
+		</xs:keyref>
+		<xs:keyref name="BlockActivityActivitySetIdRef.WorkflowProcess" refer="apia:ActivitySetIds.WorkflowProcess">
+			<xs:selector xpath=".//xpdl:BlockActivity"/>
+			<xs:field xpath="@ActivitySetId"/>
+		</xs:keyref>
+		<xs:keyref name="BlockActivityStartActivityIdRef.WorkflowProcess" refer="apia:ActivityIds.WorkflowProcess">
+			<xs:selector xpath=".//xpdl:BlockActivity"/>
+			<xs:field xpath="@StartActivityId"/>
+		</xs:keyref>
+		<xs:keyref name="TransitionFromRef.WorkflowProcess" refer="apia:ActivityIdsTopLevel.WorkflowProcess">
+			<xs:selector xpath="./apia:Transitions/apia:Transition"/>
+			<xs:field xpath="@From"/>
+		</xs:keyref>
+		<xs:keyref name="TransitionToRef.WorkflowProcess" refer="apia:ActivityIdsTopLevel.WorkflowProcess">
+			<xs:selector xpath="./apia:Transitions/apia:Transition"/>
+			<xs:field xpath="@To"/>
+		</xs:keyref>
+		<xs:keyref name="TransitionRefIdRef.WorkflowProcess" refer="apia:TransitionIdsTopLevel.WorkflowProcess">
+			<xs:selector xpath="./apia:Activities/apia:Activity/xpdl:TransitionRestrictions/xpdl:TransitionRestriction/xpdl:Split/xpdl:TransitionRefs/xpdl:TransitionRef"/>
+			<xs:field xpath="@Id"/>
+		</xs:keyref>
+		<!-- constrain to only activities in the top-level, not activitysets -->
+		<!-- constrain to only transitions in the top-level, not activitysets -->
+		<!-- check that specified default start activityset exists -->
+		<!-- check that specified default start activity exists (note: incomplete test, does not constrain to optional activtyset specified by DefaultStartActivitySetId) -->
+		<!-- check that the activityset specified in a blockactivity exists -->
+		<!-- check that the start activity specified in a blockactivity exists (note: incomplete test, does not constrain to activtyset specified by ActivitySetId) -->
+		<!-- check that the from and to specified in a transition exists -->
+		<!-- check that the id specified in a transitionref exists -->
+	</xs:element>
+	<xs:complexType name="ProcessType">
+		<xs:sequence>
+			<xs:element ref="xpdl:ProcessHeader"/>
+			<xs:element ref="xpdl:RedefinableHeader" minOccurs="0"/>
+			<xs:element ref="xpdl:FormalParameters" minOccurs="0"/>
+			<xs:element ref="xpdl:InputSets" minOccurs="0"/>
+			<xs:element ref="xpdl:OutputSets" minOccurs="0"/>
+			<xs:element ref="apia:Participants" minOccurs="0"/>
+			<xs:element ref="xpdl:Applications" minOccurs="0"/>
+			<xs:element ref="apia:DataFields" minOccurs="0"/>
+			<xs:element ref="apia:ActivitySets" minOccurs="0"/>
+			<xs:element ref="apia:Activities" minOccurs="0"/>
+			<xs:element ref="apia:Transitions" minOccurs="0"/>
+			<xs:element ref="xpdl:ExtendedAttributes" minOccurs="0"/>
+			<xs:element ref="apia:Assignments" minOccurs="0"/>
+			<xs:element ref="xpdl:PartnerLinks" minOccurs="0"/>
+			<xs:element ref="xpdl:Object" minOccurs="0"/>
+			<xs:choice minOccurs="0">
+				<xs:sequence>
+					<xs:element name="Extensions"/>
+					<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:choice>
+			<!-- New Apia ProcessType Elements -->
+			<xs:element name="ApiaExtensions"/> 
+			<xs:element ref="apia:RedundantProAtts" minOccurs="0"/>
+			<xs:element ref="apia:BusEntProcess" minOccurs="0"/>
+			<xs:element ref="apia:ProDocumentation"/>
+			<xs:element ref="apia:ProNotifications"/>
+			<xs:element ref="apia:MonProForms" minOccurs="0"/>
+			<xs:element ref="apia:WsPublication" minOccurs="0"/>
+			<xs:element ref="apia:WsPublications" minOccurs="0"/>
+			<xs:element ref="apia:WsPublicationAttributes" minOccurs="0"/>
+			<xs:element ref="apia:ApiaProEvents" minOccurs="0"/>
+			<xs:element ref="apia:Documents" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="Id" type="xpdl:Id" use="required">
+			<xs:annotation>
+				<xs:documentation>BPMN: unique identifier for the process, referenced by Pool</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Name" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>BPMN: label of WorkflowProcess in diagram, should be same as for Pool</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="AccessLevel" use="optional" default="PUBLIC">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="PUBLIC"/>
+					<xs:enumeration value="PRIVATE"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="ProcessType" use="optional" default="None">
+			<xs:annotation>
+				<xs:documentation>BPMN:</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="None"/>
+					<xs:enumeration value="Private"/>
+					<xs:enumeration value="Abstract"/>
+					<xs:enumeration value="Collaboration"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Status" use="optional" default="None">
+			<xs:annotation>
+				<xs:documentation> BPMN: Status values are assigned during execution. Status can be treated as a property and used in expressions local to a Process. It is unclear that status belongs in the XPDL document.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="None"/>
+					<xs:enumeration value="Ready"/>
+					<xs:enumeration value="Active"/>
+					<xs:enumeration value="Cancelled"/>
+					<xs:enumeration value="Aborting"/>
+					<xs:enumeration value="Aborted"/>
+					<xs:enumeration value="Completing"/>
+					<xs:enumeration value="Completed"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="SuppressJoinFailure" type="xs:boolean" use="optional" default="false"/>
+		<xs:attribute name="EnableInstanceCompensation" type="xs:boolean" use="optional" default="false"/>
+		<xs:attribute name="AdHoc" type="xs:boolean" use="optional" default="false">
+			<xs:annotation>
+				<xs:documentation>BPMN: for Embedded subprocess</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="AdHocOrdering" use="optional" default="Parallel">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="Sequential"/>
+					<xs:enumeration value="Parallel"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="AdHocCompletionCondition" type="xs:string" use="optional"/>
+		<xs:attribute name="DefaultStartActivitySetId" type="xpdl:IdRef" use="optional"/>
+		<xs:attribute name="DefaultStartActivityId" type="xpdl:IdRef" use="optional"/>
+		<!-- New Apia ProcessType Attributes -->
+		<xs:attribute name="ProId" type="apia:Id" use="required" form="qualified"/>
+		<xs:attribute name="ProVerId" type="apia:Id" use="required" form="qualified"/>
+		<xs:attribute name="ProVerComment" type="xs:string" use="optional" form="qualified"/>
+		<xs:attribute name="ProName" type="xs:string" use="required" form="qualified"/>
+		<xs:attribute name="ProTitle" type="xs:string" use="optional" form="qualified"/>
+		<xs:attribute name="ProDesc" type="xs:string" use="optional" form="qualified"/>
+		<xs:attribute name="ProType" type="xs:string" use="required" form="qualified"/>
+		<xs:attribute name="ProAction" type="xs:string" use="required" form="qualified"/>
+		<xs:attribute name="ProMaxDuration" type="xs:integer" use="optional" form="qualified"/>
+		<xs:attribute name="ProAlertDuration" type="xs:integer" use="optional" form="qualified"/>
+		<xs:attribute name="ProAlertType" type="xs:string" use="optional" form="qualified"/>
+		<xs:attribute name="FirstStart" type="xs:dateTime" use="optional" form="qualified"/>
+		<xs:attribute name="Cycle" type="xs:integer" use="required" form="qualified"/>
+		<xs:attribute name="ProInstIdePreFix" type="xs:string" use="optional" form="qualified"/>
+		<xs:attribute name="ProInstIdeNum" type="apia:Id" use="required" form="qualified"/>
+		<xs:attribute name="ProInstIdePosFix" type="xs:string" use="optional" form="qualified"/>
+		<xs:attribute name="ProIdePre" type="xs:string" use="optional" form="qualified"/>
+		<xs:attribute name="ProIdePreFix" type="xs:string" use="optional" form="qualified"/>
+		<xs:attribute name="ProIdeNum" type="xs:string" use="optional" form="qualified"/>
+		<xs:attribute name="ProIdePos" type="xs:string" use="optional" form="qualified"/>
+		<xs:attribute name="ProIdePosFix" type="xs:string" use="optional" form="qualified"/>
+		<xs:attribute name="ProExeTemplate" type="xs:string" use="optional" form="qualified"/>
+		<xs:attribute name="ProFlags" type="xs:string" use="optional" form="qualified"/>
+		<xs:attribute name="ProTemporary" type="xs:integer" use="optional" form="qualified"/>
+		<xs:attribute name="ProGroupReasign" type="xs:integer" use="optional" form="qualified"/>
+		<xs:attribute name="CustomMsg" type="xs:string" use="optional" form="qualified"/>
+		<xs:attribute name="ClaTreeId" type="apia:Id" use="optional" form="qualified"/>
+		<xs:attribute name="CalendarId" type="apia:Id" use="optional" form="qualified"/>
+		<xs:attribute name="ImgPath" type="xs:string" use="optional" form="qualified"/>
+		<xs:attribute name="ProFrontImage" type="xs:string" use="optional" form="qualified"/>
+		<xs:attribute name="ProHeaderImage" type="xs:string" use="optional" form="qualified"/>
+		<xs:attribute name="DateBindsOk" type="xs:boolean" use="optional" form="qualified"/>
+		<xs:attribute name="HasInstance" type="xs:boolean" use="optional" form="qualified"/>
+		<xs:attribute name="QryId" type="apia:Id" use="optional" form="qualified"/>
+		<xs:attribute name="PrjId" type="apia:Id" use="optional" form="qualified"/>
+		<xs:attribute name="EnvId" type="apia:Id" use="required" form="qualified"/>
+		<xs:attribute name="RegUser" type="xs:string" use="required" form="qualified"/>
+		<xs:attribute name="RegStatus" type="xs:integer" use="required" form="qualified"/>
+		<xs:attribute name="RegDate" type="xs:dateTime" use="required" form="qualified"/>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:element name="ActivitySets">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:ActivitySet" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ActivitySet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:Activities" minOccurs="0"/>
+				<xs:element ref="apia:Transitions" minOccurs="0"/>
+				<xs:element ref="xpdl:Object" minOccurs="0"/>
+				<!--<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>-->
+				<xs:choice minOccurs="0">
+					<xs:sequence>
+						<xs:element name="Extensions"/>
+						<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="Id" type="xpdl:Id" use="required"/>
+			<xs:attribute name="Name" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation source="added to XPDL 2.0"/>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="AdHoc" type="xs:boolean" use="optional" default="false">
+				<xs:annotation>
+					<xs:documentation>BPMN: for Embedded subprocess</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="AdHocOrdering" use="optional" default="Parallel">
+				<xs:annotation>
+					<xs:documentation>BPMN: for Embedded subprocess</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="Sequential"/>
+						<xs:enumeration value="Parallel"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="AdHocCompletionCondition" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation>BPMN: for Embedded subprocess</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="DefaultStartActivityId" type="xpdl:IdRef" use="optional"/>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+		<xs:key name="ActivityIds.ActivitySet">
+			<xs:selector xpath="./apia:Activities/apia:Activity"/>
+			<xs:field xpath="@Id"/>
+		</xs:key>
+		<xs:key name="TransitionIds.ActivitySet">
+			<xs:selector xpath="./apia:Transitions/apia:Transition"/>
+			<xs:field xpath="@Id"/>
+		</xs:key>
+		<xs:keyref name="DefaultStartActivityIdRef.ActivitySet" refer="apia:ActivityIds.ActivitySet">
+			<xs:selector xpath="."/>
+			<xs:field xpath="@DefaultStartActivityId"/>
+		</xs:keyref>
+		<xs:keyref name="TransitionFromRef.ActivitySet" refer="apia:ActivityIds.ActivitySet">
+			<xs:selector xpath="./apia:Transitions/apia:Transition"/>
+			<xs:field xpath="@From"/>
+		</xs:keyref>
+		<xs:keyref name="TransitionToRef.ActivitySet" refer="apia:ActivityIds.ActivitySet">
+			<xs:selector xpath="./apia:Transitions/apia:Transition"/>
+			<xs:field xpath="@To"/>
+		</xs:keyref>
+		<xs:keyref name="TransitionRefIdRef.ActivitySet" refer="apia:TransitionIds.ActivitySet">
+			<xs:selector xpath="./apia:Activities/apia:Activity/xpdl:TransitionRestrictions/xpdl:TransitionRestriction/xpdl:Split/xpdl:TransitionRefs/xpdl:TransitionRef"/>
+			<xs:field xpath="@Id"/>
+		</xs:keyref>
+		<!-- check that the default start activity id exists -->
+		<!-- check that the from and to specified in a transition exists -->
+		<!-- check that the id specified in a transitionref exists -->
+	</xs:element>
+	<xs:element name="Activities">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:Activity" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>BPMN: corresponds to a flow object, which could be a BPMN activity, gateway, or event</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Activity">
+		<xs:annotation>
+			<xs:documentation>BPMN extension</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="xpdl:Description" minOccurs="0"/>
+				<xs:element ref="xpdl:Limit" minOccurs="0"/>
+				<xs:choice minOccurs="0">
+					<xs:element ref="xpdl:Route"/>
+					<xs:element ref="apia:Implementation">
+						<xs:annotation>
+							<xs:documentation>BPMN: corresponds to an activity, which could be a task or subprocess.[Suggest change element to BpmnActivity, since there is an attribute Implementation which means something else entirely.]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="xpdl:BlockActivity" minOccurs="0"/>
+					<xs:element ref="xpdl:Event">
+						<xs:annotation>
+							<xs:documentation>BPMN: Identifies XPDL activity as a BPMN event.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:choice>
+				<xs:element ref="xpdl:Transaction" minOccurs="0"/>
+				<xs:element ref="xpdl:Performers" minOccurs="0"/> <!-- it won't appear in the DataBase, this is not the place to set this element -->
+				<xs:element ref="xpdl:Priority" minOccurs="0"/>
+				<xs:element ref="xpdl:Deadline" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="xpdl:SimulationInformation" minOccurs="0"/>
+				<xs:element ref="xpdl:Icon" minOccurs="0"/>
+				<xs:element ref="xpdl:Documentation" minOccurs="0"/>
+				<xs:element ref="xpdl:TransitionRestrictions" minOccurs="0"/>
+				<xs:element ref="xpdl:ExtendedAttributes" minOccurs="0"/>
+				<xs:element ref="apia:DataFields" minOccurs="0"/>
+				<xs:element ref="xpdl:InputSets" minOccurs="0"/>
+				<xs:element ref="xpdl:OutputSets" minOccurs="0"/>
+				<xs:element ref="xpdl:IORules" minOccurs="0"/>
+				<xs:element ref="xpdl:Loop" minOccurs="0"/>
+				<xs:element ref="apia:Assignments" minOccurs="0"/>
+				<xs:element ref="xpdl:Object" minOccurs="0"/>
+				<xs:element ref="xpdl:NodeGraphicsInfos" minOccurs="0"/>
+				<xs:choice minOccurs="0">
+					<xs:sequence>
+						<xs:element name="Extensions"/>
+						<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:choice>
+				<!-- New Apia Activity Elements -->
+				<xs:element name="ApiaExtensions"/> 
+				<xs:element ref="apia:WsPublication" minOccurs="0"/>
+				<xs:element ref="apia:AttachedEvts" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="Id" type="xpdl:Id" use="required">
+				<xs:annotation>
+					<xs:documentation>BPMN: unique identifier of the flow object</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="IsForCompensation" type="xs:boolean" use="optional"/>
+			<xs:attribute name="Name" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation>BPMN: label of the flow object in the diagram</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="StartActivity" type="xs:boolean" use="optional">
+				<xs:annotation>
+					<xs:documentation> Designates the first activity to be executed when the process is instantiated. Used when there is no other way to determine this Conflicts with BPMN StartEvent and no process definition should use both.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Status" use="optional" default="None">
+				<xs:annotation>
+					<xs:documentation> BPMN: Status values are assigned during execution. Status can be treated as a property and used in expressions local to an Activity. It is unclear that status belongs in the XPDL document.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="None"/>
+						<xs:enumeration value="Ready"/>
+						<xs:enumeration value="Active"/>
+						<xs:enumeration value="Cancelled"/>
+						<xs:enumeration value="Aborting"/>
+						<xs:enumeration value="Aborted"/>
+						<xs:enumeration value="Completing"/>
+						<xs:enumeration value="Completed"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="StartMode">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="Automatic"/>
+						<xs:enumeration value="Manual"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="FinishMode">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="Automatic"/>
+						<xs:enumeration value="Manual"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="StartQuantity" type="xs:integer" use="optional" default="1"/>
+			<xs:attribute name="CompletionQuantity" type="xs:integer" use="optional" default="1"/>
+			<xs:attribute name="IsATransaction" type="xs:boolean" use="optional" default="false"/>
+			<!-- New Apia Activity Attributes -->
+			<xs:attribute name="ProEleId" type="apia:Id" use="required" form="qualified"/>
+			<xs:attribute name="ProId" type="apia:Id" use="required" form="qualified"/>
+			<xs:attribute name="ProVerId" type="apia:Id" use="required" form="qualified"/>
+			<xs:attribute name="ProEleIteration" type="xs:integer" use="optional" form="qualified"/>
+			<xs:attribute name="ElementType" use="required" form="qualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="G"/>  <!-- Gateway -->
+						<xs:enumeration value="T"/>  <!-- Task -->
+						<xs:enumeration value="S"/>  <!-- Subflow -->
+						<xs:enumeration value="B"/>  <!-- BlockActivity -->
+						<xs:enumeration value="E"/>  <!-- Event -->
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="ProEleFlags" type="xs:string" use="optional" form="qualified"/>
+			<xs:attribute name="ProEleMultValue" type="xs:integer" use="optional" form="qualified"/>
+			<xs:attribute name="ProEleMultiplier" type="xs:integer" use="optional" form="qualified"/>
+			<xs:attribute name="ProEleAttBusEnt" type="xs:integer" use="optional" form="qualified"/>
+			<xs:attribute name="MultiplierName" type="xs:string" use="optional" form="qualified"/>
+			<xs:attribute name="ProEleDesignXML" type="xs:string" use="optional" form="qualified"/>
+			<xs:attribute name="Target" type="xs:string" use="optional" form="qualified"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required" form="qualified"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required" form="qualified"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required" form="qualified"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required" form="qualified"/>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DataFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:DataField" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DataField">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="xpdl:DataType"/>
+				<xs:element name="InitialValue" type="xpdl:ExpressionType" minOccurs="0"/>
+				<xs:element ref="xpdl:Length" minOccurs="0"/>
+				<xs:element ref="xpdl:Description" minOccurs="0"/>
+				<xs:element ref="xpdl:ExtendedAttributes" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="Id" type="xs:NMTOKEN" use="required"/>
+			<xs:attribute name="Name" type="xs:string" use="optional"/>
+			<xs:attribute name="ReadOnly" type="xs:boolean" use="optional" default="false"/>
+			<xs:attribute name="IsArray" type="xs:boolean" use="optional" default="false"/>
+			<xs:attribute name="Correlation" type="xs:boolean" use="optional" default="false">
+				<xs:annotation>
+					<xs:documentation>Used in BPMN to support mapping to BPEL</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<!-- New Apia DataField Attributes -->
+			<xs:attribute name="AttributeType" use="required" form="qualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="P"/> <!-- PROCESS ATTRIBUTE -->
+						<xs:enumeration value="E"/> <!-- ENTITY ATTRIBUTE -->
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="ApiaDataType" use="required" form="qualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="S"/>
+						<xs:enumeration value="N"/>
+						<xs:enumeration value="D"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Label" type="xs:string" use="required" form="qualified"/>
+			<xs:attribute name="Mask" type="xs:string" use="optional" form="qualified"/>
+			<xs:attribute name="RegExp" type="xs:string" use="optional" form="qualified"/>
+			<xs:attribute name="PrjId" type="apia:Id" use="optional" form="qualified"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required" form="qualified"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required" form="qualified"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required" form="qualified"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required" form="qualified"/>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Task">
+		<xs:annotation>
+			<xs:documentation>BPMN</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice minOccurs="0">
+					<xs:element ref="xpdl:TaskService">
+						<xs:annotation>
+							<xs:documentation>BPMN: TaskType = Service.  In BPMN generally signifies any automated activity.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="xpdl:TaskReceive">
+						<xs:annotation>
+							<xs:documentation>BPMN: TaskType = Receive.  Waits for a message, then continues. Equivalent to a "catching" message event.  In BPMN, "message" generally signifies any signal from outside the process (pool).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="apia:TaskManual">
+						<xs:annotation>
+							<xs:documentation>BPMN: TaskType = Manual.  Used for human tasks other than those accessed via workflow.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="xpdl:TaskReference">
+						<xs:annotation>
+							<xs:documentation>BPMN: TaskType = Reference.  Task properties defined in referenced activity.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="xpdl:TaskScript">
+						<xs:annotation>
+							<xs:documentation>BPMN: TaskType = Script.  Used for automated tasks executed by scripts on process engine, to distinguish from automated tasks performed externally (Service).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="xpdl:TaskSend">
+						<xs:annotation>
+							<xs:documentation>BPMN: Task Type = Send.  Equivalent to a "throwing" message event.  Sends a message immediately and continues.  In BPMN, "message" signifies any signal sent outside the process (pool).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="apia:TaskUser">
+						<xs:annotation>
+							<xs:documentation>BPMN: Task Type = User.  Generally used for human tasks.  </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="xpdl:TaskApplication"/>
+				</xs:choice>
+				<!-- New Apia Task Elements -->
+				<xs:element name="ApiaExtensions"/>
+				<xs:element ref="apia:FormsRef" minOccurs="0"/>
+				<xs:element ref="apia:ApiaTskStates" minOccurs="0"/>
+				<xs:element ref="apia:ApiaTskEvents" minOccurs="0"/>
+				<xs:element ref="apia:RoleRef" minOccurs="0"/>
+				<xs:element ref="apia:Documents" minOccurs="0"/>
+				<xs:element ref="apia:TskDocumentation"/>
+				<xs:element ref="apia:TskNotifications"/>
+			</xs:sequence>
+			<!-- New Apia Task Attributes -->
+			<xs:attribute name="TskId" type="apia:Id" use="required" form="qualified"/>
+			<xs:attribute name="TskName" type="xs:string" use="required" form="qualified"/>
+			<xs:attribute name="TskTitle" type="xs:string" use="optional" form="qualified"/>
+			<xs:attribute name="TskDesc" type="xs:string" use="optional" form="qualified"/>
+			<xs:attribute name="TskMaxDuration" type="xs:integer" use="optional" form="qualified"/>
+			<xs:attribute name="TskAlertDuration" type="xs:integer" use="optional" form="qualified"/>
+			<xs:attribute name="TskAlertType" type="xs:string" use="optional" form="qualified"/>
+			<xs:attribute name="TskFlags" type="xs:string" use="optional" form="qualified"/>
+			<xs:attribute name="TskExeTemplate" type="xs:string" use="optional" form="qualified"/>
+			<xs:attribute name="TskGroupReasign" type="xs:integer" use="optional" form="qualified"/>
+			<xs:attribute name="ImgPath" type="xs:string" use="optional" form="qualified"/>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="TaskUser">
+		<xs:annotation>
+			<xs:documentation>BPMN</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:Performers" minOccurs="0"/>
+				<xs:element name="MessageIn" type="xpdl:MessageType" minOccurs="0"/>
+				<xs:element name="MessageOut" type="xpdl:MessageType" minOccurs="0"/>
+				<xs:element ref="xpdl:WebServiceOperation" minOccurs="0"/>
+				<!--<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>-->
+				<xs:choice minOccurs="0">
+					<xs:sequence>
+						<xs:element name="Extensions"/>
+						<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="Implementation" use="optional" default="WebService">
+				<xs:annotation>
+					<xs:documentation>Required if the Task is User</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="WebService"/>
+						<xs:enumeration value="Other"/>
+						<xs:enumeration value="Unspecified"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="TaskManual">
+		<xs:annotation>
+			<xs:documentation>BPMN</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:Performers" minOccurs="0"/>
+				<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Transitions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:Transition" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Transition">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="xpdl:Condition" minOccurs="0"/>
+				<xs:element ref="xpdl:Description" minOccurs="0"/>
+				<xs:element ref="xpdl:ExtendedAttributes" minOccurs="0"/>
+				<xs:element ref="apia:Assignments" minOccurs="0"/>
+				<xs:element ref="xpdl:Object" minOccurs="0"/>
+				<xs:element ref="xpdl:ConnectorGraphicsInfos" minOccurs="0"/>
+				<!--<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>-->
+				<xs:choice minOccurs="0">
+					<xs:sequence>
+						<xs:element name="Extensions"/>
+						<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="Id" type="xpdl:Id" use="required"/>
+			<xs:attribute name="From" type="xpdl:IdRef" use="required"/>
+			<xs:attribute name="To" type="xpdl:IdRef" use="required"/>
+			<xs:attribute name="Name" type="xs:string" use="optional"/>
+			<xs:attribute name="Quantity" type="xs:integer" use="optional" default="1">
+				<xs:annotation>
+					<xs:documentation>Used only in BPMN. Specifies number of tokens on outgoing transition.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<!-- New Apia Transition Attributes -->
+			<xs:attribute name="LoopBack" type="xs:boolean" use="optional" form="qualified"/>
+			<xs:attribute name="TakeNext" type="xs:boolean" use="optional" form="qualified"/>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Implementation">
+		<xs:complexType>
+			<xs:choice minOccurs="0">
+				<xs:element ref="xpdl:No" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>BPMN: corresponds to a task with unspecified TaskType</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="apia:Task" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>BPMN: corresponds to a task with specified TaskType</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="apia:SubFlow" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>BPMN: corresponds to Reusable subprocess.  May run in different pool or same pool.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="xpdl:Reference" minOccurs="0"/>
+			</xs:choice>
+			<!-- New Apia Implementation Attribute -->
+			<xs:attribute name="ActivityCode" type="xs:string" use="optional" form="qualified"/> <!-- Corresponde únicamente para Subflow y Task. -->
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="SubFlow">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice minOccurs="0">
+					<xs:element ref="xpdl:ActualParameters"/>
+					<xs:element ref="xpdl:DataMappings"/>
+				</xs:choice>
+				<xs:element ref="xpdl:EndPoint" minOccurs="0"/>
+				<!--<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>-->
+				<xs:choice minOccurs="0">
+					<xs:sequence>
+						<xs:element name="Extensions"/>
+						<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="Id" type="xpdl:IdRef" use="required">
+				<xs:annotation>
+					<xs:documentation>BPMN: Corresponds to BPMN attribute ProcessRef, pointer to WorkflowProcess/@Id in BPD referenced by PackageRef. [Suggest name change to ProcessRef; this is IDREF not ID].</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Name" type="xs:string" use="optional"/>
+			<xs:attribute name="Execution" use="optional" default="SYNCHR">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="ASYNCHR"/>
+						<xs:enumeration value="SYNCHR"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="View" use="optional" default="COLLAPSED">
+				<xs:annotation>
+					<xs:documentation>BPMN: Detrmines rendering of subprocess as Collapsed or Expended. Default is Collapsed.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="COLLAPSED"/>
+						<xs:enumeration value="EXPANDED"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="PackageRef" type="xpdl:IdRef" use="optional">
+				<xs:annotation>
+					<xs:documentation>BPMN: Corresponds to BPMN attribute DiagramRef, pointer to a BPD identified by Package/@Id.  [Maybe IDREF doesn't work here since ID is in a different document.]</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="InstanceDataField" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation> Used to store the instance id of the subflow instantiated by the activity. This is then available later on (e.g. for correlation, messaging etc.) especially in the case of asynchronous invocation.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="StartActivitySetId" type="xpdl:IdRef" use="optional"/>
+			<xs:attribute name="StartActivityId" type="xpdl:IdRef" use="optional"/>
+			<!-- New Apia SubFlow Attributes -->
+			<xs:attribute name="ApiaExecution" use="optional" default="MAP" form="qualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="MAP"/>
+						<xs:enumeration value="ASYNCHR"/>
+						<xs:enumeration value="ASYNCHR_SKIP"/>
+						<xs:enumeration value="SYNCHR"/>
+						<xs:enumeration value="SYNCHR_SKIP"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="ProVerId" type="apia:Id" use="optional" form="qualified"/>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Participants">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:Participant" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Participant">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="xpdl:ParticipantType"/>
+				<xs:element ref="xpdl:Description" minOccurs="0"/>
+				<xs:element ref="xpdl:ExternalReference" minOccurs="0"/>
+				<xs:element ref="xpdl:ExtendedAttributes" minOccurs="0"/>
+				<!--<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>-->
+				<xs:choice minOccurs="0">
+					<xs:sequence>
+						<xs:element name="Extensions"/>
+						<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="Id" type="xs:NMTOKEN" use="required"/>
+			<xs:attribute name="Name" type="xs:string" use="optional"/>
+			<!-- New Apia Participant Attributes -->
+			<xs:attribute name="PartGenerated" type="xs:boolean" use="required" form="qualified"/>
+			<xs:attribute name="PartAllEnvs" type="xs:boolean" use="optional" form="qualified"/>
+			<xs:attribute name="EnvsQty" type="xs:integer" use="optional" form="qualified"/>
+			<xs:attribute name="HasCondition" type="xs:boolean" use="optional" form="qualified"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required" form="qualified"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required" form="qualified"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required" form="qualified"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required" form="qualified"/>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Performers">
+		<xs:annotation>
+			<xs:documentation>BPMN and XPDL</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:Performer" maxOccurs="unbounded"/>
+				<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Performer">
+		<xs:annotation>
+			<xs:documentation>A String or Expression designating the Performer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string"> <!-- The extension in this case is used to represent the evaluation condition. -->
+					<!-- New Apia Performer Attributes -->
+					<xs:attribute name="ProEleId" type="apia:Id" use="required" form="qualified"/>
+					<xs:attribute name="PerfId" type="apia:Id" use="required" form="qualified"/> <!-- it matches the id of a participant-->
+					<xs:attribute name="PerfName" type="xs:string" use="optional" form="qualified"/><!-- it matches the name of a participant-->
+					<xs:attribute name="ProElePerfEvalCond" type="xs:string" use="optional" form="qualified"/>
+					<xs:attribute name="ProElePerfEvalSql" type="xs:string" use="optional" form="qualified"/>
+					<xs:attribute name="ProElePerfDoc" type="xs:string" use="optional" form="qualified"/>
+					<xs:anyAttribute namespace="##other" processContents="lax"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Artifact">
+		<xs:annotation>
+			<xs:documentation>BPMN: Not further defined here.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0">
+				<xs:element ref="xpdl:Object" minOccurs="0"/>
+				<xs:element ref="xpdl:Group" minOccurs="0"/>
+				<xs:element ref="xpdl:DataObject" minOccurs="0"/>
+				<xs:element ref="xpdl:NodeGraphicsInfos" minOccurs="0"/>
+				<!--<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>-->
+				<xs:choice minOccurs="0">
+					<xs:sequence>
+						<xs:element name="Extensions"/>
+						<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="Id" type="xs:NMTOKEN" use="required"/>
+			<xs:attribute name="Name" type="xs:string" use="optional"/>
+			<xs:attribute name="ArtifactType" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="DataObject"/>
+						<xs:enumeration value="Group"/>
+						<xs:enumeration value="Annotation"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="TextAnnotation" type="xs:string" use="optional"/>
+			<xs:attribute name="Group" type="xs:string" use="optional"/>
+			<!-- New Apia Artifact Attributes -->
+			<xs:attribute name="EnvId" type="apia:Id" use="required" form="qualified"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required" form="qualified"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required" form="qualified"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required" form="qualified"/>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Artifacts">
+		<xs:annotation>
+			<xs:documentation>BPMN</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="apia:Artifact"/>
+				<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Assignments">
+		<xs:annotation>
+			<xs:documentation>BPMN and XPDL</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:Assignment" maxOccurs="unbounded"/>
+				<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Assignment">
+		<xs:annotation>
+			<xs:documentation>BPMN and XPDL</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Target" type="xpdl:ExpressionType">
+					<xs:annotation>
+						<xs:documentation> lvalue expression of the assignment, in XPDL may be the name of a DataField, in BPMN name of a Property, in XPATH a reference</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Expression" type="xpdl:ExpressionType">
+					<xs:annotation>
+						<xs:documentation>rvalue expression of the assignment</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="AssignTime" use="optional" default="Start">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="Start"/>
+						<xs:enumeration value="End"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<!-- New Apia Assignment Attributes -->
+			<xs:attribute name="TargetType" type="xs:string" use="required" form="qualified"/>
+			<xs:attribute name="AttributeId" type="xs:string" use="optional" form="qualified"/>
+			<xs:attribute name="Type" type="xs:string" use="required" form="qualified"/>
+			<xs:attribute name="Index" type="xs:integer" use="optional" form="qualified"/>
+			<xs:attribute name="Value" type="xs:string" use="optional" form="qualified"/>
+			<xs:anyAttribute namespace="##other" processContents="lax"/>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<!-- End Apia's XPDL extensions -->
+	<!-- ========================== -->
+	<!-- Start Apia Definitions -->
+	
+	<xs:element name="AttachedEvts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:Activity" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ApiaTskStates">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:ApiaTskState" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ApiaTskState">
+		<xs:complexType>
+			<xs:attribute name="ProEleId" type="apia:Id" use="required"/>
+			<xs:attribute name="BusEntId" type="apia:Id" use="required"/>
+			<xs:attribute name="EntStaId" type="apia:Id" use="required"/>
+			<xs:attribute name="StaName" type="xs:string" use="optional"/>
+			<xs:attribute name="EvtId" type="apia:Id" use="required"/>
+			<xs:attribute name="EvtName" type="xs:string" use="optional"/>
+			<xs:attribute name="ProEleBusEntStaOrder" type="xs:integer" use="optional"/>
+			<xs:attribute name="ProEleBusEntStaEvalCond" type="xs:string" use="optional"/>
+			<xs:attribute name="ProEleBusEntStaEvalSql" type="xs:string" use="optional"/>
+			<xs:attribute name="ProEleBusEntStaDoc" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ApiaTskEvents">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:ApiaTskEvent" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ApiaTskEvent">  <!-- This element corresponds to the ProEleEvtBusClassVo object in Apia -->
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:BusClaParBindings" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="ProEleId" type="apia:Id" use="required"/>
+			<xs:attribute name="EvtId" type="apia:Id" use="required"/>
+			<xs:attribute name="EvtName" type="xs:string" use="optional"/>
+			<xs:attribute name="BusClaId" type="apia:Id" use="required"/>
+			<xs:attribute name="BusClaName" type="xs:string" use="optional"/>
+			<xs:attribute name="BusClaParBndId" type="apia:Id" use="optional"/>
+			<xs:attribute name="ProEleEvtBusClaExecOrder" type="xs:integer" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="TskNotifications">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:TskNotification" minOccurs="0" maxOccurs="unbounded"/>  <!-- REVISAR SI LIMITAMOS MAXOCCURS A LOS DISTINTOS TIPOS DE NOTIFICACIONES POSIBLES-->
+				<xs:element ref="apia:TskNotificationPool" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="apia:TskNotificationMessage" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="TskNotification">
+		<xs:complexType>
+			<xs:attribute name="TskId" type="apia:Id" use="required"/>
+			<xs:attribute name="TskNotTo" type="xs:string" use="required"/>
+			<xs:attribute name="TskNotOnComplete" type="xs:integer" use="optional"/>
+			<xs:attribute name="TskNotOnAlarm" type="xs:integer" use="optional"/>
+			<xs:attribute name="TskNotOnOverdue" type="xs:integer" use="optional"/>
+			<xs:attribute name="TskNotOnRelease" type="xs:integer" use="optional"/>
+			<xs:attribute name="TskNotOnAcquired" type="xs:integer" use="optional"/>
+			<xs:attribute name="TskNotOnAssigned" type="xs:integer" use="optional"/>
+			<xs:attribute name="TskNotOnReassign" type="xs:integer" use="optional"/>
+			<xs:attribute name="TskNotOnElevate" type="xs:integer" use="optional"/>
+			<xs:attribute name="TskNotOnDelegate" type="xs:integer" use="optional"/>
+			<xs:attribute name="FromDB" type="xs:boolean" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="TskNotificationPool">
+		<xs:complexType>
+			<xs:attribute name="TskId" type="apia:Id" use="required"/>
+			<xs:attribute name="PoolId" type="apia:Id" use="required"/>
+			<xs:attribute name="PoolName" type="xs:string" use="optional"/>
+			<xs:attribute name="TskNotEvent" type="xs:string" use="required"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="TskNotificationMessage">
+		<xs:complexType>
+			<xs:attribute name="TskId" type="apia:Id" use="required"/>
+			<xs:attribute name="TskNotEvent" type="xs:string" use="required"/>
+			<xs:attribute name="TskNotMessage" type="xs:string" use="optional"/>
+			<xs:attribute name="FromDB" type="xs:boolean" use="optional"/>
+			<xs:attribute name="LblSet" type="xs:integer" use="optional"/>
+			<xs:attribute name="LangId" type="xs:integer" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="TskDocumentation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:TskDocEvents" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="apia:TskDocFields" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="TskUniqueId" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="TskDocEvents">
+		<xs:complexType>
+			<xs:attribute name="EvtId" type="apia:Id" use="required"/>
+			<xs:attribute name="EvtDoc" type="xs:string" use="required"/>
+			<xs:attribute name="TskId" type="apia:Id" use="required"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="TskDocFields">
+		<xs:complexType>
+			<xs:attribute name="TskId" type="apia:Id" use="required"/>
+			<xs:attribute name="TskDocDesc" type="xs:string" use="optional"/>
+			<xs:attribute name="TskDocActMan" type="xs:string" use="optional"/>
+			<xs:attribute name="TskDocActTar" type="xs:string" use="optional"/>
+			<xs:attribute name="TskDocActManPos" type="xs:string" use="optional"/>
+			<xs:attribute name="TskDocActManAnt" type="xs:string" use="optional"/>
+			<xs:attribute name="TskDocActTarAlt" type="xs:string" use="optional"/>
+			<xs:attribute name="TskDocActManPosAlt" type="xs:string" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="RoleRef">
+		<xs:complexType>
+			<xs:attribute name="RoleId" type="apia:Id" use="required"/>
+			<xs:attribute name="RoleName" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="FormsRef">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:Step" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Step">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:FormRef" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="FormRef">  <!-- This element represents the Apia ProEleFormVo and the ProEleBusEntFormVo Objects -->
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">  <!-- The extension in this case is used to represent the evaluation condition. -->
+					<xs:attribute name="ProEleId" type="apia:Id" use="required"/>
+					<xs:attribute name="BusEntId" type="apia:Id" use="optional"/>  <!-- This attribute only applies if FrmType = "E" -->
+					<xs:attribute name="FrmId" type="apia:Id" use="required"/>
+					<xs:attribute name="FrmName" type="xs:string" use="optional"/>
+					<xs:attribute name="FrmType" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:NMTOKEN">
+								<xs:enumeration value="E"/>  <!-- Entity Attribute -->
+								<xs:enumeration value="P"/>  <!-- Process Attribute -->
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="ProEleFrmStepId" type="apia:Id" use="required"/>
+					<xs:attribute name="ProEleFrmReadOnly" type="xs:integer" use="required"/>
+					<xs:attribute name="ProEleFrmOrder" type="xs:integer" use="optional"/>
+					<xs:attribute name="ProEleFrmMultiply" type="xs:string" use="optional"/>
+					<xs:attribute name="ProEleFrmEvalCond" type="xs:string" use="optional"/>
+					<xs:attribute name="ProEleFrmEvalSql" type="xs:string" use="optional"/>
+					<xs:attribute name="ProEleFrmDoc" type="xs:string" use="optional"/>
+					<xs:attribute name="ProId" type="apia:Id" use="required"/>
+					<xs:attribute name="ProVerId" type="apia:Id" use="required"/>
+					<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+					<xs:attribute name="RegUser" type="xs:string" use="required"/>
+					<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+					<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="WSAttributePro">
+		<xs:complexType>
+			<xs:attribute name="AttributeId" type="apia:Id" use="required"/>
+			<xs:attribute name="Name" type="xs:string" use="required"/>
+			<xs:attribute name="Multivalued" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="T"/>
+						<xs:enumeration value="F"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="AttributeType" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="P"/>
+						<xs:enumeration value="E"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="AttributeUk" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="T"/>
+						<xs:enumeration value="F"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="WSAttributeTsk">
+		<xs:complexType>
+			<xs:attribute name="AttributeId" type="apia:Id" use="required"/>
+			<xs:attribute name="Name" type="xs:string" use="required"/>
+			<xs:attribute name="Multivalued" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="T"/>
+						<xs:enumeration value="F"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="AttributeType" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="P"/>
+						<xs:enumeration value="E"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="AttributeUk" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="T"/>
+						<xs:enumeration value="F"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="WsPublications">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:WsPublication" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="WsPublication">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:WsPublicationAttributes" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="WsPubId" type="apia:Id" use="required"/>
+			<xs:attribute name="WsPubType" type="xs:string" use="required"/>
+			<xs:attribute name="WsName" type="xs:string" use="required"/>
+			<xs:attribute name="RefId" type="apia:Id" use="required"/>
+			<xs:attribute name="RefName" type="xs:string" use="required"/>
+			<xs:attribute name="Status" type="xs:string" use="required"/>
+			<xs:attribute name="PermittedAction" type="xs:string" use="required"/>
+			<xs:attribute name="Flags" type="xs:string" use="required"/>
+			<xs:attribute name="WsXmlDesign" type="xs:string" use="required"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="WsPublicationAttributes">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:WsPublicationAttribute" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="WsPublicationAttribute">
+		<xs:complexType>
+			<xs:attribute name="ProEleId" type="apia:Id" use="required"/>
+			<xs:attribute name="WsPubRefId" type="apia:Id" use="required"/>
+			<xs:attribute name="AttId" type="apia:Id" use="required"/>
+			<xs:attribute name="AttName" type="xs:string" use="required"/>
+			<xs:attribute name="WsAttType" type="xs:string" use="required"/>
+			<xs:attribute name="WsAttUk" type="xs:string" use="required"/>
+			<xs:attribute name="Multivaluated" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="BusinessClasses">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:BusinessClass" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="BusinessClass">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:BusClaParams" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="BusClaId" type="apia:Id" use="required"/>
+			<xs:attribute name="BusClaName" type="xs:string" use="required"/>
+			<xs:attribute name="BusClaDesc" type="xs:string" use="optional"/>
+			<xs:attribute name="BusClaType" type="xs:string" use="required"/>
+			<xs:attribute name="BusClaExec" type="xs:string" use="required"/>
+			<xs:attribute name="BusClaUrl" type="xs:string" use="optional"/>
+			<xs:attribute name="BusClaView" type="xs:string" use="optional"/>
+			<xs:attribute name="DbConId" type="apia:Id" use="optional"/>
+			<xs:attribute name="PrjId" type="apia:Id" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="BusClaParams">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:BusClaParam" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="BusClaParam">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:BusClaParBinding" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="BusClaId" type="apia:Id" use="required"/>
+			<xs:attribute name="BusClaParId" type="apia:Id" use="required"/>
+			<xs:attribute name="BusClaParName" type="xs:string" use="required"/>
+			<xs:attribute name="BusClaParDesc" type="xs:string" use="optional"/>
+			<xs:attribute name="BusClaParIndex" type="xs:integer" use="optional"/>
+			<xs:attribute name="BusClaParType" type="xs:string" use="optional"/>
+			<xs:attribute name="BusClaParLength" type="xs:integer" use="optional"/>
+			<xs:attribute name="BusClaParInOut" type="xs:string" use="optional"/>
+			<xs:attribute name="Flags" type="xs:string" use="optional"/>
+			<xs:attribute name="ReadOnly" type="xs:boolean" use="optional"/>
+			<xs:attribute name="Binding" type="xs:boolean" use="optional"/>
+			<xs:attribute name="ParInOutReadOnly" type="xs:boolean" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="BusClaParBinding">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="BusClaParBndId" type="apia:Id" use="required"/>
+					<xs:attribute name="BusClaParBndType" type="xs:string" use="optional"/>
+					<xs:attribute name="BusClaParBndValue" type="xs:string" use="optional"/>
+					<xs:attribute name="BusClaParId" type="apia:Id" use="required"/>
+					<xs:attribute name="BusClaParName" type="xs:string" use="optional"/>
+					<xs:attribute name="BusClaParType" type="xs:string" use="optional"/>
+					<xs:attribute name="AttId" type="apia:Id" use="optional"/>
+					<xs:attribute name="AttName" type="xs:string" use="optional"/>
+					<xs:attribute name="AttLabel" type="xs:string" use="optional"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="BusClaParBindings">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:BusClaParBinding" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="UserQueries">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:UserQuery" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:element name="UserQuery">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:QryColumns" minOccurs="0"/>
+				<xs:element ref="apia:QryEvents" minOccurs="0"/>
+				<xs:element ref="apia:QryCharts" minOccurs="0"/>
+				<xs:element ref="apia:QryButtons" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="QryId" type="apia:Id" use="required"/>
+			<xs:attribute name="QryName" type="xs:string" use="required"/>
+			<xs:attribute name="QryTitle" type="xs:string" use="required"/>
+			<xs:attribute name="QryDesc" type="xs:string" use="optional"/>
+			<xs:attribute name="QryViewName" type="xs:string" use="required"/>
+			<xs:attribute name="QrySqlSentence" type="xs:string" use="optional"/>
+			<xs:attribute name="QrySqlSentence2" type="xs:string" use="optional"/>
+			<xs:attribute name="QrySqlSort" type="xs:string" use="optional"/>
+			<xs:attribute name="QryType" type="xs:string" use="optional"/>
+			<xs:attribute name="QryColIdModValue" type="xs:string" use="optional"/>
+			<xs:attribute name="QryColIdModText" type="xs:string" use="optional"/>
+			<xs:attribute name="QryFlags" type="xs:string" use="optional"/>
+			<xs:attribute name="QryButtons" type="xs:string" use="optional"/>
+			<xs:attribute name="QryActions" type="xs:string" use="optional"/>
+			<xs:attribute name="DbConId" type="apia:Id" use="optional"/>
+			<xs:attribute name="FncId" type="apia:Id" use="optional"/>
+			<xs:attribute name="PrjId" type="apia:Id" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="QryEvents">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:QryEvent" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="QryEvent">
+		<xs:complexType>
+			<xs:attribute name="QryId" type="apia:Id" use="required"/>
+			<xs:attribute name="EvtId" type="apia:Id" use="required"/>
+			<xs:attribute name="BusClaId" type="apia:Id" use="required"/>
+			<xs:attribute name="BusClaParBnd" type="xs:integer" use="optional"/>
+			<xs:attribute name="QryEvtBusClaExecOrder" type="xs:integer" use="required"/>
+			<xs:attribute name="ButtonLabel" type="xs:string" use="required"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="QryCharts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:QryChart" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="QryChart">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:QryChtSeries" minOccurs="0"/>
+				<xs:element ref="apia:QryChtProperties" minOccurs="0"/>
+				<xs:element name="QryColX" type="apia:QryColumn" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="QryId" type="apia:Id" use="required"/>
+			<xs:attribute name="QryChtId" type="apia:Id" use="required"/>
+			<xs:attribute name="QryChtType" type="xs:string" use="required"/>
+			<xs:attribute name="QryChtSubType" type="xs:string" use="optional"/>
+			<xs:attribute name="QryChtTitle" type="xs:string" use="required"/>
+			<xs:attribute name="QryChtTitleX" type="xs:string" use="optional"/>
+			<xs:attribute name="QryChtTitleY" type="xs:string" use="optional"/>
+			<xs:attribute name="QryColIdX" type="apia:Id" use="optional"/>
+			<xs:attribute name="QryChtOrder" type="xs:integer" use="optional"/>
+			<xs:attribute name="QryColIdXCompose" type="xs:string" use="optional"/>
+			<xs:attribute name="InDataBase" type="xs:boolean" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="QryChtSeries">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:QryChtSerie" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="QryChtSerie">
+		<xs:complexType>
+			<xs:attribute name="QryId" type="apia:Id" use="required"/>
+			<xs:attribute name="QryChtId" type="apia:Id" use="required"/>
+			<xs:attribute name="QryColId" type="apia:Id" use="required"/>
+			<xs:attribute name="QryChtSerieColor" type="xs:string" use="optional"/>
+			<xs:attribute name="QryColName" type="xs:string" use="optional"/>
+			<xs:attribute name="AttId" type="apia:Id" use="optional"/>
+			<xs:attribute name="BusClaParId" type="apia:Id" use="optional"/>
+			<xs:attribute name="Valid" type="xs:boolean" use="optional"/>
+			<xs:attribute name="Confirmed" type="xs:boolean" use="optional"/>
+			<xs:attribute name="ParentQryChtId" type="apia:Id" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="QryChtProperties">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:QryChtProperty" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="QryChtProperty">
+		<xs:complexType>
+			<xs:attribute name="QryId" type="apia:Id" use="required"/>
+			<xs:attribute name="QryChtId" type="apia:Id" use="required"/>
+			<xs:attribute name="PrpId" type="apia:Id" use="required"/>
+			<xs:attribute name="QryChtPrpStrValue" type="xs:string" use="optional"/>
+			<xs:attribute name="QryChtPrpNumValue" type="xs:integer" use="optional"/>
+			<xs:attribute name="QryChtPrpDteValue" type="xs:dateTime" use="optional"/>
+			<xs:attribute name="ParentQryChtId" type="apia:Id" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="QryButtons">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:QryButton" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="QryButton">
+		<xs:complexType>
+			<xs:attribute name="ButtonCode" type="xs:integer" use="required"/>
+			<xs:attribute name="ButtonLabel" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="QryColumns">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="QryColumn" type="apia:QryColumn" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="QryColumn">
+		<xs:sequence>
+			<xs:element ref="apia:DataField" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="QryId" type="apia:Id" use="required"/>
+		<xs:attribute name="QryColId" type="apia:Id" use="required"/>
+		<xs:attribute name="QryColName" type="xs:string" use="required"/>
+		<xs:attribute name="QryColHeadName" type="xs:string" use="optional"/>
+		<xs:attribute name="QryColTooltip" type="xs:string" use="optional"/>
+		<xs:attribute name="QryColType" type="xs:string" use="required"/>
+		<xs:attribute name="QryColTypeFilter" type="xs:string" use="optional"/>
+		<xs:attribute name="QryColSort" type="xs:string" use="optional"/>
+		<xs:attribute name="QryColValue" type="xs:string" use="optional"/>
+		<xs:attribute name="QryColDataType" type="xs:string" use="required"/>
+		<xs:attribute name="QryColDbType" type="xs:string" use="required"/>
+		<xs:attribute name="QryColWidth" type="xs:integer" use="optional"/>
+		<xs:attribute name="QryColOrder" type="xs:integer" use="optional"/>
+		<xs:attribute name="QryColFlags" type="xs:string" use="optional"/>
+		<xs:attribute name="QryColFunction" type="xs:integer" use="optional"/>
+		<xs:attribute name="QryColParStart" type="xs:integer" use="optional"/>
+		<xs:attribute name="QryColParEnd" type="xs:integer" use="optional"/>
+		<xs:attribute name="AttId" type="apia:Id" use="optional"/>
+		<xs:attribute name="BusclaParId" type="apia:Id" use="optional"/>
+		<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+		<xs:attribute name="RegUser" type="xs:string" use="required"/>
+		<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+		<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+	</xs:complexType>
+	
+	<xs:element name="Forms">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:Form" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Form">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:FormLayout"/>
+				<xs:element ref="apia:Documents" minOccurs="0"/>
+				<xs:element ref="apia:AdvancedSettings"/>
+				<xs:element ref="apia:FormDocumentation"/>
+			</xs:sequence>
+			<xs:attribute name="FrmId" type="apia:Id" use="required"/>
+			<xs:attribute name="FrmName" type="xs:string" use="required"/>
+			<xs:attribute name="FrmTitle" type="xs:string" use="required"/>
+			<xs:attribute name="FrmDesc" type="xs:string" use="optional"/>
+			<xs:attribute name="FrmFlags" type="xs:string" use="optional"/>
+			<xs:attribute name="FrmFather" type="xs:integer" use="optional"/>
+			<xs:attribute name="PrjId" type="apia:Id" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="FormLayout">
+		<xs:complexType>
+			<xs:attribute name="FormLayoutXml" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="AdvancedSettings">
+		<xs:complexType>
+			<xs:attribute name="TriggerAjax" type="xs:boolean" use="optional"/>
+			<xs:attribute name="RefreshAjax" type="xs:boolean" use="optional"/>
+			<xs:attribute name="NotRefreshAjaxRO" type="xs:boolean" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="FormDocumentation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FrmDocEvents" type="apia:FormDocEvents" minOccurs="0"/>
+				<xs:element name="FldDocEvents" type="apia:FormDocEvents" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="FrmUniqueId" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="FormDocEvents">
+		<xs:sequence>
+			<xs:element ref="apia:FormDocEvent" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="FormDocEvent">
+		<xs:complexType>
+			<xs:attribute name="FrmId" type="apia:Id" use="required"/>
+			<xs:attribute name="ObjId" type="xs:string" use="required"/>
+			<xs:attribute name="EvtId" type="apia:Id" use="required"/>
+			<xs:attribute name="EvtDoc" type="xs:string" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Documents">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:Document" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Document">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:DocPermissions" minOccurs="0"/>
+				<xs:element ref="apia:DocVersions" minOccurs="0"/>
+				<xs:element ref="apia:DocLock" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="DocId" type="apia:Id" use="required"/>
+			<xs:attribute name="DocName" type="xs:string" use="required"/>
+			<xs:attribute name="DocDesc" type="xs:string" use="optional"/>
+			<xs:attribute name="DocPath" type="xs:string" use="required"/>
+			<xs:attribute name="DocSize" type="xs:unsignedLong" use="optional"/>
+			<xs:attribute name="DocAllowAll" type="xs:string" use="optional"/>
+			<xs:attribute name="TmpFilePath" type="xs:string" use="optional"/>
+			<xs:attribute name="DocStatus" type="xs:string" use="optional"/>
+			<xs:attribute name="UserPermissions" type="xs:string" use="optional"/>
+			<xs:attribute name="DocType" type="xs:string" use="optional"/>
+			<xs:attribute name="LockedByUser" type="xs:boolean" use="optional"/>
+			<xs:attribute name="NewVersion" type="xs:boolean" use="optional"/>
+			<xs:attribute name="DocInserted" type="xs:boolean" use="optional"/>
+			<xs:attribute name="OwnerName" type="xs:string" use="optional"/>
+			<xs:attribute name="OwnerNamePre" type="xs:string" use="optional"/>
+			<xs:attribute name="OwnerNameNum" type="xs:integer" use="optional"/>
+			<xs:attribute name="OwnerNamePos" type="xs:string" use="optional"/>
+			<xs:attribute name="PrjId" type="apia:Id" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="DocLock">
+		<xs:complexType>
+			<xs:attribute name="DocId" type="apia:Id" use="required"/>
+			<xs:attribute name="UsrLogin" type="xs:string" use="optional"/>
+			<xs:attribute name="DocLockDate" type="xs:dateTime" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="DocPermissions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:DocPermission" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="DocPermission">
+		<xs:complexType>
+			<xs:attribute name="DocId" type="apia:Id" use="required"/>
+			<xs:attribute name="DocPerId" type="apia:Id" use="required"/>
+			<xs:attribute name="DocPerType" type="xs:string" use="optional"/>
+			<xs:attribute name="UsrLogin" type="xs:string" use="optional"/>
+			<xs:attribute name="UsrName" type="xs:string" use="optional"/>
+			<xs:attribute name="PoolId" type="apia:Id" use="optional"/>
+			<xs:attribute name="PoolName" type="xs:string" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="DocVersions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:DocVersion" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="DocVersion">
+		<xs:complexType>
+			<xs:attribute name="DocId" type="apia:Id" use="required"/>
+			<xs:attribute name="DocDate" type="xs:dateTime" use="required"/>
+			<xs:attribute name="DocPath" type="xs:string" use="optional"/>
+			<xs:attribute name="DbDocId" type="apia:Id" use="optional"/>
+			<xs:attribute name="UsrLogin" type="xs:string" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Entities">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:Entity" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Entity">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:BusEntAttributes" minOccurs="0"/>
+				<xs:element ref="apia:BusEntProcesses" minOccurs="0"/>
+				<xs:element ref="apia:BusEntForms" minOccurs="0"/>
+				<xs:element ref="apia:BusEntStates" minOccurs="0"/>
+				<xs:element ref="apia:ApiaBusEntEvents" minOccurs="0"/>
+				<xs:element ref="apia:Documents" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="BusEntId" type="apia:Id" use="required"/>
+			<xs:attribute name="BusEntName" type="xs:string" use="required"/>
+			<xs:attribute name="BusEntTitle" type="xs:string" use="optional"/>
+			<xs:attribute name="BusEntDesc" type="xs:string" use="optional"/>
+			<xs:attribute name="BusEntAdminType" type="xs:string" use="required"/>
+			<xs:attribute name="BusEntIdePre" type="xs:string" use="optional"/>
+			<xs:attribute name="BusEntIdePreFix" type="xs:string" use="optional"/>
+			<xs:attribute name="BusEntIdeNum" type="xs:string" use="optional"/>
+			<xs:attribute name="BusEntIdePos" type="xs:string" use="optional"/>
+			<xs:attribute name="BusEntIdePosFix" type="xs:string" use="optional"/>
+			<xs:attribute name="BusEntExeTemplate" type="xs:string" use="optional"/>
+			<xs:attribute name="BusEntAttCmb" type="xs:integer" use="optional"/>
+			<xs:attribute name="BusEntAllowUpdInst" type="xs:string" use="optional"/>
+			<xs:attribute name="BusEntFlags" type="xs:string" use="optional"/>
+			<xs:attribute name="AttUcsFlags" type="xs:string" use="optional"/>
+			<xs:attribute name="HasInstance" type="xs:boolean" use="optional"/>
+			<xs:attribute name="ModalDependency" type="xs:boolean" use="optional"/>
+			<xs:attribute name="FncId" type="apia:Id" use="optional"/>
+			<xs:attribute name="PrjId" type="apia:Id" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="BusEntStates">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:BusEntState" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="BusEntState">
+		<xs:complexType>
+			<xs:attribute name="EntStaId" type="apia:Id" use="required"/>
+			<xs:attribute name="EntStaName" type="xs:string" use="required"/>
+			<xs:attribute name="EntStaDesc" type="xs:string" use="optional"/>
+			<xs:attribute name="PrjId" type="apia:Id" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="BusEntProcesses">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:BusEntProcess" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="BusEntProcess">
+		<xs:complexType>
+			<xs:attribute name="BusEntId" type="apia:Id" use="required"/>
+			<xs:attribute name="BusEntName" type="xs:string" use="optional"/>
+			<xs:attribute name="BusEntProBeginEntStaId" type="apia:Id" use="optional"/>
+			<xs:attribute name="BusEntProEndEntStaId" type="apia:Id" use="optional"/>
+			<xs:attribute name="ProId" type="apia:Id" use="required"/>
+			<xs:attribute name="ProVerId" type="apia:Id" use="required"/>
+			<xs:attribute name="ProName" type="xs:string" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="BusEntForms">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:BusEntForm" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="BusEntForm">
+		<xs:complexType>
+			<xs:attribute name="BusEntId" type="apia:Id" use="required"/>
+			<xs:attribute name="FrmId" type="apia:Id" use="required"/>
+			<xs:attribute name="BusEntFrmOrder" type="xs:integer" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="BusEntAttributes">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AttString" minOccurs="0" maxOccurs="10">
+					<xs:complexType>
+						<xs:attribute name="AttId" type="apia:Id" use="required"/>
+						<xs:attribute name="AttPos" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="1"/>
+									<xs:maxInclusive value="10"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="AttNum" minOccurs="0" maxOccurs="8">
+					<xs:complexType>
+						<xs:attribute name="AttIdNum" type="apia:Id" use="required"/>
+						<xs:attribute name="AttPos" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="1"/>
+									<xs:maxInclusive value="8"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="AttDate" minOccurs="0" maxOccurs="6">
+					<xs:complexType>
+						<xs:attribute name="AttIdDte" type="apia:Id" use="required"/>
+						<xs:attribute name="AttPos" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="1"/>
+									<xs:maxInclusive value="6"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ApiaBusEntEvents">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:ApiaBusEntEvent" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ApiaBusEntEvent">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:BusClaParBindings" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="BusEntId" type="apia:Id" use="required"/>
+			<xs:attribute name="BusEntName" type="xs:string" use="optional"/>
+			<xs:attribute name="EvtId" type="apia:Id" use="required"/>
+			<xs:attribute name="EvtName" type="xs:string" use="optional"/>
+			<xs:attribute name="BusClaId" type="apia:Id" use="required"/>
+			<xs:attribute name="BusClaName" type="xs:string" use="optional"/>
+			<xs:attribute name="BusClaParBndId" type="apia:Id" use="optional"/>
+			<xs:attribute name="BusEntEvtBusClaExecOrder" type="xs:integer" use="required"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Roles">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:Role" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Role">
+		<xs:complexType>
+			<xs:attribute name="RoleId" type="apia:Id" use="required"/>
+			<xs:attribute name="RoleName" type="xs:string" use="required"/>
+			<xs:attribute name="RoleDesc" type="xs:string" use="optional"/>
+			<xs:attribute name="PrjId" type="apia:Id" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ApiaProEvents">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:ApiaProEvent" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ApiaProEvent">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:BusClaParBindings" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="EvtId" type="apia:Id" use="required"/>
+			<xs:attribute name="EvtName" type="xs:string" use="optional"/>
+			<xs:attribute name="BusClaId" type="apia:Id" use="required"/>
+			<xs:attribute name="BusClaName" type="xs:string" use="optional"/>
+			<xs:attribute name="BusClaParBndId" type="apia:Id" use="optional"/>
+			<xs:attribute name="ProEvtBusClaExecOrder" type="xs:integer" use="required"/>
+			<xs:attribute name="ProId" type="apia:Id" use="required"/>
+			<xs:attribute name="ProVerId" type="apia:Id" use="required"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ProDocumentation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:ProDocEvents" minOccurs="0"/>
+				<xs:element ref="apia:ProDocFields" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="ProUniqueId" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ProDocEvents">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:ProDocEvent" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ProDocEvent">
+		<xs:complexType>
+			<xs:attribute name="EvtId" type="apia:Id" use="required"/>
+			<xs:attribute name="EvtDoc" type="xs:string" use="optional"/>
+			<xs:attribute name="ProId" type="apia:Id" use="required"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ProDocFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:ProDocField" minOccurs="0" maxOccurs="15"/>
+			</xs:sequence>
+			<xs:attribute name="ProDocObj" type="xs:string" use="optional"/>
+			<xs:attribute name="ProId" type="apia:Id" use="required"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ProDocField">
+		<xs:complexType>
+			<xs:attribute name="ProDocFieldValue" type="xs:string" use="optional"/>
+			<xs:attribute name="ProDocFieldDesc" type="xs:string" use="optional"/>
+			<xs:attribute name="ProDocFieldPos" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:minInclusive value="1"/>
+						<xs:maxInclusive value="15"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ProNotifications">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:ProNotification" minOccurs="0" maxOccurs="unbounded"/>  <!-- REVISAR SI LIMITAMOS MAXOCCURS A LOS DISTINTOS TIPOS DE NOTIFICACIONES POSIBLES-->
+				<xs:element ref="apia:ProNotificationPool" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="apia:ProNotificationMessage" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ProNotification">
+		<xs:complexType>
+			<xs:attribute name="ProNotTo" type="xs:string" use="required"/>
+			<xs:attribute name="ProNotOnCreate" type="xs:integer" use="optional"/>
+			<xs:attribute name="ProNotOnEnd" type="xs:integer" use="optional"/>
+			<xs:attribute name="ProNotOnAlert" type="xs:integer" use="optional"/>
+			<xs:attribute name="ProNotOnOverdue" type="xs:integer" use="optional"/>
+			<xs:attribute name="FromDB" type="xs:boolean" use="optional"/>
+			<xs:attribute name="ProId" type="apia:Id" use="optional"/>
+			<xs:attribute name="ProVerId" type="apia:Id" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ProNotificationPool">
+		<xs:complexType>
+			<xs:attribute name="PoolId" type="apia:Id" use="required"/>
+			<xs:attribute name="PoolName" type="xs:string" use="optional"/>
+			<xs:attribute name="ProNotEvent" type="xs:string" use="required"/>
+			<xs:attribute name="ProId" type="apia:Id" use="required"/>
+			<xs:attribute name="ProVerId" type="apia:Id" use="required"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ProNotificationMessage">
+		<xs:complexType>
+			<xs:attribute name="ProNotMessage" type="xs:string" use="optional"/>
+			<xs:attribute name="ProNotEvent" type="xs:string" use="required"/>
+			<xs:attribute name="FromDB" type="xs:boolean" use="optional"/>
+			<xs:attribute name="LblSet" type="xs:integer" use="optional"/>
+			<xs:attribute name="LangId" type="xs:integer" use="optional"/>
+			<xs:attribute name="ProId" type="apia:Id" use="required"/>
+			<xs:attribute name="ProVerId" type="apia:Id" use="required"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="MonProForms">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:MonProForm" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="MonProForm">
+		<xs:complexType>
+			<xs:attribute name="FrmId" type="apia:Id" use="required"/>
+			<xs:attribute name="FrmName" type="xs:string" use="optional"/>
+			<xs:attribute name="ProFrmOrder" type="xs:integer" use="optional"/>
+			<xs:attribute name="ProId" type="apia:Id" use="required"/>
+			<xs:attribute name="ProVerId" type="apia:Id" use="required"/>
+			<xs:attribute name="ProName" type="xs:string" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="RedundantProAtts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AttString" minOccurs="0" maxOccurs="5">
+					<xs:complexType>
+						<xs:attribute name="AttId" type="apia:Id" use="required"/>
+						<xs:attribute name="AttPos" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="1"/>
+									<xs:maxInclusive value="5"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="AttNum" minOccurs="0" maxOccurs="3">
+					<xs:complexType>
+						<xs:attribute name="AttIdNum" type="apia:Id" use="required"/>
+						<xs:attribute name="AttPos" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="1"/>
+									<xs:maxInclusive value="3"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="AttDate" minOccurs="0" maxOccurs="3">
+					<xs:complexType>
+						<xs:attribute name="AttIdDte" type="apia:Id" use="required"/>
+						<xs:attribute name="AttPos" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="1"/>
+									<xs:maxInclusive value="3"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Classifications">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:Classification" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Classification">
+		<xs:complexType>
+			<xs:attribute name="ClaTreeId" type="apia:Id" use="required"/>
+			<xs:attribute name="ClaTreeName" type="xs:string" use="required"/>
+			<xs:attribute name="ClaTreeDesc" type="xs:string" use="optional"/>
+			<xs:attribute name="ClaTreeIdFather" type="apia:Id" use="optional"/>
+			<xs:attribute name="ClaTreeFatherName" type="xs:string" use="optional"/>
+			<xs:attribute name="PrjId" type="apia:Id" use="optional"/>
+			<xs:attribute name="EnvId" type="apia:Id" use="required"/>
+			<xs:attribute name="RegUser" type="xs:string" use="required"/>
+			<xs:attribute name="RegStatus" type="xs:integer" use="required"/>
+			<xs:attribute name="RegDate" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Tasks">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apia:Task" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:simpleType name="Id">
+		<!--<xs:restriction base="xs:integer"/>  -->
+		<xs:restriction base="xs:integer"/>  
+	</xs:simpleType>
+	
+	<!-- End Apia Definitions -->
+</xs:schema>

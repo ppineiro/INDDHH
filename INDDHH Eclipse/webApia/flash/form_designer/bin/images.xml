@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<forms>
+	<data>
+		<level width="0" name="id" label="id" type="label" hidden="true" />
+		<level width="40%" name="name" label="Name" type="label" />
+		<level width="60%" name="label" label="Label" type="label" />
+	</data>
+	<values>
+		<value>
+			<level name="id" value="FTP" />
+			<level name="name" value="FTP" />
+			<level name="label" value="path de img 1" />
+		</value>
+		<value>
+			<level name="id" value="FTP2" />
+			<level name="name" value="FTP2" />
+			<level name="label" value="path de img 2" />
+		</value>
+		<value>
+			<level name="id" value="FTP3" />
+			<level name="name" value="FTP3" />
+			<level name="label" value="path de img 3" />
+		</value>
+	</values>
+</forms>

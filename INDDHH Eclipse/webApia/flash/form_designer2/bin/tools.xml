@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<elements>
+	<element name="input" action="dragAndDrop" elementClass="view.fields.InputField"/>
+	<element name="combo" action="dragAndDrop" elementClass="view.fields.ComboboxField"/>
+	<element name="checkbox" action="dragAndDrop" elementClass="view.fields.CheckboxField"/>
+	<element name="textarea" action="dragAndDrop" elementClass="view.fields.TextareaField"/>
+	<element name="file" action="dragAndDrop" elementClass="view.fields.FileField"/>
+	<element name="radio" action="dragAndDrop" elementClass="view.fields.RadiobuttonField"/>
+	<element name="button" action="dragAndDrop" elementClass="view.fields.ButtonField"/>
+	<element name="label" action="dragAndDrop" elementClass="view.fields.LabelField"/>
+	<element name="table" action="dragAndDrop" elementClass="view.fields.GridField"/>
+	<element name="more" action="press" elementClass="showMoreAction">
+		<element name="title" action="dragAndDrop" elementClass="view.fields.TitleField"/>
+		<element name="password" action="dragAndDrop" elementClass="view.fields.PasswordField"/>
+		<element name="image" action="dragAndDrop" elementClass="view.fields.ImageField"/>
+		<element name="tree" action="dragAndDrop" elementClass="view.fields.TreeField"/>
+		<element name="listbox" action="dragAndDrop" elementClass="view.fields.ListboxField"/>
+		<element name="editor" action="dragAndDrop" elementClass="view.fields.EditorField"/>	
+		<element name="link" action="dragAndDrop" elementClass="view.fields.LinkField"/>
+		<element name="hidden" action="dragAndDrop" elementClass="view.fields.HiddenField"/>
+		<element name="captcha" action="dragAndDrop" elementClass="view.fields.CaptchaField"/>
+	</element>
+	<element name="undo" action="click" elementClass="undo"/>
+	<element name="redo" action="click" elementClass="redo"/>
+	<element name="layout" action="press" elementClass="editWorkareaAction"/>
+	<element name="clear" action="click" elementClass="clearForm" />
+	
+	<!--element label="Listbox" color="0xC9E2BA" name="listbox" icon="toolIcons.ListboxIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.ListboxField"/>
+	<!--element label="Combobox" color="0xC9E2BA" name="combobox" icon="toolIcons.ComboboxIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.ComboboxField"/>
+	<element label="Checkbox" color="0xC9E2BA" name="checkbox" icon="toolIcons.CheckboxIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.CheckboxField"/>
+	<element label="Password" color="0xC9E2BA" name="password" icon="toolIcons.PasswordIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.PasswordField"/>
+	<element label="Option" color="0xC9E2BA" name="option" icon="toolIcons.OptionIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.RadiobuttonField"/>
+	<element label="Textarea" color="0xC9E2BA" name="textarea" icon="toolIcons.TextareaIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.TextareaField"/>
+	<element label="Label" color="0xC9E2BA" name="label" icon="toolIcons.LabelIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.LabelField"/>
+	<element label="Button" color="0xC9E2BA" name="button" icon="toolIcons.ButtonIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.ButtonField"/>
+	<element label="Title" color="0xC9E2BA" name="title" icon="toolIcons.TitleIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.TitleField"/>
+	<element label="Fileinput" color="0xC9E2BA" name="file" icon="toolIcons.FileIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.FileField"/>
+	<element label="Hidden" color="0xC9E2BA" name="hidden" icon="toolIcons.HiddenIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.HiddenField"/>
+	<element label="Image" color="0xC9E2BA" name="image" icon="toolIcons.ImageIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.ImageField"/>
+	<element label="Grid" color="0xC9E2BA" name="grid" icon="toolIcons.GridIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.GridField" attUrl="attributes.xml"/>
+	<element label="Link" color="0xC9E2BA" name="link" icon="toolIcons.LinkIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.LinkField"/>
+	<element label="Editor" color="0xFFFFFF" name="editor" icon="toolIcons.EditorIcon" className="view.tools.DragNDrop" group="events" elementClass="view.fields.EditorField"/>	
+	
+	<element label="Editar area de trabajo" color="0xFFFFFF" name="editWorkarea" icon="toolIcons.AddColumnTool" className="view.tools.Press" group="events" pressGroup="pressGroup1" elementClass="view.tools.toolAction.EditWorkareaAction"/>
+	
+	<element label="Propiedades del formulario" color="0xFFFFFF" name="formProperties" icon="toolIcons.PropertyTool" className="view.tools.Click" group="events" elementClass="view.tools.toolAction.FormProperties"/>
+	<element label="Limpiar formulario" color="0xFFFFFF" name="clearForm" icon="toolIcons.CloseTool" className="view.tools.Click" group="events" elementClass="view.tools.toolAction.ClearForm" /-->
+	
+</elements>

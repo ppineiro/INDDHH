@@ -1,0 +1,29 @@
+
+@media (max-width: 768px) {
+	.modalContent {
+	    width: 94% !important;
+	}
+}
+
+.modalContent.modal-loading {
+	width: 200px;
+	border-radius: 5px;
+}
+
+.modalContent.modal-loading .header {
+	display: none;
+}
+
+.modalContent.modal-loading .footer {
+	display: none;
+}
+
+.modalContent.modal-loading .content {
+    text-align: center;
+    background: url(spinner.gif) no-repeat;
+    background-position: top center;
+    background-size: 30px;
+    padding-top: 35px;
+    margin: 35px 0 15px;
+    
+}

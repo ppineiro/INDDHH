@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Sexy Tooltips - www.coders.me</title><link rel="stylesheet" href="global.css" type="text/css" media="all" /><script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.3/mootools-yui-compressed.js"></script><script type="text/javascript" src="js/sexy-tooltips.v1.1.mootools.js"></script><link rel="stylesheet" href="js/sexy-tooltips/blue.css" type="text/css" media="all" id="theme"/><style>
+  .alert h1 {
+    font-family:Verdana,Arial,Helvetica,sans-serif;
+    font-size:1em;
+    font-weight:bold;
+    padding-left:18px;
+    background: url('images/error.png') no-repeat left center;
+    color:#000;
+    margin:0 0 8px 0;
+  }
+  .alert p {
+    font-family:Verdana,Arial,Helvetica,sans-serif;
+    font-size:0.9em;
+    font-weight:normal;
+    color:#000;
+    margin:0;
+    padding:0 0 8px 0;
+    line-height:14px;
+  }
+  .alert img {
+    vertical-align: top;
+  }
+  
+  .wiki h1
+  {
+    background:#C4D5E3 url(images/wikiTitle.png) no-repeat scroll 0% 50%;
+    padding:5px 0px 5px 80px;
+    border:1px solid #C4D5E3;
+    font-weight:bold;
+    clear: both; 
+    font-size: 12px;
+    color: #000;
+    margin: 0 0 8px 0;
+  }
+
+  .wiki p {
+    font-family:Verdana,Arial,Helvetica,sans-serif;
+    font-size:0.8em;
+    font-weight:normal;
+    color:#000;
+    margin:0;
+    padding:0 0 8px 0;
+    line-height:1.2em;
+  }
+
+  .wiki .thumbcaption{
+    font-size:10px;
+  }
+  .wiki .thumbinner{
+    background:#D6E6FE;
+    margin:4px auto;
+    text-align:center;
+    padding:5px;
+    border:dashed #CCCCCC 1px;
+  }
+
+  .msn {
+      opacity:0.90;
+  }
+
+  .msn h1 {
+    font-size:1.1em;
+    padding-left:18px;
+    background: url('images/msn.gif') no-repeat left center;
+    color:#333333;
+    margin:0 0 8px 0;
+  }
+
+  .msn p {
+    margin:0;
+    padding:8px 0 8px 0;
+    line-height:14px;
+  }
+  
+  .msn img {
+    float: left;
+    margin-right:6px;
+    padding-bottom:12px
+  }
+
+
+</style></head><body><div id="top"><div id="header"><div id="login-form" style="text-align: right;"><a href="http://www.coders.me/web-html-js-css/javascript/sexy-tooltips">Back to www.coders.me</a></div><h1>Sexy <span>ToolTips</span><sup>for MooTools</sup></h1></div><div class="message"><p>Really Sexy Tooltips!</p></div><div class="hastoc"><h2 id="content"><span><a href="#top">Top</a></span>Content</h2><div><p><a href="#" id="a1">Lorem ipsum dolor</a> sit amet, consectetur adipiscing elit. Duis massa metus, convallis vitae, mollis vel, feugiat vitae, nunc. Etiam a nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce mattis fermentum elit. Mauris lorem. Duis a mi. Vivamus <a href="#" id="ff">Firefox</a> arcu elit, fermentum non, sagittis vitae, rhoncus in, metus. Pellentesque in tortor. Maecenas volutpat posuere purus. Sed sed dolor. <a href="#" id="a2">Aenean nec</a> ipsum. Nunc tristique dolor et enim. Sed libero ante, gravida et, sodales at, rhoncus sed, dui. Etiam velit nisi, hendrerit quis, cursus fringilla, tincidunt a, dolor. Morbi nec arcu vitae magna viverra adipiscing. Proin in purus vel ligula porta suscipit. Pellentesque semper, <a href="#" id="a3">risus varius interdum mattis</a>, urna nisl interdum neque, sit amet luctus dolor dui vitae justo. Sed vulputate neque sed quam. Vestibulum sit amet risus. Vivamus est velit, tempus vel, condimentum ac, commodo eget, velit.</p><script type="text/javascript">
+            document.addEvent('domready', function() {
+              $('a1').tooltip ('<h1>Title Formating</h1><p>Example of simple tooltip with an image.</p>', { width: 200, style: 'alert' });
+              $('a2').tooltip ('Example of simple tooltip. Top Right arrow.', { mode: 'tr', width: 200 });
+              $('a3').tooltip ('<h1>Gato Negro</h1><p>El <b>gato negro</b> tal es considerado desde el inicio de los tiempos como un animal mágico. En la <a href="http://es.wikipedia.org/wiki/Edad_Media" title="Edad Media">Edad Media</a> sin embargo, se relacionó a los gatos negros con la brujería (se decía que los gatos negros eran brujas transformadas en tales) motivo por el cual los gatos negros (y gatos en general) eran perseguidos, cazados, metidos en sacos y quemados en hogueras.</p><p>... <a href="http://es.wikipedia.org/wiki/Gato_negro">Read More</a><div class="thumbinner" ><a href="http://es.wikipedia.org/wiki/Archivo:Gato_negro.JPG" class="image" title="Gato negro"><img width="100" height="75"alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Gato_negro.JPG/300px-Gato_negro.JPG" width="300" height="225" class="thumbimage" /></a><div class="thumbcaption">Gato negro</div></div>', { width: 240, style: 'wiki', sticky: 1 });
+              
+              $('ff').tooltip ('<img src="images/ff.jpg" alt="" />', { mode: 'tc', width: 123, style: 'alert'});
+            });
+          </script><h2 id="clicking"><span><a href="#top">Top</a></span>Clicking</h2><p>Show tooltip by clicking the <a href="#" id="b1">link</a></p><script type="text/javascript">
+            document.addEvent('domready', function() {
+              $('b1').tooltip ('It\'s working baby <img src="images/face05.png"/>', { width: 190, click: 1, style: 'alert', sticky: 1 });
+            });
+          </script><script type="text/javascript"><!--
+            google_ad_client = "pub-6896919298908258";
+            /* Sexy-Tooltips */
+            google_ad_slot = "2069642636";
+            google_ad_width = 728;
+            google_ad_height = 90;
+            //--></script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script><h2 id="reallife"><span><a href="#top">Top</a></span>Real life example</h2><form id="form-1" method="get"><p><label>Name: <input type="text" id="t1" /></label><em>Get empty for error</em></p><input type="submit" /></form><script type="text/javascript">
+            document.addEvent('domready', function() {
+            
+              $('form-1').addEvent('submit', function() {
+
+                if (!$('t1').get('value')) {
+                  $('t1').tooltip('<h1>Error...</h1><p>Complete todos los campos antes de enviar el formulario.</p>', {width:250, style: 'alert', sticky: 1, mouse: false}).show();
+                  return false;
+                } else {
+                  alert('delete all fields for see the effect');
+                }
+
+              });
+              
+              $('t1').addEvent('keyup', function() {
+                $('t1').tooltip_hide();
+              });
+              
+            });
+          </script><h2 id="skins"><span><a href="#top">Top</a></span>Skins</h2><script type="text/javascript">
+            document.addEvent('domready', function() {
+              $('i1').tooltip ('<h1>Default Style</h1><p>Reset style.</p>', { hook: true, width: 200, style: 'alert'});
+              $('i2').tooltip ('<h1>Hulk Style</h1><p>Click on the image to... don\'t make me angry! <img src="images/face03.png"/></p>', { hook: 1, width: 200, style: 'alert'});
+              $('i3').tooltip ('<h1>Rosita Fresita</h1><p>Click on the image to see a pinky style <img src="images/face05.png"/>.</p>', { hook: 1, width: 200, style: 'alert'});
+              $('i4').tooltip ('<h1>Blue Style</h1><p>Is not twitter! Click on the image to see a blue sky.</p>', { hook: 1, width: 200, style: 'alert'});
+              $('i5').tooltip ('<h1>Vista Style</h1><p>Beautiful design like Windows Vista</p>', { hook: 1, width: 200, style: 'alert'});
+              $('i6').tooltip ('<h1>Windows Live Messenger</h1><img src="images/avatarmsn.png" alt="" /><p>King of the jungle <br/>has just signed in.</p>', { hook: 1, width: 220, style: 'msn'});
+            });
+          </script><div class="img_container"><ul><li><a href="#" onclick="$('theme').href='js/sexy-tooltips/coda.css';return false;"    id="i1"><img src="images/small_logocoders.jpg" alt=""/></a></li><li><a href="#" onclick="$('theme').href='js/sexy-tooltips/vista.css';return false;"   id="i5"><img src="images/vista.jpg" alt=""/></a></li><li><a href="#" onclick="$('theme').href='js/sexy-tooltips/hulk.css';return false;"    id="i2"><img src="images/hulk.jpg" alt=""/></a></li><li><a href="#" onclick="$('theme').href='js/sexy-tooltips/rosita.css';return false;"  id="i3"><img src="images/rosita.jpg" alt=""/></a></li><li><a href="#" onclick="$('theme').href='js/sexy-tooltips/blue.css';return false;"    id="i4"><img src="images/blue.jpg" alt=""/></a></li><li><a href="#" onclick="$('theme').href='js/sexy-tooltips/msn.css';return false;"     id="i6"><img src="images/msn.jpg" alt=""/></a></li></ul></div></div><h2 id="events"><span><a href="#top">Top</a></span>Events</h2><script type="text/javascript">
+            document.addEvent('domready', function() {
+              var lastTheme = '';
+              $('e1').tooltip ('<h1>Windows Live Messenger</h1><img src="images/avatarmsn.png" alt="" /><p>King of the jungle <br/>has just signed in.</p>', { click: true, width: 220, style: 'msn', sticky: 1 });
+
+              $('e1').addEvent('click', function() {
+                lastTheme = $('theme').href;
+                $('theme').href = 'js/sexy-tooltips/msn.css';
+                return false;
+              });
+              $('e1').addEvent('tooltipshow', function() {
+                $('e1').tooltip_hide.delay(1000, $('e1'));
+              });
+              $('e1').addEvent('tooltiphide', function() {
+                $('theme').href = lastTheme;
+              });
+            });
+          </script><div class="img_container"><ul><li><a href="#" id="e1"><img src="images/msn.jpg" alt=""/></a></li></ul></div><h2 id="license"><span><a href="#top">Top</a></span>Licencia MIT</h2><div><p>Copyright (c) 2008-2009 www.coders.me (Eduardo D. Sada)</p><p>Permission is hereby granted, free of charge, to any person obtaining a copy
+            of this software and associated documentation files (the "Software"), to deal
+            in the Software without restriction, including without limitation the rights
+            to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+            copies of the Software, and to permit persons to whom the Software is
+            furnished to do so, subject to the following conditions:</p><p>The above copyright notice and this permission notice shall be included in
+            all copies or substantial portions of the Software.</p><p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+            FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+            AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+            LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+            OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+            THE SOFTWARE.</p></div><h2 id="download"><span><a href="#top">Top</a></span>Download</h2><div><p>You can download Sexy Tooltips from <a href="http://www.coders.me/web-html-js-css/javascript/sexy-tooltips">www.coders.me</a></p></div></div></div><script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script><script type="text/javascript">
+  var pageTracker = _gat._getTracker("UA-2851998-1");
+  pageTracker._trackPageview();
+  </script></body></html>

@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" metadata-complete="true"> --> 
+<web-app id="WebApp_ID" version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"  metadata-complete="true">
+
+<display-name>Apia</display-name>
+
+	<!--  ************  TYPE OF EXECUTION (TESTING OR RELEASE) **************************  -->
+	<context-param>
+		<param-name>ServletType</param-name>
+		<param-value>RELEASE</param-value>
+	</context-param>
+	
+	<!-- ************* ApiaTester files ******************************* -->
+	<context-param>
+		<param-name>PathTestFile</param-name>
+		<param-value>/tmp/ApiaTester/files</param-value>
+	</context-param>
+	
+	<!-- ************* JPIVOT ********** -->
+    <context-param>
+    	<param-name>com.tonbeller.wcf.controller.RequestContextFactory</param-name>
+ 	    <param-value>com.tonbeller.wcf.controller.RequestContextFactoryImpl</param-value>
+    </context-param>	
+	<!-- ******************************* -->
+	<!-- ************* Conector AGESIC ********** -->
+    <listener>
+		<listener-class>
+             <!-- uy.com.st.pge.agesic.proxy.ProxyMultiThread  -->
+             st.ws_pge.conector.agesic.proxy.ProxyMultiThread
+        </listener-class>
+   </listener>
+	<!-- Filtro para codificacion de caracteres en formato UTF-8--> 
+	
+    <filter>
+          <filter-name>UTF8Filter</filter-name>
+          <filter-class>com.dogma.controller.UTF8Filter</filter-class>
+          <init-param>
+             <param-name>requestEncoding</param-name>
+             <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    
+    
+	<filter>
+	   <filter-name>AvoidCacheInFiles</filter-name>
+	   <filter-class>com.dogma.controller.AvoidHttpCacheFilter</filter-class>
+		<!--    
+		<init-param>
+             <param-name>hoursToLive</param-name>
+             <param-value>1</param-value>
+        </init-param>
+        -->
+	</filter>
+     
+     
+  	<filter>
+          <filter-name>InjectionFilter</filter-name>
+          <filter-class>com.dogma.controller.InjectionFilter</filter-class>
+    </filter>
+	
+	<!--  
+    <filter>
+	    <filter-name>CaptureFilter</filter-name>
+    	<filter-class>com.apiaTester.capture.CaptureFilter</filter-class>
+  	</filter> 
+  	-->
+  	
+  	<!-- This page is displayed if a the user clicks on a query before the previous query has finished -->
+	 <filter>
+	    <filter-name>JPivotController</filter-name>
+    	<filter-class>com.dogma.controller.JpivotRequestFilter</filter-class>
+		    <init-param>
+		      <param-name>busyJSP</param-name>
+		      <param-value>/busy.jsp</param-value>
+		    </init-param>
+  	</filter>
+  	
+	
+ 
+    <filter-mapping>
+          <filter-name>UTF8Filter</filter-name>
+          <url-pattern>/*</url-pattern>
+    </filter-mapping>
+  	
+  	
+  	
+  	<filter-mapping>
+		<filter-name>AvoidCacheInFiles</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AvoidCacheInFiles</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AvoidCacheInFiles</filter-name>
+		<url-pattern>*.gif</url-pattern>
+	</filter-mapping>
+  	
+    
+    <filter-mapping>
+          <filter-name>InjectionFilter</filter-name>
+          <url-pattern>/*</url-pattern>
+    </filter-mapping>
+  	
+  	<!-- 
+	<filter-mapping>
+        <filter-name>CaptureFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>	 
+	 -->
+	
+	<filter-mapping>
+    	<filter-name>JPivotController</filter-name>
+	    <url-pattern>/jpivot/*</url-pattern>
+	</filter-mapping>
+	
+	
+	
+	
+	<!-- ********* FILTERS FOR CAS SSO -->
+	<!--<filter-class>com.apia.cas.client.validation.ApiaCASValidationFilter</filter-class>-->
+	
+	<!--  
+	<filter>
+		<filter-name>CAS Authentication Filter</filter-name>
+		<filter-class>org.jasig.cas.client.authentication.AuthenticationFilter</filter-class>
+		<init-param>
+			<param-name>casServerLoginUrl</param-name>
+			<param-value>https://localhost:8443/cas/login</param-value>
+		</init-param>
+		<init-param>
+			<param-name>serverName</param-name>
+			<param-value>https://localhost:8443</param-value>
+		</init-param>
+		<init-param>
+			<param-name>renew</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		<init-param>
+			<param-name>gateway</param-name>
+			<param-value>false</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>CAS Validation Filter</filter-name>
+		
+		<filter-class>org.jasig.cas.client.validation.Cas20ProxyReceivingTicketValidationFilter</filter-class>
+		<init-param>
+			<param-name>casServerUrlPrefix</param-name>
+			<param-value>https://localhost:8443/cas/</param-value>
+		</init-param>
+		<init-param>
+			<param-name>serverName</param-name>
+			<param-value>https://localhost:8443</param-value>
+		</init-param>
+		<init-param>
+			<param-name>proxyCallbackUrl</param-name>
+			<param-value>https://localhost:8443/Apia3.0/proxyCallback</param-value>
+		</init-param>
+		<init-param>
+			<param-name>proxyReceptorUrl</param-name>
+			<param-value>/Apia3.0/proxyCallback</param-value>
+		</init-param>
+	</filter>
+ 	<filter>
+		<filter-name>CAS HttpServletRequest Wrapper Filter</filter-name>
+		<filter-class>org.jasig.cas.client.util.HttpServletRequestWrapperFilter</filter-class>
+	</filter>
+ 	<filter>
+		<filter-name>CAS Assertion Thread Local Filter</filter-name>
+		<filter-class>org.jasig.cas.client.util.AssertionThreadLocalFilter</filter-class>
+	</filter>
+
+ 	<filter-mapping>
+		<filter-name>CAS Authentication Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CAS Validation Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CAS HttpServletRequest Wrapper Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+ 	<filter-mapping>
+		<filter-name>CAS Assertion Thread Local Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+ 	<filter-mapping>
+		<filter-name>CAS Validation Filter</filter-name>
+		<url-pattern>/proxyCallback</url-pattern> 
+	</filter-mapping>
+	
+	-->
+	<!-- ********* END FILTERS FOR CAS SSO -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!--  ************  WEB SERVICE IMPLEMENTATION USING AXIS ***************************  -->
+	<listener>
+		<listener-class>org.apache.axis.transport.http.AxisHTTPSessionListener</listener-class>
+	</listener>
+
+	<!-- ************* JPIVOT ********** -->
+	<listener>
+    	<listener-class>com.tonbeller.tbutils.res.ResourcesFactoryContextListener</listener-class>
+    </listener>
+
+	<!-- jfreechart provided servlet -->
+	<servlet>
+    	<servlet-name>ChatClient</servlet-name>
+	    <servlet-class>com.dogma.bean.UrlParser</servlet-class>
+	</servlet>
+
+	<servlet>
+    	<servlet-name>DisplayChart</servlet-name>
+	    <servlet-class>org.jfree.chart.servlet.DisplayChart</servlet-class>
+	</servlet>
+
+  	<servlet>
+    	<servlet-name>GetChart</servlet-name>
+	    <servlet-class>com.tonbeller.jpivot.chart.GetChart</servlet-class>
+  	</servlet>
+  	
+	<servlet>
+    	<servlet-name>Print</servlet-name>
+    	<servlet-class>com.tonbeller.jpivot.print.PrintServlet</servlet-class>
+	</servlet>
+  
+	<servlet>
+    	<servlet-name>Views</servlet-name>
+    	<servlet-class>com.tonbeller.jpivot.views.ViewControllerServlet</servlet-class>
+	</servlet>
+
+  	<servlet>
+    	<servlet-name>MondrianXmlaServlet</servlet-name>
+	    <servlet-class>mondrian.xmla.impl.DefaultXmlaServlet</servlet-class>
+	</servlet>
+    <!-- ******************************* -->
+
+	<servlet>
+		<servlet-name>SSO</servlet-name>
+		<servlet-class>com.gxc.saml.servlet.SSO</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>SLO</servlet-name>
+		<servlet-class>com.gxc.saml.servlet.SLO</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>AxisServlet</servlet-name>
+		<servlet-class>org.apache.axis.transport.http.AxisServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+    	<servlet-name>AdminServlet</servlet-name>
+    	<servlet-class>org.apache.axis.transport.http.AdminServlet</servlet-class>
+    	<load-on-startup>100</load-on-startup>
+	</servlet>
+
+	<!--  ************  CONTROLLER SERVLET FOR MVC IMPLEMENTATION ***********************  -->
+	<servlet>                                           
+		<servlet-name>ApiaServlet</servlet-name>            
+		<servlet-class>com.dogma.controller.DogmaActionServlet</servlet-class> 
+    </servlet>                                          
+
+	<!--  ************  CONTROLLER SERVLET FOR PORTLET IMPLEMENTATION ***********************  -->
+	
+	<servlet>                                           
+		<servlet-name>FindItemServlet</servlet-name>            
+		<servlet-class>biz.statum.apia.servlet.FindItemServlet</servlet-class> 
+    </servlet>             
+	
+	<servlet>                                           
+		<servlet-name>UserImageServlet</servlet-name>            
+		<servlet-class>biz.statum.apia.servlet.UserImageServlet</servlet-class> 
+    </servlet> 
+	
+	
+	<servlet>                                           
+		<servlet-name>ApiaQueryPortletAction</servlet-name>            
+		<servlet-class>com.dogma.action.portlet.QueryAction</servlet-class> 
+    </servlet>                                          
+
+	<servlet>                                           
+		<servlet-name>ApiaProcessStartPortletAction</servlet-name>            
+		<servlet-class>com.dogma.action.portlet.ProcessStartAction</servlet-class> 
+    </servlet>   
+    
+    <!-- <servlet> 
+    	<servlet-name>TestServlet</servlet-name>            
+		<servlet-class>com.apiaTester.test.ExecTestActionServlet</servlet-class> 
+    </servlet> -->      
+
+	<!--  ************  SECURITY SERVER SERVLET ****************************************  -->
+	<servlet>                                           
+		<servlet-name>SecurityServlet</servlet-name>            
+		<servlet-class>biz.statum.apia.web.controller.SecurityServerStarter</servlet-class> 
+		<load-on-startup>1</load-on-startup>
+    </servlet>                                          
+
+	<!--  ************  STARTS THE DISPATCHER AT SERVER STARTUP ************************  -->
+	<servlet>
+		<servlet-name>DispatcherStarter</servlet-name>
+		<servlet-class>com.dogma.controller.DispatcherStarter</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>UpdateManagerStarter</servlet-name>
+		<servlet-class>com.dogma.controller.UpdateManagerStarter</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ActionServlet</servlet-name>
+		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>
+				/WEB-INF/conf/apia-administration.xml,
+				/WEB-INF/conf/apia-ajax.xml,
+				/WEB-INF/conf/apia-controll.xml,
+				/WEB-INF/conf/apia-design.xml,
+				/WEB-INF/conf/apia-execution.xml,
+				/WEB-INF/conf/apia-main.xml,
+				/WEB-INF/conf/apia-modals.xml,
+				/WEB-INF/conf/apia-monitor.xml,
+				/WEB-INF/conf/apia-query.xml,
+				/WEB-INF/conf/apia-security.xml
+			</param-value>
+			<!-- skb-global must be at the end always -->
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet>
+    	<servlet-name>JMySpellChecker</servlet-name>
+	    <servlet-class>com.tinymce.spellchecker.JMySpellCheckerServlet</servlet-class>
+	    
+	     <init-param>		
+        	<param-name>maxSuggestionsCount</param-name>
+        	<param-value>10</param-value>
+		</init-param>
+	    
+	</servlet>
+	
+	<servlet>
+    	<servlet-name>XMLServlet</servlet-name>
+	    <servlet-class>testJS.XMLServlet</servlet-class>
+	    
+	     <!--init-param>
+            <param-name>preloadedLanguages</param-name>
+            <param-value>en_US;es_UY;pt_PT</param-value>
+        </init-param-->
+	    
+	</servlet>
+	
+	<servlet>
+		<servlet-name>BPMNTimerStarter</servlet-name>
+		<servlet-class>com.dogma.controller.BPMNTimerStarter</servlet-class>
+		<load-on-startup>50</load-on-startup>
+	</servlet>
+
+	<!--  ************  SERVLETS DE PAGOS *********************************  -->
+	<servlet>
+		<servlet-name>ResponsePagosWebServletCompraAprobada</servlet-name>
+		<servlet-class>st.pagosWeb.ResponsePagosWebServletCompraAprobada</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>ResponsePagosWebServletCompraRechazada</servlet-name>
+		<servlet-class>st.pagosWeb.ResponsePagosWebServletCompraRechazada</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>ResponsePagosWebServletCompraCancelada</servlet-name>
+		<servlet-class>st.pagosWeb.ResponsePagosWebServletCompraCancelada</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>ResponsePagosWebServletNotificacionOffLine</servlet-name>
+		<servlet-class>st.pagosWeb.ResponsePagosWebServletNotificacionOffLine</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>RespuestaDeControl</servlet-name>
+		<servlet-class>st.gatewayPagosITC.RespuestaDeControl</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>RespuestaPagoAprobada</servlet-name>
+		<servlet-class>st.gatewayPagosITC.RespuestaPagoAprobada</servlet-class>
+	</servlet>	
+	
+	<servlet>
+		<servlet-name>RespuestaPagoConError</servlet-name>
+		<servlet-class>st.gatewayPagosITC.RespuestaPagoConError</servlet-class>
+	</servlet>	
+	
+	<servlet>
+		<servlet-name>RespuestaPagoPendiente</servlet-name>
+		<servlet-class>st.gatewayPagosITC.RespuestaPagoPendiente</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>RespuestaPagoRechazado</servlet-name>
+		<servlet-class>st.gatewayPagosITC.RespuestaPagoRechazado</servlet-class>
+	</servlet>
+	
+	<servlet>
+        <servlet-name>SimpleCaptcha</servlet-name>
+        <servlet-class>com.dogma.controller.CaptchaServlet</servlet-class>
+        <!-- The width and height params are optional; if unspecified they default to 200 and 50 respectively. -->
+        <init-param>
+            <param-name>width</param-name>
+            <param-value>250</param-value>
+        </init-param>
+        <init-param>
+            <param-name>height</param-name>
+            <param-value>75</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet>
+        <servlet-name>AudioSimpleCaptcha</servlet-name>
+        <servlet-class>com.dogma.controller.AudioCaptchaServlet</servlet-class>        
+    </servlet>    
+    
+    <servlet>
+    	<servlet-name>SignReceiveServlet</servlet-name>
+    	<servlet-class>biz.statum.apia.signature.ReceiveFileServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+    	<servlet-name>URLShortenerFilter</servlet-name>
+    	<servlet-class>com.dogma.controller.URLShortenerFilter</servlet-class>
+  	</servlet>
+<!--   	
+  	 <servlet>
+        <description>StatusWebSocketServlet</description>
+        <servlet-name>StatusWebSocketServlet</servlet-name>
+        <servlet-class>org.atmosphere.cpr.AtmosphereServlet</servlet-class>
+        <init-param>
+            <param-name>org.atmosphere.cpr.packages</param-name>
+            <param-value>biz.statum.chat.web.external.websocket.StatusWebSocketServlet</param-value>
+        </init-param>
+        <init-param>
+            <param-name>org.atmosphere.interceptor.HeartbeatInterceptor.clientHeartbeatFrequencyInSeconds</param-name>
+            <param-value>10</param-value>
+        </init-param>
+        <load-on-startup>0</load-on-startup>
+        <async-supported>true</async-supported>
+    </servlet>
+ 
+    <servlet>
+        <description>ClientWebSocketServlet</description>
+        <servlet-name>ClientWebSocketServlet</servlet-name>
+        <servlet-class>org.atmosphere.cpr.AtmosphereServlet</servlet-class>
+        <init-param>
+            <param-name>org.atmosphere.cpr.packages</param-name>
+            <param-value>biz.statum.chat.web.external.websocket.ClientWebSocketServlet</param-value>
+        </init-param>
+        <init-param>
+            <param-name>org.atmosphere.interceptor.HeartbeatInterceptor.clientHeartbeatFrequencyInSeconds</param-name>
+            <param-value>10</param-value>
+        </init-param>
+        <load-on-startup>0</load-on-startup>
+        <async-supported>true</async-supported>
+    </servlet>
+
+    <servlet>
+        <description>TestWebSocketServlet</description>
+        <servlet-name>TestWebSocketServlet</servlet-name>
+        <servlet-class>org.atmosphere.cpr.AtmosphereServlet</servlet-class>
+        <init-param>
+            <param-name>org.atmosphere.cpr.packages</param-name>
+            <param-value>biz.statum.chat.web.external.websocket.TestWebSocketServlet</param-value>
+        </init-param>
+        <init-param>
+            <param-name>org.atmosphere.interceptor.HeartbeatInterceptor.clientHeartbeatFrequencyInSeconds</param-name>
+            <param-value>10</param-value>
+        </init-param>
+        <load-on-startup>0</load-on-startup>
+        <async-supported>true</async-supported>
+    </servlet>
+-->    
+    <servlet>
+    	<servlet-name>WebDavServlet</servlet-name>
+    	<servlet-class>com.webdav.WebDavServlet</servlet-class>       
+    </servlet>
+    
+    <servlet>
+    	<servlet-name>StylesImageServlet</servlet-name>
+   		<servlet-class>biz.statum.apia.servlet.StylesImageServlet</servlet-class>
+  	</servlet>
+    
+	<!--  ************  MAPPING FOR CONTROLLER SERVLET *********************************  -->
+	<servlet-mapping>                                   
+		<servlet-name>ApiaServlet</servlet-name>        
+		<url-pattern>*.do</url-pattern>            
+	</servlet-mapping>
+	
+	<servlet-mapping>                                   
+		<servlet-name>FindItemServlet</servlet-name>        
+		<url-pattern>/Item/*</url-pattern>            
+	</servlet-mapping>
+	
+	<servlet-mapping>                                   
+		<servlet-name>UserImageServlet</servlet-name>        
+		<url-pattern>/getImageServlet.run</url-pattern>            
+	</servlet-mapping>
+	
+
+	<servlet-mapping>                                   
+		<servlet-name>ApiaQueryPortletAction</servlet-name>        
+		<url-pattern>/QueryAction.portlet</url-pattern>            
+	</servlet-mapping>
+
+	<servlet-mapping>                                   
+		<servlet-name>ApiaProcessStartPortletAction</servlet-name>        
+		<url-pattern>/ProcessStartAction.portlet</url-pattern>            
+	</servlet-mapping>
+	
+	<!-- <servlet-mapping>                                   
+		<servlet-name>TestServlet</servlet-name>        
+		<url-pattern>*.test</url-pattern>            
+	</servlet-mapping> -->
+
+	<!--  ************  MAPPING FOR SECURITY SERVLET ***********************************  -->
+	<servlet-mapping>                                   
+		<servlet-name>SecurityServlet</servlet-name>        
+		<url-pattern>*.security</url-pattern>            
+	</servlet-mapping>
+
+	<!--  ************  MAPPING FOR DISPATCHER SERVLET *********************************  -->
+	<servlet-mapping>
+		<servlet-name>DispatcherStarter</servlet-name>
+		<url-pattern>*.Dispatcher.Starter</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ActionServlet</servlet-name>
+		<url-pattern>*.run</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>BPMNTimerStarter</servlet-name>
+		<url-pattern>*.BPMNTimer.Starter</url-pattern>
+	</servlet-mapping>
+
+	<!--  ************  MAPPING FOR AXIS SERVLETS **************************************  -->
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>/services/*</url-pattern>
+	</servlet-mapping>	
+
+  	<servlet-mapping>
+    	<servlet-name>AxisServlet</servlet-name>
+    	<url-pattern>/servlet/AxisServlet</url-pattern>	
+    </servlet-mapping>
+
+	<!-- ************* JPIVOT ********** -->
+	<servlet-mapping>
+    	<servlet-name>ChatClient</servlet-name>
+	    <url-pattern>*.chat</url-pattern>
+  	</servlet-mapping>
+  	
+	<servlet-mapping>
+    	<servlet-name>DisplayChart</servlet-name>
+	    <url-pattern>/DisplayChart</url-pattern>
+  	</servlet-mapping>
+  	
+	<servlet-mapping>
+    	<servlet-name>Print</servlet-name>
+	    <url-pattern>/Print</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet-mapping>
+    	<servlet-name>GetChart</servlet-name>
+    	<url-pattern>/GetChart</url-pattern>
+  	</servlet-mapping>
+  	
+	<servlet-mapping>
+    	<servlet-name>Views</servlet-name>
+	    <url-pattern>/Views</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+    	<servlet-name>MondrianXmlaServlet</servlet-name>
+	    <url-pattern>/xmla</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+    	<servlet-name>JMySpellChecker</servlet-name>
+	    <url-pattern>/spellchecker/jmyspell-spellchecker</url-pattern>
+	</servlet-mapping>
+	
+	
+
+	<servlet-mapping>
+    	<servlet-name>XMLServlet</servlet-name>
+	    <url-pattern>/testJS/XMLServlet</url-pattern>
+	</servlet-mapping>
+
+	<!--  ************  MAPPINGS FOR PAGOS SERVLETS ******************************************  -->
+	<servlet-mapping>
+    	<servlet-name>ResponsePagosWebServletCompraAprobada</servlet-name>
+	    <url-pattern>/responsePagosWebServletCompraAprobada</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+    	<servlet-name>ResponsePagosWebServletCompraRechazada</servlet-name>
+	    <url-pattern>/responsePagosWebServletCompraRechazada</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+    	<servlet-name>ResponsePagosWebServletCompraCancelada</servlet-name>
+	    <url-pattern>/responsePagosWebServletCompraCancelada</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+    	<servlet-name>ResponsePagosWebServletNotificacionOffLine</servlet-name>
+	    <url-pattern>/responsePagosWebServletNotificacionOffLine</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RespuestaDeControl</servlet-name>
+		<url-pattern>/respuestaDeControl/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RespuestaPagoAprobada</servlet-name>
+		<url-pattern>/respuestaPagoAprobada/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RespuestaPagoConError</servlet-name>
+		<url-pattern>/respuestaPagoConError/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RespuestaPagoPendiente</servlet-name>
+		<url-pattern>/respuestaPagoPendiente/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RespuestaPagoRechazado</servlet-name>
+		<url-pattern>/respuestaPagoRechazado/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+        	<servlet-name>SSO</servlet-name>
+	        <url-pattern>/coesys.response</url-pattern>
+	</servlet-mapping>
+    
+	<servlet-mapping>
+		<servlet-name>SLO</servlet-name>
+		<url-pattern>/coesys.slo</url-pattern>
+	</servlet-mapping>
+    
+
+	<!--  ************  MAPPING FOR SIMPLECAPTCHA SERVLET ******************************************  -->
+	<servlet-mapping>
+        <servlet-name>SimpleCaptcha</servlet-name>
+        <url-pattern>/captchaImg</url-pattern>
+    </servlet-mapping>
+    
+	<servlet-mapping>
+    	<servlet-name>SignReceiveServlet</servlet-name>
+   		<url-pattern>*.AppletReceiveFile</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>AudioSimpleCaptcha</servlet-name>
+        <url-pattern>/captchaAudio</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+    	<servlet-name>URLShortenerFilter</servlet-name>
+    	<url-pattern>/shortUrl/*</url-pattern>
+  	</servlet-mapping>
+<!-- 	
+	<servlet-mapping>
+	   	<servlet-name>StatusWebSocketServlet</servlet-name>
+	   	<url-pattern>/chatExternalStatusWebSocket/*</url-pattern>
+	</servlet-mapping>
+    
+    <servlet-mapping>
+    	<servlet-name>ClientWebSocketServlet</servlet-name>
+    	<url-pattern>/chatExternalClientWebSocket/*</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+    	<servlet-name>TestWebSocketServlet</servlet-name>
+    	<url-pattern>/testWebSocket/*</url-pattern>
+    </servlet-mapping>
+ -->    
+    <servlet-mapping>
+    	<servlet-name>WebDavServlet</servlet-name>
+    	<url-pattern>/WebDav/*</url-pattern>
+    </servlet-mapping>
+     
+    <servlet-mapping>
+    	<servlet-name>StylesImageServlet</servlet-name>
+    	<url-pattern>/getStyleImage.run</url-pattern>
+  	</servlet-mapping>
+    
+	<!-- ******************************* -->
+
+	<!--  ************  SESSION CONFIGURATION ******************************************  -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+	<!--  ************  MIME MAPPINGS **************************************************  -->
+	
+  	<!-- currently the W3C havent settled on a media type for WSDL;   
+  	     http://www.w3.org/TR/2003/WD-wsdl12-20030303/#ietf-draft 
+  	     for now we go with the basic 'it's XML' response -->
+	<mime-mapping>
+		<extension>wsdl</extension>
+		<mime-type>text/xml</mime-type>
+	</mime-mapping>
+  
+	<mime-mapping>
+		<extension>htc</extension>
+		<mime-type>text/x-component</mime-type>
+	</mime-mapping>
+	  
+	<mime-mapping>
+		<extension>xsd</extension>
+		<mime-type>text/xml</mime-type>
+	</mime-mapping>	
+
+	<!--  ************ ARCHIVOS DE BIENVENIDA ******************************************  -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!--  ************ MAPPING PARA ERRORES HTTP ***************************************  -->
+  	<error-page>
+		<error-code>500</error-code>
+		<location>/page/dogmaErrorPage.jsp</location>
+	</error-page>
+  	
+  	<error-page>
+		<error-code>404</error-code>
+		<location>/page/dogmaErrorPage.jsp</location>
+	</error-page>
+
+	<jsp-config> 
+		<!--  ************  TAGLIBS *******************************************************  -->
+		<taglib>
+	    	<taglib-uri>regions</taglib-uri>
+	    	<taglib-location>/WEB-INF/regions.tld</taglib-location>
+	  	</taglib>
+		
+		<!-- ************* JPIVOT ********** -->
+		<taglib>
+	    	<taglib-uri>http://www.tonbeller.com/wcf</taglib-uri>
+		    <taglib-location>/wcf/wcf-tags.tld</taglib-location>
+	  	</taglib>
+	
+	    <taglib>
+	  	    <taglib-uri>http://www.tonbeller.com/jpivot</taglib-uri>
+	        <taglib-location>/jpivot/jpivot-tags.tld</taglib-location>
+		</taglib>
+		<!-- ************ Nuevos a partir del 26/1/2010 ******************* -->
+		<taglib>
+		    <taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>
+		    <taglib-location>/WEB-INF/fmt.tld</taglib-location>
+		</taglib>
+		<taglib>
+		    <taglib-uri>http://java.sun.com/jsp/jstl/core</taglib-uri>
+		    <taglib-location>/WEB-INF/c.tld</taglib-location>
+		</taglib>
+		<taglib>
+		    <taglib-uri>http://java.sun.com/jstl/sql</taglib-uri>
+		    <taglib-location>/WEB-INF/sql.tld</taglib-location>
+		</taglib>
+		<taglib>
+		    <taglib-uri>http://java.sun.com/jstl/x</taglib-uri>
+		    <taglib-location>/WEB-INF/x.tld</taglib-location>
+		</taglib>
+	  	<!-- ******************************* -->
+  	</jsp-config> 
+  	
+  	<absolute-ordering />
+</web-app>

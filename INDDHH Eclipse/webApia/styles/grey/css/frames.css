@@ -1,0 +1,48 @@
+
+BODY {
+	MARGIN:4px;
+    BORDER:0px;
+    PADDING:0px;
+    OVERFLOW: hidden;
+    BACKGROUND-COLOR:#FFFFFF;
+}
+#topFrame {
+	WIDTH:100%; 
+	HEIGHT:26px;
+	LEFT:4px;
+}
+#tocArea{
+	POSITION:absolute;
+	TOP:30px;						/*(30 the height of topframe + 4 of the body margin)*/
+	LEFT:4px;
+	WIDTH:151px;
+	height:0px;
+	BORDER-LEFT:1px solid #7B7B7B; 
+	BORDER-BOTTOM:1px solid #7B7B7B;
+}
+#workArea {
+	POSITION:absolute;
+	LEFT:154px;						/*(150 tocs width + the body margins 4 )*/
+	TOP:30px;
+	height:0px;
+	BORDER-LEFT:1px solid #7B7B7B;
+	BORDER-BOTTOM:1px solid #7B7B7B;
+	BORDER-RIGHT:1px solid #7B7B7B;
+}
+
+.feedBackFrame{
+	POSITION: absolute;
+	DISPLAY:none;
+	WIDTH:350px;
+	HEIGHT:201px;
+	OVERFLOW:hidden;
+}
+
+.modalWin{
+	BORDER:#416D94 1px solid;
+    BACKGROUND-COLOR:#6A6A6A;
+}
+
+.closeButton{
+	background-image:url(../images/modalCloseBtn.png);
+}

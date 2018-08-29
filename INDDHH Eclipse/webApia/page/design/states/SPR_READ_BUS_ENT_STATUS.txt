@@ -1,0 +1,37 @@
+////YA IMPACTADO EN SCRIPT DE CREACION
+
+CREATE  PROCEDURE [SPR_READ_BUS_ENT_STATUS]
+@p_where VARCHAR(2000),
+@p_order_by VARCHAR(2000),
+@from_row INT,
+@rows_per_page INT
+AS
+DECLARE
+  @total INT,
+  @aux_sql VARCHAR(1500) 
+
+SET NOCOUNT ON
+
+CREATE TABLE #tmp_table (
+    id INT IDENTITY (1,1),
+     env_id int,
+     ent_sta_id_auto int,
+     ent_sta_name varchar(50),
+     ent_sta_desc varchar(255),
+     prj_id int,
+     reg_user varchar(20),
+     reg_status int,
+     reg_date datetime
+)
+SET @aux_sql = 'INSERT INTO #tmp_table (env_id,ent_sta_id_auto,ent_sta_name,ent_sta_desc,prj_id,reg_user,reg_status,reg_date) '
+SET @aux_sql = @aux_sql + ' SELECT s.env_id,s.ent_sta_id_auto,s.ent_sta_name,s.ent_sta_desc,s.prj_id,s.reg_user,s.reg_status,s.reg_date FROM bus_ent_status s LEFT OUTER JOIN project p ON (s.env_id=p.env_id and s.prj_id=p.prj_id_auto and s.reg_status=p.reg_status) WHERE s.reg_status = 0 '
+IF (@p_where IS NOT NULL) SET @aux_sql = @aux_sql + ' AND ' + @p_where
+IF (@p_order_by IS NOT NULL) SET @aux_sql = @aux_sql + ' ORDER BY ' + @p_order_by
+set @total = @from_row + @rows_per_page
+set rowcount @total
+EXEC(@aux_sql)
+set rowcount @rows_per_page
+SELECT * FROM #tmp_table WHERE id BETWEEN @from_row AND (@from_row + @rows_per_page - 1)
+DROP TABLE #tmp_table
+set rowcount 0
+--

@@ -1,0 +1,149 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+
+
+
+@font-face
+{
+font-family:'Chantilly';
+src: url('../font/chantilly-xlight_regular-webfont.eot');
+src: url('../font/chantilly-xlight_regular-webfont.eot') format('embedded-opentype'),
+	url('../font/chantilly-xlight_regular-webfont.ttf') format('truetype'),
+     url('../font/chantilly-xlight_regular-webfont.woff') format('woff'),
+	 url('../font/chantilly-xlight_regular-webfont.svg') format('svg');
+	 font-weight: normal;
+    font-style: normal;
+	 
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    
+    .col1{display:inline-table; position:absolute; padding-bottom:50px; left:0px; top:0px; bottom:0px; width:235px; height:100%;padding-top:20px; color:white; font-size:12px; box-shadow:#666 2px 0px 4px; -moz-box-shadow:#666 2px 0px 4px; -webkit-box-shadow:#666 2px 0px 4px;
+          background-image: linear-gradient(bottom, rgb(97,132,157) 36%, rgb(154,181,195) 68%);
+background-image: -o-linear-gradient(bottom, rgb(97,132,157) 36%, rgb(154,181,195) 68%);
+background-image: -moz-linear-gradient(bottom, rgb(97,132,157) 36%, rgb(154,181,195) 68%);
+background-image: -webkit-linear-gradient(bottom, rgb(97,132,157) 36%, rgb(154,181,195) 68%);
+background-image: -ms-linear-gradient(bottom, rgb(97,132,157) 36%, rgb(154,181,195) 68%);
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.36, rgb(97,132,157)),
+	color-stop(0.68, rgb(154,181,195))
+);}
+
+}
+
+.ie9 .col1  {min-height:500px;
+          height: 85%; 
+          background-color: rgb(154,181,195) ! important;
+}
+
+    .col1{display:inline-table; position:absolute; padding-bottom:50px; left:0px; top:0px; bottom:0px; width:235px;height:calc(100% - 70px)\9; padding-top:20px; color:white; font-size:12px; box-shadow:#666 2px 0px 4px; -moz-box-shadow:#666 2px 0px 4px; -webkit-box-shadow:#666 2px 0px 4px;
+          background-image: linear-gradient(bottom, rgb(97,132,157) 36%, rgb(154,181,195) 68%);
+background-image: -o-linear-gradient(bottom, rgb(97,132,157) 36%, rgb(154,181,195) 68%);
+background-image: -moz-linear-gradient(bottom, rgb(97,132,157) 36%, rgb(154,181,195) 68%);
+background-image: -webkit-linear-gradient(bottom, rgb(97,132,157) 36%, rgb(154,181,195) 68%);
+background-image: -ms-linear-gradient(bottom, rgb(97,132,157) 36%, rgb(154,181,195) 68%);
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.36, rgb(97,132,157)),
+	color-stop(0.68, rgb(154,181,195))
+);}
+
+
+*{margin:0px; padding:0px; border:0px; text-decoration:none; list-style:none; font-family:Chantilly !important}
+.clear{clear:both;}
+html{ height:100%}
+body{ height:100%}
+
+.ie9 iframe{display:block;}
+
+iframe{display:inline-table;}
+
+#cabezal{display:none; background-color:#FFF; height:80px; box-shadow:#666 0px 2px 4px; -moz-box-shadow:#666 0px 2px 4px; -webkit-box-shadow:#666 0px 2px 4px; position:relative; z-index:100; color:#515050 !important;}
+#contgral{ margin:0 auto; height:inherit; position:relative; top:0; bottom:0;height:calc(100% - 2px)}
+.cont{width:1024px; margin:0 auto; position:relative;}
+.logo{position:absolute; right:5px; top:20px}
+.nombre{font-size:30px; position:absolute; left:5px; top:20px}
+
+
+
+
+
+.col2{position:absolute; right:0px;height:100%}
+.col1 a{color:white;}
+.hoja{width:665px; background-color:#FFF; box-shadow:#666 2px 2px 4px; -moz-box-shadow:#666 2px 2px 4px; -webkit-box-shadow:#666 2px 2px 4px; float:left; color:#515050; padding-bottom:20px; min-height:500px; display:inline-table;}
+.linea{background-color:#114E6F; height:8px; width:100%; position:absolute; bottom:0px;}
+.procesos, .formularios, .tareas{font-size:25px; margin-bottom:8px; margin-top:10px;}
+.procesos h3, .formularios h3, .tareas h3 {color:white !important; font-size:25px; font-family:Chantilly !important}
+.col1 h3{color:white !important; font-size:20px; font-family:Chantilly !important}
+.elementos li{margin-bottom:5px; margin-left:15px;}
+.elementos a{color:white;}
+.selected{border-bottom:1px solid #FFF; width:150px; padding-bottom:10px; margin-bottom:5px;}
+.hidden{ visibility:hidden; height:0px}
+.select{color:#114E6F !important;}
+.cabezales{background-color:#114E6F; color:white; font-size:23px; padding:10px 0 0 30px; margin:30px auto 0 auto; width:533px; height:40px; clear:both;}
+div.datos{background-color:#E4E8EA; width:523px; padding:20px; margin:10px auto;}
+div.datos li{margin-bottom:5px; font-size:20px;}
+div.datos li p{font-size:15px !important; display:inline; margin-left:5px;}
+.cerrado{margin-left:5px;}
+.abierto{margin-top:-2px;}
+.apunte{font-size:12px; color:#515050; margin:10px auto; width:563px;}
+.tablados{margin:15px auto; width:563px; max-width:563px; border-collapse:collapse;}
+.tablados tr {border:1px solid #666;}
+.tablados th{text-transform:uppercase; color:#114E6F; font-size: 15px;border:1px solid #666; margin-left:10px; width:50%; text-align:left;padding:10px;}
+.tablados td{width:50%; font-size:13px; border:1px solid #666;padding:10px;}
+
+table.formularios .td0{max-width:120px;word-wrap: break-word;}
+table.procesos .td0{max-width:120px;word-wrap: break-word;}
+table.datos .td0{max-width:120px;word-wrap: break-word;}
+table.subprocesos .td0{max-width:120px;word-wrap: break-word;}
+
+.docentidades table.procesos .td0{max-width:80px ! important;word-wrap: break-word;}
+.docentidades table.procesos .td3{max-width:50px ! important;word-wrap: break-word;}
+
+.nombrelink{text-decoration:underline; color:#515050 !important;display:block;height:30px;word-wrap: break-word;}
+.tablatres{margin:15px auto; width:563px; border-collapse:collapse;}
+.tablatres tr {border:1px solid #666;}
+.tablatres th{text-transform:uppercase; color:#114E6F; font-size: 15px;border:1px solid #666; margin-left:10px; width:50%; text-align:left;padding:10px;}
+.tablatres td{width:50%; font-size:13px; border:1px solid #666;padding:10px;}
+
+.imagenproceso{ max-width:700px;text-align:center;display:block}
+
+.ui-accordion-content
+{
+    
+    max-height: 298px ! important ;
+}
+
+.headerActivo
+{
+    background-image:url('../img/abierto.png') ! important;
+}
+
+.headerInactivo
+{
+    background-image:url('../img/cerrado.png') ! important;
+}
+
+@-moz-document url-prefix() {
+    .col1 {
+              height: calc(100% - 70px);
+    }
+}
+
+#contgral iframe {
+	width: 686px !important;
+}
+
+.ui-accordion .ui-accordion-content {
+	word-break: break-word;
+	word-wrap: break-word;
+	padding: 1em 0px !important;
+	max-width: 235px !important;
+	
+}
+

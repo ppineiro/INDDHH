@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<data-sources />
+
+	<form-beans></form-beans>
+
+	<global-exceptions />
+
+	<action-mappings>
+		<action path="/apia.query.OffLineAction" scope="request" type="biz.statum.apia.web.action.query.OffLineAction" parameter="action">
+			<forward name="view"				path="/page/query/offline/list.jsp" /> 
+			<forward name="list"				path="/page/query/offline/list.jsp" /> 
+			<forward name="error"				path="/page/query/common/error.jsp" /> 
+			<forward name="open"				path="/page/query/offline/open.jsp" /> 
+			<forward name="download"			path="/page/query/offline/download.jsp" />
+			<forward name="downloadDocument"	path="/page/generic/downloadDocument.jsp" />
+		</action>
+
+		<action path="/apia.query.UserAction" scope="request" type="biz.statum.apia.web.action.query.UserAction" parameter="action">
+			<forward name="view"				path="/page/query/user/list.jsp" /> 
+			<forward name="list"				path="/page/query/user/list.jsp" /> 
+			<forward name="generateChart"		path="/page/query/user/generateChart.jsp" /> 
+			<forward name="download"			path="/page/query/common/download.jsp" /> 
+			<forward name="error"				path="/page/query/common/error.jsp" /> 
+			<forward name="downloadDocument"	path="/page/generic/downloadDocument.jsp" />
+		</action>
+
+		<action path="/apia.query.MonitorProcessAction" scope="request" type="biz.statum.apia.web.action.query.MonitorProcessAction" parameter="action">
+			<forward name="view"				path="/page/query/monitor/process/list.jsp" /> 
+			<forward name="list"				path="/page/query/monitor/process/list.jsp" /> 
+			<forward name="download"			path="/page/query/common/download.jsp" /> 
+			<forward name="error"				path="/page/query/common/error.jsp" /> 
+			<forward name="viewTasks"			path="/apia.monitor.ProcessesAction.run?action=initTaskProcess&amp;fromQueryProcessMonitor=true" />
+			<forward name="viewDetails"			path="/apia.monitor.ProcessesAction.run?action=initDetails&amp;fromQueryProcessMonitor=true" />
+			<forward name="viewProDetails"		path="/apia.monitor.ProcessesAction.run?action=initDetails&amp;fromQueryProcessMonitor=true&amp;proDetails=true" />
+			<forward name="downloadDocument"	path="/page/generic/downloadDocument.jsp" /> 
+		</action>
+
+		<action path="/apia.query.MonitorEntityAction" scope="request" type="biz.statum.apia.web.action.query.MonitorEntityAction" parameter="action">
+			<forward name="view"				path="/page/query/monitor/entity/list.jsp" /> 
+			<forward name="list"				path="/page/query/monitor/entity/list.jsp" /> 
+			<forward name="download"			path="/page/query/common/download.jsp" /> 
+			<forward name="error"				path="/page/query/common/error.jsp" /> 
+			<forward name="viewEntity"			path="/apia.monitor.EntitiesAction.run?action=view&amp;fromQuery=true" />
+			<forward name="downloadDocument"	path="/page/generic/downloadDocument.jsp" /> 
+		</action>
+
+		<action path="/apia.query.MonitorTaskAction" scope="request" type="biz.statum.apia.web.action.query.MonitorTaskAction" parameter="action">
+			<forward name="view"				path="/page/query/monitor/task/list.jsp" /> 
+			<forward name="list"				path="/page/query/monitor/task/list.jsp" /> 
+			<forward name="download"			path="/page/query/common/download.jsp" /> 
+			<forward name="error"				path="/page/query/common/error.jsp" /> 
+			<forward name="viewTasks"			path="/apia.monitor.ProcessesAction.run?action=initTaskProcess&amp;fromQueryTaskMonitor=true" /> 
+			<forward name="viewHistory"			path="/apia.monitor.TasksAction.run?action=initTaskHistory&amp;fromQueryTaskMonitor=true" />
+			<forward name="downloadDocument"	path="/page/generic/downloadDocument.jsp" /> 
+		</action>
+
+		<action path="/apia.query.EntityInstanceAction" scope="request" type="biz.statum.apia.web.action.query.EntityInstanceAction" parameter="action">
+			<forward name="view"							path="/page/query/entity/list.jsp" /> 
+			<forward name="list"							path="/page/query/entity/list.jsp" /> 
+			<forward name="download"						path="/page/query/common/download.jsp" /> 
+			<forward name="error"							path="/page/query/common/error.jsp" /> 
+			<forward name="adminEntInstanceCreate"			path="/apia.execution.EntInstanceListAction.run?action=create&amp;fromQuery=true" />
+			<forward name="adminEntInstanceUpdate"			path="/apia.execution.EntInstanceListAction.run?action=update&amp;fromQuery=true" />
+			<forward name="adminEntInstanceDelete"			path="/apia.execution.EntInstanceListAction.run?action=delete&amp;fromQuery=true" />
+			<forward name="adminEntInstanceClone"			path="/apia.execution.EntInstanceListAction.run?action=clone&amp;fromQuery=true" />
+			<forward name="adminEntInstanceDependencies"	path="/apia.execution.EntInstanceListAction.run?action=loadDeps&amp;fromQuery=true" />
+			<forward name="downloadDocument"				path="/page/generic/downloadDocument.jsp" />
+		</action>
+
+		<action path="/apia.query.TaskListAction" scope="request" type="biz.statum.apia.web.action.query.TaskListAction" parameter="action">
+			<forward name="view"				path="/page/query/taskList/container.jsp" /> 
+			<forward name="viewReady"			path="/page/query/taskList/list.jsp" /> 
+			<forward name="viewAcquired"		path="/page/query/taskList/list.jsp" /> 
+			<forward name="list"				path="/page/query/taskList/list.jsp" /> 
+			<forward name="download"			path="/page/query/common/download.jsp" /> 
+			<forward name="error"				path="/page/query/common/error.jsp" /> 
+			<forward name="downloadDocument"	path="/page/generic/downloadDocument.jsp" />
+		</action>
+
+		<action path="/apia.query.ProcessCancelationAction" scope="request" type="biz.statum.apia.web.action.query.ProcessCancelationAction" parameter="action">
+			<forward name="viewTasks"			path="/apia.execution.TaskAction.run?action=startCancelProcess" />
+			<forward name="view"				path="/page/query/process/cancelation/list.jsp" /> 
+			<forward name="list"				path="/page/query/process/cancelation/list.jsp" /> 
+			<forward name="download"			path="/page/query/common/download.jsp" /> 
+			<forward name="error"				path="/page/query/common/error.jsp" />
+			<forward name="downloadDocument"	path="/page/generic/downloadDocument.jsp" />
+		</action>
+
+		<action path="/apia.query.ProcessAlterationAction" scope="request" type="biz.statum.apia.web.action.query.ProcessAlterationAction" parameter="action">
+			<forward name="viewTasks"			path="/apia.execution.TaskAction.run?action=startAlterationProcess" />
+			<forward name="view"				path="/page/query/process/alteration/list.jsp" /> 
+			<forward name="list"				path="/page/query/process/alteration/list.jsp" /> 
+			<forward name="download"			path="/page/query/common/download.jsp" /> 
+			<forward name="error"				path="/page/query/common/error.jsp" />
+			<forward name="downloadDocument"	path="/page/generic/downloadDocument.jsp" />
+		</action>
+
+		<action path="/apia.query.ModalAction" scope="request" type="biz.statum.apia.web.action.query.ModalAction" parameter="action">
+			<forward name="view"				path="/page/query/modal/list.jsp" /> 
+			<forward name="list"				path="/page/query/modal/list.jsp" /> 
+			<forward name="error"				path="/page/query/common/error.jsp" /> 
+			<forward name="downloadDocument"	path="/page/generic/downloadDocument.jsp" />
+		</action>
+		
+	</action-mappings>
+
+	<controller />
+
+
+</struts-config>

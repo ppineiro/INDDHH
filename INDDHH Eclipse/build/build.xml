@@ -1,0 +1,126 @@
+<project name="Project Builder" default="_Copy all to web master folder" basedir="../">
+	<!-- Load default properties -->
+	<property file="${basedir}/build/build.properties"/>
+	
+	<property name="path.full.build.web.apia" value="${basedir}/${build.web.apia}" />
+	<property name="path.full.build.web.project" value="${basedir}/${build.web.project}" />
+	<property name="path.full.build.web" value="${basedir}/${build.web}" />
+	
+	<target name="EmptyWeb">
+		<echo message="Deleting: '${path.full.build.web}'" />
+		 <delete includeEmptyDirs="true">
+		    <fileset dir="${path.full.build.web}" excludes="**/WEB-INF/classes/**"/>
+		 </delete>
+		<mkdir dir="${path.full.build.web}"/>
+		<mkdir dir="${path.full.build.web}/WEB-INF/classes"/>
+	</target>
+	
+	<target name="CopyWebApiaToWeb">
+		<echo message="Coping to: '${path.full.build.web}'" />
+		<echo message="from: '${path.full.build.web.apia}'" />
+		<copy todir="${path.full.build.web}" >
+			<fileset dir="${path.full.build.web.apia}" />
+		</copy>
+	</target>
+	
+	<target name="CopyWebProjecToWeb">
+		<echo message="Coping to: '${path.full.build.web}'" />
+		<echo message="from: '${path.full.build.web.project}'" />
+		<copy todir="${path.full.build.web}" >
+			<fileset dir="${path.full.build.web.project}" />
+		</copy>
+	</target>
+	
+	<target name="CopyExtraToWeb">
+		<!-- add here your extra file to copy to master web -->
+		<echo message="Coping to: '${path.full.build.web}'" />
+		
+		
+		
+		<echo message="Coping to: '${path.full.build.web}'" />
+		<!-- end -->
+	</target>
+	
+	<target name="RetrieveJSFromWeb">
+		<echo message="Coping to: '${path.full.build.web.project}/customScripts'" />
+		<echo message="from: '${path.full.build.web}/customScripts'" />
+		<copy todir="${path.full.build.web.project}/customScripts">
+			<fileset dir="${path.full.build.web}/customScripts" includes="**/*.js"/>
+		</copy>
+	</target>
+	
+	<target name="CopyWebApiaPropertiesToSrcApia">
+		<echo message="Coping to: '${build.src.apia}'" />
+		<echo message="from: '${build.web.apia}/WEB-INF/classes'" />
+		<copy todir="${build.src.apia}">
+			<fileset dir="${build.web.apia}/WEB-INF/classes" includes="**/*.*"/>
+		</copy>
+		
+		<echo message="Removeing files from: '${build.web.apia}/WEB-INF/classes'" />
+		<delete includeEmptyDirs="true">
+			<fileset dir="${build.web.apia}/WEB-INF/classes" includes="**/*"/>
+		</delete>
+		
+		<echo message="Please do a refresh of the folder '${build.src.apia}' in your eclipse project." />
+	</target>
+	
+	<target name="ZipWebForServer">
+		<echo message="Createing temporal folder" />
+		<delete dir="${folder.temporal}" />
+		<mkdir dir="${folder.temporal}" />
+		
+		<echo message="Coping to: '${folder.temporal}/web'" />
+		<echo message="from: '${build.web}'" />
+		
+		<copy todir="${folder.temporal}/web">
+			<fileset dir="${build.web}" includes="**/*.*">
+				<exclude name="*.properties"/>
+				<exclude name="**.properties"/>
+				<exclude name="*/*.properties"/>
+				<exclude name="**/*.properties"/>
+				<exclude name="/**/*.properties"/>
+				<exclude name="/WEB-INF/web.xml"/>
+			</fileset>
+		</copy>
+		
+		<echo message="Coping to (overwrite mode): '${folder.temporal}/web'" />
+		<echo message="from: '${build.web.prd}'" />
+		<copy todir="${folder.temporal}/web" overwrite="true">
+			<fileset dir="${build.web.prd}" includes="**/*.*">
+			</fileset>
+		</copy>
+		
+		<echo message="Zip name: ${publish.server.zip}" />
+		<zip destfile="${folder.temporal}/${publish.server.zip}">
+			<fileset dir="${folder.temporal}/web">
+			</fileset>
+		</zip>
+		
+		<echo message="Zip file for server in: ${folder.temporal}/${publish.server.zip}" />
+		
+		<delete dir="${folder.temporal}/web" />
+	</target>
+	
+	<target name="CopyWebToServer">
+		<echo message="Coping to: '${publish.server.location1}'" />
+		<echo message="from: '${folder.temporal}/${publish.server.zip}'" />
+		<copy todir="${publish.server.location1}">
+			<fileset file="${folder.temporal}/${publish.server.zip}" />
+		</copy>
+		<echo message="Coping to: '${publish.server.location2}'" />
+		<echo message="from: '${folder.temporal}/${publish.server.zip}'" />
+		<copy todir="${publish.server.location2}">
+			<fileset file="${folder.temporal}/${publish.server.zip}" />
+		</copy>
+
+		<echo message="Please access server un manually unzip file" />
+	</target>
+	
+	<!-- Main Tagets -->
+	<target name="_Create web master folder" description="Copia todo el contenido a la carpeta web" depends="EmptyWeb,_Copy all to web master folder" />
+	<target name="_Copy all to web master folder" description="Copia todo el contenido a la carpeta web" depends="CopyWebApiaToWeb,CopyWebProjecToWeb,CopyExtraToWeb" />
+	<target name="_Copy javascript classes to project folder" description="Copia todos los .js de la carpeta 'customScripts' de la carpeta web a la carpeta web del projecto" depends="RetrieveJSFromWeb" />
+	<target name="_WebApia updated" description="El código web de Apia fue actualizado y se actualiza el web global y los archivos properties correspondientes en el src Apia" depends="CopyWebApiaPropertiesToSrcApia,CopyWebApiaToWeb" />
+	<target name="_Zip for publish to server" description="Crea un zip con todo le contenido de la carpeta web a una carpeta en un servidor para que esté publicada. No copia archivos de configuración de Apia y otros adicionales." depends="ZipWebForServer" />
+	<target name="_Publish to server" description="Genera el zip de publicación, y lo copia al servidor (se recomienda descomprimir en el servidor por acceso remoto" depends="_Zip for publish to server,CopyWebToServer" />
+</project>

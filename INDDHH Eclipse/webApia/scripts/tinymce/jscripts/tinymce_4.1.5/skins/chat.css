@@ -1,0 +1,17 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	margin: 3px 4px 1px 4px;
+	cursor: text;
+	min-height: 13px;
+}
+
+body.disabled {
+	background-color: #f0f0f0;
+}
+
+p {
+	margin: 0px;
+	font-family: Tahoma, Verdana, Arial;
+	font-size: 9pt;
+}

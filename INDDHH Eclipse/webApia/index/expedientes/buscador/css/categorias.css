@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+/* unvisited link */
+a.one:link {
+	font-family:inherit;
+	font-size:1.15em;
+    color: black; /*#155E92;*/
+    text-decoration: underline; /*text-decoration: none;*/
+}
+
+/* visited link */
+a.one:visited {
+	font-family:inherit;
+	font-size:1.15em;
+    color: black;  /*#155E92;*/
+    text-decoration: underline; /*text-decoration: none;*/
+}
+
+/* mouse over link */
+a.one:hover {
+	font-family:inherit;
+	font-size:1.15em;
+    color: #c4c4c4;
+    text-decoration: underline;
+}
+
+/* selected link */
+a.one:active {
+	font-family:inherit;
+	font-size:1.15em;
+    color: #c4c4c4;
+    text-decoration: underline;
+}
+
+/* unvisited link */
+a.two:link {
+	font-family:inherit;
+	font-size:1.15em;
+    color: #155E92;
+    text-decoration: none;     
+}
+
+/* visited link */
+a.two:visited {
+	font-family:inherit;
+	font-size:1.15em;
+    color: #155E92;
+    text-decoration: none;      
+}
+
+/* mouse over link */
+a.two:hover {
+	font-family:inherit;
+	font-size:1.15em;
+    color: #c4c4c4;
+    text-decoration: underline;    
+}
+
+/* selected link */
+a.two:active {
+	font-family:inherit;
+	font-size:1.15em;
+    color: #c4c4c4;
+    text-decoration: underline;    
+}

@@ -1,0 +1,101 @@
+/* CSS Document */
+#dtPicker{
+	text-decoration:none;
+	text-align:right;
+	border:1px solid #EAEAEA;
+	border-right:1px solid #666666;
+	border-bottom:1px solid #666666;
+	background-color:#ffffff;
+	background-image:url(../../gradient.jsp?height=100&width=160&colors=FFFFFF;B2B2B2&type=v);
+	background-position:bottom;
+	background-repeat:repeat-x;
+}
+#dtPicker tr{
+	/*background-color:#FFFFFF;*/
+}
+
+#dtPicker table{
+	/*background-color:#FFFFFF;*/
+}
+
+#dtPicker td{
+	text-align:center;
+	border:0px;
+	cursor: pointer;
+	cursor: default;
+}
+
+#dtPicker a{
+	text-decoration:none;
+	text-align:center;
+	color:#000000;
+	font-family:Tahoma;
+	font-size:12px;
+	cursor: pointer;
+	cursor: default;
+}
+#calendar{
+	border-width:1px;
+	border-style:hidden;
+}
+#calendar td{
+	height:20;
+	width:20;
+	border:0px;
+}
+#calendar td.week{
+	color:#DFA960;
+	background-color:#303588;
+	font-family:Tahoma;
+	font-size:10px;
+	font-weight:bold;
+	border-color:#5285CA;
+	border:0px;
+	cursor: pointer;
+	cursor: default;
+}
+
+#calendar td.days{
+	/*background-color:#FFFFFF;*/
+	border:0px;
+	cursor: pointer;
+	cursor: default;
+}
+#calendar td.days:hover{
+	background-color:#D5FFBB;
+	border:0px;
+	filter:alpha(opacity=50);
+	-moz-opacity:0.5;
+	opacity:0.5;
+}
+#calendar td.daysHover{
+	background-color:#DFA960;
+	border:0px;
+	filter:alpha(opacity=50);
+	-moz-opacity:0.5;
+	opacity:0.5;
+}
+#dtPicker p{
+	color:#000000;
+	font-family:Tahoma;
+	font-size:12px;
+}
+.pickerControls{
+	
+}
+.pickerControls tr{
+	background-image:url(../../gradient.jsp?height=10&width=160&colors=B2B2B2;FFFFFF&type=v);
+    background-repeat:repeat-x;
+}
+font.this{
+	font-family:Tahoma;
+	color:#303588;
+	font-size:10px;
+	margin:0px;
+}
+font.notThis{
+	font-family:Tahoma;
+	color:#000000;
+	font-size:10px;
+	margin:0px;
+}

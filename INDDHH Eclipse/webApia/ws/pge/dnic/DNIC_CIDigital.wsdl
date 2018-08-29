@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" 
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+	xmlns:tns="http://wsServicioDeInformacion/"
+	xmlns:s="http://www.w3.org/2001/XMLSchema" 
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+	targetNamespace="http://wsServicioDeInformacion/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+	<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Interfaz de Servicios de Informacion-DNIC</wsdl:documentation>
+	<wsdl:types>
+		<s:schema elementFormDefault="qualified" targetNamespace="http://wsServicioDeInformacion/">
+			<s:element name="obtDocDigitalizado">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="paramObtDocDigitalizado" type="tns:objParamObtDocDigitalizado" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="objParamObtDocDigitalizado">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="1" name="ClaveAcceso2" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="NroSerie" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="TipoDocumento" type="s:string" />
+					<s:element minOccurs="1" maxOccurs="1" name="IdSolicitud" type="s:int" />
+					<s:element minOccurs="0" maxOccurs="1" name="Organismo" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="ClaveAcceso1" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="Nrodocumento" type="s:string" />
+					<s:element minOccurs="1" maxOccurs="1" name="NroIdentificacion" type="s:int" />
+				</s:sequence>
+			</s:complexType>
+			<s:element name="obtDocDigitalizadoResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="obtDocDigitalizadoResult" type="tns:resultObtDocDigitalizado" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="resultObtDocDigitalizado">
+				<s:complexContent mixed="false">
+					<s:extension base="tns:objResult">
+						<s:sequence>
+							<s:element minOccurs="0" maxOccurs="1" name="ObjPersona" type="tns:objPersona" />
+							<s:element minOccurs="0" maxOccurs="1" name="Imagenes" type="tns:ArrayOfImagenDigital" />
+						</s:sequence>
+					</s:extension>
+				</s:complexContent>
+			</s:complexType>
+			<s:complexType name="objResult">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="1" name="Warnings" type="tns:ArrayOfMensaje" />
+					<s:element minOccurs="0" maxOccurs="1" name="Errores" type="tns:ArrayOfMensaje" />
+					<s:element minOccurs="1" maxOccurs="1" name="idSolicitud" type="s:int" />
+					<s:element minOccurs="1" maxOccurs="1" name="idRespuesta" type="s:int" />
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfMensaje">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="unbounded" name="Mensaje" nillable="true" type="tns:Mensaje" />
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Mensaje">
+				<s:sequence>
+					<s:element minOccurs="1" maxOccurs="1" name="CodMensaje" type="s:int" />
+					<s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="DatoExtra" type="s:string" />
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="objPersona">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="1" name="CodTipoDocumento" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="primerApellido" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="segundoApellido" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="Nombre1" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="Nombre2" type="s:string" />
+					<s:element minOccurs="1" maxOccurs="1" name="sexo" type="s:int" />
+					<s:element minOccurs="1" maxOccurs="1" name="CodNacionalidad" type="s:int" />
+					<s:element minOccurs="0" maxOccurs="1" name="NombreEnCedula" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="FechaNacimiento" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="apellidoAdoptivo1" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="apellidoAdoptivo2" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="NroDocumento" type="s:string" />
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfImagenDigital">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="unbounded" name="ImagenDigital" nillable="true" type="tns:ImagenDigital" />
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ImagenDigital">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="1" name="Foto" type="s:string" />
+					<s:element minOccurs="1" maxOccurs="1" name="largoBytes" type="s:int" />
+					<s:element minOccurs="1" maxOccurs="1" name="TipoImagen" type="s:int" />
+				</s:sequence>
+			</s:complexType>
+			<s:element name="ProductDesc">
+				<s:complexType />
+			</s:element>
+			<s:element name="ProductDescResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="ProductDescResult" type="tns:obtProductInfo" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="obtProductInfo">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="1" name="modalidad" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="version" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+				</s:sequence>
+			</s:complexType>
+		</s:schema>
+	</wsdl:types>
+	<wsdl:message name="obtDocDigitalizadoSoapIn">
+		<wsdl:part name="parameters" element="tns:obtDocDigitalizado" />
+	</wsdl:message>
+	<wsdl:message name="obtDocDigitalizadoSoapOut">
+		<wsdl:part name="parameters" element="tns:obtDocDigitalizadoResponse" />
+	</wsdl:message>
+	<wsdl:message name="ProductDescSoapIn">
+		<wsdl:part name="parameters" element="tns:ProductDesc" />
+	</wsdl:message>
+	<wsdl:message name="ProductDescSoapOut">
+		<wsdl:part name="parameters" element="tns:ProductDescResponse" />
+	</wsdl:message>
+	<wsdl:portType name="wsServicioDeInformacionSoap">
+		<wsdl:operation name="obtDocDigitalizado">
+			<wsdl:input message="tns:obtDocDigitalizadoSoapIn" />
+			<wsdl:output message="tns:obtDocDigitalizadoSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="ProductDesc">
+			<wsdl:input message="tns:ProductDescSoapIn" />
+			<wsdl:output message="tns:ProductDescSoapOut" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="wsServicioDeInformacionSoap" type="tns:wsServicioDeInformacionSoap">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="obtDocDigitalizado">
+			<soap:operation soapAction="http://wsServicioDeInformacion/obtDocDigitalizado" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ProductDesc">
+			<soap:operation soapAction="http://wsServicioDeInformacion/ProductDesc" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="wsServicioDeInformacion">
+		<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Interfaz de Servicios de Informacion-DNIC</wsdl:documentation>
+		<wsdl:port name="wsServicioDeInformacionSoap" binding="tns:wsServicioDeInformacionSoap">
+			<soap:address location="http://localhost:15858/wsciDigitalWSDL/Service1.asmx" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

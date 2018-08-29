@@ -1,0 +1,294 @@
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML><head><script language="javascript">
+var LOGGED_USER				= "admin";
+var LOGGED_USER_NAME		= "System Administrator";
+var GNR_DATE_SEPARATOR		= "/";
+var GNR_TIME_SEPARATOR		= ":";
+
+var GNR_WAIT_A_MOMENT 		= "Espere un momento";
+
+var GNR_CHK_NONE 			= "No debe seleccionar elementos.";
+var GNR_CHK_ONLY_ONE 		= "Debe seleccionar solo un registro.";
+var GNR_CHK_AT_LEAST_ONE 	= "Debe seleccionar un registro.";
+var GNR_DELETE_RECORD		= "¿Desea eliminar el/los registro/s?";
+var GNR_INIT_RECORD			= "¿Desea inicializar el/los registro/s?";
+var GNR_INIT_MESSAGES		= "¿Desea inicializar los mensajes?";
+var GNR_NOT_EMAIL			= "El campo \"<TOK1>\" no es una dirección válida de e-mail.";
+var SEC_PWD_MUST_BE_SAME	= "La contraseña y la confirmación deben ser iguales.";
+
+var GNR_INVALID_NAME		= "El nombre solo puede contener letras y números.";
+var GNR_INVALID_TIME		= "Hora inválida.";
+var GNR_INVALID_LOGIN		= "El login solo puede contener letras y números.";
+
+var GNR_PER_DAT_ING		= "Esta por perder los datos ingresados. ¿Desea continuar?";
+
+GNR_REG_EXP_FAIL			= "La expresión regular para el campo \"<TOK1>\" no se validó.";
+
+var GNR_REQUIRED			= "El campo \"<TOK1>\" no puede estar vacío.";
+var GNR_NUMERIC				= "El campo \"<TOK1>\" debe ser Numérico.";
+var GNR_STRING_SEPARATOR 	= "·";
+var URL_ROOT_PATH		 	= "http://stw32:9090/Apia2.3";
+var URL_STYLE_PATH			= "http://stw32:9090/Apia2.3/styles/default";
+
+var GNR_ORDER_DUPLICATED	= "El orden para \"<TOK1>\" ya está asignado.";
+var GNR_ERROR_MAX_ATTRIBUTE = "Cantidad máxima de atributos alcanzados."
+var GNR_MAX_ATTRIBUTE		= 3;
+
+var HOUR_FORMAT_ERROR		= "LBL_NOT_FOUND : msgHouForError";
+var FCH_FIN_MAY_FCH_INI     = "La fecha de finalización debe ser mayor que la fecha de inicio.";
+
+var GNR_JANUARY		= "Enero";
+var GNR_FEBRUARY	= "Febrero";
+var GNR_MARCH		= "Marzo";
+var GNR_APRIL		= "Abril";
+var GNR_MAY			= "Mayo";
+var GNR_JUNE		= "Junio";
+var GNR_JULY		= "Julio";
+var GNR_AUGUST		= "Agosto";
+var GNR_SEPTEMBER	= "Setiembre";
+var GNR_OCTOBER		= "Octubre";
+var GNR_NOVEMBER	= "Noviembre";
+var GNR_DECEMBER	= "Diciembre";
+
+var GNR_NO_EXI_MES	= "Mes inexistente.";
+var GNR_FOR_FCH		= "El formato debe ser -dd/mm/aaaa-.";
+var GNR_MIN_FCH		= "El año debe ser mayor a 1800.";
+var GNR_EL_MES_DE	= "El mes de.";
+var GNR_TIE_28_DIA	= "Tiene 28 dias en años no bisiestos.";
+var GNR_TIE_29_DIA	= "Tiene 29 dias en años bisiestos.";
+var GNR_TIE_30_DIA	= "Tiene 30 días.";
+var GNR_TIE_31_DIA	= "Tiene 31 días.";
+var GRID_SELECTALL  = "Seleccionar todos.";
+var GRID_SELECTNONE = "No seleccionar ninguno.";
+
+
+
+var DATE_MASK 		= "__/__/____";
+
+
+var GNR_CURR_STYLE 	= "default";
+
+var objDateRegExp 				=  /^\d{2}\/\d{2}\/\d{4}$/
+var objNumRegExp 				=  /^-?\d{1,3}(\.\d{3})*,\d{1,3}$|^-?\d{1,3}(\.\d{3})*$|^-?\d{1,},\d{1,3}$|^-?\d{1,}$/
+var strDateFormat 				= "dd/MM/yyyy";
+var charDecimalSeparator		= ",";
+var charThousSeparator			= ".";
+var rootPath					= "http://stw32:9090/Apia2.3";
+var internalDivType	= "CMP_HEIGHT";
+var internalDivSize = "";
+
+var currentModule = "administration.ProcessAction";
+function getCurrentModule(){
+	return currentModule;
+}
+</script><link href="http://stw32:9090/Apia2.3/styles/default/css/workArea.css" rel="styleSheet" type="text/css" media="screen"><link href="http://stw32:9090/Apia2.3/styles/default/css/tabElement.css" rel="styleSheet" type="text/css" media="screen"><link href="http://stw32:9090/Apia2.3/styles/default/css/printArea.css" rel="styleSheet" type="text/css" media="print"><link href="http://stw32:9090/Apia2.3/styles/default/css/printTabElement.css" rel="styleSheet" type="text/css" media="print"><link href="http://stw32:9090/Apia2.3/styles/default/css/tree.css" rel="styleSheet" type="text/css" media="screen"><link href="http://stw32:9090/Apia2.3/styles/default/css/splash.css" rel="styleSheet" type="text/css" media="screen"></link><link href="http://stw32:9090/Apia2.3/styles/default/css/grid.css" rel="styleSheet" type="text/css" media="screen"><link href="http://stw32:9090/Apia2.3/styles/default/css/gridContextMenu.css" rel="styleSheet" type="text/css" media="screen"><link href="http://stw32:9090/Apia2.3/styles/default/css/dtPicker.css" rel="styleSheet" type="text/css" media="screen"><link href="http://stw32:9090/Apia2.3/styles/default/css/tabs.css" rel="styleSheet" type="text/css" media="screen"><script language="javascript" src="http://stw32:9090/Apia2.3/scripts/tabs.js"></script><script language="javascript" src="http://stw32:9090/Apia2.3/scripts/grid/grids.js" defer="true"></script><script language="javascript" src="http://stw32:9090/Apia2.3/scripts/requiredFields.js"></script><script language="javascript" src="http://stw32:9090/Apia2.3/scripts/maxLength.js"></script><script src="http://stw32:9090/Apia2.3/scripts/events.js"></script><script src="http://stw32:9090/Apia2.3/scripts/util.js" defer=true></script><script src="http://stw32:9090/Apia2.3/scripts/val.js" defer=true></script><script src="http://stw32:9090/Apia2.3/scripts/xml.js" defer=true></script><script src="http://stw32:9090/Apia2.3/scripts/ajax.js" defer=true></script><script language="javascript" src="http://stw32:9090/Apia2.3/scripts/mask/tjmlib.js"></script><script language="javascript" src="http://stw32:9090/Apia2.3/scripts/mask/calendar.js"></script><script language="javascript" src="http://stw32:9090/Apia2.3/scripts/mask/maskedInput.js"></script><script language="javascript" src="http://stw32:9090/Apia2.3/scripts/checkBoxes.js"></script><script language="javascript" src="http://stw32:9090/Apia2.3/scripts/numeric.js"></script><script language="javascript" src="http://stw32:9090/Apia2.3/scripts/winSizer.js"></script><script language="javascript" src="http://stw32:9090/Apia2.3/scripts/selBind.js"></script><script language="javascript" src="http://stw32:9090/Apia2.3/scripts/filter.js"></script><script language="javascript" src="http://stw32:9090/Apia2.3/scripts/scriptBehaviors.js" defer="true"></script><script defer=true>
+	
+	
+	var listGridId="";
+	
+
+var windowId        = "";
+
+</script></head><body><TABLE class="pageTop"><COL class="col1"><COL class="col2"><TR><TD>Procesos
+			
+			</TD><TD></TD></TR></TABLE><div id="divContent"><form id="frmMain" name="frmMain" method="POST"><div type ="tabElement" id="samplesTab" ontabswitched="tabSwitch()"><div type="tab" style="visibility:hidden" style="visibility:hidden;" tabTitle="Datos genéricos del proceso" tabText="Datos gen."><DIV class="subTit">Datos del proceso</DIV><table class="tblFormLayout"><tr><!-- PROYECTOS --><td style="width:20%;" title="Proyecto"><U>P</U>royecto:</td><td><input type=hidden name="txtPrj" value=""><select name="selPrj" accesskey=""><option value="0"></option><option value="1000"
+	   							
+										>MI_PROJECT</option><option value="1002"
+	   							
+										>PROYECTO_APIA</option><option value="1020"
+	   							
+										>ITIL</option><option value="1040"
+	   							
+										>PDT</option></select></select></td><td style="width:20%;" title="Categoría"><U>C</U>ategoría:</td><td rowspan=5 valign=top align=left><div id="tblProfileTree" style="BORDER-LEFT:1px solid #777777;BORDER-RIGHT:1px solid #777777;BORDER-TOP:1px solid gray;BORDER-BOTTOM:1px solid #777777;BACKGROUND-COLOR:#DFDFDF;SCROLLBAR-FACE-COLOR: #DFDFDF;SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;SCROLLBAR-SHADOW-COLOR: #C0C0C0;SCROLLBAR-ARROW-COLOR: #808080;SCROLLBAR-DARKSHADOW-COLOR: #808080;SCROLLBAR-BASE-COLOR: #808080;scrollbar-3d-light-color: #808080;OVERFLOW:AUTO;WIDTH:100%;HEIGHT:133px"><?xml version="1.0" encoding="ISO-8859-1"?><div nowrap="true" id="tocHolder" class="tocHolder"><ul><li CLASS="clsFolder" IDNODO="1060"><input name="chkCat" id="chkList" type="checkbox" value="1060" onclick="selectOneChk(this);"/>APIA</li></ul><ul><li CLASS="clsFolder" IDNODO="1042"><input name="chkCat" id="chkList" type="checkbox" value="1042" onclick="selectOneChk(this);"/>CLA_GONZALO2</li></ul></div></div></td></tr><tr><td title="Nombre"><U>N</U>ombre:</td><td><input name="txtName" p_required="true" maxlength="50" accesskey="N" type="text" value=""></td></tr><tr><td title="Título"><U>T</U>ítulo:</td><td><input name="txtTitle" p_required="true" maxlength="250" accesskey="T" type="text" value="" size=30></td></tr><tr><td title="Descripción"><U>D</U>escripción:</td><td><TEXTAREA p_maxlength="true" maxlength="255" name="txtDesc" cols=30 rows=4 accesskey="D"></TEXTAREA></td></tr><tr><!--     - INDICADOR DE ACCIÓN          --><tr><td title="Acción del proceso"><U>A</U>cción del proceso:</td><td><select name="txtProAction" p_required="true"  onChange="loadQuerys()" accesskey="A"><option value=""></option><option value="C"  >Creación</option><option value="A" >Alteración</option><option value="Z" >Cancelación</option></select></td></tr><!--     - TIPO DE PROCESO          --><tr style="display:none"><td title="Tipo de proceso"><U>T</U>ipo de proceso:</td><td><select name="txtProType" onchange="proTypeChange()" p_required="true" accesskey="T"><option value="A" >Automático</option><option value="M" >Manual</option></select></td></tr><!--     - ENTIDAD ASOCIADA          --><tr><td title="Entidad asociada"><U>E</U>ntidad asociada:</td><td colspan=2><input type=hidden name="txtBusEnt" value=""><select  onChange="loadQuerys()" name="selBusEnt" onblur="entBlur()" accesskey="E"><option><option value="1020" >CLIENTE
+								
+									<option value="1321" >ENTI_INI_LOGS
+								
+									<option value="1500" >FORMULA
+								
+									<option value="1281" >FUNCIONALIDAD
+								
+									<option value="1261" >INICIALIZAR
+								
+									<option value="1301" >PDT
+								
+									<option value="1282" >ROLL
+								
+									<option value="1323" >TEST_GF
+								
+									<option value="1400" >WS
+								
+									<option value="1160" >X
+								
+
+		   				</select></td></tr><!--     - TEMPLATES          --><!-- CONSULTA ASOCIADA --><tr><td title="Consulta"><U>C</U>onsulta:</td></td><td colspan="2"><select name="qryId" id="qryId"><option value=""></option></select></td></tr><!-- TEMPLATES --><tr><td title="Template de ejecución"><U>T</U>emplate:</td><td colspan=3 nowrap><select name="txtTemplate" onchange="changeTemplate()" accesskey="T"><option value="" selected >Completo
+<option value="/templates/taskEntityOnly.jsp">Solamente entidad
+<option value="/templates/taskProcessOnly.jsp">Solamente proceso
+<option value="/templates/taskFormOnly.jsp">Solamente formularios
+<option value="/templates/taskFormDoc.jsp">Formularios y documentos
+<option value="/templates/taskFormOnlyNoObs.jsp">Formularios sin observaciones
+<option value="/templates/taskFormEntDoc.jsp">Documentos de entidad y formularios
+
+							<option value="<CUSTOM>" >Custom
+		   				</select>
+		   				&nbsp;
+						<button type="button" id="btnVerOne"  onclick="btnViewTemplate()" accesskey="V" title="Ver"><U>V</U>er</button><input id=customTemplate onkeyup="customKeyPress()" type="text" name="txtCusTemplate" size="40" disabled="true" style="display:none">
+		   				&nbsp;
+						<button type="button" id="btnVerTwo" style="display:none" onclick="btnViewTemplate()" accesskey="V" title="Ver"><U>V</U>er</button></td></tr><!-- CALENDARIOS --><tr><td title="Calendario"><U>C</U>alendario:</td><td colspan=2><input type=hidden name="txtCal" value=""><select name="selCal" accesskey="E"><option value="0"></option><option value="1000" 
+		   						
+									>CALENDARIO1</option><option value="1001" 
+		   						
+									>ITIL</option><option value="1016" 
+		   						
+									>A</option><option value="1017" 
+		   						
+									>ASD</option></select>
+		   				&nbsp;
+		   				<button type="button" id="btnVerCal" onclick="btnViewCalendar()" accesskey="V" title="Ver"><U>V</U>er</button></td></tr><tr><td title="No mostrar el proceso en el menú"><U>N</U>o mostrar en el menú</td><td><input type="checkbox" name="chkHidFun" accessKey="N" ></td><td title="Permitir delegar"><U>P</U>ermitir delegar:</td><td><input type="checkbox" name="txtPerDel" accesskey="P" ></td></tr></table><BR><DIV class="subTit">Definición del identificador</DIV><table class="tblFormLayout"><tr><td colspan=4><table width=100%><tr><td align=right vAlign="middle">Prefijo:</td><td vAlign="middle"><input type="radio" name="radIdePre" onclick="changeIdePre(true);" value="N"  checked  >No usar</td><td align=right vAlign="middle">Número:</td><td vAlign="middle"><input type="radio" name="radIdeNum" value="A"  checked  >Autonumérico</td><td align=right vAlign="middle">Sufijo:</td><td vAlign="middle"><input type="radio" name="radIdePos" onclick="changeIdePos(true);" value="N"  checked  >No usar</td></tr><tr><td align=right vAlign="middle"></td><td vAlign="middle"><input type="radio" name="radIdePre" onclick="changeIdePre(true);" value="W"  >Permite ingreso</td><td align=right vAlign="middle"></td><td vAlign="middle"><input type="radio" name="radIdeNum" value="W"  >Exige ingreso</td><td align=right vAlign="middle"></td><td vAlign="middle"><input type="radio" name="radIdePos" onclick="changeIdePos(true);" value="W"  >Permite ingreso</td></tr><tr><td align=right vAlign="middle"></td><td vAlign="middle"><table cellspacing="0" cellpadding="0"><tr><td><input type="radio" name="radIdePre" onclick="changeIdePre(false);" value="F"  >Fijo</td><td><input type=text size=6 maxlength=50 name="txtIdePre" value=""  disabled ></td></tr></table></td><td align=right vAlign="middle"></td><td vAlign="middle"><input type="radio" name="radIdeNum" value="B"  >Ambos</td><td align=right vAlign="middle"></td><td vAlign="middle"><table cellspacing="0" cellpadding="0"><tr><td><input type="radio" name="radIdePos" onclick="changeIdePos(false);" value="F"  >Fijo</td><td><input type=text size=6 maxlength=50 name="txtIdePos" value=""  disabled ></td></tr></table></td></tr></table></td></tr></table></div><div type="tab" style="visibility:hidden" style="visibility:hidden;" tabTitle="Atributos específicos del proceso" tabText="Atributos"><!--     - Sección de atributos específicos          --><table class="tblFormLayout"><COL class="col1"><COL class="col2"><COL class="col3"><COL class="col4"><tr><td title="1er. atributo de tipo String del proceso"><U>A</U>trib. String 1 pro.:</td><td><input type="hidden" name="hidAttId1" value=""><input type="text" name="txtAttName1" readonly class='txtReadOnly' value=""><img src="http://stw32:9090/Apia2.3/styles/default/images/btnQuery.gif" onclick="btnLoadAtt_click(1,'S')" style="cursor:hand;position:static;" accesskey="A"><button type="button" onclick="btnRemAtt_click(1,'S')" title="Eliminar el atributo" accesskey="E"><U>E</U>liminar</button></td><td title="1er. atributo de tipo Numérico de la entidad"><U>A</U>trib. Numérico 1 pro.:</td><td><input type="hidden" name="hidAttIdNum1" value=""><input type="text" name="txtAttNameNum1" readonly class='txtReadOnly' value=""><img src="http://stw32:9090/Apia2.3/styles/default/images/btnQuery.gif" onclick="btnLoadAtt_click(1,'N')" style="cursor:hand;position:static;" accesskey="A"><button type="button" onclick="btnRemAtt_click(1,'N')" title="Eliminar el atributo" accesskey="E"><U>E</U>liminar</button></td></tr><tr><td title="2do. atributo de tipo String del proceso"><U>A</U>trib. String 2 pro.:</td><td><input type="hidden" name="hidAttId2" value=""><input type="text" name="txtAttName2" readonly class='txtReadOnly' value=""><img src="http://stw32:9090/Apia2.3/styles/default/images/btnQuery.gif" onclick="btnLoadAtt_click(2,'S')" style="cursor:hand;position:static;" accesskey="A"><button type="button" onclick="btnRemAtt_click(2,'S')" title="Eliminar el atributo" accesskey="E"><U>E</U>liminar</button></td><td title="2do. atributo de tipo Numérico del proceso"><U>A</U>trib. Numérico 2 pro.:</td><td><input type="hidden" name="hidAttIdNum2" value=""><input type="text" name="txtAttNameNum2" readonly class='txtReadOnly' value=""><img src="http://stw32:9090/Apia2.3/styles/default/images/btnQuery.gif" onclick="btnLoadAtt_click(2,'N')" style="cursor:hand;position:static;" accesskey="A"><button type="button" onclick="btnRemAtt_click(2,'N')" title="Eliminar el atributo" accesskey="E"><U>E</U>liminar</button></td></tr><tr><td title="3er. atributo de tipo String del proceso"><U>A</U>trib. String 3 pro.:</td><td><input type="hidden" name="hidAttId3" value=""><input type="text" name="txtAttName3" readonly class='txtReadOnly' value=""><img src="http://stw32:9090/Apia2.3/styles/default/images/btnQuery.gif" onclick="btnLoadAtt_click(3,'S')" style="cursor:hand;position:static;" accesskey="A"><button type="button" onclick="btnRemAtt_click(3,'S')" title="Eliminar el atributo" accesskey="E"><U>E</U>liminar</button></td><td title="3er. atributo de tipo Numérico del proceso"><U>A</U>trib. Numérico 3 pro.:</td><td><input type="hidden" name="hidAttIdNum3" value=""><input type="text" name="txtAttNameNum3" readonly class='txtReadOnly' value=""><img src="http://stw32:9090/Apia2.3/styles/default/images/btnQuery.gif" onclick="btnLoadAtt_click(3,'N')" style="cursor:hand;position:static;" accesskey="A"><button type="button" onclick="btnRemAtt_click(3,'N')" title="Eliminar el atributo" accesskey="E"><U>E</U>liminar</button></td></tr><tr><td title="4to. atributo de tipo String del proceso"><U>A</U>trib. String 4 pro.:</td><td><input type="hidden" name="hidAttId4" value=""><input type="text" name="txtAttName4" readonly class='txtReadOnly' value=""><img src="http://stw32:9090/Apia2.3/styles/default/images/btnQuery.gif" onclick="btnLoadAtt_click(4,'S')" style="cursor:hand;position:static;" accesskey="A"><button type="button" onclick="btnRemAtt_click(4,'S')" title="Eliminar el atributo" accesskey="E"><U>E</U>liminar</button></td><td title="1er. atributo de tipo Fecha del proceso"><U>A</U>trib. Fecha 1 pro.:</td><td><input type="hidden" name="hidAttIdDte1" value=""><input type="text" name="txtAttNameDte1" readonly class='txtReadOnly' value=""><img src="http://stw32:9090/Apia2.3/styles/default/images/btnQuery.gif" onclick="btnLoadAtt_click(1,'D')" style="cursor:hand;position:static;" accesskey="A"><button type="button" onclick="btnRemAtt_click(1,'D')" title="Eliminar el atributo" accesskey="E"><U>E</U>liminar</button></td></tr><tr><td title="5to. atributo de tipo String del proceso"><U>A</U>trib. String 5 pro.:</td><td><input type="hidden" name="hidAttId5" value=""><input type="text" name="txtAttName5" readonly class='txtReadOnly' value=""><img src="http://stw32:9090/Apia2.3/styles/default/images/btnQuery.gif" onclick="btnLoadAtt_click(5,'S')" style="cursor:hand;position:static;" accesskey="A"><button type="button" onclick="btnRemAtt_click(5,'S')" title="Eliminar el atributo" accesskey="E"><U>E</U>liminar</button></td><td title="2do. atributo de tipo Fecha del proceso"><U>A</U>trib. Fecha 2 pro.:</td><td><input type="hidden" name="hidAttIdDte2" value=""><input type="text" name="txtAttNameDte2" readonly class='txtReadOnly' value=""><img src="http://stw32:9090/Apia2.3/styles/default/images/btnQuery.gif" onclick="btnLoadAtt_click(2,'D')" style="cursor:hand;position:static;" accesskey="A"><button type="button" onclick="btnRemAtt_click(2,'D')" title="Eliminar el atributo" accesskey="E"><U>E</U>liminar</button></td></tr><tr><td></td><td></td><td title="3er. atributo de tipo Fecha del proceso"><U>A</U>trib. Fecha 3 pro.:</td><td><input type="hidden" name="hidAttIdDte3" value=""><input type="text" name="txtAttNameDte3" readonly class='txtReadOnly' value=""><img src="http://stw32:9090/Apia2.3/styles/default/images/btnQuery.gif" onclick="btnLoadAtt_click(3,'D')" style="cursor:hand;position:static;" accesskey="A"><button type="button" onclick="btnRemAtt_click(3,'D')" title="Eliminar el atributo" accesskey="E"><U>E</U>liminar</button></td></tr></table></div><div type="tab" style="visibility:hidden" style="visibility:hidden;" tabTitle="Mapa del proceso" tabText="Mapa" style="display:none;"><!--     - MAPA DEL PROCESSO          --><TABLE WIDTH="100%" HEIGHT="100%" BORDER=0 cellspacing=0><TR><TD VALIGN="middle" ALIGN="center"><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"  
+	 codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" 
+		WIDTH="100%" 
+		HEIGHT="100%" 
+		style="/*border:1px solid red*/"
+		id="shell" ALIGN="center" VALIGN="middle"><param name="allowScriptAccess" value="sameDomain" /><param name="movie" value="shell.swf" /><param name="FlashVars" value="SWF_OBJ_PATH="/><param name="quality" value="high" /><param name="bgcolor" value="#EFEFEF" /><!--<param name="movie" value="../flash/process/shell.swf" />--><!--<param name="movie" value="<%=Parameters.ROOT_PATH%>/flash/process/shell.swf" />--><!--<param name="FlashVars" value="SWF_OBJ_PATH=<%=Parameters.ROOT_PATH%>/flash/process/"/>--><!--<param name="FlashVars" value="SWF_OBJ_PATH=../flash/process/"/>--><!--<param name="scale" value="exactfit" />--><!--DONT USE SCALE WHEN 100%--><!--<param name="menu" value="false">--><embed menu="false" wmode="transparent" allowscriptaccess="sameDomain" src="shell.swf" quality="high" bgcolor="#efefef" swliveconnect="true" id="shell" name="shell" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="SWF_OBJ_PATH=" align="middle" height="450" width="100%"></object></TD></TR></TABLE><table width=100% style="display:none"><tr><td align=right vAlign="middle">Mapa:</td><!--     -style="display:block"         --><td vAlign="middle"><TEXTAREA p_required="true" name="txtMap" cols="100" rows="30"><?xml version='1.0' encoding='ISO-8859-1'?><PROCESS_DEFINITION><ELEMENT type="I"  id="1"><INIT_MARK/><DESIGN x="150" y="150"/></ELEMENT><ELEMENT type="E"  id="2"><END_MARK/><DESIGN x="250" y="150"/></ELEMENT><EVENTS></EVENTS></PROCESS_DEFINITION></TEXTAREA></td></tr></table></div><div type="tab" style="visibility:hidden" style="visibility:hidden;" tabTitle="LBL_NOT_FOUND : tabAct" tabText="LBL_NOT_FOUND : tabAct"><DIV class="subTit">Duración y acciones</DIV><table class="tblFormLayout"><COL class="col1"><COL class="col2"><COL class="col3"><COL class="col4"><tr><td title="LBL_NOT_FOUND : lblIniProAtr">LBL_NOT_FOUND : lblIniProAtr:</td><td><input type=text maxlength=3 size=4 name="txtProDurMaxD" p_numeric="true" value="" accesskey=""><U>D</U>ía(s) 
+		   				<input type=text maxlength=3 size=4 name="txtProDurMaxH" p_numeric="true" value="" accesskey=""><U>H</U>ora(s) 
+		   			</td><td title="Tipo de notificación"><U>T</U>ipo de notificación:</td><td><input type=checkbox name="chkNotEma"  value="1" accesskey="T">Notificación por e-mail
+				   	</td></tr><tr><td title="LBL_NOT_FOUND : lblIniProAle">LBL_NOT_FOUND : lblIniProAle:</td><td><input type=text maxlength=3 size=4 name="txtProDurAleD" p_numeric="true" value="" accesskey=""><U>D</U>ía(s) 
+		   				<input type=text maxlength=3 size=4 name="txtProDurAleH" p_numeric="true" value="" accesskey=""><U>H</U>ora(s) 
+		   			</td><td><font style="visibility=hidden">Tipo de notificación:</font></td><td><input type=checkbox name="chkNotMes"   value="1" accesskey="T">Notificación por mensaje
+					</td></tr><tr><td></td><td></td><td title="LBL_NOT_FOUND : lblTskInAtr">LBL_NOT_FOUND : lblTskInAtr:</td><td><input type=checkbox name="chkLibTas"  value="1" accesskey="L">Liberar tareas
+					</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td><input type=checkbox name="chkReaGru" value="1" onclick="chkReaGruFun()" accesskey="R">Reasignar a grupo:			   
+				   		<select name="reaGroups" id="reaGroups" disabled = "true"  accesskey=""><option value="0"></option><option value="1347"
+		   						
+											>controlador</option><option value="1346"
+		   						
+											>CONTROL</option><option value="1361"
+		   						
+											>g1</option><option value="1001"
+		   						
+											>GRUPETE</option><option value="1360"
+		   						
+											>u1</option><option value="1060"
+		   						
+											>gonza1</option><option value="1362"
+		   						
+											>gr1</option><option value="1364"
+		   						
+											>rod2</option><option value="1380"
+		   						
+											>ROD1</option><option value="1420"
+		   						
+											>z1</option><option value="1423"
+		   						
+											>zwx1</option></select></select></td><td></td></tr></table><DIV class="subTit">Notificaciones</DIV><!--     - NOTIFICACIONES          --><div style="height: 200px;" type="grid" id="gridList" docBean=""><table width="500px" cellpadding="0" cellspacing="0"><thead class="fixedHeader"><tr><th title="" style="width:200px">&nbsp;</th><th style="width:25%" title="Creación">Creación</th><th style="width:25%" title="Finalización">Finalización</th><th style="width:25%" title="Alerta">Alerta</th><th style="width:25%" title="Atrasado">Atrasado</th></tr></thead><tbody class="scrollContent" id="tblUsrBody"><tr><td>
+								
+									Usuario creador proceso
+								
+								</td><td align="center"></td><td align="center"><input type="checkbox" name="proEndU"  value="-2"></td><td align="center"><input type="checkbox" name="proAleU"  value="-2"></td><td align="center"><input type="checkbox" name="proOveU"  value="-2"></td></tr><tr><td>
+								
+									Grupo del usuario creador
+								
+								</td><td align="center"><select name="proCreP" onChange="cmbAlert_change('proCreP')"><option value="-1" selected></option><option value="-2" >Notificar</option><option value="-3" >Notificar padre</option><option value="-4" >Notificar ancestros</option><option value="0" >Niveles</option></select><input style="visibility:hidden" type="text" name="proCrePL" size="3" value="0" maxlength="3" p_numeric=true></td><td align="center"><select name="proEndP" onChange="cmbAlert_change('proEndP')"><option value="-1" selected></option><option value="-2" >Notificar</option><option value="-3" >Notificar padre</option><option value="-4" >Notificar ancestros</option><option value="0" >Niveles</option></select><input style="visibility:hidden" type="text" name="proEndPL" size="3" value="0" maxlength="3" p_numeric=true></td><td align="center"><select name="proAleP" onChange="cmbAlert_change('proAleP')"><option value="-1" selected></option><option value="-2" >Notificar</option><option value="-3" >Notificar padre</option><option value="-4" >Notificar ancestros</option><option value="0" >Niveles</option></select><input style="visibility:hidden" type="text" name="proAlePL" size="3" value="0" maxlength="3" p_numeric=true></td><td align="center"><select name="proOveP" onChange="cmbAlert_change('proOveP')"><option value="-1" selected></option><option value="-2" >Notificar</option><option value="-3" >Notificar padre</option><option value="-4" >Notificar ancestros</option><option value="0" >Niveles</option><
+											
+										</select><input style="visibility:hidden" type="text" name="proOvePL" size="3" value="0" maxlength="3" p_numeric=true></td></tr><tr><td>
+								
+									Usuario creador entidad
+								
+								</td><td align="center"><input type="checkbox" name="proCreE"  value="-2"></td><td align="center"><input type="checkbox" name="proEndE"  value="-2"></td><td align="center"><input type="checkbox" name="proAleE"  value="-2"></td><td align="center"><input type="checkbox" name="proOveE"  value="-2"></td></tr><tr><td>
+								
+									Usuario(s) con tarea(s) adquirida(s)
+								
+								</td><td align="center"></td><td align="center"></td><td align="center"><input type="checkbox" name="proAleA"  value="-2"></td><td align="center"><input type="checkbox" name="proOveA"  value="-2"></td></tr><tr><td>
+								
+									Grupo asignado a tarea
+								
+								</td><td align="center"><select name="proCreT" onChange="cmbAlert_change('proCreT')"><option value="-1" selected></option><option value="-2" >Notificar</option><option value="-3" >Notificar padre</option><option value="-4" >Notificar ancestros</option><option value="0" >Niveles</option></select><input style="visibility:hidden" type="text" name="proCreTL" size="3" value="0" maxlength="3" p_numeric=true></td><td align="center"></td><td align="center"><select name="proAleT" onChange="cmbAlert_change('proAleT')"><option value="-1" selected></option><option value="-2" >Notificar</option><option value="-3" >Notificar padre</option><option value="-4" >Notificar ancestros</option><option value="0" >Niveles</option></select><input style="visibility:hidden" type="text" name="proAleTL" size="3" value="0" maxlength="3" p_numeric=true></td><td align="center"><select name="proOveT" onChange="cmbAlert_change('proOveT')"><option value="-1" selected></option><option value="-2" >Notificar</option><option value="-3" >Notificar padre</option><option value="-4" >Notificar ancestros</option><option value="0" >Niveles</option><
+											
+										</select><input style="visibility:hidden" type="text" name="proOveTL" size="3" value="0" maxlength="3" p_numeric=true></td></tr><tr><td>Grupos</td><td align="center" valign=top><img style='cursor:hand;position:static;' border=0 src='http://stw32:9090/Apia2.3/styles/default/images/btn_mod.gif' onclick="alterPools('C')"></td><td align="center"><img style='cursor:hand;position:static;' src='http://stw32:9090/Apia2.3/styles/default/images/btn_mod.gif' onclick="alterPools('E')"></td><td align="center"><img style='cursor:hand;position:static;' src='http://stw32:9090/Apia2.3/styles/default/images/btn_mod.gif' onclick="alterPools('A')"></td><td align="center"><img style='cursor:hand;position:static;' src='http://stw32:9090/Apia2.3/styles/default/images/btn_mod.gif' onclick="alterPools('O')"></td></tr><tr><td>Mensajes</td><td align="center"><img style='cursor:hand;position:static;' src='http://stw32:9090/Apia2.3/styles/default/images/btn_mod.gif' onclick="alterMessage('C')"></td><td align="center"><img style='cursor:hand;position:static;' src='http://stw32:9090/Apia2.3/styles/default/images/btn_mod.gif' onclick="alterMessage('E')"></td><td align="center"><img style='cursor:hand;position:static;' src='http://stw32:9090/Apia2.3/styles/default/images/btn_mod.gif' onclick="alterMessage('A')"></td><td align="center"><img border=0 style='cursor:hand;position:static;' src='http://stw32:9090/Apia2.3/styles/default/images/btn_mod.gif' onclick="alterMessage('O')"></td></tr></tbody></table></div></div><div type="tab" style="visibility:hidden" style="visibility:hidden;" tabTitle="Documentos" tabText="Documentos"><!--     - DOCUMENTOS          --><DIV class="subTit">Documentos asociados</DIV><div class="tableContainerNoHScroll" style="height: 120px;" type="grid" id="docGridprocess"><table cellpadding="0" cellspacing="0"><thead><tr><th style="display:none;width:0px;" title="Seleccionar">&nbsp;</th><th style="width:28px" title="Bloqueado">&nbsp;</th><th style="width:28px" title="Bloqueado">&nbsp;</th><th style="width:100%" title="Nombre">Nombre</th><th style="width:70px" title="Tamaño del archivo">Tamaño</th><th style="width:100px" title="Usuario">Usuario</th><th style="width:70px" title="Fecha de upload">Fecha</th></tr></thead><tbody></tbody></table></div><table class="navBar"><COL class="col1"><COL class="col2"><tr><td></td><td align="right"><button type="button" type="button" name="btnUplDoc"  onclick="btnUplDoc_click('process')" accesskey="A" title="Agregar"><U>A</U>gregar</button><button type="button" type="button" name="btnModDoc"  onclick="btnModDoc_click('process', 'true')" accesskey="M" title="Modificar"><U>M</U>odificar</button><button type="button" type="button" name="btnDelDoc"  onclick="btnDelDoc_click('process', 'true')" accesskey="E" title="Eliminar"><U>E</U>liminar</button></td></tr></table><iframe id="docFrame" style="display:none"></iframe><script defer="true">
+			var msgNotPer = "No se tienen permisos suficientes sobre el documento para realizar la acción solicitada.";
+			var msgMusLoc = "El documento debe estar bloqueado por el usuario actual para permitir modificaciones.";
+		</script><script src="http://stw32:9090/Apia2.3/programs/documents/documents.js"></script></div></div></FORM></div><TABLE class="pageBottom"><COL class="col1"><COL class="col2"><TR><TD align="left"><button type="button" onclick="actionAfterFlash='validar';getFlashOutput()" accesskey="V" title="Validar el proceso"><U>V</U>alidar</button></TD><TD align="right"><button type="button" onclick="actionAfterFlash='guardar';getFlashOutput()" accesskey="G" title="Guardar"><U>G</U>uardar</button><button type="button" onclick="actionAfterFlash='confirmar';getFlashOutput()" accesskey="C" title="Confirmar"><U>C</U>onfirmar</button><button type="button" onclick="btnBack_click()" accesskey="V" title="Volver"><U>V</U>olver</button><button type="button" id="btnSalir" onclick="btnExit_click()" accesskey="S" title="Salir"><U>S</U>alir</button></TD></TR></TABLE></body></html><SCRIPT>
+  TYPE_NUMERIC = "N";
+  TYPE_DATE = "D";
+  TYPE_STRING = "S";
+</script><script src="http://stw32:9090/Apia2.3/programs/administration/process/process.js"></script><script src="http://stw32:9090/Apia2.3/programs/administration/process/flash.js"></script><script language="javascript">
+
+function showContent(contentNumber){
+	if(document.getElementById("content"+contentNumber).style.display!="block"){
+		if(navigator.userAgent.indexOf("MSIE")<0){
+			if(contentNumber!=1 && flashLoaded && document.getElementById("content1").style.display=="block"){
+				listener.contentNumber=contentNumber;
+				hideFlash();
+			}else{
+				hideAllContents();
+				document.getElementById("tab"+contentNumber).parentNode.className="here";
+				document.getElementById("content"+contentNumber).style.display="block";
+				var continer=window.parent.document.getElementById(window.name);
+				continer.style.display="none";
+				continer.style.display="block";
+			}
+		}else{
+			hideAllContents();
+			document.getElementById("tab"+contentNumber).parentNode.className="here";
+			document.getElementById("content"+contentNumber).style.display="block";
+		}
+	}
+}
+function hideAllContents(){
+	for(var i=0;i<5;i++){
+		document.getElementById("tab"+i).parentNode.className="";
+		document.getElementById("content"+i).style.display="none";
+	}
+}
+</script><SCRIPT LANGUAGE="VBScript">
+Sub shell_FSCommand(ByVal command, ByVal args)
+    call shell_DoFSCommand(command, args)
+end sub
+</SCRIPT><SCRIPT defer="true">
+
+function changeIdePos(val) {
+	document.getElementById("txtIdePos").disabled = val; 
+	if (val) {
+		document.getElementById("txtIdePos").p_required = 'false';
+	} else {
+		document.getElementById("txtIdePos").p_required = 'true';
+	}
+}
+
+function changeIdePre(val) {
+	document.getElementById("txtIdePre").disabled = val; 
+	if (val) {
+		document.getElementById("txtIdePre").p_required = 'false';
+	} else {
+		document.getElementById("txtIdePre").p_required = 'true';
+	}
+}
+
+
+</SCRIPT><script language="javascript">
+function getFlashObject(movieName){
+	if (window.document[movieName]){
+		return window.document[movieName];
+	}
+	if (navigator.appName.indexOf("Microsoft Internet")==-1){
+		if (document.embeds && document.embeds[movieName]){
+			return document.embeds[movieName];
+		}
+	}else{ // if (navigator.appName.indexOf("Microsoft Internet")!=-1){
+		return document.getElementById(movieName);
+	}
+}
+function chkReaGruFun(){
+	if (document.getElementById("reaGroups").disabled){
+		document.getElementById("reaGroups").disabled = false;
+	}else{
+		document.getElementById("reaGroups").disabled = true;
+	}
+}
+var dependencies=false; //usado para que al presionar volver o salir pregunte si desea perder los datos ingresados (si no estamos en dependencies debe preguntar)
+
+</script>

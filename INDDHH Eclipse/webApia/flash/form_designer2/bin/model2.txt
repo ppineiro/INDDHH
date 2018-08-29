@@ -1,0 +1,11 @@
+<FORM_LAYOUT>
+  <FORM_FIELD fieldId="1" fieldLabel="Documento del cliente" fieldType="1" attId="1021" attName="CI_CLIENTE" x="0" y="0">
+    <ENTITY_BINDING entityId="1011" entityName="PERSONA" entityTitle="Persona">
+      <MAPPING ent_att="1017" frm_att="1020" att_name="NOM_PERSONA"/>
+      <MAPPING ent_att="1019" frm_att="1022" att_name="DOM_PERSONA"/>
+    </ENTITY_BINDING>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="2" fieldLabel="Nombre y apellido de cliente bastante largo" fieldType="1" attId="1020" attName="NOM_CLIENTE" x="0" y="1"/>
+  <FORM_FIELD fieldId="3" fieldLabel="Dirección de cliente" fieldType="1" attId="1022" attName="DOM_CLIENTE" x="0" y="2"/>
+  <EVENTS/>
+</FORM_LAYOUT>

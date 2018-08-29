@@ -1,0 +1,9 @@
+<script type="text/javascript">
+	var MSG_NO_DOC_TYPE_SEL	= '<system:label show="text" label="msgNoDocTypeSel" />';
+	var MSG_NO_MET_INTER	= '<system:label show="text" label="msgNoMetInter" />';	
+	
+	var TYPE_STRING			= "S";
+	var TYPE_NUMERIC		= "N";
+	var TYPE_DATE			= "D";
+	var PRIMARY_SEPARATOR		= new Element('div').set('html', '<system:edit show="constant" from="com.st.util.StringUtil" field="PRIMARY_SEPARATOR"/>').get('text');
+</script><div class="aTab"><div class="tab" id="tabFilters"><system:label show="text" label="sbtFiltersMet" /></div><div class="contentTab" id="contentTabFiltersMetadata"><div><div class="fieldGroup"><div class="title"><system:label show="text" label="titFilMetAva" /></div><div class="fieldGroup" style="vertical-align: top;"><div class="field extendedSize"><label title="<system:label show="tooltip" label="lblCanFil" />"><system:label show="text" label="lblCanFil" />:&nbsp;</label><input type="checkbox" name="flagFilDocMetadata" id="flagFilDocMetadata" <system:edit show="ifFlag" from="theEdition" field="10" defaultValue="monDocFilterFlags">checked</system:edit> ></div></div><div id="divNoMetadataNoSel"><span class="italic"><system:label show="text" label="msgNoDocTypeSel" /></span></div><div id="divNoMetadataNoInter"><span class="italic"><system:label show="text" label="msgNoMetInter" /></span></div><div id="divMetadata"><div class="fieldGroup" style="vertical-align: top;"><br><br><div class="modalOptionsContainer" id="containerDocMetadata" style="overflow: auto; height: 600px;"></div><input type="hidden" id="filtersDocMetadata" name="filtersDocMetadata" value=""></div></div></div></div></div></div>

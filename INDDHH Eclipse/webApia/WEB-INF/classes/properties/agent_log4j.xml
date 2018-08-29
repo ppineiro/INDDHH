@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+
+-->
+
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+           <layout class="org.apache.log4j.PatternLayout">
+             <param name="ConversionPattern"
+		    value="%-5p [%t] %C{2} (%F:%L) - %m%n"/>
+           </layout>	    
+	</appender>
+	
+	<appender name="EVENT_TREE" class="com.apiamonitor.agent.logging.TreeRollingFileAppender">
+	     <param name="File" value="/tmp/logs/events/events.log"/>
+	     <param name="DatePattern" value="yyyy-MM-dd-HH-mm"/>
+	     <param name="Interval" value="15"/>
+	     <layout class="com.apiamonitor.agent.logging.MonitorLayout"/>
+	</appender>
+	
+	<appender name="NET" class="com.apiamonitor.agent.net.MonitorHubAppender">
+    	<param name="port" value="2526"/>
+	</appender>
+
+	<appender name="NET_ASYNC" class="org.apache.log4j.AsyncAppender">
+		<param name="BufferSize" value="5000" />
+		<param name="Blocking" value="false" />
+    	<appender-ref ref="NET" />
+	</appender>
+	
+	<logger name="com.apiamonitor.agent" additivity="false">
+		<level value="all" class="com.apiamonitor.agent.logging.MonitorLevel" />
+		<!-- <appender-ref ref="STDOUT" /> -->
+	</logger>
+	
+	<logger name="com.apiamonitor.agent.logging.MonitorLogger" additivity="false">
+		<level value="all" class="com.apiamonitor.agent.logging.MonitorLevel" />
+		<!--  <appender-ref ref="STDOUT" /> -->
+		<!--  <appender-ref ref="NET" />  -->
+		<appender-ref ref="NET_ASYNC" />
+		<appender-ref ref="EVENT_TREE" />
+	</logger>
+	
+	
+	
+	<loggerFactory class="com.apiamonitor.agent.logging.MonitorLoggerFactory"/>
+	
+</log4j:configuration>

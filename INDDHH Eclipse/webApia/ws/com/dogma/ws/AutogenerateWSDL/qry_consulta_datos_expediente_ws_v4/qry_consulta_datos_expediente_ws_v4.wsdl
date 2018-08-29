@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.apiasolutions.com/WebServices"
+	xmlns:impl="http://www.apiasolutions.com/WebServices"
+	xmlns:intf="http://www.apiasolutions.com/WebServices"
+	xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:apachesoap="http://xml.apache.org/xml-soap"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:ns3="http://www.ig.com.br/poc/Venda"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns1="http://www.apiasolutions.com/WebServices/Data">
+	<wsdl:types>
+		<schema elementFormDefault="qualified" targetNamespace="http://www.apiasolutions.com/WebServices" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://www.apiasolutions.com/WebServices">
+			<element name="ApiaWSInput" type="impl:ApiaWSInputType"/>
+			<complexType name="ApiaWSInputType">
+			  	<sequence>
+					<element name="Q_nroexpediente" type="xsd:string"/>
+				</sequence>
+			</complexType>
+			<element name="ExecResult" type="impl:ExecResultType"/>
+			<complexType name="ExecResultType">
+			  	<sequence>
+			  		<element name="resultCode" type="xsd:int"/>
+			  		<element name="resultMessage" type="xsd:string"/>
+			  		<element name="resultQueryRows" type="impl:Row" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</complexType>
+			<complexType name="Row">
+			  	<sequence>
+			  		<element name="Dependencia" type="xsd:string" nillable="true"/>
+			  		<element name="Area" type="xsd:string" nillable="true"/>
+			  		<element name="OficinaActual" type="xsd:string" nillable="true"/>
+			  		<element name="asunto" type="xsd:string" nillable="true"/>
+			  		<element name="FechaCreacion" type="xsd:date" nillable="true"/>
+			  		<element name="tipoexpstr" type="xsd:string" nillable="true"/>
+			  		<element name="UsuarioActual" type="xsd:string" nillable="true"/>
+			  		<element name="Confidencial" type="xsd:string" nillable="true"/>
+			  		<element name="Prioridad" type="xsd:string" nillable="true"/>
+			  		<element name="DocumentacionFisica" type="xsd:string" nillable="true"/>
+			  		<element name="OficinaCreadora" type="xsd:string" nillable="true"/>
+				</sequence>
+			</complexType>
+		</schema>
+	</wsdl:types>
+	<wsdl:message name="qry_consulta_datos_expediente_ws_v4Request">
+		<wsdl:part name="qry_consulta_datos_expediente_ws_v4Input" element="impl:ApiaWSInput"/>
+	</wsdl:message>
+	<wsdl:message name="qry_consulta_datos_expediente_ws_v4Response">
+		<wsdl:part name="qry_consulta_datos_expediente_ws_v4Return" element="impl:ExecResult"/>
+	</wsdl:message>	
+	<wsdl:portType name="ApiaWSInterface">
+		<wsdl:operation name="qry_consulta_datos_expediente_ws_v4" parameterOrder="qry_consulta_datos_expediente_ws_v4Input">
+			<wsdl:input name="qry_consulta_datos_expediente_ws_v4Request" message="impl:qry_consulta_datos_expediente_ws_v4Request"/>
+			<wsdl:output name="qry_consulta_datos_expediente_ws_v4Response" message="impl:qry_consulta_datos_expediente_ws_v4Response"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ApiaWSSoapBinding" type="impl:ApiaWSInterface">
+		<wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="qry_consulta_datos_expediente_ws_v4">
+			<wsdlsoap:operation soapAction="apiaAction"/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ApiaWSInterfaceService">
+		<wsdl:port name="ApiaWSqry_consulta_datos_expediente_ws_v4" binding="impl:ApiaWSSoapBinding">
+			<wsdlsoap:address location="http://LOCATION-TOKEN"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,74 @@
+<monitor>
+	<central id="" name="" type="">
+		<instances total="" from="" amount="">
+			<instance id="" ident="" />
+			<instance id="" ident="" />
+		</instances>
+		<elements>
+			<element id="" name="" type="" direction="">
+				<properties>
+					<property id="" name="" value="" />
+					<property id="" name="" value="" />
+					<property id="" name="" value="" />
+				</properties>
+			</element>
+			<element id="" name="" type="" direction="">
+				<properties>
+					<property id="" name="" value="" />
+					<property id="" name="" value="" />
+					<property id="" name="" value="" />
+				</properties>
+			</element>
+		</elements>
+		<properties>
+			<property id="" name="" value="" />
+			<property id="" name="" value="" />
+			<property id="" name="" value="" />
+		</properties>
+	</central>
+	<search>
+		<element id="" name="" type=""/>
+		<element id="" name="" type=""/>
+		<element id="" name="" type=""/>
+	</search>
+	<error message="">
+		stack trace
+	</error>
+</monitor>
+
+
+<monitor>
+	<central id="" name="" type="">
+		<instances total="" from="" amount="">
+			<instance id="" ident="" name="" />
+			...
+		</instances>
+		<elements>
+			<element id="" name="" type="" direction="" depLabel="" image="" groupId="" groupType="">
+				<properties>
+					<property id="" name="" value="" />
+					...
+				</properties>
+				<depProperties>
+					<property id="" name="" value="" />
+					...
+				</depProperties>
+			</element>
+			...
+		</elements>
+		<groups>
+			<element id="" name="" type="" image="" />
+		</groups >
+		<properties>
+			<property id="" name="" value="" />
+			...
+		</properties>
+	</central>
+	<search>
+		<element id="" name="" type=""/>
+		...
+	</search>
+	<error message="">
+		... stack trace ...
+	</error>
+</monitor>

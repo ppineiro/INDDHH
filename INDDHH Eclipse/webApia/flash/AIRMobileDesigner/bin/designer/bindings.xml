@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<bindings>
+	<values>
+		<value>
+			<level name="id" value="1" />
+			<level name="param" value="PARAMENTRONOMBRE" />
+			<level name="type" value="S" />
+			<level name="inout" value="in" />
+		</value>
+		<value>
+			<level name="id" value="2" />
+			<level name="param" value="PARAMENTRONOMBRE 2" />
+			<level name="type" value="S" />
+			<level name="inout" value="out" />
+		</value>
+		<value>
+			<level name="id" value="3" />
+			<level name="param" value="PARAMENTRONOMBRE 3" />
+			<level name="type" value="S" />
+			<level name="inout" value="in" />
+		</value>
+		<value>
+			<level name="id" value="4" />
+			<level name="param" value="PARAMENTRONOMBRE 4" />
+			<level name="type" value="S" />
+			<level name="inout" value="out" />
+		</value>
+	</values>
+</bindings>

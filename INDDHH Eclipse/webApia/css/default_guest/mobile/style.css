@@ -1,0 +1,16 @@
+/**
+* Sample file for styling Apia.
+* Write here your CSS classes to override Apia default style.
+*/
+
+.divAdminActEdit div.button:not(.suggestedAction) {
+	background: none !important;
+    border: none;
+    width: auto;
+    height: auto;
+    padding: 0px;
+    font-weight: normal !important;
+    text-decoration: underline;
+    color: #003dc6;
+    font-size: 14px;
+} 

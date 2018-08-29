@@ -1,0 +1,1 @@
+<html><head><title>Chat Service Test</title></head><body><iframe src="status.jsp?id=test" width="35px" height="35px" scrolling="no" style="border: 0px;"></iframe></body></html>

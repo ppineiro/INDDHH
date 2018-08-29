@@ -1,0 +1,67 @@
+<FORM_LAYOUT>
+  <FORM_FIELD fieldId="1" fieldLabel="String 1" fieldType="1" attId="1091" attName="STRING1" x="0" y="0">
+    <PROPERTY prpId="7" prpLabel="prpRequired" value="true" type="S"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="2" fieldLabel="String 4" fieldType="10" attId="1094" attName="STRING4" x="1" y="0">
+    <PROPERTY prpId="9" prpLabel="prpRowSpan" value="3" type="N"/>
+    <PROPERTY prpId="7" prpLabel="prpRequired" value="true" type="S"/>
+    <PROPERTY prpId="11" prpLabel="prpEntity" value="SI_NO" type="S"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="3" fieldLabel="String 2" fieldType="2" attId="1092" attName="STRING2" x="0" y="1">
+    <PROPERTY prpId="7" prpLabel="prpRequired" value="true" type="S"/>
+    <PROPERTY prpId="11" prpLabel="prpEntity" value="SI_NO" type="S"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="4" fieldLabel="String 3" fieldType="3" attId="1093" attName="STRING3" x="0" y="2">
+    <PROPERTY prpId="7" prpLabel="prpRequired" value="true" type="S"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="5" fieldLabel="String 5" fieldType="12" attId="1095" attName="STRING5" x="2" y="0">
+    <PROPERTY prpId="7" prpLabel="prpRequired" value="true" type="S"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="6" fieldLabel="String 6" fieldType="4" attId="1096" attName="STRING6" x="2" y="1">
+    <PROPERTY prpId="7" prpLabel="prpRequired" value="true" type="S"/>
+    <PROPERTY prpId="11" prpLabel="prpEntity" value="SI_NO" type="S"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="7" fieldLabel="STRING8" fieldType="6" attId="1100" attName="STRING8" x="3" y="0">
+    <PROPERTY prpId="9" prpLabel="prpRowSpan" value="3" type="N"/>
+    <PROPERTY prpId="7" prpLabel="prpRequired" value="true" type="S"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="8" fieldLabel="String 7" fieldType="9" attId="1097" attName="STRING7" x="2" y="2">
+    <PROPERTY prpId="7" prpLabel="prpRequired" value="true" type="S"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="10" fieldLabel="STRING9" fieldType="16" attId="1101" attName="STRING9" x="0" y="3">
+    <PROPERTY prpId="8" prpLabel="prpColSpan" value="4" type="N"/>
+    <PROPERTY prpId="9" prpLabel="prpRowSpan" value="8" type="N"/>
+    <PROPERTY prpId="7" prpLabel="prpRequired" value="true" type="S"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="16" fieldLabel="" fieldType="14" attId="0" attName="null" x="0" y="11">
+    <FORM_FIELD_CHILD fieldId="11" fieldLabel="STRING10" fieldType="1" attId="1102" attName="STRING10" x="1" y="0">
+      <PROPERTY prpId="7" prpLabel="prpRequired" value="true" type="S"/>
+      <PROPERTY prpId="2" prpLabel="prpReadOnly" value="true" type="S"/>
+    </FORM_FIELD_CHILD>
+    <FORM_FIELD_CHILD fieldId="12" fieldLabel="STRING11" fieldType="2" attId="1103" attName="STRING11" x="2" y="0">
+      <PROPERTY prpId="7" prpLabel="prpRequired" value="true" type="S"/>
+      <PROPERTY prpId="11" prpLabel="prpEntity" value="SI_NO" type="S"/>
+    </FORM_FIELD_CHILD>
+    <FORM_FIELD_CHILD fieldId="13" fieldLabel="STRING12" fieldType="3" attId="1104" attName="STRING12" x="3" y="0">
+      <PROPERTY prpId="7" prpLabel="prpRequired" value="true" type="S"/>
+    </FORM_FIELD_CHILD>
+    <FORM_FIELD_CHILD fieldId="14" fieldLabel="STRING13" fieldType="12" attId="1105" attName="STRING13" x="4" y="0">
+      <PROPERTY prpId="7" prpLabel="prpRequired" value="true" type="S"/>
+    </FORM_FIELD_CHILD>
+    <FORM_FIELD_CHILD fieldId="15" fieldLabel="STRING14" fieldType="9" attId="1106" attName="STRING14" x="5" y="0">
+      <PROPERTY prpId="7" prpLabel="prpRequired" value="true" type="S"/>
+    </FORM_FIELD_CHILD>
+    <PROPERTY prpId="8" prpLabel="prpColSpan" value="4" type="N"/>
+    <PROPERTY prpId="9" prpLabel="prpRowSpan" value="3" type="N"/>
+  </FORM_FIELD>
+	<FORM_PROPERTY  prpId="79"  value="4"  type="N" />
+	<FORM_PROPERTY  prpId="80"  value="15"  type="N" />
+	<FORM_PROPERTY  prpId="3"  value="true"  type="S" />
+	<EVENTS>
+		<EVENT  event_id="19"  event_name="ONRELOAD" order="0" class_id="1510" class_name="SET_REQUIRED_ALTERACION_CT" skip_cond="" bnd_id="6363">
+			<BINDING param_id="1456" param_name="form" param_type="S" att_type="V">CAM_ANA_ACT_CT_ALT</BINDING>
+			<BINDING param_id="1457" param_name="att" param_type="S" att_type="V">CDT_ALTERAR</BINDING>
+			<BINDING param_id="1458" param_name="att_id" param_type="S" att_type="V">CAM_ANA_CT_ID</BINDING>
+		</EVENT>
+	</EVENTS>
+</FORM_LAYOUT>

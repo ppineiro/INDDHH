@@ -1,0 +1,74 @@
+<project name="WebServices"  default="init" >
+
+  <property name="dirBase" value=""/>
+  <property name="method" value=""/>
+  <property name="server" value=""/>
+  <property name="port" value=""/>
+  <property name="path" value=""/>
+  <path id="class.path"> 
+    <pathelement path="${dirBase}/WEB-INF/classes"/>
+    <pathelement path="${dirBase}/WEB-INF/lib/axis.jar"/>
+    <pathelement path="${dirBase}/WEB-INF/lib/axis-ant.jar"/>
+    <pathelement path="${dirBase}/WEB-INF/lib/activation.jar"/>
+    <pathelement path="${dirBase}/WEB-INF/lib/mailapi.jar"/>
+    <pathelement path="${dirBase}/WEB-INF/lib/saaj.jar"/>
+    <pathelement path="${dirBase}/WEB-INF/lib/xalan.jar"/>
+    <pathelement path="${dirBase}/WEB-INF/lib/log4j-1.2.8.jar"/>
+    <pathelement path="${dirBase}/WEB-INF/lib/wsdl4j-1.6.2-fixed.jar"/>
+    <pathelement path="${dirBase}/WEB-INF/lib/jaxrpc.jar"/>
+    <pathelement path="${dirBase}/WEB-INF/lib/commons-logging.jar"/>
+    <pathelement path="${dirBase}/WEB-INF/lib/commons-logging-1.1.jar"/>
+    <pathelement path="${dirBase}/WEB-INF/lib/commons-discovery.jar"/>
+    <pathelement path="${dirBase}/WEB-INF/lib/xml-apis.jar"/>
+    <pathelement path="${dirBase}/WEB-INF/lib/xercesImpl.jar"/>
+  </path>
+		
+  <taskdef name="wsdl2java" classname="org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask" classpathref="class.path" />
+  <taskdef name="adminclient" classname="org.apache.axis.tools.ant.axis.AdminClientTask"  classpathref="class.path" />
+	
+  <target name="init">
+  </target>
+	
+  <target name="compile">
+    <mkdir dir="${dirBase}/ws/com/dogma/ws/AutogenerateWSDL/${method}/gen/classes"/>
+  	<javac srcdir="${dirBase}/ws/com/dogma/ws/AutogenerateWSDL/${method}"
+         destdir="${dirBase}/ws/com/dogma/ws/AutogenerateWSDL/${method}/gen/classes"
+         classpath="${dirBase}/WEB-INF/lib/jaxrpc.jar; ${dirBase}/WEB-INF/lib/axis.jar;${dirBase}/WEB-INF/classes; ${dirBase}/WEB-INF/lib/Apia.jar;${dirBase}/WEB-INF/lib/lucene-core-2.0.0.jar"
+         source="1.4"
+  	  />
+  	<mkdir dir="${dirBase}/WEB-INF/classes/com/dogma/ws/AutogenerateWSDL/${method}"/>
+  	<copy todir="${dirBase}/WEB-INF/classes/com/dogma/ws/AutogenerateWSDL/${method}">
+	  	<fileset dir="${dirBase}/ws/com/dogma/ws/AutogenerateWSDL/${method}/gen/classes/com/dogma/ws/AutogenerateWSDL/${method}">
+  		</fileset>
+	 </copy>		
+  </target>
+
+  <target name="wsdl2java">
+  	<delete file="${dirBase}/ws/com/dogma/ws/AutogenerateWSDL/${method}/gen/${method}Impl.java" />
+  	<replace file="${dirBase}/ws/com/dogma/ws/utils/namespace.properties" token="TOKEN" value="${method}"/>
+  	<wsdl2java output="${dirBase}/ws"
+			deployscope="application"
+			serverside="true"
+			url="${dirBase}/ws/com/dogma/ws/AutogenerateWSDL/${method}/${method}.wsdl" 
+			namespacemappingfile="${dirBase}/ws/com/dogma/ws/utils/namespace.properties"
+			implementationclassname="com.dogma.ws.AutogenerateWSDL.${method}.gen.${method}Impl"
+			nowrapped="false"
+			all="true"
+			testcase="false"  
+			verbose="true"
+  			wrapArrays="true"
+			helpergen="false"/>
+  	<replace file="${dirBase}/ws/com/dogma/ws/AutogenerateWSDL/${method}/gen/deploy.wsdd" token="&quot;document&quot;" value="&quot;wrapped&quot;"></replace>
+    <replace file="${dirBase}/ws/com/dogma/ws/AutogenerateWSDL/${method}/gen/ApiaWSInterfaceServiceLocator.java" token="&quot;http://LOCATION-TOKEN&quot;" value="&quot;http://${server}:${port}/Dogma2.0/services/ApiaWS${method}&quot;"/>
+  	<replace file="${dirBase}/ws/com/dogma/ws/AutogenerateWSDL/${method}/gen/ApiaWSSoapBindingStub.java" token="Style.DOCUMENT" value="Style.WRAPPED"/>
+  </target>		
+
+  <target name="adminClient">
+	<adminclient url="http://${server}:${port}/${path}/services/AdminService" xmlfile="${dirBase}/ws/com/dogma/ws/AutogenerateWSDL/${method}/gen/deploy.wsdd" classpathref="class.path"/>
+  </target>	
+	
+	<target name="undeploy">
+		<adminclient url="http://${server}:${port}/${path}/services/AdminService" xmlfile="${dirBase}/ws/com/dogma/ws/AutogenerateWSDL/${method}/gen/undeploy.wsdd" classpathref="class.path"/>
+	  </target>	
+	
+</project>

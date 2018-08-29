@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<PROCESS_DEFINITION>
+	
+	<ELEMENT id="1063" pro_ele_id="1063" type="I">		
+		<INIT_MARK/>
+		<DESIGN y="148" x="107"/>		
+		<DEPENDENCY id="1065" ></DEPENDENCY>
+	</ELEMENT>
+	
+
+	
+	<ELEMENT id="1064" pro_ele_id="1064" type="E">		
+		<END_MARK/>
+		<DESIGN y="156" x="372"/>	
+	</ELEMENT>
+
+
+
+	<ELEMENT id="1065" pro_ele_id="1065" type="T">		
+		<TASK task_id="1011" name="TSK_1">
+			<FORMS></FORMS>
+			<POOLS>
+				<POOL pool_id="1012" name="GRP_1"></POOL>
+			</POOLS>
+			<EVENT></EVENT>
+		</TASK>
+		<DESIGN y="112" x="240"/>		
+		<DEPENDENCY id="1069" ></DEPENDENCY>
+	</ELEMENT>
+
+
+
+	<ELEMENT id="1069" pro_ele_id="1069" type="P">
+		<PROCESS pro_id="1006" name="TEST" iterate="false"/>
+			<DESIGN y="191" x="255"/>		
+			<DEPENDENCY id="1064" ></DEPENDENCY>
+	</ELEMENT>
+
+
+</PROCESS_DEFINITION>
+
+
+
+

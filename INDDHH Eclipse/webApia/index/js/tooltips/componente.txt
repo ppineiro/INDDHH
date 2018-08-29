@@ -1,0 +1,48 @@
+http://www.ajaxshake.com/plugin/ES/167/927f3d1d/crear-tooltips-sexys-con-mootools-sexy-tooltips.html
+
+
+    tooltip()
+
+    Element.tooltip(content, options)
+
+    Crea el tooltip para ese elemento.
+
+    @content (string) El mensaje a mostrar.
+
+    @options (array) Opciones del estilo del tooltip.
+
+    Ejemplo:
+    $('example').tooltip('Hello world.', { mode: 'tl', width: 140, hook: 1 });
+
+    tooltip_hide()
+
+    Element.tooltip_hide()
+
+    Oculta el tooltip.
+
+    options
+        width – (number: default to 250) Ancho total del tooltip. Tener en cuenta que el contenedor tiene 15px menos de cada lado.
+        mode – (string: default to ‘auto’) Posición del puntero. Este parámetro acepta un string de 2 caracteres (obligatorio) donde la primer letra puede ser ‘t’ (Top) o ‘b’ (Bottom) y la segunda letra puede ser ‘l’ (Left) o ‘r’ (Right). Si se establece este parámetro a ‘auto’ el script calculará la mejor posición para mostrar el tooltip.
+        hook – (boolean: default to false) El tooltip se mueve a medida que movemos el puntero del mouse.
+        mouse – (boolean: default to true) El tooltip se muestra al pasar el mouse por arriba del elemento.
+        click – (boolean: default to false) El tooltip se muestra al clickear el elemento. Se desactiva el parámetro ‘mouse’ al establecer este parámetro a ‘true’.
+        sticky – (boolean: default to false) Establezca este parámetro a ‘true’ si desea que el tooltip muestre un botón para cerrarse.
+        style – (string: default to ‘default’) Corresponde a la clase para el contenedor del mensaje. Útil si deseas agregar estilos propios.
+
+Eventos
+
+    event tooltipshow()
+
+    Evento lanzado cuando el tooltip termina de mostrarse.
+
+    $('element').addEvent('tooltipshow', function() {
+    alert('tooltip event fired');
+    });
+
+    event tooltiphide()
+
+    Evento lanzado cuando el tooltip termina de cerrarse.
+
+    $('element').addEvent('tooltiphide', function() {
+    alert('tooltip event fired');
+    });

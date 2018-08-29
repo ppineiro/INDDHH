@@ -1,0 +1,75 @@
+<%@page import="biz.statum.apia.web.bean.BasicBeanStatic"%><%@page import="com.st.util.labels.LabelManager"%><%@page import="com.dogma.Parameters"%><%
+response.setHeader("Pragma","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setDateHeader("Expires",-1); 
+response.setCharacterEncoding("utf-8");
+//**************THIS IS USED TO GET THE LABEL SET OF THE USER***************//
+String labelSet = "0001"+String.valueOf(Parameters.DEFAULT_LABEL_SET);
+boolean envUsesEntities = false;
+com.dogma.UserData uData = BasicBeanStatic.getUserDataStatic(request);
+if (uData!=null) {
+	labelSet = uData.getStrLabelSetId();
+}
+out.clear();
+out.print("lblDwDimCreate=");
+out.print(LabelManager.getName(labelSet,"flaDwDimCreate"));
+out.print("&lblDwDimName=");
+out.print(LabelManager.getName(labelSet,"flaDwDimName"));
+out.print("&lblDwDimension=");
+out.print(LabelManager.getName(labelSet,"flaDwDimension"));
+out.print("&lblDwDimFgnKey=");
+out.print(LabelManager.getName(labelSet,"flaDwDimFgnKey"));
+out.print("&lblDwDimDescription=");
+out.print(LabelManager.getName(labelSet,"flaDwDimDescription"));
+out.print("&lblDwDimTable=");
+out.print(LabelManager.getName(labelSet,"flaDwDimTable"));
+out.print("&lblDwInnerDimension=");
+out.print(LabelManager.getName(labelSet,"flaDwVirtDimension"));
+out.print("&lblDwDimPriKey=");
+out.print(LabelManager.getName(labelSet,"flaDwDimPriKey"));
+out.print("&lblDwDimOk=");
+out.print(LabelManager.getName(labelSet,"flaDwDimOk"));
+out.print("&lblDwDimCancel=");
+out.print(LabelManager.getName(labelSet,"flaDwDimCancel"));
+out.print("&lblDwSrcFields=");
+out.print(LabelManager.getName(labelSet,"flaDwSrcFields"));
+out.print("&lblDwDimensions=");
+out.print(LabelManager.getName(labelSet,"flaDwDimensions"));
+out.print("&lblDwProperties=");
+out.print(LabelManager.getName(labelSet,"flaDwProperties"));
+out.print("&lblDwPrpPrperty=");
+out.print(LabelManager.getName(labelSet,"flaDwPrpProperty"));
+out.print("&lblDwPrpValue=");
+out.print(LabelManager.getName(labelSet,"flaDwPrpValue"));
+
+out.print("&lblPropName=");
+out.print(LabelManager.getName(labelSet,"flaPropName"));
+out.print("&lblPropSource=");
+out.print(LabelManager.getName(labelSet,"flaPropSource"));
+out.print("&lblPropForeignKey=");
+out.print(LabelManager.getName(labelSet,"flaPropForeignKey"));
+out.print("&lblPropPrimaryKey=");
+out.print(LabelManager.getName(labelSet,"flaPropPrimaryKey"));
+out.print("&lblPropPrimaryKeyTable=");
+out.print(LabelManager.getName(labelSet,"flaPropPrimaryKeyTable"));
+out.print("&lblPropTable=");
+out.print(LabelManager.getName(labelSet,"flaPropTable"));
+out.print("&lblPropHasAll=");
+out.print(LabelManager.getName(labelSet,"flaPropHasAll"));
+out.print("&lblPropAliasView=");
+out.print(LabelManager.getName(labelSet,"flaPropAliasView"));
+out.print("&lblPropAllMemberName=");
+out.print(LabelManager.getName(labelSet,"flaPropAllMemberName"));
+out.print("&lblPropOrdinalColumn=");
+out.print(LabelManager.getName(labelSet,"flaPropOrdinalColumn"));
+out.print("&lblPropLevelType=");
+out.print(LabelManager.getName(labelSet,"flaPropLevelType"));
+out.print("&lblPropHideMemberIf=");
+out.print(LabelManager.getName(labelSet,"flaPropHideMemberIf"));
+out.print("&lblPropUniqueMembers=");
+out.print(LabelManager.getName(labelSet,"flaPropUniqueMembers"));
+out.print("&lblPropType=");
+out.print(LabelManager.getName(labelSet,"flaPropType"));
+out.print("&lblPropColumn=");
+out.print(LabelManager.getName(labelSet,"flaPropColumn"));
+%>

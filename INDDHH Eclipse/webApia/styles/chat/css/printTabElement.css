@@ -1,0 +1,105 @@
+
+/*----------------------------- TAB CLASSES---------------------------*/
+
+
+control\:tab{
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+    FONT-SIZE:12px;
+	/*DISPLAY:none;*/
+/*	OVERFLOW:auto;*/
+	/*HEIGHT:expression(divContent.offsetHeight - (this.offsetTop + 1));*/
+	/*border:1px solid red;*/
+	WIDTH:100%;
+	MARGIN-RIGHT:0px;
+	MARGIN-LEFT:0px;
+	MARGIN-TOP:1px;
+	MARGIN-BOTTOM:0px;
+}
+
+control\:tab FIELDSET{
+	PADDING-TOP: 0px;
+    PADDING-BOTTOM: 6px;
+    PADDING-LEFT: 2px;
+    PADDING-RIGHT: 0px;
+    MARGIN-TOP: 6px;
+    /*MARGIN-BOTTOM: 12px;*/
+}
+control\:tab LEGEND{		
+    MARGIN-BOTTOM: 4px;
+    /*BACKGROUND-COLOR:  #E8E8E8;*/
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: normal;
+    LETTER-SPACING:1px;
+    BORDER:1px outset;
+    PADDING-LEFT:2px;
+    PADDING-RIGHT:2px;
+    PADDING-TOP:0px;
+    PADDING-BOTTOM:1px;
+}
+/*------------------TABS TABLE-[Holds the tab images & buttons]------------------------*/
+.tblForTabs{
+	WIDTH:100%;
+	DISPLAY:none;
+	BORDER-COLLAPSE:collapse;
+	TABLE-LAYOUT:fixed;
+	MARGIN-TOP:4px;
+	MARGIN-BOTTOM:0px;
+}
+.tblForTabs .tabTitle{
+	WIDTH:100%;
+	/*BACKGROUND-COLOR:#CACACA;*/
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#92C0E2', endColorStr='#FFFFFF', gradientType='0');
+	color:#1B4D80;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	FONT-SIZE: 12px;
+	BORDER:1px solid #416D94;
+	/*BORDER:1px solid #BABABA;*/
+	MARGIN:0px;
+	LETTER-SPACING:1px;
+	PADDING-LEFT:3px;
+	PADDING-BOTTOM:1px;
+	PADDING-TOP:1px;
+	PADDING-RIGHT:0px;
+}
+
+.tblForTabs THEAD{
+}
+.tblForTabs THEAD TR{
+}
+.tblForTabs THEAD TR TD{
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:0px;
+	PADDING-RIGHT:0px;
+	PADDING-LEFT:8px;
+	MARGIN:0px;
+}
+
+.tblForTabs THEAD TR TD BUTTON{
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	FONT-SIZE:12px;
+	color:#1B4D80;
+	LETTER-SPACING:1px;
+	TEXT-ALIGN: center;
+	PADDING-TOP: 3px;
+	MARGIN:0px;
+	BORDER:none;
+	BACKGROUND-COLOR:transparent;
+	BACKGROUND-REPEAT: no-repeat;
+	WIDTH:94px;
+	HEIGHT:19px;
+	CURSOR: pointer;
+	CURSOR:hand;
+	FILTER:alpha(opacity = 30);
+}
+.tblForTabs THEAD TR TD BUTTON IMG{
+
+}
+.tblForTabs TBODY{
+	
+}
+.tblForTabs TBODY TR{	
+}
+.tblForTabs TBODY TR TD{
+	PADDING:0px;
+}
+/*-----------------------------   END TAB CLASSES ------------------------*/

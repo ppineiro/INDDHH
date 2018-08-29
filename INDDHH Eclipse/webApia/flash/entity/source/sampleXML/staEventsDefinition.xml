@@ -1,0 +1,7 @@
+<ENTITY_DEFINITION>
+	<EVENTS>
+		<EVENT event_id="17" sta_id="1080" sta_name="TEST" event_name="ONCREATE" order="0"/>
+		<EVENT event_id="21" sta_id="1081" sta_name="TEST2" event_name="ONUPDATE" order="2"/>
+		<EVENT event_id="22" sta_id="1082" sta_name="TEST3" event_name="ONDELETE" order="1"/>
+	</EVENTS>
+</ENTITY_DEFINITION>

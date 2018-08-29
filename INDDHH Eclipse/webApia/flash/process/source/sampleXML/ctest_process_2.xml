@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by pp (pp) -->
+<!--<!DOCTYPE PROCESS_DEFINITION SYSTEM "\\stsdesa01\Documentacion\ST\DOGMA\XML\process\process.dtd">-->
+<PROCESS_DEFINITION maxId="8">
+
+	
+	<EVENTS>
+		<EVENT event_id="10000" event_name="onLoad" order="1" class_id="10000" class_name="com.st.events" bnd_id="3">
+			<BINDING param_id="1" param_name="nombre del param"  param_type="String">Valor del binding1</BINDING>
+			<BINDING param_id="2" param_name="nombre del param2"  param_type="String">Valor del binding2</BINDING>
+		</EVENT>
+	</EVENTS>
+
+
+	<ELEMENT id="1" pro_ele_id="1" type="I">
+		<DESIGN y="80" x="40"/>
+		<INIT_MARK/>
+		<DEPENDENCY id="4"/>
+	</ELEMENT>
+	<ELEMENT id="2" type="T" pro_ele_id="2">
+		<DESIGN y="107" x="251"/>
+		<TASK task_id="10000" name="Registro de la reserva" mult_id="1004" mult_name="Ciudad">
+			<FORMS>
+				<STEP>
+					<FORM form_id="1" read_only="true" type="P" name="Registro form 1P [step1]" multiply="false">CONDICION</FORM>
+					<FORM form_id="2" read_only="false" type="E" name="Registro form 2E [step1]" multiply="true">CONDICION 2</FORM>
+				</STEP>
+				<STEP>
+					<FORM form_id="1" read_only="true" type="P" name="Registro form 1P [step2]" multiply="true"></FORM>
+				</STEP>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="10000" name="pool0"/>
+				<POOL pool_id="10001" name="pool1">DATA_1 + DATA_2 = 34</POOL>
+			</POOLS>
+			<STATES>
+				<STATE event_id="10000" event_name="onLoad" sta_id="100" sta_name="conected" order="12">condicion
+				</STATE>
+				<STATE event_id="20000" event_name="onLoad" sta_id="200" sta_name="unplugged" order="22">condicion2
+				</STATE>
+			</STATES>
+			<EVENTS>
+				<EVENT event_id="10000" event_name="onLoad" order="1" class_id="10000" class_name="com.st.events" bnd_id="3">
+					<BINDING param_id="1" param_name="nombre del param"  param_type="String" att_id="15" att_name="nombre att 15" att_type="E">Valor del binding1
+					</BINDING>
+					<BINDING param_id="2" param_name="nombre del param2"  param_type="String" att_id="16" att_name="nombre att 16" att_type="E">Valor del binding2
+					</BINDING>
+				</EVENT>
+			</EVENTS>
+		</TASK>
+		<DEPENDENCY id="3" take_next="true" name="Completar Registro"/>
+	</ELEMENT>
+	<ELEMENT  id="3" type="E">
+		<DESIGN y="104" x="473"/>
+		<END_MARK/>
+	</ELEMENT>
+	<ELEMENT id="4" type="O">
+		<DESIGN y="106" x="140"/>
+		<OPERATOR ope_id="1"/>
+		<DEPENDENCIES>
+			<DEPENDENCY id="2">DATA_1 + DATA_2 = 34</DEPENDENCY>
+			<DEPENDENCY id="5" name="another description"  loop_back="true" />
+		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="5" type="O">
+		<DESIGN y="241" x="140"/>
+		<OPERATOR ope_id="1"/>
+		<DEPENDENCIES>
+			<DEPENDENCY id="6"/>
+			<DEPENDENCY id="7"/>
+		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="6" type="T">
+		<DESIGN y="201" x="251"/>
+		<TASK task_id="10001" name="Registrar firma de la reserva">
+			<ROL rol_id="10001" name="rol 10001"/>
+			<FORMS>
+				<STEP>
+					<FORM form_id="10000" read_only="true" type="P" name="form 10000" multiply="true"></FORM>
+					<FORM form_id="10001" read_only="false" type="P" name="form 10001" multiply="true"></FORM>
+				</STEP>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="10000" name="pool0"/>
+				<POOL pool_id="10001" name="pool1">DATA_1 + DATA_2 = 34</POOL>
+			</POOLS>
+			<STATES>
+				<STATE event_id="30000" event_name="onLoad" sta_id="100" sta_name="plugged" order="12">condicion3
+				</STATE>
+				<STATE event_id="40000" event_name="onLoad" sta_id="300" sta_name="unloaded" order="22">
+				</STATE>
+			</STATES>
+			<EVENTS>
+				<EVENT event_id="10000" event_name="onLoad" order="1" class_id="10000" class_name="com.st.events" bnd_id="3">
+					<BINDING param_id="1" param_name="nombre del param"  param_type="String" att_id="15" att_name="nombre att 15" att_type="E"/>
+					<BINDING param_id="2" param_name="nombre del param2"  param_type="String" att_id="16" att_name="nombre att 16" att_type="E"/>
+				</EVENT>
+				<EVENT event_id="10001" event_name="onClick" order="2" class_id="10001" class_name="com.st.validate" bnd_id="4">
+					<BINDING param_id="1" param_name="nombre del param"  param_type="String" att_id="15" att_name="nombre att 15" att_type="E"/>
+					<BINDING param_id="2" param_name="nombre del param2"  param_type="String" att_id="16" att_name="nombre att 16" att_type="E"/>
+				</EVENT>
+			</EVENTS>
+		</TASK>
+		<DEPENDENCY id="9"/>
+	</ELEMENT>
+	<ELEMENT id="7" type="T">
+		<DESIGN y="281" x="251"/>
+		<TASK task_id="10002" name="Reserva a autorizar por la junta directiva">
+			<FORMS>
+				<STEP>
+					<FORM form_id="10000" read_only="false" type="P" name="form 10000" multiply="true"></FORM>
+				</STEP>
+				<STEP>	
+					<FORM form_id="10001" read_only="true" type="P" name="form 10001" multiply="false"></FORM>
+				</STEP>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="10000" name="pool0"/>
+				<POOL pool_id="10001" name="pool1">DATA_1 + DATA_2 = 34</POOL>
+			</POOLS>
+			<EVENTS>
+				<EVENT event_id="10001" event_name="onClick" order="2" class_id="10001" class_name="com.st.validate" bnd_id="3">
+					<BINDING param_id="1" param_name="nombre del param"  param_type="tipo" att_id="15" att_name="nombre att 15" att_type="E"></BINDING>
+					<BINDING param_id="2" param_name="nombre del param2"  param_type="tipo" >valor2</BINDING>
+				</EVENT>
+			</EVENTS>
+		</TASK>
+		<DEPENDENCY id="8"/>
+	</ELEMENT>
+
+	<ELEMENT id="8" pro_ele_id="12" type="P">
+		<DESIGN y="314" x="473"/>
+		<PROCESS pro_id="21" type="a" iterate="true" name="Gestion de stands y publicidad">
+			<ITERATE>DATA_1 + DATA_2 = 34</ITERATE>
+			<FORMS>
+				<FORM form_id="10000" read_only="false" type="P" name="subpro form 10000"></FORM>
+				<FORM form_id="10001" read_only="true" type="E" name="subpro form 10001" ></FORM>
+			</FORMS>
+		</PROCESS>
+		<DEPENDENCY id="9"/>
+	</ELEMENT>
+
+
+	<ELEMENT id="9" type="O">
+		<DESIGN y="243" x="353"/>
+		<OPERATOR ope_id="1"/>
+		<DEPENDENCY id="3"/>
+	</ELEMENT>
+</PROCESS_DEFINITION>

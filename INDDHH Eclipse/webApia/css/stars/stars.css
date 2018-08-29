@@ -1,0 +1,37 @@
+.rating {
+	float: left;
+}
+
+.rating input {
+	position: absolute;
+	z-index: 2;
+	opacity: 0;
+}
+
+.rating label {
+	float: right;
+	cursor: pointer;
+	color: #ddd;
+	font-size: 150%;
+	width: 1em;
+}
+
+.rating label:before {
+	content: "\2605";
+}
+
+.rating>input:checked ~ label {
+	color: #f70;
+}
+
+.rating>label:hover, .rating>label:hover ~ label {
+	color: gold;
+}
+
+.rating>input:checked+label:hover, 
+.rating>input:checked+label:hover ~	label, 
+.rating>input:checked ~ label:hover, 
+.rating>input:checked ~	label:hover ~ label, 
+.rating>label:hover ~ input:checked ~ label {
+	color: #ea0;
+}

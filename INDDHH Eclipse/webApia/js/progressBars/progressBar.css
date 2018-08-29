@@ -1,0 +1,14 @@
+@CHARSET "ISO-8859-1";
+
+.progress-bar-box { 
+	border:1px solid #ccc; 
+ 	width:20%; height:20px;
+ 	margin-left: 40%;
+ 	top: 49% ;
+ 	position: absolute;
+}
+
+.progress-bar-perc {
+	background:#ccc;
+	height:20px;
+}

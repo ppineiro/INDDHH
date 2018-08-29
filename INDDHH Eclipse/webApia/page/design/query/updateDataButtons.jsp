@@ -1,0 +1,4 @@
+<div id="divQueryButtons"></div><system:edit show="ifValue" from="theEdition" field="qryType" value="Q"><div class="title"><system:label show="text" label="sbtQryOpt" /></div><div class="field"><label title="<system:label show="tooltip" label="lblQryPaged" />" for="chkSchDisabled" class="label"><system:label show="text" label="lblQryPaged" />:&nbsp;</label><input type="checkbox" id="chkPaged" name="chkPaged" value='1' <system:edit show="ifFlag" from="theEdition" field="12" >checked</system:edit>></div><div class="field"><label title="<system:label show="tooltip" label="lblQryHidFun" />" for="flagNotShowMenu" class="label"><system:label show="text" label="lblQryHidFun" />:&nbsp;</label><input type="checkbox"
+			id="chkNotShowMenu" name="chkNotShowMenu" 
+			<system:edit show="ifFlag" from="theEdition" field="23" >checked</system:edit>
+			style="width: 30px !important;"></div></system:edit>

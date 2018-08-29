@@ -1,0 +1,2 @@
+<%@page import="java.util.*"%><%@include file="components/scripts/server/startInc.jsp" %><HTML XMLNS:CONTROL><head><%@include file="components/scripts/server/headInclude.jsp" %></head><body><table class="usuMsg" border=0 align="center" valign="middle"><thead><tr><td>Mensajes a usuarios</td></tr></thead><tr><td align=center ><li><%=LabelManager.getName(labelSet,"lblRstartInProg")%></td></tr></table></body></HTML><%@include file="components/scripts/server/endInc.jsp" %>
+

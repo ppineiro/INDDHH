@@ -1,0 +1,38 @@
+<%
+boolean withProject = (tskSchVo.getPrjId()!=null);
+boolean usePrjPerms = (tskSchVo!=null && tskSchVo.getTskSchAllPerm() != null && TaskSchedulerVo.FLAG_PROJ_PERM_USED.equals(tskSchVo.getTskSchAllPerm().substring(0,1)));
+%><div type="tab" style="visibility:hidden" style="visibility:hidden;" tabTitle="<%=LabelManager.getToolTip(labelSet,"tabTskSchPer")%>" tabText="<%=LabelManager.getName(labelSet,"tabTskSchPer")%>"><DIV class="subTit"><%=LabelManager.getName(labelSet,"sbtPerAccTskSch")%></DIV><table class="tblFormLayout"><tr><td><input name="usePrjPerms" id="usePrjPerms" type=checkbox <%=(usePrjPerms)?"checked":""%><%=(!withProject)?"disabled":""%> onClick="chkUsePrjPerms()"><%=LabelManager.getName(labelSet,"lblUsePrjReadModPerms")%></td></tr></table><div style="height:120px;" type="grid" id="tskSchPrivGrid"><table width="500px" cellpadding="0" cellspacing="0"><thead class="fixedHeader"><tr><th style="width:0px;display:none;" title="<%=LabelManager.getToolTip(labelSet,"lblSel")%>">&nbsp;</th><th min_width="50px" style="width:50px">&nbsp;</th><th min_width="300px" style="min-width:300px;width:70%" title="<%=LabelManager.getToolTip(labelSet,"lblNom")%>"><%=LabelManager.getName(labelSet,"lblNom")%></th><th min_width="300px" style="min-width:300px;width:30%" title="<%=LabelManager.getToolTip(labelSet,"lblPer")%>"><%=LabelManager.getName(labelSet,"lblPer")%></th></tr></thead><tbody class="scrollContent"><%
+				   		  boolean noPermsDefined = (tskSchVo.getTskSchPrivileges()==null || tskSchVo.getTskSchPrivileges().size()==0);
+				   		%><tr cantDelete="true"><td style="width:0px;display:none;" align="center"><input type='hidden' style='visibility:hidden;'><input type='hidden'></td><td align="center"><div style="width:18px; height:18px;"></div></td><td style="min-width:300px" title="<%=LabelManager.getToolTip(labelSet,"lblTod")%>"><%=LabelManager.getName(labelSet,"lblTod")%></td><td style="min-width:300px"><input name="chkRead" <%if (usePrjPerms){%> disabled <%}%> type=checkbox onclick="clickOnRead(this)" value="0" <%if (!usePrjPerms && ((tskSchVo.getTskSchId()==null || (tskSchVo.getTskSchAllPerm()!=null && tskSchVo.getTskSchAllPerm(TaskSchedulerVo.FLAG_ALL_READ)) || noPermsDefined))) {%> checked <%}%> ><%=LabelManager.getName(labelSet,"lblPerVer")%></input><input name="chkModify" <%if (usePrjPerms){%> disabled <%}%> type=checkbox onclick="clickOnModify(this)" value="0" <%if (!usePrjPerms && ((tskSchVo.getTskSchId()==null || (tskSchVo.getTskSchAllPerm()!=null && tskSchVo.getTskSchAllPerm(TaskSchedulerVo.FLAG_ALL_MODIFY)) || noPermsDefined))) {%> checked <%}%>><%=LabelManager.getName(labelSet,"lblPerMod")%></input><input name="chkQuery" type=checkbox value="0" onclick="clickOnQuery(this)" <%if (tskSchVo.getTskSchId()==null || (tskSchVo.getTskSchAllPerm()!=null && tskSchVo.getTskSchAllPerm(TaskSchedulerVo.FLAG_ALL_QUERY)) || noPermsDefined) {%> checked <%}%>><%=LabelManager.getName(labelSet,"lblPerCon")%></input><input name="chkRegen" type=checkbox value="0" onclick="clickOnRegen(this)" <%if (tskSchVo.getTskSchId()==null || (tskSchVo.getTskSchAllPerm()!=null && tskSchVo.getTskSchAllPerm(TaskSchedulerVo.FLAG_ALL_RESCHED)) || noPermsDefined) {%> checked <%}%>><%=LabelManager.getName(labelSet,"lblPerReg")%></input><input type="hidden" id="objValue" value="0" name="objValue" /><input type="hidden" id="type" value="all" name="type" /></td></tr><%if  (tskSchVo.getTskSchPrivileges() != null && tskSchVo.getTskSchPrivileges().size()>0) {
+								Iterator it = tskSchVo.getTskSchPrivileges().iterator();
+								String strVal = "";
+								String strDesc = "";
+								String strImage = "";
+								String objValue = ""; //usrLogin o poolId
+								int i = 0;
+								while (it.hasNext()) {
+									i++;
+									TskSchPrivilegeVo tskSchPrivilegeVo = (TskSchPrivilegeVo) it.next();
+									if (tskSchPrivilegeVo.getUsrLogin() != null) {
+										strImage="<div style='width:18px; height:18px; background-image:url(" + com.dogma.Parameters.ROOT_PATH + "/styles/" + styleDirectory + "/images/user.gif);background-repeat:no-repeat;'></div>";
+										strVal = StringUtil.encodeString(new String[] {tskSchPrivilegeVo.getUsrLogin(), tskSchPrivilegeVo.getUsrName()}) ;
+										strDesc = tskSchPrivilegeVo.getUsrName();
+										strVal = "user";
+										objValue = tskSchPrivilegeVo.getUsrLogin();
+									} else if (tskSchPrivilegeVo.getPoolId() != null) {
+										strImage="<div style='width:18px; height:18px; background-image:url(" + com.dogma.Parameters.ROOT_PATH + "/styles/" + styleDirectory + "/images/pool.gif);background-repeat:no-repeat;'></div>";
+										strVal = StringUtil.encodeString(new String[] {tskSchPrivilegeVo.getPoolId().toString(), tskSchPrivilegeVo.getPoolName()});
+										strDesc = tskSchPrivilegeVo.getPoolName();
+										strVal = "pool";
+										objValue = tskSchPrivilegeVo.getPoolId().toString();
+									}
+									%><tr style="100%"><td style="width:0px;display:none;" align="center"><input type='checkbox' name='chkPoolSel'><input type='hidden' name='chkPool' value="<%=strVal%>"></td><td align="center"><%=strImage%></td><td style="min-width:300px"><%=dBean.fmtHTML(strDesc)%></td><td style="min-width:300px"><input type="checkbox" id="chkRead" <%if (tskSchPrivilegeVo.useProjectPerms()){%> disabled <%}%>  name="chkRead" onclick="clickOnRead(this)" value="<%=i%>" <%if (!tskSchPrivilegeVo.useProjectPerms() && tskSchPrivilegeVo.getTskSchPrivPerm(TskSchPrivilegeVo.FLAG_READ)){   %> checked <%}%>><%=dBean.fmtHTML(LabelManager.getName(labelSet,"lblPerVer"))%></input><input type="checkbox" id="chkModify" <%if (tskSchPrivilegeVo.useProjectPerms()){%> disabled <%}%>  name="chkModify" onclick="clickOnModify(this)" value="<%=i%>" <%if (!tskSchPrivilegeVo.useProjectPerms() && tskSchPrivilegeVo.getTskSchPrivPerm(TskSchPrivilegeVo.FLAG_MODIFY)){ %> checked <%}%>><%=dBean.fmtHTML(LabelManager.getName(labelSet,"lblPerMod"))%></input><input type="checkbox" id="chkQuery"  name="chkQuery" onclick="clickOnQuery(this)" value="<%=i%>" <%if (tskSchPrivilegeVo.getTskSchPrivPerm(TskSchPrivilegeVo.FLAG_QUERY)){  %> checked <%}%>><%=dBean.fmtHTML(LabelManager.getName(labelSet,"lblPerCon"))%></input><input type="checkbox" id="chkRegen"  name="chkRegen" onclick="clickOnRegen(this)" value="<%=i%>" <%if (tskSchPrivilegeVo.getTskSchPrivPerm(TskSchPrivilegeVo.FLAG_RESCHED)){%> checked <%}%>><%=dBean.fmtHTML(LabelManager.getName(labelSet,"lblPerReg"))%></input><input type="hidden" id="objValue" value="<%=objValue%>" name="objValue" /><input type="hidden" id="type" value="<%=strVal%>" name="type" /></td></tr><%
+								}
+							}%></tbody></table></div><table class="navBar" id="navBar"><COL class="col2"><tr><td  align="right"><button type="button" type="button" onclick="btnAddPoolUsrPerm_click()" accesskey="<%=LabelManager.getAccessKey(labelSet,"btnAgrGruUsr")%>" title="<%=LabelManager.getToolTip(labelSet,"btnAgrGruUsr")%>"><%=LabelManager.getNameWAccess(labelSet,"btnAgrGruUsr")%></button><button type="button" type="button" onclick="btnDelPriv_click()" accesskey="<%=LabelManager.getAccessKey(labelSet,"btnEli")%>" title="<%=LabelManager.getToolTip(labelSet,"btnEli")%>"><%=LabelManager.getNameWAccess(labelSet,"btnEli")%></button></td></tr></table></div><script>
+function btnAddPoolUsrPerm_click() {
+	var rets = openModal("/programs/modals/pools.jsp?showAutogenerated=true&envAndGlobal=true&envId=" + <%=envId%> + "&showGlobal=true",500,350);
+	rets.onclose=function(){
+		addObject(rets.returnValue);
+	}
+}
+</script>

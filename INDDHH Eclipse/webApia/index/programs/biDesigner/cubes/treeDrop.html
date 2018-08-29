@@ -1,0 +1,63 @@
+<!-- saved from url=(0013)about:internet --><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><title>treeDrop</title></head><body bgcolor="#ffffff"><script language="JavaScript"><!--
+var isInternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
+// Handle all the FSCommand messages in a Flash movie.
+function treeDrop_DoFSCommand(command, args) {
+	var treeDropObj = isInternetExplorer ? document.all.treeDrop : document.treeDrop;
+	//
+	// Place your code here.
+	//
+	if(command=="getTables"){
+		setTables();
+	}else if(command=="getPrimaries"){
+		var par1=args.split(".")[0];
+		var par2=args.split(".")[1];
+		setPrimaries(par1,par2);
+	}else if(command=="getColumns"){
+		setColumns();
+	}else{
+		alert(command+"--"+args);
+	}
+}
+// Hook for Internet Explorer.
+if (navigator.appName && navigator.appName.indexOf("Microsoft") != -1 && navigator.userAgent.indexOf("Windows") != -1 && navigator.userAgent.indexOf("Windows 3.1") == -1) {
+	document.write('<script language=\"VBScript\"\>\n');
+	document.write('On Error Resume Next\n');
+	document.write('Sub treeDrop_FSCommand(ByVal command, ByVal args)\n');
+	document.write('	Call treeDrop_DoFSCommand(command, args)\n');
+	document.write('End Sub\n');
+	document.write('</script\>\n');
+}
+//--></script><script language="javascript">
+
+
+	function setTables(){
+		var tables="tableid-tabla1;tableid-tablaZ;tableid-tabla9;tableid-tabla3;tableid-tabla7;tableid-tabla4";
+		getFlashObject("treeDrop").SetVariable("call", "setTables,"+tables);
+	}
+
+
+	function setPrimaries(tableId,tableName){
+		var primaries="colid-primary1;colid-primary2;colid-primary3;colid-primary4";
+		getFlashObject("treeDrop").SetVariable("call", "setPrimaries,"+primaries);
+	}
+
+	function setColumns(){
+		var columns="primary1.aaa-bbb.aaaa;primary2.aaa-bbb.aaaa;primary3.aaa-bbb.aaaa;primary4.aaa-bbb.aaaa";
+		getFlashObject("treeDrop").SetVariable("call", "setColumns,"+columns);
+	}
+
+	function getFlashObject(movieName){
+		if (window.document[movieName]){
+			return window.document[movieName];
+		}
+		if (navigator.appName.indexOf("Microsoft Internet")==-1){
+			if (document.embeds && document.embeds[movieName]){
+				return document.embeds[movieName];
+			}
+		}else{ // if (navigator.appName.indexOf("Microsoft Internet")!=-1){
+			return document.getElementById(movieName);
+		}
+	}
+
+	
+</script><!--url's used in the movie--><!--text used in the movie--><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" id="treeDrop" width="580" height="430" align="middle"><param name="allowScriptAccess" value="sameDomain" /><param name="movie" value="treeDrop.swf" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" /><embed src="treeDrop.swf" quality="high" bgcolor="#ffffff" width="580" height="430" swLiveConnect=true id="treeDrop" name="treeDrop" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /></object></body></html>

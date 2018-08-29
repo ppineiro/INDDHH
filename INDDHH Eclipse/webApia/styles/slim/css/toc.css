@@ -1,0 +1,189 @@
+
+BODY{
+	BACKGROUND-COLOR: #F5F5F5;
+	MARGIN-TOP: 0px;								
+	MARGIN-BOTTOM:0px;
+	MARGIN-LEFT: 0px;
+	MARGIN-RIGHT: 0px;
+	cursor:pointer;
+	cursor:default;
+}
+
+#tocContainer{
+    SCROLLBAR-FACE-COLOR: #C69C6D;
+	SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+	SCROLLBAR-SHADOW-COLOR: #C0C0C0;
+	SCROLLBAR-ARROW-COLOR: #000000;
+	SCROLLBAR-DARKSHADOW-COLOR: #808080;
+	SCROLLBAR-BASE-COLOR: #808080;
+	scrollbar-3d-light-color: #808080; 
+}
+
+.tocHolder{
+	BORDER-COLLAPSE:collapse;
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    MARGIN:0px;
+    OVERFLOW-Y:auto;
+    OVERFLOW-X:hidden;
+    WIDTH: 100%;
+    SCROLLBAR-FACE-COLOR: #C69C6D;
+	SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+	SCROLLBAR-SHADOW-COLOR: #C0C0C0;
+	SCROLLBAR-ARROW-COLOR: #000000;
+	SCROLLBAR-DARKSHADOW-COLOR: #808080;
+	SCROLLBAR-BASE-COLOR: #808080;
+	scrollbar-3d-light-color: #808080; 
+}
+.tocTop{
+	BORDER-COLLAPSE:collapse;
+	background-color : #ffffff;
+	WIDTH: 100%;
+	MARGIN:0px;
+	PADDING-top:20px;
+/*	BORDER:1px solid #416D94;*/
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    COLOR:gray;
+    DISPLAY:none;
+}
+.tocTop TR{
+	HEIGHT:4px;
+}
+.tocTop TR TD{
+	TEXT-ALIGN:left;
+	PADDING-top:5px;
+	MARGIN:0px;
+	LETTER-SPACING: 2px;
+	TEXT-TRANSFORM: uppercase;
+}
+IMG{
+    MARGIN-RIGHT: 2px;
+    MARGIN-LEFT:4px;
+    POSITION: static;
+    TOP: 4px;
+    CURSOR: default;
+}
+
+LI.clsFolder{
+	color:black;
+    CURSOR: hand;
+    LIST-STYLE: none;
+}
+
+LI.clsFolder UL LI{
+    font-weight:normal;
+}
+
+.tblAcord {
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    MARGIN: 0px;
+	WIDTH : 100%;
+    PADDING: 0px;
+   	border-collapse:collapse;
+}
+
+.tblAcord TR {
+    MARGIN:0px;
+    PADDING:0px;
+}
+
+.tdTitleAcord {
+  
+    
+}
+span{
+	cursor:pointer;
+	cursor:default;
+	vertical-align:super;
+	white-space:nowrap;
+}
+.tocHolder LI UL {
+	padding-top:1px;
+	vertical-align:top;
+	DISPLAY: none;
+	TEXT-ALIGN:left;
+	/*TEXT-TRANSFORM: uppercase;*/
+	cursor:pointer;
+	cursor:default;
+	position:static;
+    line-style:none;
+}
+
+
+#tocContainer{
+	
+}
+
+.tdTitleAcord TD{
+    CURSOR: hand;
+	padding-top :0px;
+    MARGIN:0px;
+    margin-left:0px;
+	padding-left :0px;
+    PADDING-bottom:0px;
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    border : 0px;
+    vertical-align:bottom;
+}
+
+.tdBodyAcord {
+	MARGIN:1px;
+    PADDING-left:0px;    
+    PADDING-top:0px;        
+    PADDING-bottom:0px;
+    DISPLAY: none;
+    BACKGROUND-COLOR:#ffffff;
+}
+
+.tdInnerTitleAcord{
+	height:23px;
+	CURSOR: hand;
+	padding-top :0px;
+    MARGIN:0px;
+    margin-left:10px;
+	padding-left :0px;
+    PADDING-bottom:0px;
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    font-weight : normal;
+    background : transparent;
+	background-image:url(../../gradient.jsp?height=1&width=300&colors=FFFFFF;C69C6D);
+	background-repeat:repeat-y;
+	background-color:#C69C6D;
+    color  : #000000;
+    vertical-align:center;
+	text-align:left;
+	border-bottom:1px solid #7c7c94;
+  	border-collapse:collapse;
+}
+
+.tdBodyAcord TD { 
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    border: 0px;
+    MARGIN: 0px;
+    PADDING: 0px;    
+    BACKGROUND-COLOR:#ffffff;
+}
+
+LI UL{
+	padding-left:15px;
+}
+
+UL{	
+	align:left;
+	LIST-STYLE: none;
+	position:static;
+    padding-left:5px;
+    margin-left:0px;
+}
+LI{
+	white-space:nowrap;
+	LIST-STYLE: none;
+	position:static;
+	padding-top:1px;
+	margin-left:0px;
+}

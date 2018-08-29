@@ -1,0 +1,76 @@
+
+
+BODY{
+	BACKGROUND-COLOR: #FFFFE7;
+	MARGIN-TOP: 2px;								
+	MARGIN-BOTTOM:2px;
+	MARGIN-LEFT: 2px;
+	MARGIN-RIGHT: 1px;
+}
+
+.tocHolder{
+	background-color: #FFFFE7;
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    MARGIN:0px;
+    OVERFLOW-Y:auto;
+    OVERFLOW-X:hidden;
+    WIDTH: 100%;
+    HEIGHT:100%;
+    BORDER:1px solid #000000;
+    SCROLLBAR-FACE-COLOR: #F7C35A;
+	SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+	SCROLLBAR-SHADOW-COLOR: #C0C0C0;
+	SCROLLBAR-ARROW-COLOR: #000000;
+	SCROLLBAR-DARKSHADOW-COLOR: #808080;
+	SCROLLBAR-BASE-COLOR: #808080;
+	scrollbar-3d-light-color: #808080; 
+
+}
+.tocTop{
+	BORDER-COLLAPSE:collapse;
+	WIDTH: 100%;
+	MARGIN:0px;
+	BORDER:1px solid #416D94;
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    COLOR:gray;
+    DISPLAY:none;
+}
+.tocTop TR{
+	HEIGHT:15px;
+}
+.tocTop TR TD{
+	TEXT-ALIGN:center;
+	PADDING:0px;
+	MARGIN:0px;
+	LETTER-SPACING: 2px;
+	TEXT-TRANSFORM: uppercase;
+}
+IMG{
+    MARGIN-RIGHT: 2px;
+    MARGIN-LEFT:4px;
+    POSITION: relative;
+    TOP: 4px;
+    CURSOR: default;
+}
+UL{
+    MARGIN: 0px;
+    WIDTH:1px;
+	HEIGHT:1px;
+}
+LI UL{
+    DISPLAY: none;
+    MARGIN-LEFT: 15px;
+    MARGIN-RIGHT:0px;
+}
+LI{
+    CURSOR: hand;
+    LIST-STYLE: none;
+    
+}
+LI.clsFolder{
+	 color:#000000;
+    CURSOR: hand;
+    LIST-STYLE: none;
+}

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" version="1.0" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:nsBpsS="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" xmlns:tns="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://bps.gub.uy/atyr/certificados/services/v1/datatypes" xmlns:ns2="http://bps.gub.uy/atyr/certificados/services/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="GeneralFault" nillable="true" type="tns:generalFaultInfo"/>
+  <xs:element name="ParamObtenerEstadoCCyCE" nillable="true" type="tns:ParamObtenerEstadoCCyCE"/>
+  <xs:element name="ParamValidarSolicitudWebCC" nillable="true" type="tns:ParamValidarSolicitudWebCC"/>
+  <xs:element name="ResultObtenerEstadoCCyCE" nillable="true" type="tns:ResultObtenerEstadoCCyCE"/>
+  <xs:element name="ResultValidarSolicitudWebCC" nillable="true" type="tns:ResultValidarSolicitudWebCC"/>
+  <xs:element name="ValidacionesFault" nillable="true" type="tns:validacionesFaultInfo"/>
+  <xs:element name="paramObtCertificadoComun" nillable="true" type="tns:paramObtCertificadoComun"/>
+  <xs:element name="paramObtCertificadoComunVigente" nillable="true" type="tns:paramObtCertificadoComunVigente"/>
+  <xs:element name="paramObtCodigoEstadoCertificado" nillable="true" type="tns:paramObtCodigoEstadoCertificado"/>
+  <xs:element name="paramObtReporteCertComun" nillable="true" type="tns:paramObtReporteCertComun"/>
+  <xs:element name="paramObtReporteVerificacionCert" nillable="true" type="tns:paramObtReporteVerificacionCert"/>
+  <xs:element name="paramObtValidacionClave" nillable="true" type="tns:paramObtValidacionClave"/>
+  <xs:element name="paramObtenerEstadoCC" nillable="true" type="tns:paramObtenerEstadoCC"/>
+  <xs:element name="resultObtCertificadoComunVigente" nillable="true" type="xs:anyType"/>
+  <xs:element name="resultObtCodigoEstadoCertificado" nillable="true" type="tns:resultObtCodigoEstadoCertificado"/>
+  <xs:element name="resultObtReporteCertComun" nillable="true" type="tns:resultObtReporteCertComun"/>
+  <xs:element name="resultObtReporteVerificacionCert" nillable="true" type="tns:resultObtReporteVerificacionCert"/>
+  <xs:element name="resultObtValidacionClave" nillable="true" type="tns:resultObtValidacionClave"/>
+  <xs:element name="resultObtVersion" nillable="true" type="tns:resultVersion"/>
+  <xs:element name="resultObtenerEstadoCC" nillable="true" type="tns:resultObtenerEstadoCC"/>
+  <xs:complexType name="paramObtCodigoEstadoCertificado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnioSolicitud" type="xs:int"/>
+      <xs:element minOccurs="0" name="NroSolicitud" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultObtCodigoEstadoCertificado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnioSolicitud" type="xs:int"/>
+      <xs:element minOccurs="0" name="CodEstado" type="xs:int"/>
+      <xs:element minOccurs="0" name="Estado" type="xs:string"/>
+      <xs:element minOccurs="0" name="NroIntContr" type="xs:int"/>
+      <xs:element minOccurs="0" name="NroIntEmp" type="xs:int"/>
+      <xs:element minOccurs="0" name="NroSolicitud" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generalFaultInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validacionesFaultInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ListaErrores">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="errores" nillable="true" type="tns:errorValidacion"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="errorValidacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" type="xs:int"/>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+      <xs:element minOccurs="0" name="severidad" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="paramObtValidacionClave">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnioCertificado" type="xs:int"/>
+      <xs:element minOccurs="0" name="Clave" type="xs:string"/>
+      <xs:element minOccurs="0" name="NroCertificado" type="xs:int"/>
+      <xs:element minOccurs="0" name="NroContribuyente" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultObtValidacionClave">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnioCertificado" type="xs:int"/>
+      <xs:element minOccurs="0" name="DatosAdicionalesCE" nillable="true" type="tns:datosAdicionalesCE"/>
+      <xs:element minOccurs="0" name="Estado" type="xs:string"/>
+      <xs:element minOccurs="0" name="FechaControl" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaEmision" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaVencimiento" type="xs:dateTime"/>
+      <xs:element name="NroCertificado" type="xs:int"/>
+      <xs:element minOccurs="0" name="Resultado" type="xs:int"/>
+      <xs:element minOccurs="0" name="TipoCertificado" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="datosAdicionalesCE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ListaEstabComerciales">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="listaEstabComercial" nillable="true" type="tns:estabComercial"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ListaInmuebles">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="listaInmueble" nillable="true" type="tns:inmueble"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ListaVehiculos">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="listaVehiculo" nillable="true" type="tns:vehiculo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="MotivoCert" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Sucesor" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="estabComercial">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Apto" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Bis" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="calle" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Departamento" type="xs:string"/>
+      <xs:element minOccurs="0" name="Giro" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Localidad" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="inmueble">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Departamento" type="xs:string"/>
+      <xs:element minOccurs="0" name="Localidad" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Padron" type="xs:string"/>
+      <xs:element minOccurs="0" name="PadronHasta" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="vehiculo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Departamento" type="xs:string"/>
+      <xs:element minOccurs="0" name="Matricula" type="xs:string"/>
+      <xs:element minOccurs="0" name="Padron" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="paramObtReporteCertComun">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnioSolicitud" type="xs:int"/>
+      <xs:element minOccurs="0" name="NroSolicitud" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultObtReporteCertComun">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnioSolicitud" type="xs:int"/>
+      <xs:element minOccurs="0" name="NroSolicitud" type="xs:int"/>
+      <xs:element minOccurs="0" name="Reporte" type="xs:base64Binary"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="paramObtReporteVerificacionCert">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnioCertificado" type="xs:int"/>
+      <xs:element minOccurs="0" name="RepDatosAdicionalesCE" nillable="true" type="tns:repDatosAdicionalesCE"/>
+      <xs:element minOccurs="0" name="Denominacion" type="xs:string"/>
+      <xs:element minOccurs="0" name="Estado" type="xs:string"/>
+      <xs:element minOccurs="0" name="FechaControl" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaEmision" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaVencimiento" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="NroCertificado" type="xs:int"/>
+      <xs:element minOccurs="0" name="NroContribuyente" type="xs:string"/>
+      <xs:element minOccurs="0" name="TipoCertificado" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="repDatosAdicionalesCE">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="listaEstabComercial" nillable="true" type="tns:estabComercial"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="listaInmueble" nillable="true" type="tns:inmueble"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="listaVehiculo" nillable="true" type="tns:vehiculo"/>
+      <xs:element minOccurs="0" name="motivoCert" type="xs:string"/>
+      <xs:element minOccurs="0" name="sucesor" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultObtReporteVerificacionCert">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnioSolicitud" type="xs:int"/>
+      <xs:element minOccurs="0" name="NroSolicitud" type="xs:int"/>
+      <xs:element minOccurs="0" name="Reporte" type="xs:base64Binary"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="paramObtCertificadoComunVigente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NroInternoContribuyente" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultObtCertificadoComunVigente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NroAgencia" type="xs:int"/>
+      <xs:element minOccurs="0" name="FechaEmision" type="xs:date"/>
+      <xs:element minOccurs="0" name="FechaVigencia" type="xs:date"/>
+      <xs:element minOccurs="0" name="NroCertificado" type="xs:string"/>
+      <xs:element minOccurs="0" name="NroInternoContribuyente" type="xs:int"/>
+      <xs:element minOccurs="0" name="Vigencia" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="paramObtCertificadoComun">
+    <xs:sequence>
+      <xs:element name="NroContribuyente" type="xs:string"/>
+      <xs:element minOccurs="0" name="TipoContribuyente" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultObtCertificadoComun">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FechaEmision" type="xs:date"/>
+      <xs:element minOccurs="0" name="FechaVigencia" type="xs:date"/>
+      <xs:element minOccurs="0" name="NroCertificado" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultVersion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+      <xs:element minOccurs="0" name="version" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="paramObtenerEstadoCC">
+    <xs:sequence>
+      <xs:element name="Rut" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultObtenerEstadoCC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodEstado" type="xs:int"/>
+      <xs:element minOccurs="0" name="Estado" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParamValidarSolicitudWebCC">
+    <xs:sequence>
+      <xs:element name="NroIntContr" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResultValidarSolicitudWebCC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="resultado" nillable="true" type="xs:int"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="listaErrores" nillable="true" type="tns:errorValidacion"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParamObtenerEstadoCCyCE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NroIntEmp" nillable="true" type="xs:int"/>
+      <xs:element name="NroIntContr" type="xs:int"/>
+      <xs:element name="TipoCertificado" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResultObtenerEstadoCCyCE">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="listaInfoCertificados" nillable="true" type="tns:InfoCertificados"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InfoCertificados">
+    <xs:sequence>
+      <xs:element name="AnioSolicitud" type="xs:int"/>
+      <xs:element name="NroSolicitud" type="xs:int"/>
+      <xs:element name="AnioCertificado" type="xs:int"/>
+      <xs:element name="NroCertificado" type="xs:int"/>
+      <xs:element name="Estado" type="xs:string"/>
+      <xs:element name="Motivo" type="xs:string"/>
+      <xs:element name="FechaSolicitud" type="xs:dateTime"/>
+      <xs:element name="FechaEmision" type="xs:dateTime"/>
+      <xs:element name="FechaVencimiento" type="xs:dateTime"/>
+      <xs:element name="descripcionEstado" type="xs:string"/>
+      <xs:element name="descripcionEstadoWeb" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

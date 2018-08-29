@@ -1,0 +1,1 @@
+<%response.setCharacterEncoding(com.dogma.Parameters.APP_ENCODING);%><%out.clear(); %><%=request.getParameter("result")%>

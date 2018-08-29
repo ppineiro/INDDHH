@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" 
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+	xmlns:tns="http://wsDNIC/"
+	xmlns:s="http://www.w3.org/2001/XMLSchema" 
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+	targetNamespace="http://wsDNIC/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+	<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio Web de Información Básica</wsdl:documentation>
+	<wsdl:types>
+		<s:schema elementFormDefault="qualified" targetNamespace="http://wsDNIC/">
+			<s:element name="ObtPersonaPorDoc">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="paramObtPersonaPorDoc" type="tns:objParamObtPersonaPorDoc" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="objParamObtPersonaPorDoc">
+				<s:complexContent mixed="false">
+					<s:extension base="tns:objParamAutenticacion">
+						<s:sequence>
+							<s:element minOccurs="0" maxOccurs="1" name="Nrodocumento" type="s:string" />
+							<s:element minOccurs="0" maxOccurs="1" name="TipoDocumento" type="s:string" />
+						</s:sequence>
+					</s:extension>
+				</s:complexContent>
+			</s:complexType>
+			<s:complexType name="objParamAutenticacion">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="1" name="Organizacion" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="PasswordEntidad" type="s:string" />
+				</s:sequence>
+			</s:complexType>
+			<s:element name="ObtPersonaPorDocResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="ObtPersonaPorDocResult" type="tns:obtPersonaPorDocResult" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="obtPersonaPorDocResult">
+				<s:complexContent mixed="false">
+					<s:extension base="tns:objResult">
+						<s:sequence>
+							<s:element minOccurs="0" maxOccurs="1" name="ObjPersona" type="tns:objPersona" />
+						</s:sequence>
+					</s:extension>
+				</s:complexContent>
+			</s:complexType>
+			<s:complexType name="objResult">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="1" name="Errores" type="tns:ArrayOfMensaje" />
+					<s:element minOccurs="0" maxOccurs="1" name="Warnings" type="tns:ArrayOfMensaje" />
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ArrayOfMensaje">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="unbounded" name="Mensaje" nillable="true" type="tns:Mensaje" />
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Mensaje">
+				<s:sequence>
+					<s:element minOccurs="1" maxOccurs="1" name="CodMensaje" type="s:int" />
+					<s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="DatoExtra" type="s:string" />
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="objPersona">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="1" name="CodTipoDocumento" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="NroDocumento" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="Nombre1" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="Nombre2" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="Apellido1" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="Apellido2" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="ApellidoAdoptivo1" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="ApellidoAdoptivo2" type="s:string" />
+					<s:element minOccurs="1" maxOccurs="1" name="Sexo" type="s:int" />
+					<s:element minOccurs="0" maxOccurs="1" name="FechaNacimiento" type="s:string" />
+					<s:element minOccurs="1" maxOccurs="1" name="CodNacionalidad" type="s:int" />
+					<s:element minOccurs="0" maxOccurs="1" name="NombreEnCedula" type="s:string" />
+				</s:sequence>
+			</s:complexType>
+			<s:element name="ProductDesc">
+				<s:complexType />
+			</s:element>
+			<s:element name="ProductDescResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="ProductDescResult" type="tns:obtProductInfo" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="obtProductInfo">
+				<s:sequence>
+					<s:element minOccurs="0" maxOccurs="1" name="modalidad" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="version" type="s:string" />
+					<s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+				</s:sequence>
+			</s:complexType>
+		</s:schema>
+	</wsdl:types>
+	<wsdl:message name="ObtPersonaPorDocSoapIn">
+		<wsdl:part name="parameters" element="tns:ObtPersonaPorDoc" />
+	</wsdl:message>
+	<wsdl:message name="ObtPersonaPorDocSoapOut">
+		<wsdl:part name="parameters" element="tns:ObtPersonaPorDocResponse" />
+	</wsdl:message>
+	<wsdl:message name="ProductDescSoapIn">
+		<wsdl:part name="parameters" element="tns:ProductDesc" />
+	</wsdl:message>
+	<wsdl:message name="ProductDescSoapOut">
+		<wsdl:part name="parameters" element="tns:ProductDescResponse" />
+	</wsdl:message>
+	<wsdl:portType name="wsServicioDeInformacionBasicoSoap">
+		<wsdl:operation name="ObtPersonaPorDoc">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método de obtención de datos de una persona por número de cédula.</wsdl:documentation>
+			<wsdl:input message="tns:ObtPersonaPorDocSoapIn" />
+			<wsdl:output message="tns:ObtPersonaPorDocSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="ProductDesc">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método para identificación del presente servicio web, versión y modalidad de ejecución</wsdl:documentation>
+			<wsdl:input message="tns:ProductDescSoapIn" />
+			<wsdl:output message="tns:ProductDescSoapOut" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="wsServicioDeInformacionBasicoSoap" type="tns:wsServicioDeInformacionBasicoSoap">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="ObtPersonaPorDoc">
+			<soap:operation soapAction="http://wsDNIC/ObtPersonaPorDoc" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ProductDesc">
+			<soap:operation soapAction="http://wsDNIC/ProductDesc" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="wsServicioDeInformacionBasico">
+		<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio Web de Información Básica</wsdl:documentation>
+		<wsdl:port name="wsServicioDeInformacionBasicoSoap" binding="tns:wsServicioDeInformacionBasicoSoap">
+			<soap:address location="http://localhost:15858/wsServicioDeInformacionBasicoTest/Service1.asmx" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

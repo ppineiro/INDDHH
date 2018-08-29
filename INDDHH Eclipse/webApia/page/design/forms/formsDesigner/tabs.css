@@ -1,0 +1,89 @@
+
+
+/* Tabbed Styles */
+.tabbed { margin: 0 auto; border-bottom: 2px solid #000; overflow: hidden; }
+.tabbed ul { margin: 0px; padding: 0px; overflow: hidden; float: left; padding-left: 25px; list-style-type: none; }
+.tabbed ul * { margin: 0px; padding: 0px; }
+.tabbed ul li { display: block; float: left; padding: 5px 10px 5px 5px; background-color: #FFF; margin-right: 20px; z-index: 2; position: relative; cursor: pointer; color: #777; }
+
+.tabbed ul li:before, .tabbed ul li:after { display: block; content: " "; position: absolute; top: 0; height: 100%; width: 15px; background-color: #FFF; }
+.tabbed ul li:before { 
+	right: -8px;
+	-ms-transform:skew(30deg, 0deg);
+	-webkit-transform: skew(30deg, 0deg);
+	transform: skew(30deg, 0deg); 
+	box-shadow: rgba(0, 0, 0, .1) 3px 2px 5px, inset rgba(255, 255, 255, .09) -1px 0; 
+}
+.tabbed ul li:after { 
+	left: -8px; 
+	-ms-transform:skew(-30deg, 0deg);
+	-webkit-transform: skew(-30deg, 0deg);
+	transform: skew(-30deg, 0deg);
+	box-shadow: rgba(0, 0, 0, .1) -3px 2px 5px, inset rgba(255, 255, 255, .09) 1px 0; 
+}
+
+
+.tabbed ul li:hover, .tabbed ul li:hover:before, .tabbed ul li:hover:after { background-color: #F4F7F9; color: #444; }
+.tabbed ul li.active { z-index: 3; }
+.tabbed ul li.active, .tabbed ul li.active:before, .tabbed ul li.active:after { background-color: #000; color: #fff; }
+
+
+/* Round Tabs */
+.tabbed.round ul li { border-radius: 8px 8px 0 0; }
+.tabbed.round ul li:before { border-radius: 0 8px 0 0; }
+.tabbed.round ul li:after { border-radius: 8px 0 0 0; }
+
+
+.tabbed[class*="skin-"] ul li {
+ color: #FFF;
+ text-shadow: rgba(0, 0, 0, .1) 0 1px;
+}
+
+.tabbed.skin-wet-asphalt { border-bottom-color: #34495E; }
+.tabbed.skin-wet-asphalt ul li, .tabbed.skin-wet-asphalt ul li:before, .tabbed.skin-wet-asphalt ul li:after { background-color: #4E6378; }
+.tabbed.skin-wet-asphalt ul li:hover, .tabbed.skin-wet-asphalt ul li:hover:before, .tabbed.skin-wet-asphalt ul li:hover:after { background-color: #5A6F84; }
+.tabbed.skin-wet-asphalt ul li.active, .tabbed.skin-wet-asphalt ul li.active:before, .tabbed.skin-wet-asphalt ul li.active:after { background-color: #34495E; }
+
+
+.tab-content-bg {
+	height: 100%;
+    width: 100%;
+    padding-top: 26px;
+    position: absolute;
+    top: 0;
+    box-sizing: border-box;
+}	
+.tab-content {
+	display:none; 
+	height: 100%; 
+	box-sizing: border-box;
+	border: 1px solid #B0B8C0;
+    border-top: 0; 
+}
+
+.tabbed .labelTab {	
+	margin-left: 15px; 
+	font-size: 12px;
+    font-weight: bold;
+}
+.tabbed .iconTab {
+	z-index: 2;
+	position: absolute;
+	width:12px; height:12px;
+	background-size: contain;
+    background-repeat: no-repeat;
+	background-position: center;
+}
+.tabbed .schemaIcon { background-image: url("img/schemaIcon.png"); }
+.tabbed .attsIcon { background-image: url("img/attsIcon.png"); }
+.tabbed .propsIcon { background-image: url("img/propsIcon.png"); }
+
+.half-container { width:100%; height: 50% }
+.half-container .tab-container { height: 100%; position: relative; }
+
+.half-container .max-min-props-icon { right: 0px; width: 10px; top: 5px; opacity: 0.5; }
+.half-container .max-min-props-icon:hover { opacity: 1; }
+.half-container #maxPropsTab { background-image: url("img/propsMaxIcon.png"); }
+.half-container #minPropsTab { background-image: url("img/propsMinIcon.png"); }
+
+

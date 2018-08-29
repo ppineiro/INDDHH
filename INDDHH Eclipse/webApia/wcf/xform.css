@@ -1,0 +1,47 @@
+body {font-family: sans-serif; }
+    input, select {font-size:90%;}
+
+    .xfm_control {vertical-align:middle }
+    .xfm_input, .xfm_secret {border:1 solid GrayText;} 
+    .xfm_label 
+        {font-family: Arial, sans-serif; font-size: smaller; width: 10ex;
+        white-space:normal; text-align:right; vertical-align:middle;
+        }
+    button, .xfm_button {cursor:pointer}
+    .xfm_help { cursor: help;}
+    .xfm_focus {border-color:red; background:#FFFFCC; color:black}
+    .xfm_key, input.xfm_help { font-family: Arial, sans-serif; font-weight:900; width: 3ex; text-align: center; }
+    .xfm_key, .xfm_button, .xfm_submit, .xfm_reset {cursor: pointer}
+
+    fieldset {border-style:groove; padding-left:1em; padding-right:1ex; padding-bottom:0.5ex}
+    .legend {
+        border-bottom: groove 2; padding-left:1em; padding-right:1em; padding-top: 0.4ex; 
+        padding-bottom: 0.2ex; 
+        margin-bottom:1ex; font-weight:900; font-family:Arial, sans-serif;
+    }
+
+
+/*
+    button.over { border-style:outset; }
+    button.down { border-style:inset;color:red;}
+    button.up { border-style:groove; }
+    button.click {border-style:inset;background:Gray}
+*/
+    .info {background:LightYellow; color:Black;}
+
+    /* help button, display:none for NS4 */
+        input.xfm_help {display:none; }
+
+    /* popup of an help text */
+    table.xfm_help { width: 60ex; right: 10%;
+        border: 2 ridge; background-color: InfoBackground; color: infoText; 
+        font-size: smaller; white-space: normal; font-weight: normal; text-align: justify;
+        white-space: normal; margin-top:2em; margin-bottom:1ex
+    }
+    /* position:absolute; right: 10%; */
+    /* caption bar of an help popup  */
+    .xfm_bar {background:Highlight; color:HighlightText}
+    .xfm_text {padding:1ex}
+    .xfm_text h1 { font-size: 2em; }
+    .xfm_text h2 { font-size: larger; margin-bottom: 0; }
+    .xfm_text p { text-indent: 2em; }

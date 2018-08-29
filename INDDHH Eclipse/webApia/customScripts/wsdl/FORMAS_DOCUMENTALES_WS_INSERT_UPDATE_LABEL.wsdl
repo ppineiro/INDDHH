@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="ws.framework.kb.statum.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="ws.framework.kb.statum.com" xmlns:intf="ws.framework.kb.statum.com" xmlns:tns1="http://objects.ws.framework.kb.statum.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+
+  <wsdl:types>
+
+    <schema elementFormDefault="qualified" targetNamespace="ws.framework.kb.statum.com" xmlns="http://www.w3.org/2001/XMLSchema">
+
+      <import namespace="http://objects.ws.framework.kb.statum.com"/>
+
+      <complexType name="ArrayOf_xsd_string">
+
+        <sequence>
+
+          <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:string"/>
+
+        </sequence>
+
+      </complexType>
+
+      <complexType name="ArrayOf_tns1_Language">
+
+        <sequence>
+
+          <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:Language"/>
+
+        </sequence>
+
+      </complexType>
+
+      <complexType name="ArrayOf_tns1_Visibility">
+
+        <sequence>
+
+          <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:Visibility"/>
+
+        </sequence>
+
+      </complexType>
+
+      <element name="wsRequest" type="tns1:WsPublicationDocument"/>
+
+      <element name="insertUpdateDocumentReturn" type="tns1:WsExecutionResult"/>
+
+      <element name="wsRequest1" type="tns1:WsPublicationDocument"/>
+
+      <element name="removeDocumentReturn" type="tns1:WsExecutionResult"/>
+
+      <element name="label" type="tns1:Label"/>
+
+      <element name="insertUpdateLabelReturn" type="tns1:WsExecutionResult"/>
+
+      <element name="label1" type="tns1:Label"/>
+
+      <element name="removeLabelReturn" type="tns1:WsExecutionResult"/>
+
+      <complexType name="ArrayOf_xsd_int">
+
+        <sequence>
+
+          <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:int"/>
+
+        </sequence>
+
+      </complexType>
+
+      <element name="wsRequest2" type="tns1:WsPublicationItem"/>
+
+      <element name="insertUpdateItemReturn" type="tns1:WsExecutionResult"/>
+
+      <element name="wsRequest3" type="tns1:WsPublicationItem"/>
+
+      <element name="removeItemReturn" type="tns1:WsExecutionResult"/>
+
+    </schema>
+
+    <schema elementFormDefault="qualified" targetNamespace="http://objects.ws.framework.kb.statum.com" xmlns="http://www.w3.org/2001/XMLSchema">
+
+      <import namespace="ws.framework.kb.statum.com"/>
+
+      <complexType name="Language">
+
+        <sequence>
+
+          <element name="ident" nillable="true" type="xsd:string"/>
+
+          <element name="name" nillable="true" type="xsd:string"/>
+
+        </sequence>
+
+      </complexType>
+
+      <complexType name="Visibility">
+
+        <sequence>
+
+          <element name="name" nillable="true" type="xsd:string"/>
+
+        </sequence>
+
+      </complexType>
+
+      <complexType name="Document">
+
+        <sequence>
+
+          <element name="canBeDownload" nillable="true" type="xsd:string"/>
+
+          <element name="canBePreview" nillable="true" type="xsd:string"/>
+
+          <element name="comments" nillable="true" type="impl:ArrayOf_xsd_string"/>
+
+          <element name="description" nillable="true" type="xsd:string"/>
+
+          <element name="isAvoidIndex" nillable="true" type="xsd:string"/>
+
+          <element name="isUniversalLanuage" nillable="true" type="xsd:string"/>
+
+          <element name="label" nillable="true" type="xsd:string"/>
+
+          <element name="languages" nillable="true" type="impl:ArrayOf_tns1_Language"/>
+
+          <element name="name" nillable="true" type="xsd:string"/>
+
+          <element name="transferLocations" nillable="true" type="impl:ArrayOf_xsd_string"/>
+
+          <element name="visibilities" nillable="true" type="impl:ArrayOf_tns1_Visibility"/>
+
+        </sequence>
+
+      </complexType>
+
+      <complexType name="Login">
+
+        <sequence>
+
+          <element name="kbName" nillable="true" type="xsd:string"/>
+
+          <element name="language" nillable="true" type="tns1:Language"/>
+
+          <element name="password" nillable="true" type="xsd:string"/>
+
+          <element name="user" nillable="true" type="xsd:string"/>
+
+        </sequence>
+
+      </complexType>
+
+      <complexType name="WsPublicationDocument">
+
+        <sequence>
+
+          <element name="document" nillable="true" type="tns1:Document"/>
+
+          <element name="login" nillable="true" type="tns1:Login"/>
+
+        </sequence>
+
+      </complexType>
+
+      <complexType name="WsExecutionResult">
+
+        <sequence>
+
+          <element name="aditionalMessage" nillable="true" type="xsd:string"/>
+
+          <element name="aditionalStack" nillable="true" type="xsd:string"/>
+
+          <element name="resultCode" type="xsd:int"/>
+
+        </sequence>
+
+      </complexType>
+
+      <complexType name="Label">
+
+        <sequence>
+
+          <element name="id" nillable="true" type="xsd:string"/>
+
+          <element name="languages" nillable="true" type="impl:ArrayOf_tns1_Language"/>
+
+          <element name="source" nillable="true" type="xsd:string"/>
+
+          <element name="texts" nillable="true" type="impl:ArrayOf_xsd_string"/>
+
+          <element name="tooltips" nillable="true" type="impl:ArrayOf_xsd_string"/>
+
+        </sequence>
+
+      </complexType>
+
+      <complexType name="Item">
+
+        <sequence>
+
+          <element name="canBeCommented" nillable="true" type="xsd:string"/>
+
+          <element name="canBeEdited" nillable="true" type="xsd:string"/>
+
+          <element name="canBeEvaluated" nillable="true" type="xsd:string"/>
+
+          <element name="canSendByEmail" nillable="true" type="xsd:string"/>
+
+          <element name="categories" nillable="true" type="impl:ArrayOf_xsd_string"/>
+
+          <element name="dateAdded" nillable="true" type="xsd:dateTime"/>
+
+          <element name="dateUpdated" nillable="true" type="xsd:dateTime"/>
+
+          <element name="documents" nillable="true" type="impl:ArrayOf_xsd_string"/>
+
+          <element name="documentsOrder" nillable="true" type="impl:ArrayOf_xsd_int"/>
+
+          <element name="ident" nillable="true" type="xsd:string"/>
+
+          <element name="identifier" nillable="true" type="xsd:int"/>
+
+          <element name="keywords" nillable="true" type="xsd:string"/>
+
+          <element name="languageIdent" nillable="true" type="xsd:string"/>
+
+          <element name="languageName" nillable="true" type="xsd:string"/>
+
+          <element name="mustAllowPrint" nillable="true" type="xsd:string"/>
+
+          <element name="mustAllowReload" nillable="true" type="xsd:string"/>
+
+          <element name="mustClearCategories" nillable="true" type="xsd:string"/>
+
+          <element name="mustClearVisiblities" nillable="true" type="xsd:string"/>
+
+          <element name="mustRemoveRelated" nillable="true" type="xsd:string"/>
+
+          <element name="relatedTo" nillable="true" type="impl:ArrayOf_xsd_string"/>
+
+          <element name="sections" nillable="true" type="impl:ArrayOf_xsd_string"/>
+
+          <element name="sectionsContent" nillable="true" type="impl:ArrayOf_xsd_string"/>
+
+          <element name="summary" nillable="true" type="xsd:string"/>
+
+          <element name="template" nillable="true" type="xsd:string"/>
+
+          <element name="title" nillable="true" type="xsd:string"/>
+
+          <element name="useItemVisiblitiesInSections" nillable="true" type="xsd:string"/>
+
+          <element name="visibilities" nillable="true" type="impl:ArrayOf_xsd_string"/>
+
+        </sequence>
+
+      </complexType>
+
+      <complexType name="WsPublicationItem">
+
+        <sequence>
+
+          <element name="item" nillable="true" type="tns1:Item"/>
+
+          <element name="login" nillable="true" type="tns1:Login"/>
+
+        </sequence>
+
+      </complexType>
+
+    </schema>
+
+  </wsdl:types>
+
+
+    <wsdl:message name="insertUpdateLabelResponse">
+
+
+        <wsdl:part element="impl:insertUpdateLabelReturn" name="insertUpdateLabelReturn"/>
+
+
+    </wsdl:message>
+
+
+    <wsdl:message name="insertUpdateDocumentResponse">
+
+
+        <wsdl:part element="impl:insertUpdateDocumentReturn" name="insertUpdateDocumentReturn"/>
+
+
+    </wsdl:message>
+
+
+    <wsdl:message name="insertUpdateDocumentRequest">
+
+
+        <wsdl:part element="impl:wsRequest" name="wsRequest"/>
+
+
+    </wsdl:message>
+
+
+    <wsdl:message name="removeDocumentResponse">
+
+
+        <wsdl:part element="impl:removeDocumentReturn" name="removeDocumentReturn"/>
+
+
+    </wsdl:message>
+
+
+    <wsdl:message name="removeLabelRequest">
+
+
+        <wsdl:part element="impl:label1" name="label"/>
+
+
+    </wsdl:message>
+
+
+    <wsdl:message name="insertUpdateLabelRequest">
+
+
+        <wsdl:part element="impl:label" name="label"/>
+
+
+    </wsdl:message>
+
+
+    <wsdl:message name="removeItemResponse">
+
+
+        <wsdl:part element="impl:removeItemReturn" name="removeItemReturn"/>
+
+
+    </wsdl:message>
+
+
+    <wsdl:message name="insertUpdateItemRequest">
+
+
+        <wsdl:part element="impl:wsRequest2" name="wsRequest"/>
+
+
+    </wsdl:message>
+
+
+    <wsdl:message name="removeDocumentRequest">
+
+
+        <wsdl:part element="impl:wsRequest1" name="wsRequest"/>
+
+
+    </wsdl:message>
+
+
+    <wsdl:message name="insertUpdateItemResponse">
+
+
+        <wsdl:part element="impl:insertUpdateItemReturn" name="insertUpdateItemReturn"/>
+
+
+    </wsdl:message>
+
+
+    <wsdl:message name="removeLabelResponse">
+
+
+        <wsdl:part element="impl:removeLabelReturn" name="removeLabelReturn"/>
+
+
+    </wsdl:message>
+
+
+    <wsdl:message name="removeItemRequest">
+
+
+        <wsdl:part element="impl:wsRequest3" name="wsRequest"/>
+
+
+    </wsdl:message>
+
+
+    <wsdl:portType name="WsPublicationExecutionClass">
+
+
+        <wsdl:operation name="insertUpdateDocument" parameterOrder="wsRequest">
+
+
+            <wsdl:input message="impl:insertUpdateDocumentRequest" name="insertUpdateDocumentRequest"/>
+
+
+            <wsdl:output message="impl:insertUpdateDocumentResponse" name="insertUpdateDocumentResponse"/>
+
+
+        </wsdl:operation>
+
+
+        <wsdl:operation name="removeDocument" parameterOrder="wsRequest">
+
+
+            <wsdl:input message="impl:removeDocumentRequest" name="removeDocumentRequest"/>
+
+
+            <wsdl:output message="impl:removeDocumentResponse" name="removeDocumentResponse"/>
+
+
+        </wsdl:operation>
+
+
+        <wsdl:operation name="insertUpdateLabel" parameterOrder="label">
+
+
+            <wsdl:input message="impl:insertUpdateLabelRequest" name="insertUpdateLabelRequest"/>
+
+
+            <wsdl:output message="impl:insertUpdateLabelResponse" name="insertUpdateLabelResponse"/>
+
+
+        </wsdl:operation>
+
+
+        <wsdl:operation name="removeLabel" parameterOrder="label">
+
+
+            <wsdl:input message="impl:removeLabelRequest" name="removeLabelRequest"/>
+
+
+            <wsdl:output message="impl:removeLabelResponse" name="removeLabelResponse"/>
+
+
+        </wsdl:operation>
+
+
+        <wsdl:operation name="insertUpdateItem" parameterOrder="wsRequest">
+
+
+            <wsdl:input message="impl:insertUpdateItemRequest" name="insertUpdateItemRequest"/>
+
+
+            <wsdl:output message="impl:insertUpdateItemResponse" name="insertUpdateItemResponse"/>
+
+
+        </wsdl:operation>
+
+
+        <wsdl:operation name="removeItem" parameterOrder="wsRequest">
+
+
+            <wsdl:input message="impl:removeItemRequest" name="removeItemRequest"/>
+
+
+            <wsdl:output message="impl:removeItemResponse" name="removeItemResponse"/>
+
+
+        </wsdl:operation>
+
+
+    </wsdl:portType>
+
+
+    <wsdl:binding name="WsPublicationSoapBinding" type="impl:WsPublicationExecutionClass">
+
+
+        <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+
+        <wsdl:operation name="insertUpdateDocument">
+
+
+            <wsdlsoap:operation soapAction=""/>
+
+
+            <wsdl:input name="insertUpdateDocumentRequest">
+
+
+                <wsdlsoap:body use="literal"/>
+
+
+            </wsdl:input>
+
+
+            <wsdl:output name="insertUpdateDocumentResponse">
+
+
+                <wsdlsoap:body use="literal"/>
+
+
+            </wsdl:output>
+
+
+        </wsdl:operation>
+
+
+        <wsdl:operation name="removeDocument">
+
+
+            <wsdlsoap:operation soapAction=""/>
+
+
+            <wsdl:input name="removeDocumentRequest">
+
+
+                <wsdlsoap:body use="literal"/>
+
+
+            </wsdl:input>
+
+
+            <wsdl:output name="removeDocumentResponse">
+
+
+                <wsdlsoap:body use="literal"/>
+
+
+            </wsdl:output>
+
+
+        </wsdl:operation>
+
+
+        <wsdl:operation name="insertUpdateLabel">
+
+
+            <wsdlsoap:operation soapAction=""/>
+
+
+            <wsdl:input name="insertUpdateLabelRequest">
+
+
+                <wsdlsoap:body use="literal"/>
+
+
+            </wsdl:input>
+
+
+            <wsdl:output name="insertUpdateLabelResponse">
+
+
+                <wsdlsoap:body use="literal"/>
+
+
+            </wsdl:output>
+
+
+        </wsdl:operation>
+
+
+        <wsdl:operation name="removeLabel">
+
+
+            <wsdlsoap:operation soapAction=""/>
+
+
+            <wsdl:input name="removeLabelRequest">
+
+
+                <wsdlsoap:body use="literal"/>
+
+
+            </wsdl:input>
+
+
+            <wsdl:output name="removeLabelResponse">
+
+
+                <wsdlsoap:body use="literal"/>
+
+
+            </wsdl:output>
+
+
+        </wsdl:operation>
+
+
+        <wsdl:operation name="insertUpdateItem">
+
+
+            <wsdlsoap:operation soapAction=""/>
+
+
+            <wsdl:input name="insertUpdateItemRequest">
+
+
+                <wsdlsoap:body use="literal"/>
+
+
+            </wsdl:input>
+
+
+            <wsdl:output name="insertUpdateItemResponse">
+
+
+                <wsdlsoap:body use="literal"/>
+
+
+            </wsdl:output>
+
+
+        </wsdl:operation>
+
+
+        <wsdl:operation name="removeItem">
+
+
+            <wsdlsoap:operation soapAction=""/>
+
+
+            <wsdl:input name="removeItemRequest">
+
+
+                <wsdlsoap:body use="literal"/>
+
+
+            </wsdl:input>
+
+
+            <wsdl:output name="removeItemResponse">
+
+
+                <wsdlsoap:body use="literal"/>
+
+
+            </wsdl:output>
+
+
+        </wsdl:operation>
+
+
+    </wsdl:binding>
+
+
+    <wsdl:service name="WsPublicationExecutionClassService">
+
+
+        <wsdl:port binding="impl:WsPublicationSoapBinding" name="WsPublication">
+
+
+            <wsdlsoap:address location="http://sts02:8100/ApiaDocumentumKB/services/WsPublication"/>
+
+
+        </wsdl:port>
+
+
+    </wsdl:service>
+
+
+</wsdl:definitions>

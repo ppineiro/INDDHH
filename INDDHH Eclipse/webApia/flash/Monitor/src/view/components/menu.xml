@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<!-- <menuitem label="{LabelManager.getInstance().getLabel('lbl_export')}" > -->
+	<element>
+		<menuitem label="lbl_export" name="export">
+			<menuitem label="TXT" name="exportTXT" />
+			<menuitem label="PDF" name="exportPDF" />
+			<menuitem label="Excel" name="exportXLS" />
+			<menuitem label="CSV" name="exportCSV" />
+		</menuitem>
+		<!-- <menuitem label="lbl_properties" name="details"/>
+		<menuitem label="MenuItem C" type="check" toggled="false"/>
+		<menuitem type="separator"/>     
+		<menuitem label="MenuItem D" >
+			<menuitem label="SubMenuItem D-1" type="radio" groupName="one"/>
+			<menuitem label="SubMenuItem D-2" type="radio" groupName="one" toggled="true"/>
+			<menuitem label="SubMenuItem D-3" type="radio" groupName="one"/>
+		</menuitem> -->
+	</element>
+	<process_instance>
+		<menuitem label="lbl_export" name="export">
+			<menuitem label="TXT" name="exportTXT" />
+			<menuitem label="PDF" name="exportPDF" />
+			<menuitem label="Excel" name="exportXLS" />
+			<menuitem label="CSV" name="exportCSV" />
+		</menuitem>
+		<menuitem label="lbl_details" name="details" />
+		<menuitem label="lbl_tasks" name="tasks"/>
+	</process_instance>
+	<entity_instance>
+		<menuitem label="lbl_export"  name="export">
+			<menuitem label="TXT" name="exportTXT" />
+			<menuitem label="PDF" name="exportPDF" />
+			<menuitem label="Excel" name="exportXLS" />
+			<menuitem label="CSV" name="exportCSV" />
+		</menuitem>
+		<menuitem label="lbl_details" name="details"/>
+	</entity_instance>
+</root>

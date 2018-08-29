@@ -1,0 +1,1 @@
+<div class="fieldGroup" id="catContent"><div id="categoryDesign"></div><div class="clear"></div></div>

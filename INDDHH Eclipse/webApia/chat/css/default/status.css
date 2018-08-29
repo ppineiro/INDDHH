@@ -1,0 +1,3 @@
+.chatStatus { background-image: url('img/chat_off.png'); }
+.chatActive { background-image: url('img/chat_on.png'); }
+.invalid { background-image: url('img/chat_invalid.png'); }

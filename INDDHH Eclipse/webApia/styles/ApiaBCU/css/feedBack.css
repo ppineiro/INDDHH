@@ -1,0 +1,225 @@
+
+
+BODY{
+	background-image:url(../../gradient.jsp?height=200&width=1&colors=f1f1f1;e0e0e0&type=v);
+	background-repeat:repeat-x;
+	background-color:#e0e0e0;
+	FONT-FAMILY: Verdana;
+	MARGIN-TOP:0px;
+    MARGIN-LEFT:0px;
+    MARGIN-BOTTOM:0px;
+    MARGIN-RIGHT:0px;
+    OVERFLOW: hidden;
+    PADDING: 0px;
+	border: 1px solid #c0c0c0;
+}
+
+BUTTON{
+	/*background-image:url(../../gradient.jsp?height=20&width=1&colors=DFCF60;DFA960&type=v);*/
+	background-repeat:repeat-x;
+	background-color:#FFFFFF;
+	BORDER: 1px solid #1B4D80;
+	color:#000000;
+	FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: bold;
+    MARGIN-LEFT:2px;
+    MARGIN-RIGHT:2px;
+	
+}
+TABLE{
+	FONT-SIZE: 8pt;
+	 color: #333333;
+}
+
+/*---------------CLASSES--------------------------*/
+.divContent
+{
+	DISPLAY:none;
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+    MARGIN: 0px;
+    OVERFLOW: auto;
+}
+
+.tblTituloWait {
+	width : 100%;
+	background-image:url(../../gradient.jsp?height=20&width=1&colors=f6f7f7;c0c0c0&type=v);
+	background-repeat:repeat-x;
+	background-color:#333333;
+}
+
+
+.tblTitulo
+{
+   MARGIN: 0px;
+   MARGIN-BOTTOM:4px;
+   WIDTH: 100%;
+   PADDING: 0px;
+}
+.tblTitulo TR
+{
+}
+.tblTitulo TR TD
+{
+    color: #333333;
+    font-family: Verdana;
+    font-size: 8pt;
+    font-weight: bold;
+    padding: 1px;
+}
+
+
+PRE
+{
+    FONT-SIZE: 8pt;
+}
+
+SELECT
+{
+	FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+}
+
+/*------------BUTTONS BAR-----------TABLE----------*/
+.btnsBar
+{
+	DISPLAY:none;
+    WIDTH: 100%;
+}
+.btnsBar TR
+{
+}
+.btnsBar TR TD
+{
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+    PADDING: 0px;
+}
+.btnsBar BUTTON
+{
+    background-color: #BDBDBD;
+    background-image: url("../../gradient.jsp?height=20&width=1&colors=FAFAFA;BDBDBD&type=v");
+    border: 1px solid #C0C0C0;
+    font-size: 8pt;
+}
+.tblList
+{
+	BORDER-COLLAPSE:collapse;
+	MARGIN-TOP:4px;
+}
+.tblList THEAD
+{
+}
+.tblList THEAD TR
+{
+	BACKGROUND-COLOR:#cccccc;
+} 
+.tblList THEAD TR TD
+{
+	BORDER: 1px outset;
+    FONT-SIZE:8pt;
+    PADDING-BOTTOM: 1px;
+    PADDING-LEFT: 4px;
+    PADDING-RIGHT: 2px;
+    PADDING-TOP: 1px;
+    LETTER-SPACING:2px;
+}
+.tblList TBODY
+{
+	
+	
+}
+.tblList TBODY TR
+{
+	
+}
+.tblList TBODY TR TD
+{
+	
+	PADDING-BOTTOM: 1px;
+    PADDING-RIGHT: 2px;
+    PADDING-LEFT: 4px;
+    PADDING-TOP: 1px;
+    BORDER-BOTTOM:1px solid gray;
+    BORDER-LEFT:1px solid gray;
+}
+.tblList TBODY TR TH
+{
+}
+.tblList .colorTR
+{
+	BACKGROUND-COLOR: #eeeeee;
+}
+
+.tblList .colorTD
+{
+	BACKGROUND-COLOR: #eeeeee;
+}
+.tblList .firstTd
+{
+	BACKGROUND-COLOR: #cccccc;
+    
+}
+
+
+
+/*---------------------- WAIT MSG------------------------*/
+.waitMsg
+{
+	POSITION: absolute;
+	DISPLAY:none;
+	FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+	BACKGROUND-COLOR:lightyellow;
+	BORDER:2px groove white;
+	PADDING:2px;
+	LETTER-SPACING:2px;
+}
+
+/*
+#f6f7f7
+#babfc5
+#dee0e2
+
+#5c6675
+#576272
+*/
+
+.tdPathAnd {
+	WHITE-SPACE : nowrap; 
+	TEXT-ALIGN  : left;
+	VERTICAL-ALIGN  : middle;
+    BORDER-LEFT:2px solid gray;
+}
+
+.tdPathXor {
+	WHITE-SPACE : nowrap; 
+	TEXT-ALIGN  : left;
+	VERTICAL-ALIGN : middle;
+    BORDER-LEFT:2px solid gray;
+}
+
+.tdPathOr {
+	WHITE-SPACE : nowrap; 
+	TEXT-ALIGN  : left;
+	VERTICAL-ALIGN  : top;
+    BORDER-LEFT:2px solid gray;
+}
+
+.tdPathText {
+	WHITE-SPACE : nowrap; 
+	COLOR : gray;
+	TEXT-ALIGN : left;
+	VERTICAL-ALIGN  : middle;
+	FONT-WEIGHT : bold;
+}
+
+.tblPath {
+}
+
+.tblPath TR {
+}
+
+
+

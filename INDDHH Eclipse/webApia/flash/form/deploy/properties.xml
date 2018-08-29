@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <ROWSET>
+      <PROPERTY  id="1"  field_type_id="1"  name="Tamao"  type="N"  scope="I"  length="3"  element_type="input" />
+      <PROPERTY  id="2"  field_type_id="1"  name="Solo lectura"  type="S"  scope="I"  length="5"  element_type="checkbox" />
+      <PROPERTY  id="4"  field_type_id="1"  name="Deshabilitado"  type="S"  scope="I"  length="5"  element_type="checkbox" />
+      <PROPERTY  id="5"  field_type_id="1"  name="Color del texto"  type="S"  scope="I"  length="10"  element_type="color" />
+      <PROPERTY  id="7"  field_type_id="1"  name="Requerido"  type="S"  scope="I"  length="10"  element_type="checkbox" />
+      <PROPERTY  id="10"  field_type_id="1"  name="Modal"  type="S"  scope="I"  length="50"  element_type="modal" />
+      <PROPERTY  id="16"  field_type_id="1"  name="Valor por defecto"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="19"  field_type_id="1"  name="Nombre"  type="S"  scope="I"  length="50" element_type="input" />
+      <PROPERTY  id="24"  field_type_id="1"  name="Ancho de columna"  type="S"  scope="I"  length="4"  element_type="input" />
+      <PROPERTY  id="31"  field_type_id="1"  name="Oculto"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="33"  field_type_id="1"  name="Transitorio"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="35"  field_type_id="1"  name="ToolTip"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="37"  field_type_id="1"  name="Color del valor"  type="S"  scope="I"  length="8"  element_type="color" />
+      <PROPERTY  id="39"  field_type_id="1"  name="Ver como texto"  type="S"  scope="I"  length="50"  element_type="checkbox" />
+      <PROPERTY  id="40"  field_type_id="1"  name="No imprimir"  type="S"  scope="I"  length="50"  element_type="checkbox" />
+      <PROPERTY  id="53"  field_type_id="1"  name="Frmula"  type="S"  scope="I"  length="250"  element_type="input" />
+      <PROPERTY  id="54"  field_type_id="1"  name="Mensaje para expresin regular"  type="S"  scope="I"  length="255"  element_type="input" />
+      <PROPERTY  id="1"  field_type_id="2"  name="Tamao"  type="N"  scope="I"  length="3"  element_type="input" />
+      <PROPERTY  id="2"  field_type_id="2"  name="Solo lectura"  type="S"  scope="I"  length="5"  element_type="checkbox" />
+      <PROPERTY  id="4"  field_type_id="2"  name="Deshabilitado"  type="S"  scope="I"  length="5"  element_type="checkbox" />
+      <PROPERTY  id="5"  field_type_id="2"  name="Color del texto"  type="S"  scope="I"  length="10"  element_type="color" />
+      <PROPERTY  id="7"  field_type_id="2"  name="Requerido"  type="S"  scope="I"  length="10"  element_type="checkbox" />
+      <PROPERTY  id="11"  field_type_id="2"  name="Entidad"  type="S"  scope="I"  length="50"  element_type="modal" />
+      <PROPERTY  id="12"  field_type_id="2"  name="Renglones"  type="N"  scope="I"  length="2"  element_type="input" />
+      <PROPERTY  id="18"  field_type_id="2"  name="Ordenado"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="19"  field_type_id="2"  name="Nombre"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="20"  field_type_id="2"  name="PopValue"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="21"  field_type_id="2"  name="PopText"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="24"  field_type_id="2"  name="Ancho de columna"  type="S"  scope="I"  length="4"  element_type="input" />
+      <PROPERTY  id="31"  field_type_id="2"  name="Oculto"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="33"  field_type_id="2"  name="Transitorio"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="35"  field_type_id="2"  name="ToolTip"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="37"  field_type_id="2"  name="Color del valor"  type="S"  scope="I"  length="8"  element_type="color" />
+      <PROPERTY  id="40"  field_type_id="2"  name="No imprimir"  type="S"  scope="I"  length="50"  element_type="checkbox" />
+      <PROPERTY  id="47"  field_type_id="2"  name="Opcin nula"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="2"  field_type_id="3"  name="Solo lectura"  type="S"  scope="I"  length="5"  element_type="checkbox" />
+      <PROPERTY  id="4"  field_type_id="3"  name="Deshabilitado"  type="S"  scope="I"  length="5"  element_type="checkbox" />
+      <PROPERTY  id="5"  field_type_id="3"  name="Color del texto"  type="S"  scope="I"  length="10"  element_type="color" />
+      <PROPERTY  id="7"  field_type_id="3"  name="Requerido"  type="S"  scope="I"  length="10"  element_type="checkbox" />
+      <PROPERTY  id="17"  field_type_id="3"  name="Checkeado"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="19"  field_type_id="3"  name="Nombre"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="24"  field_type_id="3"  name="Ancho de columna"  type="S"  scope="I"  length="4"  element_type="input" />
+      <PROPERTY  id="31"  field_type_id="3"  name="Oculto"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="33"  field_type_id="3"  name="Transitorio"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="35"  field_type_id="3"  name="ToolTip"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="40"  field_type_id="3"  name="No imprimir"  type="S"  scope="I"  length="50"  element_type="checkbox" />
+      <PROPERTY  id="2"  field_type_id="4"  name="Solo lectura"  type="S"  scope="I"  length="5"  element_type="checkbox" />
+      <PROPERTY  id="4"  field_type_id="4"  name="Deshabilitado"  type="S"  scope="I"  length="5"  element_type="checkbox" />
+      <PROPERTY  id="5"  field_type_id="4"  name="Color del texto"  type="S"  scope="I"  length="10"  element_type="color" />
+      <PROPERTY  id="7"  field_type_id="4"  name="Requerido"  type="S"  scope="I"  length="10"  element_type="checkbox" />
+      <PROPERTY  id="11"  field_type_id="4"  name="Entidad"  type="S"  scope="I"  length="50"  element_type="modal" />
+      <PROPERTY  id="18"  field_type_id="4"  name="Ordenado"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="19"  field_type_id="4"  name="Nombre"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="31"  field_type_id="4"  name="Oculto"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="33"  field_type_id="4"  name="Transitorio"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="35"  field_type_id="4"  name="ToolTip"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="37"  field_type_id="4"  name="Color del valor"  type="S"  scope="I"  length="8"  element_type="color" />
+      <PROPERTY  id="40"  field_type_id="4"  name="No imprimir"  type="S"  scope="I"  length="50"  element_type="checkbox" />
+      <PROPERTY  id="5"  field_type_id="5"  name="Color del texto"  type="S"  scope="I"  length="10"  element_type="color" />
+      <PROPERTY  id="6"  field_type_id="5"  name="Valor"  type="S"  scope="I"  length="255"  element_type="input" />
+      <PROPERTY  id="19"  field_type_id="5"  name="Nombre"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="31"  field_type_id="5"  name="Oculto"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="35"  field_type_id="5"  name="ToolTip"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="40"  field_type_id="5"  name="No imprimir"  type="S"  scope="I"  length="50"  element_type="checkbox" />
+      <PROPERTY  id="1"  field_type_id="6"  name="Tamao"  type="N"  scope="I"  length="3"  element_type="input" />
+      <PROPERTY  id="2"  field_type_id="6"  name="Solo lectura"  type="S"  scope="I"  length="5"  element_type="checkbox" />
+	  <PROPERTY  id="6"  field_type_id="6"  name="ATRIBO"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="4"  field_type_id="6"  name="Deshabilitado"  type="S"  scope="I"  length="5"  element_type="checkbox" />
+      <PROPERTY  id="5"  field_type_id="6"  name="Color del texto"  type="S"  scope="I"  length="10"  element_type="color" />
+      <PROPERTY  id="7"  field_type_id="6"  name="Requerido"  type="S"  scope="I"  length="10"  element_type="checkbox" />
+      <PROPERTY  id="12"  field_type_id="6"  name="Renglones"  type="N"  scope="I"  length="2"  element_type="input" />
+      <PROPERTY  id="19"  field_type_id="6"  name="Nombre"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="31"  field_type_id="6"  name="Oculto"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="33"  field_type_id="6"  name="Transitorio"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="35"  field_type_id="6"  name="ToolTip"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="37"  field_type_id="6"  name="Color del valor"  type="S"  scope="I"  length="8"  element_type="color" />
+      <PROPERTY  id="40"  field_type_id="6"  name="No imprimir"  type="S"  scope="I"  length="50"  element_type="checkbox" />
+      <PROPERTY  id="5"  field_type_id="7"  name="Color del texto"  type="S"  scope="I"  length="10"  element_type="color" />
+      <PROPERTY  id="6"  field_type_id="7"  name="Valor"  type="S"  scope="I"  length="255"  element_type="input" />
+      <PROPERTY  id="13"  field_type_id="7"  name="Negrita"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="14"  field_type_id="7"  name="Subrayado"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="15"  field_type_id="7"  name="Alineacin"  type="S"  scope="I"  length="6"  element_type="align" />
+      <PROPERTY  id="19"  field_type_id="7"  name="Nombre"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="35"  field_type_id="7"  name="ToolTip"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="40"  field_type_id="7"  name="No imprimir"  type="S"  scope="I"  length="50"  element_type="checkbox" />
+      <PROPERTY  id="5"  field_type_id="8"  name="Color del texto"  type="S"  scope="I"  length="10"  element_type="color" />
+      <PROPERTY  id="6"  field_type_id="8"  name="Valor"  type="S"  scope="I"  length="255"  element_type="input" />
+      <PROPERTY  id="19"  field_type_id="8"  name="Nombre"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="35"  field_type_id="8"  name="ToolTip"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="40"  field_type_id="8"  name="No imprimir"  type="S"  scope="I"  length="50"  element_type="checkbox" />
+      <PROPERTY  id="7"  field_type_id="9"  name="Requerido"  type="S"  scope="I"  length="10"  element_type="checkbox" />
+      <PROPERTY  id="19"  field_type_id="9"  name="Nombre"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="40"  field_type_id="9"  name="No imprimir"  type="S"  scope="I"  length="50"  element_type="checkbox" />
+      <PROPERTY  id="41"  field_type_id="9"  name="No modificar"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="42"  field_type_id="9"  name="No descargar archivo"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="43"  field_type_id="9"  name="No eliminar"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="44"  field_type_id="9"  name="No bloquear/desbloquear"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="45"  field_type_id="9"  name="No ver historial"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="1"  field_type_id="10"  name="Tamao"  type="N"  scope="I"  length="3"  element_type="input" />
+      <PROPERTY  id="2"  field_type_id="10"  name="Solo lectura"  type="S"  scope="I"  length="5"  element_type="checkbox" />
+      <PROPERTY  id="4"  field_type_id="10"  name="Deshabilitado"  type="S"  scope="I"  length="5"  element_type="checkbox" />
+      <PROPERTY  id="5"  field_type_id="10"  name="Color del texto"  type="S"  scope="I"  length="10"  element_type="color" />
+      <PROPERTY  id="7"  field_type_id="10"  name="Requerido"  type="S"  scope="I"  length="10"  element_type="checkbox" />
+      <PROPERTY  id="11"  field_type_id="10"  name="Entidad"  type="S"  scope="I"  length="50"  element_type="modal" />
+      <PROPERTY  id="12"  field_type_id="10"  name="Renglones"  type="N"  scope="I"  length="2"  element_type="input" />
+      <PROPERTY  id="18"  field_type_id="10"  name="Ordenado"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="19"  field_type_id="10"  name="Nombre"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="33"  field_type_id="10"  name="Transitorio"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="35"  field_type_id="10"  name="ToolTip"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="37"  field_type_id="10"  name="Color del valor"  type="S"  scope="I"  length="8"  element_type="color" />
+      <PROPERTY  id="40"  field_type_id="10"  name="No imprimir"  type="S"  scope="I"  length="50"  element_type="checkbox" />
+      <PROPERTY  id="16"  field_type_id="11"  name="Valor por defecto"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="19"  field_type_id="11"  name="Nombre"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="33"  field_type_id="11"  name="Transitorio"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="40"  field_type_id="11"  name="No imprimir"  type="S"  scope="I"  length="50"  element_type="checkbox" />
+      <PROPERTY  id="1"  field_type_id="12"  name="Tamao"  type="N"  scope="I"  length="3"  element_type="input" />
+      <PROPERTY  id="2"  field_type_id="12"  name="Solo lectura"  type="S"  scope="I"  length="5"  element_type="checkbox" />
+      <PROPERTY  id="4"  field_type_id="12"  name="Deshabilitado"  type="S"  scope="I"  length="5"  element_type="checkbox" />
+      <PROPERTY  id="5"  field_type_id="12"  name="Color del texto"  type="S"  scope="I"  length="10"  element_type="color" />
+      <PROPERTY  id="7"  field_type_id="12"  name="Requerido"  type="S"  scope="I"  length="10"  element_type="checkbox" />
+      <PROPERTY  id="19"  field_type_id="12"  name="Nombre"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="33"  field_type_id="12"  name="Transitorio"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="35"  field_type_id="12"  name="ToolTip"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="37"  field_type_id="12"  name="Color del valor"  type="S"  scope="I"  length="8"  element_type="color" />
+      <PROPERTY  id="40"  field_type_id="12"  name="No imprimir"  type="S"  scope="I"  length="50"  element_type="checkbox" />
+      <PROPERTY  id="19"  field_type_id="13"  name="Nombre"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="22"  field_type_id="13"  name="Imagen"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="40"  field_type_id="13"  name="No imprimir"  type="S"  scope="I"  length="50"  element_type="checkbox" />
+      <PROPERTY  id="2"  field_type_id="14"  name="Solo lectura"  type="S"  scope="I"  length="5"  element_type="checkbox" />
+      <PROPERTY  id="19"  field_type_id="14"  name="Nombre"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="25"  field_type_id="14"  name="Consulta"  type="S"  scope="I"  length="50"  element_type="modal" />
+      <PROPERTY  id="27"  field_type_id="14"  name="Altura del grid"  type="N"  scope="I"  length="4"  element_type="input" />
+      <PROPERTY  id="30"  field_type_id="14"  name="Ocultar botones"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="31"  field_type_id="14"  name="Oculto"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="32"  field_type_id="14"  name="Ocultar checkboxes"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="34"  field_type_id="14"  name="Ttulo"  type="S"  scope="I"  length="250"  element_type="input" />
+      <PROPERTY  id="38"  field_type_id="14"  name="Formulario de cargado de la grilla"  type="S"  scope="I"  length="50"  element_type="input" />
+      <PROPERTY  id="51"  field_type_id="14"  name="Ocultar botones de ordenado"  type="S"  scope="I"  length="50"  element_type="checkbox" />
+      <PROPERTY  id="52"  field_type_id="14"  name="Ocultar botones de modificacin"  type="S"  scope="I"  length="50"  element_type="checkbox" />
+      <PROPERTY  id="55"  field_type_id="14"  name="Paginable"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="56"  field_type_id="14"  name="Registros por Pgina"  type="N"  scope="I"  length="3"  element_type="input" />
+      <PROPERTY  id="57"  field_type_id="14"  name="Alterar slo la ultima pgina"  type="S"  scope="I"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="6"  field_type_id="15"  name="Valor"  type="S"  scope="I"  length="255"  element_type="input" />
+      <PROPERTY  id="46"  field_type_id="15"  name="URL"  type="S"  scope="I"  length="255"  element_type="input" />
+      <PROPERTY  id="3"  field_type_id="0"  name="Formulario invisible"  type="S"  scope="F"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="28"  field_type_id="0"  name="Formulario oculto"  type="S"  scope="F"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="29"  field_type_id="0"  name="Formulario cerrado"  type="S"  scope="F"  length="1"  element_type="checkbox" />
+      <PROPERTY  id="36"  field_type_id="0"  name="Tab"  type="S"  scope="F"  length="1"  element_type="checkbox" />
+    </ROWSET>

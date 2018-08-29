@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<data-sources />
+
+	<form-beans></form-beans>
+
+	<global-exceptions />
+
+	<action-mappings>
+		<action path="/apia.security.LoginAction" scope="request" type="biz.statum.apia.web.action.security.LoginAction" parameter="action">
+			<forward name="splash"					path="/apia.splash.MenuAction.run?action=init" /> 
+			<forward name="loginAjax"				path="/page/ajax/returnXML.jsp" />
+			<!-- redirecciones de open.jsp y otros externos -->
+			<forward name="openjsp"					path="/page/externalAccess/open.jsp" />
+			<forward name="queryjsp"				path="/page/externalAccess/query.jsp" />
+			<forward name="workjsp"					path="/page/externalAccess/workTask.jsp" />
+			<forward name="gotoLogin"				path="/page/login/login.jsp" />
+			<forward name="index"					path="/index.jsp?action=init" />
+			<!-- redirecciones del minisitio -->
+<!-- 			<forward name="minisite"				path="/miniSite/pages/menu.jsp" /> -->
+<!-- 			<forward name="loginMinisite"			path="/miniSite/index.jsp" /> -->
+<!-- 			<forward name="minisiteTasks"			path="/miniSite/pages/taskList.jsp" /> -->
+<!-- 			<forward name="minisiteProcesses"		path="/miniSite/pages/process.jsp" /> -->
+<!-- 			<forward name="minisiteQueries"			path="/miniSite/pages/queries.jsp" /> -->
+		</action>
+
+
+	</action-mappings>
+
+	<controller />
+
+	<message-resources parameter="com.sastock.web.resources.GeneralResources" />
+
+</struts-config>

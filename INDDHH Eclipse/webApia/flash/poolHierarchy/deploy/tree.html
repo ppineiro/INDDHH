@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><title>att_tree</title><script type="text/javascript" src="Exception.js"></script><script type="text/javascript" src="FlashTag.js"></script></head><body bgcolor="#ffffff"><!--URL utilizadas en la película--><!--Texto utilizado en la película--></body></html><script type="text/javascript">
+
+    // The arguments below are path, width, height, and Flash Player version number.
+
+    var tag = new FlashTag('otree.swf', '100%', '100%', '7,0,14,0');
+	tag.id="shell";
+    	tag.addFlashVar('in_apia', 'false');
+    	tag.addFlashVar('action', 'GucApiaAction.guc');
+	tag.addFlashVar('ok', 'Aceptar');
+	tag.addFlashVar('modalTitle', 'Agregar Nodo');
+	tag.addFlashVar('cancel', 'Cancelar');
+	tag.addFlashVar('descCol', 'Descripcion');
+	tag.addFlashVar('nameCol', 'Nombre');
+	tag.addFlashVar('noMoveLabel', 'Este Elemento No Puede Ser Movido');
+	tag.addFlashVar('noDeleteLabel', 'Este Elemento No Puede Ser Eliminado');
+	tag.addFlashVar('mustSelect', 'Debe Seleccionar un Elemento');
+	tag.addFlashVar('isAddedLabel', 'Este Elemento ya ha sido Agregado');
+	tag.addFlashVar('ttAdd', 'Agregar Elemento');
+	tag.addFlashVar('ttDel', 'Eliminar Elemento');
+	tag.addFlashVar('modal2Title', 'Informacion');
+	tag.addFlashVar('ambCol', 'Ambientes');
+	tag.addFlashVar('idCol', 'Identificador');
+	tag.addFlashVar('usrCol', 'Usuarios');
+
+    tag.write(document);
+
+</script><script language="javascript">
+function shell_DoFSCommand(command, args) {
+
+	if (command == "largalo") {
+		alert(args);
+	}
+	if (command == "largalo2") {
+		window.status=(args);
+	}
+	if (command == "returnedXML") {
+		alert(args);
+	}
+
+
+}
+
+var aux=false;
+function getXml(){
+	document.all.shell.SetVariable("call", "getXML");
+}
+function readOnly(){
+	document.all.shell.SetVariable("call", ("setReadOnly,"+aux));
+	aux=(!aux);
+}
+</script><SCRIPT LANGUAGE="VBScript">
+'Catch FS Commands in IE, and pass them to the corresponding JavaScript function.'
+Sub shell_FSCommand(ByVal command, ByVal args)
+    call shell_DoFSCommand(command, args)
+end sub
+</SCRIPT><button onclick="getXml()">Get</button>

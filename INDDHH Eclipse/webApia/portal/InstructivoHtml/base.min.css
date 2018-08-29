@@ -1,0 +1,335 @@
+/*! 
+ * Base CSS
+ * Copyright 2012,2013 Lu Wang <coolwanglu@gmail.com> 
+ * https://github.com/coolwanglu/pdf2htmlEX/blob/master/share/LICENSE
+ */
+
+#sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    padding: 0;
+    margin: 0;
+    overflow: auto
+}
+#page-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    border: 0
+}
+@media screen {
+    #sidebar.opened+#page-container {
+        left: 250px
+    }
+    #page-container {
+        bottom: 0;
+        right: 0;
+        overflow: auto
+    }
+    .loading-indicator {
+        display: none
+    }
+    .loading-indicator.active {
+        display: block;
+        position: absolute;
+        width: 64px;
+        height: 64px;
+        top: 50%;
+        left: 50%;
+        margin-top: -32px;
+        margin-left: -32px
+    }
+    .loading-indicator img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0
+    }
+}
+@media print {
+    @page {
+        margin: 0
+    }
+    html {
+        margin: 0
+    }
+    body {
+        margin: 0;
+        -webkit-print-color-adjust: exact
+    }
+    #sidebar {
+        display: none
+    }
+    #page-container {
+        width: auto;
+        height: auto;
+        overflow: visible;
+        background-color: transparent
+    }
+    .d {
+        display: none
+    }
+}
+.pf {
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+    margin: 0;
+    border: 0
+}
+.pc {
+    position: absolute;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0
+}
+.pc.opened {
+    display: block
+}
+.bf {
+    position: absolute;
+    border: 0;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none
+}
+.bi {
+    position: absolute;
+    border: 0;
+    margin: 0;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none
+}
+@media print {
+    .pf {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+        page-break-inside: avoid
+    }
+    @-moz-document url-prefix() {
+        .pf {
+            overflow: visible;
+            border: 1px solid #fff
+        }
+        .pc {
+            overflow: visible
+        }
+    }
+}
+.c {
+    position: absolute;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    display: block
+}
+.t {
+    position: absolute;
+    white-space: pre;
+    font-size: 1px;
+    transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    -webkit-transform-origin: 0 100%;
+    unicode-bidi: bidi-override;
+    -moz-font-feature-settings: "liga" 0
+}
+.t:after {
+    content: ''
+}
+.t:before {
+    content: '';
+    display: inline-block
+}
+.t span {
+    position: relative;
+    unicode-bidi: bidi-override
+}
+._ {
+    display: inline-block;
+    color: transparent;
+    z-index: -1
+}
+::selection {
+    background: rgba(127, 255, 255, 0.4)
+}
+::-moz-selection {
+    background: rgba(127, 255, 255, 0.4)
+}
+.pi {
+    display: none
+}
+.d {
+    position: absolute;
+    transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    -webkit-transform-origin: 0 100%
+}
+.it {
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.0)
+}
+.ir:hover {
+    cursor: pointer
+}
+
+* {box-sizing:border-box}
+body {font-family: Verdana,sans-serif;margin:0}
+.mySlides {display:none}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: grey;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+/* Estilo boton TEL */
+.btnPrincipal{
+  cursor: pointer;
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #337ab7;
+  box-shadow: 0 2px 0 #1A2F5A;
+  transition: 0.6s ease;
+  border-radius: 3px;
+}
+.btnPrincipal:hover {
+  background-color: #296192;
+}
+
+
+/* Open tramite button */
+.openTramite {
+  position: absolute;
+  top: 90%;
+  width: auto;
+  margin-top: -20px;
+  margin-right: 5px;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover */
+
+
+.returnHome {
+  margin-left: 23.5%;
+  margin-top: 1%;
+/* position: absolute;*/
+  width: auto;
+  right: 0;
+  border-radius: 3px;
+  display: inline-block;
+}
+---
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}

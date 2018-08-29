@@ -1,0 +1,66 @@
+<?xml version = "1.0" encoding = "utf-8" standalone = "yes"?>
+<aiml>
+
+	<category>
+		<pattern>ACCESO RAPIDO 5 *</pattern>
+		<template>5VAR_USR<star/></template>
+	</category>
+	
+	<category>
+		<pattern>EXPEDIENTES CREADOS POR EL USUARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 5</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES CREADO POR EL USUARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 5</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE CREADOS POR EL USUARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 5</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES CREADOS POR EL FUNCIONARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 5</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES CREADO POR EL FUNCIONARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 5</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE CREADOS POR EL FUNCIONARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 5</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE CREADO POR EL FUNCIONARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 5</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES QUE CREO EL FUNCIONARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 5</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE QUE CREO EL FUNCIONARIO *</pattern>
+		<template><srai>ACCESO RAPIDO 5</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES CREADOS POR *</pattern>
+		<template><srai>ACCESO RAPIDO 5</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES CREADO POR *</pattern>
+		<template><srai>ACCESO RAPIDO 5</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE CREADOS POR *</pattern>
+		<template><srai>ACCESO RAPIDO 5</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE CREADO POR *</pattern>
+		<template><srai>ACCESO RAPIDO 5</srai> <star/></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES QUE CREO EL USAURIO *</pattern>
+		<template><srai>ACCESO RAPIDO 5</srai> <star/></template>
+	</category>
+
+</aiml>

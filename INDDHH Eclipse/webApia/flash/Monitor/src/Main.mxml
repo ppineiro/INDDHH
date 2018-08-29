@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" creationPolicy="none" preinitialize="preInitHandler(event)" applicationComplete="completeHandler()" xmlns:cmps="view.components.*" xmlns:flare="flare.flex.*" layout="absolute" paddingRight="0" paddingLeft="0" paddingTop="0" paddingBottom="0">
+	<mx:Style source="style/simplicitygray.css" />
+	<mx:Script>
+        <![CDATA[
+			import communication.*;
+			import flare.animate.interpolate.PointInterpolator;
+			import flare.vis.data.NodeSprite;
+			import flash.geom.Point;
+			import flash.xml.*;
+			import mx.containers.TabNavigator;
+			import mx.core.IFlexDisplayObject;
+			import view.ExternalLoader;
+			import flash.events.*;
+			import mx.controls.Alert;
+			import labels.LabelManager;
+			import flash.display.LoaderInfo;
+			import mx.managers.SystemManager;
+			import view.components.diagram.Diagram;
+			import view.components.*;
+			import mx.managers.PopUpManager;
+			import mx.controls.Menu;
+			
+			private var loadingBar:LoadingBar;
+			
+			private static var _main:Main;
+			
+			public static function get main() {
+				return main;
+			}
+			
+			function preInitHandler(e:Event):void {
+				Main._main = this;
+				var systemManager:SystemManager = this.parent as SystemManager;
+				var paramObj:Object = LoaderInfo(systemManager.loaderInfo).parameters;
+				Parameters.SWF_URL = (paramObj["SWF_URL"] != null)?paramObj["SWF_URL"]:"";
+				Parameters.TAB_ID_REQUEST = (paramObj["TAB_ID_REQUEST"] != null)?paramObj["TAB_ID_REQUEST"]:"";
+				Parameters.LBL_URL = (paramObj["LBL_URL"] != null)?paramObj["LBL_URL"]:"labels.txt";
+				Parameters.WINDOW_ID = (paramObj["windowId"] != null)?"&windowId=" + paramObj["windowId"]:"";
+				
+				Parameters.DEFAULT_VISUALIZATION = (paramObj["DEFAULT_VISUALIZATION"] != null)?paramObj["DEFAULT_VISUALIZATION"]:"";
+		
+				Parameters.DEFAULT_SHOW_RELATED_ENTITIES = (paramObj["DEFAULT_SHOW_RELATED_ENTITIES"] != null)?(paramObj["DEFAULT_SHOW_RELATED_ENTITIES"] == "true"):true;
+				Parameters.DEFAULT_SHOW_RELATED_PROCESS = (paramObj["DEFAULT_SHOW_RELATED_PROCESS"] != null)?(paramObj["DEFAULT_SHOW_RELATED_PROCESS"] == "true"):true;
+				Parameters.DEFAULT_SHOW_RELATED_TASKS = (paramObj["DEFAULT_SHOW_RELATED_TASKS"] != null)?(paramObj["DEFAULT_SHOW_RELATED_TASKS"] == "true"):true;
+				Parameters.DEFAULT_GROUP_ENTITY_INSTANCES = (paramObj["DEFAULT_GROUP_ENTITY_INSTANCES"] != null)?(paramObj["DEFAULT_GROUP_ENTITY_INSTANCES"] == "true"):true;
+				Parameters.DEFAULT_GROUP_PROCESS_INSTANCES = (paramObj["DEFAULT_GROUP_PROCESS_INSTANCES"] != null)?(paramObj["DEFAULT_GROUP_PROCESS_INSTANCES"] == "true"):true;
+				
+				Parameters.SHOW_HISTORY = (paramObj["SHOW_HISTORY"] != null)?(paramObj["SHOW_HISTORY"] == "true"):true;
+				Parameters.SHOW_INSTANCES = (paramObj["SHOW_INSTANCES"] != null)?(paramObj["SHOW_INSTANCES"] == "true"):true;
+				Parameters.SHOW_VISUALIZATION = (paramObj["SHOW_VISUALIZATION"] != null)?(paramObj["SHOW_VISUALIZATION"] == "true"):true;
+				
+				var l:view.ExternalLoader = new ExternalLoader();
+				l.addEventListener(ExternalLoader.ON_LOADED, externalLoaded);
+				l.load();
+			}
+			public function completeHandler():void {
+				//dividedPanels.getDividerAt(0).visible = false;
+				Communication.getInstance().addEventListener(Communication.ON_ERROR, onError);
+				Communication.getInstance().addEventListener(AbstractCommunication.ON_CALL, onCall);
+				Communication.getInstance().addEventListener(AbstractCommunication.ON_COMPLETE, onComplete);
+				Communication.getInstance().addEventListener(AbstractCommunication.ON_PROGRESS, onProgress);
+				
+				this.stage.addEventListener(Event.RESIZE, onResize);
+				this.stage.addEventListener(MouseEvent.CLICK, onStageClick );
+				
+				if(!Parameters.SHOW_INSTANCES){
+					instancesViewerBox.parent.removeChild(instancesViewerBox);
+					tn.percentHeight = 100;
+				}
+				
+				if(!Parameters.SHOW_HISTORY){
+					(tn as TabNavigator).removeChildAt(1);
+				}
+				
+				if (!Parameters.SHOW_VISUALIZATION) {
+					visualizationPanel.parent.removeChild(visualizationPanel);
+				}
+				
+				//Communication.getInstance().call(Parameters.SWF_URL + "sampleXml/monitorTest.xml");
+					
+				/*history.addLevel(1, 1, 1);
+				history.addLevel(2, 1, 1);
+				history.addLevel(3, 1, 1);
+				history.addLevel(4, 1, 1);
+				history.addLevel(5, 1, 1);
+				history.addLevel(6, 1, 1);
+				history.addLevel(7, 1, 1);
+				history.addLevel(8, 1, 1);
+				history.addLevel(9, 1, 1);*/
+				
+			}
+			function externalLoaded(e:Event):void {
+				createComponentsFromDescriptors();
+				MenuController.getInstance().setMain(this);
+				super.initialized = true;
+			}
+			private function onError(e:Event):void {
+				var error:XMLNode = Communication.getInstance().error;
+				var alert:Alert = Alert.show(error.attributes.message, LabelManager.getInstance().getLabel("lbl_error"));
+			}
+			
+			private function nodeDoubleClicked(e:Event):void {
+				/*var f:NodeSprite = diagram.nodeDoubleClicked;
+				history.addLevel(f.data.name, f.data.id, f.data.type);*/
+				MenuController.getInstance().closeMenu();
+			}
+			
+			private function nodeClicked(e:Event):void {
+				MenuController.getInstance().closeMenu();
+			}
+			
+			private function diagramClicked(e:Event):void {
+				var p:Point = new Point(diagram.mouseX, diagram.mouseY);
+				p=diagram.localToGlobal(p);
+				MenuController.getInstance().openMenu(p.x, p.y);
+			}
+			
+			private function searchSelected(e:Event):void {
+				history.reset();
+				//var selectedRow:Object = search.selectedRow;
+				//history.addLevel(selectedRow.name, selectedRow.id, selectedRow.type);
+			}
+			
+			private function visualizationOptsChanged(e:Event):void {
+				diagram.refreshDiagram();
+				diagram.changeLayout(visualization.getLayout());
+			}
+			
+			private var notfirstCentral:Boolean = true;
+			
+			private function checkFirstSelection(e:Event):void {
+				if (notfirstCentral) {
+					notfirstCentral = false;
+					visualizationOptsChanged(null);
+				}
+			}
+			
+			private function onResize(e:Event):void {
+				//navigationBox.height = 70;
+				visualizationPanel.maxHeight = 200;
+				visualizationPanel.minHeight = 30;
+				centerLoading();
+			}
+			
+			private function onStageClick(e:MouseEvent):void {
+				//navigationBox.height = 70;
+				//MenuController.getInstance().openMenu(e.stageX, e.stageY);
+				//if (diagram.hitTestPoint(e.stageX, e.stageY, true)){
+				if (e.stageX < diagramPanel.width && e.stageY < diagramPanel.height) {
+					//MenuController.getInstance().openMenu(e.stageX, e.stageY);
+				}
+			}
+			
+			private function onCall(e:Event):void {
+				if (!loadingBar) {
+					//loadingBar = new LoadingBar();
+					//loadingBar.setLoadingSource(Communication.getInstance());
+					loadingBar = PopUpManager.createPopUp(this, LoadingBar, true);
+					//this.addChild(loadingBar);
+					centerLoading();
+				}
+			}
+			
+			private function onComplete(e:Event):void {
+				if (loadingBar) {
+					//this.removeChild(loadingBar);
+					PopUpManager.removePopUp(loadingBar);
+					loadingBar = null;
+				}
+			}
+			
+			private function onProgress(e:Event):void {
+				//loadingBar.minimum = 0;
+				//loadingBar.maximum = Communication.getInstance().bytesTotal;
+				//loadingBar.value = Communication.getInstance().bytesLoaded;
+				loadingBar.setProgress(Communication.getInstance().bytesLoaded, Communication.getInstance().bytesTotal);
+			}
+			
+			private function centerLoading():void {
+				if (loadingBar) {
+					loadingBar.center();
+				}
+			}
+			
+			private function openExportModal():void {
+				 var modal:IFlexDisplayObject = PopUpManager.createPopUp(this, ExportModal, true);
+				 PopUpManager.centerPopUp(modal);
+			}
+			
+        ]]>
+	</mx:Script>
+	<!-- <cmps:CanvasDragDrop width="100%" height="100%" backgroundColor="#FFFFFF" paddingTop="0">
+		<cmps:DragPanel  id="dp2"  title="Drag Panel 2" paddingLeft="10" paddingRight="10" paddingTop="10" paddingBottom="10" x="149" y="149" width="600" height="600">
+			<cmps:DiagramView width="100%" height="100%"></myComp:DiagramView>
+		</cmps:DragPanel>
+	</cmps:CanvasDragDrop> -->
+	<mx:Box direction="vertical" width="100%" height="100%">
+		
+		<!-- <mx:Panel width="100%" id="top" height="40" headerHeight="0">
+			<mx:Box width="100%" height="25" direction="horizontal">
+				<mx:Button id="exportButton" click="openExportModal()" label="{LabelManager.getInstance().getLabel('lbl_export')}"></mx:Button>
+				<mx:Spacer width="100%"/>
+			</mx:Box>
+		</mx:Panel> -->
+		
+		<mx:DividedBox direction="horizontal" width="100%" height="100%">
+			<mx:DividedBox direction="vertical" width="75%" height="100%">
+				<mx:Panel title="{LabelManager.getInstance().getLabel('lbl_diagram')}" id="diagramPanel" width="100%" height="100%" backgroundColor="0xFFFFFF">
+					<cmps:DiagramView nodeDoubleClicked="nodeDoubleClicked(event)" nodeClicked="nodeClicked(event)" diagramClicked="diagramClicked(event)" width="100%" height="100%" id="diagram">
+					</cmps:DiagramView>
+				</mx:Panel>
+				<mx:Panel title="{LabelManager.getInstance().getLabel('lbl_visualization')}" id="visualizationPanel" maxHeight="200" minHeight="30" width="100%" height="30" backgroundColor="0xFFFFFF">
+				<!-- <mx:TabNavigator id="tn" maxHeight="200" minHeight="30" width="100%" height="30">
+					<mx:VBox label="{LabelManager.getInstance().getLabel('lbl_visualization')}"> -->
+						<cmps:Visualization id="visualization" visualizationChanged="visualizationOptsChanged(event)" width="100%" height="100%"></cmps:Visualization>
+					<!-- </mx:VBox>
+				</mx:TabNavigator> -->
+				</mx:Panel>
+			</mx:DividedBox>
+			<mx:DividedBox maxWidth="400" minWidth="200" id="dividedPanels" direction="vertical" width="25%" height="100%">
+				<!--<mx:Panel width="100%" title="{LabelManager.getInstance().getLabel('lbl_navigation')}" id="navigationBox" height="70">
+					<cmps:NavigationBar id="navigator" xmlns:nav="view.components.navigation.*" ></cmps:NavigationBar>
+				</mx:Panel>
+				<mx:Panel width="100%" title="{LabelManager.getInstance().getLabel('lbl_finder')}" id="finderBox" height="50%"> -->
+				<mx:TabNavigator id="tn" height="50%" width="100%" minHeight="150" creationPolicy="all">
+					<mx:Box label="{LabelManager.getInstance().getLabel('lbl_finder')}" paddingLeft="10" paddingRight="10">
+						<cmps:Finder id="search" searchSelected="searchSelected(event)" width="100%" height="90%"></cmps:Finder>
+					</mx:Box>
+					<mx:Box label="{LabelManager.getInstance().getLabel('lbl_history')}" id="historyBox" paddingLeft="10" paddingRight="10">
+						<cmps:HistoryViewer id="history" width="100%" height="100%" ></cmps:HistoryViewer>
+					</mx:Box>
+					<!-- <mx:Box label="{LabelManager.getInstance().getLabel('lbl_export')}" paddingLeft="10" paddingRight="10">
+						<cmps:ExportViewer id="export" width="100%" height="100%" ></cmps:ExportViewer>
+					</mx:Box> -->
+				</mx:TabNavigator>
+				<!-- </mx:Panel> -->
+				<mx:Panel width="100%" title="{LabelManager.getInstance().getLabel('lbl_instances')}" id="instancesViewerBox" height="50%" minHeight="150">
+					<cmps:InstanceViewer width="100%" height="100%" centralLoaded="checkFirstSelection(event)"></cmps:InstanceViewer>
+				</mx:Panel>
+			</mx:DividedBox>
+		</mx:DividedBox>
+	</mx:Box>
+	
+	<!-- <mx:XML format="e4x" id="menuData">
+		<root>
+			<menuitem label="{LabelManager.getInstance().getLabel('lbl_export')}" >
+				<menuitem label="TXT"/>
+				<menuitem label="PDF"/>
+				<menuitem label="Excel"/>
+				<menuitem label="CSV"/>
+			</menuitem>
+			<menuitem label="MenuItem B" type="check" toggled="true"/>
+			<menuitem label="MenuItem C" type="check" toggled="false"/>
+			<menuitem type="separator"/>     
+			<menuitem label="MenuItem D" >
+				<menuitem label="SubMenuItem D-1" type="radio" groupName="one"/>
+				<menuitem label="SubMenuItem D-2" type="radio" groupName="one" toggled="true"/>
+				<menuitem label="SubMenuItem D-3" type="radio" groupName="one"/>
+			</menuitem>
+		</root>
+	</mx:XML> -->
+	
+</mx:Application>

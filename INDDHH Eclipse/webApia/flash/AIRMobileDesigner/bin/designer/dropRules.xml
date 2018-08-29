@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<rules>
+	<rule dropIn="csubflow">
+	</rule>
+	<rule from="esubflow">
+		<element drop="task" />
+		<element drop="gateway" />
+		<element drop="startevent"/>
+		<element drop="endevent"/>
+		<element drop="middleevent" />
+		<element drop="csubflow" />
+		<element drop="esubflow" />
+		<element drop="textannotation" />
+		<element drop="dataobject" />
+		<element drop="datainput" />
+		<element drop="dataoutput" />
+	</rule>
+	<rule from="task">
+		<element drop="middleevent" />
+	</rule>
+	<rule from="csubflow">
+		<element drop="middleevent" />
+	</rule>
+	<rule from="group">
+		<!-- <element drop="task" />
+		<element drop="gateway" />
+		<element drop="startevent"/>
+		<element drop="endevent"/>
+		<element drop="middleevent" />
+		<element drop="csubflow" />
+		<element drop="esubflow" />
+		<element drop="textannotation" />
+		<element drop="dataobject" /> -->
+	</rule>
+	<rule from="pool">
+		<!-- <element drop="task" />
+		<element drop="gateway" />
+		<element drop="startevent"/>
+		<element drop="endevent"/>
+		<element drop="middleevent" />
+		<element drop="csubflow" />
+		<element drop="esubflow" />
+		<element drop="textannotation" />
+		<element drop="dataobject" />
+		<element drop="datainput" />
+		<element drop="dataoutput" />
+		<element drop="datastore" />
+		<element drop="group" /-->
+		<element drop="swimlane" />
+	</rule>
+	<rule from="swimlane">
+		<!--<element drop="task" />
+		<element drop="gateway" />
+		<element drop="startevent"/>
+		<element drop="endevent"/>
+		<element drop="middleevent" />
+		<element drop="csubflow" />
+		<element drop="esubflow" />
+		<element drop="textannotation" />
+		<element drop="dataobject" />
+		<element drop="group" /> -->
+	</rule>
+	<rule from="back">
+		<element drop="task" />
+		<element drop="gateway" />
+		<element drop="startevent"/>
+		<element drop="endevent"/>
+		<element drop="middleevent" />
+		<element drop="csubflow" />
+		<element drop="esubflow" />
+		<element drop="textannotation" />
+		<element drop="dataobject" />
+		<element drop="datainput" />
+		<element drop="dataoutput" />
+		<element drop="datastore" />
+		<element drop="group" />
+		<element drop="pool" />
+		<!-- <element drop="swimlane" /> -->
+	</rule>
+</rules>

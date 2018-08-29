@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<mx:VBox width="100%" xmlns:mx="http://www.adobe.com/2006/mxml" initialize="instancesReady()">
+		<mx:Metadata>
+			[Event(name="instanceSelected", type="flash.events.Event")]
+			[Event(name="centralLoaded", type="flash.events.Event")]
+		</mx:Metadata>
+		<mx:Script>
+		<![CDATA[
+		import flash.net.URLRequest;
+		import mx.collections.ArrayCollection;
+		import mx.controls.Button;
+		import view.ExternalLoader;
+		import communication.Communication;
+		import flash.events.*;
+		import labels.LabelManager;
+		import flash.xml.*;
+		import utils.*;
+		import mx.controls.dataGridClasses.DataGridColumn;
+		import flash.net.URLLoader;
+		
+		private var totalInstances:Number;
+		private var fromInstances:Number;
+		private var amountInstances:Number;
+		private var actualPage:Number;
+		
+		private var centralType:String = "";
+		
+		public static var INSTANCE_SELECTED:String = "instanceSelected";
+		public static var CENTRAL_LOADED:String = "centralLoaded";
+		
+		private var filterLoader:URLLoader = new URLLoader();
+		
+		public function instancesReady():void {
+			Communication.getInstance().addEventListener(Communication.ON_CENTRALCHANGE, centralChange);
+			setBtnIcon(previous, "icon.Back");
+			setBtnIcon(next, "icon.Next");
+			setBtnIcon(first, "icon.First");
+			setBtnIcon(last, "icon.Last");
+			filterLoader.addEventListener(Event.COMPLETE, loadFilters);
+		}
+		
+		private var previousCentral:String = '';
+		
+		private function centralChange(e:Event):void {
+
+			instancePageLabel.text = "";
+			instancesGrid.dataProvider = null;
+			var instancesNode:XMLNode = Communication.getInstance().centralInstances;
+			
+			centralType = Communication.getInstance().central.attributes.type;
+			
+			var centralId:String = Communication.getInstance().central.attributes.id;
+			
+			if(centralType + centralId != previousCentral) {
+				previousCentral = centralType + centralId;
+				
+				filterTypeCombo.enabled = true;
+				filterTypeComboContainer.visible = true;
+				filterTypeComboContainer.includeInLayout = true;
+				
+				filterText.visible = true;
+				filterText.width = "75%";
+				filterText.includeInLayout = true;
+				filterTextStatus.visible = false;
+				filterTextStatus.width = "0";
+				
+				if (centralType == "P") {
+					//filterTargetCombo.dataProvider = filterTargetsP;
+					try {
+						filterLoader.close();
+					} catch (errr:Error) {}
+					filterTargetCombo.dataProvider = null;
+					filterTypeCombo.dataProvider = filterTypesAll;// filterTypes;
+					var toLoad:URLRequest = new URLRequest(Parameters.BASE_URL + "action=instanceAttributes&type=P&id=" + Communication.getInstance().central.attributes.id + Parameters.TAB_ID_REQUEST);
+					filterLoader.load(toLoad);
+					
+					filterTargetCombo.enabled = true
+					filterTypeCombo.enabled = true;
+					filterText.enabled = true;
+					btnFilter.enabled = true;
+				} else if (centralType == "E") {
+					//filterTargetCombo.dataProvider = filterTargetsE;
+					try {
+						filterLoader.close();
+					} catch (errr:Error) {}
+					filterTargetCombo.dataProvider = null;
+					filterTypeCombo.dataProvider = filterTypesAll;// filterTypes;
+					var toLoad:URLRequest = new URLRequest(Parameters.BASE_URL + "action=instanceAttributes&type=E&id=" + Communication.getInstance().central.attributes.id + Parameters.TAB_ID_REQUEST);
+					filterLoader.load(toLoad);
+					
+					filterTargetCombo.enabled = true
+					filterTypeCombo.enabled = true;
+					filterText.enabled = true;
+					btnFilter.enabled = true;
+				} else if (centralType == "T") {
+					try {
+						filterLoader.close();
+					} catch (errr:Error) {}		
+					//filterTargetCombo.dataProvider = filterTargetsT;
+					filterTargetCombo.dataProvider = null;
+					filterTypeCombo.dataProvider = null;
+					
+					filterTargetCombo.enabled = false
+					filterTypeCombo.enabled = false;
+					filterText.enabled = false;
+					btnFilter.enabled = false;
+				}
+				filterTypeCombo.selectedIndex = 0;
+				filterText.text = "";
+			}
+			
+			nameColumn.headerText = LabelManager.getInstance().getLabel("lbl_name");
+			if (centralType == "P") {
+				nameColumn.headerText = LabelManager.getInstance().getLabel("lbl_status");
+			}
+			if(instancesNode){
+				totalInstances = parseInt(instancesNode.attributes.total);// as Number;
+				fromInstances = parseInt(instancesNode.attributes.from);// as Number;
+				amountInstances = parseInt(instancesNode.attributes.amount);// as Number;
+				actualPage = fromInstances / amountInstances;
+				var data:Array = parseInstancesData(instancesNode);
+				if(data.length > 0) {
+					var totalPages:Number = Math.floor(totalInstances / amountInstances) - (( (totalInstances % amountInstances) == 0 ) ? 1 : 0);
+					if(!isNaN(totalPages)) {
+						instancePageLabel.text = (actualPage + 1) + "-" + (totalPages + 1);
+					}
+					instancesGrid.dataProvider = data;
+				}
+			}
+			
+			dispatchEvent(new Event(CENTRAL_LOADED));
+		}
+		var filterPossibleCompareOptions:Array = new Array();
+		
+		public function loadFilters(e:Event):void {
+			var filtersXML:XML = new XML(e.target.data);
+			var filters:XMLList = filtersXML.filter;			
+			var filterTargets:ArrayCollection = new ArrayCollection();
+			filterPossibleCompareOptions.splice(0, filterPossibleCompareOptions.length);
+			
+			for (var i:int = 0; i < filters.length(); i++ ) {
+				filterTargets.addItem( { label:filters[i].@label, data: filters[i].@data, fontWeight: filters[i].@fontWeight } );
+				
+				filterPossibleCompareOptions.push( { id: filters[i].@data, options: filters[i].@filter } );
+			}
+			filterTargetCombo.dataProvider = filterTargets;
+		}
+		
+		private function parseInstancesData(node:XMLNode):Array {
+			var dataArray:Array = new Array();
+			for (var i:int = 0; i < node.childNodes.length; i++ ) {
+				var data:Object = new Object();
+				data.ident = node.childNodes[i].attributes.ident;
+				data.id = node.childNodes[i].attributes.id;
+				data.name = node.childNodes[i].attributes.name;
+				dataArray.push(data);
+			}
+			return dataArray;
+		}
+		private function setBtnIcon(btn:Button,icon:String):void {
+			btn.setStyle("icon", IconUtilityPlus.getClass(btn, (LibraryManager.getInstance().getInstancedObject(icon) as Sprite))); 
+		}
+		private function firstClick(e:Event):void {
+			Communication.getInstance().getInstancesPage(0);
+		}
+		private function previousClick(e:Event):void {
+			actualPage--;
+			Communication.getInstance().getInstancesPage(actualPage);
+		}
+		private function nextClick(e:Event):void {
+			actualPage++;
+			Communication.getInstance().getInstancesPage(actualPage);
+		}
+		private function lastClick(e:Event):void {
+			Communication.getInstance().getInstancesPage((( Math.floor(totalInstances / amountInstances) - (( (totalInstances % amountInstances) == 0 )?1:0) ) + 1));
+		}
+		
+		private function itemDoubleClicked(e:Event):void {
+			selectedRow = e.currentTarget.selectedItem;
+			Communication.getInstance().getCentral(selectedRow.id, centralType+"I");
+		}
+		private function filter(e:Event):void {
+			//Communication.getInstance().filterInstances(filterText.text);
+			if (filterTextStatus.visible) {
+				Communication.getInstance().filterInstances(filterTextStatus.value + "&filterTarget=" + filterTargetCombo.value + "&filterType=" + filterTypeCombo.value);
+			} else {
+				Communication.getInstance().filterInstances(filterText.text + "&filterTarget=" + filterTargetCombo.value + "&filterType=" + filterTypeCombo.value);
+			}
+			
+		}
+		
+		private var filterTypesAll:ArrayCollection = new ArrayCollection(
+		[
+			{label:LabelManager.getInstance().getLabel("lblFilLik"), data:"I" },
+			{label:LabelManager.getInstance().getLabel("lblFilEqu"), data:"E"}, 
+			{label:LabelManager.getInstance().getLabel("lblFilDis"), data:"D" }, 
+			{label:LabelManager.getInstance().getLabel("lblFilLikRig"), data:"W" },
+			{label:LabelManager.getInstance().getLabel("lblFilNotLik"), data:"K"},
+			{label:LabelManager.getInstance().getLabel("lblFilMor"), data:"M"}, 
+			{label:LabelManager.getInstance().getLabel("lblFilMorE"), data:"O"}, 
+			{label:LabelManager.getInstance().getLabel("lblFilLes"), data:"L"}, 
+			{label:LabelManager.getInstance().getLabel("lblFilLesE"), data:"S"}
+		]);
+		
+		private var filterNoNegative:ArrayCollection = new ArrayCollection(
+		[
+			{label:LabelManager.getInstance().getLabel("lblFilLik"), data:"I" },
+			{label:LabelManager.getInstance().getLabel("lblFilEqu"), data:"E"},
+			{label:LabelManager.getInstance().getLabel("lblFilLikRig"), data:"W" },
+			{label:LabelManager.getInstance().getLabel("lblFilMor"), data:"M"},
+			{label:LabelManager.getInstance().getLabel("lblFilMorE"), data:"O"},
+			{label:LabelManager.getInstance().getLabel("lblFilLes"), data:"L"},
+			{label:LabelManager.getInstance().getLabel("lblFilLesE"), data:"S"}
+		]);
+		
+		private var filterTypesStr:ArrayCollection = new ArrayCollection(
+		[
+			{label:LabelManager.getInstance().getLabel("lblFilLik"), data:"I" },
+			{label:LabelManager.getInstance().getLabel("lblFilEqu"), data:"E"}, 
+			{label:LabelManager.getInstance().getLabel("lblFilDis"), data:"D" }, 
+			{label:LabelManager.getInstance().getLabel("lblFilLikRig"), data:"W" },
+			{label:LabelManager.getInstance().getLabel("lblFilNotLik"), data:"K"}
+		]);
+		
+		private var filterTypesNum:ArrayCollection = new ArrayCollection(
+		[		
+			{label:LabelManager.getInstance().getLabel("lblFilEqu"), data:"E"}, 
+			{label:LabelManager.getInstance().getLabel("lblFilDis"), data:"D" },
+			{label:LabelManager.getInstance().getLabel("lblFilMor"), data:"M"}, 
+			{label:LabelManager.getInstance().getLabel("lblFilMorE"), data:"O"}, 
+			{label:LabelManager.getInstance().getLabel("lblFilLes"), data:"L"}, 
+			{label:LabelManager.getInstance().getLabel("lblFilLesE"), data:"S"}
+		]);
+		
+		private var filterTypesDate:ArrayCollection = new ArrayCollection(
+		[
+			{label:LabelManager.getInstance().getLabel("lblFilEqu"), data:"E"}, 
+			{label:LabelManager.getInstance().getLabel("lblFilDis"), data:"D" }, 
+			{label:LabelManager.getInstance().getLabel("lblFilMor"), data:"M"}, 
+			{label:LabelManager.getInstance().getLabel("lblFilMorE"), data:"O"}, 
+			{label:LabelManager.getInstance().getLabel("lblFilLes"), data:"L"}, 
+			{label:LabelManager.getInstance().getLabel("lblFilLesE"), data:"S"}
+		]);
+		
+		private var filterStatus:ArrayCollection = new ArrayCollection(
+		[
+			{label:"", data:"" },
+			{label:LabelManager.getInstance().getLabel("lblMonInstProStaRun"), data:"R" },
+			{label:LabelManager.getInstance().getLabel("lblMonInstProStaCan"), data:"N"}, 
+			{label:LabelManager.getInstance().getLabel("lblMonInstProStaFin"), data:"F" }, 
+			{label:LabelManager.getInstance().getLabel("lblMonInstProStaCom"), data:"C" },
+			{label:LabelManager.getInstance().getLabel("lblMonInstProStaSus"), data:"S"}
+		]);
+		
+		private function changeEvtFilterTargetCombo(e:Event) {
+			for (var i:int; i < filterPossibleCompareOptions.length; i++ ) {
+				var o:Object = filterPossibleCompareOptions[i];
+				if(o.id == e.currentTarget.value) {
+					if (o.options == 'str') {
+						filterTypeCombo.dataProvider = filterTypesStr;
+					} else if (o.options == 'num') {
+						filterTypeCombo.dataProvider = filterTypesNum;
+					} else if (o.options == 'date') {
+						filterTypeCombo.dataProvider = filterTypesDate;
+					} else if (o.options == 'noneg') {
+						filterTypeCombo.dataProvider = filterNoNegative;
+					} else {
+						filterTypeCombo.dataProvider = filterTypesAll;
+					}
+				}
+			}
+			
+			if (e.currentTarget.value == "status") {
+				//Seleccionar la opcion Igual, y deshabilitar el combo
+				filterTypeCombo.selectedIndex = 1;
+				filterTypeComboContainer.visible = false;
+				filterTypeComboContainer.includeInLayout = false;
+				
+				filterTypeCombo.enabled = false;
+				filterText.visible = false;
+				filterText.width = "0";
+				filterText.includeInLayout = false;
+				filterTextStatus.visible = true;
+				filterTextStatus.width = "75%";
+			} else {
+				filterTypeCombo.enabled = true;
+				filterTypeComboContainer.visible = true;
+				filterTypeComboContainer.includeInLayout = true;
+				
+				filterText.visible = true;
+				filterText.width = "75%";
+				filterText.includeInLayout = true;
+				filterTextStatus.visible = false;
+				filterTextStatus.width = "0";
+			}
+		}
+	]]>
+	</mx:Script>
+		<mx:HBox width="100%" height="10%">
+			<mx:ComboBox width="75%" id="filterTargetCombo" maxWidth="150" change="changeEvtFilterTargetCombo(event)" itemRenderer="ComboBoxItemRenderer" />
+		</mx:HBox>
+		<mx:HBox id="filterTypeComboContainer" width="100%" height="10%">
+			<mx:ComboBox width="108" id="filterTypeCombo" />
+		</mx:HBox>
+		<mx:HBox width="100%" height="10%">
+			<mx:TextInput width="75%" id="filterText" maxWidth="100" backgroundDisabledColor="0xF5F5F5"/>
+			<mx:ComboBox visible="false" width="0" id="filterTextStatus" dataProvider="{filterStatus}" />
+			<mx:Button id="btnFilter" click="filter(event)" paddingLeft="0" paddingRight="0" width="50" label="{LabelManager.getInstance().getLabel('lbl_filter')}"></mx:Button>
+		</mx:HBox>
+		<mx:HBox width="100%" height="100%">
+			<mx:DataGrid id="instancesGrid" width="100%" height="100%" doubleClickEnabled="true" itemDoubleClick="itemDoubleClicked(event);dispatchEvent(new Event(InstanceViewer.INSTANCE_SELECTED));">
+				<mx:columns>
+					<mx:DataGridColumn visible="false" headerText="Id" dataField="id" />
+					<mx:DataGridColumn headerText="{LabelManager.getInstance().getLabel('lbl_ident')}" dataField="ident" />
+					<mx:DataGridColumn headerText="{LabelManager.getInstance().getLabel('lbl_name')}" dataField="name" id="nameColumn" />
+				</mx:columns>
+			</mx:DataGrid>
+		</mx:HBox>
+		<mx:HBox width="100%" height="10%">
+			<mx:Button id="first" toolTip="{LabelManager.getInstance().getLabel('lbl_first')}" click="firstClick(event)" width="25"></mx:Button>
+			<mx:Button id="previous" toolTip="{LabelManager.getInstance().getLabel('lbl_back')}" click="previousClick(event)" width="25"></mx:Button>
+			<mx:Label fontSize="9" textAlign="center" paddingTop="3" width="100%" id="instancePageLabel" />
+			<mx:Button id="next" toolTip="{LabelManager.getInstance().getLabel('lbl_next')}" click="nextClick(event)" width="25"></mx:Button>
+			<mx:Button id="last" toolTip="{LabelManager.getInstance().getLabel('lbl_last')}" click="lastClick(event)" width="25"></mx:Button>
+		</mx:HBox>
+	</mx:VBox>

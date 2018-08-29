@@ -1,0 +1,2544 @@
+
+<?xml version="1.0" ?>
+<elements>
+	<element name="task">
+		<attGroup name="">
+			<!-- <attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+				<data label="Category" name="category" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+					<level width="100%">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="modal" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" modalclass="view.modal.ElementChoose" title="attributes" />
+							<value name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+							</value>
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="Name" regExp="a-zA-Z0-9_." name="nameChooser" type="modal" change="setName" modalclass="view.modal.ElementChoose" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=task" value="DEFAULT_TASK">
+				<complexadd regExp="a-zA-Z0-9_.">
+					<level name="name" label="Name" type="text" />
+					<level name="title" label="Title" type="text" />
+				</complexadd>
+				<values>
+					<value>
+						<level name="id" value="2" />
+						<level name="name" value="DEFAULT_TASK" />
+					</value>
+				</values>
+			</attribute>
+			<!-- <attribute label="Name" name="name" type="text" change="setName" disabled="true" use="optional" dataType="string" value="DEFAULT_TASK" /> -->
+			<attribute label="StartQuantity" name="startquantity" type="text" use="optional" dataType="string" value="1" hidden="true" />
+			<attribute label="CompletionQuantity" name="completionquantity" type="text" use="optional" dataType="string" value="1" hidden="true" />
+			<attribute label="CompletionQuantity" name="completionquantity" type="text" use="optional" dataType="string" value="1" hidden="true" />
+			<!-- <attribute label="Assignments" name="assignments" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+				<data>
+					<level width="40%" label="To" name="to" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="text" />
+							<value name="type" label="Type" type="text" />
+							<value name="value" label="Value" type="text" />
+							<value name="correlation" label="Correlation" type="text" />
+							<value name="targettype" label="Target Type" type="text" />
+							<value name="index" label="Index" type="text" />
+						</values>
+					</level>
+					<level width="40%" label="From" name="from" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="expressionbody" label="ExpressionBody" type="text" />
+						</values>
+					</level>
+					<level width="20%" name="assigntime" label="AssignTime" type="combo" value="Start">
+						<values>
+							<value label="Start" value="Start" />
+							<value label="End" value="End" />
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			
+			<attribute label="ActivityType" name="activitytype" type="label" value="Task" change="setDependencyProps" hidden="true" />
+			<attribute label="Performers" name="performers" modalwidth="380" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=group">
+				<data>
+					<level name="perfid" type="label" width="0" label="Id" />
+					<level name="perfname" type="label" width="40%" label="Name" />
+					<level width="30%" name="condition" label="Cond." modaltitle="Condition" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="290">
+						<data>REGLAS DE SINTAXIS: 
+String: 'string' | Number: number | Date: [date] | Null: null 
+Entity Att.: ent_att('attr_name') | Process Att.: pro_att('attr_name') 
+Arith. Operator: +, -, /,* 
+Comp. Operator : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Boolean Operator: and, or | Unary Operator: not(expression)</data>
+					</level>
+					<level width="30%" name="documentation" label="Doc." modaltitle="Docuementation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+					</level>
+				</data>
+			</attribute>
+			<attribute label="Performers" name="hiddenperformers" modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=group" hidden="true">
+				<data>
+					<level name="perfid" type="label" width="0" label="Id" />
+					<level name="perfname" type="label" width="40%" label="Name" />
+					<level width="30%" name="condition" label="Cond." modaltitle="Condition" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="290">
+						<data>REGLAS DE SINTAXIS: 
+String: 'string' | Number: number | Date: [date] | Null: null 
+Entity Att.: ent_att('attr_name') | Process Att.: pro_att('attr_name') 
+Arith. Operator: +, -, /,* 
+Comp. Operator : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Boolean Operator: and, or | Unary Operator: not(expression)</data>
+					</level>
+					<level width="30%" name="documentation" label="Doc." modaltitle="Docuementation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+					</level>
+				</data>
+			</attribute>
+			<!-- <attribute label="Properties" name="properties" type="modalArray" modalclass="view.modal.AttMultiValueFinder" modalwidth="460" modalheight="330" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" filter="String:String;Numeric:Numeric;Date:Date" >
+				<data>
+					<level width="0" name="id" label="id" type="text" hidden="true" />
+					<level width="20%" name="name" label="Name" type="label" />
+					<level width="12%" name="type" label="Type" type="label" />
+					<level width="15%" name="value" label="Value" type="text" />
+					<level width="20%" name="propertytype" label="Property Type" type="combo" value="P">
+						<values>
+							<value label="Process" value="P" />
+							<value label="Entity" value="E" />
+						</values>
+					</level>
+					<level width="0" name="label" label="Name Code" type="label" hidden="true" />
+					<level width="10%" name="index" label="Index" type="text" use="optional" dataType="int" />
+					<level width="13%" name="multivalued" label="Multivalued" type="checkbox" use="optional" dataType="boolean"/>
+					<level width="10%" name="uk" label="UK" type="checkbox" use="optional" dataType="boolean"/>
+				</data>
+			</attribute> -->
+			<attribute label="TaskType" name="taskType" type="combo" change="typeChange" value="User">
+				<values>
+					<value label="None" value="None" enable="name,performers,looptype,role" disable="service,receive,send,user" />
+					<value label="Service" value="Service" enable="service,name" disable="receive,send,user,performers,role,looptype" />
+					<value label="Receive" value="Receive" enable="receive,name" disable="service,send,user,looptype,performers,role" />
+					<value label="Send" value="Send" enable="send,name,looptype" disable="service,receive,user,performers,role" />
+					<value label="User" value="User" enable="user,looptype,performers,role" disable="service,receive,send,name" />
+					<value label="Manual" value="Manual" enable="name,looptype,performers,role" disable="service,send,user,receive" />
+					<value label="Script" value="Script" enable="name,looptype" disable="service,send,user,receive,performers,role" />
+					<!-- <value label="Reference Task" value="TaskReference" /> -->
+				</values>
+			</attribute>
+			<attribute label="LoopType" name="looptype" type="combo" change="loopTypeChange,setMultiInMsgs" value="None">
+				<values>
+					<value label="None" value="None" disable="testtime,mi_ordering,loopmaximum,loopcounter,mi_condition,mi_flowcondition,complexmi_flowcondition" enable="" />
+					<!-- <value label="Standard" value="Standard" disable="mi_ordering,mi_condition,mi_flowcondition,complexmi_flowcondition" enable="testtime,loopmaximum,loopcounter,loopcondition"/> -->
+					<value label="MultiInstance" value="MultiInstance" enable="mi_ordering,mi_condition" disable="testtime,loopmaximum,mi_flowcondition,complexmi_flowcondition,loopcounter"/>
+				</values>
+			</attribute>
+			<!-- <attribute label="MI_Condition" name="mi_condition" type="text" disabled="true" use="required" dataType="string"/> -->
+			<attribute label="MI_Condition" name="mi_condition" textenabled="true" type="modal" regExp="0-9" modalwidth="280" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes&attType=N" modalclass="view.modal.ElementChoose" title="attributes" />
+			<attribute label="LoopCounter" name="loopcounter" type="text" disabled="true" use="required" dataType="int"/>
+			<attribute label="LoopMaximum" name="loopmaximum" type="text" disabled="true" use="optional" dataType="int"/>
+			<attribute label="TestTime" name="testtime" type="combo" disabled="true" value="After" dataType="string" hidden="true">
+				<values>
+					<value label="After" value="After" />
+					<value label="Before" value="Before" />
+				</values>
+			</attribute>
+			<attribute label="MI_Ordering" name="mi_ordering" type="combo" disabled="true" value="Parallel" dataType="string" hidden="true">
+				<values>
+					<value label="Parallel" value="Parallel" enable="mi_flowcondition" disable="complexmi_flowcondition" />
+					<value label="Sequential" value="Sequential" disable="mi_flowcondition,complexmi_flowcondition"/>
+				</values>
+			</attribute>
+			<attribute label="MI_FlowCondition" name="mi_flowcondition" type="combo" disabled="true" value="All" dataType="string" hidden="true">
+				<values>
+					<value label="All" value="All" disable="complexmi_flowcondition"/>
+					<value label="One" value="One" disable="complexmi_flowcondition"/>
+					<value label="Complex" value="Complex" enable="complexmi_flowcondition"/>
+				</values>
+			</attribute>
+			<attribute label="ComplexMI_FlowCondition" name="complexmi_flowcondition" type="text" disabled="true" use="optional" dataType="string"/>
+			<attribute name="user" label="User" disabled="false">
+				<attributes>
+					<attribute name="inmessageref" label="InMessageRef">
+						<attributes>
+							<attribute name="wsname" label="Web Service" type="text" />
+							<attribute name="processattributes" label="Process Atts." modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" oneCheckedInRow="true">
+								<data>
+									<level width="0" name="id" label="id" type="text" hidden="true" />
+									<level width="100" name="name" label="Name" type="label" />
+									<level width="40" name="uk" label="correl." type="checkbox" />
+									<level width="40" name="multivalued" label="multival." type="checkbox" />
+								</data>
+							</attribute>
+							<attribute name="entityattributes" label="Entity Atts." modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" oneCheckedInRow="true">
+								<data>
+									<level width="0" name="id" label="id" type="text" hidden="true" />
+									<level width="100" name="name" label="Name" type="label" />
+									<level width="40" name="uk" label="correl." type="checkbox" />
+									<level width="40" name="multivalued" label="multival." type="checkbox" />
+								</data>
+							</attribute>
+						</attributes>
+					</attribute>
+					<attribute name="outmessageref" label="OutMessageRef">
+						<attributes>
+							<attribute label="Web Service" name="wsclasses" type="modalArray" modalclass="view.modal.ComboAdder" modalwidth="384" modalheight="250" clsXml="/Apia2.3/administration.BPMNAction.do?action=classes&amp;wsClasses=true">
+								<data>
+									<level width="0" name="evtname" label="Event" type="label" />
+									<level width="0" name="evtid" label="Event" type="label" />
+									<level width="50%" name="clsname" label="Name" type="label" />
+									<level width="0" name="clsid" label="Clsid" type="label" />
+									<level width="50%" name="binding" label="Properties"  type="modalArray" modalclass="view.modal.EntityBinding" modalwidth="500" modalheight="320" modalUrl="/Apia2.3/administration.BPMNAction.do?action=bindings" attributesUrl="/Apia2.3/administration.BPMNAction.do?type=attributes">
+										<data>
+											<level width="0" name="id" label="Id" type="text" hidden="true" />
+											<level width="30%" name="param" label="Parameter" type="label" />
+											<level width="10%" name="type" label="Type" type="label" />
+											<level width="10%" name="value" label="Value" type="label" />
+											<level width="20%" name="attribute" label="Attribute" type="label" atttype="event" />
+											<level width="0" name="attributeid" label="AttributeId" type="label" />
+											<level width="10%" name="inout" label="In/Out" type="label" />
+											<!-- <level width="10%" name="uk" label="Correl." type="checkbox" />
+											<level width="10%" name="multivalued" label="Multival." type="checkbox" /> -->
+										</data>
+									</level>
+								</data>
+							</attribute>
+						</attributes>
+					</attribute>
+					<attribute name="implementation" label="Implementation" value="WebService" type="label" hidden="true" />
+				</attributes>
+			</attribute>
+			<attribute name="service" label="Service" disabled="true">
+				<attributes>
+					<attribute name="inmessageref" label="InMessageRef">
+						<attributes>
+							<attribute name="wsname" label="Web Service" type="text" />
+							<attribute name="processattributes" label="Process Atts." modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" oneCheckedInRow="true">
+								<data>
+									<level width="0" name="id" label="id" type="text" hidden="true" />
+									<level width="100" name="name" label="Name" type="label" />
+									<level width="40" name="uk" label="correl." type="checkbox" />
+									<level width="40" name="multivalued" label="multival." type="checkbox" />
+								</data>
+							</attribute>
+							<attribute name="entityattributes" label="Entity Atts." modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" oneCheckedInRow="true">
+								<data>
+									<level width="0" name="id" label="id" type="text" hidden="true" />
+									<level width="100" name="name" label="Name" type="label" />
+									<level width="40" name="uk" label="correl." type="checkbox" />
+									<level width="40" name="multivalued" label="multival." type="checkbox" />
+								</data>
+							</attribute>
+						</attributes>
+					</attribute>
+					<attribute name="outmessageref" label="OutMessageRef">
+						<attributes>
+							<attribute label="Web Service" name="wsclasses" type="modalArray" modalclass="view.modal.ComboAdder" modalwidth="384" modalheight="250" clsXml="/Apia2.3/administration.BPMNAction.do?action=classes&amp;wsClasses=true">
+								<data>
+									<level width="0" name="evtname" label="Event" type="label" />
+									<level width="0" name="evtid" label="Event" type="label" />
+									<level width="50%" name="clsname" label="Name" type="label" />
+									<level width="0" name="clsid" label="Clsid" type="label" />
+									<level width="50%" name="binding" label="Properties"  type="modalArray" modalclass="view.modal.EntityBinding" modalwidth="500" modalheight="320" modalUrl="/Apia2.3/administration.BPMNAction.do?action=bindings" attributesUrl="/Apia2.3/administration.BPMNAction.do?type=attributes">
+										<data>
+											<level width="0" name="id" label="Id" type="text" hidden="true" />
+											<level width="30%" name="param" label="Parameter" type="label" />
+											<level width="10%" name="type" label="Type" type="label" />
+											<level width="10%" name="value" label="Value" type="label" />
+											<level width="20%" name="attribute" label="Attribute" type="label" atttype="event" />
+											<level width="0" name="attributeid" label="AttributeId" type="label" />
+											<level width="10%" name="inout" label="In/Out" type="label" />
+											<!-- <level width="10%" name="uk" label="Correl." type="checkbox" />
+											<level width="10%" name="multivalued" label="Multival." type="checkbox" /> -->
+										</data>
+									</level>
+								</data>
+							</attribute>
+						</attributes>
+					</attribute>
+					<attribute name="implementation" label="Implementation" value="WebService" type="label" hidden="true" />
+				</attributes>
+			</attribute>
+			<attribute name="receive" label="Receive" disabled="true">
+				<attributes>
+					<attribute name="messageref" label="MessageRef">
+						<attributes>
+							<attribute name="wsname" label="Web Service" type="text" />
+							<attribute name="processattributes" label="Process Atts." modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" oneCheckedInRow="true">
+								<data>
+									<level width="0" name="id" label="id" type="text" hidden="true" />
+									<level width="100" name="name" label="Name" type="label" />
+									<level width="40" name="uk" label="correl." type="checkbox" />
+									<level width="40" name="multivalued" label="multival." type="checkbox" />
+								</data>
+							</attribute>
+							<attribute name="entityattributes" label="Entity Atts." modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" oneCheckedInRow="true">
+								<data>
+									<level width="0" name="id" label="id" type="text" hidden="true" />
+									<level width="100" name="name" label="Name" type="label" />
+									<level width="40" name="uk" label="correl." type="checkbox" />
+									<level width="40" name="multivalued" label="multival." type="checkbox" />
+								</data>
+							</attribute>
+						</attributes>
+					</attribute>
+					<attribute name="instantiate" label="Instantiate" type="checkbox" value="false" disabled="true" />
+					<attribute name="implementation" label="Implementation" value="WebService" type="label" hidden="true" />
+				</attributes>
+			</attribute>
+			<attribute name="send" label="Send" disabled="true">
+				<attributes>
+					<attribute name="messageref" label="MessageRef">
+						<attributes>
+							<attribute label="Web Service" name="wsclasses" type="modalArray" modalclass="view.modal.ComboAdder" modalwidth="384" modalheight="250" clsXml="/Apia2.3/administration.BPMNAction.do?action=classes&amp;wsClasses=true">
+								<data>
+									<level width="0" name="evtname" label="Event" type="label" />
+									<level width="0" name="evtid" label="Event" type="label" />
+									<level width="50%" name="clsname" label="Name" type="label" />
+									<level width="0" name="clsid" label="Clsid" type="label" />
+									<level width="50%" name="binding" label="Properties"  type="modalArray" modalclass="view.modal.EntityBinding" modalwidth="500" modalheight="320" modalUrl="/Apia2.3/administration.BPMNAction.do?action=bindings" attributesUrl="/Apia2.3/administration.BPMNAction.do?type=attributes">
+										<data>
+											<level width="0" name="id" label="Id" type="text" hidden="true" />
+											<level width="30%" name="param" label="Parameter" type="label" />
+											<level width="10%" name="type" label="Type" type="label" />
+											<level width="10%" name="value" label="Value" type="label" />
+											<level width="20%" name="attribute" label="Attribute" type="label" atttype="event" />
+											<level width="0" name="attributeid" label="AttributeId" type="label" />
+											<level width="10%" name="inout" label="In/Out" type="label" />
+											<!-- <level width="10%" name="uk" label="Correl." type="checkbox" />
+											<level width="10%" name="multivalued" label="Multival." type="checkbox" /> -->
+										</data>
+									</level>
+								</data>
+							</attribute>
+						</attributes>
+					</attribute>
+					<attribute name="implementation" label="Implementation" value="WebService" type="label" hidden="true" />
+				</attributes>
+			</attribute>
+			<attribute label="FirstTask" name="firsttask" type="text" use="optional" dataType="string" value="false" hidden="true" />
+		<!-- </attGroup> 
+		<attGroup name="Apia Extensions" id="apiaextensions"> -->
+ 			<attribute name="role" label="Role" modalwidth="210" modalheight="220" type="modal" modalclass="view.modal.ElementChoose" modalUrl="/Apia2.3/administration.BPMNAction.do?type=roles"/>
+			<!-- <attribute name="multiplier" label="Task Multiplier" type="modal" modalclass="view.modal.AttributeFinder" modalwidth="320" modalheight="280" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes&attType=N"/> -->
+			<attribute label="Forms" name="steps" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+				<data>
+					<level width="20%" name="step" label="Step" type="label" value="step" />
+					<level width="40%" name="processforms" label="Process Forms" modalwidth="540" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=form">
+						<data>
+							<level width="0" name="id" label="Id" type="text" hidden="true"/>
+							<level width="49%" name="name" label="Name" type="label"/>
+							<level width="9%" name="readonly" label="RO" type="checkbox"/>
+							<level width="9%" name="multiple" label="M" type="checkbox"/>
+							<level width="16%" name="condition" label="Cond." type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" modaltitle="Condition" >
+								<data>REGLAS DE SINTAXIS: 
+String: 'string' | Number: number | Date: [date] | Null: null 
+Entity Att.: ent_att('attr_name') | Process Att.: pro_att('attr_name') 
+Arith. Operator: +, -, /,* 
+Comp. Operator : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Boolean Operator: and, or | Unary Operator: not(expression)</data>
+							</level>
+							<level name="documentation" width="16%" label="Doc." modaltitle="Docuementation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" />
+						</data>
+					</level>
+					<level width="40%" name="entityforms" label="Entity Forms" modalwidth="540" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=form&busEntId=null" message="An Entity has not been selected">
+						<data>
+							<level width="0" name="id" label="Id" type="text" hidden="true"/>
+							<level width="49%" name="name" label="Name" type="label"/>
+							<level width="9%" name="readonly" label="RO" type="checkbox"/>
+							<level width="9%" name="multiple" label="M" type="checkbox"/>
+							<level width="16%" name="condition" label="Cond." modaltitle="Condition" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" >
+								<data>REGLAS DE SINTAXIS: 
+String: 'string' | Number: number | Date: [date] | Null: null 
+Entity Att.: ent_att('attr_name') | Process Att.: pro_att('attr_name') 
+Arith. Operator: +, -, /,* 
+Comp. Operator : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Boolean Operator: and, or | Unary Operator: not(expression)</data>
+							</level>
+							<level name="documentation" width="16%" label="Doc." modaltitle="Docuementation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" />
+						</data>
+					</level>
+				</data>
+			</attribute>
+			<attribute label="Events" name="bussinessclasses" type="modalArray" modalclass="view.modal.ComboAdder" modalwidth="500" modalheight="250" evtXml="/Apia2.3/administration.BPMNAction.do?action=events&amp;evtScope=T" clsXml="/Apia2.3/administration.BPMNAction.do?action=classes">
+				<data>
+					<level width="20%" name="evtname" label="Event" type="label" />
+					<level width="1" name="evtid" label="Event" type="label" />
+					<level width="58%" name="clsname" label="Name" type="label" />
+					<level width="1" name="clsid" label="Clsid" type="label" />
+					<level width="18%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalwidth="600" modalheight="320" modalUrl="/Apia2.3/administration.BPMNAction.do?action=bindings" attributesUrl="/Apia2.3/administration.BPMNAction.do?type=attributes">
+						<data>
+							<level width="1" name="id" label="Id" type="text" hidden="true" />
+							<level width="30%" name="param" label="Parameter" type="label" />
+							<level width="10%" name="type" label="Type" type="label" />
+							<level width="20%" name="value" label="Value" type="label" />
+							<level width="20%" name="attribute" label="Attribute" type="label" atttype="event" />
+							<level width="1" name="attributeid" label="AttributeId" type="label" />
+							<level width="18%" name="inout" label="In/Out" type="label" />
+						</data>
+					</level>
+				</data>
+			</attribute>
+			<!-- <attribute label="Webservices" name="webservices" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+				<data>
+				<level width="40%" name="wsname" label="Name" type="text" />
+				<level width="30%" name="processattributes" label="Process Attributes" modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="<Parameters.ROOT_PATH>/administration.BPMNAction.do?type=form">
+					<data>
+						<level width="0" name="id" label="id" type="label" hidden="true" />-->
+						<!--<level width="0" name="type" label="type" type="label" hidden="true" /> -->
+						<!--<level width="40%" name="name" label="name" type="label" />
+						<level width="30%" name="unique" label="readonly" type="checkbox" />
+						<level width="30%" name="multiple" label="multiple" type="checkbox" />
+					</data>
+				</level>
+				<level width="30%" name="entityattributes" label="Entity Attributes" modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="<Parameters.ROOT_PATH>/administration.BPMNAction.do?type=form&busEntId=<currentEntity>">
+					<data>
+						<level width="0" name="id" label="id" type="label" hidden="true" />-->
+						<!--<level width="0" name="type" label="type" type="label" hidden="true" /> -->
+						<!--<level width="40%" name="name" label="name" type="label" />
+						<level width="30%" name="unique" label="readonly" type="checkbox" />
+						<level width="30%" name="multiple" label="multiple" type="checkbox" />
+					</data>
+				</level>
+				</data>
+			</attribute>-->
+			
+			<attribute label="States" name="taskstates" type="modalArray" modalclass="view.modal.ComboAdder" modalwidth="384" modalheight="250" evtXml="/Apia2.3/administration.BPMNAction.do?action=events&amp;evtScope=T" clsXml="/Apia2.3/administration.BPMNAction.do?action=status&busEntId=null" message="An Entity has not been selected">
+				<data>
+					<level width="40%" name="evtname" label="Event" type="label" />
+					<level width="0" name="evtid" label="Event" type="label" />
+					<level width="20%" name="clsname" label="State" type="label" />
+					<level width="0" name="clsid" label="Clsid" type="label" />
+					<level width="20%" label="Condition" name="condition" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="290">
+						<data>REGLAS DE SINTAXIS: 
+String: 'string' | Number: number | Date: [date] | Null: null 
+Entity Att.: ent_att('attr_name') | Process Att.: pro_att('attr_name') 
+Arith. Operator: +, -, /,* 
+Comp. Operator : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Boolean Operator: and, or | Unary Operator: not(expression)</data>
+					</level>
+					<level name="documentation" width="20%" label="Doc." type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" modaltitle="Documentation" />
+				</data>
+			</attribute>
+
+			<!-- <attribute label="name" name="name" type="text" change="setName" /> -->
+			<!--<attribute label="name" name="name" type="modal" change="setName" modalclass="view.modal.ElementChoose" modalwidth="210" modalheight="220" modalUrl="<Parameters.ROOT_PATH>/administration.BPMNAction.do?type=tasks" />
+			<attribute name="tsktitle" label="Title" type="text"/>
+			<attribute label="Description" name="description" type="text" />
+			<attribute name="tskmaxduration" label="Task Max Duration" type="text" />
+			<attribute name="tskalertduration" label="Task Alert Duration" type="text" />
+			<attribute name="tskalerttype" label="Task Alert Type" type="text" />
+			<attribute name="tskflags" label="Task Flags" type="text" />
+			<attribute name="tskexetemplate" label="Task Execution Template" type="text" />
+			<attribute name="tskgroupreasign" label="Task Group Reasign" type="text" />
+			-->
+			
+		</attGroup>
+		<attGroup name="User Defined Attributes" id="userproperties" notShown="true">
+			<attribute label="User Attributes" name="userattributes" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+				<data>
+					<level width="30%" label="Name" name="name" type="text" />
+					<level width="30%" label="Type" name="type" type="combo" value="String">
+						<values>
+							<value label="String" value="String" />
+							<value label="Numeric" value="Numeric" />
+							<value label="Boolean" value="Boolean" />
+						</values>
+					</level>
+					<level width="30%" label="Value" name="value" type="text" />
+				</data>
+			</attribute>
+		</attGroup>
+		
+	</element>
+	<element name="csubflow">
+		<attGroup name="">
+			<!--<attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+				<data modalwidth="210" modalheight="220" modalUrl="categories.xml" modalclass="view.modal.ElementChoose" title="attributes">
+					<level name="perfname" type="label" label="Name" />
+				</data>
+			</attribute>-->
+			
+			<!-- <attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+				<data label="Category" name="category" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+					<level width="100%">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="modal" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" modalclass="view.modal.ElementChoose" title="attributes" />
+							<value name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+							</value>
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			
+			
+			<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			
+			<attribute label="Name" value="DEFAULT_PROCESS" name="name" change="setName" type="modal" modalclass="view.modal.ElementChoose" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess">
+				<complexadd regExp="a-zA-Z0-9_.">
+					<level name="name" label="Name" type="text" />
+					<level name="title" label="Title" type="text" />
+					<!-- <level name="proAction" value="C" label="Action" type="combo">
+						<values>
+							<value label="Creation" value="C" />
+							<value label="Alteration" value="A" />
+							<value label="Cancelation" value="Z" />
+						</values>
+					</level> -->
+				</complexadd>
+				<values>
+					<value>
+						<level name="id" value="1" />
+						<level name="name" value="DEFAULT_PROCESS" />
+					</value>
+				</values>
+			</attribute>
+			
+			<attribute label="SubProcessType" name="subprocesstype" type="combo" value="Embedded" use="required" change="typeChange">
+				<values>
+					<value label="Embedded" value="Embedded" disable="execution,datamappings,processref,skipfirsttask,processforms,entityforms,entity" enable=""/>
+					<value label="Reusable" value="Reusable" enable="execution,datamappings,processref,skipfirsttask,processforms,entityforms,entity" disable=""/>
+				</values>
+			</attribute>
+			<attribute label="IsATransaction" name="transaction" type="checkbox" change="transactionChange" value="false" hidden="true" use="required" enable="transactionref,transactionid" />
+			<!-- 
+			<attribute label="TransactionRef" name="transactionref" disabled="true" >
+				<attributes>
+					<attribute label="TransactionId" name="transactionid" type="text" use="required" dataType="string" disabled="true"/>
+				</attributes>
+			</attribute> 
+			-->
+			<!-- <attribute name="datamappings" label="Data Mappings" disabled="true">
+				<attributes>
+					<attribute label="InputMaps" name="inputmaps" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+						<data>
+							<level width="100%" label="InputMap" name="inputmap" type="modal" modalclass="view.modal.Condition" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+								<data>Ingrese la expresion de mapeo entrante.</data>
+							</level>
+						</data>
+					</attribute>
+					<attribute label="OutputMaps" name="outputmaps" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+						<data>
+							<level width="100%" label="OutputMap" name="outputmap" type="modal" modalclass="view.modal.Condition" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+								<data>Ingrese la expresion de mapeo saliente.</data>
+							</level>
+						</data>
+					</attribute>
+				</attributes>
+			</attribute> -->
+			
+			<!-- <attribute label="ProcessRef" name="processref" disabled="true" change="setName" type="modal" modalclass="view.modal.ElementChoose" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess">
+				<complexadd>
+					<level name="name" label="Name" type="text" />
+					<level name="title" label="Title" type="text" />
+					<level name="proAction" label="Action" type="combo">
+						<values>
+							<value label="Creation" value="C" />
+							<value label="Alteration" value="A" />
+							<value label="Cancelation" value="Z" />
+						</values>
+					</level>
+				</complexadd>
+			</attribute> 
+			<attribute label="Name" name="name" type="text" change="setName" use="required" dataType="string"/>-->
+			<!-- <attribute label="Assignments" name="assignments" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+				<data>
+					<level width="40%" label="To" name="to" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="text" />
+							<value name="type" label="Type" type="text" />
+							<value name="value" label="Value" type="text" />
+							<value name="correlation" label="Correlation" type="text" />
+							<value name="targettype" label="Target Type" type="text" />
+							<value name="index" label="Index" type="text" />
+						</values>
+					</level>
+					<level width="40%" label="From" name="from" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="expressionbody" label="ExpressionBody" type="text" />
+						</values>
+					</level>
+					<level width="20%" name="assigntime" label="AssignTime" type="combo" value="Start">
+						<values>
+							<value label="Start" value="Start" />
+							<value label="End" value="End" />
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			
+			<attribute label="ActivityType" name="activitytype" type="label" value="Sub-Process" change="setDependencyProps" hidden="true" />
+			<!-- <attribute label="Performers" name="performers" modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=group">
+				<data>
+					<level name="perfid" type="label" width="0" label="Id" />
+					<level name="perfname" type="label" width="50%" label="Name" />
+					<level width="50%" name="condition" label="Condition" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="290">
+						<data>Inserte la expresion de la condicion</data>
+					</level>
+				</data>
+			</attribute>
+			<attribute label="Properties" name="properties" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+				<data>
+					<level width="100%" label="Property" name="property" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="text" dataType="string"/>
+							<value name="type" label="Type" type="text" dataType="string"/>
+							<value name="value" label="Value" type="text" dataType="string"/>
+							<value name="correlation" label="Correlation" type="text" dataType="boolean"/>
+						</values>
+					</level>
+				</data>
+			</attribute>
+			<attribute label="Properties" name="properties" type="modalArray" modalclass="view.modal.AttMultiValueFinder" modalwidth="460" modalheight="330" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" filter="String:String;Numeric:Numeric;Date:Date">
+				<data>
+					<level width="0" name="id" label="id" type="text" hidden="true" />
+					<level width="20%" name="name" label="Name" type="label" />
+					<level width="12%" name="type" label="Type" type="label" />
+					<level width="15%" name="value" label="Value" type="text" />
+					<level width="20%" name="propertytype" label="Property Type" type="combo" value="P">
+						<values>
+							<value label="Process" value="P" />
+							<value label="Entity" value="E" />
+						</values>
+					</level>
+					<level width="0" name="label" label="Name Code" type="label" hidden="true" />
+					<level width="10%" name="index" label="Index" type="text" use="optional" dataType="int" />
+					<level width="13%" name="multivalued" label="Multivalued" type="checkbox" use="optional" dataType="boolean"/>
+					<level width="10%" name="uk" label="UK" type="checkbox" use="optional" dataType="boolean"/>
+				</data>
+			</attribute> -->
+			<attribute label="LoopType" name="looptype" type="combo" change="loopTypeChange" value="None">
+				<values>
+					<value label="None" value="None" disable="testtime,mi_ordering,loopmaximum,loopcounter,loopcondition,mi_condition,mi_flowcondition,complexmi_flowcondition,loopdocumentation"/>
+					<value label="Standard" value="Standard" disable="mi_ordering,mi_condition,mi_flowcondition,complexmi_flowcondition,loopmaximum,loopcounter" enable="testtime,loopcondition,loopdocumentation"/>
+					<value label="MultiInstance" value="MultiInstance" enable="mi_ordering,mi_condition" disable="testtime,loopmaximum,loopcondition,mi_flowcondition,complexmi_flowcondition,loopcounter,loopdocumentation"/>
+				</values>
+			</attribute>
+			<attribute label="LoopCondition" name="loopcondition" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="290">
+				<data>REGLAS DE SINTAXIS: 
+String: 'string' | Number: number | Date: [date] | Null: null 
+Entity Att.: ent_att('attr_name') | Process Att.: pro_att('attr_name') 
+Arith. Operator: +, -, /,* 
+Comp. Operator : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Boolean Operator: and, or | Unary Operator: not(expression)</data>
+			</attribute>
+			<attribute name="loopdocumentation" label="Loop Cond. Doc." type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string" disabled="true">
+			</attribute>
+			<attribute label="MI_Condition" name="mi_condition" textenabled="true" regExp="0-9" type="modal" modalwidth="280" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes&attType=N" modalclass="view.modal.ElementChoose" title="attributes" />
+			<attribute label="LoopCounter" name="loopcounter" type="text" disabled="true" use="required" dataType="int"/>
+			<attribute label="LoopMaximum" name="loopmaximum" type="text" disabled="true" use="optional" dataType="int"/>
+			<attribute label="TestTime" name="testtime" type="combo" disabled="true" value="After" dataType="string" hidden="true">
+				<values>
+					<value label="After" value="After" />
+					<value label="Before" value="Before" />
+				</values>
+			</attribute>
+			<attribute label="MI_Ordering" name="mi_ordering" type="combo" disabled="true" value="Parallel" dataType="string" hidden="true">
+				<values>
+					<value label="Parallel" value="Parallel" enable="mi_flowcondition" disable="complexmi_flowcondition" />
+					<value label="Sequential" value="Sequential" disable="mi_flowcondition,complexmi_flowcondition"/>
+				</values>
+			</attribute>
+			<attribute label="MI_FlowCondition" name="mi_flowcondition" type="combo" disabled="true" value="All" dataType="string" hidden="true">
+				<values>
+					<value label="All" value="All" disable="complexmi_flowcondition"/>
+					<value label="One" value="One" disable="complexmi_flowcondition"/>
+					<value label="Complex" value="Complex" enable="complexmi_flowcondition"/>
+				</values>
+			</attribute>
+			<attribute label="ComplexMI_FlowCondition" name="complexmi_flowcondition" type="text" disabled="true" use="optional" dataType="string"/>
+			<attribute label="FirstTask" name="firsttask" type="text" use="optional" dataType="string" value="false" hidden="true" />
+		<!-- </attGroup>
+		<attGroup name="Apia Extensions"> -->
+			<!-- <attribute label="Process type" name="apiaprocesstype" type="combo" value="Mapped">
+				<values>
+					<value label="Mapped" value="Mapped" />
+					<value label="Asynchronic" value="Asynchronic" />
+					<value label="Synchronic" value="Synchronic" />
+					<value label="Asynchronic Skip" value="Asynchronic Skip" />
+					<value label="Synchronic Skip" value="Synchronic Skip" />
+				</values>
+			</attribute> 
+			<attribute name="iterate" label="Iterate" type="checkbox" enable="iteratecondition" value="false" />  
+			<attribute name="iteratecondition" disabled="true" label="Iterate Condition" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300">
+				<data>REGLAS DE SINTAXIS: 
+String: 'string' | Number: number | Date: [date] | Null: null 
+Entity Att.: ent_att('attr_name') | Process Att.: pro_att('attr_name') 
+Arith. Operator: +, -, /,* 
+Comp. Operator : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Boolean Operator: and, or | Unary Operator: not(expression)</data>
+			</attribute> -->
+			<attribute label="Entity Id Att." name="entity" type="modal" modalwidth="280" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes&attType=N" modalclass="view.modal.ElementChoose" title="attributes" disabled="true" />
+			<attribute width="140" name="processforms" label="Process Forms" modalwidth="430" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=form">
+				<data>
+					<level width="1" name="id" label="id" type="text" hidden="true" />
+					<level width="98%" name="name" label="Name" type="label" />
+					<!-- <level width="60" name="readonly" label="readonly" type="checkbox" />
+					<level width="60" name="multiple" label="multiple" type="checkbox" /> -->
+				</data>
+			</attribute>
+			<attribute width="140" name="entityforms" label="Entity Forms" modalwidth="430" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=form&busEntId=null" message="An Entity has not been selected">
+				<data>
+					<level width="1" name="id" label="id" type="text" hidden="true" />
+					<level width="98%" name="name" label="Name" type="label" />
+					<!-- <level width="60" name="readonly" label="readonly" type="checkbox" />
+					<level width="60" name="multiple" label="multiple" type="checkbox" /> -->
+				</data>
+			</attribute>
+			<attribute label="Execution" name="execution" type="combo" value="SYNCHR">
+				<values>
+					<value label="Synchronic" value="SYNCHR" />
+					<value label="Asynchronic" value="ASYNCHR" />
+				</values>
+			</attribute>
+			<attribute label="Skip First Task" name="skipfirsttask" type="checkbox" value="false" use="required" disable="" />
+		</attGroup>
+		<attGroup name="User Defined Attributes" id="userproperties" notShown="true">
+			<attribute label="User Attributes" name="userattributes" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+				<data>
+					<level width="30%" label="Name" name="name" type="text" />
+					<level width="30%" label="Type" name="type" type="combo" value="String">
+						<values>
+							<value label="String" value="String" />
+							<value label="Numeric" value="Numeric" />
+							<value label="Boolean" value="Boolean" />
+						</values>
+					</level>
+					<level width="30%" label="Value" name="value" type="text" />
+				</data>
+			</attribute>
+		</attGroup>
+		
+	</element>
+	Ã¯Â»Â¿<element name="esubflow">
+		<attGroup name="">
+			
+			<!-- <attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+				<data label="Category" name="category" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+					<level width="100%">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="modal" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" modalclass="view.modal.ElementChoose" title="attributes" />
+							<value name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+							</value>
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			
+			<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			
+			<attribute label="SubProcessType" name="subprocesstype" type="combo" value="Embedded" use="required">
+				<values>
+					<value label="Embedded" value="Embedded" disable="execution" />
+					<value label="Reusable" value="Reusable" enable="execution" />
+				</values>
+			</attribute>
+			<attribute label="Execution" name="execution" type="combo" value="Sync">
+				<values>
+					<value label="Synchronic" value="Sync" />
+					<value label="Asynchronic" value="Async" />
+				</values>
+			</attribute>
+			<!-- <attribute label="IsATransaction" name="transaction" type="checkbox" change="transactionChange" value="false" use="required" enable="transactionref,transactionid" /> -->
+			<attribute label="TransactionRef" name="transactionref" disabled="true">
+				<attributes>
+					<attribute label="TransactionId" name="transactionid" disabled="true" type="text" use="required" dataType="string"/>
+				</attributes>
+			</attribute>
+
+			
+			<attribute label="Name" name="name" type="text" change="setName" use="required" dataType="string"/>
+			<!-- <attribute label="Assignments" name="assignments" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+				<data>
+					<level width="40%" label="To" name="to" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="text" />
+							<value name="type" label="Type" type="text" />
+							<value name="value" label="Value" type="text" />
+							<value name="correlation" label="Correlation" type="text" />
+							<value name="targettype" label="Target Type" type="text" />
+							<value name="index" label="Index" type="text" />
+						</values>
+					</level>
+					<level width="40%" label="From" name="from" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="expressionbody" label="ExpressionBody" type="text" />
+						</values>
+					</level>
+					<level width="20%" name="assigntime" label="AssignTime" type="combo" value="Start">
+						<values>
+							<value label="Start" value="Start" />
+							<value label="End" value="End" />
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			
+			<attribute label="ActivityType" name="activitytype" type="label" value="Sub-Process" change="setDependencyProps" hidden="true" />
+			<!-- <attribute label="Performers" name="performers" modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=group">
+				<data>
+					<level name="perfid" type="label" width="0" label="Id" />
+					<level name="perfname" type="label" width="50%" label="Name" />
+					<level width="50%" name="condition" label="Condition" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="290">
+						<data>Inserte la expresion de la condicion</data>
+					</level>
+				</data>
+			</attribute>
+			<attribute label="Properties" name="properties" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+				<data>
+					<level width="100%" label="Property" name="property" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="text" dataType="string"/>
+							<value name="type" label="Type" type="text" dataType="string"/>
+							<value name="value" label="Value" type="text" dataType="string"/>
+							<value name="correlation" label="Correlation" type="text" dataType="boolean"/>
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			<attribute label="LoopType" name="looptype" type="combo" change="loopTypeChange" value="None">
+				<values>
+					<value label="None" value="None" disable="testtime,mi_ordering,loopmaximum,loopcounter,loopcondition,mi_condition,mi_flowcondition,complexmi_flowcondition"/>
+					<value label="Standard" value="Standard" disable="mi_ordering,mi_condition,mi_flowcondition,complexmi_flowcondition" enable="testtime,loopmaximum,loopcounter,loopcondition"/>
+					<value label="MultiInstance" value="MultiInstance" enable="mi_ordering,mi_condition" disable="testtime,loopmaximum,loopcondition,mi_flowcondition,complexmi_flowcondition,loopcounter"/>
+				</values>
+			</attribute>
+			
+			<attribute label="LoopCondition" name="loopcondition" type="text" disabled="true" use="required" dataType="string"/>
+			<attribute label="MI_Condition" name="mi_condition" textenabled="true" type="modal" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes&attType=N" modalclass="view.modal.ElementChoose" title="attributes" />
+			<attribute label="LoopCounter" name="loopcounter" type="text" disabled="true" use="required" dataType="int"/>
+			<attribute label="LoopMaximum" name="loopmaximum" type="text" disabled="true" use="optional" dataType="int"/>
+			<attribute label="TestTime" name="testtime" type="combo" disabled="true" value="After" dataType="string" hidden="true">
+				<values>
+					<value label="After" value="After" />
+					<value label="Before" value="Before" />
+				</values>
+			</attribute>
+			<attribute label="MI_Ordering" name="mi_ordering" type="combo" disabled="true" value="Sequential" dataType="string" hidden="true">
+				<values>
+					<value label="Sequential" value="Sequential" disable="mi_flowcondition,complexmi_flowcondition"/>
+					<value label="Parallel" value="Parallel" enable="mi_flowcondition" disable="complexmi_flowcondition" />
+				</values>
+			</attribute>
+			<attribute label="MI_FlowCondition" name="mi_flowcondition" type="combo" disabled="true" value="All" dataType="string" hidden="true">
+				<values>
+					<value label="One" value="One" disable="complexmi_flowcondition"/>
+					<value label="All" value="All" disable="complexmi_flowcondition"/>
+					<value label="Complex" value="Complex" enable="complexmi_flowcondition"/>
+				</values>
+			</attribute>
+			<attribute label="ComplexMI_FlowCondition" name="complexmi_flowcondition" type="text" disabled="true" use="optional" dataType="string"/>
+			
+			<attribute label="Expanded" name="expanded" value="true" type="text" disabled="true" />
+		</attGroup>
+		<attGroup name="Apia Extensions">
+			<!-- <attribute label="Process type" name="apiaprocesstype" type="combo" value="Mapped">
+				<values>
+					<value label="Mapped" value="Mapped" />
+					<value label="Asynchronic" value="Async" />
+					<value label="Synchronic" value="Sync" />
+					<value label="Asynchronic Skip" value="Asynchronic Skip" />
+					<value label="Synchronic Skip" value="Synchronic Skip" />
+				</values>
+			</attribute>
+			<attribute name="iterate" label="Iterate" type="checkbox" enable="iteratecondition" value="false" />
+			<attribute name="iteratecondition" disabled="true" label="Iterate Condition" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300">
+				<data>REGLAS DE SINTAXIS: 
+String: 'string' | Number: number | Date: [date] | Null: null 
+Entity Att.: ent_att('attr_name') | Process Att.: pro_att('attr_name') 
+Arith. Operator: +, -, /,* 
+Comp. Operator : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Boolean Operator: and, or | Unary Operator: not(expression)</data>
+			</attribute> -->
+			<attribute width="140" name="processforms" label="Process Forms" modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=form">
+				<data>
+					<level width="1" name="id" label="id" type="text" hidden="true" />
+					<level width="100" name="name" label="name" type="label" />
+					<level width="60" name="readonly" label="readonly" type="checkbox" />
+					<level width="60" name="multiple" label="multiple" type="checkbox" />
+				</data>
+			</attribute>
+			<attribute width="140" name="entityforms" label="Entity Forms" modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=form&busEntId=null" message="An Entity has not been selected">
+				<data>
+					<level width="1" name="id" label="id" type="text" hidden="true" />
+					<level width="100" name="name" label="name" type="label" />
+					<level width="60" name="readonly" label="readonly" type="checkbox" />
+					<level width="60" name="multiple" label="multiple" type="checkbox" />
+				</data>
+			</attribute>
+		</attGroup>
+		<attGroup name="User Defined Attributes" id="userproperties" notShown="true">
+			<attribute label="User Attributes" name="userattributes" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+				<data>
+					<level width="30%" label="Name" name="name" type="text" />
+					<level width="30%" label="Type" name="type" type="combo" value="String">
+						<values>
+							<value label="String" value="String" />
+							<value label="Numeric" value="Numeric" />
+							<value label="Boolean" value="Boolean" />
+						</values>
+					</level>
+					<level width="30%" label="Value" name="value" type="text" />
+				</data>
+			</attribute>
+		</attGroup>
+	</element>
+	Ã¯Â»Â¿	<element name="startevent">
+		<attGroup name="">
+			<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="Name" name="name" type="text" change="setName" use="required" dataType="string"/>
+			<!-- <attribute label="Assignments" name="assignments" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+				<data>
+					<level width="40%" label="To" name="to" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="text" />
+							<value name="type" label="Type" type="text" />
+							<value name="value" label="Value" type="text" />
+							<value name="correlation" label="Correlation" type="text" />
+							<value name="targettype" label="Target Type" type="text" />
+							<value name="index" label="Index" type="text" />
+						</values>
+					</level>
+					<level width="40%" label="From" name="from" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="expressionbody" label="ExpressionBody" type="text" />
+						</values>
+					</level>
+					<level width="20%" name="assigntime" label="AssignTime" type="combo" value="Start">
+						<values>
+							<value label="Start" value="Start" />
+							<value label="End" value="End" />
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			<!-- <attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+				<data label="Category" name="category" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+					<level width="100%">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="modal" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" modalclass="view.modal.ElementChoose" title="attributes" />
+							<value name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+							</value>
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			<attribute name="eventtype" label="EventType" type="label" value="Start" hidden="true" />
+			<attribute name="eventdetailtype" label="EventDetailType" type="combo" change="typeChange,setFirstTaskType" value="None">
+				<values>
+					<value label="None" value="None" disable="message,timer,conditional,signal,multiple,trigger" />
+					<value label="Message" value="Message" enable="trigger,message" disable="timer,conditional,signal,multiple" />
+					<value label="Timer" value="Timer" enable="trigger,timer" disable="message,conditional,signal,multiple" />
+					<!-- <value label="Conditional" value="Conditional" enable="conditional" disable="message,timer,signal,multiple" />
+					<value label="Signal" value="Signal" enable="signal" disable="message,timer,conditional,multiple" />
+					<value label="Multiple" value="Multiple" enable="multiple" disable="message,timer,conditional,signal" /> -->
+				</values>
+			</attribute>
+			<!-- <attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+				<data label="Category" name="category" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+					<level width="100%">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="modal" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" modalclass="view.modal.ElementChoose" title="attributes" />
+							<value name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+								<data>Documentacion</data>
+							</value>
+						</values>
+					</level>
+				</data>
+			</attribute>
+			<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute> -->
+			<attribute label="Message" name="message" disabled="true">
+				<attributes>
+					<attribute name="wsname" label="Web Service Name" type="text" />
+					<attribute name="processattributes" label="Process Attributes" modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" oneCheckedInRow="true">
+						<data>
+							<level width="0" name="id" label="id" type="text" hidden="true" />
+							<level width="100" name="name" label="name" type="label" />
+							<level width="40" name="uk" label="correl." type="checkbox" />
+							<level width="40" name="multivalued" label="multival." type="checkbox" />
+						</data>
+					</attribute>
+					<attribute name="entityattributes" label="Entity Attributes" modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" oneCheckedInRow="true">
+						<data>
+							<level width="0" name="id" label="id" type="text" hidden="true" />
+							<level width="100" name="name" label="name" type="label" />
+							<level width="40" name="uk" label="correl." type="checkbox" />
+							<level width="40" name="multivalued" label="multival." type="checkbox" />
+						</data>
+					</attribute>
+					<attribute label="Implementation" name="implementation" type="label" value="WebService" hidden="true" />
+				</attributes>
+			</attribute>
+
+			<attribute name="timer" label="Timer" disabled="true">
+				<attributes>
+					<attribute label="TimeDate" name="timedate">
+						<attributes>
+							<attribute label="Init Date" name="initdate" type="text" use="optional" dataType="mask" mask="nnnn'/'nn'/'nn' 'nn':'nn':'nn" />
+							<attribute label="End Date" name="enddate" type="text" use="optional" dataType="mask" mask="nnnn'/'nn'/'nn' 'nn':'nn':'nn" />
+						</attributes>	
+					</attribute>
+					<attribute label="TimeCycle" name="timecycle">
+						<attributes>
+							<attribute label="Time Measurement Unit" name="unit" type="combo" value="Milliseconds">
+								<values>
+									<value label="Milliseconds" value="Milliseconds"/>
+									<value label="Seconds" value="Seconds"/>
+									<value label="Minutes" value="Minutes"/>
+									<value label="Hours" value="Hours"/>
+									<value label="Days" value="Days"/>
+									<value label="Weeks" value="Weeks"/>
+								</values>
+							</attribute>
+							<attribute label="Value" name="value" type="text" use="optional" dataType="int" />
+						</attributes>
+					</attribute>
+				</attributes>
+			</attribute>
+
+			<!-- <attribute name="conditional" label="Conditional" disabled="true">
+				<attributes>
+					<attribute label="ConditionalRef" name="conditionalref">
+						<attributes>
+							<attribute label="Name" name="name" type="text" use="optional" dataType="string" />
+							<attribute label="ConditionExpression" name="conditionexpression">
+								<attributes>
+									<attribute name="expressionbody" label="ExpressionBody" type="text" use="required" dataType="string"/>
+								</attributes>
+							</attribute>
+						</attributes>	
+					</attribute>
+				</attributes>
+			</attribute>
+
+			<attribute name="signal" label="Signal" disabled="true">
+				<attributes>
+					<attribute label="SignalRef" name="signalref">
+						<attributes>
+							<attribute label="Name" name="name" type="text" use="required" dataType="string" />
+						</attributes>	
+					</attribute>
+				</attributes>
+			</attribute> -->
+		
+		
+			<attribute label="Multiple" name="multiple" disabled="true">
+				<attributes>
+					<attribute label="Message" name="message">
+						<attributes>
+							<attribute name="wsname" label="Web Service Name" type="text" />
+							<attribute name="processattributes" label="Process Attributes" modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" oneCheckedInRow="true">
+								<data>
+									<level width="0" name="id" label="id" type="text" hidden="true" />
+									<level width="100" name="name" label="name" type="label" />
+									<level width="40" name="uk" label="correl." type="checkbox" />
+									<level width="40" name="multivalued" label="multival." type="checkbox" />
+								</data>
+							</attribute>
+							<attribute name="entityattributes" label="Entity Attributes" modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" oneCheckedInRow="true">
+								<data>
+									<level width="0" name="id" label="id" type="text" hidden="true" />
+									<level width="100" name="name" label="name" type="label" />
+									<level width="40" name="uk" label="correl." type="checkbox" />
+									<level width="40" name="multivalued" label="multival." type="checkbox" />
+								</data>
+							</attribute>
+						</attributes>
+					</attribute>
+					<attribute name="timer" label="Timer" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330" single="true">
+						<data>
+							<level width="50%" label="TimeDate" name="timedate" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+								<data>
+									<level width="50%" name="value" label="Value">
+									</level>
+								</data>
+								<values>
+									<value label="Init Date" name="initdate" type="text" use="optional" dataType="mask" mask="nnnn'/'nn'/'nn' 'nn':'nn':'nn" />
+									<value label="End Date" name="enddate" type="text" use="optional" dataType="mask" mask="nnnn'/'nn'/'nn' 'nn':'nn':'nn" />
+								</values>	
+							</level>
+							<level width="50%" label="TimeCycle" name="timecycle" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+								<data>
+									<level width="50%" name="value" label="Value">
+									</level>
+								</data>
+								<values>
+									<value label="Time Measurement Unit" name="unit" type="combo" value="Milliseconds">
+										<values>
+											<value label="Milliseconds" value="Milliseconds"/>
+											<value label="Seconds" value="Seconds"/>
+											<value label="Minutes" value="Minutes"/>
+											<value label="Hours" value="Hours"/>
+											<value label="Days" value="Days"/>
+											<value label="Weeks" value="Weeks"/>
+										</values>
+									</value>
+									<value label="Value" name="value" type="text" use="optional" dataType="int" />
+								</values>
+							</level>
+						</data>
+					</attribute>
+					<!-- 
+					<attribute name="conditional" label="Conditional" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+						<data>
+							<level width="100%" label="ConditionalRef" name="conditionalref" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+								<data>
+									<level width="60%" name="value" label="Value">
+									</level>
+								</data>
+								<values>
+									<value label="Name" name="name" type="text" use="optional" dataType="string" />
+									<value label="ConditionExpression" name="conditionexpression" type="text" use="required" dataType="string">
+										<!--<values>
+											<value name="expressionbody" label="ExpressionBody" type="text"/>
+										</values>-->
+										<!--
+									</value>
+								</values>	
+							</level>
+						</data>
+					</attribute>
+					<attribute name="signal" label="Signal" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+						<data>
+							<level width="100%" label="SignalRef" name="signalref" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+								<data>
+									<level width="50%" name="value" label="Value">
+									</level>
+								</data>
+								<values>
+									<value label="Name" name="name" type="text" use="required" dataType="string" />
+								</values>	
+							</level>
+						</data>
+					</attribute>
+					-->
+				</attributes>
+			</attribute>
+		</attGroup>
+		<attGroup name="User Defined Attributes" id="userproperties" notShown="true">
+			<attribute label="User Attributes" name="userattributes" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+				<data>
+					<level width="30%" label="Name" name="name" type="text" />
+					<level width="30%" label="Type" name="type" type="combo" value="String">
+						<values>
+							<value label="String" value="String" />
+							<value label="Numeric" value="Numeric" />
+							<value label="Boolean" value="Boolean" />
+						</values>
+					</level>
+					<level width="30%" label="Value" name="value" type="text" />
+				</data>
+			</attribute>
+		</attGroup>
+	</element>
+	Ã¯Â»Â¿	<element name="middleevent">
+		<attGroup name="">
+			<attribute name="attached" label="Attached" type="combo" value="TRUE" readonly="true" hidden="true">
+				<values>
+					<value label="TRUE" value="TRUE" enable="messagecatch,multmessagecatch,errorcodeopt,inmessageref" disable="messagethrow,multmessagethrow,errorcodereq,outmessageref,catchthrow"/>
+					<value label="FALSE" value="FALSE" disable="messagecatch,multmessagecatch,errorcodeopt" enable="messagethrow,multmessagethrow,errorcodereq,catchthrow"/>
+				</values>
+			</attribute>
+			<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="Name" name="name" type="text" change="setName" use="required" dataType="string"/>
+			
+			<!-- <attribute label="Assignments" name="assignments" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+				<data>
+					<level width="40%" label="To" name="to" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="text" />
+							<value name="type" label="Type" type="text" />
+							<value name="value" label="Value" type="text" />
+							<value name="correlation" label="Correlation" type="text" />
+							<value name="targettype" label="Target Type" type="text" />
+							<value name="index" label="Index" type="text" />
+						</values>
+					</level>
+					<level width="40%" label="From" name="from" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="expressionbody" label="ExpressionBody" type="text" />
+						</values>
+					</level>
+					<level width="20%" name="assigntime" label="AssignTime" type="combo" value="Start">
+						<values>
+							<value label="Start" value="Start" />
+							<value label="End" value="End" />
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			<!-- <attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+				<data label="Category" name="category" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+					<level width="100%">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="modal" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" modalclass="view.modal.ElementChoose" title="attributes" />
+							<value name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+							</value>
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			<attribute name="eventtype" label="EventType" type="label" value="Intermediate" hidden="true" />
+			<attribute name="eventdetailtype" label="EventDetailType" type="combo" change="typeChange" value="None">
+				<values>
+					<value label="None" value="None" disable="message,timer,error,conditional,signal,compensation,multiple,trigger,catchthrow,firstvalue,secondvalue,comptype" />
+					<value label="Message" value="Message" disable="timer,error,conditional,signal,compensation,multiple,firstvalue,secondvalue,comptype" enable="trigger,message" />
+					<value label="Timer" value="Timer" disable="message,error,conditional,signal,compensation,multiple,catchthrow" enable="trigger,timer,firstvalue,secondvalue,comptype" />
+					<!-- <value label="Error" value="Error" disable="message,timer,conditional,signal,compensation,multiple" enable="error" />
+					<value label="Cancel" value="Cancel" disable="message,timer,error,signal,compensation,conditional,multiple" />
+					<value label="Conditional" value="Conditional" disable="message,timer,error,signal,compensation,multiple" enable="conditional" />
+					<value label="Signal" value="Signal" disable="message,timer,error,compensation,conditional,multiple" enable="signal" />
+					<value label="Compensation" value="Compensation" disable="message,timer,error,signal,conditional,multiple" enable="compensation" /> -->
+					<value label="Multiple" value="Multiple" enable="trigger,multiple,firstvalue,secondvalue,comptype" disable="message,timer,error,compensation,conditional,signal" />
+				</values>
+			</attribute>
+			
+			<!-- <attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+				<data label="Category" name="category" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+					<level width="100%">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="modal" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" modalclass="view.modal.ElementChoose" title="attributes" />
+							<value name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+							</value>
+						</values>
+					</level>
+				</data>
+			</attribute>
+			<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute> -->
+			<attribute label="Message" name="message" disabled="true">
+				<attributes>
+					<attribute name="catchthrow" label="Catch/Throw" type="combo" change="catchThrowChange" value="Catch">
+						<values>
+							<value label="Catch" value="Catch" disable="outmessageref" enable="inmessageref" />
+							<value label="Throw" value="Throw" enable="outmessageref" disable="inmessageref" />
+						</values>
+					</attribute>
+					<attribute name="inmessageref" label="InMessageRef">
+						<attributes>
+							<attribute name="wsname" label="Web Service Name" type="text" />
+							<attribute name="processattributes" label="Process Attribs." modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" oneCheckedInRow="true">
+								<data>
+									<level width="0" name="id" label="id" type="text" hidden="true" />
+									<level width="100" name="name" label="name" type="label" />
+									<level width="40" name="uk" label="correl." type="checkbox" />
+									<level width="40" name="multivalued" label="multival." type="checkbox" />
+								</data>
+							</attribute>
+							<attribute name="entityattributes" label="Entity Attribs." modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" oneCheckedInRow="true">
+								<data>
+									<level width="0" name="id" label="id" type="text" hidden="true" />
+									<level width="100" name="name" label="name" type="label" />
+									<level width="40" name="uk" label="correl." type="checkbox" />
+									<level width="40" name="multivalued" label="multival." type="checkbox" />
+								</data>
+							</attribute>
+						</attributes>
+					</attribute>
+					<attribute name="outmessageref" label="OutMessageRef">
+						<attributes>
+							<attribute label="Web Service" name="wsclasses" type="modalArray" modalclass="view.modal.ComboAdder" modalwidth="384" modalheight="250" clsXml="/Apia2.3/administration.BPMNAction.do?action=classes&amp;wsClasses=true">
+								<data>
+									<level width="0" name="evtname" label="Event" type="label" />
+									<level width="0" name="evtid" label="Event" type="label" />
+									<level width="50%" name="clsname" label="Name" type="label" />
+									<level width="0" name="clsid" label="Clsid" type="label" />
+									<level width="50%" name="binding" label="Properties"  type="modalArray" modalclass="view.modal.EntityBinding" modalwidth="500" modalheight="320" modalUrl="/Apia2.3/administration.BPMNAction.do?action=bindings" attributesUrl="/Apia2.3/administration.BPMNAction.do?type=attributes">
+										<data>
+											<level width="0" name="id" label="Id" type="text" hidden="true" />
+											<level width="30%" name="param" label="Parameter" type="label" />
+											<level width="10%" name="type" label="Type" type="label" />
+											<level width="10%" name="value" label="Value" type="label" />
+											<level width="20%" name="attribute" label="Attribute" type="label" atttype="event" />
+											<level width="0" name="attributeid" label="AttributeId" type="label" />
+											<level width="10%" name="inout" label="In/Out" type="label" />
+											<!-- <level width="10%" name="uk" label="Correl." type="checkbox" />
+											<level width="10%" name="multivalued" label="Multival." type="checkbox" /> -->
+										</data>
+									</level>
+								</data>
+							</attribute>
+						</attributes>
+					</attribute>
+					<attribute label="Implementation" name="implementation" type="label" value="WebService" hidden="true" />
+				</attributes>	
+			</attribute>
+
+			<attribute name="timer" label="Timer" disabled="true">
+				<attributes>
+					<attribute label="TimeDate" name="timedate">
+						<attributes>
+							<attribute label="Init Date" name="initdate" type="text" use="optional" dataType="mask" mask="nnnn'/'nn'/'nn' 'nn':'nn':'nn" />
+							<!-- <attribute label="End Date" name="enddate" type="text" use="optional" dataType="mask" mask="nnnn'/'nn'/'nn' 'nn':'nn':'nn" /> -->
+						</attributes>	
+					</attribute>
+					<attribute label="TimeCycle" name="timecycle">
+						<attributes>
+							<attribute label="Time Measurement Unit" name="unit" type="combo" value="Milliseconds">
+								<values>
+									<value label="Milliseconds" value="Milliseconds"/>
+									<value label="Seconds" value="Seconds"/>
+									<value label="Minutes" value="Minutes"/>
+									<value label="Hours" value="Hours"/>
+									<value label="Days" value="Days"/>
+									<value label="Weeks" value="Weeks"/>
+								</values>
+							</attribute>
+							<attribute label="Value" name="value" type="text" use="optional" dataType="int" />
+						</attributes>
+					</attribute>
+				</attributes>
+			</attribute>
+
+			<!-- <attribute name="conditional" label="Conditional" disabled="true">
+				<attributes>
+					<attribute label="ConditionalRef" name="conditionalref">
+						<attributes>
+							<attribute label="Name" name="name" type="text" use="optional" dataType="string" />
+							<attribute label="ConditionExpression" name="conditionexpression">
+								<attributes>
+									<attribute name="expressionbody" label="ExpressionBody" type="text" use="required" dataType="string"/>
+								</attributes>
+							</attribute>
+						</attributes>	
+					</attribute>
+				</attributes>
+			</attribute>
+
+			<attribute name="signal" label="Signal" disabled="true">
+				<attributes>
+					<attribute label="SignalRef" name="signalref">
+						<attributes>
+							<attribute label="Name" name="name" type="text" use="required" dataType="string" />
+						</attributes>	
+					</attribute>
+				</attributes>
+			</attribute>
+		
+			<attribute name="error" label="Error" disabled="true">
+				<attributes>
+					<attribute label="ErrorCode" name="errorcodereq" type="text" disabled="true" use="required" dataType="string"/>
+					<attribute label="ErrorCode" name="errorcodeopt" type="text" disabled="true" use="optional" dataType="string"/>
+				</attributes>
+			</attribute>
+			
+			<attribute name="compensation" label="Compensation" disabled="true">
+				<attributes>
+					<attribute label="ActivityRef" name="activityreftask" type="modal" modalclass="view.modal.ElementChoose" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=task" />
+					<attribute label="ActivityRef" name="activityrefsubproc" disabled="true" type="modal" modalclass="view.modal.ElementChoose" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" />
+					<!--<attribute label="ActivityRef" name="activityref" type="label">
+						<attributes>
+							<attribute label="Name" name="name" type="text" use="required" dataType="string" />
+						</attributes> 	
+					</attribute>-->
+					<!--
+					<attribute name="activitytype" label="Activity Type" type="combo" value="Task" hidden="true">
+						<values>
+							<value label="Task" value="Task" enable="activityreftask" disable="activityrefsubproc"/>
+							<value label="Sub-Process" value="Sub-Process" enable="activityrefsubproc" disable="activityreftask"/>
+						</values>
+					</attribute>
+				</attributes>
+			</attribute> -->
+		
+		
+			<attribute label="Multiple" name="multiple" disabled="true">
+				<attributes>
+					<attribute label="Message" name="multimessage">
+						<attributes>
+							<attribute name="inmessageref" label="InMessageRef">
+								<attributes>
+									<attribute name="wsname" label="Web Service Name" type="text" />
+									<attribute name="processattributes" label="Process Attribs." modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" oneCheckedInRow="true">
+										<data>
+											<level width="0" name="id" label="id" type="text" hidden="true" />
+											<level width="100" name="name" label="name" type="label" />
+											<level width="40" name="uk" label="correl." type="checkbox" />
+											<level width="40" name="multivalued" label="multival." type="checkbox" />
+										</data>
+									</attribute>
+									<attribute name="entityattributes" label="Entity Attribs." modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" oneCheckedInRow="true">
+										<data>
+											<level width="0" name="id" label="id" type="text" hidden="true" />
+											<level width="100" name="name" label="name" type="label" />
+											<level width="40" name="uk" label="correl." type="checkbox" />
+											<level width="40" name="multivalued" label="multival." type="checkbox" />
+										</data>
+									</attribute>
+								</attributes>
+							</attribute>
+						</attributes>
+					</attribute>
+					
+					<attribute name="multitimer" label="Timer">
+						<attributes>
+							<attribute label="TimeDate" name="timedate">
+								<attributes>
+									<attribute label="Init Date" name="initdate" type="text" use="optional" dataType="mask" mask="nnnn'/'nn'/'nn' 'nn':'nn':'nn" />
+									<!-- <attribute label="End Date" name="enddate" type="text" use="optional" dataType="mask" mask="nnnn'/'nn'/'nn' 'nn':'nn':'nn" /> -->
+								</attributes>	
+							</attribute>
+							<attribute label="TimeCycle" name="timecycle">
+								<attributes>
+									<attribute label="Time Measurement Unit" name="unit" type="combo" value="Milliseconds">
+										<values>
+											<value label="Milliseconds" value="Milliseconds"/>
+											<value label="Seconds" value="Seconds"/>
+											<value label="Minutes" value="Minutes"/>
+											<value label="Hours" value="Hours"/>
+											<value label="Days" value="Days"/>
+											<value label="Weeks" value="Weeks"/>
+										</values>
+									</attribute>
+									<attribute label="Value" name="value" type="text" use="optional" dataType="int" />
+								</attributes>
+							</attribute>
+						</attributes>
+					</attribute>
+					<!-- <attribute name="conditional" label="Conditional" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+						<data>
+							<level width="100%" label="ConditionalRef" name="conditionalref" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+								<data>
+									<level width="60%" name="value" label="Value">
+									</level>
+								</data>
+								<values>
+									<value label="Name" name="name" type="text" use="optional" dataType="string" />
+									<value label="ConditionExpression" name="conditionexpression" type="text" use="required" dataType="string">
+										<!--<values>
+											<value name="expressionbody" label="ExpressionBody" type="text"/>
+										</values>-->
+											<!--
+									</value>
+								</values>	
+							</level>
+						</data>
+					</attribute>
+					<attribute name="signal" label="Signal" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+						<data>
+							<level width="100%" label="SignalRef" name="signalref" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+								<data>
+									<level width="50%" name="value" label="Value">
+									</level>
+								</data>
+								<values>
+									<value label="Name" name="name" type="text" use="required" dataType="string" />
+								</values>	
+							</level>
+						</data>
+					</attribute>
+					<attribute name="error" label="Error" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+						<data>
+							<level width="100%" label="Error" name="errorlevel" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+								<data>
+									<level width="50%" name="value" label="Value">
+									</level>
+								</data>
+								<values>
+									<value label="ErrorCode" name="errorcode" type="text" use="required" dataType="string" />
+								</values>
+							</level>
+						</data>
+					</attribute>
+					<attribute name="compensation" label="Compensation" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+						<data>
+							<level width="50%" label="Compensation" type="label" name="compensation" value="Compensation"></level>
+							<level width="50%" label="ActivityRef" name="activityref" modalwidth="210" modalheight="220" type="modal" modalclass="view.modal.ElementChoose" modalUrl="/Apia2.3/administration.BPMNAction.do?type=compensate" filter="Task:task;SubProcess:subProcess"></level>
+						</data>
+					</attribute> -->
+				</attributes>
+			</attribute>
+		</attGroup>
+		<attGroup name="User Defined Attributes" id="userproperties" notShown="true">
+			<attribute label="User Attributes" name="userattributes" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+				<data>
+					<level width="30%" label="Name" name="name" type="text" />
+					<level width="30%" label="Type" name="type" type="combo" value="String">
+						<values>
+							<value label="String" value="String" />
+							<value label="Numeric" value="Numeric" />
+							<value label="Boolean" value="Boolean" />
+						</values>
+					</level>
+					<level width="30%" label="Value" name="value" type="text" />
+				</data>
+			</attribute>
+		</attGroup>
+		
+	</element>
+	Ã¯Â»Â¿	<element name="endevent">
+		<attGroup name="">
+			<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="Name" name="name" type="text" change="setName" use="required" dataType="string"/>
+			<!-- <attribute label="Assignments" name="assignments" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+				<data>
+					<level width="40%" label="To" name="to" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="text" />
+							<value name="type" label="Type" type="text" />
+							<value name="value" label="Value" type="text" />
+							<value name="correlation" label="Correlation" type="text" />
+							<value name="targettype" label="Target Type" type="text" />
+							<value name="index" label="Index" type="text" />
+						</values>
+					</level>
+					<level width="40%" label="From" name="from" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="expressionbody" label="ExpressionBody" type="text" />
+						</values>
+					</level>
+					<level width="20%" name="assigntime" label="AssignTime" type="combo" value="Start">
+						<values>
+							<value label="Start" value="Start" />
+							<value label="End" value="End" />
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			<!-- <attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+				<data label="Category" name="category" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+					<level width="100%">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="modal" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" modalclass="view.modal.ElementChoose" title="attributes" />
+							<value name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+							</value>
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			<attribute name="eventtype" label="EventType" type="label" value="End" hidden="true" />
+			<attribute name="eventdetailtype" label="EventDetailType" type="combo" change="typeChange" value="None">
+				<values>
+					<value label="None" value="None" disable="message,error,compensation,signal,multiple,result" />
+					<value label="Message" value="Message" disable="error,compensation,signal,multiple" enable="result,message" />
+					<!-- <value label="Error" value="Error" disable="message,signal,compensation,multiple" enable="result,error" />
+					<value label="Cancel" value="Cancel" disable="message,error,signal,compensation,multiple,result" />
+					<value label="Compensation" value="Compensation" disable="message,error,signal,multiple" enable="result,compensation" />
+					<value label="Signal" value="Signal" disable="message,error,compensation,multiple" enable="result,signal" />
+					<value label="Terminate" value="Terminate" disable="message,error,signal,compensation,multiple,result" /> 
+					<value label="Multiple" value="Multiple" disable="message,error,compensation,signal" enable="result,multiple" /> -->
+				</values>
+			</attribute>
+			
+			<!-- <attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+				<data label="Category" name="category" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+					<level width="100%">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="modal" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" modalclass="view.modal.ElementChoose" title="attributes" />
+							<value name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+							</value>
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			
+			<attribute label="Message" name="message" disabled="true">
+				<attributes>
+					<attribute label="Web Service" name="wsclasses" type="modalArray" modalclass="view.modal.ComboAdder" modalwidth="384" modalheight="250" clsXml="/Apia2.3/administration.BPMNAction.do?action=classes&amp;wsClasses=true">
+						<data>
+							<level width="0" name="evtname" label="Event" type="label" />
+							<level width="0" name="evtid" label="Event" type="label" />
+							<level width="50%" name="clsname" label="Name" type="label" />
+							<level width="0" name="clsid" label="Clsid" type="label" />
+							<level width="50%" name="binding" label="Properties"  type="modalArray" modalclass="view.modal.EntityBinding" modalwidth="500" modalheight="320" modalUrl="/Apia2.3/administration.BPMNAction.do?action=bindings" attributesUrl="/Apia2.3/administration.BPMNAction.do?type=attributes">
+								<data>
+									<level width="0" name="id" label="Id" type="text" hidden="true" />
+									<level width="30%" name="param" label="Parameter" type="label" />
+									<level width="10%" name="type" label="Type" type="label" />
+									<level width="10%" name="value" label="Value" type="label" />
+									<level width="20%" name="attribute" label="Attribute" type="label" atttype="event" />
+									<level width="0" name="attributeid" label="AttributeId" type="label" />
+									<level width="10%" name="inout" label="In/Out" type="label" />
+									<!-- <level width="10%" name="uk" label="Correl." type="checkbox" />
+									<level width="10%" name="multivalued" label="Multival." type="checkbox" /> -->
+								</data>
+							</level>
+						</data>
+					</attribute>
+					<attribute name="implementation" label="Implementation" value="WebService" type="label" hidden="true" />
+				</attributes>
+			</attribute>
+			
+			<!-- <attribute name="error" label="Error" disabled="true">
+				<attributes>
+					<attribute label="ErrorCode" name="errorcode" type="text" dataType="string"/>
+				</attributes>
+			</attribute>
+			
+			<attribute name="compensation" label="Compensation" disabled="true">
+				<attributes>
+					<attribute label="ActivityRef" name="activityreftask" type="modal" change="setName" modalclass="view.modal.ElementChoose" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=task" />
+					<attribute label="ActivityRef" name="activityrefsubproc" disabled="true" type="modal" change="setName" modalclass="view.modal.ElementChoose" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" />
+					<attribute name="activitytype" label="Activity Type" type="combo" value="Task" hidden="true">
+						<values>
+							<value label="Task" value="Task" enable="activityreftask" disable="activityrefsubproc"/>
+							<value label="Sub-Process" value="Sub-Process" enable="activityrefsubproc" disable="activityreftask"/>
+						</values>
+					</attribute>
+				</attributes>
+			</attribute>
+			
+
+			<attribute name="signal" label="Signal" disabled="true">
+				<attributes>
+					<attribute label="SignalRef" name="signalref">
+						<attributes>
+							<attribute label="Name" name="name" type="text" use="required" dataType="string" />
+						</attributes>	
+					</attribute>
+				</attributes>
+			</attribute> -->
+		
+		
+			<attribute label="Multiple" name="multiple" disabled="true">
+				<attributes>
+					<attribute label="Message" name="message" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+						<data>
+							<level width="50%" label="MessageRef" name="messageref" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+								<data>
+									<level width="50%" name="value" label="Value">
+									</level>
+								</data>
+								<values>
+									<!-- <value label="Name" name="name" type="text" use="required" dataType="string" />
+									<value label="Method" name="method" type="text" use="required" dataType="string" />
+									<value label="WSDL" name="wsdl" type="text" use="required" dataType="string" /> -->
+									<value label="Web Services" name="wsclasses" type="modalArray" modalclass="view.modal.ComboAdder" modalwidth="384" modalheight="250" evtXml="/Apia2.3/administration.BPMNAction.do?action=events&amp;evtScope=T" clsXml="/Apia2.3/administration.BPMNAction.do?action=classes">
+										<data>
+											<level width="40%" name="evtname" label="Event" type="label" />
+											<level width="0" name="evtid" label="Event" type="label" />
+											<level width="30%" name="clsname" label="Name" type="label" />
+											<level width="0" name="clsid" label="Clsid" type="label" />
+											<level width="30%" name="binding" label="Properties"  type="modalArray" modalclass="view.modal.EntityBinding" modalwidth="500" modalheight="320" modalUrl="/Apia2.3/administration.BPMNAction.do?action=bindings" attributesUrl="/Apia2.3/administration.BPMNAction.do?type=attributes">
+												<data>
+													<level width="0" name="id" label="Id" type="text" hidden="true" />
+													<level width="30%" name="param" label="Parameter" type="label" />
+													<level width="10%" name="type" label="Type" type="label" />
+													<level width="20%" name="value" label="Value" type="label" />
+													<level width="20%" name="attribute" label="Attribute" type="label" atttype="event" />
+													<level width="0" name="attributeid" label="AttributeId" type="label" />
+													<level width="20%" name="inout" label="In/Out" type="label" />
+												</data>
+											</level>
+										</data>
+									</value>
+								</values>
+							</level>
+							<level width="50%" label="Implementation" name="implementation" type="label" value="WebService" hidden="true" />
+						</data>
+					</attribute>
+					<!-- <attribute name="error" label="Error" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+						<data>
+							<level width="100%" label="Error" name="errorlevel" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+								<data>
+									<level width="50%" name="value" label="Value">
+									</level>
+								</data>
+								<values>
+									<value label="ErrorCode" name="errorcode" type="text" use="required" dataType="string" />
+								</values>
+							</level>
+						</data>
+					</attribute>
+					
+					<attribute name="compensation" label="Compensation" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+						<data>
+							<level width="100%" label="Compensation" name="compensationlevel" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+								<data>
+									<level width="50%" name="value" label="Value">
+									</level>
+								</data>
+								<values>
+									<value label="ActivityRef" name="activityreftask" type="modal" change="setName" modalclass="view.modal.ElementChoose" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=task" />
+									<value label="ActivityRef" name="activityrefsubproc" hidden="true" type="modal" change="setName" modalclass="view.modal.ElementChoose" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" />
+									<value name="activitytype" label="Activity Type" type="combo" value="Task">
+										<values>
+											<value label="Task" value="Task" enable="activityreftask" disable="activityrefsubproc"/>
+											<value label="Sub-Process" value="Sub-Process" enable="activityrefsubproc" disable="activityreftask"/>
+										</values>
+									</value>
+								</values>
+							</level>
+						</data>
+					</attribute>
+					<attribute name="signal" label="Signal" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+						<data>
+							<level width="100%" label="SignalRef" name="signalref" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+								<data>
+									<level width="50%" name="value" label="Value">
+									</level>
+								</data>
+								<values>
+									<value label="Name" name="name" type="text" use="required" dataType="string" />
+								</values>	
+							</level>
+						</data>
+					</attribute> -->
+				</attributes>
+			</attribute>
+		</attGroup>
+		<attGroup name="User Defined Attributes" id="userproperties" notShown="true">
+			<attribute label="User Attributes" name="userattributes" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+				<data>
+					<level width="30%" label="Name" name="name" type="text" />
+					<level width="30%" label="Type" name="type" type="combo" value="String">
+						<values>
+							<value label="String" value="String" />
+							<value label="Numeric" value="Numeric" />
+							<value label="Boolean" value="Boolean" />
+						</values>
+					</level>
+					<level width="30%" label="Value" name="value" type="text" />
+				</data>
+			</attribute>
+		</attGroup>
+	</element>
+	Ã¯Â»Â¿	<element name="gateway">
+		<attGroup name="">
+			<!-- <attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+				<data label="Category" name="category" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+					<level width="100%">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="modal" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" modalclass="view.modal.ElementChoose" title="attributes" />
+							<value name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+							</value>
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="Name" name="name" type="text" change="setName" use="optional" dataType="string"/>
+			<!-- <attribute label="Assignments" name="assignments" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+				<data>
+					<level width="40%" label="To" name="to" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="text" />
+							<value name="type" label="Type" type="text" />
+							<value name="value" label="Value" type="text" />
+							<value name="correlation" label="Correlation" type="text" />
+							<value name="targettype" label="Target Type" type="text" />
+							<value name="index" label="Index" type="text" />
+						</values>
+					</level>
+					<level width="40%" label="From" name="from" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="expressionbody" label="ExpressionBody" type="text" />
+						</values>
+					</level>
+					<level width="20%" name="assigntime" label="AssignTime" type="combo" value="Start">
+						<values>
+							<value label="Start" value="Start" />
+							<value label="End" value="End" />
+						</values>
+					</level>
+				</data>
+			</attribute>-->
+			<attribute name="exclusivetype" label="ExclusiveType" type="text" disabled="true" value="Data" readonly="true" hidden="true" />
+			<attribute name="gatewaytype" label="GatewayType" type="combo" change="typeChange,setDependencyProps" value="Exclusive">
+				<values>
+					<value label="Exclusive" value="Exclusive" enable="exclusivetype,executiontype" disable="incomingcondition,outgoingcondition,instantiate" />
+					<value label="Inclusive" value="Inclusive" enable="executiontype" disable="exclusivetype,incomingcondition,outgoingcondition,instantiate" />
+					<value label="Parallel" value="Parallel" disable="exclusivetype,incomingcondition,outgoingcondition,instantiate,executiontype" />
+					<!-- <value label="Complex" value="Complex" disable="exclusivetype,instantiate" enable="incomingcondition,outgoingcondition" /> -->
+				</values>
+			</attribute>
+			<attribute name="instantiate" label="Instantiate" type="checkbox" value="false" disabled="true" />
+			<attribute label="IncomingCondition" name="incomingcondition" disabled="true" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300">
+				<data>REGLAS DE SINTAXIS: 
+String: 'string' | Number: number | Date: [date] | Null: null 
+Entity Att.: ent_att('attr_name') | Process Att.: pro_att('attr_name') 
+Arith. Operator: +, -, /,* 
+Comp. Operator : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Boolean Operator: and, or | Unary Operator: not(expression)</data>
+			</attribute>
+			<attribute label="OutgoingCondition" name="outgoingcondition" disabled="true" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300">
+				<data>REGLAS DE SINTAXIS: 
+String: 'string' | Number: number | Date: [date] | Null: null 
+Entity Att.: ent_att('attr_name') | Process Att.: pro_att('attr_name') 
+Arith. Operator: +, -, /,* 
+Comp. Operator : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Boolean Operator: and, or | Unary Operator: not(expression)</data>
+			</attribute>
+			<attribute label="MarkerVisible" name="markervisible" type="label" value="true" hidden="true" />
+		<!-- </attGroup>
+		<attGroup name="Apia Extensions" id="apiaextensions"> -->
+			<attribute name="executiontype" label="ExecutionType" type="combo" value="Automatic" change="setExecutionType">
+				<values>
+					<value label="Automatic" value="Automatic"/>
+					<value label="Manual" value="Manual"/>
+				</values>
+			</attribute>
+		</attGroup>
+		<attGroup name="User Defined Attributes" id="userproperties" notShown="true">
+			<attribute label="User Attributes" name="userattributes" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+				<data>
+					<level width="30%" label="Name" name="name" type="text" />
+					<level width="30%" label="Type" name="type" type="combo" value="String">
+						<values>
+							<value label="String" value="String" />
+							<value label="Numeric" value="Numeric" />
+							<value label="Boolean" value="Boolean" />
+						</values>
+					</level>
+					<level width="30%" label="Value" name="value" type="text" />
+				</data>
+			</attribute>
+		</attGroup>
+	</element>
+	Ã¯Â»Â¿	<element name="mflow">
+		<attGroup name="">
+			<!-- <attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+				<data label="Category" name="category" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+					<level width="100%">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="modal" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" modalclass="view.modal.ElementChoose" title="attributes" />
+							<value name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+								<data>Documentacion</data>
+							</value>
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="Name" name="name" type="text" change="setName" use="optional" dataType="string"/>
+			<attribute label="MessageRef" name="messageref" use="optional">
+				<attributes>
+					<!-- <attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+						<data label="Category" name="category" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+							<level width="100%">
+								<data>
+									<level width="50%" name="value" label="Value">
+									</level>
+								</data>
+								<values>
+									<value name="name" label="Name" type="modal" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" modalclass="view.modal.ElementChoose" title="attributes" />
+									<value name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+									</value>
+								</values>
+							</level>
+						</data>
+					</attribute> -->
+					<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+					</attribute>
+					
+					<attribute label="Name" name="name" type="text" use="required" dataType="string" />
+					<attribute label="Properties" name="properties" type="modalArray" modalclass="view.modal.AttMultiValueFinder" modalwidth="460" modalheight="330" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" filter="String:String;Numeric:Numeric;Date:Date">
+						<data>
+							<level width="0" name="id" label="id" type="text" hidden="true" />
+							<level width="20%" name="name" label="Name" type="label" />
+							<level width="12%" name="type" label="Type" type="label" />
+							<level width="15%" name="value" label="Value" type="text" />
+							<level width="20%" name="propertytype" label="Property Type" type="combo" value="P">
+								<values>
+									<value label="Process" value="P" />
+									<value label="Entity" value="E" />
+								</values>
+							</level>
+							<level width="0" name="label" label="Name Code" type="label" hidden="true" />
+							<level width="10%" name="index" label="Index" type="text" use="optional" dataType="int" />
+							<level width="13%" name="multivalued" label="multival." type="checkbox" use="optional" dataType="boolean"/>
+							<level width="10%" name="uk" label="UK" type="checkbox" use="optional" dataType="boolean"/>
+						</data>
+					</attribute>
+				</attributes>
+			</attribute>
+		</attGroup>
+		<attGroup name="User Defined Attributes" id="userproperties" notShown="true">
+			<attribute label="User Attributes" name="userattributes" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+				<data>
+					<level width="30%" label="Name" name="name" type="text" />
+					<level width="30%" label="Type" name="type" type="combo" value="String">
+						<values>
+							<value label="String" value="String" />
+							<value label="Numeric" value="Numeric" />
+							<value label="Boolean" value="Boolean" />
+						</values>
+					</level>
+					<level width="30%" label="Value" name="value" type="text" />
+				</data>
+			</attribute>
+		</attGroup>
+	</element>
+	Ã¯Â»Â¿	<element name="association">
+		<attGroup name="">
+			<!-- <attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+				<data label="Category" name="category" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+					<level width="100%">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="modal" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" modalclass="view.modal.ElementChoose" title="attributes" />
+							<value name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+							</value>
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="Name" name="name" type="text" change="setName" use="optional" dataType="string"/>
+			<!--<attribute label="SourceRef" name="sourceref" type="label" use="optional" dataType="string"/>
+			<attribute label="TargetRef" name="targetref" type="label" use="optional" dataType="string"/> -->
+			<attribute name="direction" label="Direction" type="combo" change="setDirection" value="None">
+				<values>
+					<value label="None" value="None" />
+					<value label="One" value="From" />
+					<value label="Both" value="Both" />
+				</values>
+			</attribute>
+		</attGroup>
+	</element>
+	Ã¯Â»Â¿	<element name="sflow">
+		<attGroup name="">
+			<!-- <attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+				<data label="Category" name="category" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+					<level width="100%">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="modal" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" modalclass="view.modal.ElementChoose" title="attributes" />
+							<value name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+							</value>
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			<attribute name="conditiondocumentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="Name" name="name" type="text" change="setName" use="optional" dataType="string"/>
+			<!--<attribute label="SourceRef" name="sourceref" type="label" use="optional" dataType="string"/>
+			<attribute label="TargetRef" name="targetref" type="label" use="optional" dataType="string"/>-->
+		
+			<attribute name="conditiontype" label="ConditionType" type="combo" change="conditionChange" value="None">
+				<values>
+					<value label="Expression" value="CONDITION" enable="conditionexpression,conditiondocumentation"/>
+					<value label="None" value="None" disable="conditionexpression,conditiondocumentation"/>
+					<!-- <value label="Default" value="Default" disable="conditionexpression"/> -->
+				</values>
+			</attribute>
+			<attribute name="conditionexpression" label="ConditionExpression" disabled="true" type="modalArray" validateurl="/Apia2.3/administration.BPMNAction.do?action=xmlValCondition" modalclass="view.modal.Condition" modalwidth="330" modalheight="300" >
+				<data>REGLAS DE SINTAXIS: 
+String: 'string' | Number: number | Date: [date] | Null: null 
+Entity Att.: ent_att('attr_name') | Process Att.: pro_att('attr_name') 
+Arith. Operator: +, -, /,* 
+Comp. Operator : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Boolean Operator: and, or | Unary Operator: not(expression)</data>
+			</attribute>
+			<!-- <attribute name="conditiondocumentation" label="Condition Doc." type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute> -->
+		<!-- </attGroup>
+		<attGroup name="Apia Extensions"> -->
+			<attribute label="Apia Type" name="apiatype" type="combo" value="None" change="setApiaType">
+				<values>
+					<value label="None" value="None" />
+					<value label="Wizard" value="Wizard" />
+					<value label="Loopback" value="Loopback" />
+				</values>
+			</attribute>
+			<attribute label="ExecutionOrder" name="executionorder" type="text" use="optional" dataType="int" disabled="true"/>
+		</attGroup>
+		<attGroup name="User Defined Attributes" id="userproperties" notShown="true">
+			<attribute label="User Attributes" name="userattributes" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+				<data>
+					<level width="30%" label="Name" name="name" type="text" />
+					<level width="30%" label="Type" name="type" type="combo" value="String">
+						<values>
+							<value label="String" value="String" />
+							<value label="Numeric" value="Numeric" />
+							<value label="Boolean" value="Boolean" />
+						</values>
+					</level>
+					<level width="30%" label="Value" name="value" type="text" />
+				</data>
+			</attribute>
+		</attGroup>
+		
+	</element>
+	Ã¯Â»Â¿	<element name="pool">
+		<attGroup name="">
+			<!-- <attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+				<data label="Category" name="category" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+					<level width="100%">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="modal" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" modalclass="view.modal.ElementChoose" title="attributes" />
+							<value name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+							</value>
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="Name" name="name" type="text" change="setName" use="required" dataType="string" />
+			
+			<!-- <attribute label="ProcessRef" name="processref" hidden="true">
+				<attributes>
+					<attribute label="Name" name="name" type="text" use="required" dataType="string" />
+					<attribute label="ProcessType" name="processtype" type="label" value="Private" />
+					<!--<attribute label="ProcessType" name="processtype" type="combo" value="None" use="optional">
+						<values>
+							<value label="None" value="None" />
+							<value label="Private" value="Private" />
+							<value label="Abstract" value="Abstract" />
+							<value label="Collaboration" value="Collaboration" />
+						</values>
+					</attribute>-->
+					<!-- <attribute label="Performers" name="performers" modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=group">
+						<data>
+							<level name="perfid" type="label" width="0" label="Id" />
+							<level name="perfname" type="label" width="50%" label="Name" />
+							<level width="50%" name="condition" label="Condition" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="290">
+								<data>REGLAS DE SINTAXIS: 
+String: 'string' | Number: number | Date: [date] | Null: null 
+Entity Att.: ent_att('attr_name') | Process Att.: pro_att('attr_name') 
+Arith. Operator: +, -, /,* 
+Comp. Operator : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Boolean Operator: and, or | Unary Operator: not(expression)</data>
+							</level>
+						</data>
+					</attribute> -->
+					<!-- <attribute label="Assignments" name="assignments" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+						<data>
+							<level width="40%" label="To" name="to" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+								<data>
+									<level width="50%" name="value" label="Value">
+									</level>
+								</data>
+								<values>
+									<value name="name" label="Name" type="text" />
+									<value name="type" label="Type" type="text" />
+									<value name="value" label="Value" type="text" />
+									<value name="correlation" label="Correlation" type="text" />
+									<value name="targettype" label="Target Type" type="text" />
+									<value name="index" label="Index" type="text" />
+								</values>
+							</level>
+							<level width="40%" label="From" name="from" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+								<data>
+									<level width="50%" name="value" label="Value">
+									</level>
+								</data>
+								<values>
+									<value name="expressionbody" label="ExpressionBody" type="text" />
+								</values>
+							</level>
+							<level width="20%" name="assigntime" label="AssignTime" type="combo" value="Start">
+								<values>
+									<value label="Start" value="Start" />
+									<value label="End" value="End" />
+								</values>
+							</level>
+						</data>
+					</attribute> -->
+					<!-- <attribute label="Properties" name="properties" type="modalArray" modalclass="view.modal.AttMultiValueFinder" modalwidth="460" modalheight="330" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" filter="String:String;Numeric:Numeric;Date:Date">
+						<data>
+							<level width="0" name="id" label="id" type="text" hidden="true" />
+							<level width="20%" name="name" label="Name" type="label" />
+							<level width="12%" name="type" label="Type" type="label" />
+							<level width="15%" name="value" label="Value" type="text" />
+							<level width="20%" name="propertytype" label="Property Type" type="combo" value="P">
+								<values>
+									<value label="Process" value="P" />
+									<value label="Entity" value="E" />
+								</values>
+							</level>
+							<level width="0" name="label" label="Name Code" type="label" hidden="true" />
+							<level width="10%" name="index" label="Index" type="text" use="optional" dataType="int" />
+							<level width="13%" name="multivalued" label="multival." type="checkbox" use="optional" dataType="boolean"/>
+							<level width="10%" name="uk" label="UK" type="checkbox" use="optional" dataType="boolean"/>
+						</data>
+					</attribute>
+				</attributes>
+			</attribute>
+			
+			<!--<attribute label="ParticipantRef" name="participantref" type="modal" use="required" modalclass="view.modal.ElementChoose" modalwidth="210" modalheight="220" modalUrl="<Parameters.ROOT_PATH>/administration.BPMNAction.do?type=entities" />-->
+			<!-- <attribute label="ParticipantRef" name="participantref" hidden="true">
+				<attributes>
+					<attribute label="ParticipantType" name="participanttype" type="label" value="Entity"/>
+					<attribute label="EntityRef" name="entityref" type="modal" use="optional" modalclass="view.modal.ElementChoose" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=entities" />
+				</attributes>
+			</attribute>
+			<!--<attribute label="Lanes" name="lanes" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+				<data>
+					<level width="100%" label="Lane" name="lane" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="text" use="required" dataType="string"/>
+						</values>
+					</level>
+				</data>
+			</attribute>-->
+			
+			<!-- <attribute label="BoundaryVisible" name="boundaryvisible" type="label" value="true" hidden="true" />
+			<attribute label="MainPool" name="mainpool" type="label" value="false" hidden="true"  /> -->
+			
+			
+		</attGroup>
+		<!-- <attGroup name="User Defined Attributes" id="userproperties" notShown="true">
+			<attribute label="User Attributes" name="userattributes" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+				<data>
+					<level width="30%" label="Name" name="name" type="text" />
+					<level width="30%" label="Value" name="value" type="text" />
+					<level width="30%" label="Type" name="type" type="combo" value="String">
+						<values>
+							<value label="String" value="String" />
+							<value label="Numeric" value="Numeric" />
+							<value label="Boolean" value="Boolean" />
+						</values>
+					</level>
+				</data>
+			</attribute>
+		</attGroup> -->
+	</element>
+	Ã¯Â»Â¿	<element name="textannotation">
+		<attGroup name="">
+			<!-- <attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+				<data label="Category" name="category" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+					<level width="100%">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="modal" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" modalclass="view.modal.ElementChoose" title="attributes" />
+							<value name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+							</value>
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="ArtifactType" name="artifacttype" type="label" value="Annotation" hidden="true" />
+			<attribute label="Text" name="text" type="text" change="setText" use="required" dataType="string"/>
+		</attGroup>
+		<attGroup name="User Defined Attributes" id="userproperties" notShown="true">
+			<attribute label="User Attributes" name="userattributes" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+				<data>
+					<level width="30%" label="Name" name="name" type="text" />
+					<level width="30%" label="Value" name="value" type="text" />
+					<level width="30%" label="Type" name="type" type="combo" value="String">
+						<values>
+							<value label="String" value="String" />
+							<value label="Numeric" value="Numeric" />
+							<value label="Boolean" value="Boolean" />
+						</values>
+					</level>
+				</data>
+			</attribute>
+		</attGroup>
+	</element>
+	Ã¯Â»Â¿	<element name="group">
+		<attGroup name="">
+			<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="Name" name="name" type="text" change="setName" use="required" dataType="string" />
+			<!-- <attribute label="CategoryRef" name="categoryref">
+				<attributes>
+					<attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+						<data label="Category" name="category" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+							<level width="100%">
+								<data>
+									<level width="50%" name="value" label="Value">
+									</level>
+								</data>
+								<values>
+									<value name="name" label="Name" type="modal" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" modalclass="view.modal.ElementChoose" title="attributes" />
+									<value name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+									</value>
+								</values>
+							</level>
+						</data>
+					</attribute>
+				</attributes>
+			</attribute> -->
+			
+			<attribute label="ArtifactType" name="artifacttype" type="label" value="Group" hidden="true" />
+		
+
+			<!--<attribute label="Name" name="name" type="text" />
+			<attribute label="Group" name="group" type="text" change="setName" />-->
+		</attGroup>
+		<attGroup name="User Defined Attributes" id="userproperties" notShown="true">
+			<attribute label="User Attributes" name="userattributes" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+				<data>
+					<level width="30%" label="Name" name="name" type="text" />
+					<level width="30%" label="Value" name="value" type="text" />
+					<level width="30%" label="Type" name="type" type="combo" value="String">
+						<values>
+							<value label="String" value="String" />
+							<value label="Numeric" value="Numeric" />
+							<value label="Boolean" value="Boolean" />
+						</values>
+					</level>
+				</data>
+			</attribute>
+		</attGroup>
+	</element>
+	Ã¯Â»Â¿	<element name="swimlane">
+		<attGroup name="">
+			<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="Name" name="name" type="text" change="setName" />
+			<!-- <attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute> -->
+		</attGroup>
+		<!-- <attGroup name="User Defined Attributes" id="userproperties" notShown="true">
+			<attribute label="User Attributes" name="userattributes" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+				<data>
+					<level width="30%" label="Name" name="name" type="text" />
+					<level width="30%" label="Value" name="value" type="text" />
+					<level width="30%" label="Type" name="type" type="combo" value="String">
+						<values>
+							<value label="String" value="String" />
+							<value label="Numeric" value="Numeric" />
+							<value label="Boolean" value="Boolean" />
+						</values>
+					</level>
+				</data>
+			</attribute>
+		</attGroup> -->
+	</element>
+	
+	Ã¯Â»Â¿	<element name="dataobject">
+		<attGroup name="">
+			<!-- <attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+				<data label="Category" name="category" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+					<level width="100%">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="modal" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=subProcess" modalclass="view.modal.ElementChoose" title="attributes" />
+							<value name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+							</value>
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			
+			<attribute label="ArtifactType" name="artifacttype" type="label" value="DataObject" hidden="true" />
+		
+			<attribute label="Name" name="name" type="text" change="setName" use="required" dataType="string"/>
+			<attribute label="State" name="state" type="text" use="optional" change="setState" dataType="string"/>
+			<!-- <attribute label="Properties" name="properties" type="modalArray" modalclass="view.modal.AttMultiValueFinder" modalwidth="460" modalheight="330" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" filter="String:String;Numeric:Numeric;Date:Date">
+				<data>
+					<level width="0" name="id" label="id" type="text" hidden="true" />
+					<level width="20%" name="name" label="Name" type="label" />
+					<level width="12%" name="type" label="Type" type="label" />
+					<level width="15%" name="value" label="Value" type="text" />
+					<level width="20%" name="propertytype" label="Property Type" type="combo" value="P">
+						<values>
+							<value label="Process" value="P" />
+							<value label="Entity" value="E" />
+						</values>
+					</level>
+					<level width="0" name="label" label="Name Code" type="label" hidden="true" />
+					<level width="10%" name="index" label="Index" type="text" use="optional" dataType="int" />
+					<level width="13%" name="multivalued" label="Multivalued" type="checkbox" use="optional" dataType="boolean"/>
+					<level width="10%" name="uk" label="UK" type="checkbox" use="optional" dataType="boolean"/>
+				</data>
+			</attribute> -->
+		</attGroup>
+		<attGroup name="User Defined Attributes" id="userproperties" notShown="true">
+			<attribute label="User Attributes" name="userattributes" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+				<data>
+					<level width="30%" label="Name" name="name" type="text" />
+					<level width="30%" label="Value" name="value" type="text" />
+					<level width="30%" label="Type" name="type" type="combo" value="String">
+						<values>
+							<value label="String" value="String" />
+							<value label="Numeric" value="Numeric" />
+							<value label="Boolean" value="Boolean" />
+						</values>
+					</level>
+				</data>
+			</attribute>
+		</attGroup>
+	</element>
+	Ã¯Â»Â¿	<element name="back" x="0" y="0" height="0" width="0" mainpool="true">
+		<attGroup name="">
+			<!--<attribute label="Business Process Diagram" name="bpd">
+				<attributes>
+					<attribute label="Id" name="id" type="text" use="required" dataType="int" />
+					<attribute label="Name" name="name" type="text" use="required" dataType="string" />
+					<attribute label="Version" name="version" type="text" use="optional" dataType="string" />
+					<attribute label="Author" name="author" type="text" use="optional" dataType="string" />
+					<attribute label="Language" name="language" type="combo" use="optional" value="EspaÃƒÂ±ol">
+						<values>
+							<value label="EspaÃƒÂ±ol" value="EspaÃƒÂ±ol" />
+							<value label="English" value="English" />
+							<value label="PortuguÃƒÂªs" value="PortuguÃƒÂªs" />
+						</values>
+					</attribute>
+					<attribute label="QueryLanguage" name="querylanguage" type="text" use="optional" dataType="string" />
+					<attribute label="CreationDate" name="creationdate" type="text" use="optional" dataType="date" />
+					<attribute label="ModificationDate" name="modificationdate" type="text" use="optional" dataType="date" />-->
+					<!--<attribute label="Pools" name="language" type="text" use="required" />-->
+					<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+					</attribute>
+					<!--<attribute label="description" name="description" type="text" />-->
+				<!-- </attributes> 
+			</attribute> -->
+			<!-- <attribute label="Pool" name="mainpool">
+				<attributes>
+					<attribute label="Name" name="name" type="text" use="required" dataType="string" />
+					<!--<attribute label="ParticipantRef" name="participantref" type="modal" use="required" modalclass="view.modal.ElementChoose" modalwidth="210" modalheight="220" modalUrl="<Parameters.ROOT_PATH>/administration.BPMNAction.do?type=entities" />-->
+					<!-- <attribute label="ParticipantRef" name="participantref">
+						<attributes>
+							<attribute label="ParticipantType" name="participanttype" type="label" value="Entity"/>
+							<attribute label="EntityRef" name="entityref" type="modal" use="optional" modalclass="view.modal.ElementChoose" modalwidth="210" modalheight="220" modalUrl="/Apia2.3/administration.BPMNAction.do?type=entities" />
+						</attributes>
+					</attribute>
+					<attribute label="BoundaryVisible" name="boundaryvisible" type="label" value="false" />
+					<attribute label="MainPool" name="mainpool" type="label" value="true" />
+				</attributes>
+			</attribute>
+			
+			
+			<attribute label="Process" name="process">
+				<attributes>
+					<attribute label="Name" name="name" type="text" use="required" dataType="string" />
+					<attribute label="ProcessType" name="processtype" type="label" value="Private"/>
+					<!--<attribute label="ProcessType" name="processtype" type="combo" value="None" use="optional">
+						<values>
+							<value label="None" value="None" />
+							<value label="Private" value="Private" />
+							<value label="Abstract" value="Abstract" />
+							<value label="Collaboration" value="Collaboration" />
+						</values>
+					</attribute> -->
+					<!-- <attribute label="Performers" name="performers" modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=group">
+						<data>
+							<level name="perfid" type="label" width="0" label="Id" />
+							<level name="perfname" type="label" width="50%" label="Name" />
+							<level width="50%" name="condition" label="Condition" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="290">
+								<data>REGLAS DE SINTAXIS: 
+String: 'string' | Number: number | Date: [date] | Null: null 
+Entity Att.: ent_att('attr_name') | Process Att.: pro_att('attr_name') 
+Arith. Operator: +, -, /,* 
+Comp. Operator : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Boolean Operator: and, or | Unary Operator: not(expression)</data>
+							</level>
+						</data>
+					</attribute>
+					<!-- <attribute label="Assignments" name="assignments" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+						<data>
+							<level width="40%" label="To" name="to" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+								<data>
+									<level width="50%" name="value" label="Value">
+									</level>
+								</data>
+								<values>
+									<value name="name" label="Name" type="text" />
+									<value name="type" label="Type" type="text" />
+									<value name="value" label="Value" type="text" />
+									<value name="correlation" label="Correlation" type="text" />
+									<value name="targettype" label="Target Type" type="text" />
+									<value name="index" label="Index" type="text" />
+								</values>
+							</level>
+							<level width="40%" label="From" name="from" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+								<data>
+									<level width="50%" name="value" label="Value">
+									</level>
+								</data>
+								<values>
+									<value name="expressionbody" label="ExpressionBody" type="text" />
+								</values>
+							</level>
+							<level width="20%" name="assigntime" label="AssignTime" type="combo" value="Start">
+								<values>
+									<value label="Start" value="Start" />
+									<value label="End" value="End" />
+								</values>
+							</level>
+						</data>
+					</attribute> -->
+					<!-- <attribute label="Properties" name="properties" type="modalArray" modalclass="view.modal.AttMultiValueFinder" modalwidth="460" modalheight="330" modalUrl="/Apia2.3/administration.BPMNAction.do?type=attributes" filter="String:String;Numeric:Numeric;Date:Date">
+						<data>
+							<level width="0" name="id" label="id" type="text" hidden="true" />
+							<level width="20%" name="name" label="Name" type="label" />
+							<level width="12%" name="type" label="Type" type="label" />
+							<level width="15%" name="value" label="Value" type="text" />
+							<level width="20%" name="propertytype" label="Property Type" type="combo" value="P">
+								<values>
+									<value label="Process" value="P" />
+									<value label="Entity" value="E" />
+								</values>
+							</level>
+							<level width="0" name="label" label="Name Code" type="label" hidden="true" />
+							<level width="10%" name="index" label="Index" type="text" use="optional" dataType="int" />
+							<level width="13%" name="multivalued" label="multival." type="checkbox" use="optional" dataType="boolean"/>
+							<level width="10%" name="uk" label="UK" type="checkbox" use="optional" dataType="boolean"/>
+						</data>
+					</attribute>
+				</attributes>
+			</attribute>
+			<!-- <attribute name="proname" label="Process Name" type="text" />
+			<attribute name="proTitle" label="Process Title" type="text" />
+			<attribute name="prodesc" label="Process Desc" type="text" />
+			<attribute name="protype" label="Process Type" type="text" />
+			<attribute name="proaction" label="Process Action" type="text" />
+			<attribute name="promaxduration" label="Processs Max Duration" type="text" />
+			<attribute name="proalertduration" label="Process Alert Duration" type="text" /> -->
+		<!-- </attGroup>
+		
+		<attGroup name="Apia Extensions"> -->
+			<!--<attribute label="Parameters" name="parameters">
+				<attributes>
+					<attribute label="EnvId" name="envid" type="label" value="<dBean.getEnvId(request)>" />
+					<attribute label="User" name="reguser" type="label" value="<dBean.getUserId(request)>" />
+					<attribute label="Date" name="regdate" type="label" value="" />
+					<attribute label="Status" name="regstatus" type="label" value="" />
+				</attributes>
+			</attribute>-->
+			<attribute label="Process Events" name="bussinessclasses" type="modalArray" modalclass="view.modal.ComboAdder" modalwidth="384" modalheight="250" evtXml="/Apia2.3/administration.BPMNAction.do?action=events&amp;evtScope=P" clsXml="/Apia2.3/administration.BPMNAction.do?action=classes">
+				<data>
+					<level width="40%" name="evtname" label="Event" type="label" />
+					<level width="0" name="evtid" label="event" type="label" />
+					<level width="30%" name="clsname" label="Name" type="label" />
+					<level width="0" name="clsid" label="clsid" type="label" />
+					<level width="30%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalwidth="500" modalheight="320" modalUrl="/Apia2.3/administration.BPMNAction.do?action=bindings" attributesUrl="/Apia2.3/administration.BPMNAction.do?type=attributes">
+						<data>
+							<level width="0" name="id" label="id" type="text" hidden="true" />
+							<level width="30%" name="param" label="Parameter" type="label" />
+							<level width="10%" name="type" label="Type" type="label" />
+							<level width="20%" name="value" label="Value" type="label" />
+							<level width="20%" name="attribute" label="Attribute" type="label" atttype="event" />
+							<level width="0" name="attributeid" label="AttributeId" type="label" />
+							<level width="20%" name="inout" label="In/Out" type="label" />
+						</data>
+					</level>
+				</data>
+			</attribute>
+			
+		</attGroup>
+		
+	</element>
+</elements>

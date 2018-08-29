@@ -1,0 +1,83 @@
+BODY{
+   MARGIN-TOP:1px;
+   MARGIN-LEFT:0px;
+   MARGIN-RIGHT:0px;
+   MARGIN-BOTTOM:0px;
+   OVERFLOW: hidden;
+}
+    
+.spanLogged{
+	WIDTH:30px;
+	HEIGHT: 18px;
+	color: #47493d;
+	FONT-SIZE: 14px;
+	MARGIN-TOP:1px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: times new roman;
+}
+
+.spanName{
+	HEIGHT: 18px;
+	color: #47493d;
+	FONT-SIZE: 14px;
+	MARGIN-TOP:1px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: times new roman;
+}
+
+.spanMenu{
+	HEIGHT: 18px;
+	color: #47493d;
+	FONT-SIZE: 14px;
+	MARGIN-TOP:1px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: times new roman;
+}
+
+.spanLogout{
+	HEIGHT: 18px;
+    color: #47493d;
+	FONT-SIZE: 14px;
+	MARGIN-TOP:1px;
+	MARGIN-RIGHT:60px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: times new roman;
+}
+
+.btn{
+	BORDER:1px solid #416D94;
+	color:#1B4D80;
+    HEIGHT: 18px;
+    WIDTH: 18px;
+    MARGIN-LEFT: 1px;
+    margin-right:2px;
+	margin-bottom:3px;
+    PADDING: 0px;
+    TEXT-ALIGN: center;
+}
+
+.btn IMG{
+	FILTER:alpha(opacity=40);
+}    
+
+.degree1 {
+	 background-color: #FFFFFF;
+}
+.degree{
+
+}
+
+.degree2 {
+	background: url("../images/top_frame.gif") repeat-x scroll 0 0 transparent;
+	height: 130px;
+	background-color: #003a73; 
+}
+
+SELECT{
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif;
+	FONT-SIZE: 8pt;
+}

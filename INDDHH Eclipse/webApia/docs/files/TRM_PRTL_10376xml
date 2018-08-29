@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><informationXS xmlns="http://www.com.uy/st/xml">
+  <entitiesXS>
+    <entityXS name="EXPEDIENTE">
+      <attributesXS>
+        <attributeXS isFile="false" name="EXP_TIPO_TITULAR_ENUM">
+          <valueXS index="0">25</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="EXP_TITULAR_DESCRIPCION_STR">
+          <valueXS index="0">Tipo documento: R.U.T. / Nro. documento: 212532580016 / Titular: CABLE PLUS S A</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="EXP_APE_PER_JUR_STR">
+          <valueXS index="0">CABLE PLUS S A</valueXS>
+        </attributeXS>
+      </attributesXS>
+    </entityXS>
+  </entitiesXS>
+</informationXS>

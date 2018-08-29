@@ -1,0 +1,525 @@
+/*CONTAINER*/
+#tabMobileMenu {
+	background-image: url("img/menu/mobile-menu.png") !important;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 30px;
+	width: 30px;
+	border-width: 0px;
+	margin-left: 5px;
+	background-color: transparent !important;
+}
+
+div.mobileApiaLogo {
+	background-image: url("img/menu/apia-white-small.png") ;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+	width: 100px;
+	height: 40px;
+	right: -4px;
+	top: 1px;
+}
+
+#tabHome {
+	display: none;
+}
+
+.splashLayout div.planelContainerHorizontalTop-OneColumn {
+	width: 98%;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+#tabScrollContainer {
+	display: none;
+}
+
+div.mobileMenuContent {
+	display: none;
+	position: absolute;
+	top: 0px !important;
+	background-color: #464646;
+	border: none;
+	color: white;
+	height: 100%;
+	padding: 6px;
+	font-size: 1.4em;
+}
+
+div.mobileMenuContent ul {
+	list-style: none;
+	padding-left: 10px;
+}
+
+div.mobileMenuContent li {
+	line-height: 40px;
+	background-repeat: no-repeat;
+	background-position: left;
+	padding-left: 40px;
+}
+
+div.mobileMenuContent li.pressed {
+	background-color: #555555;
+}
+
+div.mobileMenuContent #menuOptHome {
+	background-image: url("img/menu/mobile-menu-home.png");
+}
+
+div.mobileMenuContent #menuOptTasksList {
+	background-image: url("img/menu/mobile-menu-tasks.png");
+}
+
+div.mobileMenuContent #menuOptStartPro {
+	background-image: url("img/menu/mobile-menu-process.png");
+}
+
+div.mobileMenuContent #menuOptQuery {
+	background-image: url("img/menu/mobile-menu-query.png");
+}
+
+div.mobileMenuContent #menuOptChangeUserPwd {
+	background-image: url("img/menu/mobile-menu-change-pwd.png");
+}
+
+div.mobileMenuContent #menuOptChangeEnv {
+	background-image: url("img/menu/mobile-menu-change-env.png");
+}
+
+div.mobileMenuContent #menuOptChangeEnv #collapseMenuEnvIcon.menu-change-env-open {
+	background-image: url("img/menu/mobile-menu-collapse.png");
+    background-position: 100%;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 40px;
+    float: right;
+    margin-right: 10px;
+}
+
+div.mobileMenuContent hr {
+	border-color: #a0a0a0;
+}
+
+div.mobileMenuContent #menuOptLogout, div.mobileMenuContent #menuOptBack {
+    padding-left: 20px;
+    line-height: 40px;
+}
+
+div.mobileMenuContent div.menuInfo {
+	padding: 10px;
+	text-align: center;
+}
+
+div.mobileMenuContent ul#usrEnvList {
+	height: 200px;
+	overflow: scroll;
+}
+
+div.mobileMenuContent ul#usrEnvList li {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 40px;
+    padding-right: 10px;
+}
+
+div.mobileMenuContent ul#usrEnvList li.current-env {
+	font-weight: bold;
+	background-color: #3E3E3E;
+}
+	
+div.mobileMenuContent div.menuInfo > div.menuInfo-usrImg {
+	background-repeat: no-repeat;
+	margin-left: auto;
+	margin-right: auto;
+	width: 38px;
+	height: 38px;
+	background-color: #666666;
+	border-radius: 19px;
+	margin-bottom: 10px;
+	background-position: center;
+}
+
+div.mobileMenuContent div.menuInfo > span {
+	line-height: 20px;
+}
+div.mobileMenuContent span.menuInfo-loginName {
+	font-size: 1.2em;
+}
+
+div.mobileMenuContent span.menuInfo-login {
+	font-size: 0.8em;
+}
+
+div.mobileMenuContent span.menuInfo-env {
+	
+}
+
+div.mask.mobileMenuMask {
+	filter: alpha(opacity=85);
+	background-color: #ffffff;
+	opacity: .85;
+}
+
+div.theFooter {
+	display: none;
+}
+
+div.mobileMask {
+	width: 100% !important;
+	left: 0px !important;
+	color: #004c92;
+	font-size: 1.3em;
+}
+
+div.mobileMask div.spinner-content {
+	top: 40% !important;
+}
+
+/*SPLASH*/
+div.pnl_MENU_LANDING_PAGE div.content {
+	padding-right: 7px;
+}
+
+div.pnl_MENU_LANDING_PAGE table {
+	width: 100%;
+}
+
+.panel div.functionality {
+	width: 48%;
+	margin-right: 1%;
+	height: auto;
+	margin-bottom: 20px;
+	border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 3%;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 10px -5px #c0c0c0;
+}
+
+.panel div.functionality img {
+	margin-right: 10px;
+}
+
+.panel div.functionality div.name {
+	white-space: normal;
+    word-wrap: break-word;
+}
+
+.panel div.functionality div.name div.fncDesc{
+	font-size: 1em;
+}
+
+/*Funcionalidades en 1 sola linea*/
+.panel div.functionality {
+	width: 98%;
+	margin-bottom: 10px;
+}
+.panel div.functionality br {
+	display: none;
+}
+
+
+
+div.panel div table.dshMenu {
+	width: 100% !important;
+}
+
+div.panel > div.title {
+	font-size: 1.3em !important;	
+}
+
+div.panel > div.content {
+	font-size: 1.2em;
+}
+
+div.panel > div > table tbody tr {
+	line-height: 25px;
+}
+
+div.panel > div.content table thead tr td:first-child {
+	width: 30px;
+}
+
+div.panel > div.content table tbody tr.additionalInfo div.container {
+	width: auto !important;
+	display: block;
+}
+div.panel > div.content table tbody tr.additionalInfo div.container > .field {
+	font-weight: bold;
+	width: 130px;
+}
+
+div.panel > div.content table tbody tr.additionalInfo div.container > .content {
+	vertical-align: top;
+}
+
+div.pnl_ACQUIRED_TASK_CHART > .content > div:first-child, div.pnl_FREE_TASK_CHART > .content > div:first-child {
+	height: auto !important;
+}
+
+img.resizableOnResize {
+	width: 100%;
+}
+
+div.panel div.title div.options {
+	display: block;
+}
+
+div.panelMoveIcon {
+	display: none;
+}
+
+div.panelConfigurationIcon {
+	background-image: url("img/splash/panelconf_mobile.gif") !important;
+	margin-top: 0px !important;
+	padding: 2px;
+}
+
+div.panelConfigurationOptions {
+	left: auto !important;
+	right: 10px;
+}
+
+div.panelConfigurationOption  {
+	line-height: 30px !important;
+}
+
+/*MODALES*/
+div.modalContent {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+.modalContent table tr td.text {
+	white-space: normal;
+	width: 50%;
+}
+
+div.mdlContainer  {
+	width: 90% !important;
+}
+
+div.mdlContainer div.mdlBody div.gridFooter {
+    width: 100% !important;
+}
+
+#mdlDocumentContainer textarea {
+	width: 99% !important;
+	resize: none;
+}
+
+#mdlDocumentContainer .mdlBody > table td.text {
+	width: 20%;
+}
+
+.modalOptionsContainer .option {
+	min-height: 21px;
+	height: auto !important;
+}
+
+.modalOptionsContainer .optionWidthParameter {
+    width: 40% !important;
+}
+
+#mdlDocumentPoolContainter > span.option > span {
+	word-break: break-all;
+}
+
+div.mdlContainer .mdlHeader {
+	font-size: 1.2em;
+}
+
+/*EJECUCION*/
+
+div.formContainer > table > tbody > tr > td {
+	display: block;
+}
+
+#tabHolder {
+	width: 100%;
+}
+
+div.fncPanel.info div.title {
+    color: #464646;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+div.fncPanel.info div.title > span > div {
+	display: inline;
+}
+
+div.divFncDescription div.fncDescriptionImgSection {
+    float: left;
+    height: 64px;
+    width: 64px;
+    margin-right: 8px;
+}
+
+div.divFncDescription div.fncDescriptionImgUsers {
+    float: left;
+    background-image: url(img/users.gif);
+    height: 64px;
+    width: 64px;
+    margin-right: 8px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+div.divFncDescription div.fncDescriptionText {
+    padding-top: 8px;
+}
+
+div.buttonsActions {
+    padding-top: 10px;
+}
+
+
+div.buttonsActions > div, div.optionsContainer.mobileQry > div {
+	display: inline !important;
+}
+
+div.buttonsActions div.title {
+	display: none !important;
+}
+
+div.buttonsActions div.button > button, div.optionsContainer.mobileQry div.button > button {
+	width: 32%;
+}
+
+div.optionsContainer.mobileQry div.filter {
+	display: block !important;
+}
+
+div.optionsContainer.mobileQry div.fncPanel.options div.content {
+	padding: 0px;
+}
+
+#stepsGraph {
+    display: block !important;
+    width: 100%;
+    text-align: center;
+    float: none;
+    padding-bottom: 10px;
+}
+
+#stepsGraph > div {
+	float: none;
+	display: inline-block !important;
+}
+
+div.tabContent {
+	padding-left: 0px !important;
+}
+
+div.fieldGroup div.fieldCommentLeft , div.fieldGroup div.fieldCommentRight {
+	display: block !important;
+	width: 100% !important;
+	font-size: 1.2em;
+}
+
+.asList > * > .option {
+	width: 95% !important;
+}
+
+div.dataContainer.allowMobileMaxSize {
+	padding-right: 1.3em !important;
+}
+
+div.tabHolder > div.tab, div.fncPanel.info div.title, .formContainer > table {
+	font-size: 1.2em !important;
+}
+
+div.fieldGroup div.title {
+	font-size: 1.3em !important;
+}
+
+div.fncPanel div.button {
+	margin-right: 1px !important;
+}
+
+
+/*CONSULTAS Y OTRAS FUNCIONALIDADES*/
+body.mobileNonExec  {
+	padding-left: 15px;
+    padding-right: 15px;
+}
+
+body.mobileNonExec.no-padding {
+	padding: 0px;
+}
+
+body.mobileNonExec div.optionsContainer {
+    display: block;
+    float: none;
+    margin-right: 0px;
+    margin-top: 0px;
+    position: initial !important;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+}
+
+body.mobileNonExec div.queryModal {
+	position: relative;
+}
+
+body.mobileNonExec div.queryModal div.optionsContainer {
+	position: absolute !important;
+}
+
+body.mobileNonExec #panelPinHidde, #queryForm #favFncContainer {
+	display: none;
+}
+
+body.mobileNonExec div.gridContainer {
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+body.mobileNonExec div.optionsContainer.mobileQry {
+	margin-top: 20px;
+}
+body.mobileNonExec div.optionsContainer div.fncPanel {
+	margin-bottom: 0px !important;
+}
+body.mobileNonExec div.optionsContainer div.fncPanel.options {
+	overflow: auto;
+}
+body.mobileNonExec div.optionsContainer div.fncPanel.options div.content {
+	min-width: 300px;
+}
+body.mobileNonExec div.optionsContainer.mobileQry div.options .title {
+	display: none !important;
+}
+
+body.mobileNonExec  div.dataContainer {
+	position: initial !important;
+	padding-right: 0px !important;
+}
+
+body.mobileNonExec  div.optionsContainer #divAdminActEdit div.title {
+	display: none;
+}
+
+div.gridFooter div.navButtons div.pGroup span.moreInformation {
+	display: none;
+}
+
+div.noDataMessage {
+	width: 90% !important;
+	top: initial !important;
+}
+
+/*MONITOREO*/
+
+div.planelContainer div.panel {
+	display: block;
+    width: auto;
+}

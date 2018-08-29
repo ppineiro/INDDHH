@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions 
+	name="RUTPersonaGetEntidad" 
+	targetNamespace="http://rutpersonagetentidad.dgi.gub.uy"
+	xmlns:tns="http://rutpersonagetentidad.dgi.gub.uy" 
+	xmlns:wsdlns="http://rutpersonagetentidad.dgi.gub.uy"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:dgi="DGI_Modernizacion_Consolidado">
+	<types>
+		<schema 
+			targetNamespace="DGI_Modernizacion_Consolidado"
+			elementFormDefault="qualified" 
+			xmlns="http://www.w3.org/2001/XMLSchema"
+			xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+			<element name="RUTPersonaGetEntidad.Execute">
+				<complexType>
+					<sequence>
+						<element name="Ruc" type="xsd:string" />
+					</sequence>
+				</complexType>
+			</element>
+			<element name="RUTPersonaGetEntidad.ExecuteResponse">
+				<complexType>
+					<sequence>
+						<element minOccurs="1" maxOccurs="1" name="Data" type="xsd:string" />
+						<element minOccurs="1" maxOccurs="1" name="Mensajes" type="xsd:string" />
+					</sequence>
+				</complexType>
+			</element>
+		</schema>
+	</types>
+	<message name="RUTPersonaGetEntidad.ExecuteSoapIn">
+		<part name="parameters" element="dgi:RUTPersonaGetEntidad.Execute" />
+	</message>
+	<message name="RUTPersonaGetEntidad.ExecuteSoapOut">
+		<part name="parameters" element="dgi:RUTPersonaGetEntidad.ExecuteResponse" />
+	</message>
+	<portType name="RUTPersonaGetEntidadSoapPort">
+		<operation name="Execute">
+			<input message="wsdlns:RUTPersonaGetEntidad.ExecuteSoapIn" />
+			<output message="wsdlns:RUTPersonaGetEntidad.ExecuteSoapOut" />
+		</operation>
+	</portType>
+	<binding name="RUTPersonaGetEntidadSoapBinding" type="wsdlns:RUTPersonaGetEntidadSoapPort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="Execute">
+			<soap:operation soapAction="DGI_Modernizacion_Consolidadoaction/ARUTPERSONAGETENTIDAD.Execute" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="RUTPersonaGetEntidad">
+		<port name="RUTPersonaGetEntidadSoapPort" binding="wsdlns:RUTPersonaGetEntidadSoapBinding">
+			<soap:address location="http://localhost:15858/RUTWebServicesTest/servlet/arutpersonagetentidad" />
+		</port>
+	</service>
+</definitions>

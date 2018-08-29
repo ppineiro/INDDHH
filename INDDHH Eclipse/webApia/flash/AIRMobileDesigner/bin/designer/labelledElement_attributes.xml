@@ -1,0 +1,660 @@
+<?xml version="1.0" ?>
+<elements>
+	<element name="task">
+		<attGroup name="BPMN">
+			<!-- <attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.AdvancedDoc" modalwidth="400" modalheight="340" use="optional" dataType="string" formValues="true" eventValues="true">
+				<values>
+					<value name="documentation" label="Documentation" />
+					<value name="forms" label="Forms" type="modalArray" modalclass="view.modal.AdvancedDoc" modalwidth="360" modalheight="390" use="optional" dataType="string">
+						<data>
+							<level width="35%" name="formName" label="Form Name" type="text" use="optional" dataType="string" />
+							<level width="40%" name="formDesc" label="Description" type="text" use="optional" dataType="string" />
+							<level width="24%" name="doc" label="Documentation" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="700" modalheight="330">
+								<data>
+									<level width="20%" name="fname" label="Name" type="text" />
+									<level width="30%" name="description" label="Description" type="text" />
+									<level width="10%" name="fieldtype" label="Field Type" value="Input" type="combo">
+										<values>
+											<value label="Input" value="Input" />
+											<value label="ComboBox" value="Combobox" />
+											<value label="ListBox" value="Listbox" />
+											<value label="Button" value="Button" />
+											<value label="Radio" value="Radio" />
+											<value label="CheckBox" value="CheckBox" />
+											<value label="TextArea" value="TextArea" />
+											<value label="FileInput" value="FileInput" />
+											<value label="Image" value="Image" />
+											<value label="Grid" value="Grid" />
+										</values>
+									</level>
+									<level width="10%" name="datatype" label="Data Type" type="combo" value="String">
+										<values>
+											<value label="String" value="String" />
+											<value label="Number" value="Number" />
+											<value label="Date" value="Date" />
+										</values>
+									</level>
+									<level width="29%" name="rules" label="Rules" type="text" />
+								</data>
+							</level>
+						</data>
+					</value>
+					<value name="events" label="Events" type="modalArray" modalclass="view.modal.AdvancedDoc" modalwidth="360" modalheight="380" use="optional" dataType="string">
+						<data>
+							<level width="35%" name="evtName" label="Event Name" type="text" use="optional" dataType="string" />
+							<level width="65%" name="evtDesc" label="Action" type="text" use="optional" dataType="string" />
+						</data>
+					</value>
+				</values>
+			</attribute> -->
+			<attribute name="documentation" label="lbl_documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="lbl_name" name="nameChooser" type="text" change="setName" regExp="a-zA-Z0-9_." value="DEFAULT_TASK" />
+			<attribute label="lbl_title" name="title" type="text" use="required" dataType="string"/>
+			<attribute label="lbl_color" name="colorFill" type="colorPicker" change="setColor" value="" />
+			<attribute label="lbl_tasktype" name="taskType" type="combo" change="typeChange" value="User">
+				<values>
+					<value label="lbl_none" value="None" enable="name,looptype,loopcondition" disable="service,receive,send,user,performers" />
+					<value label="lbl_service" value="Service" enable="service,name" disable="receive,send,user,performers,looptype,loopcondition" />
+					<value label="lbl_receive" value="Receive" enable="receive,name" disable="service,send,user,looptype,loopcondition,performers" />
+					<value label="lbl_send" value="Send" enable="send,name,looptype,loopcondition" disable="service,receive,user,performers" />
+					<value label="lbl_user" value="User" enable="user,looptype,loopcondition,performers" disable="service,receive,send,name" />
+					<value label="lbl_manual" value="Manual" enable="name,looptype,loopcondition,performers" disable="service,send,user,receive" />
+					<value label="lbl_script" value="Script" enable="name,looptype,loopcondition" disable="service,send,user,receive,performers,performers" />
+					<!-- <value label="Reference Task" value="TaskReference" /> -->
+				</values>
+			</attribute>
+			<attribute label="lbl_looptype" name="looptype" type="combo" change="loopTypeChange,setMultiInMsgs" value="None">
+				<values>
+					<value label="lbl_none" value="None" disable="testtime,mi_ordering,loopmaximum,loopcounter,mi_condition,mi_flowcondition,complexmi_flowcondition" enable="" />
+					<!-- <value label="Standard" value="Standard" disable="mi_ordering,mi_condition,mi_flowcondition,complexmi_flowcondition" enable="testtime,loopmaximum,loopcounter,loopcondition"/> -->
+					<value label="lbl_multiinstance" value="MultiInstance" enable="mi_ordering,mi_condition" disable="testtime,loopmaximum,mi_flowcondition,complexmi_flowcondition,loopcounter"/>
+				</values>
+			</attribute>
+			<attribute label="lbl_mi_condition" name="mi_condition" type="text" disabled="true" regExp="0-9" dataType="integer"/>
+			<attribute label="lbl_performers" name="performers" modalwidth="380" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+				<data>
+					<level name="perfname" type="text" regExp="a-zA-Z0-9_." width="100%" label="lbl_name" />
+				</data>
+			</attribute>
+			<attribute name="forms" label="lbl_forms" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="500" modalheight="300" use="optional" dataType="string">
+				<data>
+					<level width="30%" name="formName" regExp="a-zA-Z0-9_." label="lbl_formname" type="text" use="optional" dataType="string" />
+					<level width="53%" name="formDesc" label="lbl_description" type="text" use="optional" dataType="string" />
+					<level width="16%" name="doc" label="lbl_attributes" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="700" modalheight="330">
+						<data>
+							<level width="20%" name="fname" regExp="a-zA-Z0-9_." label="lbl_name" type="text" />
+							<level width="30%" name="lbl_description" label="Description" type="text" />
+							<level width="10%" name="fieldtype" label="lbl_fieldtype" value="Input" type="combo">
+								<values>
+									<value label="lbl_input" value="Input" />
+									<value label="lbl_combobox" value="Combobox" />
+									<value label="lbl_listbox" value="Listbox" />
+									<value label="lbl_button" value="Button" />
+									<value label="lbl_radio" value="Radio" />
+									<value label="lbl_checkbox" value="CheckBox" />
+									<value label="lbl_textarea" value="TextArea" />
+									<value label="lbl_fileinput" value="FileInput" />
+									<value label="lbl_image" value="Image" />
+									<value label="lbl_grid" value="Grid" />
+								</values>
+							</level>
+							<level width="10%" name="datatype" label="lbl_datatype" type="combo" value="String">
+								<values>
+									<value label="lbl_string" value="String" />
+									<value label="lbl_number" value="Number" />
+									<value label="lbl_date" value="Date" />
+								</values>
+							</level>
+							<level width="29%" name="rules" label="lbl_rules" type="text" />
+						</data>
+					</level>
+				</data>
+			</attribute>
+			<attribute name="events" label="lbl_events" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="400" modalheight="380" use="optional" dataType="string">
+				<data>
+					<level width="35%" name="evtName" label="lbl_evtname" type="combo" use="optional" dataType="string" value="ONWARNING">
+						<values>
+							<value label="lbl_onwarning" value="ONWARNING" />
+							<value label="lbl_onoverdue" value="ONOVERDUE" />
+							<value label="lbl_onacquire" value="ONACQUIRE" />
+							<value label="lbl_onrelease" value="ONRELEASE" />
+							<value label="lbl_oncomplete" value="ONCOMPLETE" />
+							<value label="lbl_onready" value="ONREADY" />
+							<value label="lbl_onsave" value="ONSAVE" />
+							<value label="lbl_onstepchg" value="ONSTEPCHG" />
+							<value label="lbl_onreasign" value="ONREASIGN" />
+							<value label="lbl_onelevate" value="ONELEVATE" />
+							<value label="lbl_ondelegate" value="ONDELEGATE" />
+							<value label="lbl_onwork" value="ONWORK" />
+							<value label="lbl_ondetail" value="ONDETAIL" />
+							<value label="lbl_onrollback" value="ONROLLBACK" />
+						</values>
+					</level>
+					<level width="64%" name="evtDesc" label="lbl_businessclass" type="text" use="optional" dataType="string" regExp="a-zA-Z0-9_." />
+				</data>
+			</attribute>
+			<attribute label="lbl_firsttask" name="firsttask" type="text" use="optional" dataType="string" value="false" hidden="true" />
+		</attGroup>
+	</element>
+	<element name="csubflow">
+		<attGroup name="BPMN">
+			
+			<attribute name="documentation" label="lbl_documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			
+			<attribute label="lbl_name" value="DEFAULT_PROCESS" regExp="a-zA-Z0-9_." name="name" change="setName" type="text" />
+			<attribute label="lbl_color" name="colorFill" type="colorPicker" change="setColor" value="" />
+			<attribute label="lbl_subprocesstype" name="subprocesstype" type="combo" value="Embedded" use="required" change="typeChange">
+				<values>
+					<value label="lbl_embedded" value="Embedded" disable="execution,datamappings,processref,skipfirsttask,processforms,entityforms,entity" enable=""/>
+					<value label="lbl_reusable" value="Reusable" enable="execution,datamappings,processref,skipfirsttask,processforms,entityforms,entity" disable=""/>
+				</values>
+			</attribute>
+			
+			<attribute label="lbl_looptype" name="looptype" type="combo" change="loopTypeChange" value="None">
+				<values>
+					<value label="lbl_none" value="None" disable="testtime,mi_ordering,loopmaximum,loopcounter,loopcondition,mi_condition,mi_flowcondition,complexmi_flowcondition,loopdocumentation"/>
+					<value label="lbl_standard" value="Standard" disable="mi_ordering,mi_condition,mi_flowcondition,complexmi_flowcondition,loopmaximum,loopcounter" enable="testtime,loopcondition,loopdocumentation"/>
+					<value label="lbl_multiinstance" value="MultiInstance" enable="mi_ordering,mi_condition" disable="testtime,loopmaximum,loopcondition,loopdocumentation,mi_flowcondition,complexmi_flowcondition,loopcounter"/>
+				</values>
+
+			</attribute>
+			<attribute label="lbl_loopcondition" name="loopcondition" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+				<data>REGLAS DE SINTAXIS: 
+String: ''string'' | Number: number | Date: [date] | Null: null 
+Entity Att.: ent_att(''attr_name'') | Process Att.: pro_att(''attr_name'') 
+Arith. Operator: +, -, /,* 
+Comp. Operator : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Boolean Operator: and, or | Unary Operator: not(expression)</data>
+			</attribute>
+			<attribute label="lbl_mi_condition" name="mi_condition" type="text" regExp="0-9" disabled="true" dataType="integer"/>
+			<attribute label="lbl_testtime" name="testtime" type="combo" disabled="true" value="After" dataType="string" hidden="true">
+				<values>
+					<value label="lbl_after" value="After" />
+					<value label="lbl_before" value="Before" />
+				</values>
+			</attribute>
+			
+			
+			<attribute label="lbl_mi_ordering" name="mi_ordering" type="combo" disabled="true" value="Parallel" dataType="string" hidden="true">
+				<values>
+					<value label="lbl_parallel" value="Parallel" enable="mi_flowcondition" disable="complexmi_flowcondition" />
+					<value label="lbl_sequential" value="Sequential" disable="mi_flowcondition,complexmi_flowcondition"/>
+				</values>
+			</attribute>
+			<attribute label="lbl_mi_flowcondition" name="mi_flowcondition" type="combo" disabled="true" value="All" dataType="string" hidden="true">
+				<values>
+					<value label="lbl_all" value="All" disable="complexmi_flowcondition"/>
+					<value label="lbl_one" value="One" disable="complexmi_flowcondition"/>
+					<value label="lbl_complex" value="Complex" enable="complexmi_flowcondition"/>
+				</values>
+			</attribute>
+			
+		</attGroup>
+	
+	</element>
+	<element name="esubflow">
+		<attGroup name="BPMN">
+			<attribute name="documentation" label="lbl_documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			
+			<attribute label="lbl_subprocesstype" name="subprocesstype" type="combo" value="Embedded" use="required">
+
+				<values>
+					<value label="lbl_embedded" value="Embedded" disable="execution" />
+					<value label="lbl_reusable" value="Reusable" enable="execution" />
+				</values>
+			</attribute>
+			<attribute label="lbl_execution" name="execution" type="combo" value="Sync">
+				<values>
+					<value label="lbl_synchronic" value="Sync" />
+					<value label="lbl_asynchronic" value="Async" />
+
+				</values>
+			</attribute>
+			<!-- <attribute label="IsATransaction" name="transaction" type="checkbox" change="transactionChange" value="false" use="required" enable="transactionref,transactionid" /> -->
+			<attribute label="lbl_transactionref" name="transactionref" disabled="true">
+				<attributes>
+					<attribute label="lbl_transactionid" name="transactionid" disabled="true" type="text" use="required" dataType="string"/>
+				</attributes>
+			</attribute>
+
+			
+			<attribute label="lbl_name" name="name" type="text" change="setName" use="required" dataType="string"/>
+			<!-- <attribute label="Assignments" name="assignments" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="310" modalheight="330">
+				<data>
+					<level width="40%" label="To" name="to" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="text" />
+							<value name="type" label="Type" type="text" />
+							<value name="value" label="Value" type="text" />
+							<value name="correlation" label="Correlation" type="text" />
+							<value name="targettype" label="Target Type" type="text" />
+							<value name="index" label="Index" type="text" />
+						</values>
+					</level>
+					<level width="40%" label="From" name="from" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="expressionbody" label="ExpressionBody" type="text" />
+						</values>
+					</level>
+					<level width="20%" name="assigntime" label="AssignTime" type="combo" value="Start">
+						<values>
+							<value label="Start" value="Start" />
+							<value label="End" value="End" />
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			
+			<attribute label="lbl_activitytype" name="activitytype" type="label" value="Sub-Process" change="setDependencyProps" hidden="true" />
+			<!-- <attribute label="Performers" name="performers" modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="/Apia2.3/administration.BPMNAction.do?type=group">
+				<data>
+					<level name="perfid" type="label" width="0" label="Id" />
+					<level name="perfname" type="label" width="50%" label="Name" />
+					<level width="50%" name="condition" label="Condition" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="290">
+						<data>Inserte la expresion de la condicion</data>
+					</level>
+				</data>
+			</attribute>
+			<attribute label="Properties" name="properties" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+				<data>
+					<level width="100%" label="Property" name="property" type="modalArray" modalclass="view.modal.ComplexElementModal" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>
+							<level width="50%" name="value" label="Value">
+							</level>
+						</data>
+						<values>
+							<value name="name" label="Name" type="text" dataType="string"/>
+							<value name="type" label="Type" type="text" dataType="string"/>
+							<value name="value" label="Value" type="text" dataType="string"/>
+							<value name="correlation" label="Correlation" type="text" dataType="boolean"/>
+						</values>
+					</level>
+				</data>
+			</attribute> -->
+			<attribute label="lbl_looptype" name="looptype" type="combo" change="loopTypeChange" value="None">
+				<values>
+					<value label="lbl_none" value="None" disable="testtime,mi_ordering,loopmaximum,loopcounter,loopcondition,mi_condition,mi_flowcondition,complexmi_flowcondition"/>
+					<value label="lbl_standard" value="Standard" disable="mi_ordering,mi_condition,mi_flowcondition,complexmi_flowcondition" enable="testtime,loopmaximum,loopcounter,loopcondition"/>
+					<value label="lbl_multiinstance" value="MultiInstance" enable="mi_ordering,mi_condition" disable="testtime,loopmaximum,loopcondition,mi_flowcondition,complexmi_flowcondition,loopcounter"/>
+
+				</values>
+			</attribute>
+			
+			<attribute label="lbl_loopcondition" name="loopcondition" type="text" disabled="true" use="required" dataType="string"/>
+			<attribute label="lbl_mi_condition" name="mi_condition" textenabled="true" type="modal" modalwidth="210" modalheight="220" modalUrl="attributes.xml&attType=N" modalclass="view.modal.ElementChoose" title="attributes" />
+			<attribute label="LoopCounter" name="loopcounter" type="text" disabled="true" use="required" dataType="int"/>
+			<attribute label="lbl_loopmaximum" name="loopmaximum" type="text" disabled="true" use="optional" dataType="int"/>
+			<attribute label="lbl_testtime" name="testtime" type="combo" disabled="true" value="After" dataType="string" hidden="true">
+				<values>
+					<value label="lbl_after" value="After" />
+					<value label="lbl_before" value="Before" />
+				</values>
+			</attribute>
+			<attribute label="lbl_mi_ordering" name="mi_ordering" type="combo" disabled="true" value="Sequential" dataType="string" hidden="true">
+				<values>
+					<value label="lbl_sequential" value="Sequential" disable="mi_flowcondition,complexmi_flowcondition"/>
+					<value label="lbl_parallel" value="Parallel" enable="mi_flowcondition" disable="complexmi_flowcondition" />
+				</values>
+			</attribute>
+
+			<attribute label="lbl_mi_flowcondition" name="mi_flowcondition" type="combo" disabled="true" value="All" dataType="string" hidden="true">
+				<values>
+					<value label="lbl_one" value="One" disable="complexmi_flowcondition"/>
+					<value label="lbl_all" value="All" disable="complexmi_flowcondition"/>
+					<value label="lbl_complex" value="Complex" enable="complexmi_flowcondition"/>
+				</values>
+			</attribute>
+			<attribute label="lbl_complexmi_flowcondition" name="complexmi_flowcondition" type="text" disabled="true" use="optional" dataType="string"/>
+			
+			<attribute label="lbl_expanded" name="expanded" value="true" type="text" disabled="true" />
+
+		</attGroup>
+		<attGroup name="Apia Extensions">
+			<!-- <attribute label="Process type" name="apiaprocesstype" type="combo" value="Mapped">
+				<values>
+					<value label="Mapped" value="Mapped" />
+					<value label="Asynchronic" value="Async" />
+					<value label="Synchronic" value="Sync" />
+					<value label="Asynchronic Skip" value="Asynchronic Skip" />
+					<value label="Synchronic Skip" value="Synchronic Skip" />
+				</values>
+			</attribute>
+			<attribute name="iterate" label="Iterate" type="checkbox" enable="iteratecondition" value="false" /> -->
+			<attribute name="iteratecondition" disabled="true" label="lbl_iteratecondition" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300">
+				<data>REGLAS DE SINTAXIS: 
+String: ''string'' | Number: number | Date: [date] | Null: null 
+Entity Att.: ent_att(''attr_name'') | Process Att.: pro_att(''attr_name'') 
+Arith. Operator: +, -, /,* 
+Comp. Operator : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Boolean Operator: and, or | Unary Operator: not(expression)</data>
+
+			</attribute>
+			<attribute width="140" name="processforms" label="lbl_processforms" modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="forms.xml">
+				<data>
+					<level width="1" name="id" label="lbl_id" type="text" hidden="true" />
+					<level width="100" name="name" label="lbl_name" type="label" />
+					<level width="60" name="readonly" label="lbl_readonly" type="checkbox" />
+					<level width="60" name="multiple" label="lbl_multiple" type="checkbox" />
+				</data>
+			</attribute>
+
+			<attribute width="140" name="lbl_entityforms" label="lbl_entityforms" modalwidth="340" modalheight="330" type="modalArray" modalclass="view.modal.ObjectAdder" modalUrl="forms.xml&busEntId=2541">
+				<data>
+					<level width="1" name="id" label="lbl_id" type="text" hidden="true" />
+					<level width="100" name="name" label="lbl_name" type="label" />
+					<level width="60" name="readonly" label="lbl_readonly" type="checkbox" />
+					<level width="60" name="multiple" label="lbl_multiple" type="checkbox" />
+				</data>
+			</attribute>
+		</attGroup>
+
+		<attGroup name="lbl_userdefinedattributes" id="userproperties">
+			<attribute label="lbl_userattributes" name="userattributes" modalwidth="310" modalheight="330" type="modalArray" modalclass="view.modal.LevelAdder">
+				<data>
+					<level width="30%" label="lbl_name" name="name" type="text" />
+					<level width="30%" label="lbl_type" name="type" type="combo" value="String">
+						<values>
+							<value label="lbl_string" value="String" />
+							<value label="lbl_numeric" value="Numeric" />
+							<value label="lbl_boolean" value="Boolean" />
+
+						</values>
+					</level>
+					<level width="30%" label="lbl_value" name="value" type="text" />
+				</data>
+			</attribute>
+		</attGroup>
+	</element>
+	<element name="startevent">
+		<attGroup name="BPMN">
+
+			<attribute name="documentation" label="lbl_documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="lbl_name" name="name" type="text" change="setName" use="required" dataType="string"/>
+			
+			<attribute name="eventtype" label="lbl_eventtype" type="label" value="Start" hidden="true" />
+			<attribute name="eventdetailtype" label="EventDetailType" type="combo" change="typeChange,setFirstTaskType" value="None">
+				<values>
+					<value label="lbl_none" value="None" disable="message,timer,conditional,signal,multiple,trigger" />
+
+					<value label="lbl_message" value="Message" enable="trigger,message" disable="timer,conditional,signal,multiple" />
+					<value label="lbl_timer" value="Timer" enable="trigger,timer" disable="message,conditional,signal,multiple" />
+					<!-- <value label="Conditional" value="Conditional" enable="conditional" disable="message,timer,signal,multiple" />
+					<value label="Signal" value="Signal" enable="signal" disable="message,timer,conditional,multiple" />
+					<value label="Multiple" value="Multiple" enable="multiple" disable="message,timer,conditional,signal" /> -->
+				</values>
+			</attribute>
+		</attGroup>
+	</element>
+	<element name="middleevent">
+
+		<attGroup name="BPMN">
+			<attribute name="attached" label="lbl_attached" type="combo" value="TRUE" readonly="true" hidden="true" change="">
+				<values>
+					<value label="lbl_true" value="TRUE" enable="messagecatch,multmessagecatch,errorcodeopt,inmessageref" disable="messagethrow,multmessagethrow,errorcodereq,catchthrow,outmessageref"/>
+					<value label="lbl_false" value="FALSE" disable="messagecatch,multmessagecatch,errorcodeopt" enable="messagethrow,multmessagethrow,errorcodereq,catchthrow"/>
+				</values>
+			</attribute>
+			<attribute name="documentation" label="lbl_documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+
+			<attribute label="lbl_name" name="name" type="text" change="setName" use="required" dataType="string"/>
+			
+			<attribute name="eventtype" label="lbl_eventtype" type="label" value="Intermediate" hidden="true" />
+			<attribute name="eventdetailtype" label="lbl_eventdetailtype" type="combo" change="typeChange" value="None">
+				<values>
+					<value label="lbl_none" value="None" disable="message,timer,error,conditional,signal,compensation,multiple,trigger,catchthrow" />
+					<value label="lbl_message" value="Message" disable="timer,error,conditional,signal,compensation,multiple" enable="trigger,message,catchthrows" />
+					<value label="lbl_timer" value="Timer" disable="message,error,conditional,signal,compensation,multiple,catchthrow" enable="trigger,timer" />
+
+					<!-- <value label="Error" value="Error" disable="message,timer,conditional,signal,compensation,multiple" enable="error" />
+					<value label="Cancel" value="Cancel" disable="message,timer,error,signal,compensation,conditional,multiple" />
+					<value label="Conditional" value="Conditional" disable="message,timer,error,signal,compensation,multiple" enable="conditional" />
+					<value label="Signal" value="Signal" disable="message,timer,error,compensation,conditional,multiple" enable="signal" />
+					<value label="Compensation" value="Compensation" disable="message,timer,error,signal,conditional,multiple" enable="compensation" /> -->
+					<value label="lbl_multiple" value="Multiple" enable="trigger,multiple" disable="message,timer,error,compensation,conditional,signal" />
+				</values>
+			</attribute>
+			<attribute name="catchthrow" label="Catch/Throw" type="combo" change="catchThrowChange" value="Catch">
+				<values>
+					<value label="lbl_catch" value="Catch" disable="" enable="" />
+					<value label="lbl_throw" value="Throw" enable="" disable="" />
+				</values>
+			</attribute>
+			
+		</attGroup>
+	</element>
+	<element name="endevent">
+		<attGroup name="BPMN">
+			<attribute name="documentation" label="lbl_documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="lbl_name" name="name" type="text" change="setName" use="required" dataType="string"/>
+			
+			<attribute name="eventtype" label="lbl_eventtype" type="label" value="End" hidden="true" />
+			<attribute name="eventdetailtype" label="lbl_eventdetailtype" type="combo" change="typeChange" value="None">
+				<values>
+					<value label="lbl_none" value="None" disable="message,error,compensation,signal,multiple,result" />
+					<value label="lbl_message" value="Message" disable="error,compensation,signal,multiple" enable="result,message" />
+					<!-- <value label="Error" value="Error" disable="message,signal,compensation,multiple" enable="error" />
+					<value label="Cancel" value="Cancel" disable="message,error,signal,compensation,multiple" />
+					<value label="Compensation" value="Compensation" disable="message,error,signal,multiple" enable="compensation" />
+					<value label="Signal" value="Signal" disable="message,error,compensation,multiple" enable="signal" />
+					<value label="Terminate" value="Terminate" disable="message,error,signal,compensation,multiple" /> 
+					<value label="Multiple" value="Multiple" disable="message,error,compensation,signal" enable="multiple" /> -->
+				</values>
+			</attribute>
+					
+		</attGroup>
+	</element>
+	<element name="gateway">
+		<attGroup name="BPMN">
+
+			<attribute name="documentation" label="lbl_documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="lbl_name" name="name" type="text" change="setName" use="optional" dataType="string"/>
+			
+			<attribute name="exclusivetype" label="lbl_exclusivetype" type="text" disabled="true" value="Data" readonly="true" hidden="true" />
+			<attribute name="gatewaytype" label="lbl_gatewaytype" type="combo" change="typeChange,setDependencyProps" value="Exclusive">
+				<values>
+					<value label="lbl_exclusive" value="Exclusive" enable="exclusivetype,executiontype" disable="incomingcondition,outgoingcondition,instantiate" />
+
+					<value label="lbl_inclusive" value="Inclusive" enable="executiontype" disable="exclusivetype,incomingcondition,outgoingcondition,instantiate" />
+					<value label="lbl_parallel" value="Parallel" disable="exclusivetype,incomingcondition,outgoingcondition,instantiate,executiontype" />
+					<!-- <value label="Complex" value="Complex" disable="exclusivetype,instantiate" enable="incomingcondition,outgoingcondition" /> -->
+				</values>
+			</attribute>
+			<attribute name="instantiate" label="lbl_instantiate" type="checkbox" value="false" disabled="true" />
+		</attGroup>
+	</element>
+	<element name="mflow">
+
+		<attGroup name="BPMN">
+			
+			<attribute name="documentation" label="lbl_documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="lbl_name" name="name" type="text" change="setName" use="optional" dataType="string"/>
+		</attGroup>
+	</element>
+	<element name="association">
+		<attGroup name="BPMN">
+			
+			<attribute name="documentation" label="lbl_documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="lbl_name" name="name" type="text" change="setName" use="optional" dataType="string"/>
+			<attribute name="direction" label="lbl_direction" type="combo" change="setDirection" value="None">
+				<values>
+					<value label="lbl_none" value="None" />
+					<value label="lbl_one" value="From" />
+					<value label="lbl_both" value="Both" />
+				</values>
+			</attribute>
+		</attGroup>
+
+	</element>
+	<element name="sflow">
+		<attGroup name="BPMN">
+			
+			<attribute name="documentation" label="lbl_documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="lbl_name" name="name" type="text" change="setName" use="optional" dataType="string"/>
+			<!--<attribute label="SourceRef" name="sourceref" type="label" use="optional" dataType="string"/>
+			<attribute label="TargetRef" name="targetref" type="label" use="optional" dataType="string"/>-->
+		
+			<attribute name="conditiontype" label="lbl_conditiontype" type="combo" change="conditionChange" value="None">
+				<values>
+					<value label="lbl_expression" value="CONDITION" enable="conditionexpression,conditiondocumentation"/>
+					<value label="lbl_none" value="None" disable="conditionexpression,conditiondocumentation"/>
+					<!-- <value label="Default" value="Default" disable="conditionexpression"/> -->
+				</values>
+			</attribute>
+			<attribute name="conditionexpression" label="lbl_conditionexpression" disabled="true" type="modalArray" modalclass="view.modal.Condition" modalwidth="330" modalheight="300" >
+				<data>SYNTAX Rules: 
+String: 'string' | Number: number | Date: [date] | Null: null 
+Entity Att.: ent_att('attr_name') | Process Att.: pro_att('attr_name') 
+Arith. Operator: +, -, /,* 
+Comp. Operator: &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Boolean Operator: and, or | Unary Operator: not(expression)</data>
+			</attribute>
+		</attGroup>
+	</element>
+	<element name="pool">
+		<attGroup name="BPMN">
+
+			<attribute name="documentation" label="lbl_documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			
+			<attribute label="lbl_name" name="name" type="text" change="setName" use="required" dataType="string" />
+			
+		
+		</attGroup>
+	</element>
+	<element name="group">
+		<attGroup name="BPMN">
+			<attribute name="documentation" label="lbl_documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="lbl_name" name="name" type="text" change="setName" use="required" dataType="string" />
+			
+			<attribute label="lbl_artifacttype" name="artifacttype" type="label" value="Group" hidden="true" />
+
+		</attGroup>
+		
+	</element>
+
+	<element name="swimlane">
+		<attGroup name="BPMN">
+			<attribute name="documentation" label="lbl_documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string"></attribute>
+			<attribute label="lbl_name" name="name" type="text" change="setName"></attribute>
+		</attGroup>
+	</element>
+	<element name="textannotation">
+		<attGroup name="BPMN">
+			
+			<attribute name="documentation" label="lbl_documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+
+			</attribute>
+			<attribute label="lbl_artifacttype" name="artifacttype" type="label" value="Annotation" hidden="true" />
+			<attribute label="lbl_text" name="text" type="text" change="setText" use="required" dataType="string"/>
+		</attGroup>
+	</element>
+	<element name="dataobject">
+		<attGroup name="BPMN">
+
+			<attribute name="documentation" label="lbl_documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			
+			<attribute label="lbl_artifacttype" name="artifacttype" type="label" value="DataObject" hidden="true" />
+		
+			<attribute label="lbl_name" name="name" type="text" change="setName" use="required" dataType="string"/>
+
+			<attribute label="lbl_state" name="state" type="text" use="optional" change="setState" dataType="string"/>
+		</attGroup>
+
+	</element>
+	<!--<element name="webservice">
+		<attGroup name="BPMN">
+			<attribute label="Categories" name="categories" type="modalArray" modalclass="view.modal.TreeModal" modalwidth="310" modalheight="330">
+				<data modalwidth="210" modalheight="220" modalUrl="<Parameters.ROOT_PATH>/administration.BPMNAction.do?type=subProcess" modalclass="view.modal.ElementChoose" title="attributes">
+					<level name="categoryname" type="label" label="Name" />
+				</data>
+			</attribute>
+			<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="Interface" name="interface" type="text" use="required" dataType="string"/>
+			<attribute label="Operations" name="operations" type="modalArray" use="required" modalwidth="310" modalheight="330" modalclass="view.modal.LevelAdder">
+				<data>
+					<level width="100%" label="Operation" name="operation" type="modal" modalclass="view.modal.Condition" modalwidth="310" modalheight="330" modalUrl="subProcess.xml">
+						<data>Ingrese el nombre de la operacion del Web Service.</data>
+					</level>
+				</data>
+			</attribute>
+		</attGroup>
+	</element>-->
+	<element name="back" x="0" y="0" height="0" width="0" mainpool="true">
+		<attGroup name="BPMN">
+			<!-- <attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="360" modalheight="340" use="optional" dataType="string">
+				<values><value>Process documentation
+
+Title:
+Unique identifier:
+Process objective:
+
+Process data:
+
+Events
+On create:
+On end:
+On cancel:
+On delay:
+On view details:
+On suspend:
+On resume:
+On Rollback:</value></values>
+			</attribute>
+			
+			<attribute name="documentation" label="Documentation" type="modalArray" modalclass="view.modal.AdvancedDoc" modalwidth="400" modalheight="340" use="optional" dataType="string" eventValues="true">
+				<values>
+					<value name="documentation" label="Documentation" />
+					<value name="events" label="Events" type="modalArray" modalclass="view.modal.AdvancedDoc" modalwidth="360" modalheight="380" use="optional" dataType="string">
+						<data>
+							<level width="35%" name="evtName" label="Event Name" type="text" use="optional" dataType="string" />
+							<level width="65%" name="evtDesc" label="Action" type="text" use="optional" dataType="string" />
+						</data>
+					</value>
+				</values>
+			</attribute> -->
+			<attribute name="documentation" label="lbl_documentation" type="modalArray" modalclass="view.modal.Condition" modalwidth="310" modalheight="300" use="optional" dataType="string">
+			</attribute>
+			<attribute label="lbl_name" regExp="a-zA-Z0-9_." name="name" type="text" use="required" dataType="string"/>
+			<attribute name="events" label="lbl_events" type="modalArray" modalclass="view.modal.LevelAdder" modalwidth="360" modalheight="380" use="optional" dataType="string">
+				<data>
+					<level width="35%" name="evtName" label="lbl_evtName" type="combo" use="optional" dataType="string" value="ONCREATE">
+					<values>
+							<value label="lbl_oncreate" value="ONCREATE" />
+							<value label="lbl_oncomplete" value="ONCOMPLETE" />
+							<value label="lbl_oncancel" value="ONCANCEL" />
+							<value label="lbl_onwarning" value="ONWARNING" />
+							<value label="lbl_onoverdue" value="ONOVERDUE" />
+							<value label="lbl_ondetail" value="ONDETAIL" />
+							<value label="lbl_onsuspend" value="ONSUSPEND" />
+							<value label="lbl_onresume" value="ONRESUME" />
+							<value label="lbl_onrollback" value="ONROLLBACK" />
+							<value label="lbl_onfinalize" value="ONFINALIZE" />
+						</values>
+					</level>
+					<level width="65%" name="evtDesc" label="lbl_businessclass" regExp="a-zA-Z0-9_." type="text" use="optional" dataType="string" />
+				</data>
+			</attribute>
+		</attGroup>
+	</element>
+</elements>

@@ -1,0 +1,203 @@
+<FORM_LAYOUT>
+  <FORM_FIELD fieldId="0" fieldLabel="Usuario creador" fieldType="2" attId="2481" attName="CDT_CONTACTO" x="2" y="2">
+    <PROPERTY prpId="7" prpLabel="prpRequired" value="T" type="S"/>
+    <EVENTS>
+      <EVENT event_id="5" event_name="POPULATE" order="0" class_id="1098" class_name="CAM_CONTACTO_INTERNO_ONLOAD" bnd_id="4784">
+        <BINDING param_id="1086" param_name="recurso" param_type="S" att_type="V">CDT_CONTACTO</BINDING>
+        <BINDING param_id="1153" param_name="contactos" param_type="S" att_type="null"/>
+      </EVENT>
+    </EVENTS>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="1" fieldLabel="Fecha de creación" fieldType="1" attId="2413" attName="CDT_FECHA_CREACION" x="0" y="1">
+    <PROPERTY prpId="7" prpLabel="prpRequired" value="T" type="S"/>
+    <EVENTS>
+      <EVENT event_id="1" event_name="ONCHANGE" order="0" class_id="1170" class_name="CDT_FECHAS" bnd_id="4825">
+        <BINDING param_id="1110" param_name="form" param_type="S" att_type="V">CDT_BASICO</BINDING>
+        <BINDING param_id="1121" param_name="fecha3" param_type="S" att_type="V">CDT_FECHA_FIJA</BINDING>
+        <BINDING param_id="1124" param_name="fecha1" param_type="S" att_type="V">CDT_ULTIMA_FECHA_MODIFICACION</BINDING>
+        <BINDING param_id="1125" param_name="fecha2" param_type="S" att_type="V">CDT_FECHA_CREACION</BINDING>
+      </EVENT>
+    </EVENTS>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="2" fieldLabel="Última fecha de modificación" fieldType="1" attId="2521" attName="CDT_ULTIMA_FECHA_MODIFICACION" x="2" y="1">
+    <PROPERTY prpId="7" prpLabel="prpRequired" value="T" type="S"/>
+    <EVENTS>
+      <EVENT event_id="1" event_name="ONCHANGE" order="0" class_id="1170" class_name="CDT_FECHAS" bnd_id="4819">
+        <BINDING param_id="1110" param_name="form" param_type="S" att_type="V">CDT_BASICO</BINDING>
+        <BINDING param_id="1121" param_name="fecha3" param_type="S" att_type="V">CDT_FECHA_FIJA</BINDING>
+        <BINDING param_id="1124" param_name="fecha1" param_type="S" att_type="V">CDT_ULTIMA_FECHA_MODIFICACION</BINDING>
+        <BINDING param_id="1125" param_name="fecha2" param_type="S" att_type="V">CDT_FECHA_CREACION</BINDING>
+      </EVENT>
+    </EVENTS>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="3" fieldLabel="Robotizado" fieldType="2" attId="2448" attName="CDT_ROBOTIZADO" x="2" y="3">
+    <EVENTS>
+      <EVENT event_id="5" event_name="POPULATE" order="0" class_id="1001" class_name="GEN_SI_NO_POPULATE" bnd_id="null"/>
+    </EVENTS>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="4" fieldLabel="Tipo de test" fieldType="2" attId="2587" attName="CDT_TIPO_TEST" x="0" y="6">
+    <PROPERTY prpId="7" prpLabel="prpRequired" value="T" type="S"/>
+    <PROPERTY prpId="11" prpLabel="prpEntity" value="TIPO_TEST" type="S"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="31" fieldLabel="Descripción del caso de test" fieldType="6" attId="2371" attName="CDT_DESCRIPCION" x="0" y="27">
+    <PROPERTY prpId="7" prpLabel="prpRequired" value="T" type="S"/>
+    <PROPERTY prpId="8" prpLabel="prpColSpan" value="4" type="N"/>
+    <PROPERTY prpId="9" prpLabel="prpRowSpan" value="4" type="N"/>
+    <PROPERTY prpId="12" prpLabel="prpRows" value="7" type="N"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="32" fieldLabel="Producto" fieldType="2" attId="2556" attName="CDT_PRODUCTO" x="0" y="3">
+    <PROPERTY prpId="7" prpLabel="prpRequired" value="T" type="S"/>
+    <PROPERTY prpId="11" prpLabel="prpEntity" value="PRODUCTOS" type="S"/>
+    <EVENTS>
+      <EVENT event_id="1" event_name="ONCHANGE" order="0" class_id="1171" class_name="CDT_PRODUCTO_ONCHANGE" bnd_id="null"/>
+    </EVENTS>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="33" fieldLabel="Datos de entrada" fieldType="6" attId="2468" attName="CDT_DATOS_ENTRADA" x="0" y="24">
+    <PROPERTY prpId="8" prpLabel="prpColSpan" value="4" type="N"/>
+    <PROPERTY prpId="12" prpLabel="prpRows" value="7" type="N"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="50" fieldLabel="Versión desde" fieldType="2" attId="2450" attName="CDT_VERSION_DESDE" x="0" y="16">
+    <PROPERTY prpId="7" prpLabel="prpRequired" value="T" type="S"/>
+    <EVENTS>
+      <EVENT event_id="1" event_name="ONCHANGE" order="0" class_id="1159" class_name="CDT_VERSION_ONCHANGE" bnd_id="null"/>
+    </EVENTS>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="51" fieldLabel="Release desde" fieldType="2" attId="2512" attName="CDT_RELEASE_DESDE" x="0" y="17">
+    <EVENTS>
+      <EVENT event_id="1" event_name="ONCHANGE" order="0" class_id="1144" class_name="CDT_RELEASE_ONCHANGE" bnd_id="null"/>
+    </EVENTS>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="52" fieldLabel="Fix desde" fieldType="2" attId="2451" attName="CDT_FIX_DESDE" x="0" y="18"/>
+  <FORM_FIELD fieldId="58" fieldLabel="Versión" fieldType="1" attId="2465" attName="CDT_VERSION" x="0" y="0">
+    <PROPERTY prpId="2" prpLabel="prpReadOnly" value="T" type="S"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="59" fieldLabel="Id. Caso test inmediatamente anterior" fieldType="1" attId="2472" attName="CDT_ID_ANTERIOR" x="2" y="0">
+    <PROPERTY prpId="2" prpLabel="prpReadOnly" value="T" type="S"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="60" fieldLabel="Módulo" fieldType="2" attId="2470" attName="CDT_MODULO1" x="0" y="4">
+    <EVENTS>
+      <EVENT event_id="1" event_name="ONCHANGE" order="0" class_id="1153" class_name="CDT_MODULO_ONCHANGE" bnd_id="null"/>
+    </EVENTS>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="61" fieldLabel="Funcionalidad" fieldType="2" attId="2537" attName="CDT_FUNCIONALIDAD1" x="0" y="5"/>
+  <FORM_FIELD fieldId="64" fieldLabel="Id. siguiente" fieldType="11" attId="2382" attName="CDT_ID_SIGUIENTE" x="2" y="6"/>
+  <FORM_FIELD fieldId="69" fieldLabel="" fieldType="14" attId="0" attName="null" x="0" y="7">
+    <FORM_FIELD_CHILD fieldId="70" fieldLabel="Id. Apia documento" fieldType="1" attId="2363" attName="CDT_REL_DOCUMENTO" x="1" y="0">
+      <PROPERTY prpId="2" prpLabel="prpReadOnly" value="T" type="S"/>
+      <PROPERTY prpId="2" prpLabel="prpReadOnly" value="T" type="S"/>
+      <PROPERTY prpId="10" prpLabel="prpModal" value="MODAL_DOCUMENTOS" type="S"/>
+      <PROPERTY prpId="10" prpLabel="prpModal" value="MODAL_DOCUMENTOS" type="S"/>
+      <EVENTS>
+        <EVENT event_id="1" event_name="ONCHANGE" order="1" class_id="1122" class_name="GEN_CARGAR_CASOS_DE_USO" bnd_id="null"/>
+        <EVENT event_id="37" event_name="ONMODALRETURN" order="0" class_id="1022" class_name="ENT_DOCUMENTO_ONMODALRETURN" bnd_id="4571">
+          <BINDING param_id="1228" param_name="form" param_type="S" att_id="null" att_name="null" att_type="V">CDT_BASICO</BINDING>
+          <BINDING param_id="1229" param_name="param1" param_type="S" att_id="null" att_name="null" att_type="V">CDT_REL_DESC_DOC</BINDING>
+          <BINDING param_id="1230" param_name="param2" param_type="S" att_id="null" att_name="null" att_type="V">CDT_REL_TIPO_DOC</BINDING>
+          <BINDING param_id="1231" param_name="param3" param_type="S" att_id="null" att_name="null" att_type="V">CDT_REL_LENGUAJE</BINDING>
+          <BINDING param_id="1232" param_name="param4" param_type="S" att_id="null" att_name="null" att_type="V">CDT_REL_VERSION</BINDING>
+        </EVENT>
+      </EVENTS>
+    </FORM_FIELD_CHILD>
+    <FORM_FIELD_CHILD fieldId="71" fieldLabel="Nombre" fieldType="1" attId="2489" attName="CDT_REL_DESC_DOC" x="2" y="0">
+      <PROPERTY prpId="2" prpLabel="prpReadOnly" value="T" type="S"/>
+    </FORM_FIELD_CHILD>
+    <FORM_FIELD_CHILD fieldId="72" fieldLabel="Tipo de documento" fieldType="1" attId="2486" attName="CDT_REL_TIPO_DOC" x="3" y="0">
+      <PROPERTY prpId="2" prpLabel="prpReadOnly" value="T" type="S"/>
+    </FORM_FIELD_CHILD>
+    <FORM_FIELD_CHILD fieldId="73" fieldLabel="Idioma" fieldType="1" attId="2461" attName="CDT_REL_LENGUAJE" x="4" y="0">
+      <PROPERTY prpId="2" prpLabel="prpReadOnly" value="T" type="S"/>
+    </FORM_FIELD_CHILD>
+    <FORM_FIELD_CHILD fieldId="74" fieldLabel="Versión del documento" fieldType="1" attId="2388" attName="CDT_REL_VERSION" x="5" y="0">
+      <PROPERTY prpId="2" prpLabel="prpReadOnly" value="T" type="S"/>
+    </FORM_FIELD_CHILD>
+    <PROPERTY prpId="8" prpLabel="prpColSpan" value="4" type="N"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="75" fieldLabel="" fieldType="14" attId="0" attName="null" x="0" y="11">
+    <FORM_FIELD_CHILD fieldId="77" fieldLabel="Módulo" fieldType="1" attId="2507" attName="GEN_CU_MODULO" x="1" y="0">
+      <PROPERTY prpId="2" prpLabel="prpReadOnly" value="T" type="S"/>
+    </FORM_FIELD_CHILD>
+    <FORM_FIELD_CHILD fieldId="78" fieldLabel="Funcionalidad" fieldType="1" attId="2514" attName="GEN_CU_FUNCIONALIDAD" x="2" y="0">
+      <PROPERTY prpId="2" prpLabel="prpReadOnly" value="T" type="S"/>
+    </FORM_FIELD_CHILD>
+    <FORM_FIELD_CHILD fieldId="79" fieldLabel="Caso de uso" fieldType="1" attId="2476" attName="GEN_CU_NOMBRE" x="3" y="0">
+      <PROPERTY prpId="2" prpLabel="prpReadOnly" value="T" type="S"/>
+    </FORM_FIELD_CHILD>
+    <FORM_FIELD_CHILD fieldId="80" fieldLabel="Item Caso de uso" fieldType="1" attId="2409" attName="GEN_CU_ITEM_CASO_DE_USO" x="4" y="0"/>
+    <PROPERTY prpId="8" prpLabel="prpColSpan" value="4" type="N"/>
+    <PROPERTY prpId="30" prpLabel="prpHideGridButtons" value="T" type="S"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="81" fieldLabel="FECHA_FIJA" fieldType="11" attId="2678" attName="CDT_FECHA_FIJA" x="2" y="5"/>
+  <FORM_FIELD fieldId="82" fieldLabel="Observaciones" fieldType="6" attId="2452" attName="CDT_OBSERVACIONES" x="0" y="35">
+    <PROPERTY prpId="8" prpLabel="prpColSpan" value="4" type="N"/>
+    <PROPERTY prpId="9" prpLabel="prpRowSpan" value="4" type="N"/>
+    <PROPERTY prpId="12" prpLabel="prpRows" value="7" type="N"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="83" fieldLabel="Resultado esperado" fieldType="6" attId="2536" attName="CDT_RESULTADO_ESPERADO" x="0" y="31">
+    <PROPERTY prpId="7" prpLabel="prpRequired" value="T" type="S"/>
+    <PROPERTY prpId="8" prpLabel="prpColSpan" value="4" type="N"/>
+    <PROPERTY prpId="9" prpLabel="prpRowSpan" value="4" type="N"/>
+    <PROPERTY prpId="12" prpLabel="prpRows" value="7" type="N"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="84" fieldLabel="Pre-condiciones" fieldType="6" attId="2570" attName="CDT_PRE_CONDICIONES" x="0" y="21">
+    <PROPERTY prpId="7" prpLabel="prpRequired" value="T" type="S"/>
+    <PROPERTY prpId="8" prpLabel="prpColSpan" value="4" type="N"/>
+    <PROPERTY prpId="12" prpLabel="prpRows" value="7" type="N"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="85" fieldLabel="Autogenerado" fieldType="11" attId="2749" attName="CAM_AUTOGENERADO" x="0" y="39"/>
+  <FORM_FIELD fieldId="87" fieldLabel="Nro. cambio" fieldType="1" attId="2812" attName="CDT_NRO_CAMBIO" x="0" y="42">
+    <PROPERTY prpId="31" prpLabel="prpVisibilityHidden" value="T" type="S"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="88" fieldLabel="" fieldType="5" attId="0" attName="null" x="3" y="44">
+    <PROPERTY prpId="6" prpLabel="prpValue" value="Confirmar" type="S"/>
+    <PROPERTY prpId="6" prpLabel="prpValue" value="Confirmar" type="S"/>
+    <PROPERTY prpId="19" prpLabel="prpName" value="BTN_CONFIRMAR" type="S"/>
+    <PROPERTY prpId="19" prpLabel="prpName" value="BTN_CONFIRMAR" type="S"/>
+    <PROPERTY prpId="31" prpLabel="prpVisibilityHidden" value="T" type="S"/>
+    <PROPERTY prpId="31" prpLabel="prpVisibilityHidden" value="T" type="S"/>
+    <EVENTS>
+      <EVENT event_id="4" event_name="ONCLICK" order="1" class_id="1114" class_name="CDT_OBTENER_CT" bnd_id="6588">
+        <BINDING param_id="1481" param_name="entidad" param_type="S" att_type="V">CASOS_DE_TEST</BINDING>
+        <BINDING param_id="1482" param_name="prefijo" param_type="S" att_type="V">CDT</BINDING>
+        <BINDING param_id="1483" param_name="att_id_anterior" param_type="S" att_type="V">CDT_ID_ANTERIOR</BINDING>
+        <BINDING param_id="1484" param_name="version" param_type="S" att_type="V">CDT_VERSION</BINDING>
+      </EVENT>
+      <EVENT event_id="4" event_name="ONCLICK" order="0" class_id="1511" class_name="VERIFICAR_REQUERIDOS" bnd_id="6587">
+        <BINDING param_id="1459" param_name="form" param_type="S" att_type="V">CDT_BASICO</BINDING>
+        <BINDING param_id="1460" param_name="att" param_type="S" att_type="V">CDT_ALL_REQUIRED</BINDING>
+      </EVENT>
+    </EVENTS>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="89" fieldLabel="Mostrar Botones CDT" fieldType="1" attId="3022" attName="CDT_MOSTRAR_BTN" x="0" y="45">
+    <PROPERTY prpId="31" prpLabel="prpVisibilityHidden" value="T" type="S"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="90" fieldLabel="Splash Confirmar Versionar" fieldType="1" attId="3021" attName="CDT_SPL_VER" x="0" y="46">
+    <PROPERTY prpId="31" prpLabel="prpVisibilityHidden" value="T" type="S"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="91" fieldLabel="Proyecto" fieldType="2" attId="3666" attName="CDT_PROYECTO" x="0" y="2">
+    <PROPERTY prpId="11" prpLabel="prpEntity" value="PROYECTOS" type="S"/>
+    <PROPERTY prpId="18" prpLabel="prpSorted" value="T" type="S"/>
+  </FORM_FIELD>
+  <FORM_FIELD fieldId="92" fieldLabel="CDT_ALL_REQUIRED" fieldType="11" attId="3735" attName="CDT_ALL_REQUIRED" x="0" y="44"/>
+  <EVENTS>
+    <EVENT event_id="2" event_name="ONLOAD" order="7" class_id="1144" class_name="CDT_RELEASE_ONCHANGE" bnd_id="null"/>
+    <EVENT event_id="2" event_name="ONLOAD" order="6" class_id="1153" class_name="CDT_MODULO_ONCHANGE" bnd_id="null"/>
+    <EVENT event_id="2" event_name="ONLOAD" order="4" class_id="1157" class_name="CDT_FECHA_ONLOAD" bnd_id="null"/>
+    <EVENT event_id="2" event_name="ONLOAD" order="3" class_id="1159" class_name="CDT_VERSION_ONCHANGE" bnd_id="null"/>
+    <EVENT event_id="2" event_name="ONLOAD" order="5" class_id="1171" class_name="CDT_PRODUCTO_ONCHANGE" bnd_id="null"/>
+    <EVENT event_id="2" event_name="ONLOAD" order="1" class_id="1300" class_name="CDT_HID_BTN" bnd_id="6600">
+      <BINDING param_id="1478" param_name="form" param_type="S" att_type="V">CDT_BASICO</BINDING>
+    </EVENT>
+    <EVENT event_id="2" event_name="ONLOAD" order="9" class_id="1301" class_name="CDT_OCU_MOS_BOTON" bnd_id="6603">
+      <BINDING param_id="1479" param_name="form" param_type="S" att_type="V">CDT_BASICO</BINDING>
+    </EVENT>
+    <EVENT event_id="19" event_name="ONRELOAD" order="8" class_id="1299" class_name="CDT_SPL_SCR" bnd_id="6602">
+      <BINDING param_id="1480" param_name="form" param_type="S" att_type="V">CDT_BASICO</BINDING>
+    </EVENT>
+    <EVENT event_id="19" event_name="ONRELOAD" order="0" class_id="1300" class_name="CDT_HID_BTN" bnd_id="6599">
+      <BINDING param_id="1478" param_name="form" param_type="S" att_type="V">CDT_BASICO</BINDING>
+    </EVENT>
+    <EVENT event_id="19" event_name="ONRELOAD" order="2" class_id="1301" class_name="CDT_OCU_MOS_BOTON" bnd_id="6601">
+      <BINDING param_id="1479" param_name="form" param_type="S" att_type="V">CDT_BASICO</BINDING>
+    </EVENT>
+  </EVENTS>
+</FORM_LAYOUT>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<ROWSET>
+<CALENDAR id='1002'  name='CALENDO1'/>
+<CALENDAR id='1003'  name='CALENDO2'/>
+<CALENDAR id='1004'  name='CALENDO3'/>
+<CALENDAR id='1005'  name='CALENDO4'/>
+<CALENDAR id='1006'  name='CALENDO5'/>
+<CALENDAR id='1007'  name='CALENDO6'/>
+<CALENDAR id='1008'  name='CALENDO7'/>
+<CALENDAR id='1009'  name='CALENDO8'/>
+<TYPE id='1002'  name='tipo 1'/>
+<TYPE id='1003'  name='tipo 2'/>
+<TYPE id='1004'  name='tipo 3'/>
+<TYPE id='1005'  name='tipo 4'/>
+<TYPE id='1006'  name='tipo 5'/>
+</ROWSET>

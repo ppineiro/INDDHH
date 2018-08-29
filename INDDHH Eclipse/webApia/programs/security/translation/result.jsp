@@ -1,0 +1,1 @@
+<jsp:useBean id="dBean" scope="session" class="com.dogma.bean.security.TranslationBean"></jsp:useBean><%out.clear();%><%out.print(dBean.getImage());%>

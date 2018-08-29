@@ -1,0 +1,3 @@
+<div class="gridBody" id="gridBody"><!-- Cuerpo de la tabla --><table title="<system:query show="value" from="theBean" field="qryTitle"/>"><thead><tr><system:query show="iteration" from="theBean" field="columnsToShow" saveOn="header"><th style="width: <system:query show="value" from="header" field="width" />px;"></th></system:query></tr></thead><tbody class="tableData" id="tableData"></tbody></table></div><script type="text/javascript">
+	var FLAG_AUTO_FILTER = toBoolean('<system:query show="flagValue" from="theQuery" field="22" />');
+</script>

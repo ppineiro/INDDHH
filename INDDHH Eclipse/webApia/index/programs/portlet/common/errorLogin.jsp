@@ -1,0 +1,1 @@
+Error al realizar login con el usuario especificado. Verifique que el mismo tiene acceso al ambiente seleccionado y que el usuario y contraseña ingresados sean correctos.

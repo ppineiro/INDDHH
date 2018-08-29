@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<PROCESS_DEFINITION>
+	<ELEMENT id="1074" pro_ele_id="1074" type="O">		<OPERATOR ope_id="1" />
+<DESIGN y="138" x="426"/>		<DEPENDENCIES>
+		<DEPENDENCY id="1075" ></DEPENDENCY>
+		<DEPENDENCY id="1078"  loop_back="true"></DEPENDENCY>
+		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="1075" pro_ele_id="1075" type="T">		<TASK task_id="1005" name="T4">
+			<FORMS>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="1" name="ADMIN"></POOL>
+			</POOLS>
+			<EVENTS>
+			</EVENTS>
+		</TASK>
+<DESIGN y="139" x="521"/>		<DEPENDENCY id="1080" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1076" pro_ele_id="1076" type="T">		<TASK task_id="1004" name="T3">
+			<FORMS>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="1" name="ADMIN"></POOL>
+			</POOLS>
+			<EVENTS>
+			</EVENTS>
+		</TASK>
+<DESIGN y="139" x="339"/>		<DEPENDENCY id="1074" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1077" pro_ele_id="1077" type="T">		<TASK task_id="1003" name="T2">
+			<FORMS>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="1" name="ADMIN"></POOL>
+			</POOLS>
+			<EVENTS>
+			</EVENTS>
+		</TASK>
+<DESIGN y="138" x="242"/>		<DEPENDENCY id="1076" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1078" pro_ele_id="1078" type="T">		<TASK task_id="1002" name="T1">
+			<FORMS>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="1" name="ADMIN"></POOL>
+			</POOLS>
+			<EVENTS>
+			</EVENTS>
+		</TASK>
+<DESIGN y="140" x="151"/>		<DEPENDENCY id="1077" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1079" pro_ele_id="1079" type="I">		<INIT_MARK/>
+<DESIGN y="138" x="59"/>		<DEPENDENCY id="1078" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1080" pro_ele_id="1080" type="E">		<END_MARK/>
+<DESIGN y="138" x="616"/>	</ELEMENT>
+			<EVENTS>
+			</EVENTS>
+</PROCESS_DEFINITION>

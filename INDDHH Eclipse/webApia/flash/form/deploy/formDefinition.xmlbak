@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<FORM_LAYOUT>
+<FORM_EVENT evtId="1" evtLabel="FORM eventlabel 1" busClaId="1" busClaLabel="class1" execOrder="1"/>
+<FORM_EVENT evtId="2" evtLabel="FORM eventlabel 2" busClaId="2" busClaLabel="class2" execOrder="2"/>
+-->
+<EVENTS>
+	<EVENT event_id="10000" event_name="onLoad" order="1" class_id="10000" class_name="com.st.events" bnd_id="3">
+		<BINDING param_id="1" param_name="nombre del param"  param_type="String" att_id="15" att_name="nombre att 15" att_type="E"/>
+		<BINDING param_id="2" param_name="nombre del param2"  param_type="String" att_id="16" att_name="nombre att 16" att_type="E"/>
+	</EVENT>
+	<EVENT event_id="10001" event_name="onClick" order="2" class_id="10001" class_name="com.st.validate" bnd_id="4">
+		<BINDING param_id="1" param_name="nombre del param"  param_type="String" att_id="15" att_name="nombre att 15" att_type="E"/>
+		<BINDING param_id="2" param_name="nombre del param2"  param_type="String" att_id="16" att_name="nombre att 16" att_type="E"/>
+	</EVENT>
+</EVENTS>
+
+<FORM_PROPERTY prpId="3" type="S" value="true"/>
+</FORM_LAYOUT>

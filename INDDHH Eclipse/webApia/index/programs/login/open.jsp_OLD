@@ -1,0 +1,333 @@
+<%@page import="com.dogma.Parameters"%>
+<%@page import="com.st.util.labels.LabelManager"%>
+<%@page import="com.dogma.UserData"%>
+<%@page import="com.dogma.EnvParameters"%>
+<%@page import="com.dogma.ExternalAccessLoader"%>
+<%
+
+	//  * Abre la ventana de creación de instancias de entidad sin hacer login, ni seleccionar la entidad o proceso asociado
+	//	* Parametros requeridos: user, pass, type, entCode
+	//	* @param user				user
+	//	* @param pass				password
+	//  * @param logFromFile 		if (param user is null or param pass is null) and (logFromFile is true or Y), get user and pass from file externalAccessUsers.xml (if null --> false)
+	//  * @param logFromSession		if (param user is null or param pass is null) and (logFromFile is false or N or null) and (logFromSession is true or Y), get user and pass from session (if null --> false)
+	//  * @param askLogin 			if (param user is null or param pass is null) and (logFromFile is false or N or null) and (logFromSession is false or N or null) and (askLogin is true or Y) the application ask for a user and password. (Default if param user=null, pass=null and logFromFile=false
+	//	* @param remoteUser			remote user (user that call the url)
+	//	* @param env				environment (if null --> env = 1)
+	//	* @param lang				language    (if null or wrong --> lang = 1)
+	//	* @param type				type of instance creation ('E' o 'P')
+	//	* @param entCode			entity code (asociated to the process in case type = P)
+	//	* @param proCode			process code
+	//	* @param proCancelCode		process to cancel code
+	//  * @param onFinish			action on finish (1:close window (DEFAULT), 2:execute url again, 3:go to splash)
+	//  * @param sessionAtts		atributes and values to store in the http session (usage:  &sessionAtts=name,value,name,value)
+	//  * @param eatt_STR|NUM|DTE_<name> atttribute of entity to set value to
+	//  * @param patt_STR|NUM|DTE_<name> atttribute of process to set value to
+	//	* @param encryptedPass		indicates if password is encrypted 
+
+	// se pueden omitir: [user], [pass], [logFromFile], [logFromSession], [askLogin], [remoteUser], [env], [lang], [onFinish], [sessionAtts], [eatt_STR|NUM|DTE_<name>] y [patt_STR|NUM|DTE_<name>]
+	//      ([proCode] y [proCancelCode] si [type] = 'E') y ([proCancelCode] si [proCode] no es de un proceso de cancelación)  
+
+	//Nota: El parámetro de usuario remoto permitirá al desarrollador registrar en el formulario correspondiente, quien ejecutó la url para la creación de la instancia.
+	
+	//Ejemplos:
+	//http://localhost:8080/ApiaDesarrollo/programs/login/open.jsp?env=1&lang=1&type=E&entCode=1005&onFinish=3		
+
+	//http://localhost:8080/ApiaDesarrollo/programs/login/open.jsp?env=1&lang=1&type=P&entCode=1005&proCode=1018
+	//http://localhost:8080/ApiaDesarrollo/programs/login/open.jsp?type=P&entCode=1005&proCode=1018 
+	//http://localhost:8080/ApiaDesarrollo/programs/login/open.jsp?logFromSession=true&env=1&lang=1&type=E&entCode=1015&sessionAtts=valor1,3,valor2,5
+	//http://localhost:8080/ApiaDesarrollo/programs/login/open.jsp?askLogin=true&env=1&lang=1&type=P&entCode=1005&proCode=1024&proCancelCode=1003&onFinish=1&eatt_STR_NOMBRE=SANTANDER&eatt_NUM_CODIGO=1234&patt_STR_CLIENTE=SHEPARD
+	//http://localhost:8080/ApiaDesarrollo/programs/login/open.jsp?env=1&lang=1&type=E&entCode=1005
+	//Ejecutar el proceso de cancelacion 1024 para cancelar el proceso 1003:		
+	//--> http://localhost:8080/ApiaDesarrollo/programs/login/open.jsp?env=1&lang=1&type=P&entCode=1005&proCode=1024&proCancelCode=1003
+	//--> http://localhost:8080/ApiaDesarrollo/programs/login/open.jsp?user=admin&pass=admin&env=1&lang=1&type=P&entCode=1005&proCode=1024&proCancelCode=1003
+	//Ejecutar el proceso de alteración 1019 para alterar la entidad 1001:
+	//--> http://localhost:8080/ApiaDesarrollo/programs/login/open.jsp?env=1&lang=1&type=P&entCode=1001&&proCode=1019
+
+	String user = null;
+	String pass = null;
+	String logFromSession = "false"; //por defecto
+	Integer env = null;
+	Integer langId = null;
+	Integer labelSet = Parameters.DEFAULT_LABEL_SET;
+	String type = null;
+	Integer entCode = null;
+	Integer proCode = null;
+	Integer proCancelCode = null;
+	Integer onFinish = new Integer(1); //por defecto 
+	String sessionAtts = null;
+	boolean logged = false; //de uso interno
+	
+	String styleDirectory = "default";
+	com.dogma.UserData uData = (com.dogma.UserData)session.getAttribute("sessionAttribute");
+	if (uData!=null) {
+		styleDirectory = EnvParameters.getEnvParameter(uData.getEnvironmentId(),EnvParameters.ENV_STYLE);
+	}
+	
+	//Obtenemos user de la url
+	if (request.getParameter("user") != null) {
+		user = new String(request.getParameter("user"));
+	}
+	
+	//Obtenemos pass de la url
+	if (request.getParameter("pass") != null) {
+		pass = new String(request.getParameter("pass"));
+	}
+	
+	//Obtenemos parametro que indica si el password viene encriptada
+	if (request.getParameter("encryptedPass")!=null && "true".equals(request.getParameter("encryptedPass"))){
+		//pass = utilClass.decryptApia(request.getParameter("userPass"));
+		String[] mesArr = pass.split(";");
+		byte[] decrypted = new byte[mesArr.length];
+		
+		for (int i=0; i<mesArr.length; i++) {
+			int val = Integer.valueOf(mesArr[i]).intValue();
+			
+			//Metodo de encriptacion/decriptacion propio de Apia y utilizado en aplicaciones Android (no modificar)
+			//Se hizo de esta forma pq la utilización de algoritmos daba error
+			if (i==0) val = val - 2;
+			if (i==1) val = val / 5;
+			if (i==2) val = val + 5;
+			if (i==3) val = val / 19;
+			if (i==4) val = val - 7;
+			if (i==5) val = val + 9;
+			
+			decrypted[i] = (byte) val;
+		}
+		
+		pass = new String(decrypted);
+	}
+	
+	//Obtenemos ambiente
+	if (request.getParameter("env") != null
+		&& !"null".equals(request.getParameter("env"))) {
+		env = new Integer(request.getParameter("env"));
+	} else {
+		env = new Integer(1);
+	}
+	
+	//Obtenemos codigoEntidad
+	if (request.getParameter("entCode") != null && !"null".equals(request.getParameter("entCode"))) {
+		entCode = new Integer(request.getParameter("entCode"));
+	}
+	//Obtenemos codigoProceso
+	if (request.getParameter("proCode") != null && !"null".equals(request.getParameter("proCode"))) {
+		proCode = new Integer(request.getParameter("proCode"));
+	}
+	
+	//Verificamos si debemos obtener user y pass de archivo xml
+	if (user == null || pass == null){
+		if (request.getParameter("logFromFile") != null && ("true".equals(request.getParameter("logFromFile")) || "Y".equals(request.getParameter("logFromFile")))){
+			ExternalAccessLoader.load();
+			if(proCode!=null){
+				user = ExternalAccessLoader.getUser(env,proCode,"P");
+				pass = ExternalAccessLoader.getPassword(env,proCode,"P");
+			} else {
+				user = ExternalAccessLoader.getUser(env,entCode,"E");
+				pass = ExternalAccessLoader.getPassword(env,entCode,"E");
+			}
+		}else{
+			//Si estamos aqui es o porque el usuario y pass se sacan de session o se va a abrir la ventana de login 
+		}
+	}
+	
+	//Obtenemos logFromSession
+	if (request.getParameter("logFromSession") != null){
+		logFromSession = new String (request.getParameter("logFromSession"));
+	}
+
+	//Obtenemos lenguaje
+	if (request.getParameter("lang") != null
+			&& !"null".equals(request.getParameter("lang"))) {
+		langId = new Integer(request.getParameter("lang"));
+	} else {
+		langId = Parameters.DEFAULT_LANG;
+	}
+	//Obtenemos tipo
+	if (request.getParameter("type") != null) {
+		if (request.getParameter("type").equals("E") || request.getParameter("type").equals("F")) {
+			type = new String("F");
+		} else if (request.getParameter("type").equals("P")){
+			type = new String("P");
+		}
+	}
+
+	//Obtenemos codigoProceso a cancelar
+	if (request.getParameter("proCancelCode") != null
+			&& !"null".equals(request.getParameter("proCancelCode"))) {
+		proCancelCode = new Integer(request.getParameter("proCancelCode"));
+	}
+	//Obtenemos acción final
+	if (request.getParameter("onFinish") != null && !"null".equals(request.getParameter("onFinish")) && !"".equals(request.getParameter("onFinish"))) {
+		onFinish = new Integer(request.getParameter("onFinish"));
+	}
+	
+	//Obtenemos si ya esta logueado (de uso interno)
+	if (request.getParameter("logged") != null && !"null".equals(request.getParameter("logged"))) {
+		logged = "true".equals(request.getParameter("logged"));
+	}
+ 
+	Enumeration attParamsEnum = request.getParameterNames();
+	String attParams = null;
+	String errorMsg=null;
+	UserData udata = (UserData)request.getSession().getAttribute(Parameters.SESSION_ATTRIBUTE);
+	if (udata == null){
+		udata = new UserData();
+		udata.setLangId(langId);
+		udata.setLabelSetId(Parameters.DEFAULT_LABEL_SET);
+	}
+	
+	if (request.getParameter("attParams")!=null && !"".equals(request.getParameter("attParams"))){
+		attParams = request.getParameter("attParams");
+	}else{
+		while (attParamsEnum.hasMoreElements()) {
+			String paramName = (String)attParamsEnum.nextElement();
+			String arr [] = StringUtil.split(paramName,"_");
+			if (arr[0].equals("eatt") || arr[0].equals("patt")) {
+				String attType = arr[1].toUpperCase();
+				if (!"STR".equals(attType) && !"NUM".equals(attType) && !"DTE".equals(attType)){
+					errorMsg = LabelManager.getName(udata.getLabelSetId(),langId,"msgWrngAttType");
+				}
+				if (request.getParameter(paramName) != null && !"null".equals(request.getParameter(paramName))){
+					if (attParams == null){
+						attParams = paramName + "=" + new String(request.getParameter(paramName));
+					}else {
+						attParams = attParams + ";" + paramName + "=" + new String(request.getParameter(paramName));
+					}
+				}
+			}
+		}
+	}
+	
+	if (request.getParameter("sessionAtts") != null && !"null".equals(request.getParameter("sessionAtts")) && !"".equals(request.getParameter("sessionAtts"))) {
+		sessionAtts = request.getParameter("sessionAtts");
+		String[] atts = sessionAtts.split(",");
+		if(atts.length%2==0){
+			for(int i=0;i<atts.length;i=i+2){
+				String name= atts[i];
+				String value= atts[i+1];
+				request.getSession().setAttribute(name,value);
+			}
+		}else{
+			//no es un numero par, entonces falta un valor
+			errorMsg = "invalid value for parameter: sessionAtts";
+		}
+	}
+	
+	if (request.getParameter("error") != null) {
+		if (request.getParameter("error").equals("1")) {
+			//Usuario y/o Password incorrectos
+			errorMsg = LabelManager.getName(udata.getLabelSetId(),langId,"msgLogUseEnvFailed");
+	  } else if (request.getParameter("error").equals("2")) {
+			//Usuario debe cambiar password.
+	 	  	errorMsg = LabelManager.getName(udata.getLabelSetId(),langId,"msgMustChangePassword");
+	  } else if (request.getParameter("error").equals("3")) {
+			//Usuario expirado.
+			errorMsg = LabelManager.getName(udata.getLabelSetId(),langId,"msgLogUserExpired");
+	  } else if (request.getParameter("error").equals("4")) {
+		  	//Usuario bloqueado
+ 		    errorMsg = LabelManager.getName(udata.getLabelSetId(),langId,"msgLogUserBlocked");
+	  } else if (request.getParameter("error").equals("5")) {
+		  //No hay ninguna tarea libre o adquirida
+		  errorMsg = LabelManager.getName(udata.getLabelSetId(),langId,"msgEntIdNotFound");
+	  }else if (request.getParameter("error").equals("6")) {
+		  //No hay un usuario en session
+		  errorMsg = LabelManager.getName(udata.getLabelSetId(),langId,"msgNotUsrInSession");
+	  }
+	} else if (type == null || (type.equals("F") && (request.getParameter("entCode")==null))){
+			errorMsg = LabelManager.getName(udata.getLabelSetId(),langId,"msgMisParTypEntCode");
+	} else if ((type == null) || (request.getParameter("entCode") == null)) {
+//		Faltan parámetros obligatorios (type y/o entCode)
+		errorMsg = LabelManager.getName(udata.getLabelSetId(),langId,"msgMisParTypEntCode");
+	} else if ((!type.equals("F")) && (!type.equals("P"))) {
+//		Type incorrecto, ingrese 'type=E' o 'type=P
+		errorMsg = LabelManager.getName(udata.getLabelSetId(),langId,"msgWrngType");
+	}  
+	if (errorMsg != null){
+%>
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+<%@page import="java.util.Enumeration"%>
+<%@page import="com.st.util.StringUtil"%><html>
+	<head>
+	</head>
+	<body onload="init()">
+		<%  out.print("<TEXTAREA id=errorText style='display:none'>"+ errorMsg + "</TEXTAREA>");
+			out.print("<SCRIPT language=javascript>");%>
+			function init(){
+				try{
+				window.parent.document.getElementById("iframeMessages").showMessage('<%=errorMsg%>',null);
+				}catch(e){alert('<%=errorMsg%>');}
+			}
+			<% out.print("</SCRIPT>");%>
+	</body>
+	</html>
+<%}else{
+%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<style>
+.feedBackFrame{
+	POSITION: absolute;
+	DISPLAY:none;
+	WIDTH:350px;
+	HEIGHT:200px;
+	OVERFLOW:hidden;
+	z-index:9999999;
+}
+
+</style>
+<title><%=LabelManager.getName(udata.getLabelSetId(),langId,"titApiaUrlEnt")%></title>
+<script src="<%=Parameters.ROOT_PATH%>/scripts/events.js"
+	language="Javascript"></script>
+<script src="<%=Parameters.ROOT_PATH%>/scripts/common.js"
+	language="Javascript"></script>
+<script src="<%=Parameters.ROOT_PATH%>/frames/frames.js"
+	language="Javascript" defer="true"></script>
+<script src="<%=Parameters.ROOT_PATH%>/scripts/feedBackFrame.js"
+	language="Javascript" defer="true"></script>
+<script src="<%=Parameters.ROOT_PATH%>/scripts/modalController.js"
+	language="Javascript" defer="true"></script>
+		
+<script language="javascript">
+	function sizeContent(){
+		document.getElementById("workArea").style.height=getStageHeight()+"px";
+	}
+	function init(){
+		document.getElementById("workArea").src="<%=Parameters.ROOT_PATH%>/login/security.LoginAction.do?action=redirect&txtUser=<%=user%>&txtPwd=<%=pass%>&logFromSession=<%=logFromSession%>&cmbEnv=<%=env%>&hidLangId=<%=langId%>&txtBusEntId=<%=entCode%>&txtBusEntAdm=<%=type%>&txtProId=<%=proCode%>&proInstCancelId=<%=proCancelCode%>&onFinish=<%=onFinish%>&attParams=<%=attParams%>&sessionAtts=<%=sessionAtts%>&logged=<%=logged%>";
+		document.getElementById("workArea").style.left="0px";
+		document.getElementById("workArea").style.top="0px";	
+	}
+</script>
+<link href="<%=Parameters.ROOT_PATH%>/styles/<%= styleDirectory %>/css/frames.css" rel="styleSheet" type="text/css" media="screen">
+</head>
+<body leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0" marginheight="0" marginwidth="0" onload="sizeContent();init();">
+<iframe name="workArea" id="workArea"
+	style="width:100%;height;100%;" scrolling="auto" frameborder="no">
+Su browser no acepta frames. </iframe>
+<iframe name="tocArea" id="tocArea" src="" style="display:none;"
+	scrolling="NO" TABINDEX=-1 FRAMEBORDER=0></iframe>
+<iframe name="iframeMessages" id="iframeMessages"
+	src="<%=Parameters.ROOT_PATH%>/frames/feedBackWin.jsp"
+	class="feedBackFrame"
+	style="display:none;"
+	frameborder="no"></iframe>
+<iframe name="iframeResult" id="iframeResult" class="feedBackFrame"
+	frameborder="no"
+	style="display:none;"></iframe>
+	
+
+<%
+}
+%>
+</body>
+</html>
+<script language="javascript">
+	if(document.all){
+		try{
+		sizeContent();
+		}catch(e){}
+	}
+</script>

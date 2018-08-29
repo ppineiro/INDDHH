@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE document PUBLIC "-//UJAC.org//Print Document//EN" "http://ujac.sourceforge.net/ujac-print-document.dtd">
+
+<document size="A4" margin-left="25" margin-right="25" margin-top="25" margin-bottom="25" rotate="true">
+	<font-def name="body" family="Verdana" style="normal" size="8"/>
+	<font-def name="title" family="Verdana" style="normal" size="10"/>
+	<font-def name="subtitle" family="Verdana" style="normal" size="8"/>
+	
+	<header>
+		<header-part halign="left">${titMonBusiness}</header-part>
+		<header-part halign="right">Page ${pageNumber} of ${pageCount}</header-part>
+	</header>
+
+	<font font-def="body">
+		<table columns="2" widths="20,80" border-width="0" padding="-5" padding-top="-5">
+			<cell halign="right" valign="middle">${lblMonBusExpEleName}:</cell>
+			<cell halign="left">${eleName}</cell>
+			<cell halign="right" valign="middle">${lblMonBusExpEleType}:</cell>
+			<cell halign="left">${eleType}</cell>
+		</table>
+		
+		<if cond="${ eleProperties != null}">
+			<paragraph font="title"><b><u>${sbtMonBusExpElePrps}</u></b></paragraph>
+			<table columns="2" width="100" border-width="1" border-style="top|bottom|left|right">
+				<foreach sequence="${eleProperties}" loop-variable="prop">
+					<cell valign="middle">${prop.prpName}</cell>
+					<cell valign="middle">${prop.prpValue}</cell>
+				</foreach>
+			</table>
+		</if>
+		
+		<if cond="${eleRelations != null}">
+			<paragraph font="title"><b><u>${sbtMonBusExpEleRel}</u></b></paragraph>
+			<foreach sequence="${eleRelations}" loop-variable="ele">
+				<paragraph font="subtitle"><b>${ele.eleName}</b></paragraph>
+				<table columns="5" widths="20,20,20,20,20" border-width="0" padding="-5" padding-top="-5">
+					<cell halign="right" valign="middle">${lblMonBusExpEleType}:</cell>
+					<cell halign="left">${ele.eleType}</cell>
+					<cell halign="right" valign="middle">${lblMonBusExpEleDir}:</cell>
+					<cell halign="left">${ele.eleDirection}</cell>
+					<cell halign="left">${ele.eleDepLabel}</cell>
+				</table>
+				<if cond="${ele.eleProperties != null}">
+					<paragraph font="subtitle"><b><u>${sbtMonBusExpElePrps}</u></b></paragraph>
+					<table columns="2" width="100" border-width="1" border-style="top|bottom|left|right">
+						<foreach sequence="${ele.eleProperties}" loop-variable="prop">
+							<cell valign="middle">${prop.prpName}</cell>
+							<cell valign="middle">${prop.prpValue}</cell>
+						</foreach>
+					</table>
+				</if>
+			</foreach>
+		</if>
+	</font>
+</document>

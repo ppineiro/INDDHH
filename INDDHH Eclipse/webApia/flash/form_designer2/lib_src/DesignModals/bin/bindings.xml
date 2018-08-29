@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<bindings>
+	<values>
+		<value>
+			<level name="id" value="1" />
+			<level name="inout" value="in" />
+			<level name="type" value="S" />
+			<level name="param" value="PARAMENTRONOMBRE" />
+			<level name="desc" value="Descripcion 1" />
+		</value>
+	</values>
+</bindings>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<data-sources />
+
+	<form-beans></form-beans>
+
+	<global-exceptions />
+
+	<global-forwards>
+	</global-forwards>
+
+	<action-mappings>
+		<action path="/apia.modals.AttributesAction" scope="request" type="biz.statum.apia.web.action.modal.AttributesAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.BusClaParAction" scope="request" type="biz.statum.apia.web.action.modal.BusClaParAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.DashboardsAction" scope="request" type="biz.statum.apia.web.action.modal.DashboardsAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.EnvironmentsAction" scope="request" type="biz.statum.apia.web.action.modal.EnvironmentsAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.PoolsAction" scope="request" type="biz.statum.apia.web.action.modal.PoolsAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.PanelsAction" scope="request" type="biz.statum.apia.web.action.modal.PanelsAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.UsersAction" scope="request" type="biz.statum.apia.web.action.modal.UsersAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.ProfilesAction" scope="request" type="biz.statum.apia.web.action.modal.ProfilesAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.OrganizationalRolesAction" scope="request" type="biz.statum.apia.web.action.modal.OrganizationalRolesAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.BusClassAction" scope="request" type="biz.statum.apia.web.action.modal.BusClassAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.ProjectsAction" scope="request" type="biz.statum.apia.web.action.modal.ProjectsAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.ImagesAction" scope="request" type="biz.statum.apia.web.action.modal.ImagesAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.StatusAction" scope="request" type="biz.statum.apia.web.action.modal.StatusAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.LanguageAction" scope="request" type="biz.statum.apia.web.action.modal.LanguageAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.ProcessesAction" scope="request" type="biz.statum.apia.web.action.modal.ProcessesAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.TasksAction" scope="request" type="biz.statum.apia.web.action.modal.TasksAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.FormsAction" scope="request" type="biz.statum.apia.web.action.modal.FormsAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.EntitiesAction" scope="request" type="biz.statum.apia.web.action.modal.EntitiesAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.CategoriesAction" scope="request" type="biz.statum.apia.web.action.modal.CategoriesAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.FunctionalitiesAction" scope="request" type="biz.statum.apia.web.action.modal.FunctionalitiesAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.ColumnsAction" scope="request" type="biz.statum.apia.web.action.modal.ColumnsAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.QueryAction" scope="request" type="biz.statum.apia.web.action.modal.QueryAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.CalendarViewAction" scope="request" type="biz.statum.apia.web.action.modal.CalendarViewAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.DocumentTypeAction" scope="request" type="biz.statum.apia.web.action.modal.DocumentTypeAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>	
+					
+		<action path="/apia.modals.EntInstanceAction" scope="request" type="biz.statum.apia.web.action.modal.EntInstanceAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+		<action path="/apia.modals.StylesAction" scope="request" type="biz.statum.apia.web.action.modal.StylesAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+		</action>
+		
+	</action-mappings>
+
+	<controller />
+
+
+</struts-config>

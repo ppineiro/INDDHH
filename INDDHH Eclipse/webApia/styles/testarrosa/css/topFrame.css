@@ -1,0 +1,97 @@
+
+
+BODY{
+   BORDER:1px solid #000000;
+   MARGIN-TOP:0px;
+	MARGIN-LEFT:0px;
+	MARGIN-RIGHT:0px;
+	MARGIN-BOTTOM:0px;
+   OVERFLOW: hidden;
+   BACKGROUND-COLOR:#EFEFEF;
+}
+    
+.spanLogged{
+	WIDTH:30px;
+	HEIGHT: 18px;
+	color:#ffffff;
+	PADDING:2px;
+	FONT-SIZE: 8pt;
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+}
+
+.spanName{
+	HEIGHT: 18px;
+	color:#ffffff;
+	PADDING:2px;
+	FONT-SIZE: 8pt;
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+}
+
+.spanMenu{
+	HEIGHT: 18px;
+	color:#ffffff;
+	PADDING:2px;
+	FONT-SIZE: 8pt;
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+}
+
+.spanLogout{
+	HEIGHT: 18px;
+	color:#ffffff;
+	PADDING:2px;
+	FONT-SIZE: 8pt;
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	MARGIN-RIGHT:10px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+}
+
+
+.btn{
+ 	background-image:url(../../gradient.jsp?height=20&width=1&colors=92C0E2;FFFFFF&type=v);
+    background-repeat:repeat-x;
+	BORDER:1px solid #416D94;
+	color:#1B4D80;
+    HEIGHT: 18px;
+    WIDTH: 18px;
+    MARGIN-LEFT: 1px;
+    margin-right:2px;
+	 margin-bottom:3px;
+    PADDING: 0px;
+    TEXT-ALIGN: center;
+}
+.btn IMG{
+	FILTER:alpha(opacity=40);
+}    
+
+
+.degree {
+	background-image:url(../images/back.gif);
+    /*background-repeat:repeat-y;*/
+    background-color:#ffffff;
+}
+
+.degree2 {
+	background-image:url(../images/back.gif);
+	/*background-repeat:repeat-y;*/
+	background-color:#8cbad6;
+}
+
+SELECT{
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	FONT-SIZE: 8pt;
+}

@@ -1,0 +1,19 @@
+﻿<flash_project name="EntityEvents" version="1">
+    <project_folder name="source" expanded="true">
+        <project_folder name="com" expanded="true">
+            <project_folder name="st" expanded="true">
+                <project_folder name="util" expanded="true">
+                    <project_file path="./source/com/st/util/WindowManager.as" filetype="as" />
+                    <project_file path="./source/com/st/util/Labels.as" filetype="as" />
+                    <project_file path="./source/com/st/util/DataSourceXML.as" filetype="as" />
+                </project_folder>
+                <project_folder name="dialogs" expanded="true">
+                    <project_file path="./source/com/st/dialogs/EvtBindModal.as" filetype="as" />
+                    <project_file path="./source/com/st/dialogs/EvtModal.as" filetype="as" />
+                    <project_file path="./source/com/st/dialogs/AttModal.as" filetype="as" />
+                </project_folder>
+            </project_folder>
+        </project_folder>
+        <project_file path="./source/EntityEvents.fla" filetype="fla" profile="" def_file="true" />
+    </project_folder>
+</flash_project>

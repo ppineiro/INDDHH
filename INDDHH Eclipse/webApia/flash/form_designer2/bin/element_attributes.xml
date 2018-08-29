@@ -1,0 +1,1588 @@
+<?xml version="1.0" ?>
+<elements>
+	<element name="input">
+		<attGroup name="Ejecución">
+			<attribute name='type' label='Tipo' value='0' type='combo'>
+				<values>
+					<value label="INPUT" value="0" classname="view.fields.InputField" />
+					<value label="COMBOBOX" value="1" classname="view.fields.ComboboxField" />
+					<value label="CHECKBOX" value="2" classname="view.fields.CheckboxField" />
+					<value label="RADIOBUTTON" value="3" classname="view.fields.RadiobuttonField" not_for_grid="true" />
+					<value label="HIDDEN INPUT" value="4" classname="view.fields.HiddenField" />
+					<value label="PASSWORD" value="5" classname="view.fields.PasswordField" />
+				</values>
+			</attribute>
+			<attribute name="attr" label="Atributo" type="modal" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" pagedmodal="true" modalUrl="attributes.xml" modaltitle="lbl_datafinder_att_title">
+				<values>
+					<value>
+						<level name="id" value="" />
+						<level name="name" value="" />
+					</value>
+				</values>
+			</attribute>
+			<attribute name="prpChildOrder" label="Orden dentro de Tabla" type="modal" modalclass="design.modals.GridOrder" only_for_grid="true"/>
+			<attribute prpId="19" name="prpName" prpType="S" label="Nombre" type="text" datatype="String" value=""/>
+			<attribute prpId="10" name="prpModal" prpType="S" label="Modal" type="modalErase" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="attributes.xml" modaltitle="lbl_datafinder_mdl_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+					</value>
+				</values>
+			</attribute>
+			<attribute prpId="33" name="prpTransient" prpType="S" label="Transitorio" type="checkbox" value="false"/>
+			<attribute prpId="54" name="prpRegExpMessage" prpType="S" label="Mensaje para expresión regular" type="text" datatype="String" value=""/>
+			<attribute prpId="53" name="prpFormula" prpType="S" label="Fórmula" type="text" datatype="String" value=""/>
+			<attribute prpId="16" name="prpDefault" prpType="S" label="Valor por defecto" type="text" datatype="String" value=""/>
+			
+			<attribute prpId="7" name="prpRequired" prpType="S" label="Requerido" type="checkbox" value="false"/>
+			<attribute prpId="65" name="prpGridLabel" only_for_grid="true" prpType="S" label="Título de columnas en tablas" type="text" datatype="String" value=""/>
+		</attGroup>
+		<attGroup name="Eventos">
+			<attribute name="bussinessclasses" label="onChange" evtName="ONCHANGE" evtId="1" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true" />
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+Operador aritmético: + , - , / , * 
+Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Operador booleano: and, or | Operador unario: not(expresion)
+Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+			<attribute name="bussinessclasses" label="onModalReturn" evtName="ONMODALRETURN" evtId="37" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true" />
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+Operador aritmético: + , - , / , * 
+Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Operador booleano: and, or | Operador unario: not(expresion)
+Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+		</attGroup>
+		<attGroup name="Estilo">
+			<attribute prpId="2" name="prpReadOnly" prpType="S" label="Solo lectura" type="checkbox" value="false"/>
+			<attribute prpId="4" name="prpDisabled" prpType="S" label="Deshabilitado" type="checkbox" value="false"/>
+			<attribute prpId="39" name="prpInputAsText" prpType="S" label="Ver como texto" type="checkbox" value="false"/>
+			<attribute prpId="31" name="prpVisibilityHidden" prpType="S" label="Oculto" type="checkbox" value="false"/>
+			<attribute prpId="1" name="prpSize" prpType="N" label="Tamaño" type="text" datatype="int" value=""/>
+			<attribute prpId="5" name="prpFontColor" prpType="S" label="Color del texto" type="colorPicker" datatype="String" value=""/>
+			<attribute prpId="37" name="prpValColor" prpType="S" label="Color del valor" type="colorPicker" datatype="String" value=""/>
+			<attribute prpId="40" name="prpNoPrint" prpType="S" label="No imprimir" type="checkbox" value="false"/>
+			<attribute prpId="24" name="prpColWidth" only_for_grid="true" prpType="S" label="Ancho de columna" type="numeric" datatype="int" value=""/>
+			<attribute prpId="35" name="prpToolTip" prpType="S" label="Tooltip" type="text" datatype="String" value=""/>
+		</attGroup>
+		<attGroup name="Binding">
+			<attribute name="entBinding" label="Binding con entidad" type="modalErase" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="entities.xml" bindAttUrl="entBindAttributes.xml" volatile_childs="" modaltitle="lbl_datafinder_ent_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+					</value>
+				</values>
+				<attributes name="entBindingAsociation">
+				</attributes>
+			</attribute>
+		</attGroup>
+	</element>
+	<element name="listbox">
+		<attGroup name="Ejecución">
+			<attribute name="attr" label="Atributo" type="modal" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="attributes.xml" modaltitle="lbl_datafinder_att_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+					</value>
+				</values>
+			</attribute>
+			<attribute prpId="19" name="prpName" prpType="S" label="Nombre" type="text" datatype="String" value=""/>
+			<attribute prpId="11" name="modalName" label="Modal" type="modalErase" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="entities.xml" modaltitle="lbl_datafinder_mdl_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+					</value>
+				</values>
+			</attribute>
+			<attribute name="sinOpcionNulaName" label="Sin opción nula" type="checkbox" value="false"/>
+			<attribute name="transitorioName" label="Transitorio" type="checkbox" value="false"/>
+			<attribute prpId="7" name="prpRequired" prpType="S" label="Requerido" type="checkbox" value="false"/>
+		</attGroup>
+		<attGroup name="Eventos">
+			<attribute name="bussinessclasses" label="onChange" evtName="ONCHANGE" evtId="1" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true" />
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+Operador aritmético: + , - , / , * 
+Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Operador booleano: and, or | Operador unario: not(expresion)
+Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+		</attGroup>
+		<attGroup name="Estilo">
+			<attribute prpId="2" name="prpReadOnly" prpType="S" label="Solo lectura" type="checkbox" value="false"/>
+			<attribute prpId="4" name="prpDisabled" prpType="S" label="Deshabilitado" type="checkbox" value="false"/>
+			<attribute name="alineacionName" label="Alineación" type="combo" value="1">
+				<values>
+					<value label="Izquierdo" value="0"/>
+					<value label="Centrado" value="1"/>
+					<value label="Derecho" value="2"/>
+				</values>
+			</attribute>
+			<attribute name="ordenadoName" label="Ordenado" type="checkbox" value="false"/>
+			
+			<attribute name="tamanioName" label="Tamaño" type="text" datatype="int" value=""/>
+			<attribute name="renglonesName" label="Renglones" type="text" datatype="int" value=""/>
+			
+			<attribute prpId="5" name="prpFontColor" prpType="S" label="Color del texto" type="colorPicker" datatype="String" value=""/>
+			<attribute prpId="37" name="prpValColor" prpType="S" label="Color del valor" type="colorPicker" datatype="String" value=""/>
+			
+			
+			<attribute prpId="40" name="prpNoPrint" prpType="S" label="No imprimir" type="checkbox" value="false"/>
+			<attribute prpId="35" name="prpToolTip" prpType="S" label="Tooltip" type="text" datatype="String" value=""/>
+			
+			
+		</attGroup>
+	</element>
+	<element name="tree">
+		<attGroup name="Ejecución">
+			<attribute name="attr" label="Atributo" type="modal" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="attributes.xml" modaltitle="lbl_datafinder_att_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+					</value>
+				</values>
+			</attribute>
+			<attribute prpId="19" name="prpName" prpType="S" label="Nombre" type="text" datatype="String" value=""/>
+			<attribute name="entidadName" label="Entidad" type="modalErase" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="entities.xml" modaltitle="lbl_datafinder_mdl_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+					</value>
+				</values>
+			</attribute>
+			<attribute prpId="86" name="prpMultiselect" prpType="S" label="Selección múltiple" type="checkbox" value="false"/>
+			<attribute prpId="87" name="prpSelParent" prpType="S" label="Seleccionar padres" type="checkbox" value="false"/>
+			<attribute name="transitorioName" label="Transitorio" type="checkbox" value="false"/>
+			<attribute prpId="7" name="prpRequired" prpType="S" label="Requerido" type="checkbox" value="false"/>
+		</attGroup>
+		<attGroup name="Eventos">
+			<attribute name="bussinessclasses" label="onChange" evtName="ONCHANGE" evtId="1" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true" />
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+	Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+	Operador aritmético: + , - , / , * 
+	Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+	Operador booleano: and, or | Operador unario: not(expresion)
+	Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+			<attribute name="bussinessclasses" label="onPopulate" evtName="POPULATE" evtId="5" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true" />
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+	Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+	Operador aritmético: + , - , / , * 
+	Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+	Operador booleano: and, or | Operador unario: not(expresion)
+	Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+		</attGroup>
+		<attGroup name="Estilo">	
+			<attribute prpId="2" name="prpReadOnly" prpType="S" label="Solo lectura" type="checkbox" value="false"/>
+			<attribute prpId="31" name="prpVisibilityHidden" prpType="S" label="Oculto" type="checkbox" value="false"/>
+			
+			<attribute name="tamanioName" label="Tamaño" type="text" datatype="int" value=""/>
+			<attribute name="altoName" label="Alto" type="text" datatype="int" value=""/>
+			
+			<attribute prpId="88" name="prpParentIcon" prpType="S" label="Parent icon" type="modalErase" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="images.xml" modaltitle="lbl_datafinder_img_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+						<level name="value" type="label" value="" />
+					</value>
+				</values>
+			</attribute>
+			
+			<attribute prpId="89" name="prpLeafIcon" prpType="S" label="Leaf icon" type="modalErase" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="images.xml" modaltitle="lbl_datafinder_img_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+						<level name="value" type="label" value="" />
+					</value>
+				</values>
+			</attribute>
+			<attribute prpId="37" name="prpValColor" prpType="S" label="Color del valor" type="colorPicker" datatype="String" value=""/>
+			<attribute prpId="5" name="prpFontColor" prpType="S" label="Color del texto" type="colorPicker" datatype="String" value=""/>
+			
+			<attribute prpId="40" name="prpNoPrint" prpType="S" label="No imprimir" type="checkbox" value="false"/>
+			<attribute prpId="35" name="prpToolTip" prpType="S" label="Tooltip" type="text" datatype="String" value=""/>
+			
+		</attGroup>
+	</element>
+	<element name="combobox">
+		<attGroup name="Ejecución">
+			<attribute name='type' label='Tipo' value='1' type='combo'>
+				<values>
+					<value label="INPUT" value="0" classname="view.fields.InputField" />
+					<value label="COMBOBOX" value="1" classname="view.fields.ComboboxField" />
+					<value label="CHECKBOX" value="2" classname="view.fields.CheckboxField"/>
+					<value label="RADIOBUTTON" value="3" classname="view.fields.RadiobuttonField" not_for_grid="true" />
+					<value label="HIDDEN INPUT" value="4" classname="view.fields.HiddenField" />
+					<value label="PASSWORD" value="5" classname="view.fields.PasswordField" />
+				</values>
+			</attribute>
+			<attribute name="attr" label="Atributo" type="modal" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="attributes.xml" modaltitle="lbl_datafinder_att_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+					</value>
+				</values>
+			</attribute>
+			<attribute name="prpChildOrder" label="Orden dentro de Tabla" type="modal" modalclass="design.modals.GridOrder" only_for_grid="true"/>
+			<attribute prpId="19" name="prpName" prpType="S" label="Nombre" type="text" datatype="String" value=""/>
+			<attribute name="entidadName" label="Entidad" type="modalErase" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="entities.xml" modaltitle="lbl_datafinder_mdl_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+					</value>
+				</values>
+			</attribute>
+			<attribute name="sinOpcionNulaName" label="Sin opción nula" type="checkbox" value="false"/>
+			<attribute name="popValueName" label="Pop value" type="text" datatype="String" value=""/>
+			<attribute name="popTextName" label="Pop text" type="text" datatype="String" value=""/>
+			<attribute name="transitorioName" label="Transitorio" type="checkbox" value="false"/>
+			<attribute prpId="7" name="prpRequired" prpType="S" label="Requerido" type="checkbox" value="false"/>
+			<attribute prpId="65" name="prpGridLabel" only_for_grid="true" prpType="S" label="Título de columnas en tablas" type="text" datatype="String" value=""/>
+		</attGroup>
+		<attGroup name="Eventos">
+			<attribute name="bussinessclasses" label="onChange" evtName="ONCHANGE" evtId="1" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true" />
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+	Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+	Operador aritmético: + , - , / , * 
+	Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+	Operador booleano: and, or | Operador unario: not(expresion)
+	Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+			<attribute name="bussinessclasses" label="onPopulate" evtName="POPULATE" evtId="5" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true" />
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+	Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+	Operador aritmético: + , - , / , * 
+	Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+	Operador booleano: and, or | Operador unario: not(expresion)
+	Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+		</attGroup>
+		<attGroup name="Estilo">	
+			<attribute prpId="2" name="prpReadOnly" prpType="S" label="Solo lectura" type="checkbox" value="false"/>
+			<attribute prpId="4" name="prpDisabled" prpType="S" label="Deshabilitado" type="checkbox" value="false"/>
+			<attribute name="verComoTextoName" label="Ver como texto" type="checkbox" value="false"/>
+			<attribute prpId="31" name="prpVisibilityHidden" prpType="S" label="Oculto" type="checkbox" value="false"/>
+			<attribute name="ordenadoName" label="Ordenado" type="checkbox" value="false"/>
+			
+			<attribute name="tamanioName" label="Tamaño" type="text" datatype="int" value=""/>
+			<attribute prpId="37" name="prpValColor" prpType="S" label="Color del valor" type="colorPicker" datatype="String" value=""/>
+			<attribute prpId="5" name="prpFontColor" prpType="S" label="Color del texto" type="colorPicker" datatype="String" value=""/>
+			
+			<attribute prpId="40" name="prpNoPrint" prpType="S" label="No imprimir" type="checkbox" value="false"/>
+			<attribute name="prpColWidth" only_for_grid="true" label="Ancho de columna" type="text" datatype="int" value=""/>
+			<attribute prpId="35" name="prpToolTip" prpType="S" label="Tooltip" type="text" datatype="String" value=""/>
+			
+		</attGroup>
+		<attGroup name="Binding">
+			<attribute name="entBinding" label="Binding con entidad" type="modalErase" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="entities.xml" bindAttUrl="entBindAttributes.xml" volatile_childs="" modaltitle="lbl_datafinder_ent_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+					</value>
+				</values>
+				<attributes name="entBindingAsociation">
+				</attributes>
+			</attribute>
+		</attGroup>
+	</element>
+	<element name="checkbox">
+		<attGroup name="Ejecución">
+			<attribute name='type' label='Tipo' value='2' type='combo'>
+				<values>
+					<value label="INPUT" value="0" classname="view.fields.InputField" />
+					<value label="COMBOBOX" value="1" classname="view.fields.ComboboxField" />
+					<value label="CHECKBOX" value="2" classname="view.fields.CheckboxField" />
+					<value label="RADIOBUTTON" value="3" classname="view.fields.RadiobuttonField" not_for_grid="true" />
+					<value label="HIDDEN INPUT" value="4" classname="view.fields.HiddenField" />
+					<value label="PASSWORD" value="5" classname="view.fields.PasswordField" />
+				</values>
+			</attribute>
+			<attribute name="attr" label="Atributo" type="modal" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="attributes.xml" modaltitle="lbl_datafinder_att_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+					</value>
+				</values>
+			</attribute>
+			<attribute name="prpChildOrder" label="Orden dentro de Tabla" type="modal" modalclass="design.modals.GridOrder" only_for_grid="true"/>
+			<attribute prpId="19" name="prpName" prpType="S" label="Nombre" type="text" datatype="String" value=""/>
+			<attribute prpId="17" name="prpChecked" label="Checkeado" type="checkbox" value="false"/>
+			
+			<attribute name="transitorioName" label="Transitorio" type="checkbox" value="false"/>
+			<attribute prpId="7" name="prpRequired" prpType="S" label="Requerido" type="checkbox" value="false"/>
+			<attribute prpId="65" name="prpGridLabel" only_for_grid="true" prpType="S" label="Título de columnas en tablas" type="text" datatype="String" value=""/>
+		</attGroup>
+		<attGroup name="Eventos">
+			<attribute name="bussinessclasses" label="onChange" evtName="ONCHANGE" evtId="1" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true" />
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+	Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+	Operador aritmético: + , - , / , * 
+	Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+	Operador booleano: and, or | Operador unario: not(expresion)
+	Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+			<attribute name="bussinessclasses" label="onClick" evtName="ONCLICK" evtId="4" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true" />
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+	Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+	Operador aritmético: + , - , / , * 
+	Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+	Operador booleano: and, or | Operador unario: not(expresion)
+	Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+		</attGroup>
+		<attGroup name="Estilo">	
+			<attribute prpId="4" name="prpDisabled" prpType="S" label="Deshabilitado" type="checkbox" value="false"/>
+			<attribute prpId="31" name="prpVisibilityHidden" prpType="S" label="Oculto" type="checkbox" value="false"/>
+			<attribute prpId="5" name="prpFontColor" prpType="S" label="Color del texto" type="colorPicker" datatype="String" value=""/>
+			<attribute prpId="40" name="prpNoPrint" prpType="S" label="No imprimir" type="checkbox" value="false"/>
+			<attribute name="prpColWidth" only_for_grid="true"  label="Ancho de columna" type="text" datatype="int" value=""/>
+			<attribute prpId="35" name="prpToolTip" prpType="S" label="Tooltip" type="text" datatype="String" value=""/>
+			
+		</attGroup>
+	</element>
+	<element name="password">
+		<attGroup name="Ejecución">		
+			<attribute name='type' label='Tipo' value='5' type='combo'>
+				<values>
+					<value label="INPUT" value="0" classname="view.fields.InputField" />
+					<value label="COMBOBOX" value="1" classname="view.fields.ComboboxField" />
+					<value label="CHECKBOX" value="2" classname="view.fields.CheckboxField" />
+					<value label="RADIOBUTTON" value="3" classname="view.fields.RadiobuttonField" not_for_grid="true" />
+					<value label="HIDDEN INPUT" value="4" classname="view.fields.HiddenField" />
+					<value label="PASSWORD" value="5" classname="view.fields.PasswordField" />
+				</values>
+			</attribute>
+			<attribute name="attr" label="Atributo" type="modal" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="attributes.xml" modaltitle="lbl_datafinder_att_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+					</value>
+				</values>
+			</attribute>
+			<attribute name="prpChildOrder" label="Orden dentro de Tabla" type="modal" modalclass="design.modals.GridOrder" only_for_grid="true"/>
+			<attribute prpId="19" name="prpName" prpType="S" label="Nombre" type="text" datatype="String" value=""/>
+			<attribute name="transitorioName" label="Transitorio" type="checkbox" value="false"/>
+			<attribute prpId="7" name="prpRequired" prpType="S" label="Requerido" type="checkbox" value="false"/>
+			<attribute prpId="65" name="prpGridLabel" only_for_grid="true" prpType="S" label="Título de columnas en tablas" type="text" datatype="String" value=""/>
+		</attGroup>
+		<attGroup name="Estilo">	
+			<attribute prpId="2" name="prpReadOnly" prpType="S" label="Solo lectura" type="checkbox" value="false"/>
+			<attribute prpId="4" name="prpDisabled" prpType="S" label="Deshabilitado" type="checkbox" value="false"/>
+			
+			<attribute name="tamanioName" label="Tamaño" type="text" datatype="int" value=""/>
+			<attribute prpId="5" name="prpFontColor" prpType="S" label="Color del texto" type="colorPicker" datatype="String" value=""/>
+			<attribute prpId="37" name="prpValColor" prpType="S" label="Color del valor" type="colorPicker" datatype="String" value=""/>
+			
+			<attribute prpId="40" name="prpNoPrint" prpType="S" label="No imprimir" type="checkbox" value="false"/>
+			
+			<attribute prpId="35" name="prpToolTip" prpType="S" label="Tooltip" type="text" datatype="String" value=""/>
+			
+		</attGroup>		
+	</element>
+	<element name="option">
+		<attGroup name="Ejecución">	
+			<attribute name='type' label='Tipo' value='3' type='combo'>
+				<values>
+					<value label="INPUT" value="0" classname="view.fields.InputField" />
+					<value label="COMBOBOX" value="1" classname="view.fields.ComboboxField" />
+					<value label="CHECKBOX" value="2" classname="view.fields.CheckboxField" />
+					<value label="RADIOBUTTON" value="3" classname="view.fields.RadiobuttonField" not_for_grid="true" />
+					<value label="HIDDEN INPUT" value="4" classname="view.fields.HiddenField" />
+					<value label="PASSWORD" value="5" classname="view.fields.PasswordField" />
+				</values>
+			</attribute>
+			<attribute name="attr" label="Atributo" type="modal" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="attributes.xml" modaltitle="lbl_datafinder_att_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+					</value>
+				</values>
+			</attribute>
+			<attribute prpId="19" name="prpName" prpType="S" label="Nombre" type="text" datatype="String" value=""/>
+			<attribute prpId="11" name="entidadName" label="Entidad" type="modalErase" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="entities.xml" modaltitle="lbl_datafinder_mdl_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+					</value>
+				</values>
+			</attribute>
+			
+			<attribute name="transitorioName" label="Transitorio" type="checkbox" value="false"/>
+			
+			<attribute prpId="7" name="prpRequired" prpType="S" label="Requerido" type="checkbox" value="false"/>
+			
+		</attGroup>
+		<attGroup name="Eventos">
+			<attribute name="bussinessclasses" label="onChange" evtName="ONCHANGE" evtId="1" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true" />
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+Operador aritmético: + , - , / , * 
+Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Operador booleano: and, or | Operador unario: not(expresion)
+Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+			<attribute name="bussinessclasses" label="onClick" evtName="ONCLICK" evtId="4" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true" />
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+Operador aritmético: + , - , / , * 
+Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Operador booleano: and, or | Operador unario: not(expresion)
+Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+		</attGroup>
+		<attGroup name="Estilo">	
+			<attribute prpId="2" name="prpReadOnly" prpType="S" label="Solo lectura" type="checkbox" value="false"/>
+			<attribute prpId="4" name="prpDisabled" prpType="S" label="Deshabilitado" type="checkbox" value="false"/>
+			<attribute prpId="31" name="prpVisibilityHidden" prpType="S" label="Oculto" type="checkbox" value="false"/>
+			
+			<attribute name="ordenadoName" label="Ordenado" type="checkbox" value="false"/>
+			<attribute name="saltoDePaginaName" label="No realizar salto de página entre opciones" type="checkbox" value="false"/>
+			
+			<attribute prpId="5" name="prpFontColor" prpType="S" label="Color del texto" type="colorPicker" datatype="String" value=""/>
+			<attribute prpId="37" name="prpValColor" prpType="S" label="Color del valor" type="colorPicker" datatype="String" value=""/>
+			<attribute prpId="40" name="prpNoPrint" prpType="S" label="No imprimir" type="checkbox" value="false"/>
+			<attribute prpId="35" name="prpToolTip" prpType="S" label="Tooltip" type="text" datatype="String" value=""/>
+			
+		</attGroup>
+	</element>
+	<element name="textarea">
+		<attGroup name="Ejecución">
+			<attribute name="attr" label="Atributo" type="modal" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="attributes.xml" modaltitle="lbl_datafinder_att_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+					</value>
+				</values>
+			</attribute>
+			<!--attribute name='type' label='Tipo' value='0' type='combo'>
+				<values>
+					<value label="TEXTAREA" value="0" classname="view.fields.TextareaField" />
+					<value label="EDITOR" value="1" classname="view.fields.EditorField" />																
+				</values>
+			</attribute-->
+			<attribute prpId="19" name="prpName" prpType="S" label="Nombre" type="text" datatype="String" value=""/>
+			
+			<attribute name="transitorioName" label="Transitorio" type="checkbox" value="false"/>
+			<attribute name="valorPorDefectoName" label="Valor por defecto" type="text" datatype="String" value=""/>
+			
+			<attribute prpId="7" name="prpRequired" prpType="S" label="Requerido" type="checkbox" value="false"/>
+			
+		</attGroup>
+		<attGroup name="Eventos">
+			<attribute name="bussinessclasses" label="onChange" evtName="ONCHANGE" evtId="1" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true" />
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+Operador aritmético: + , - , / , * 
+Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+Operador booleano: and, or | Operador unario: not(expresion)
+Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+		</attGroup>
+		<attGroup name="Estilo">
+			<attribute prpId="2" name="prpReadOnly" prpType="S" label="Solo lectura" type="checkbox" value="false"/>
+			<attribute prpId="4" name="prpDisabled" prpType="S" label="Deshabilitado" type="checkbox" value="false"/>
+			<attribute name="verComoTextoName" label="Ver como texto" type="checkbox" value="false"/>
+			<attribute prpId="31" name="prpVisibilityHidden" prpType="S" label="Oculto" type="checkbox" value="false"/>
+			<attribute name="tamanioName" label="Tamaño" type="text" datatype="int" value=""/>
+			<attribute name="renglonesName" label="Renglones" type="text" datatype="String" value=""/>
+			
+			<attribute prpId="5" name="prpFontColor" prpType="S" label="Color del texto" type="colorPicker" datatype="String" value=""/>
+			<attribute prpId="37" name="prpValColor" prpType="S" label="Color del valor" type="colorPicker" datatype="String" value=""/>
+			<attribute prpId="40" name="prpNoPrint" prpType="S" label="No imprimir" type="checkbox" value="false"/>
+			<attribute prpId="35" name="prpToolTip" prpType="S" label="Tooltip" type="text" datatype="String" value=""/>
+			
+		</attGroup>
+	</element>
+	<element name="label">
+		<attGroup name="Ejecución">
+			<!--attribute name='type' label='Tipo' value='0' type='combo'>
+				<values>
+					<value label="LABEL" value="0" classname="view.fields.LabelField" />
+					<value label="TITLE" value="1" classname="view.fields.TitleField" />
+					<value label="LINK" value="2" classname="view.fields.LinkField" />																
+				</values>
+			</attribute-->
+			<attribute name="prpChildOrder" label="Orden dentro de Tabla" type="modal" modalclass="design.modals.GridOrder" only_for_grid="true"/>
+			<attribute prpId="19" name="prpName" prpType="S" label="Nombre" type="text" datatype="String" value=""/>
+			<attribute prpId="6" name="prpValue" prpType="S" label="Valor" type="text" datatype="String" value="LABEL"/>
+			<attribute prpId="65" name="prpGridLabel" only_for_grid="true" prpType="S" label="Título de columnas en tablas" type="text" datatype="String" value=""/>
+		</attGroup>
+		<attGroup name="Estilo">
+			<attribute prpId="13" name="prpBold" label="Negrita" type="checkbox" value="false"/>
+			<attribute prpId="15" name="prpAlignCenter" prpType="S" label="Centrado" type="combo" value="0">
+				<values>
+					<value label="Izquierdo" value="0"/>
+					<value label="Centrado" value="1"/>
+					<value label="Derecho" value="2"/>
+				</values>
+			</attribute>
+			<attribute prpId="14" name="prpUnderlined" label="Subrayado" type="checkbox" value="false"/>
+			<attribute prpId="5" name="prpFontColor" prpType="S" label="Color del texto" type="colorPicker" datatype="String" value=""/>
+			
+			
+			<attribute prpId="40" name="prpNoPrint" prpType="S" label="No imprimir" type="checkbox" value="false"/>
+			<attribute prpId="35" name="prpToolTip" prpType="S" label="Tooltip" type="text" datatype="String" value=""/>
+		</attGroup>
+	</element>
+	<element name="button">
+		<attGroup name="Ejecución">
+			<attribute name="prpChildOrder" label="Orden dentro de Tabla" type="modal" modalclass="design.modals.GridOrder" only_for_grid="true"/>
+			<attribute prpId="19" name="prpName" prpType="S" label="Nombre" type="text" datatype="String" value=""/>
+			<attribute prpId="6" name="prpValue" prpType="S" label="Valor" type="text" datatype="String" value="BUTTON"/>
+			<attribute prpId="65" name="prpGridLabel" only_for_grid="true" prpType="S" label="Título de columnas en tablas" type="text" datatype="String" value=""/>
+		</attGroup>
+		<attGroup name="Eventos">
+			<attribute name="bussinessclasses" label="onClick" evtName="ONCLICK" evtId="4" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true"/>
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="70%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="15%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+	Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+	Operador aritmético: + , - , / , * 
+	Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+	Operador booleano: and, or | Operador unario: not(expresion)
+	Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+					<level width="15%" name="ajax" label="AJAX" type="checkbox" />
+				</data>
+			</attribute>
+		</attGroup>
+		<attGroup name="Estilo">
+			<attribute prpId="2" name="prpReadOnly" prpType="S" label="Solo lectura" type="checkbox" value="false"/>
+			<attribute prpId="4" name="prpDisabled" prpType="S" label="Deshabilitado" type="checkbox" value="false"/>
+			<attribute prpId="31" name="prpVisibilityHidden" prpType="S" label="Oculto" type="checkbox" value="false"/>
+			<attribute prpId="5" name="prpFontColor" prpType="S" label="Color del texto" type="colorPicker" datatype="String" value=""/>
+			<attribute prpId="40" name="prpNoPrint" prpType="S" label="No imprimir" type="checkbox" value="false"/>
+			<attribute prpId="35" name="prpToolTip" prpType="S" label="Tooltip" type="text" datatype="String" value=""/>
+		</attGroup>
+	</element>
+	<element name="title">
+		<attGroup name="Ejecución">
+			<!--attribute name='type' label='Tipo' value='0' type='combo'>
+				<values>
+					<value label="LABEL" value="0" />
+					<value label="TITLE" value="1" />
+					<value label="LINK" value="2" />																
+				</values>
+			</attribute-->
+			<attribute prpId="19" name="prpName" prpType="S" label="Nombre" type="text" datatype="String" value=""/>
+			<attribute prpId="6" name="prpValue" prpType="S" label="Valor" type="text" datatype="String" value=""/>
+			
+		</attGroup>
+		<attGroup name="Estilo">
+			<attribute prpId="5" name="prpFontColor" label="Color del texto" type="colorPicker" datatype="String" value=""/>
+			<attribute prpId="40" name="prpNoPrint" prpType="S" label="No imprimir" type="checkbox" value="false"/>
+			<attribute prpId="35" name="prpToolTip" prpType="S" label="Tooltip" type="text" datatype="String" value=""/>
+		</attGroup>
+	</element>
+	<element name="file">
+		<attGroup name="Ejecución">
+			<attribute name="attr" label="Atributo" type="modal" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="attributes.xml" modaltitle="lbl_datafinder_att_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+					</value>
+				</values>
+			</attribute>
+			<attribute name="prpChildOrder" label="Orden dentro de Tabla" type="modal" modalclass="design.modals.GridOrder" only_for_grid="true"/>
+			<attribute prpId="19" name="prpName" prpType="S" label="Nombre" type="text" datatype="String" value=""/>
+			
+			<attribute name="noModificarName" label="No modificar" type="checkbox" value="false"/>
+			<attribute name="noEliminarName" label="No eliminar" type="checkbox" value="false"/>
+			<attribute name="noDescargarName" label="No descargar archivo" type="checkbox" value="false"/>
+			
+			<attribute prpId="62" name="extensionesPermitidasName" label="Extensiones permitidas" type="text" datatype="String" value=""/>
+			<attribute prpId="63" name="extensionesNoPermitidasName" label="Extensiones no permitidas" type="text" datatype="String" value=""/>
+			
+			<attribute prpId="7" name="prpRequired" prpType="S" label="Requerido" type="checkbox" value="false"/>
+			<attribute prpId="65" name="prpGridLabel" only_for_grid="true" prpType="S" label="Título de columnas en tablas" type="text" datatype="String" value=""/>
+		</attGroup>
+		<attGroup name="Estilo">
+			<attribute prpId="2" name="prpReadOnly" prpType="S" label="Solo lectura" type="checkbox" value="false"/>
+			<attribute prpId="4" name="prpDisabled" prpType="S" label="Deshabilitado" type="checkbox" value="false"/>
+			<attribute prpId="31" name="prpVisibilityHidden" prpType="S" label="Oculto" type="checkbox" value="false"/>
+			
+			<attribute name="ocultarPermisosName" label="Ocultar permisos al adjuntar documento" type="checkbox" value="false"/>
+			<attribute name="ocultarFirmaName" label="Ocultar botones de firma electrónica" type="checkbox" value="false"/>
+			
+			<attribute prpId="40" name="prpNoPrint" prpType="S" label="No imprimir" type="checkbox" value="false"/>
+		</attGroup>
+	</element>
+	<element name="hidden">
+		<attGroup name="Ejecución">
+			<attribute name='type' label='Tipo' value='4' type='combo'>
+				<values>
+					<value label="INPUT" value="0" classname="view.fields.InputField" />
+					<value label="COMBOBOX" value="1" classname="view.fields.ComboboxField" />
+					<value label="CHECKBOX" value="2" classname="view.fields.CheckboxField" />
+					<value label="RADIOBUTTON" value="3" classname="view.fields.RadiobuttonField" not_for_grid="true" />
+					<value label="HIDDEN INPUT" value="4" classname="view.fields.HiddenField" />
+					<value label="PASSWORD" value="5" classname="view.fields.PasswordField" />
+				</values>
+			</attribute>
+			<attribute name="attr" label="Atributo" type="modal" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="attributes.xml" modaltitle="lbl_datafinder_att_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+					</value>
+				</values>
+			</attribute>
+			<attribute name="prpChildOrder" label="Orden dentro de Tabla" type="modal" modalclass="design.modals.GridOrder" only_for_grid="true"/>
+			<attribute prpId="19" name="prpName" prpType="S" label="Nombre" type="text" datatype="String" value=""/>
+			<attribute name="transitorioName" label="Transitorio" type="checkbox" value="false"/>
+			<attribute name="valorPorDefectoName" label="Valor por defecto" type="text" datatype="String" value=""/>
+		</attGroup>
+		<attGroup name="Estilo">
+			<attribute prpId="40" name="prpNoPrint" prpType="S" label="No imprimir" type="checkbox" value="false"/>
+		</attGroup>
+	</element>
+	<element name="image">
+		<attGroup name="Ejecución">
+			<attribute name="prpChildOrder" label="Orden dentro de Tabla" type="modal" modalclass="design.modals.GridOrder" only_for_grid="true"/>
+			<attribute prpId="19" name="prpName" prpType="S" label="Nombre" type="text" datatype="String" value=""/>
+			<attribute prpId="22" name="prpImg" prpType="S" label="Imagen" type="modalErase" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="images.xml" modaltitle="lbl_datafinder_img_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+						<level name="value" type="label" value="" />
+					</value>
+				</values>
+			</attribute>
+			<attribute prpId="65" name="prpGridLabel" only_for_grid="true" prpType="S" label="Título de columnas en tablas" type="text" datatype="String" value=""/>
+		</attGroup>
+		<attGroup name="Eventos">
+			<attribute name="bussinessclasses" label="onClick" evtName="ONCLICK" evtId="4" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true"/>
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+	Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+	Operador aritmético: + , - , / , * 
+	Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+	Operador booleano: and, or | Operador unario: not(expresion)
+	Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+		</attGroup>
+		<attGroup name="Estilo">
+			<attribute prpId="40" name="prpNoPrint" prpType="S" label="No imprimir" type="checkbox" value="false"/>
+		</attGroup>
+	</element>
+	<element name="grid">
+		<attGroup name="Ejecución">
+			<attribute prpId="19" name="prpName" prpType="S" label="Nombre" type="text" datatype="String" value=""/>
+			<attribute name="prpChildOrder" label="Orden de campos" type="modal" modalclass="design.modals.GridOrder"/>
+			<attribute prpId="38" name="prpEditForm" label="Formulario de cargado de la grilla" type="text" datatype="String" value=""/>
+			<attribute prpId="25" name="prpQry" label="Consulta" type="modalErase" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="queries.xml" modaltitle="lbl_datafinder_qry_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+					</value>
+				</values>
+			</attribute>
+			<attribute prpId="55" name="prpPagedGrid" label="Admite paginación" type="checkbox" value="false"/>
+			<attribute prpId="56" name="prpPagedGridSize" label="Registros por página" type="text" datatype="String" value=""/>
+			<attribute prpId="57" name="prpGridAlterLastPage" label="Alterar sólo la última página" type="checkbox" value="false"/>
+			<attribute prpId="61" name="prpMaxRegGrid" label="Máxima cantidad de registros" type="text" datatype="String" value=""/>
+			<attribute prpId="58" name="prpGridNotVerifyReqServer" label="No valida campos requeridos en el servidor" type="checkbox" value="false"/>
+			
+		</attGroup>
+		<attGroup name="Eventos">
+			<attribute name="bussinessclasses" label="onRowAdd" evtName="ONROWADD" evtId="60" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true"/>
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+	Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+	Operador aritmético: + , - , / , * 
+	Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+	Operador booleano: and, or | Operador unario: not(expresion)
+	Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+			<attribute name="bussinessclasses" label="onRowDelete" evtName="ONROWDELETE" evtId="61" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true"/>
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+	Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+	Operador aritmético: + , - , / , * 
+	Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+	Operador booleano: and, or | Operador unario: not(expresion)
+	Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+			<attribute name="bussinessclasses" label="onRowSort" evtName="ONROWSORT" evtId="62" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true"/>
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+	Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+	Operador aritmético: + , - , / , * 
+	Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+	Operador booleano: and, or | Operador unario: not(expresion)
+	Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+			<attribute name="bussinessclasses" label="onColSelect" evtName="ONCOLSELECT" evtId="65" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true"/>
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+	Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+	Operador aritmético: + , - , / , * 
+	Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+	Operador booleano: and, or | Operador unario: not(expresion)
+	Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+		</attGroup>
+		<attGroup name="Estilo">
+			<attribute prpId="2" name="prpReadOnly" prpType="S" label="Solo lectura" type="checkbox" value="false"/>
+			<attribute prpId="31" name="prpVisibilityHidden" prpType="S" label="Oculto" type="checkbox" value="false"/>
+			
+			<attribute prpId="34" name="prpGridTitle" label="Título" type="text" datatype="String" value=""/>
+			<attribute prpId="32" name="prpHideChecks" label="Ocutlar checkboxes" type="checkbox" value="false"/>
+			
+			<attribute prpId="27" name="prpGridHeight" label="Altura del grid" type="text" datatype="String" value=""/>
+			
+			<attribute prpId="30" name="prpHideGridButtons" label="Ocultar botones" type="checkbox" value="false"/>
+			<attribute prpId="52" name="prpHideGridInsert" label="Ocultar botones de modificación" type="checkbox" value="false"/>
+			<attribute prpId="51" name="prpHideGridOrder" label="Ocultar botones de ordenado" type="checkbox" value="false"/>
+			<attribute prpId="68" name="prpHideGridAdd" label="Ocultar botón agregar" type="checkbox" value="false"/>
+			<attribute prpId="69" name="prpHideGridDel" label="Ocultar botón eliminar" type="checkbox" value="false"/>
+			
+		</attGroup>
+	</element>
+	<element name="link">
+		<attGroup name="Ejecución">
+			<!--attribute name='type' label='Tipo' value='0' type='combo'>
+				<values>
+					<value label="LABEL" value="0" />
+					<value label="TITLE" value="1" />
+					<value label="LINK" value="2" />																
+				</values>
+			</attribute-->
+			<attribute name="prpChildOrder" label="Orden dentro de Tabla" type="modal" modalclass="design.modals.GridOrder" only_for_grid="true"/>
+			<attribute prpId="19" name="prpName" prpType="S" label="Nombre" type="text" datatype="String" value=""/>
+			<attribute prpId="6" name="prpValue" prpType="S" label="Valor" type="text" datatype="String" value=""/>
+			<attribute name="urlName" label="URL" type="text" datatype="String" value=""/>
+			<attribute prpId="65" name="prpGridLabel" only_for_grid="true" prpType="S" label="Título de columnas en tablas" type="text" datatype="String" value=""/>
+		</attGroup>
+	</element>
+	<element name="editor">
+		<attGroup name="Ejecución">
+			<!--attribute name='type' label='Tipo' value='0' type='combo'>
+				<values>
+					<value label="TEXTAREA" value="0" classname="view.fields.TextareaField" />
+					<value label="EDITOR" value="1" classname="view.fields.EditorField" />
+				</values>
+			</attribute-->
+			<attribute name="attr" label="Atributo" type="modal" modalclass="design.modals.DataFinder" modalwidth="590" modalheight="380" modalUrl="attributes.xml" modaltitle="lbl_datafinder_att_title">
+				<values>
+					<value>
+						<level name="id" type="label" value="" />
+						<level name="name" type="label" value="" />
+					</value>
+				</values>
+			</attribute>
+			<attribute prpId="7" name="prpRequired" prpType="S" label="Requerido" type="checkbox" value="false"/>
+		</attGroup>
+		<attGroup name="Estilo">
+			<attribute prpId="31" name="prpVisibilityHidden" prpType="S" label="Oculto" type="checkbox" value="false"/>
+		</attGroup>
+	</element>
+	<element name="form">
+		<attGroup name="Ejecución">
+			<attribute prpId="36" name="prpTab" prpType="S" label="Tab" type="checkbox" value="false"/>
+			<attribute prpId="71" name="prpDontFireWhenInvisible" prpType="S" label="No ejecutar eventos en invisible" type="checkbox" value="false"/>			
+		</attGroup>
+		<attGroup name="Eventos">
+			<attribute name="bussinessclasses" label="onLoad" evtName="ONLOAD" evtId="2" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true"/>
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+	Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+	Operador aritmético: + , - , / , * 
+	Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+	Operador booleano: and, or | Operador unario: not(expresion)
+	Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+			<attribute name="bussinessclasses" label="onSubmit" evtName="ONSUBMIT" evtId="3" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true"/>
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+	Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+	Operador aritmético: + , - , / , * 
+	Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+	Operador booleano: and, or | Operador unario: not(expresion)
+	Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+			<attribute name="bussinessclasses" label="onReload" evtName="ONRELOAD" evtId="19" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true"/>
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+	Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+	Operador aritmético: + , - , / , * 
+	Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+	Operador booleano: and, or | Operador unario: not(expresion)
+	Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+			<attribute name="bussinessclasses" label="onBeforePrint" evtName="ONBEFOREPRINT" evtId="63" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true"/>
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+	Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+	Operador aritmético: + , - , / , * 
+	Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+	Operador booleano: and, or | Operador unario: not(expresion)
+	Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+			<attribute name="bussinessclasses" label="onAfterPrint" evtName="ONAFTERPRINT" evtId="64" type="modalArray" modalclass="design.modals.EventAdder" modalwidth="700" modalheight="550" clsXml="classes.xml">
+				<data>
+					<level width="0%" name="evtname" label="Event" type="label" hidden="true"/>
+					<level width="0%" name="evtid" label="Event" type="label" hidden="true" />
+					<level width="80%" name="clsname" label="Name" type="label" />
+					<level width="0%" name="clsid" label="Clsid" type="label" hidden="true" />
+					<level width="0%" name="bndid" label="Bndid" type="label" hidden="true" />
+					<level width="0%" name="order" label="Order" type="label" hidden="true" />
+					<level width="0%" name="binding" label="Binding" type="modalArray" modalclass="view.modal.EntityBinding" modalUrl="bindings.xml" hidden="true" >
+						<data>
+							<level width="0%" name="id" label="Id" type="label" hidden="true" />
+							<level width="6%" name="inout" label="In/Out" type="direction" />
+							<level width="6%" name="type" label="Type" type="type" />
+							<level width="32%" name="param" label="Parameter" type="label" />
+							<level width="0%" name="desc" label="" type="label" />
+							<level width="20%" name="valType" label="Tipo de valor" type="combo" value="0">
+								<values>
+									<value label="Valor" value="0" show="value"/>
+									<value label="Atributo de Entidad" value="1" show="attribute" />
+									<value label="Atributo de Proceso" value="2" show="attribute" />
+								</values>
+							</level>
+							<level width="36%" name="value" label="Value" type="input" />
+							<level width="0%" name="attributeid" label="AttributeId" type="label" hidden="true" />
+							<level width="0%" name="attribute" label="Attribute" type="modal" atttype="event" hidden="true" attUrl="attributes.xml" modalwidth="590" modalheight="380"/>
+						</data>
+					</level>
+					<level width="20%" name="condition" label="Condición" modaltitle="Condition" type="modalArray" modalclass="design.modals.Condition" modalwidth="310" modalheight="290">
+						<data>
+							<title>REGLAS DE SINTAXIS:</title>
+							<info>String: 'string' | Number: number | Date: [date] | Null: null 
+	Atributo de Entidad: ent_att('att_name') | Atributo de Proceso: pro_att('att_name') 
+	Operador aritmético: + , - , / , * 
+	Operador de comparación : &gt;, &lt;, &gt;=, &lt;=, =, !=, &lt;&gt; 
+	Operador booleano: and, or | Operador unario: not(expresion)
+	Variables globales: currentUser, currentTask, currentPool, currentStep</info>
+						</data>
+					</level>
+				</data>
+			</attribute>
+		</attGroup>
+		<attGroup name="Estilo">
+			<attribute prpId="3" name="prpFrmInvisible" prpType="S" label="Formulario invisible" type="checkbox" value="false"/>
+			<attribute prpId="28" name="prpFormHidden" prpType="S" label="Formulario oculto" type="checkbox" value="false"/>
+			<attribute prpId="29" name="prpFormClosed" prpType="S" label="Formulario cerrado" type="checkbox" value="false"/>
+			<attribute prpId="70" name="prpHighlight" prpType="S" label="Resaltar" type="checkbox" value="false"/>
+		</attGroup>
+	</element>
+	<element name="captcha">
+		<attGroup name="Estilo">
+			<attribute prpId="90" name="prpCssClass" prpType="S" label="Clase CSS" type="text" datatype="String" value=""/>
+		</attGroup>
+	</element>
+</elements>

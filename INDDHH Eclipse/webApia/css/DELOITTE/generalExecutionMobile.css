@@ -1,0 +1,17 @@
+div.optionsContainer {
+	display: none;
+}
+
+div.dataContainer {
+	padding-right: 15px;
+}
+
+div.bottom {
+	margin-right: 15px;
+}
+
+#divAdminActEdit div.content {
+	height: auto !important;
+	min-height: 30px;
+	max-height: 200px;
+}

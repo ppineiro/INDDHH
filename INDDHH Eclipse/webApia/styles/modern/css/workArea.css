@@ -1,0 +1,607 @@
+BODY {
+	background-color: #FFFFFF;
+    OVERFLOW: hidden;
+    MARGIN:0px;
+    margin-top :2px;
+	PADDING-top:2px;
+}
+/*------------------------------*/
+/*			CONTENT 			*/
+/*------------------------------*/
+#divContent{
+	HEIGHT:100px;
+	WIDTH:100%;
+    OVERFLOW: auto;
+    MARGIN: 0px;
+    PADDING-LEFT:4px;
+    PADDING-RIGHT:4px;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    SCROLLBAR-FACE-COLOR: #F1F0EF;
+    SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+    SCROLLBAR-SHADOW-COLOR: #C0C0C0;
+    SCROLLBAR-ARROW-COLOR: #00005A;
+    SCROLLBAR-DARKSHADOW-COLOR: #808080;
+    SCROLLBAR-BASE-COLOR: #F1F0EF;
+    scrollbar-3d-light-color: #808080;
+	border-left : 1px solid gray;
+	border-right : 1px solid gray;	
+	border-top :1px solid #141822;
+	border-bottom :1px solid #303030;	
+}
+
+.listBody{
+	background-color : #FFFFFF;
+}
+
+.listBody #divContent{
+	HEIGHT:100px;
+	WIDTH:100%;
+    OVERFLOW: auto;
+    MARGIN: 0px;
+    PADDING:0px;
+    border :0px;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+}
+.btn {
+	align : center;
+	padding-left : 4px;
+}
+
+/*------------------------------*/
+/*			Page Title 			*/
+/*------------------------------*/
+.pageTop{
+	background-image:url(../../gradient.jsp?height=20&width=1&colors=5BA1E0;1873C7&type=v);
+	background-repeat:repeat-x;
+	border-collapse: collapse ;
+	border-top : 1px solid gray;	
+	background-color:#1873C7;
+	BORDER:gray 1px solid;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+ 	FONT-SIZE: 12px;
+ 	FONT-WEIGHT:bolder;
+	MARGIN:0px;
+    WIDTH: 100%;
+	height:25px;
+}
+
+.pageTop TR{ 
+	padding : 0px;
+	margin : 0px;
+	border : 0px;
+}
+.pageTop TD{
+	PADDING-LEFT:4px;
+	PADDING-RIGHT:4px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:0px;
+}
+.pageTop .col1{}
+.pageTop .col2{
+	text-align:right;
+}
+/*------------------------------*/
+/*		CONTENT AREA			*/
+/*------------------------------*/
+
+
+
+/*------------------------------*/
+/*			Page Bar 			*/
+/*------------------------------*/
+.pageTop button {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: bold;
+	background-image:url(../../gradient.jsp?height=20&width=1&colors=E4E4E4;FFFFFF&type=v);
+	background-color:#FFFFFF;
+	color:black;
+	border:1px solid #666666;
+}
+.pageBottom{
+	border-bottom : 1px solid black;
+	border-top : 1px solid #666e7c;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	FONT-SIZE:11px;
+	background-image:url(../../gradient.jsp?height=20&width=1&colors=5BA1E0;1873C7&type=v);
+	background-repeat:repeat-x;
+	border-collapse: collapse ;
+	border-top : 1px solid gray;	
+	background-color:#1873C7;
+	BORDER:gray 1px solid;
+    WIDTH:100%;
+	MARGIN:0px;
+	white-space:nowrap;
+}
+.pageBottom TD{
+	PADDING-LEFT:4px;
+	PADDING-RIGHT:0px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:0px;
+}
+.pageBottom .col1{}
+.pageBottom .col2{
+	text-align:right;
+}
+
+.pageBottom BUTTON{
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: bold;
+	background-image:url(../../gradient.jsp?height=20&width=1&colors=E4E4E4;FFFFFF&type=v);
+	background-color:#FFFFFF;
+	color:black;
+	border:1px solid #666666;
+}
+
+/*------------------------------*/
+/*			Page Sub Title 		*/
+/*------------------------------*/
+.subTit{
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	FONT-SIZE: 11px;
+	color: #293450;
+	FONT-WEIGHT:bold;
+	TEXT-ALIGN:left;
+	BORDER-BOTTOM:1px solid #bec5cf;
+	MARGIN-TOP:10px;
+	MARGIN-BOTTOM:6px;
+	MARGIN-LEFT:0px;
+	MARGIN-RIGHT:0px;
+}
+
+.divFrm {
+	margin-top: 15px;
+}
+
+.tblFormLayout{
+	TABLE-LAYOUT:fixed;
+	BORDER-COLLAPSE:collapse;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	FONT-SIZE:8pt;
+	MARGIN:4px;
+	PADDING : 4px;
+	width: 97% !important;
+}
+
+.tblFormLayout .col1{
+	WIDTH:180px;
+	TEXT-ALIGN:right;
+	COLOR:#333333;
+}
+.tblFormLayout .col2{
+	WIDTH:258px;
+}
+.tblFormLayout .col3{
+	WIDTH:172px;
+	TEXT-ALIGN:right;
+	COLOR:#333333;
+}
+.tblFormLayout .col4{
+	WIDTH:258px;
+}
+.tblFormLayout TR{
+}
+.tblFormLayout TD{
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	FONT-SIZE:8pt;
+	PADDING:2px;
+}
+.tblFormLayout .readOnly{
+    /*BORDER-BOTTOM:1px solid #EFEFEF;*/
+    FONT-WEIGHT:bold;
+    FONT-SIZE: 8pt;
+    PADDING-LEFT:2px;
+    COLOR: black;
+    CURSOR: default;
+   
+}
+
+.tblFormLayout ul li{
+	margin-left:30pt;
+}
+.tblFormLayout ul li{
+	LIST-STYLE-TYPE: disc;
+}
+
+.tblDataGrid{
+	border: 1px outset;
+	BORDER-COLLAPSE:collapse;
+	TABLE-LAYOUT:fixed;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	FONT-SIZE:11px;
+}
+.tblDataGrid THEAD TD{
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	FONT-SIZE:11px;
+	TEXT-ALIGN:center;
+	background-color:#EBEBEB;
+	color : #142a3c;
+	border-top : 1px solid #d9d9d9;
+	border-right : 1px solid #c2cad4;
+	border-bottom : 1px solid #687079;
+}
+.tblDataGrid THEAD TD A{
+	COLOR:black;
+}
+.tblDataGrid TBODY TR{
+	BACKGROUND-COLOR:#ffffff;
+}
+
+.tblDataGrid TBODY TD{
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	FONT-SIZE:11px;
+	PADDING-LEFT:2px;
+	PADDING-RIGHT:2px;
+	PADDING-TOP:2px;
+	PADDING-BOTTOM:1px;
+    BORDER-LEFT:1px solid #EAEAEA;
+	WORD-WRAP: normal;
+}
+
+.tblDataGrid #taskList TD{
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	FONT-SIZE:8pt;
+	PADDING-LEFT:3px;
+	PADDING-RIGHT:2px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:1px;
+    BORDER-LEFT:1px solid #EAEAEA;
+    NOWRAP : true;
+    height : 22px;
+    line-height : 20px;
+	WORD-WRAP:normal;
+}
+
+.tblDataGrid .trOdd{
+	BACKGROUND-COLOR:#F4F4F4;
+}
+
+.tblDataGrid .trSelected{
+    BACKGROUND-COLOR: #CCE1F5;
+}
+
+.tblDataGrid .tdRed{
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR:red;
+}
+
+.tblDataGrid .tdProLat{
+	FONT-WEIGHT:bold;
+	COLOR:#ff0000;
+}
+
+.tblDataGrid .tdProInAle{
+	COLOR:#880000;
+}
+
+.tblDataGrid .tdDisable{
+	COLOR:#aaaaaa;
+}
+.tblDataGridTDHID {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	FONT-SIZE:8pt;
+	PADDING-LEFT:1px;
+	PADDING-RIGHT:1px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:1px;
+    BORDER-LEFT:1px solid #CACACA;
+    NOWRAP : true;	
+}
+
+.oHeadExtended{
+	background-color: #DADADA;
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+	border-top: 1px solid gray;
+}
+
+.oHeadExtendedExpr{
+}
+
+.navBar{
+	TABLE-LAYOUT:fixed;
+	BACKGROUND-COLOR: #EEEEEE;
+	width: 100%;
+	border: 1px outset;
+	margin: 0px;
+}
+.navBar .col1{
+	width:334px;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+}
+.navBar .col2{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+	width:60%;
+	text-align:right;
+}
+
+.navBar .colM{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+	width:30%;
+	text-align:right;
+}
+
+.navBar .colM2{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+	text-align:right;
+}
+
+.navBar BUTTON{
+	background-image:url(../../gradient.jsp?height=20&width=1&colors=4D94DB;0066CC&type=v);
+	background-repeat:repeat-x;
+	background-color:#0066CC;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	border: thin #6896C7;
+    font-size: 9px;
+	font-weight: bold;
+	padding: 1px;
+	margin: 1px;
+	color: #FFFFFF;
+}
+
+/*------------------------------*/
+/*		FORM ELEMENTS	 		*/
+/*------------------------------*/
+INPUT{
+	font-size:11px;
+   	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+INPUT.txtReadOnly{
+	BACKGROUND-COLOR: gainsboro;
+    BORDER: 1px inset;
+    COLOR: dimgray;
+    CURSOR: default;
+    FONT-SIZE: 8pt;
+}
+
+TEXTAREA{
+	font-size:11px;
+   	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+TEXTAREA.txtReadOnly{
+	BACKGROUND-COLOR: gainsboro;
+    BORDER: 1px inset;
+    COLOR: dimgray;
+    CURSOR: default;
+    FONT-SIZE: 8pt;
+}
+
+SELECT{
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	FONT-SIZE: 8pt;
+}
+
+SELECT.txtReadOnly{
+	BACKGROUND-COLOR: gainsboro;
+    BORDER: 1px inset;
+    COLOR: dimgray;
+    CURSOR: default;
+    FONT-SIZE: 8pt;
+}
+
+LABEL{
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+}
+LABEL.required{
+	FONT-STYLE:italic;
+}
+
+BUTTON{
+	background-image:url(../../gradient.jsp?height=20&width=1&colors=E4E4E4;FFFFFF&type=v);
+	background-repeat:repeat-x;
+	background-color:#FFFFFF;
+	border: 1px solid #AAAAAA;
+	color:#000000;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: bold;
+	padding : 1px;
+	margin : 1px;
+	
+}
+.hiddenBottom BUTTON{
+	PADDING-LEFT:0px;
+	PADDING-RIGHT:0px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:0px;
+}
+
+/* OTHER */
+.salame {
+	BORDER-LEFT :				1px solid #777777;
+	BORDER-RIGHT :				1px solid #777777;
+	BORDER-BOTTOM :				1px solid #777777;
+	BACKGROUND-COLOR:			#CFCFCF;
+	OVERFLOW:					auto;
+	SCROLLBAR-FACE-COLOR: #F1F0EF;SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;SCROLLBAR-SHADOW-COLOR: #C0C0C0;SCROLLBAR-ARROW-COLOR: #00005A;SCROLLBAR-DARKSHADOW-COLOR: #808080;SCROLLBAR-BASE-COLOR: #F1F0EF;scrollbar-3d-light-color: #808080;
+}
+
+.liDep {
+	list-style-type : square;
+}
+
+A:visited { color: black;}
+
+.tblComment {
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    WIDTH : 100%;
+}
+
+.tblComment PRE {
+    FONT-FAMILY:Arial; 
+    FONT-SIZE: 8pt;
+}
+
+.tblComment #trHead{
+	BACKGROUND-COLOR : #CFCFCF;
+}
+
+.tblFilter {
+	width:100%;
+	BORDER-BOTTOM:	1px dotted silver;
+	FONT-FAMILY:Arial; 
+    FONT-SIZE: 7pt;
+}
+
+#listFilterArea{
+	background-color:#EFEFEF;
+	border-top:1px solid #AEAEAE;
+	border-left:1px solid #AEAEAE;
+	border-right:1px solid #969696;
+	border-bottom:1px solid #969696;
+}
+
+#printDiv{
+	BACKGROUND-COLOR:#EFEFEF;
+	POSITION:absolute;
+	TOP:0px;						
+	LEFT:0px;
+	WIDTH:100%;
+    HEIGHT:527px;
+	TEXT-ALIGN:center;
+    FONT-FAMILY: Arial; 
+    FONT-SIZE: 8pt;
+}
+.txtRequired {
+	color: black;
+	font-weight:bold;
+}
+
+.menuItem { font-family:Arial; font-size:8pt; width:100%; padding-left:16; background-Color:menu; color:black; padding-top: 2px; padding-bottom: 2px; margin-bottom:0; margin-top:0; cursor: default; }  
+.menuItemDefault { font-family:Arial;  font-size:8pt;  font-weight:bold;  width:100%;  padding-left:16;  background-Color:menu;  color:black;  padding-top: 2px;  padding-bottom: 2px;  cursor: default; }  
+.highlightItem {  font-family:Arial;  font-size:8pt;  width:100%;  padding-left:16;  background-Color:highlight;  color:white;  padding-top: 2px;  padding-bottom: 2px;  cursor: default; }
+
+.GridHeader th{ 
+position:relative;
+cursor: default;
+font-weight:normal;
+/*IE5+ only 
+top: expression(this.parentElement.parentElement.parentElement.parentElement.scrollTop -2);
+*/
+z-index: 1;
+border-bottom:0px;
+/*filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#B7B1AC', endColorStr='#F1F0EF', gradientType='0');*/
+background-color:#EBEBEB;
+}
+
+.Grid{
+border:0;
+border-color:#AAAAAA;
+border-width:1px;
+border-style:solid;
+border-collapse:collapse;
+background-color:#DADADA;
+position:static;
+}
+
+.Grid tbody tr td{
+border:0;
+border-color:#DADADA;
+border-width:1px;
+border-style:solid;
+border-collapse:collapse;
+}
+.frmSubTit{
+	FONT-FAMILY:Arial; 
+	FONT-SIZE: 11px;
+	color : #00005A;
+	FONT-WEIGHT:bold;
+	TEXT-ALIGN:left;
+	PADDING-LEFT:3px;
+	PADDING-RIGHT:0px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:0px;	
+	MARGIN-TOP:0px;
+	MARGIN-BOTTOM:0px;
+	MARGIN-LEFT:3px;
+	MARGIN-RIGHT:0px;
+	/*BACKGROUND-COLOR:#F1F0EF;*/
+	BACKGROUND-COLOR:#E8E9F6;
+	width : 100%;
+	CURSOR : hand;
+}
+
+modalWin{
+	border-top : 2px groove #999999;
+    border-left : 2px solid #999999;
+    border-right : 2px solid #666666;
+	border-bottom : 2px solid #666666;
+	background-image:url(../../gradient.jsp?height=15&width=1&colors=3263C2;537BCA&type=v);
+	background-repeat:repeat-x;
+	background-color:#EFEFEF;
+}
+.closeButton{
+	background-image:url(../images/modalCloseBtn.png);
+}
+
+INPUT[readonly]{
+	BACKGROUND-COLOR: gainsboro;
+    BORDER: 1px inset;
+    COLOR: dimgray;
+    CURSOR: default;
+    FONT-SIZE: 8pt;
+}
+
+INPUT[disabled]{
+	color:#666666;
+} 
+
+INPUT[disabled]{
+	-moz-opacity:0.3;
+	opacity:0.6;
+} 
+
+/*------------------------------*/
+/*		SCHEDULER TASK   		*/
+/*------------------------------*/
+.sched_day_available{/* Text color for available day IN HEADER */
+	FONT-FAMILY:Verdana; 
+	COLOR: #000000; 
+}
+.sched_day_unavailable{/* Text color for unavailable day IN HEADER*/
+	FONT-FAMILY:Verdana; 
+	color:#A4A4A4; 
+}
+.sched_actualday{/* Text props for actual day */
+	font-weight:bold; 
+}
+.scheduler_cell_available{/* Background color for available cells */
+	background-color:#EFEFEF; /*#d1e2f3*/
+}
+.scheduler_cell_unavailable{/* Background color for unavailable cells */
+	background-color:#D8D8D8; /*#b9d3ee*/
+}
+.sched_disp_available{/* Text color for available disponibility */
+	font-weight:bold; 
+	COLOR: #000000;
+}
+.sched_disp_unavailable{/* Text color for unavailable disponibility */
+	font-weight:bold;
+	color:#A4A4A4;
+}
+.sched_background {/* Background color for scheduler */
+	BACKGROUND-COLOR: transparent;
+}
+.sched_header_background {/* Background color for scheduler header */
+	BACKGROUND-COLOR: #FFFFFF;
+}
+.sched_hours_background {/* Background color for scheduler hour column */
+	BACKGROUND-COLOR: #FFFFFF;
+}
+td .sched_name{/* Scheduler name */
+	FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT:bold; 
+    COLOR: #000000;
+    ALIGN: LEFT;
+}

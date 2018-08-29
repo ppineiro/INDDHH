@@ -1,0 +1,35 @@
+﻿<flash_project name="Form Designer 7" version="1">
+    <project_folder name="External" expanded="true">
+        <project_file path="./source/EvtDialog.fla" filetype="fla" profile="" />
+        <project_file path="./source/PropBar.fla" filetype="fla" profile="" />
+        <project_file path="./source/AttributesDialog.fla" filetype="fla" profile="" />
+        <project_file path="./source/EntityBindings.fla" filetype="fla" profile="" />
+    </project_folder>
+    <project_folder name="View" expanded="true">
+        <project_folder name="Dialogs" expanded="false">
+            <project_file path="./source/com/st/formDesigner/view/CodeModal.as" filetype="as" />
+            <project_file path="./source/com/st/formDesigner/view/EvtBindModal.as" filetype="as" />
+            <project_file path="./source/com/st/formDesigner/view/EvtFormModal.as" filetype="as" />
+            <project_file path="./source/com/st/formDesigner/view/EvtModal.as" filetype="as" />
+            <project_file path="./source/com/st/formDesigner/view/EntityBind.as" filetype="as" />
+            <project_file path="./source/com/st/formDesigner/view/AttModal.as" filetype="as" />
+            <project_file path="./source/com/st/formDesigner/view/EntityAttributes.as" filetype="as" />
+        </project_folder>
+        <project_folder name="Elements" expanded="true">
+            <project_file path="./source/com/st/formDesigner/view/ControlPoints.as" filetype="as" />
+            <project_file path="./source/com/st/formDesigner/view/ElementGrid.as" filetype="as" />
+            <project_file path="./source/com/st/formDesigner/view/Element.as" filetype="as" />
+        </project_folder>
+    </project_folder>
+    <project_folder name="Util" expanded="true">
+        <project_file path="./source/com/st/util/DataSourceXML.as" filetype="as" />
+    </project_folder>
+    <project_file path="./source/shell.fla" filetype="fla" profile="" />
+    <project_file path="./source/main.fla" filetype="fla" profile="" def_file="true" />
+    <project_file path="./source/com/st/formDesigner/controller/FormController.as" filetype="as" />
+    <project_file path="./source/com/st/formDesigner/model/FormModel.as" filetype="as" />
+    <project_file path="./source/com/st/formDesigner/view/ToolBar.as" filetype="as" />
+    <project_file path="./source/com/st/formDesigner/view/ToolTipClass.as" filetype="as" />
+    <project_file path="./source/com/st/formDesigner/view/FormView.as" filetype="as" />
+    <project_file path="./source/com/st/formDesigner/view/propertyValueCell.as" filetype="as" />
+</flash_project>

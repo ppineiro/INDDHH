@@ -1,0 +1,8 @@
+﻿<flash_project name="otree" version="1">
+    <project_file path="./otree.fla" filetype="fla" profile="" />
+    <project_file path="./AddModal.as" filetype="as" />
+    <project_file path="./LabelCellRenderer.as" filetype="as" />
+    <project_file path="./WindowManager.as" filetype="as" />
+    <project_file path="./ToolTipClass.as" filetype="as" />
+    <project_file path="./UsersModal.as" filetype="as" />
+</flash_project>

@@ -1,0 +1,97 @@
+<monitor><central id="2209" name="4 - null" type="EI"><instances total="0" amount="10" from="0"></instances><elements><element id="1696" name="4" type="PI" direction="in" groupId="3241" groupType="P"><properties><property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2011-05-23 13:31:20.029"/><property id="7" name="Completed" value="2011-05-23 13:33:49.384"/></properties><depProperties></depProperties></element><element id="2051" name="AA_SEBA" type="E" direction="out"><properties><property id="1" name="Name" value="AA_SEBA"/><property id="2" name="Instances" value="6"/></properties><depProperties></depProperties></element></elements><groups><element id="3241" name="test_chat" type="P" image="1922754906.JPEG"/></groups><properties><property id="6" name="Created" value="2011-05-23 13:31:19.761"/></properties><depProperties></depProperties></central></monitor>
+<!-- <monitor><central id="2012" name="REL_1 - 1" type="EI" image="1992936694.JPEG"><instances total="0" amount="10" from="0"></instances><elements><element id="2008" name="A_1 - 1" type="EI" direction="out" groupId="1741" groupType="E"><properties><property id="6" name="Created" value="2011-03-03 13:47:23.0"/><property id="3" name="IDENTIFICADOR_STR" value="1"/><property id="3" name="NOMBRE_STR" value="A1"/><property id="3" name="" value=""/></properties><depProperties></depProperties></element><element id="2011" name="B_2 - 2" type="EI" direction="out" groupId="1742" groupType="E"><properties><property id="6" name="Created" value="2011-03-03 13:49:02.0"/><property id="3" name="IDENTIFICADOR_STR" value="2"/><property id="3" name="NOMBRE_STR" value="B2"/></properties><depProperties></depProperties></element><element id="1743" name="REL_A_B" type="E" image="1992936694.JPEG" direction="out"><properties><property id="1" name="Name" value="REL_A_B"/><property id="2" name="Instances" value="2"/></properties><depProperties></depProperties></element></elements><groups><element id="1741" name="AAA" type="E" image="1992902375.JPEG"/><element id="1742" name="B" type="E" image="1992920646.JPEG"/></groups><properties><property id="6" name="Created" value="2011-03-03 13:50:32.0"/><property id="3" name="PK_A" value="1"/><property id="3" name="PK_B" value="2"/><property id="3" name="REL_ESTADO_ENUM" value=""/><property id="3" name="REL_FECHA_FIN_DTE" value=""/><property id="3" name="REL_FECHA_COMIENZO_DTE" value=""/></properties><depProperties></depProperties></central></monitor>
+
+<monitor><central id="4300" name="CIIMP_5 - 20110228 impresora del proceso de configuración 10" type="EI" image="img.gif"><instances total="0" amount="10" from="0"></instances><elements><element id="1183" name="CIIMP_5" type="PI" direction="in" groupId="2450" groupType="P"><properties><property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2011-02-28 15:55:16.235"/><property id="7" name="Completed" value="2011-02-28 16:00:12.327"/></properties><depProperties></depProperties></element><element id="1606" name="CODCA_4 - LASER B&amp;N - DOBLE FAZ" type="EI" direction="out" groupId="1749" groupType="E"><properties><property id="6" name="Created" value="2011-02-16 22:28:03.306"/><property id="3" name="Valor" value="LASER B&amp;N - DOBLE FAZ"/><property id="3" name="ID" value=""/></properties><depProperties></depProperties></element><element id="1600" name="CODTI_2 - ESCRITORIO" type="EI" direction="out" groupId="1764" groupType="E"><properties><property id="6" name="Created" value="2011-02-16 22:27:03.259"/><property id="3" name="Valor" value="ESCRITORIO"/><property id="3" name="ID" value=""/></properties><depProperties></depProperties></element><element id="1796" name="CODST_1 - Mostrar" type="EI" direction="out" groupId="1708" groupType="E"><properties><property id="6" name="Created" value="2011-02-18 12:16:24.206"/><property id="3" name="Valor" value="Mostrar"/><property id="3" name="ID" value=""/></properties><depProperties></depProperties></element><element id="1978" name="Impresora" type="E" image="img.gif" direction="out"><properties><property id="1" name="Name" value="CI_IMPRESORA"/><property id="2" name="Instances" value="6"/></properties><depProperties></depProperties></element></elements><groups><element id="1749" name="COD_CARACTERISTICA_IMPRESORA" type="E"/><element id="1764" name="COD_TIPO_IMPRESORA" type="E"/><element id="2450" name="Creación de instancia de elemento de configuración Creación de instancia de elemento de configuración Creación de instancia de elemento de configuración Creación de instancia de elemento de configuración Creación de instancia de elemento de configuraciónCreación de instancia de elemento de configuración " type="P"/><element id="1708" name="COD_STATUS" type="E"/></groups><properties><property id="6" name="Created" value="2011-02-28 15:55:16.157"/><property id="3" name="Nombre" value="20110228 impresora del proceso de configuración 10"/><property id="3" name="Descripción" value="20110228 descripción"/><property id="3" name="Dueño" value="BPS_OFIMATICA"/><property id="3" name="Numero de Serie" value="123"/><property id="3" name="Numero de Inventario" value="123"/><property id="3" name="Dueño del equipo" value="carolina"/><property id="3" name="Ubicación" value="st"/><property id="3" name="Master" value=""/><property id="3" name="Marca" value="hp"/><property id="3" name="Modelo" value="laser jet 4050N"/><property id="3" name="Identificador" value=""/><property id="3" name="Estado" value="140.0"/><property id="3" name="Categoría" value="5.0"/><property id="3" name="Subcategoría" value="5.0"/><property id="3" name="Status" value="1.0"/><property id="3" name="Tipo" value="2.0"/><property id="3" name="Caracteristica" value="4.0"/><property id="3" name="Fecha de creación" value=""/><property id="3" name="Fecha de finalización" value=""/></properties><depProperties></depProperties></central></monitor>
+
+<monitor><central id="4254" name="CICOM_1 - 2011/02/24 alt" type="EI" image="27.jpg"><instances total="0" amount="10" from="0"></instances><elements><element id="1913" name="Computadora" type="E" image="27.jpg" direction="out"><properties><property id="1" name="Name" value="CI_COMPUTADORA"/><property id="2" name="Instances" value="10"/></properties><depProperties></depProperties></element></elements><groups></groups><properties><property id="6" name="Created" value="2011-02-24 12:37:51.178"/><property id="3" name="Nombre" value="2011/02/24 alt"/><property id="3" name="Descripción" value="descripción"/><property id="3" name="Dueño" value="BPS_OFIMATICA"/><property id="3" name="Numero de Serie" value="123"/><property id="3" name="Numero de Inventario" value="123"/><property id="3" name="Dueño del equipo" value="carolina"/><property id="3" name="Ubicación" value="st"/><property id="3" name="Master" value=""/><property id="3" name="Marca" value="dell"/><property id="3" name="Modelo" value="nuevo"/><property id="3" name="Identificador" value="1.0"/><property id="3" name="Estado" value="128.0"/><property id="3" name="Categoría" value="5.0"/><property id="3" name="Subcategoría" value="5.0"/><property id="3" name="Status" value="2.0"/><property id="3" name="Tipo" value="1.0"/><property id="3" name="Fecha de creación" value=""/><property id="3" name="Fecha de finalización" value=""/></properties><depProperties></depProperties></central></monitor>
+
+<monitor><central id="1095" name="BR_1" type="PI">
+	<instances total="0" amount="10" from="0"></instances><elements><element id="1147" name="BUSINESS_RULE" type="P" direction="in"><properties><property id="8" name="Name" value="BUSINESS_RULE"/><property id="4" name="R" value="1"/><property id="4" name="C" value="1"/></properties><depProperties></depProperties></element><element id="1261" name="RULES_1 - null" type="EI" direction="out" groupId="1075" groupType="E"><properties><property id="6" name="Created" value="2010-07-30 13:09:23.282"/></properties><depProperties></depProperties></element></elements><groups><element id="1075" name="RULES" type="E"/></groups>
+	<properties
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+		<property id="5" name="Status" value="Completo"/><property id="6" name="Created" value="2010-07-30 13:09:23.399"/><property id="7" name="Completed" value="2010-07-30 13:10:47.916"/>
+	</properties>
+	<depProperties></depProperties></central></monitor>
+<monitor>
+        <central id="1061" name="AGREGA_FORM" type="P">
+          <instances total="3" amount="10" from="0">
+            <property id="1102" name="R" ident="AF_3"/>
+            <property id="1101" name="R" ident="AF_2"/>
+            <property id="1061" name="R" ident="AF_1"/>
+          </instances>
+          <elements>
+            <element id="1061" name="TEST1" type="E" direction="out">
+              <properties>
+                <property id="1" name="Title" value="TEST"/>
+                <property id="2" name="Instances" value="4"/>
+              </properties>
+            </element>
+            <element id="1002" name="test2" type="T" direction="in">
+              <properties>
+                <property id="1" name="Title" value="TAREA2"/>
+              </properties>
+            </element>
+            <element depLabel="mono" id="1001" name="MONOSSSS" type="T" direction="out">
+				<properties>
+				  <property id="1" name="Title" value="TAREA1"/>
+				</properties>
+				<depProperties>
+				  <property id="1" name="Title" value="MONERIA"/>
+				  <property id="1" name="Title" value="MONERIA"/>
+				  <property id="1" name="Title" value="MONERIA"/>
+				</depProperties>
+			</element>
+            <element id="1061" name="TEST" type="E" direction="out" groupId="1020" groupType="E">
+              <properties>
+                <property id="1" name="Title" value="TEST"/>
+                <property id="2" name="Instances" value="4"/>
+              </properties>
+            </element>
+            <element id="1002" name="TAREA2" type="T" direction="in" groupId="1020" groupType="E">
+              <properties>
+                <property id="1" name="Title" value="TAREA2"/>
+              </properties>
+            </element>
+            <element id="1061" name="TESTGROUp" type="EI" direction="out" groupId="1020" groupType="E">
+              <properties>
+                <property id="1" name="Title" value="TEST"/>
+                <property id="2" name="Instances" value="4"/>
+              </properties>
+            </element>
+            <element id="1061" name="TESTGROUp2" type="EI" direction="out" groupId="1020" groupType="E">
+              <properties>
+                <property id="1" name="Title" value="TEST"/>
+                <property id="2" name="Instances" value="4"/>
+              </properties>
+            </element>
+          </elements>
+          <groups>
+            <element id="1009" name="GROOPO" type="T" />
+            <element id="1020" name="GRROPO 2" type="E" />
+          </groups >
+          <properties>
+            <property id="1" name="Title" value="AGREGA_FORM TITULOSSSS"/>
+			<property id="8" name="Name" value="AGREGA_FORM"/>
+            <property id="4" name="R" value="3"/>
+          </properties>
+        </central>
+      </monitor> -->

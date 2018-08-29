@@ -1,0 +1,1 @@
+<% if (! _avoidLogout) { %><a href="?exit=1" class="right">[ logout ]</a><% } %>

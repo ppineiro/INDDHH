@@ -1,0 +1,167 @@
+
+div.printTitle {
+	margin-bottom: 5px;
+}
+
+div.printTitle.withBorder {
+	padding-bottom: 3px;
+	padding-top: 3px;
+	border: 2px solid #000000;
+	margin-left: 1%;
+    width: 98%;
+}
+
+div.printTitle > span {
+	font-weight: bold;
+	margin-left: 10px;	
+}
+
+div.printSubtitle {
+	margin-top: 10px;
+    padding-bottom: 1px;	
+}
+
+div.printSubtitle > span {
+	font-weight: bold;
+	margin-left: 12px;
+	display: block;	
+}
+
+div.printSeparator {
+	border-bottom: 1px solid #B0B0B0;
+	width: 100%;	
+	margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+div.docAddDocument {
+	display: none;
+}
+
+div.option.document {
+	background-color: transparent;
+	background-image: none;
+	cursor: default;
+	border-radius: 3px;
+	border: 1px solid #AAA;
+	height: 18px;
+	padding-right: 0px;
+}
+
+div.option.document > div.docIcon {
+	display: none;
+}
+
+div.option.document > a {
+	display: none;
+}
+
+div.option.document > div.docData {
+	color: #333;
+}
+
+div.field {
+}
+
+div.fieldGroup label,  div.fieldGroup span.asLabel {
+	font-weight: bold;
+}
+
+div.fieldGroup > table > tbody > tr > td {
+	padding-bottom: 15px;
+}
+
+div.editor_container {
+	width: 680px;
+	margin: auto;
+}
+
+table.row-container {
+	margin-bottom: 15px;
+	width: 500px;
+}
+
+table.row-container td {
+	border: 1px solid #CECBCB;
+	width: 60%;
+	height: 25px;
+}
+
+table.row-container td.left-cell {
+	width: 40% !important;
+}
+
+table.horizontal-grid {
+	
+}
+
+table.horizontal-grid th {
+	height: 20px;
+}
+
+
+table.tbl-query {
+	margin-left: 1%;
+    margin-bottom: 12px;
+    width: 98%;	
+}
+
+table.tbl-query > tr.tr-query {
+	width: 100%	
+}
+
+tr.tr-query > td.tdHeader-query {
+	background-color: #F0F0F0;
+	border: 1px solid #000000;
+	width: 20%;	
+}
+
+tr.tr-query > td.tdContent-query {
+	border: 1px solid #000000;
+	width: 30%;
+}
+
+td.tdHeader-query > div.header-query {
+	font-weight: bold;	
+}
+
+td.tdContent-query > div.content-query {}
+
+div.print_chart {
+	width: 100%;
+	margin-top: 15px;	
+}
+
+div.print_chart > span {
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+div.print_chart > img {
+	width: 100%;
+}
+
+div.print_field {
+	width: 98% !important;
+	display: block !important;
+}
+
+.print_field table.row-container td {
+	padding: 5px;
+}
+
+.modalOptionsContainer .option {
+    box-shadow: none;
+}
+
+div.fieldGroup div.fieldComment {
+	width: 98%;
+}
+
+.exec_field_check span {
+	font-weight: normal;
+}
+
+.multiple-value, .multiple-separator, .radio-value, .radio-separator, .select-value, .select-separator {
+	display: none;
+}

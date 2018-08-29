@@ -1,0 +1,178 @@
+<document>
+	<header/>
+	<footer/>
+<pages>
+	<page>
+		<logo/>
+	</page>
+	<page>
+		<toc/>
+	</page>
+	<page> 
+		<objective/>
+	</page>
+
+<page>
+
+  <object name="BusEntityVo">
+    <list>
+      <column>busEntName</column>
+      <column>busEntTitle</column>
+      <column>busEntDesc</column>
+      <column>busEntAdminType</column>
+    </list>
+    <details>
+      <detail/>
+      <related>
+
+        <object name="BusEntEvtBusClassVo">
+          <list>
+            <column>evtName</column>
+            <group name="lblBusCla">
+              <column>busClaName</column>
+              <column>busClaType</column>
+            </group>
+            <column>parBnd</column>
+          </list>
+        </object>
+
+        <object name="FormVo">
+          <list>
+            <column>frmName</column>
+            <column>frmTitle</column>
+            <column>frmDesc</column>
+          </list>
+          <details>
+            <detail/>
+            <related>
+              <object name="FrmPropertyVo">
+                <list>
+                  <column>prpName</column>
+                  <column>prpValue</column>
+                </list>
+              </object>
+        
+              <object name="FrmEvtBusClassVo">
+                <list>
+                  <column>evtName</column>
+                  <group name="lblBusCla">
+                    <column>busClaName</column>
+                    <column>busClaType</column>
+                  </group>
+                  <column>parBnd</column>
+                </list>
+              </object>
+        
+              <object name="FrmFieldVo">
+                <list>
+                  <column>fldId</column>
+                  <column>fldType</column>
+                  <column>attName</column>
+                  <column>attDesc</column>
+                  <column>attLabel</column>
+                  <column>attType</column>
+                  <column>attMask</column>
+                  <column>attRegExp</column>
+                  <column>fldProp</column>
+                </list>
+              </object>
+
+              <object name="FrmFldEventVo">
+                <list>
+                  <column>fldId</column>
+                  <column>evtName</column>
+                  <group name="lblBusCla">
+                    <column>busClaName</column>
+                    <column>busClaType</column>
+                  </group>
+                  <column>parBnd</column>
+                </list>
+              </object>
+
+            </related> 
+          </details>
+        </object>
+
+         <object name="ProcessVo">
+           <list>
+             <column>proName</column>
+             <column>proTitle</column>
+             <column>proDesc</column>
+             <column>proAction</column>
+             <column>busEntName</column>
+           </list>
+           <details>
+             <detail/>
+             <related>
+
+               <object name="TaskVo">
+                 <list>
+                   <column>tskName</column>
+                   <column>tskTitle</column>
+                   <column>tskDesc</column>
+                   <column>tskTemplate</column>
+                 </list>
+                 <details>
+                   <detail/>
+                 </details>
+               </object>
+
+               <object name="AttributeVo">
+                 <list>
+                   <column>attName</column>
+                   <column>attDesc</column>
+                   <column>attLabel</column>
+                   <column>attType</column>
+                   <column>attMask</column>
+                   <column>attRegExp</column>
+                   <column>proAtt</column>
+                 </list>
+               </object>
+
+               <object name="ProEvtBusClassVo">
+                 <list>
+                   <column>evtName</column>
+                   <group name="lblBusCla">
+                     <column>busClaName</column>
+                     <column>busClaType</column>
+                   </group>
+                   <column>parBnd</column>
+                 </list>
+               </object>
+      
+               <object name="ProcessVo">
+                 <list>
+                   <column>proName</column>
+                   <column>proTitle</column>
+                   <column>proDesc</column>
+                   <column>proAction</column>
+                   <column>busEntName</column>
+                 </list>
+               </object>
+        
+               <object name="ProConditionVo">
+                 <list>
+                   <column>proEleFrom</column>
+                   <column>proEleTo</column>
+                   <column>proCond</column>
+                   <column>proCondType</column>
+                   <column>proCondName</column>
+                 </list>
+                 <details>
+                   <detail/>
+                   <related>
+                   </related> 
+                 </details>
+               </object>
+ 
+             </related> 
+           </details>
+         </object>
+ 
+       </related> 
+    </details>
+  </object>
+
+</page>
+	</pages>
+</document>

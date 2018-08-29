@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<forms>
+	<data>
+		<level width="0" name="id" label="id" type="label" hidden="true" />
+		<level width="100%" name="name" label="name" type="label" />
+	</data>	
+	<values>
+		<value>
+			<level name="id" value="0" />
+			<level name="name" value="group 1" />
+		</value>
+		<value>
+			<level name="id" value="1" />
+			<level name="name" value="group 2" />
+			
+		</value>
+		<value>
+			<level name="id" value="2" />
+			<level name="name" value="group 3" />
+			
+		</value>
+		<value>
+			<level name="id" value="3" />
+			<level name="name" value="group 4" />
+			
+		</value>
+		<value>
+			<level name="id" value="4" />
+			<level name="name" value="group 5" />
+			
+		</value>
+		<value>
+			<level name="id" value="5" />
+			<level name="name" value="group 6" />
+			
+		</value>
+		<value>
+			<level name="id" value="6" />
+			<level name="name" value="group 7" />
+			
+		</value>
+		<value>
+			<level name="id" value="7" />
+			<level name="name" value="group 8" />
+			
+		</value>
+		<value>
+			<level name="id" value="8" />
+			<level name="name" value="group 9" />
+			
+		</value>
+	</values>
+</forms>

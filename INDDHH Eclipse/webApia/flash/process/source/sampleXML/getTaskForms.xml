@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ROWSET>
+<ROW>
+  <COL>2</COL> 
+  <COL>FRM 2</COL> 
+</ROW>
+<ROW>
+  <COL>3</COL> 
+  <COL>FRM 3</COL> 
+</ROW>
+<ROW>
+  <COL>1</COL> 
+  <COL>FORMULARIO 1</COL> 
+  </ROW>
+<ROW>
+  <COL>4</COL> 
+  <COL>FRM 4</COL> 
+  </ROW>
+<ROW>
+  <COL>119</COL> 
+  <COL>TEST1</COL> 
+  </ROW>
+<ROW>
+  <COL>120</COL> 
+  <COL>SIN-AUTO-ID</COL> 
+  </ROW>
+<ROW>
+  <COL>121</COL> 
+  <COL>NUEVO</COL> 
+  </ROW>
+<ROW>
+  <COL>122</COL> 
+  <COL>NUEVO:2</COL> 
+  </ROW>
+<ROW>
+  <COL>123</COL> 
+  <COL>TEST JS</COL> 
+  </ROW>
+<ROW>
+  <COL>124</COL> 
+  <COL>NUEVO:3 NO BORRAR</COL> 
+  </ROW>
+<ROW>
+  <COL>125</COL> 
+  <COL>PRUEBA-ATT</COL> 
+  </ROW>
+<ROW>
+  <COL>126</COL> 
+  <COL>ONCHANGE_COMBO</COL> 
+  </ROW>
+</ROWSET>

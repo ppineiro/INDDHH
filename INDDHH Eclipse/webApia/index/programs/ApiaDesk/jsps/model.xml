@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <desktop>
+      <element name="Rollback de procesos" icon="styles/classic/images/func_icon.png" url="../../toc/redirect.jsp?link=execution.ProRollbackAction.do?action=init" />
+      <element name="Entidades" icon="styles/classic/images/func_icon.png" url="../../toc/redirect.jsp?link=administration.EntitiesAction.do?action=init" />
+      <element name="Reseteo de contraseña" icon="styles/classic/images/func_icon.png" url="../../toc/redirect.jsp?link=security.ResetPwdAction.do?action=init" />
+      <element name="fghdhgfghgf" icon="styles/classic/images/folder_icon.png" url="">
+        <element name="ftghfhdfh" icon="styles/classic/images/folder_icon.png" url="">
+          <element name="Mantenimiento global de entidades" icon="styles/classic/images/func_icon.png" url="../../toc/redirect.jsp?link=execution.EntInstanceAction.do?action=init" />
+        </element>
+      </element>
+    </desktop>

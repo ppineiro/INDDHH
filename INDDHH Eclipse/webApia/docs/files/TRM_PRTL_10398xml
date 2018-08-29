@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><informationXS xmlns="http://www.com.uy/st/xml">
+  <entitiesXS>
+    <entityXS name="EXPEDIENTE">
+      <attributesXS>
+        <attributeXS isFile="false" name="EXP_TIPO_TITULAR_ENUM">
+          <valueXS index="0">20</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="EXP_NRO_DOC_STR">
+          <valueXS index="0">210297450018</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="EXP_TITULAR_DESCRIPCION_STR">
+          <valueXS index="0">Tipo documento: R.U.T. / Nro. documento: 210297450018 / Titular: DEVOTO HNOS S A</valueXS>
+        </attributeXS>
+      </attributesXS>
+    </entityXS>
+  </entitiesXS>
+</informationXS>

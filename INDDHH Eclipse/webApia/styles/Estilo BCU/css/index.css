@@ -1,0 +1,69 @@
+
+
+BODY{
+	background-color: #F3F3F3;
+	overflow:hidden;
+	margin:0px;
+	padding:0px;
+}
+.box{
+	height:135px; 
+	width:410px;
+	background-color:#1c267d;
+	border:1px solid #D8D8E5;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color='999999', Direction=120, Strength=4);
+	font-family:Arial;
+	font-size:11px;
+}
+.sysLogo{
+	text-align:right;
+	color: #1C267D;
+	font-family:Arial;
+	font-size:12px;
+	padding-right:2px;
+}
+.links{
+	text-align:center;
+	
+}
+.links A{
+	font-family:Arial;
+	font-size:12px;
+	text-decoration:none;
+	font-weight:bold;
+	COLOR:#666666;
+}
+.winInfo{
+	width:100%;
+	height:90px;
+	background-color:#ffffff;
+}
+.title{
+	font-weight:bold;
+	font-family:arial;
+	font-size:34px;
+	color:white;
+}
+.subTitle{
+	font-family:arial;
+	font-size:11px;
+	text-align:center;
+}
+.sysVer{
+	text-align:right;
+	color:#4266AE;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	padding-right:2px;
+	height:18px;
+}
+
+.copyrightTxt{
+	font-family:arial;
+	font-size:9px;
+	text-align:right;
+	padding-right:6px;
+	color:#666666;
+}
+

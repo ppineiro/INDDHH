@@ -1,0 +1,77 @@
+////YA IMPACTADO EN SCRIPT DE CREACION
+
+CREATE PROCEDURE [SPR_READ_BUS_ENTITY]
+@p_where VARCHAR(2000),
+@p_order_by VARCHAR(2000),
+@from_row INT,
+@rows_per_page INT
+AS
+DECLARE
+  @total INT,
+  @aux_sql VARCHAR(5000)
+
+SET NOCOUNT ON
+
+CREATE TABLE #tmp_table (
+    id INT IDENTITY (1,1),
+     env_id int,
+     bus_ent_id_auto int,
+     bus_ent_name varchar(50),
+     bus_ent_desc varchar(255),
+     bus_ent_admin_type varchar(1),
+     reg_user varchar(20),
+     reg_date datetime,
+     reg_status int,
+     bus_ent_ide_pos varchar(1),
+     bus_ent_ide_pos_fix varchar(50),
+     bus_ent_ide_num varchar(1),
+     bus_ent_ide_pre_fix varchar(50),
+     bus_ent_ide_pre varchar(1),
+     bus_ent_exe_template varchar(100),
+     att_id_1 int,
+     att_id_2 int,
+     att_id_3 int,
+     att_id_4 int,
+     att_id_5 int,
+	 att_id_6 int,
+     att_id_7 int,
+     att_id_8 int,
+     att_id_9 int,
+     att_id_10 int,
+     att_id_num_1 int,
+     att_id_num_2 int,
+     att_id_num_3 int,
+	 att_id_num_4 int,
+     att_id_num_5 int,
+     att_id_num_6 int,
+     att_id_num_7 int,
+     att_id_num_8 int,
+     att_id_dte_1 int,
+     att_id_dte_2 int,
+     att_id_dte_3 int,
+     att_id_dte_4 int,
+     att_id_dte_5 int,
+     att_id_dte_6 int,     
+     fnc_id int,	     
+     bus_ent_allow_upd_inst varchar(1),
+	 bus_ent_att_cmb int,
+     bus_ent_title varchar(255),
+     bus_ent_flags varchar(10),	 
+     prj_id int,
+	 att_ucs_flags varchar(50),
+	 cube_id int,
+	 img_path varchar(20),
+	 fnc_mon_ent_id int,
+     prj_name varchar(50)
+)
+SET @aux_sql = 'INSERT INTO #tmp_table (env_id,bus_ent_id_auto,bus_ent_name,bus_ent_desc,bus_ent_admin_type,reg_user,reg_date,reg_status,bus_ent_ide_pos,bus_ent_ide_pos_fix,bus_ent_ide_num,bus_ent_ide_pre_fix,bus_ent_ide_pre,bus_ent_exe_template,att_id_1,att_id_2,att_id_3,att_id_4,att_id_5,att_id_6,att_id_7,att_id_8,att_id_9,att_id_10,att_id_num_1,att_id_num_2,att_id_num_3,att_id_num_4,att_id_num_5,att_id_num_6,att_id_num_7,att_id_num_8,att_id_dte_1,att_id_dte_2,att_id_dte_3,att_id_dte_4,att_id_dte_5,att_id_dte_6,fnc_id,bus_ent_allow_upd_inst,bus_ent_att_cmb,bus_ent_title,bus_ent_flags,prj_id,att_ucs_flags,cube_id,img_path,fnc_mon_ent_id,prj_name) '
+SET @aux_sql = @aux_sql + ' select b.env_id,b.bus_ent_id_auto,b.bus_ent_name,b.bus_ent_desc,b.bus_ent_admin_type,b.reg_user,b.reg_date,b.reg_status,b.bus_ent_ide_pos,b.bus_ent_ide_pos_fix,b.bus_ent_ide_num,b.bus_ent_ide_pre_fix,b.bus_ent_ide_pre,b.bus_ent_exe_template,b.att_id_1,b.att_id_2,b.att_id_3,b.att_id_4,b.att_id_5,b.att_id_6,b.att_id_7,b.att_id_8,b.att_id_9,b.att_id_10,b.att_id_num_1,b.att_id_num_2,b.att_id_num_3,b.att_id_num_4,b.att_id_num_5,b.att_id_num_6,b.att_id_num_7,b.att_id_num_8,b.att_id_dte_1,b.att_id_dte_2,b.att_id_dte_3,b.att_id_dte_4,b.att_id_dte_5,b.att_id_dte_6,b.fnc_id,b.bus_ent_allow_upd_inst,b.bus_ent_att_cmb,b.bus_ent_title,b.bus_ent_flags,b.prj_id,b.att_ucs_flags,b.cube_id,b.img_path,b.fnc_mon_ent_id,prj_name from bus_entity b left outer join project p on b.env_id=p.env_id and b.prj_id=p.prj_id_auto and b.reg_status=p.reg_status where b.reg_status=0 '
+IF (@p_where IS NOT NULL) SET @aux_sql = @aux_sql + ' AND ' + @p_where
+IF (@p_order_by IS NOT NULL) SET @aux_sql = @aux_sql + ' ORDER BY ' + @p_order_by
+set @total = @from_row + @rows_per_page
+set rowcount @total
+EXEC(@aux_sql)
+set rowcount @rows_per_page
+SELECT * FROM #tmp_table WHERE id BETWEEN @from_row AND (@from_row + @rows_per_page - 1)
+DROP TABLE #tmp_table
+set rowcount 0

@@ -1,0 +1,1 @@
+<div class="fieldGroup" id="visContent"><div class="modalOptionsContainer" id="poolsContainter"><div class="element" id="addPool" data-helper="true" tabIndex="0"><div class="option optionAdd"><system:label show="text" label="btnAgr" /></div></div></div><div class="clear"></div></div>

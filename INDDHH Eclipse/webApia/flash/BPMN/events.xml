@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<data>
+<event name="onload" id="1" />
+<event name="onwalter" id="2" />
+<event name="onjohnson" id="3" />
+<event name="onmichael" id="4" />
+<event name="ONREADY" id="5" />
+<event name="ONCOMPLETE" id="13" />
+</data>

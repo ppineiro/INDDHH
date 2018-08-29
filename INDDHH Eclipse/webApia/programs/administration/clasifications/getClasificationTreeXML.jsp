@@ -1,0 +1,3 @@
+<%@page import="com.st.util.XMLUtils"%><%@page import="com.dogma.bean.GenericBean"%><jsp:useBean id="gBean" scope="session" class="com.dogma.bean.GenericBean"></jsp:useBean><%
+	out.println(XMLUtils.transform(gBean.getEnvId(request),gBean.getClasificationsXML((Integer)request.getAttribute("envId"), (Integer)request.getAttribute("selCat"), request),"/programs/administration/clasifications/tblTree.xsl"));
+%>

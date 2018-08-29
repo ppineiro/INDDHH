@@ -1,0 +1,185 @@
+/* CSS Document */
+body{
+	background-color:#EFEFEF;
+	font-family:tahoma;
+}
+div{
+	cursor:pointer;
+	cursor:default;
+}
+
+.fader{
+	background-color:#EFEFEF;
+}
+
+
+#docGridSearch table{
+	width:100%;
+}
+
+.searchGrid thead{
+	background-color:#FDFCDC;
+	border:1px solid black;
+}
+
+.searchGrid tbody{
+	background-color:#FFFFFF;
+	border:1px solid black;
+}
+
+.searchGrid th{
+	border:1px solid black;
+}
+.searchGrid td{
+	border:1px solid black;
+}
+
+.minimizedWindow{
+	border:1px solid #777777;
+	color:#FFFFFF;
+	font-size:9px;
+	font-family:Arial;
+	vertical-align:middle;
+	cursor:pointer;
+	cursor:default;
+}
+
+.contextMenu{
+	background-color:#DEDEDE;
+	background-image:url(../../../../../styles/gradient.jsp?height=1&width=15&colors=AEAEAE;DEDEDE;FFFFFF);
+	background-position:left;
+	background-repeat:repeat-y;
+	padding:5px;
+	border:1px solid black;
+/*	font-family::Arial;*/
+	color:#000000;
+	cursor:pointer;
+	cursor:default;
+	font:Arial;
+	padding:3px;
+}
+
+.contextMenuHover{
+	background-color:#CCCCCC;
+	color:#000000;
+	cursor:pointer;
+	cursor:default;
+	font-family:Arial, Helvetica;
+	font-size:10px;
+	white-space:nowrap;
+	padding:3px;
+	padding-left:8px;
+	padding-right:6px;
+}
+
+.menuItem{
+	color:#000000;
+	cursor:pointer;
+	cursor:default;
+	font-family:Arial, Helvetica;
+	font-size:10px;
+	white-space:nowrap;
+	padding:3px;
+	padding-left:8px;
+	padding-right:6px;
+}
+
+#docGridSearch{
+	font-family:Verdana, Arial, Helvetica;
+}
+
+
+#deskTop{
+	
+	/*background-image:url(../images/back.jpg);
+	background-position:right bottom;*/
+}
+
+#backArea{
+/*	background-color:#CCCCCC;*/
+/*	background-image:url(../images/back.jpg);
+	background-position:right bottom;*/
+/*	background-image:url(../images/apia_wallpaper.jpg);
+	background-position:right bottom;*/
+}
+
+.elementHover{
+	background-color:#CCCCCC;
+}
+
+.opacity30{
+	filter:alpha(opacity=30);
+	-moz-opacity:0.3;
+	opacity:0.3;
+}
+
+.opacity50{
+	filter:alpha(opacity=50);
+	-moz-opacity:0.5;
+	opacity:0.5;
+}
+
+.opacity70{
+	filter:alpha(opacity=70);
+	-moz-opacity:0.7;
+	opacity:0.7;
+}
+
+.opacity90{
+	filter:alpha(opacity=90);
+	-moz-opacity:0.9;
+	opacity:0.9;
+}
+
+#inboxTable td{
+	font-family:Arial;
+	font-size:10px;
+}
+
+#inboxTable th{
+	font-family:Arial;
+	font-size:10px;
+	background-color:#CCCCCC;
+}
+
+#taskListTable td{
+	border:1px solid black;
+	font-family:Arial;
+}
+
+#taskListTable th{
+	border:1px solid black;
+	font-family:Arial;
+	background-color:#CCCCCC;
+}
+
+.contextMenu{
+	background-color:white;
+	border-bottom:1px solid #444444;
+	border-right:1px solid #444444;
+	border-left:1px solid #BBBBBB;
+	border-top:1px solid #BBBBBB;
+}
+
+.selected{
+	background-color:#E3FFD6;
+}
+
+.widgetHandle{
+	position:absolute;
+	width:14px;
+	height:52px;
+	background-image:url(../images/widgetDrag.png);
+	top:0px;
+	left:145px;
+	cursor:pointer;
+	cursor:move;
+	/*filter:alpha(opacity=0);
+	-moz-opacity:0;
+	opacity:0;*/
+	visibility:hidden;
+}
+
+.closeButton{
+	background-image:url(../images/modalCloseBtn.png);
+}

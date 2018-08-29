@@ -1,0 +1,340 @@
+.modalBlocker{
+	z-index: 999;
+	filter: alpha(opacity=75);
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
+	-moz-opacity: 0.75;
+	opacity: 0.75;
+	background-color: white;
+	position: fixed !important; 
+	display: block;
+	top: 0px;
+	left: 0px;
+	outline: none;
+}
+
+
+.modalContent { 
+	width: 500px; 
+	background-color: white; 
+/* 	border-top: 1px ridge black;  */
+/* 	border-left: 1px ridge black;  */
+/* 	border-bottom: 2px ridge black;  */
+/* 	border-right: 2px ridge black;  */
+	-webkit-box-shadow: 0px 4px 23px 3px #a8a8a8;
+	-moz-box-shadow: 0px 4px 23px 3px #a8a8a8;
+	box-shadow: 0px 4px 23px 3px #a8a8a8;
+	
+	border: 1px solid #a8a8a8;
+}
+
+html.no-boxshadow .modalContent {
+	border: 1px solid #a8a8a8;
+}
+
+.modalContent .header { /*border-bottom: 1px solid black;*/ font-weight: bold; margin-bottom: 5px; padding: 5px; background-color: #5A89A2; color: white; height: 15px;}
+.modalContent .content { overflow: auto; padding: 8px; max-height: 300px; /* maxHeight is defined by code in modal.js */ }
+.modalContent .footer { /*border-top: 1px solid #AAAAAA;*/ margin-top: 5px; /*padding: 2px; background-color: #EFEFEF;*/ min-height: 20px; padding: 1px; background-color: #F5F5F5; }
+.modalContent .footer .button {color: #0679B8; cursor: pointer; display: inline; margin-left: 8px; line-height: 20px; float: left;}
+.modalContent .footer .button:first-child {font-weight: bold;}
+.modalContent .footer .close { float:right; cursor: pointer; color: #0679B8; line-height: 20px; }
+.modalContent .footer .close { float:right; cursor: pointer; color: #0679B8; line-height: 20px; margin-right: 20px;}
+
+.modalError .header { background-color: #C93737; }
+.modalError .content span {display: inline-block; }
+.modalError .content .stacktrace {margin-left: 10px; font-style: italic; margin-bottom: 5px;}
+.modalError { width: 450px; }
+
+.modalWarning .header { background-color: #ebb34d; */orange*/}
+.modalWarning .content { text-align: center; /*font-weight: bold;*/ }
+.modalWarning { width: 450px; }
+
+.modalMessage .header { /*background-color: green;*/ background-color: #5BAC5B; }
+.modalMessage { width: 450px; }
+
+.modalContent table { width: 100%; }
+.modalContent table tr td { white-space: wrap; }
+.modalContent table tr td.text { white-space: nowrap; width: 20%; }
+/*.modalContent table tr td.required { /*background-image: url(img/required.gif); background-repeat: no-repeat; background-position: right top; padding-right: 15px;}*/
+.modalContent table tr td.required:before {
+    content: "*";
+}
+.modalContent table tr td.content { width: 100%; }
+.modalContent table tr td input { width: 80%; }
+.modalContent table tr td input.default { width: 20px; }
+.modalContent table tr td select { width: 80%; }
+.modalContent table tr td textarea { width: 80%; height: 100px; }
+
+.normalWhiteSpace { white-space: normal !important; }
+.selectMidle { width: 45% !important; }
+.inputMidle { width: 45% !important; }
+
+.progressBarContainer {height: 10px;}
+.progressBarContainer .progressBar { height: 10px; width: 0px; background-color: #c0c0c0; }
+
+.closeButton{background-image:url(img/modalCloseBtn.png);}
+
+.modalOptionsContainer {color:#777777;}
+.modalOptionsContainer .option { background-position: right center; background-repeat: no-repeat; border: 1px solid #DDDDDD; clear: none; float: left; margin: 2px; padding: 2px 5px; line-height: 17px; border-radius: 3px; height: 23px;}
+.modalOptionsContainer .optionLarge { width: 48%; }
+.modalOptionsContainer .optionWidthAll { width: 90%; }
+.modalOptionsContainer .optionWidth75 { width: 70%; }
+.modalOptionsContainer .optionWidth40 { width: 40%; }
+.modalOptionsContainer .optionWidth30 { width: 29% !important; }
+.modalOptionsContainer .forceAlignOption { position: relative; }
+.modalOptionsContainer .forceAlignOption > .optionIcon { position: absolute; right: 15px; top: 4px; }
+.modalOptionsContainer .optionWidthAllModal { padding-right: 16px; width: 90%; word-break: break-all; }
+.modalOptionsContainer .optionMiddle { padding-right: 16px; min-width: 200px; word-break: break-all; }
+.modalOptionsContainer .optionMiddleModal { padding-right: 16px; width: 40%; word-break: break-all; }
+.modalOptionsContainer .optionOneEighthModal { padding-right: 3px; padding-left: 3px; width: 12%; word-break: break-all; }
+.modalOptionsContainer .option button { cursor: pointer; }
+.modalOptionsContainer .option input[type=text] { margin: 3px; width: inherit !important; background-color: white; }
+.modalOptionsContainer .option input[type=text].force50 { margin: 3px; width: 50% !important; background-color: white; }
+.modalOptionsContainer .option input[type=checkbox] { margin: 3px; width: inherit !important;}
+.modalOptionsContainer .option div.text { overflow: hidden; text-overflow: ellipsis; width: 80%; }
+
+span.italic { font-style: italic; }
+
+/*Veriricar que el css selector type=checkbox funcione en ie*/
+.modalOptionsContainer .option input[type=checkbox] { 
+	margin: 5px 10px 3px 3px; 
+	width: auto !important;
+	vertical-align: bottom;
+}
+
+#WSBusClassContainter > .option > span {
+	position: relative;
+	top: 2px;
+}
+
+.modalOptionsContainer .option select { margin: 3px; width: inherit !important; }
+.modalOptionsContainer .option span {}
+.modalOptionsContainer .optionTextOverflow { text-overflow: ellipsis !important; overflow: hidden; }
+.modalOptionsContainer .optionRemove { padding-right: 16px; background-image: url("img/remove2.gif"); cursor: pointer; background-color: #F7F7F7; border: none;}
+.modalOptionsContainer .optionRemoveNoImg { padding-right: 16px; cursor: pointer; background-color: #F7F7F7; border: none;}
+.modalOptionsContainer .optionRemoveTD { background-image: url("img/remove.gif"); cursor: pointer; border: 1px solid #A7A7A7 !important; padding-right: 16px;}
+.modalOptionsContainer .optionDownload { background-image: url("img/document/download.gif"); cursor: pointer; width: 15px; height: 15px; margin-left: 5px; margin-right: 5px; display: inline-block; background-repeat: no-repeat;}
+.modalOptionsContainer .optionRemoveOver {}
+.modalOptionsContainer .optionAdd { /*padding-right: 16px; background-image: url("img/add.gif");*/
+		cursor: pointer; 
+		height: 20px;
+		margin-top: 3px;
+	}
+.modalOptionsContainer .optionAddOnlyIcon { background-image: url("img/add.gif"); background-repeat: no-repeat; cursor: pointer; height: 16px !important; width: 6px !important; margin-right: 10px; }
+.modalOptionsContainer .optionAddRigth { float: right !important; }
+.modalOptionsContainer .optionAddOver {}
+.modalOptionsContainer .optionUser { background-image: url("img/user.gif"); width: 16px; display: inline-block; margin-right: 5px; background-repeat: no-repeat; }
+.modalOptionsContainer .optionPool { background-image: url("img/pool.gif"); width: 16px; display: inline-block; margin-right: 5px; background-repeat: no-repeat; }
+.modalOptionsContainer .optionIcon { background-repeat: no-repeat; cursor: pointer; width: 16px; height: 16px; margin-left: 5px; margin-right: 5px; display: inline-block; float: right;}
+.modalOptionsContainer .optionWebServicePubNOk { background-image: url("img/priority1.gif"); float: left; margin-top: 5px;}
+.modalOptionsContainer .optionWebServicePubOk { background-image: url("img/priority2.gif"); float: left; margin-top: 5px;}
+.modalOptionsContainer .optionWebServiceUnPub { 
+	background-image: url("img/priority3.gif"); 
+	float: left;
+	margin-top: 5px;	
+}
+.modalOptionsContainer .optionWebServiceNoStatus { float: left;}
+.modalOptionsContainer .optionPublish { 
+	background-image: url("img/upload.gif");
+	margin-top: 4px;
+}
+.modalOptionsContainer .optionUnPublish { 
+	background-image: url("img/download.gif");
+	float: right;
+	top: 5px;
+	position: relative;
+}
+.modalOptionsContainer .optionUnPublishAll { 
+	background-image: url("img/unpubAll.png"); 
+	width: 20px !important;
+	float: right;
+	top: 5px;
+	position: relative;
+}
+.modalOptionsContainer .optionUsersSelected { background-image: url("img/users16x16.png"); }
+.modalOptionsContainer .optionUsersUnSelected { background-image: url("img/users_gris16x16.png"); }
+.modalOptionsContainer .optionModify { background-image: url("img/modify2.gif"); width: 20px !important; height: 20px !important; }
+.modalOptionsContainer .optionInfo { background-image: url("img/document/info.gif"); }
+.modalOptionsContainer .optionItalic { font-style: italic; color: gray; }
+.modalOptionsContainer .optionFunctionalities { max-height: 350px; overflow: auto; }
+.modalOptionsContainer .optionFunctionalities.forceMaxHeight { max-height: 500px !important; }
+.modalOptionsContainer .optionFunctionalities ul { margin-top: 0px; /*list-style: none;*/ }
+.profileFunctionalitiesContainer .modalOptionsContainer .optionFunctionalities ul { list-style: none; }
+
+.mdlContainer .modalOptionsContainer .optionFunctionalities ul.modal { margin-top: 0px; list-style: inherit outside none !important; }
+.modalOptionsContainer .optionFunctionalities ul li { margin-left: -15px; line-height: 15px; width: 350px; }
+.modalOptionsContainer .optionFunctionalities ul li.modal { line-height: 20px; }
+.modalOptionsContainer .optionFunctionalities ul li.noFather { padding-left: 0px !important; }
+.modalOptionsContainer .optionFunctionalities ul li.fncTypeFolder { background-image: url("img/folder_16x14.png"); background-position: 3px 3px; background-repeat: no-repeat; padding-left: 20px; }
+.modalOptionsContainer .optionFunctionalities ul li.fncTypeFolder > ul { padding-left: 20px; }
+.modalOptionsContainer .optionFunctionalities ul li.fncTypeFolder > li { padding-left: 20px; }
+.modalOptionsContainer .optionFunctionalities ul li input.chkFnc { float: left; }
+.modalOptionsContainer .optionCategoryTree { max-height: 98px; height: 98px; overflow: auto; }
+.modalOptionsContainer .optionCategoryTree ul { margin-top: 0px; }
+.modalOptionsContainer .optionCategoryTree ul li { margin-left: -15px; line-height: 15px; width: 200; }
+.modalOptionsContainer .optionCubeModal { float: left; max-height: 350px; overflow: auto; width: -moz-available; }
+.modalOptionsContainer .optionCubeModal ul { margin-top: 0px; list-style-type: none;}
+.modalOptionsContainer .optionCubeModal ul li { margin-left: -15px; line-height: 20px; width: 480px; }
+
+.modalOptionsContainer .optionWidthParameter { width: 48%; }
+.modalOptionsContainer .optionWidthParameter img { float: right; }
+.modalOptionsContainer .optionParameter { float: right; }
+.modalOptionsContainer .optionParameterString { size: 30; max-width: 130px !important; }
+.modalOptionsContainer .optionParameterNumeric { size: 10; max-width: 130px !important; }
+.modalOptionsContainer .optionParameterDate { size: 10; max-width: 70px !important; }
+
+.left { float: left !important; }
+.right { float: right !important; }
+
+.modalOptionsContainerTable {color:#777777;}
+.modalOptionsContainerTable .option { background-position: right center; background-repeat: no-repeat; clear: none; float: left; margin: 2px; padding: 2px 5px; line-height: 17px; border-radius: 3px; height: 20px;}
+.modalOptionsContainerTable .option input { margin: 0px; width: 85% !important; }
+.modalOptionsContainerTable .optionRemove { padding-right: 16px; background-image: url("img/remove.gif"); cursor: pointer; }
+.modalOptionsContainerTable .optionIcon { background-repeat: no-repeat; cursor: pointer; width: 16px; height: 16px; margin-left: 5px; margin-right: 5px; display: inline-block; float: right;}
+.modalOptionsContainerTable .optionModify { background-image: url("img/modify2.gif"); width: 20px !important; height: 20px !important; margin-top: 1px !important; margin-left: 5px !important; position: absolute !important; }
+
+.optionFormsContainer { max-height: 540px !important; overflow: auto; }
+
+.optionRemoveFnc { background-position: center center; background-repeat: no-repeat; background-image: url("img/remove.gif"); float: left; cursor: pointer; margin: 2px; padding: 2px 5px; height: 7px; }
+.showChilds { background-position: center center; background-repeat: no-repeat; background-image: url("img/plus.gif");  float: left; cursor: pointer; margin: 2px 4px; padding: 2px 5px; height: 7px; }
+.hideChilds { background-position: center center; background-repeat: no-repeat; background-image: url("img/minus.gif"); float: left; cursor: pointer; margin: 2px 4px; padding: 2px 5px; height: 7px; }
+
+td div input.parameterString { width: 95% !important; }
+td div input.parameterNumeric { width: 95% !important; }
+td div input.parameterDate { size: 10; width: 90% !important; }
+
+div.mdl-btn { 
+	background-image: url(img/lupa.gif);
+	width: 16px;
+	height: 15px;
+	display: inline-block;
+	position: relative;
+	left: 2px;
+	top: 2px;
+	cursor: pointer;
+	margin-top: -2px;
+} /*cuando se le saco el width y el height se dejaron de ver las lupas*/
+div.mdl-btn:hover { /*background-position: 0px 22px;*/ }
+
+select option.disabled { color: red; }
+select option.enabled { color: green; }
+
+/*
+CSS para modals de usuarios, ambientes, perfiles, grupos, etc
+*/
+
+div.hiddenModal{display: none;}
+div.mdlContainer { 
+	width: 485px; 
+	background-color: #FFFFFF; 
+	border: 1px solid #a8a8a8;
+	padding: 6px;
+}
+
+html.borderradius div.mdlContainer {
+	border-radius: 3px;
+}
+
+html.boxshadow div.mdlContainer {
+	box-shadow: 0px 4px 23px 5px #a8a8a8;
+}
+
+div.mdlContainer .mdlHeader{ background-color: #2A467A; border-bottom: 1px solid white; color: white; /*padding-bottom: 3px;*/padding: 5px; font-weight: bold; text-align: center; margin-bottom: 4px;}
+div.mdlContainer .mdlBody { background-color: white;}
+div.mdlContainer .mdlBody .gridBody { width: 484px; }
+div.mdlContainer .mdlFooter{ background-color: #FFFFFF; /*border-top: 1px solid #AAAAAA;*/ margin-top: 5px; margin-right: 10px; min-height: 20px; padding: 2px; }
+div.mdlContainer .mdlFooter .button { color: #0679B8; cursor: pointer; /*display: inline;*/ font-weight: bold; margin-left: 5px; margin-top: 5px;}
+div.mdlContainer .mdlFooter .close { color: #0679B8; cursor: pointer; float: right; margin-top: 5px; padding: 2px; }
+div.mdlContainer .mdlFooter .modalButton{ color: #0679B8; cursor: pointer; /*display: inline;*/ font-weight: bold; margin-left: 5px; margin-top: 7px; display: inline-block; }
+div.mdlContainer .mdlFooter .modalButtonSecundary{ color: #0679B8; cursor: pointer; margin-left: 20px; margin-top: 7px; display: inline-block; }
+div.mdlContainer div.mdlBody div.gridFooter {width: 485px; }
+div.mdlContainer div.mdlBody div.gridFooter table { color:#4D90FE;border-top:1px solid;border-collapse: collapse;}
+div.mdlContainer div.mdlBody div.gridFooter table tr td{background-color: #5A89A2}
+div.mdlContainer div.mdlBody div.gridFooter table tr td.roundedLeft{background-color: #6581CF; }
+div.mdlContainer div.mdlBody div.gridFooter table tr td.roundedRight{background-color: #6581CF;}
+
+div.mdlContainer div.mdlBody div.gridHeader table{}
+
+.tabModal { max-height: 350px; height: 350px; margin-left: 5px !important; }
+.tabHidden { display: none !important; }
+.tabHolderHidden { display: none !important; }
+
+/*
+CSS para modal de info de documentos
+*/
+div.mdlDocContainer { 
+	width: 485px; 
+	background-color: #FFFFFF;   
+	padding: 6px;
+}
+div.mdlDocContainer .mdlHeader{ background-color: #5A89A2; border-bottom: 1px solid white; color: white; /*padding-bottom: 3px;*/padding: 5px; font-weight: bold; text-align: center; margin-bottom: 4px;}
+div.mdlDocContainer .mdlBody { background-color: white;}
+div.mdlDocContainer .mdlBody .gridBody { width: 484px; }
+div.mdlDocContainer .mdlFooter{ background-color: #FFFFFF; /*border-top: 1px solid #AAAAAA;*/ margin-top: 5px; margin-right: 10px; min-height: 20px; padding: 2px; }
+div.mdlDocContainer .mdlFooter .button { color: #0679B8; cursor: pointer; display: inline; font-weight: bold; margin-left: 5px; margin-top: 2px; }
+div.mdlDocContainer .mdlFooter .close { color: #0679B8; cursor: pointer; float: right; margin-top: 2px; padding: 2px; }
+div.mdlDocContainer .mdlFooter .modalButton{ color: #0679B8; cursor: pointer; display: inline; font-weight: bold; margin-left: 5px; margin-top: 2px; }
+div.mdlDocContainer .mdlFooter .modalButtonSecundary { color: #0679B8; cursor: pointer; display: inline; margin-left: 5px; margin-top: 2px; }
+div.mdlDocContainer .mdlBody .generalInfo {}
+div.mdlDocContainer .mdlBody .generalInfo .text{font-weight: bold;}
+div.mdlDocContainer .mdlBody .generalInfo .content{}
+div.mdlDocContainer .mdlBody .history {width: 100%; }
+div.mdlDocContainer .mdlBody .history thead { background-color: #c0c0c0}
+div.mdlDocContainer .mdlBody .history tbody {}
+
+div.mdlBody table tbody tr td input[type=file] { width: 100% !important; height: 20px; }
+
+/*
+CSS para modal generador de escenarios
+*/
+input.scenarioInput{
+	/*width:auto !important;*/
+	width: 33px !important;
+}
+div.mdlDocContainer .mdlBody .history tbody {}
+
+div.option span.checkcontainer {
+	margin-left: 10px;
+}
+
+
+/*
+CSS para modal de verificar firmas
+*/
+div.mdlVerifySignContainer {background-color: #FFFFFF; border: 3px solid #ffffff; padding: 3px;}
+div.mdlVerifySignContainer .mdlHeader{ background-color: #5A89A2; border-bottom: 1px solid white; color: white; /*padding-bottom: 3px;*/padding: 5px; font-weight: bold; text-align: center; margin-bottom: 4px;}
+div.mdlVerifySignContainer .mdlBody { background-color: white;}
+div.mdlVerifySignContainer .mdlBody table {width: 100%}
+div.mdlVerifySignContainer .mdlBody table thead tr th { border: 1px solid gray}
+div.mdlVerifySignContainer .mdlBody table tbody tr td { border-left: 1px solid #FFFFFF; border-right: 1px solid #FFFFFF; padding: 4px 5px }
+
+table.gridTranslations input {
+	width: 95% !important;
+}
+
+div.modalContent li.li {
+	display: table;
+	margin-left: -10px;
+}
+
+div.modalContent li span {
+	margin-left: 5px;
+}
+
+div.modalContent li label {
+	margin-left: 5px;
+}
+
+div.modalContent li input {
+	vertical-align: bottom;
+	position: relative;
+	top: 3px;
+}
+
+/*div.modalContent ul ul {
+	margin-bottom: 4px;
+}*/
+
+div.modalContent div > ul > li {
+	padding-top: 3px;
+}
+

@@ -1,0 +1,118 @@
+
+div.divApiaGrid td.tdDisable {filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5;}   div.divApiaGrid {
+	background-color:#F3F3F4;
+}
+
+
+html body{font: Arial;color:#333333}
+
+/* ----- base links ----- */
+a:link {color: #333333;}  dataGridHeader a:link {color: #333333;text-decoration:none;}
+a:visited  {color: #333333;}  dataGridHeader a:visited {color: #333333;text-decoration:none;}
+a:hover  {color: #333333;}  dataGridHeader a:hover {color: #333333;text-decoration:none;}
+a:active  {color: #333333;}  dataGridHeader a:active {color: #333333;text-decoration:none;}
+a:focus  {color: #333333;}  dataGridHeader a:focus {color: #333333;text-decoration:none;}
+
+p {line-height:1.4em;margin:10px 0;}
+hr{margin:10px 0;color:#999999;}
+
+
+/* ----- Scrolling Table ----- */
+.dataGridHeader {
+	position:relative;
+	padding-top:24px;
+	_padding-top:23px;
+	width:100%;
+	_width:912px;
+}
+
+.dataGridContent {
+	 background-color: #F3F3F4;
+	overflow:auto;
+	width:100%;
+	_width:912px;
+	height:144px;
+}
+
+.dataGridHeader thead tr {
+	width:100%;
+	position:absolute;
+	top:0px;
+}
+.dataGridContent thead tr th {
+	border-right:1px solid d9d9d9;
+}
+.dataGridContent thead tr th span{
+	FONT:2pt;
+}
+u{
+	cursor:pointer;
+	cursor:hand;
+    text-decoration: none;
+}
+.dataGridHeader table thead tr th, .dataGridHeader table tbody tr td { 
+	text-align:left;
+	height:0;
+}
+
+table.scrolltablestyle{
+	border-bottom: 1px solid #D9D9D9;
+	border-top: 1px solid #D9D9D9;
+}
+
+table.scrolltablestyle tbody tr td{
+	background: #F3F3F4;
+	text-align:left;
+	padding: 4px 9px;
+	border:none;
+}
+
+table.scrolltablestyle thead tr{
+	position:absolute;
+}
+
+table.scrolltablestyle thead tr th{
+	background-image:url(../../gradient.jsp?height=45&width=1&colors=FAFAFA;E6E6E6;BDBDBD&type=v);
+	background-repeat:repeat-x;
+	background-color:#DBDCE4;
+	font-weight: normal;
+	text-align:left;
+	padding: 2px 9px 2px 9px;
+	border-bottom: 1px solid #D9D9D9;
+    border-right: 1px solid #D9D9D9;
+    border-top: 1px solid #D9D9D9;
+}
+
+table.scrolltablestyle thead tr th span{
+
+}
+
+table.scrolltablestyle thead tr th a:visited{
+	color: #fff;
+}
+
+table.scrolltablestyle thead tr th a:hover{
+	color: #fff;
+}
+
+table.scrolltablestyle tbody tr td{
+	border-right: 1px solid #D9D9D9;
+	cursor:pointer;
+	cursor:default;
+	border-bottom: 1px solid #EFEFEF
+}
+
+table.scrolltablestyle tbody tr.even td{
+	background-color: #ffffff;
+	border-bottom: 1px solid #EFEFEF
+}
+
+table.scrolltablestyle tbody tr.ruled td{
+	background-color: #DEE7FF;
+}
+table.scrolltablestyle .trOdd{
+   /* BACKGROUND-COLOR:#F0F7FD;*/
+}
+#selected td{
+	background-color: #F5B8B8;
+}

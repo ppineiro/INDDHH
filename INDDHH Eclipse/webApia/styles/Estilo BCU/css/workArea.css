@@ -1,0 +1,515 @@
+
+BODY {
+	BACKGROUND-COLOR:#F3F3F4;
+    OVERFLOW: hidden;
+    MARGIN:0px;
+	PADDING:2px;
+	background-image:url(../itil_back_task.png);
+}
+/*------------------------------*/
+/*			CONTENT 			*/
+/*------------------------------*/
+#divContent{
+	/*BORDER:1px solid red;*/
+	HEIGHT:100px;
+	WIDTH:100%;
+    OVERFLOW: auto;
+    MARGIN: 0px;
+    PADDING-LEFT:4px;
+    PADDING-RIGHT:4px;
+    FONT-FAMILY: arial; 
+    FONT-SIZE: 8pt;
+    SCROLLBAR-FACE-COLOR: #eeebeb; /*#DFDFDF;*/
+    SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+    SCROLLBAR-SHADOW-COLOR: #C0C0C0;
+    SCROLLBAR-ARROW-COLOR: #808080;
+    SCROLLBAR-DARKSHADOW-COLOR: #808080;
+    SCROLLBAR-BASE-COLOR: #808080;
+    scrollbar-3d-light-color: #808080;
+    align:center;
+}
+
+/*------------------------------*/
+/*			Page Title 			*/
+/*------------------------------*/
+.pageTop{
+ background-color: #D8973D;
+    color: white;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 900;
+    width: 100%;
+	   border-bottom: 5px solid white;
+}
+.pageTop TD{
+	PADDING-LEFT:4px;
+	PADDING-RIGHT:4px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:0px;
+}
+.pageTop .col1{
+	background:transparent;
+}
+.pageTop .col2{
+	background:transparent;
+	text-align:right;
+}
+/*------------------------------*/
+/*		CONTENT AREA			*/
+/*------------------------------*/
+
+
+
+/*------------------------------*/
+/*			Page Bar 			*/
+/*------------------------------*/
+.pageBottom{
+	FONT-FAMILY: arial;
+	FONT-SIZE:11px;
+    WIDTH:100%;
+	MARGIN:0px;
+	white-space:nowrap;
+	color: white;
+	background-color: #D8973D;
+}
+.pageBottom TD{
+	PADDING-LEFT:4px;
+	PADDING-RIGHT:0px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:0px;
+}
+.pageBottom .col1{
+
+}
+.pageBottom .col2{
+	text-align: right; 
+}
+
+.pageBottom BUTTON{
+	/*background-image: url("../../gradient.jsp?height=20&width=1&colors=c0c0c0;e4e4e4&type=v");
+	background-repeat:repeat-x;
+	border: 1px solid #7F7F7F;
+	color: #41268C;
+	PADDING-LEFT:2px;
+	PADDING-RIGHT:2px;
+	PADDING-TOP:1px;
+	PADDING-BOTTOM:1px;
+	border-radius: 5px 5px 5px 5px;
+	font-size: 12px;*/
+	background-image: url("../../gradient.jsp?height=35&width=1&colors=FAFAFA;BDBDBD&type=v");
+    background-repeat: repeat-x;
+    border: 1px solid #C0C0C0;
+    font-family: arial;
+    font-size: 8pt;
+    font-weight: normal;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 2px;
+}
+
+
+
+
+
+
+/*------------------------------*/
+/*			Page Sub Title 		*/
+/*------------------------------*/
+.subTit{
+	FONT-FAMILY: arial; 
+	FONT-SIZE: 11px;
+	border-bottom: 1px solid #D8973D;
+    color: #D8973D;
+	TEXT-ALIGN:left;
+	MARGIN-TOP:10px;
+	MARGIN-BOTTOM:6px;
+	MARGIN-LEFT:0px;
+	MARGIN-RIGHT:0px;
+	width:99%;
+	font-weight: bold;
+}
+
+.frmSubTit{
+	FONT-FAMILY: arial; 
+	FONT-SIZE: 11px;
+	FONT-WEIGHT:bold;
+	TEXT-ALIGN:left;
+	border-bottom: 1px solid #D8973D;
+    color: #D8973D;
+	MARGIN-TOP:10px;
+	MARGIN-BOTTOM:6px;
+	MARGIN-LEFT:0px;
+	MARGIN-RIGHT:0px;
+	PADDING-LEFT:3px;
+	PADDING-RIGHT:0px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:0px;		
+	width : 99%;
+}
+
+.frmSubTit TD {
+	margin : 0px;
+	padding : 0px;
+	padding-LEFT : 3px;	
+	border : 0px;
+}
+
+.frmSubTit TD IMG{
+	margin : 0px;
+	padding : 0px;
+	border : 0px;
+}
+
+/*------------------------------*/
+/*		FORM LAYOUT GRID 		*/
+/*------------------------------*/
+.tblFormLayout{
+	TABLE-LAYOUT:fixed;
+	BORDER-COLLAPSE:collapse;
+	FONT-FAMILY:arial; 
+	FONT-SIZE:8pt;
+	MARGIN:4px;
+	PADDING : 4px;
+	width:97%;
+}
+
+.tblFormLayout .col1{
+	WIDTH:20%;
+	TEXT-ALIGN:right;
+	COLOR:#333333;
+}
+.tblFormLayout .col2{
+	WIDTH:30%;
+}
+.tblFormLayout .col3{
+	WIDTH:20%;
+	TEXT-ALIGN:right;
+	COLOR:#333333;
+}
+.tblFormLayout .col4{
+	WIDTH:30%;
+}
+.tblFormLayout TR{
+}
+.tblFormLayout TD{
+	FONT-FAMILY:arial;
+	FONT-SIZE:8pt;
+	PADDING:2px;
+}
+.tblFormLayout .readOnly{
+    BORDER-BOTTOM:none;
+    FONT-WEIGHT:bold;
+    FONT-SIZE: 8pt;
+    COLOR: black;
+    CURSOR: default;
+   
+}
+
+.tblFormLayout ul li{
+	margin-left:30pt;
+}
+.tblFormLayout ul li{
+	LIST-STYLE-TYPE: disc;
+}
+
+.tblDataGrid{
+	BORDER-BOTTOM :	1px solid gray;
+	BORDER-COLLAPSE:collapse;
+	TABLE-LAYOUT:fixed;
+	FONT-FAMILY: arial;
+	FONT-SIZE:11px;
+}
+
+
+.tblDataGrid THEAD TD{
+	FONT-FAMILY: arial;
+	FONT-SIZE:11px;
+	TEXT-ALIGN:center;
+	BACKGROUND-COLOR:#DFDFDF;
+	border:1px outset;
+}
+.tblDataGrid THEAD TD A{
+	COLOR:black;
+}
+.tblDataGrid TBODY TR{
+	BACKGROUND-COLOR:#ffffff;
+}
+
+.tblDataGrid TBODY TD{
+	FONT-FAMILY: arial;
+	FONT-SIZE:11px;
+	PADDING-LEFT:2px;
+	PADDING-RIGHT:2px;
+	PADDING-TOP:2px;
+	PADDING-BOTTOM:5px;
+	BORDER-BOTTOM:1px solid #CACACA;
+    BORDER-LEFT:1px solid #CACACA;
+	WORD-WRAP:break-word;
+}
+
+.tblDataGrid .trOdd{
+    BACKGROUND-COLOR:#F0F7FD;
+}
+
+.tblDataGrid .trSelected{
+    BACKGROUND-COLOR: skyblue;
+}
+
+.tblDataGrid .tdRed{
+	FONT-FAMILY: arial;
+    COLOR:red;
+}
+
+.tblDataGrid .tdProLat{
+	FONT-WEIGHT:bold;
+	COLOR:#ff0000;
+}
+
+.tblDataGrid .tdProInAle{
+	COLOR:#880000;
+}
+
+.tblDataGrid .tdDisable{
+	COLOR:#aaaaaa;
+}
+
+.oHeadExtended{
+	background-color = #DADADA;
+	border-left = 1px solid gray;
+	border-right = 1px solid gray;
+	border-top = 1px solid gray;
+}
+
+.oHeadExtendedExpr{
+}
+
+.navBar{
+	TABLE-LAYOUT:fixed;
+	BACKGROUND-COLOR:#EFEFEF;
+	width:100%;
+	margin:0px;
+	position:relative;
+}
+.navBar .col1{
+	width:40%;
+    FONT-FAMILY: arial; 
+    FONT-SIZE: 8pt;
+}
+.navBar .col2{
+    FONT-FAMILY: arial; 
+    FONT-SIZE: 8pt;
+	width:60%;
+	text-align:right;
+}
+
+.navBar .colM{
+    FONT-FAMILY: arial; 
+    FONT-SIZE: 8pt;
+	width:30%;
+	text-align:right;
+}
+
+.navBar .colM2{
+    FONT-FAMILY: arial; 
+    FONT-SIZE: 8pt;
+	text-align:right;
+}
+
+.navBar BUTTON{
+	background-image:url(../../gradient.jsp?height=35&width=1&colors=FAFAFA;BDBDBD&type=v);
+	background-repeat:repeat-x;
+	FONT-FAMILY: arial;
+    FONT-SIZE: 8pt;
+    PADDING:1px;
+    MARGIN:1px;
+    color:#333333;
+	border: 1px solid #C0C0C0;
+	font-weight: normal;
+}
+
+/*------------------------------*/
+/*		FORM ELEMENTS	 		*/
+/*------------------------------*/
+INPUT{
+	font-size:11px;
+   	font-family:arial;
+}
+
+INPUT.txtReadOnly{
+	BACKGROUND-COLOR: gainsboro;
+    BORDER: 1px inset;
+    COLOR: dimgray;
+    CURSOR: default;
+    FONT-SIZE: 8pt;
+}
+
+TEXTAREA{
+	font-size:11px;
+   	font-family:arial;
+}
+
+TEXTAREA.txtReadOnly{
+	BACKGROUND-COLOR: gainsboro;
+    BORDER: 1px inset;
+    COLOR: dimgray;
+    CURSOR: default;
+    FONT-SIZE: 8pt;
+}
+
+PRE{
+	font-size:11px;
+   	font-family:arial;
+}
+
+SELECT{
+	FONT-FAMILY: arial;
+	FONT-SIZE: 8pt;
+}
+
+SELECT.txtReadOnly{
+	BACKGROUND-COLOR: gainsboro;
+    BORDER: 1px inset;
+    COLOR: dimgray;
+    CURSOR: default;
+    FONT-SIZE: 8pt;
+}
+
+LABEL{
+	FONT-FAMILY: arial;
+    FONT-SIZE: 8pt;
+}
+LABEL.required{
+	FONT-STYLE:italic;
+}
+
+BUTTON{
+	background-image:url("../../gradient.jsp?height=35&width=1&colors=FAFAFA;BDBDBD&type=v");
+	background-repeat:repeat-x;
+	font-weight: normal;
+	FONT-FAMILY: arial;
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: bold;
+    MARGIN-LEFT:2px;
+    MARGIN-RIGHT:2px;
+	padding: 2px;
+	 border: 1px solid #C0C0C0;
+	 font-weight: normal;
+}
+
+FORM{
+}
+
+.hiddenBottom BUTTON{
+	PADDING-LEFT:0px;
+	PADDING-RIGHT:0px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:0px;
+}
+
+/* OTHER */
+.salame {
+	BORDER-LEFT :				1px solid #777777;
+	BORDER-RIGHT :				1px solid #777777;
+	BORDER-BOTTOM :				1px solid #777777;
+	BACKGROUND-COLOR:			#CFCFCF;
+	OVERFLOW:					auto;
+	SCROLLBAR-FACE-COLOR: #DFDFDF;SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;SCROLLBAR-SHADOW-COLOR: #C0C0C0;SCROLLBAR-ARROW-COLOR: #808080;SCROLLBAR-DARKSHADOW-COLOR: #808080;SCROLLBAR-BASE-COLOR: #808080;scrollbar-3d-light-color: #808080;
+}
+
+.liDep {
+	list-style-type : square;
+	
+}
+
+A:visited { color: black;}
+
+.tblComment {
+    FONT-FAMILY: arial; 
+    FONT-SIZE: 8pt;
+    WIDTH : 100%;
+}
+
+.tblComment PRE {
+    FONT-FAMILY: arial; 
+    FONT-SIZE: 8pt;
+}
+
+.tblComment #trHead{
+	BACKGROUND-COLOR : #CFCFCF;
+}
+
+
+.tblFilter {
+	width:100%;
+	FONT-FAMILY: arial; 
+    FONT-SIZE: 7pt;
+    color: #C0C0C0;
+}
+
+#listFilterArea{
+	background-color:#EFEFEF;
+	/*background-image: url("../../gradient.jsp?height=88&width=400&colors=fafafa;e6e6e6;bdbdbd&type=v");*/
+	border-top:1px solid #AEAEAE;
+	border-left:1px solid #AEAEAE;
+	border-right:1px solid #969696;
+	border-bottom:1px solid #969696;
+}
+
+#printDiv{
+	BACKGROUND-COLOR:#EFEFEF;
+	POSITION:absolute;
+	TOP:0px;						
+	LEFT:0px;
+	WIDTH:102%;
+    HEIGHT:100%;
+
+	TEXT-ALIGN:center;
+
+    FONT-FAMILY: arial; 
+    FONT-SIZE: 8pt;
+}
+
+.txtRequired {
+	color: "navy";
+}
+
+/*------------------------------*/
+/*		TEST LAYOUT GRID 		*/
+/*------------------------------*/
+.testToolbarLayout{
+	FONT-FAMILY:arial; 
+	FONT-SIZE: 12px;
+}
+
+INPUT[readonly]{
+	BACKGROUND-COLOR: gainsboro;
+    BORDER: 1px inset;
+    COLOR: dimgray;
+    CURSOR: default;
+    FONT-SIZE: 8pt;
+}
+
+INPUT[disabled]{
+	color:#666666;
+} 
+
+INPUT[disabled]{
+	-moz-opacity:0.3;
+	opacity:0.6;
+} 
+
+.pageTop BUTTON[disabled]{
+	color:#666666;
+}
+
+.pageBottom BUTTON[disabled]{
+	color:#666666;
+}
+
+.navBar BUTTON[disabled]{
+	color:#666666;
+}
+
+BUTTON[disabled]{
+	color:#666666;
+}

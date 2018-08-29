@@ -1,0 +1,150 @@
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" title="{LabelManager.getInstance().getLabel('lbl_export')}" showCloseButton="true" close="closeDialog(event)" initialize="fillGrid()" height="300" width="400">
+   <mx:Script>
+	   <![CDATA[
+			import communication.Communication;
+			import data.Group;
+			import data.Parser;
+			import flare.vis.data.Data;
+			import flare.vis.data.DataSprite;
+			import flare.vis.data.NodeSprite;
+			import flare.vis.data.Tree;
+			import flash.net.URLVariables;
+			import flash.xml.XMLNode;
+			import mx.managers.PopUpManager;
+			import mx.events.CloseEvent;
+			import labels.LabelManager;
+			import mx.controls.RadioButton;
+			import communication.FileDownloader;
+			import mx.controls.Alert;
+
+			private var TYPE_EXCEL:String	= "excel";
+			private var TYPE_PDF:String		= "pdf";
+			private var TYPE_RTF:String		= "rtf";
+			private var TYPE_CSV:String		= "csv";
+			private var TYPE_TXT:String		= "txt";
+			
+			
+			private function closeDialog(event : CloseEvent) : void {
+				close();
+			}
+			
+			private function export(event : CloseEvent) : void {
+				var fileName:String = "export";
+				var type:String = TYPE_TXT;
+				if (txt.selected) {
+					fileName += ".txt";
+				}
+				if (pdf.selected) {
+					type = TYPE_PDF;
+					fileName += ".pdf";
+				}
+				if (xls.selected) {
+					fileName += ".xls";
+					type = TYPE_EXCEL;
+				}
+				if (csv.selected) {
+					fileName += ".csv";
+					type = TYPE_CSV;
+				}
+				
+				var strIds:String = "";
+				var strTypes:String = "";
+				var dataToExport = exportGrid.dataProvider;
+				for (var i:int = 0; i < dataToExport.length; i++ ) {
+					var o:Object = dataToExport[i];
+					strIds += o.id;
+					strTypes += o.type;
+					if (i < (dataToExport.length - 1)) {
+						strIds += ",";
+						strTypes += ",";
+					}
+				}
+				var vars:URLVariables = new URLVariables("ids=" + strIds + "&types=" + strTypes + Parameters.TAB_ID_REQUEST);
+				var downloader:FileDownloader = new FileDownloader();
+				downloader.addEventListener(FileDownloader.ON_DOWNLOAD, downloadComplete);
+				downloader.addEventListener(FileDownloader.ON_ERROR, downloadError);
+				downloader.download("../../../" + Parameters.BASE_URL + Parameters.EXPORT_URL + type + Parameters.TAB_ID_REQUEST, fileName, vars);
+			}
+			
+			private function downloadComplete(e:Event):void {
+				close();
+			}
+			
+			private function downloadError(e:Event):void {
+				Alert.show(LabelManager.getInstance().getLabel("lbl_downloadError")+"\n"+FileDownloader.ERROR_MSG);
+			}
+			
+			private function close():void  {
+				PopUpManager.removePopUp(this); // close this dialog
+			}
+			
+			public function setExportType(type:String):void  {
+				txt.selected = true;
+				if (type == "pdf") {
+					pdf.selected = true;
+				}
+				if (type == "xls") {
+					xls.selected = true;
+				}
+				if (type == "csv") {
+					csv.selected = true;
+				}
+			}
+			
+			private function fillGrid():void {
+				var c:XMLNode = Communication.getInstance().central;
+				var pi:Boolean = Group.isTypeGroup(Group.PROCESS_INSTANCE);
+				var ei:Boolean = Group.isTypeGroup(Group.ENTITY_INSTANCE);
+				Group.setTypeGroupBy(Group.PROCESS_INSTANCE,true);
+				Group.setTypeGroupBy(Group.ENTITY_INSTANCE,true);
+				var d:Data = Parser.buildData(c);
+				var dt:Tree = d.tree;
+				Group.setTypeGroupBy(Group.PROCESS_INSTANCE,pi);
+				Group.setTypeGroupBy(Group.ENTITY_INSTANCE, ei);
+				var dp:Array = new Array();
+				var root:NodeSprite = dt.root;
+				var objData:Object = root.data;
+				objData.visible = true;
+				dp.push(objData);
+				var first:NodeSprite = root.firstChildNode;
+				while (first) {
+					objData = first.data;
+					objData.visible = true;
+					if (objData.group == first.firstChildNode) {
+						objData.group = true;
+					}
+					dp.push(objData);
+					first = first.nextNode;
+				}
+				exportGrid.dataProvider = dp;
+			}
+			
+	]]>
+   </mx:Script>
+   <mx:HBox width="100%" height="100%">
+		<mx:DataGrid id="exportGrid" width="100%" height="100%" sortableColumns="false">
+			<mx:columns>
+				<mx:DataGridColumn visible="false" headerText="Id" dataField="id" />
+				<mx:DataGridColumn visible="false" headerText="Type" dataField="type" />
+				<mx:DataGridColumn width=".6" headerText="{LabelManager.getInstance().getLabel('lbl_name')}" dataField="name" />
+				<mx:DataGridColumn width=".2" headerText="{LabelManager.getInstance().getLabel('lbl_visible')}" dataField="visible" itemRenderer="CheckBoxRenderer" />
+				<mx:DataGridColumn width=".2" headerText="{LabelManager.getInstance().getLabel('lbl_groupBy')}" dataField="group" itemRenderer="CheckBoxRenderer" />
+			</mx:columns>
+		</mx:DataGrid>
+	</mx:HBox>
+   <mx:HBox width="100%">
+		<mx:VBox width="50%">
+			<mx:RadioButton groupName="type" id="txt" label="TXT" selected="true" />
+			<mx:RadioButton groupName="type" id="pdf" label="PDF"/>
+		</mx:VBox>
+		<mx:VBox width="50%">
+			<mx:RadioButton groupName="type" id="xls" label="XLS"/>
+			<mx:RadioButton groupName="type" id="csv" label="CSV"/>
+		</mx:VBox>
+	</mx:HBox>
+	<mx:HBox width="100%">
+		<mx:Spacer width="100%"/>
+		<mx:Button label="{LabelManager.getInstance().getLabel('lbl_export')}" click="export(null)"/>
+		<mx:Button label="{LabelManager.getInstance().getLabel('lbl_cancel')}" click="closeDialog(null)"/>
+	</mx:HBox>
+</mx:TitleWindow>

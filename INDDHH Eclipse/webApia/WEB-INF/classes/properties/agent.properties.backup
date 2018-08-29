@@ -1,0 +1,60 @@
+# Agent name
+name=Apia
+
+# Command Server Port (default is 2525)
+cmd_server_port=2525
+
+# Logging Server Port (default is 2526)
+log_server_port=2526
+
+# Launch sampler for data collection (true/false)
+sampler.launch_sampler=true
+
+# Interval time between sampling collection (in milliseconds)
+sampler.sleep_time = 1000
+sleep_time.com.apiamonitor.agent.sampler.ApiaPoolSampler = 10000
+sleep_time.com.apiamonitor.agent.sampler.SecurityServerSampler = 30000
+sleep_time.com.apiamonitor.agent.sampler.AvailabilitySampler = 60000
+sleep_time.com.apiamonitor.agent.sampler.WMISampler = 30000
+sleep_time.com.apiamonitor.agent.sampler.JVMSampler = 10000
+
+# Sampler Classes which will be used (comma separated, full class names required)
+sampler.classes = com.apiamonitor.agent.sampler.AvailabilitySampler,com.apiamonitor.agent.sampler.JVMSampler,com.apiamonitor.agent.sampler.WMISampler,com.apiamonitor.agent.sampler.ApiaPoolSampler,com.apiamonitor.agent.sampler.SecurityServerSampler,com.apiamonitor.agent.sampler.PingSampler
+
+# Delay to send start event (in miliseconds)
+timer.delay_time = 5000
+delay_time.sql = 3000
+delay_time.execute_form = 3000
+delay_time.execute_bus_class = 3000
+delay_time.execute_scheduler = 5000
+delay_time.synch_entity = 7000
+delay_time.synch_process = 7000
+delay_time.synch_pro_ele = 7000
+delay_time.execute_query = 5000
+delay_time.wf_acquire_task = 3000
+delay_time.wf_close_initial_task = 5000
+delay_time.wf_close_task = 5000
+
+#---AVAILABLE SAMPLERS:
+#com.apiamonitor.agent.sampler.JVMSampler <--- Takes samples of the Java Virtual Machine
+#com.apiamonitor.agent.sampler.WMISampler <--- Takes samples of CPU and Memory in Windows (requires the parameter WMISampler.scriptFile)
+#com.apiamonitor.agent.sampler.ApiaPoolSampler <--- Takes samples of the size of Apia connection pool
+#com.apiamonitor.agent.sampler.SecurityServerSampler <--- Takes samples of Apia security server
+#com.apiamonitor.agent.sampler.LinuxSampler <--- Takes samples of CPU and Memory in linux/unix servers 
+#com.apiamonitor.agent.sampler.OracleSampler <--- Takes samples of oracle databases
+#com.apiamonitor.agent.sampler.PingSampler <--- Takes samples of Ping to a host
+#com.apiamonitor.agent.sampler.AvailabilitySampler <--- Takes samples of the availability of apia  
+
+#-- WMI SAMPLER CONFIGURATION ------------------------------
+WMISampler.scriptFile = /ApiaLocation/WEB-INF/compStatsSilent.vbs
+
+#-- ORACLE SAMPLER CONFIGURATION ------------------------------
+#OracleSampler.cnx_string = jdbc:oracle:thin:@//APIA:1521/APIATEST
+#OracleSampler.db_user = system
+#OracleSampler.db_pass = manager
+
+PingSampler.host = 127.0.0.1
+#AvailabilitySampler.JspLocation = http://localhost:8080/Apia/tools/verification.jsp?errorCodes=true
+
+# Action classes
+actions.classes = com.apiamonitor.agent.actions.PoolAction,com.apiamonitor.agent.actions.DiagnosticAction,com.apiamonitor.agent.actions.SecServerAction

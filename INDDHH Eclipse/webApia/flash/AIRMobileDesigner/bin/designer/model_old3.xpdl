@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns:xpdl2="http://www.wfmc.org/2004/XPDL2.0alpha" Id="_966nkEZTEduS4_t5Z4bCOg" Name="Pattern1">
+  <PackageHeader>
+    <XPDLVersion>2.0</XPDLVersion>
+    <Vendor>TIBCO</Vendor>
+    <Created>Sun Sep 17 15:53:40 BST 2006</Created>
+    <Documentation></Documentation>
+  </PackageHeader>
+  <RedefinableHeader PublicationStatus="UNDER_REVISION">
+    <Author>jbrunt</Author>
+    <Version>1.0</Version>
+  </RedefinableHeader>
+  <Pools>
+    <Pool Id="_vYn7cEZWEduPQPizkzhfcQ" Name="Pool" Process="_uf5jsEZWEduPQPizkzhfcQ">
+      <Lanes>
+        <Lane Id="_vYn7cUZWEduPQPizkzhfcQ" Name="Lane">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="300.0" ToolId="XPD"/>
+          </NodeGraphicsInfos>
+        </Lane>
+      </Lanes>
+    </Pool>
+  </Pools>
+  <WorkflowProcesses>
+    <WorkflowProcess Id="_uf5jsEZWEduPQPizkzhfcQ" Name="Pattern1">
+      <ProcessHeader/>
+      <RedefinableHeader/>
+      <Participants>
+        <Participant Id="_J6-S8GbUEdy3AOXEXyq-Mw" Name="Participant">
+          <ParticipantType Type="ROLE"/>
+        </Participant>
+      </Participants>
+      <Activities>
+        <Activity Id="_wrt7AEZWEduPQPizkzhfcQ" Name="Start">
+          <Event>
+            <StartEvent/>
+          </Event>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo BorderColor="0,0,128" FillColor="255,219,74" Height="44.0" LaneId="_vYn7cUZWEduPQPizkzhfcQ" ToolId="XPD" Width="30.0">
+              <Coordinates XCoordinate="40.0" YCoordinate="151.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="_yEJtkEZWEduPQPizkzhfcQ" Name="Activity">
+          <Implementation>
+            <Task/>
+          </Implementation>
+          <Performers>
+            <Performer>_J6-S8GbUEdy3AOXEXyq-Mw</Performer>
+          </Performers>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo BorderColor="0,0,128" FillColor="255,219,74" Height="64.0" LaneId="_vYn7cUZWEduPQPizkzhfcQ" ToolId="XPD" Width="96.0">
+              <Coordinates XCoordinate="180.0" YCoordinate="151.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="_y_FEwEZWEduPQPizkzhfcQ" Name="End">
+          <Event>
+            <EndEvent/>
+          </Event>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo BorderColor="0,0,128" FillColor="255,219,74" Height="44.0" LaneId="_vYn7cUZWEduPQPizkzhfcQ" ToolId="XPD" Width="30.0">
+              <Coordinates XCoordinate="301.0" YCoordinate="150.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+      </Activities>
+      <Transitions>
+        <Transition Id="_0rqiYEZWEduPQPizkzhfcQ" Name="Arrow 1" From="_wrt7AEZWEduPQPizkzhfcQ" To="_yEJtkEZWEduPQPizkzhfcQ"/>
+        <Transition Id="_2MCI8EZWEduPQPizkzhfcQ" Name="Arrow 2" From="_yEJtkEZWEduPQPizkzhfcQ" To="_y_FEwEZWEduPQPizkzhfcQ">
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo ToolId="XPD.StartAnchorPosition">
+              <Coordinates XCoordinate="10.3125" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+      </Transitions>
+    </WorkflowProcess>
+  </WorkflowProcesses>
+  <ExtendedAttributes>
+    <ExtendedAttribute Name="CreatedBy" Value="TIBCO Business Studio 1.0.0"/>
+    <ExtendedAttribute Name="FormatVersion" Value="1"/>
+  </ExtendedAttributes>
+</Package>

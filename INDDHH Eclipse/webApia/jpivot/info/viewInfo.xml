@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<xform style="manual" bundle="com.tonbeller.jpivot.table.resources">
+	<div id="browserBlock"></div>
+	<div id="viewsInfo" class="panel">
+		<h2 id="textInfoCubeName"></h2>
+		<div id="textInfoCubeDesc"></div> 
+		<div id="viewInfoBtnClose">
+			<img title="fmt:views.close" src="../images/jpivot/closeBtn.gif" onclick="viewsInfo.cancel()" />
+		</div>
+	</div>
+	
+</xform>

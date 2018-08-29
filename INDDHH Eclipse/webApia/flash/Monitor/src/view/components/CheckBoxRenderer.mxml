@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox width="100%" xmlns:mx="http://www.adobe.com/2006/mxml" implements="mx.controls.listClasses.IDropInListItemRenderer" >
+<mx:Script>
+<![CDATA[
+import mx.controls.listClasses.BaseListData;
+import mx.controls.dataGridClasses.DataGridListData;
+
+protected var _listData:DataGridListData;
+
+private var _data:Object;
+
+[Bindable]
+private var _value:Boolean;
+private var _colName:String;
+
+override public function set data(value:Object):void {
+	_data = value;
+	if(_data[_colName]!=null){
+		_value = _data[_colName];
+		checkBox.selected = _value;
+	}else {
+		//checkBox.visible = false;
+	}
+}
+
+public function get listData():BaseListData{
+	return _listData;
+}
+
+public function set listData(value:BaseListData):void{
+	_listData = DataGridListData(value);
+	_colName = this.parent.owner.columns[listData.columnIndex].dataField;
+	invalidateProperties();
+}
+private function setValue(value:Object):void{
+}
+private function getColValue():Boolean {
+	return _value;
+}
+private function setColValue():void {
+	_data[_colName] = checkBox.selected;
+}
+]]>
+</mx:Script>
+<mx:Spacer width="8"/><mx:CheckBox enabled="false" id="checkBox" selected="{_value}" click="setColValue();" />
+</mx:HBox>

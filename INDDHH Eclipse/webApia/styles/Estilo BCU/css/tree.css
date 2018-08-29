@@ -1,0 +1,32 @@
+IMG{
+    POSITION: static;
+    CURSOR: pointer;
+    CURSOR: default;
+	padding-left: 2px;
+}
+UL{
+    MARGIN: 0px;
+	POSITION: static;
+	white-space:nowrap;
+	padding-left:10px;
+}
+
+LI{
+	white-space:nowrap;
+}
+LI UL{
+    MARGIN-LEFT: 15px;
+    MARGIN-RIGHT:0px;
+    padding-left:10px;
+}
+
+.tocHolder{
+	FONT-FAMILY: arial;
+    FONT-SIZE: 8pt;
+    MARGIN:0px;
+    OVERFLOW-Y:auto;
+    OVERFLOW-X:hidden;
+    WIDTH: 100%;
+    SCROLLBAR-FACE-COLOR: #CCCCCC;SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;SCROLLBAR-SHADOW-COLOR: #C0C0C0;SCROLLBAR-ARROW-COLOR: #808080;SCROLLBAR-DARKSHADOW-COLOR: #808080;SCROLLBAR-BASE-COLOR: #808080;scrollbar-3d-light-color: #808080; 
+    POSITION: static;
+}

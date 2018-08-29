@@ -1,0 +1,218 @@
+
+BODY{
+	MARGIN-TOP: 0px;								
+	MARGIN-BOTTOM:0px;
+	MARGIN-LEFT: 0px;
+	MARGIN-RIGHT: 0px;
+	background-color:#FFFFFF;
+	cursor:pointer;
+	cursor:default;
+}
+
+#tocContainer{
+    SCROLLBAR-FACE-COLOR: #eeebeb; 
+    SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+    SCROLLBAR-SHADOW-COLOR: #C0C0C0;
+    SCROLLBAR-ARROW-COLOR: #808080;
+    SCROLLBAR-DARKSHADOW-COLOR: #808080;
+    SCROLLBAR-BASE-COLOR: #808080;
+    scrollbar-3d-light-color: #808080;
+}
+
+.tocHolder{
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    MARGIN:0px;
+    OVERFLOW-Y:auto;
+    OVERFLOW-X:hidden;
+	HEIGHT:100%;
+    
+    SCROLLBAR-FACE-COLOR: #eeebeb; 
+    SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+    SCROLLBAR-SHADOW-COLOR: #C0C0C0;
+    SCROLLBAR-ARROW-COLOR: #808080;
+    SCROLLBAR-DARKSHADOW-COLOR: #808080;
+    SCROLLBAR-BASE-COLOR: #808080;
+    scrollbar-3d-light-color: #808080;
+
+}
+#tocContainerBack{
+	/*BORDER:1px solid #7c7c94;
+	/*background-image:url(../../gradient.jsp?height=1&width=150&colors=f9fbff;cacdd5);
+	background-repeat:repeat-y;*/
+	
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    MARGIN:0px;
+    OVERFLOW:hidden;
+    WIDTH: 100%;
+    HEIGHT:100%;
+     border-left:1px solid #dfdfdf;
+    border-top:1px solid #dfdfdf;
+	border-bottom:1px solid #aeaeae;
+	border-right:1px solid #aeaeae;
+}
+.tocTop{
+	BORDER-COLLAPSE:collapse;
+	background-color : #ffffff;
+	WIDTH: 100%;
+	MARGIN:0px;
+	PADDING-top:20px;
+/*	BORDER:1px solid #416D94;*/
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    COLOR:gray;
+    DISPLAY:none;
+}
+.tocTop TR{
+	HEIGHT:4px;
+}
+.tocTop TR TD{
+	TEXT-ALIGN:left;
+	PADDING-top:5px;
+	MARGIN:0px;
+	LETTER-SPACING: 2px;
+	TEXT-TRANSFORM: uppercase;
+}
+IMG{
+    MARGIN-RIGHT: 2px;
+    MARGIN-LEFT:4px;
+    POSITION: static;
+    TOP: 4px;
+    CURSOR: default;
+}
+
+LI.clsFolder{
+	color:#155669;
+    CURSOR: hand;
+    LIST-STYLE: none;
+}
+
+LI SPAN{
+	border-bottom:1px solid #a3a3a3;
+}
+
+LI.clsFolder UL LI{
+    font-weight:normal;
+    
+}
+
+.tblAcord {
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    MARGIN: 0px;
+	WIDTH : 100%;
+    PADDING: 0px;
+    color : #293450;
+	border-collapse:collapse;
+}
+
+.tblAcord TR {
+    MARGIN:0px;
+    PADDING:0px;
+}
+
+.tdTitleAcord {
+  
+    
+}
+span{
+	cursor:pointer;
+	cursor:hand;
+	vertical-align:super;
+	white-space:nowrap;
+}
+.tocHolder LI UL {
+	padding-top:3px;
+	vertical-align:top;
+	DISPLAY: none;
+	TEXT-ALIGN:left;
+	/*TEXT-TRANSFORM: uppercase;*/
+	cursor:pointer;
+	cursor:default;
+	position:static;
+    line-style:none;
+}
+
+
+#tocContainer{
+	
+}
+
+.tdTitleAcord TD{
+    CURSOR: hand;
+	padding-top :0px;
+    MARGIN:0px;
+    margin-left:0px;
+	padding-left :0px;
+    PADDING-bottom:0px;
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    font-weight : bold;
+  	background-image:url(../../gradient.jsp?height=10&width=400&colors=95b2c0;02466b&type=h);
+	background-repeat:repeat-y;
+	background-color:#87B2D2;
+    color  : #FFFFFF;
+    vertical-align:bottom;
+}
+
+.tdBodyAcord {
+	padding-left :0px;
+    MARGIN:1px;
+    PADDING-left:0px;    
+    PADDING-top:1px;        
+    PADDING-bottom:2px;
+    DISPLAY: none;
+    color : #293450;
+}
+
+.tdInnerTitleAcord{
+	height:27px;
+	CURSOR: hand;
+	padding-top :0px;
+    MARGIN:0px;
+    margin-left:10px;
+	padding-left :20px;
+    PADDING-bottom:0px;
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    font-weight : bold;
+	background-image:url("../../gradient.jsp?height=30&width=6&colors=e88d21;cd7b1a&type=v");
+	background-repeat:no-repeat;
+	background-position:left;
+	background-color:#87B2D2;
+	color  : #FFFFFF;
+    vertical-align:center;
+	text-align:left;
+	border-top:1px solid #FFFFFF;
+  	border-collapse:collapse;
+}
+
+.tdBodyAcord TD { 
+	FONT-FAMILY: Verdana,Tahoma, Arial;
+    FONT-SIZE: 8pt;
+    color : #155669;
+    border: 0px;
+    MARGIN: 0px;
+    PADDING: 0px;    
+    /*background-image:url(../../gradient.jsp?height=1&width=150&colors=f9fbff;cacdd5);
+	background-repeat:repeat-y;
+	background-color:#cacdd5;*/
+}
+LI UL{
+	padding-left:15px;
+}
+UL{	
+	align:left;
+	LIST-STYLE: none;
+	position:static;
+	padding-left:5px;
+	margin-left:0px;
+}
+LI{
+	white-space:nowrap;
+	LIST-STYLE: none;
+	position:static;
+	padding-top:4px;
+	margin-left:0px;
+}

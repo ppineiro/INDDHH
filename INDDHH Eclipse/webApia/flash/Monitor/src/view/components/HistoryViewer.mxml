@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox width="100%" height="100%" xmlns:mx="http://www.adobe.com/2006/mxml" initialize="navigationReady()">
+	<mx:Script>
+		<![CDATA[
+			import flash.net.URLVariables;
+			import mx.controls.*;
+			import view.ExternalLoader;
+			import communication.Communication;
+			import flash.events.*;
+			import labels.LabelManager;
+			import flash.xml.*;
+			import utils.LibraryManager;
+			import flash.display.Sprite;
+			import mx.core.IFlexDisplayObject;
+			import utils.IconUtilityPlus;
+			import mx.events.MenuEvent;
+			import communication.FileDownloader;
+		
+			private var navigationLevels:Array;
+			private var actualLevel:Number=0;
+			private var maxLevels:Number = 10;
+			
+			private var backList:Menu;
+			private var nextList:Menu;
+			
+			private var navigatorCall:Boolean = false;
+			
+			var lastAddedId;
+			
+			public function navigationReady():void {
+				navigationLevels = new Array();
+				Communication.getInstance().addEventListener(Communication.ON_CENTRALCHANGE, onchange);
+				setBtnIcon(navigateNext, "icon.Next");
+				setBtnIcon(navigateBack, "icon.Back");
+				setBtnIcon(navigateRefresh, "icon.Refresh");
+				setBtnIcon(navigateExport, "icon.Export");
+				setBtnIcon(navigateErase, "icon.Erase");
+				setBtnIcon(navigateClear, "icon.Clear");
+				nextList = new Menu();
+				backList = new Menu();
+				nextList.addEventListener(MenuEvent.CHANGE, itemClickHandler);
+				backList.addEventListener(MenuEvent.CHANGE, itemClickHandler);
+				navigateNext.popUp = nextList;
+				navigateBack.popUp = backList;
+				sortLevels();
+			}
+			
+			private function onchange(e:Event):void {
+				var central:XMLNode = (e.currentTarget as Communication).central;
+				var id = central.attributes.id;
+				if (lastAddedId != id && !navigatorCall) {
+					lastAddedId = id;
+					var name = central.attributes.name;
+					var type = central.attributes.type;
+					var desc:String = "";
+					//var name = getDesc(central);
+					addLevel( name, id, type, desc );
+				}
+				navigatorCall = false;
+			}
+			
+			private function getDesc(node:XMLNode):String {
+				var props:XMLNode;
+				var i:int = 0;
+				var name:String = "";
+				for (i = 0 ; i < node.childNodes.length; i++ ) {
+					if (node.childNodes[i].localName == "properties") {
+						props = node.childNodes[i];
+						break;
+					}
+				}
+				i = 0;
+				if (props) {
+					for (i = 0 ; i < props.childNodes.length; i++ ) {
+						if (props.childNodes[i].attributes.name=="Name") {
+							name = props.childNodes[i].attributes.value;
+						}
+						/*if (props.childNodes[i].attributes.name=="Title") {
+							return props.childNodes[i].attributes.value;
+						}*/
+					}
+				}
+				return name;
+			}
+			
+			private function loadActualLevel():void {
+				navigatorCall = true;
+				if(navigationLevels[actualLevel]) {
+					var id = navigationLevels[actualLevel].id;
+					var type = navigationLevels[actualLevel].type;
+					Communication.getInstance().getCentral(id, type);
+				}
+			}
+			
+			public function addLevel(label, id, type, desc:String):void {
+				addLevelObj( { label:label, id:id, type:type, desc:desc } );
+			}
+			
+			private function updateLevelIds():void {
+				for (var i:int = 0; i < navigationLevels.length ; i++ ) {
+					navigationLevels[i].navigationId = i;
+				}
+			}
+			
+			public function addLevelObj(level:Object):void {
+				if (navigationLevels.length == maxLevels + 1) {
+					navigationLevels.pop();
+					actualLevel--;
+				}
+				if ((actualLevel+1) < navigationLevels.length) {
+					navigationLevels.splice(actualLevel+1, (navigationLevels.length - actualLevel));
+				}
+				//navigationLevels.reverse();
+				navigationLevels.push(level);
+				//navigationLevels.reverse();
+				actualLevel = navigationLevels.length - 1;
+				sortLevels();
+			}
+			
+			private function sortLevels():void {
+				updateLevelIds();
+				backArr = new Array();
+				nextArr = new Array();
+				/*for (var i = navigationLevels.length - 1; i >= 0 ; i-- ) {
+					if (i < actualLevel) {
+						backArr.push(navigationLevels[i]);
+					}else if (i > actualLevel) {
+						nextArr.push(navigationLevels[i]);
+					}
+				}*/
+				for (var i:int = 0; i < navigationLevels.length ; i++ ) {
+					/*if (i < actualLevel) {
+						backArr.push(navigationLevels[i]);
+					}else */if (i > actualLevel) {
+						nextArr.push(navigationLevels[i]);
+					}
+				}
+				i = navigationLevels.length - 1;
+				for (i = navigationLevels.length - 1; i >= 0 ; i-- ) {
+					if (i < actualLevel) {
+						backArr.push(navigationLevels[i]);
+					}
+				}
+				
+				/*var i = (actualLevel+1);
+				for (i = (actualLevel+1); i < navigationLevels.length ; i++ ) {
+					nextArr.push(navigationLevels[i]);
+				}
+				i = (actualLevel + 1);
+				for (i = (actualLevel+1); i >= navigationLevels.length ; i-- ) {
+					backArr.push(navigationLevels[i]);
+				}*/
+				backList.dataProvider = backArr;
+				nextList.dataProvider = nextArr;
+				historyGrid.dataProvider = navigationLevels;
+				navigateBack.enabled = true;
+				navigateNext.enabled = true;
+				if (backList.dataProvider.length==0) {
+					navigateBack.enabled = false;
+				}
+				if (nextList.dataProvider.length==0) {
+					navigateNext.enabled = false;
+				}
+			}
+			
+			public function reset():void {
+				navigationLevels = new Array();
+				actualLevel = 0;
+				historyGrid.dataProvider = null;
+			}
+			
+			private function setBtnIcon(btn:Button,icon:String):void {
+				btn.setStyle("icon", IconUtilityPlus.getClass(btn, (LibraryManager.getInstance().getInstancedObject(icon) as Sprite))); 
+				btn.setStyle("paddingLeft", 5);
+				btn.setStyle("paddingRight", 5);
+			}
+			
+			private function nextClick(e:Event):void {
+				actualLevel++;
+				if (actualLevel==navigationLevels.length) {
+					actualLevel = navigationLevels.length - 1;
+ 				}
+				sortLevels();
+				loadActualLevel();
+			}
+			
+			private function backClick(e:Event):void {
+				actualLevel--;
+				if (actualLevel<0) {
+					actualLevel=0;
+				}
+				sortLevels();
+				loadActualLevel();
+			}
+			
+			private function refreshClick(e:Event):void {
+				loadActualLevel();
+			}
+			
+			private function exportClick(e:Event):void {
+				var dp:Object = historyGrid.dataProvider.source;
+				var i:int;
+				var j:int;
+				var o:Object;
+				
+				var forObj:String = LabelManager.getInstance().getLabel("lblForObj");
+				var ident:String = LabelManager.getInstance().getLabel("lbl_ident");
+				
+				var max_type_length:int = forObj.length;
+				var max_label_length:int = ident.length;
+				
+				//Calcular el largo de la columna tipo e identificador
+				for (i = 0; i < dp.length; i++ ) {
+					o = dp[i];
+					var type:String = o.type;
+					if (o.type == "E")
+						type = LabelManager.getInstance().getLabel("lbl_entity");
+					else if(o.type == "P")
+						type = LabelManager.getInstance().getLabel("lbl_pro");
+					else if(o.type == "EI")
+						type = LabelManager.getInstance().getLabel("lbl_entInstance");
+					else if(o.type == "PI")
+						type = LabelManager.getInstance().getLabel("lbl_proInstance");
+					else if(o.type == "O")
+						type = LabelManager.getInstance().getLabel("lbl_pool");
+					else if(o.type == "T")
+						type = LabelManager.getInstance().getLabel("lbl_task");
+					
+					if (type != "" && type.length > max_type_length)
+						max_type_length = type.length;
+					if (o.label != "" && o.label.length > max_label_length)
+						max_label_length = o.label.length;
+				}
+				
+				
+				//var export:String = LabelManager.getInstance().getLabel("lblForObj") + "                    " + LabelManager.getInstance().getLabel("lbl_ident") + "                    " + LabelManager.getInstance().getLabel("lblComments") + "\n\n";
+				var export = forObj;
+				for (j = 0; j < max_type_length - forObj.length; j++ )
+					export += " ";
+				export += "        " + ident;
+				for (j = 0; j < max_label_length - ident.length; j++ )
+					export += " ";
+				export += "        " + LabelManager.getInstance().getLabel("lblComments") + "\n\n";
+				
+				for (i = 0; i < dp.length; i++ ) {
+					o = dp[i];
+					if (o.type == "E")
+						forObj = LabelManager.getInstance().getLabel("lbl_entity");
+					else if(o.type == "P")
+						forObj = LabelManager.getInstance().getLabel("lbl_pro");
+					else if(o.type == "EI")
+						forObj = LabelManager.getInstance().getLabel("lbl_entInstance");
+					else if(o.type == "PI")
+						forObj = LabelManager.getInstance().getLabel("lbl_proInstance");
+					else if(o.type == "O")
+						forObj = LabelManager.getInstance().getLabel("lbl_pool");
+					else if(o.type == "T")
+						forObj = LabelManager.getInstance().getLabel("lbl_task");
+					else
+						forObj = o.type;
+					
+					export += forObj;
+					
+					for (j = 0; j < max_type_length - forObj.length; j++ )
+						export += " ";
+					export += "        " + o.label;
+					for (j = 0; j < max_label_length - o.label.length; j++ )
+						export += " ";	
+					export += "        " + o.desc + " \n\n";
+				}
+				
+				var downloader:FileDownloader = new FileDownloader();
+				downloader.addEventListener(FileDownloader.ON_DOWNLOAD, downloadComplete);
+				downloader.addEventListener(FileDownloader.ON_ERROR, downloadError);
+				downloader.download("../../../" + Parameters.BASE_URL + Parameters.HISTORY_URL + Parameters.TAB_ID_REQUEST, "history.txt", new URLVariables("history=" + escape(export) + Parameters.TAB_ID_REQUEST));
+			}
+			
+			private function clearClick(e:Event):void {
+				historyGrid.dataProvider = null;
+				reset();
+				sortLevels();
+				
+			}
+			
+			private function eraseClick(e:Event):void {				
+				var lvl = historyGrid.selectedIndex;
+				navigationLevels.splice(lvl, 1);
+				sortLevels();
+			}
+			
+			private function itemClickHandler(e:MenuEvent):void {
+				//var id = e.item.id;
+				var navigationId = e.item.navigationId;
+				for (var i:int = 0; i < navigationLevels.length; i++ ) {
+					//if (navigationLevels[i].id==id) {
+					if (navigationLevels[i].navigationId == navigationId) {
+						actualLevel = i;
+						break;
+					}
+				}
+				sortLevels();
+				loadActualLevel();
+			}
+			
+			private function itemDoubleClicked(e:Event):void {
+				var selectedRow:Object = e.currentTarget.selectedItem;
+				actualLevel = historyGrid.selectedIndex;
+				sortLevels();
+				navigatorCall = true;
+				Communication.getInstance().getCentral(selectedRow.id, selectedRow.type);
+			}
+			
+			private function downloadComplete(e:Event):void {
+			}
+			
+			private function downloadError(e:Event):void {
+				Alert.show(LabelManager.getInstance().getLabel("lbl_downloadError"));
+			}
+			
+		]]>
+	</mx:Script>
+	<mx:HBox width="100%" height="30">
+		<mx:PopUpButton width="30%" height="90%" id="navigateBack" toolTip="{LabelManager.getInstance().getLabel('lbl_back')}" click="backClick(event)"></mx:PopUpButton>
+		<mx:PopUpButton width="30%" height="90%" id="navigateNext" toolTip="{LabelManager.getInstance().getLabel('lbl_next')}" click="nextClick(event)"></mx:PopUpButton>
+	</mx:HBox>
+	<mx:HBox width="100%" height="100%">
+		<mx:DataGrid id="historyGrid" width="100%" height="100%"  doubleClickEnabled="true" itemDoubleClick="itemDoubleClicked(event);" editable="true">
+			<mx:columns>
+				<mx:DataGridColumn visible="false" headerText="Id" dataField="id" editable="false" />
+				<mx:DataGridColumn visible="false" headerText="Type" dataField="type" editable="false" />
+				<mx:DataGridColumn headerText="{LabelManager.getInstance().getLabel('lbl_title')}" dataField="label" editable="false" />
+				<mx:DataGridColumn headerText="{LabelManager.getInstance().getLabel('lbl_comments')}" dataField="desc" editable="true" />
+			</mx:columns>
+		</mx:DataGrid>
+	</mx:HBox>
+	<mx:HBox width="100%" height="30">
+		<mx:Spacer width="100%"/>
+		<mx:Button width="20%" height="90%" id="navigateExport" toolTip="{LabelManager.getInstance().getLabel('lbl_export')}" click="exportClick(event)"></mx:Button>
+		<mx:Button width="20%" height="90%" id="navigateRefresh" toolTip="{LabelManager.getInstance().getLabel('lbl_refresh')}" click="refreshClick(event)"></mx:Button>
+		<mx:Button width="20%" height="90%" id="navigateErase" toolTip="{LabelManager.getInstance().getLabel('lbl_erase')}" click="eraseClick(event)"></mx:Button>
+		<mx:Button width="20%" height="90%" id="navigateClear" toolTip="{LabelManager.getInstance().getLabel('lbl_clear')}" click="clearClick(event)"></mx:Button>
+	</mx:HBox>
+</mx:VBox>

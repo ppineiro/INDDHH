@@ -1,0 +1,231 @@
+table.ApiaGrid {
+	FONT-FAMILY: Tahoma, Verdana, Arial, serif;
+	FONT-SIZE: 8pt;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	width: 100%;
+}
+
+table.ApiaGridTitle {
+	width: 100%;
+}
+
+table.ApiaGridTitle tr { /*background-color: #3466A9;*/
+	background-color: #cccccc;
+	height: 18px;
+}
+
+table.ApiaGridTitle tr td {
+	FONT-FAMILY: Tahoma, Verdana, Arial, serif;
+	FONT-SIZE: 8pt;
+	FONT-WEIGHT: bold;
+	color: #ffffff;
+	height: 18px;
+	background-repeat: repeat-x;
+}
+
+table.ApiaGrid thead .ApiaGridHeaderSearch {
+	text-align: right;
+}
+
+table.ApiaGrid thead tr {
+	background-color: #eeeeee;
+	height: 22px;
+	color: #ffffff;
+}
+
+table.ApiaGrid thead tr th {
+	font-weight: bold;
+	color: #000000;
+	text-align: center;
+	border-right: 1px solid #bbbbbb;
+}
+
+table.ApiaGrid tbody {
+	
+}
+
+table.ApiaGrid tbody.scrollContent { /*display: block;*/
+	overflow:hidden;
+	width: 100%;
+}
+
+table.ApiaGrid tbody tr {
+	height: 25px;
+	background-color: #ffffff;
+}
+
+table.ApiaGrid tbody tr td {
+	border-bottom: 1px solid #eee;
+	border-right: 1px solid #eee;
+}
+
+table.ApiaGrid tbody tr:hover {
+	background-color: #eeffdd;
+	cursor: pointer;
+}
+
+table.ApiaGrid tbody tr.selected {
+	background-color: #B0DB31;
+}
+
+table.ApiaGrid .ApiaGridCheckbox {
+	width: 15px;
+	height: 15px;
+	margin-left: 3px;
+}
+
+table.ApiaGrid tfoot tr {
+	background-color: #eeeeee;
+	height: 20px;
+}
+
+table.ApiaGrid tfoot tr td img.ApiaGridNavButton {
+	background-color: #eeeeee;
+	cursor: pointer;
+}
+
+table.ApiaGrid thead tr th img.ApiaHeaderSearchImage {
+	cursor: pointer;
+}
+
+div.divApiaGridContainer { /*clear: both;*/
+	overflow: auto;
+	background-color: #ffffff;
+}
+
+div.divApiaGrid td.tdDisable {filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5;}   div.divApiaGrid {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #666666;
+	background-color:#DDDDDD;
+}
+
+div.divApiaGrid td.tdDisable {
+	filter:alpha(opacity=50);
+	-moz-opacity:0.5;
+	opacity:0.5;
+}
+
+
+html body{font: 8pt Tahoma, Arial, Helvetica, sans-serif;color:#333333}
+
+/* ----- base links ----- */
+p {line-height:1.4em;margin:10px 0;}
+hr{margin:10px 0;color:#999999;}
+
+
+/* ----- Scrolling Table ----- */
+.dataGridHeader {
+	position:relative;
+	padding-top:24px;
+	_padding-top:23px;
+	border-left: 1px solid #999;
+	width:100%;
+	_width:912px;
+	border-right: 1px solid #D9D9D9;
+	border-top: 1px solid #999999;
+	border:1px solid #BBBBBB;
+}
+
+a:link {color: #0000FF;}  dataGridHeader a:link {color: #000000;text-decoration:none;}
+a:visited  {color: #0000FF;}  dataGridHeader a:visited {color: #000000;text-decoration:none;}
+a:hover  {color: #0000FF;}  dataGridHeader a:hover {color: #000000;text-decoration:none;}
+a:active  {color: #0000FF;}  dataGridHeader a:active {color: #000000;text-decoration:none;}
+a:focus  {color: #0000FF;}  dataGridHeader a:focus {color: #000000;text-decoration:none;}
+
+.dataGridContent {
+	background-color:#DDDDDD;
+	overflow:auto;
+	width:100%;
+	_width:912px;
+	height:144px;
+}
+
+.dataGridHeader thead tr {
+	width:100%;
+	position:absolute;
+	top:0px;
+}
+.dataGridContent thead tr th {
+	border-right:1px solid d9d9d9;
+}
+.dataGridContent thead tr th span{
+	FONT:2pt;
+}
+u{
+	cursor:pointer;
+	cursor:hand;
+}
+.dataGridHeader table thead tr th, .dataGridHeader table tbody tr td { 
+	text-align:left;
+	height:0;
+}
+
+table.scrolltablestyle{
+	border-bottom: 1px solid #D9D9D9;
+	border-top: 1px solid #D9D9D9;
+}
+
+table.scrolltablestyle tbody tr td{
+	background: #fff;
+	text-align:left;
+	padding: 4px 9px;
+}
+
+table.scrolltablestyle thead tr{
+	position:absolute;
+}
+
+table.scrolltablestyle thead tr th{
+	background-color: #DFDFDF;
+	font-weight: normal;
+	text-align:left;
+	padding: 2px 9px 2px 9px;
+	border-bottom: 1px solid #808080;
+	border-right: 1px solid #808080;
+}
+
+table.scrolltablestyle thead tr th a:visited{
+	color: #000000;
+}
+
+table.scrolltablestyle thead tr th a:hover{
+	color: #000000;
+}
+
+table.scrolltablestyle tbody tr td{
+	border-right: 1px solid #D9D9D9;
+	cursor:pointer;
+	cursor:default;
+}
+
+table.scrolltablestyle tbody tr.even td{
+	background-color: #F7F3F7;
+}
+
+table.scrolltablestyle tbody tr.ruled td{
+	background-color: #DEE7FF;
+}
+table.scrolltablestyle .trOdd{
+   /* BACKGROUND-COLOR:#F0F7FD;*/
+}
+#selected td{
+	background-color:#D5FFBB;
+}
+
+.tblFormLayout > tbody > tr > td:first-child {
+	text-align: right;
+}
+
+.tblFormLayout > tbody > tr > td:nth-child(3) {
+	text-align: right;
+}
+
+.divApiaGrid tr, .divApiaGrid table, .divApiaGrid {
+	text-align: left;
+}
+
+.scrolltablestyle > thead {
+	position: inherit !important;
+}

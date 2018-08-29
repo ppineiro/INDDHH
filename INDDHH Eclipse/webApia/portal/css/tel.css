@@ -1,0 +1,2369 @@
+body {
+	padding: 0px 10px;
+	outline: none;
+}
+
+#bodyDiv {
+	position: relative;
+}
+
+div.optionsContainer {
+	display: none;
+}
+
+.mobileNonExec div.optionsContainer {
+	display: block;
+}
+
+div.dataContainer {
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 25px;
+}
+
+div.bottom {
+	margin-right: 15px;
+}
+
+#divAdminActEdit div.content {
+	height: auto !important;
+	min-height: 30px;
+	max-height: 200px;
+}
+
+.tabHolder {
+/* 	fileinput_ancho display: none; */
+	display: none;
+}
+
+.collapseForm {
+	display: none !important;
+	
+}
+
+.float-left-buttons {
+	float: left;
+}
+
+.titImage {
+	display: inline;
+}
+
+.proTitle {
+	display: inline;
+	margin-left: 3px;
+}
+
+.taskTitle {
+	display: inline;
+}
+
+.fncDescriptionImgSection {
+	display: inline;
+}
+
+.descInfo {
+	display: inline;
+	position: absolute;
+	top: 5px;
+	margin-left: 10px;
+}
+
+.fncDescriptionText {
+	margin-top: 5px;
+}
+
+#divAdminActEdit .title {
+	display: none;
+}
+
+.grey-hr {
+	border-bottom: 1px solid #CCC;
+	margin-bottom: 10px;
+}
+
+.bottom {
+	margin-right: 355px;
+}
+
+.optionsContainer {
+	
+}
+
+.dataContainer {
+	
+}
+
+div.tabComponent {
+	margin: 0px;
+}
+
+div.fncPanel div.button.suggestedAction { 
+    background-color: #337ab7 !important;
+    box-shadow: 0 2px 0 #1A2F5A;
+    font-size: 1.25em;
+    margin: 0;
+    border-width: 0px !important;
+}
+/**Button**/
+div.fncPanel .button button.genericBtn.suggestedAction {
+    background-color: #337ab7 !important;
+    padding-top: 11px;
+    background: #337ab7;
+    border-width: 0px !important;
+    
+}
+
+/**Button secundario**/
+/*
+.notSuggestedAction>button {
+	margin-bottom: 10px;
+    margin-left: 25px;
+    color: #FFF;
+    background-color: #607a92;
+    box-shadow: 0 2px 0 #384450;
+    padding: 9px 16px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none !important;
+}
+*/
+
+.left_result {
+	display: inline-block;
+    margin-bottom: 20px !important;
+    float: right !important;
+    width: 30% !important; /*achicar*/
+}
+
+/* Formulario tipo TABLA */
+.left_result > div {
+	display: inline-block;
+    margin-bottom: 20px;
+    float: right !important;
+    width: 30%; /*achicar*/
+}
+.left_result > div > label {
+	background-color: #F1F1F2;
+    border: 1px solid #E4E5E6;
+	width: 235px; /*achicar*/
+}
+.left_result > div > label > span {
+	width: 50%; /*achicar*/
+}
+.left_result > div > input {
+	width: 50%; /*achicar*/
+	float: right;
+}
+
+/* Fin formulario tipo TABLA */
+
+/********COLOCADO PARA FORMATEAR FORMULARIO*****************/
+.formContainer {
+	border: 1px solid #59595C;
+	margin-top: 20px !important;
+	margin-bottom: 60px !important;
+	/*padding: 20px 45px 30px 45px; */
+	/*margin-top: 15px !important*/;
+	/*margin-bottom: 5px !important*/;
+}
+
+div.fieldGroup div.title, div.fieldGroup div.field label, input[type=text],
+	input[type=password], select, textarea, div.fieldGroup div.field {
+	color: #141414;
+}
+
+div.fieldGroup div.field, input, select {
+	font-size: 13px !important;
+}
+
+div.fieldGroup div.field span.asLabel {
+	font-family: Arial, Helvetica, sans-serif;
+	width: 220px;
+	text-align: right;
+	display: inline-block;
+	margin-right: 12px;
+}
+
+.captcha_input span.asLabel {
+	vertical-align: top;
+}
+
+.captcha_input div.asLabel {
+	vertical-align: top;
+}
+
+div.fieldGroup div.title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16.5px;
+	font-weight: normal;
+	float: left;
+	margin-top: -30px;
+	background-color: white;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: none;
+}
+
+#E_1112_6>div.fieldGroup #E_1112_6>div.exec_field.fc-field-error {
+	border: 1px solid #e3c4c4 !important;
+}
+
+div.collapseForm {
+	display: none;
+}
+
+div.formContainer>table>tbody>tr>td {
+	display: block;
+	padding: 0px;
+}
+
+div.formContainer>table>tbody>tr>td>div.exec_field {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 7px;
+	width:100%; 
+}
+
+div.TRM_TITULO>table>tbody>tr>td>div.exec_field {
+	padding: 0px;
+	padding-top: 5px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+div.TRM_TITULO>div.title {
+	display:none; 
+}
+div.TRM_FRM_DIALOGBOX>div.title {
+	display:none; 
+}
+
+div.TRM_FRM_VALIDACION_MODIFICACION>div.title {
+	display:none; 
+}
+div.TRM_FRM_VALIDACION_REGISTRO>div.title {
+	display:none; 
+}
+div.TRM_FRM_PRESENTACION_DOCUMENTACION>div.title {
+	display:none; 
+}
+div.TRM_FRM_PRESENTACION_DOCUMENTACION_CONSULTA>div.title {
+	display:none; 
+}
+div.TRM_FRM_PRESENTACION_DOCUMENTACION_MODIFICACION>div.title {
+	display:none; 
+}
+div.TRM_FRM_RESULTADO>div.title {
+	display:none; 
+}
+div.CMN_TITULO>table>tbody>tr>td>div.exec_field {
+	padding: 0px;
+	padding-top: 5px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+div.TRM_TITULO_CONSULTA_EE>table>tbody>tr>td>div.exec_field {
+	padding: 0px;
+	padding-top: 5px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+div.TRM_TITULO_RETOMA>table>tbody>tr>td>div.exec_field {
+	padding: 0px;
+	padding-top: 5px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+/*Alinea el texto "Los campos indicados con * son obligatorios" a la derecha*/
+div#E_1110_34.field.exec_field.exec_field_label > span.asLabel.labelField {
+    width: 100% !important;
+    padding: 0px;
+    margin: 0px !important;
+    text-align: right !important; 
+}
+
+.captcha_input >div > label > input {
+ 	display:block !important;
+ 	margin-left:232px !important;
+}
+.captcha_input >div >div > label {
+  	display: inline-block !important; 
+}
+
+.tipo_documento {
+	display: inline-block !important;
+	width: 420px !important;
+	/*width: auto !important;*/
+}
+
+.numero_documento {
+	display: inline-block !important;
+	width: 48% !important;
+}
+
+.numero_documento span.asLabel {
+	display: none !important;
+}
+.numero_documento span.monitor-lbl {
+	display: none !important;
+}
+.numero_documento input {
+	width: 100% !important;
+	margin-left: 5px;
+}
+
+.input_sin_label {
+	display: inline-block !important;
+	width: 48% !important;
+}
+
+.input_sin_label span.asLabel {
+	display: none !important;
+}
+.input_sin_label span.monitor-lbl {
+	display: none !important;
+}
+.input_sin_label input {
+	width: 100% !important;
+	margin-left: 5px;
+}
+.campoConAyuda {
+	display: inline-block !important;
+	width: 61% !important;
+}
+.campoConAyuda div  {
+	width: 100%;
+}
+.campoConAyuda input  {
+	width: 54% !important;
+}
+
+.imagenAyuda {
+    width: 20px !important;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+
+.ayudaOculta {
+    display: none !important;
+    background-color: #3385ff;
+    width: 50%;
+}
+
+.div_ayuda {
+	display: none;
+	position: absolute;
+	border: 3px solid #bed0e0;
+	border-radius: 2px;
+	width: 200px;
+/* 	height: 90px;190px  */
+	min-height: 30px; 
+	max-height: 130px; 
+	padding: 16px;
+	background: #ecf3f9; 
+	margin-left: 25px;
+}
+.icn {
+    vertical-align: middle;
+    background-position: center;
+    width: 20px;
+    margin-top: 0;
+    margin-right: 0;
+    display: inline-block;
+}
+.arrow {
+    position: absolute;
+    top: 23px;
+    left: -8px;
+    border-right-color: #bed0e0;
+}
+/*
+.icn-arrow-left-sm {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #bed0e0;
+}
+*/
+.incluir_digito>div label {
+	font-size: 0.9em !important;
+}
+
+.numero_documento div.fc-error p { 
+	margin-left: 5px; 
+}
+#errorlist p {
+	margin-left: 5px !important; 
+}
+.incluir_digito>div {
+	padding: 0px !important;
+/* 	margin-left: 370px; */
+	margin-left: 375px;
+	margin-top: 10px;
+	width: auto !important;
+}
+
+.incluir_digito>div label {
+	font-size: 0.9em !important;
+}
+
+.checkbox_left {
+	display: inline-block !important;
+	width: 40.2em !important;
+	margin-bottom: -10px;
+}
+
+.checkbox_right {
+	display: inline-block !important;
+	width: auto !important;
+	margin-bottom: -10px;
+}
+
+.checkbox_right span.asLabel {
+	display: none !important;
+}
+
+
+
+.alinear_checkbox > div {
+	margin-left: 232px !important;
+}
+
+/*Alinear checkBox documento vitalicio al la derecha de la fecha de vencimiento, hay que ponerle tipo_documento a la fecha
+tambien sirve para alinear el dom elec a la derecha del nro doc, cuando se usa tipo doc*/
+.check_vitalicio {
+	display: inline-block !important;
+	width: 48% !important;
+}
+.check_vitalicio > div > label {
+	margin-left: 0px !important;
+	}
+
+/*Alinea label de digito verificador debajo del campo de nro_doc, cuando no hay tipo_doc*/
+.label_align > div {
+	margin-left: 232px;
+}
+
+/*Permite alinear label de verificaciÃ„ï¿½Ã…Â¼Ã‹ï¿½n de firmas en docs, a la derecha del campo FileInput, al cual se le debe agregar.
+al label de resultado agregarle check_vitalicio*/
+.signed_fi {
+	display: inline-block !important;
+    width: 600px;
+}
+
+.alinear_left {
+	float: left;
+}
+
+.alinear_right {
+	float: right !important;
+}
+
+.fileinput_ancho>div gridContainer {
+	width: 100% !important;
+}
+
+br+label.optionLabel {
+	margin-left: 232px;
+}
+
+div.fieldGroup div.field label.optionLabel>* {
+	/*vertical-align: top;*/
+	margin-top: 0px;
+}
+
+@media screen and (min-width: 641px) {
+	.formContainer {
+		padding: 20px 45px 30px 45px;
+	}
+	div.fieldGroup div.field>label>input, div.fieldGroup div.field>label>select
+		{
+		width: 33%;
+	}
+	.exec_field textarea, div.monitor-area {
+		width: 33% !important;
+	}
+	ol.tree.first-parent, div.monitor-tree {
+		width: 33%;
+	}
+	div.formContainer>table>tbody>tr>td>div.exec_field div.monitor-multiple { 
+		width:33%;
+	}
+	div.fieldGroup div.field.exec_field_check label {
+		margin-left: 230px;
+	}
+	.captcha_input >div > div > input {
+		display: block !important;
+		margin-left:232px !important;
+		width: 33%;
+	}
+	
+	.monitor_field .monitor-lbl {
+		width: 220px;
+		text-align: right;
+		display: inline-block;
+		margin-right: 12px;
+	}
+	.numero_documento {
+ 		margin-left: 231px;
+	}
+	.numero_documento input {
+		margin-left: 5px;
+/* 		width: 86% !important; */
+	}
+	
+	.numero_documento>div.exec_field {
+		width: 33% !important;
+	
+	}
+	
+	.numero_documento {
+		display: inline-block !important;
+	}
+	.incluir_digito>div {
+		margin-left: 231px;
+	}
+	
+}
+
+@media screen and (max-width: 720px) {
+	.numero_documento {
+		width: 33% !important;
+		display: inline-block !important;
+ 		margin-left: 231px;
+	}
+	.numero_documento>div.exec_field {
+		width: 33% !important;
+	}
+	.numero_documento input {
+		margin-left: 0px;
+	}
+}
+@media screen and (min-width: 721px) {
+	.numero_documento>div.exec_field {
+		width: 33% !important;
+	}
+	.numero_documento {
+		display: inline-block !important;
+	}
+	.numero_documento {
+ 		margin-left: 5px;
+	}
+}
+
+/* 	div.fieldGroup div.field > input, div.fieldGroup div.field select { */
+/* 		width: 33%; */
+/* 	} */
+div.exec_field input[type=text], div.exec_field input[type=password] {
+	padding: 5px 10px;
+	height: 32px;
+	box-sizing: border-box;
+}
+
+div.gridMinWidth input[type=text], div.gridMinWidth input[type=password]
+	{
+	padding: 5px 0px;
+}
+
+div.gridMinWidth input[type=password] {
+	width: 100%;
+}
+
+div.exec_field select {
+	padding: 5px 10px;
+	height: 32px;
+}
+
+div.exec_field select[multiple] {
+	height: auto;
+	vertical-align: top;
+}
+
+div.exec_field textarea {
+	vertical-align: top;
+	/* 		width: 33% !important; */
+	font-size: 13px !important;
+	padding: 5px 10px;
+}
+
+/* 	br + input[type=radio] { */
+/* 		margin-left: 237px; */
+/* 	} */
+.exec_field .document {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#btnPanel>div {
+	width: 100%;
+}
+
+#btnPanel .button.suggestedAction {
+	float: right;
+}
+
+.mobileNonExec .optionsContainer, .mobileNonExec .optionsContainer>div {
+	width: 100%;
+}
+
+.mobileNonExec .optionsContainer .button.suggestedAction {
+	float: right;
+}
+
+.mobileNonExec .optionsContainer {
+	position: static;
+}
+
+.mobileNonExec .dataContainer {
+	position: static;
+}
+
+.notSuggestedAction>button {
+	background: none !important;
+	border: none;
+	width: auto;
+	height: auto;
+	padding: 0px;
+	font-weight: normal !important;
+	text-decoration: underline;
+	color: #003dc6;
+	font-size: 14px;
+}
+
+.notSuggestedAction {
+	margin-left: 25px;
+}
+
+.notSuggestedAction>button:hover {
+	background: none !important;
+}
+
+input[disabled] {
+	background-color: #f5f5f5;
+	border-color: #e6e6e6;
+}
+
+div.fieldGroup div.field input.dateInput {
+	width: 90px !important;
+}
+
+ol.tree.first-parent {
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+.exec_field.fc-field-error {
+	background: #ffeded;
+	border: 1px solid #e3c4c4;
+	margin-top: 10px;
+	padding-bottom: 40px !important;
+	width: 100% !important;	
+	background-image: url(images/icn-circle-error.png);
+    background-repeat: no-repeat;
+    background-position: 90% 47%;
+}
+
+.error-col2 {
+	background: #ffeded;
+	border: 1px solid #e3c4c4 !important;
+	margin-top: 50px;
+	padding-top: 40px !important;
+	padding-bottom: 40px !important;
+	margin-bottom: 50px !important;
+	width: 100% !important;
+	background-image: url(images/icn-circle-error.png);
+    background-repeat: no-repeat;
+    background-position: 90% 47%;
+}   
+
+.error-col2-f1 {
+	border-bottom: 1px solid #ffeded !important;	
+}   
+
+.error-col2-f2 {
+	border-top: 1px solid #ffeded !important;	
+	background: #ffeded !important;
+	height: 50px !important;
+}   
+
+.inputTextAyuda {
+/* 	background: #ffeded; */
+/* 	border: 1px solid #e3c4c4; */
+/* 	margin-top: 10px; */
+/* 	padding-bottom: 40px !important; */
+/* 	width: 100% !important;	 */
+	background-image: url(images/icn-circle-help.png);
+    background-repeat: no-repeat;
+    background-position: 90% 47%;
+}
+
+.tipo_documento > .fc-field-error {
+	background-image: none;
+} 
+
+.numero_documento > .fc-field-error {
+	background-image: none;
+}
+
+.campoConAyuda > .fc-field-error {
+	background-image: none;
+}
+.segunda_parte > .fc-field-error {
+	background-image: none;
+}
+.primera_parte > .fc-field-error {
+	background-image: none;
+}
+.css-tabla-msg-confirm {
+	display: none;		
+    width: 100%;
+    height: 100%;
+    opacity: 0.75;
+    z-index: 1001;    
+    background: white;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+} 
+
+input.fc-field-error, select.fc-field-error {
+	border-color: #a94442;
+	width: 105%;	
+}
+
+div.fc-error {
+	border: 0px;
+	background: none;
+	color: #BF2026;
+	position: absolute;
+	background-position: 35px center !important;
+ 	/*background-position-x: 35px !important;*/
+}
+
+div.fc-error>p {
+	margin-left: 237px;
+}
+
+div.fc-errorFncCol1 {
+	border: 0px;
+	background: none;
+	color: #BF2026;
+/**/
+	background: #ffeded !important;
+/*     position: absolute !important;     */
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
+    width: 81.05%!important;
+    margin-left: -1px;
+    margin-right: 41px;
+    border-top: 1px solid #ffeded !important;
+    border-bottom: 1px solid #e3c4c4 !important;
+    border-left: 1px solid #e3c4c4 !important;
+    border-right: 1px solid #e3c4c4 !important;
+    
+}
+
+div.fc-errorFnc {
+	border: 0px;
+/* 	background: none; */
+	color: #BF2026;
+
+/* 	position: absolute !important; */
+/*     left: 119px; */
+
+    text-align: left !important;    
+	background: #ffeded !important;
+/*     margin-top: 0px !important; */
+/*     padding-top: 0px !important; */
+/*     padding-bottom: 0px !important; */
+/*     margin-bottom: 0px !important; */
+/*     width: 81.05%!important; */
+/*     margin-left: -1px; */
+/*     margin-right: 41px; */
+/*     border-top: 1px solid #ffeded !important; */
+/*     border-bottom: 1px solid #e3c4c4 !important; */
+/*     border-left: 1px solid #e3c4c4 !important; */
+/*     border-right: 1px solid #e3c4c4 !important; */
+    
+}
+div.fc-errorFnc>p {
+	margin-left: 237px;	
+    text-indent: 0em;	
+    font-size: 13px;
+   	color: #A00;
+}
+.numero_documento div.fc-errorFnc p { 
+	margin-left: 5px; 
+}
+.campoConAyuda div.fc-errorFnc p { 
+	margin-left: 5px; 
+}
+
+
+div.formContainer>table>tbody>tr>td>div.exec_field {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 7px;
+}
+
+.numero_documento>div.exec_field {
+/* 	padding-right: 316px !important; */
+	width: 200px !important;
+	margin-right: 0px !important;
+/* 	border-left: 0px; */
+	
+}
+
+.gridCellRequired div.fc-error {
+	color: #BF2026;
+	background: #ffeded;
+	border: 1px solid #e3c4c4;
+	padding: 5px;
+}
+
+.gridCellRequired div.fc-error>p {
+	margin-left: 0px;
+}
+
+
+.fc-errorAux {
+	height: 1px;
+/* 	background-color: #7ff12f; */
+}
+
+.gridCellRequired .datePicker+div.fc-error {
+	margin-top: 37px;
+}
+
+.exec_field_label>span.asLabel {
+	width: 100% !important;
+}
+
+.field_disabled>label {
+	color: #CCC !important;
+}
+
+div.fieldGroup>table {
+	margin-bottom: 0px;
+	border-collapse: collapse;
+}
+
+#divAdminActSteps {
+	padding-left: 10px;
+	padding-right: 2px;
+}
+
+#stepsGraph {
+	display: table !important;
+	width: 100%;
+	table-layout: fixed;
+	border: 1px solid #d9d8d8;
+	padding: 0px;
+	margin-bottom: 40px;
+	height: 40px;
+}
+
+/* 	div.fncPanel div.stepElement { */
+#stepsGraph>div {
+	float: none !important;
+	display: table-cell !important;
+	background-image: none !important;
+	background: #F5F5F5;
+	position: relative;
+	padding: 10px 0px 10px 60px;
+	text-align: left;
+	font-size: 14px;
+	color: #231F20;
+}
+
+div.fncPanel div.stepElement:first-child {
+	padding-left: 25px;
+	padding-right: 35px;
+}
+
+div.fncPanel div.selected {
+	background: #e2e9ef !important;
+	color: #1A2F5A;
+	font-weight: bold;
+}
+
+body.mobileNonExec #divAdminActSteps {
+	padding-left: 0px;
+}
+
+div.fncPanel div.stepElement:before {
+	content: " ";
+	display: block;
+	width: 0;
+	height: 0;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-left: 12px solid #DCDCDC;
+	position: absolute;
+	top: 50%;
+	margin-top: -20px;
+	margin-left: 1px;
+	left: 100%;
+	z-index: 1;
+}
+
+div.fncPanel div.stepElement:after {
+	content: " ";
+	display: block;
+	width: 0;
+	height: 0;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-left: 12px solid #F5F5F5;
+	position: absolute;
+	top: 50%;
+	margin-top: -20px;
+	left: 100%;
+	z-index: 2;
+}
+
+div.fncPanel div.stepElement:last-child:after {
+	display: none;
+}
+
+div.fncPanel div.stepElement:last-child:before {
+	display: none;
+}
+
+div.fncPanel div.selected:after {
+	border-left: 12px solid #e2e9ef;
+}
+
+#divAdminActSteps>div.title {
+	display: none;
+}
+
+/*TABLA*/
+div.gridHeader, div.gridBody, div.gridFooter {
+	width: 100% !important;
+}
+
+div.gridContainer div.gridHeader table thead tr th {
+	font-size: 13px;
+	color: #141414;
+}
+
+div.gridContainer div.gridHeader {
+	background: none !important;
+	background-color: #f4f4f5 !important;
+}
+
+div.gridContainer div.gridFooter {
+	height: 30px;
+	background: none !important;
+	background-color: #f4f4f5 !important;
+}
+
+TD.css-tbl-sin-botones div.gridContainer div.gridFooter {
+	height: 0px;
+	/*background: url("img/grid/wbg.gif") repeat-x scroll 0 -1px transparent;
+	border-style: none solid solid;
+    border-width: 0 1px 1px;    
+    border-color: #CCCCCC;*/
+}
+
+@media screen and (max-width: 640px) {
+	.formContainer {
+		padding: 20px 30px 30px 30px;
+	}
+	div.fieldGroup div.field label {
+		text-align: left;
+		width: 100%;
+	}
+	div.fieldGroup div.field span.asLabel {
+		text-align: left;
+	}
+	br+input[type=radio] {
+		margin-left: 5px;
+	}
+
+	/* 	   	div.exec_field  input, div.exec_field select { */
+	/* 	   		width: 100%; */
+	/* 	   	} */
+	div.fieldGroup div.field>input, div.fieldGroup div.field select {
+		width: 100%;
+	}
+	.exec_field textarea, div.monitor-area {
+		width: 100% !important;
+	}
+	ol.tree.first-parent, div.monitor-tree {
+		width: 100%;
+	}
+	div.monitor-multiple {
+		width: 100%;
+	}
+	div.fc-error>p {
+		margin-left: 0px;
+	}
+	.tipo_documento {
+		display: block !important;
+		width: 100% !important;
+	}
+	.tipo_documento>div {
+		padding-bottom: 0px !important;
+	}
+	.numero_documento {
+		display: block !important;
+		width: 100% !important;
+		margin-left: 0px;
+	}
+	.numero_documento>div {
+		padding-top: 0px !important;
+		
+	}
+	.numero_documento>div.exec_field {
+		width: 95% !important;
+	
+}
+	.numero_documento > div > label >input {
+		margin-left: 0px;
+		width: 100%;
+		
+	}
+	.incluir_digito>div {
+		margin-left: 0px !important;
+	}
+	.alinear_checkbox>div {
+		margin-left: 0px !important;
+	}
+	.captcha_input > div > label > input {
+		display:block;
+		margin-left:0px !important;
+	}
+	.check_vitalicio {
+		display: inline-block !important;
+	}
+	.check_vitalicio > div > label {
+		margin-left: 0px !important;
+	}
+	
+	div.fieldGroup div.field label.optionLabel {
+	    display: block;
+	    margin-left: 10px;
+    }
+    
+    div.fieldGroup div.field span.asLabel + label.optionLabel {
+    	margin-top: 10px;
+    }
+
+    
+}
+
+div.monitor-area {
+	display: inline-block;
+	vertical-align: top;
+}
+
+div.monitor-tree {
+	display: inline-block;
+	vertical-align: top;
+}
+
+div.monitor-multiple {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.notSuggestedAction.extendedSize button.genericBtn {
+	width: auto !important;
+	height: auto !important;
+	display: inline-block !important;
+}
+
+button.genericBtn.suggestedAction {
+	width: auto !important;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+div.dataContainer>div {
+	max-width: 980px;
+	margin: 0px auto;
+}
+
+@media screen and (min-width: 1200px) {
+	div.dataContainer>div {
+		max-width: 1100px;
+	}
+	
+}
+
+@media screen and (min-width: 1600px) {
+	div.dataContainer>div {
+		max-width: 1350px;
+	}
+}
+
+label.titleTramite {
+	font-size: 1.415em;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+div.titleTramite2 {
+	font-size: 1.415em;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+td.alineado div span.asLabel.labelField{
+	position: absolute;
+	top: -15px;
+}
+
+div.TRM_TITULO {
+	padding: 0px;
+	border: 0px;
+	margin-bottom: 0 !important;
+}
+
+div.CMN_TITULO {
+	padding: 0px;
+	border: 0px;
+}
+
+div.TRM_TITULO_CONSULTA_EE {
+	padding: 0px;
+	border: 0px;
+}
+
+div.TRM_TITULO_RETOMA {
+	padding: 0px;
+	border: 0px;
+}
+
+div.TRM_FRM_DIALOGBOX {
+	padding: 0px;
+	border: 0px;
+}
+div.TRM_FRM_DIALOGBOX>table {
+	table-layout: fixed;
+}
+div.TRM_DATOS_GW_ITC_PAGOS {
+	padding: 0px;
+	border: 0px;
+}
+
+div.TRM_FRM_RESULTADO {
+	padding: 0px;
+	border: 0px;
+}
+div.TRM_FRM_RESULTADO>table {
+	table-layout: fixed;
+}
+div.TRM_TITULO .LBL_TITULO>div {
+	width: 100%;
+	padding: 0px !important;
+}
+
+th.LBL_TITULO {
+	width: 100%;
+	padding: 0px !important;
+}
+
+div.CMN_TITULO .LBL_TITULO>div {
+	width: 100%;
+	padding: 0px !important;
+}
+div.TRM_TITULO_CONSULTA_EE .LBL_TITULO>div {
+	width: 100%;
+	padding: 0px !important;
+}
+
+div.TRM_TITULO_RETOMA .LBL_TITULO>div {
+	width: 100%;
+	padding: 0px !important;
+}
+
+div.tabContent {
+	padding-left: 0px !important;
+}
+
+#divAdminActSteps {
+	display: none !important;
+}
+
+/*CSS ESPECIFICO TRAMITES EN LINEA*/
+#btnCloseTab {
+	display: none;
+}
+
+#btnSocialShare {
+	display: none;
+}
+
+#btnFree {
+	/*display: none;*/
+	
+}
+
+/*CSS PARA DIALOGBOX*/
+.dialog-box {
+	width: 100%;
+	box-sizing: border-box;
+	border-width: 1px;
+	border-style: solid;
+	margin: 0 auto;
+	margin-bottom: 25px;
+	border-radius: 2px;
+}
+
+.dialog-success {
+	border-color: #c1e0b4;
+	background: #ecf6e8;
+}
+
+.dialog-warning {
+	border-color: #e7e2c5;
+	background: #fbf8ea;
+}
+
+.dialog-error {
+	border-color: #e3c4c4;
+	background: #ffeded;
+}
+
+.dialog-info {
+	border-color: #cecece;
+	background: #F5F5F5;
+}
+
+.dialog-center {
+	display: table;
+	margin: 0 auto;
+}
+
+.dialog-data {
+	display: table-cell;
+	padding: 20px;
+	padding-left: 0;
+}
+
+.dialog-data ul, .dialog-data ol {
+	list-style-position: inside;
+	padding: 0;
+}
+
+.dialog-title {
+	display: block;
+	font-weight: normal;
+	font-size: 1.25em;
+	margin-bottom: 5px;
+	line-height: 1.1;
+}
+
+.dialog-icon {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0 35px;
+	padding-right: 30px;
+}
+
+.dialog-icon .icn {
+	width: 51px;
+	height: 51px;
+	display: inline-block;
+}
+
+.dialog-box ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.dialog-box ul li {
+	margin-bottom: 0;
+	margin-top: 2px;
+}
+
+.dialog-box ul li:first-child {
+	margin-top: 0;
+}
+
+/*	Ã„ï¿½Ã…Â¼Ã‹ï¿½conos	*/
+.icn-circle-info-lg {
+	background: url(images/icn-circle-info-lg.png) no-repeat;
+	width: 46px;
+	height: 46px;
+	background-position: 5px 5px;
+}
+
+.icn-circle-success-lg {
+	background: url(images/icn-circle-success-lg.png) no-repeat;
+	width: 46px;
+	height: 46px;
+}
+
+.icn-circle-error-lg {
+	background: url(images/icn-circle-error-lg.png) no-repeat;
+	width: 46px;
+	height: 46px;
+}
+
+.icn-circle-warning-lg {
+	background: url(images/icn-warning-lg.png) no-repeat;
+	width: 51px;
+	height: 46px;
+}
+
+.icn-warning-lg {
+	background: url(images/icn-warning-lg.png) no-repeat;
+	width: 51px;
+	height: 46px;
+}
+
+.icn-info-lg {
+	background: url(images/icn-circle-info-lg.png) no-repeat;
+	width: 46px;
+	height: 46px;
+}
+
+.icn-success-lg {
+	background: url(images/icn-circle-success-lg.png) no-repeat;
+	width: 46px;
+	height: 46px;
+}
+
+.icn-error-lg {
+	background: url(images/icn-circle-error-lg.png) no-repeat;
+	width: 46px;
+	height: 46px;
+}
+/*CSS PARA PROGRESSBAR*/
+.pBarContainer {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	font-weight: normal;
+	font-size: 13px;
+	font-family: Arial, Helvetica, sans-serif;
+	overflow: hidden;
+	list-style-type: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	line-height: 1.2;
+	color: #141414;
+	box-sizing: content-box;
+}
+
+.pBarContainer h2 {
+	cursor: auto !important;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+	font-family: inherit;
+	font-weight: 600;
+	line-height: 1.1;
+	color: inherit;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	font-size: 1.45em;
+	padding-top: 20px;
+}
+
+.progressBar {
+	padding: 0;
+	margin-bottom: 40px;
+	overflow: hidden;
+	background: #F5F5F5;
+	border: 1px solid /*#d9d8d8*/ #ffffff;
+	height: 80px;
+	margin: 0px;
+}
+
+.progressBar a {
+	color: #064D8E;
+	word-wrap: break-word;
+}
+
+.progressBar li {
+	position: relative;
+	display: table-cell;
+	float: left;
+	list-style-type: none;
+	padding: 10px 0;
+	padding-left: 60px;
+	box-sizing: border-box;
+	height: 100%;
+}
+
+.progressBar li:first-child {
+	padding-left: 25px;
+}
+
+.progressBar li:after {
+	content: " ";
+	display: block;
+	width: 0;
+	height: 0;
+	border-top: 50px solid transparent;
+	border-bottom: 50px solid transparent;
+	border-left: 30px solid #F5F5F5;
+	position: absolute;
+	top: 50%;
+	margin-top: -50px;
+	left: 100%;
+	z-index: 2;
+}
+
+.progressBar li:before {
+	content: " ";
+	display: block;
+	width: 0;
+	height: 0;
+	border-top: 50px solid transparent;
+	border-bottom: 50px solid transparent;
+	border-left: 30px solid #DCDCDC;
+	position: absolute;
+	top: 50%;
+	margin-top: -50px;
+	margin-left: 1px;
+	left: 100%;
+	z-index: 1;
+}
+
+.progressBar li a {
+	text-decoration: none;
+	color: #231F20;
+}
+
+.progressBar li .stepNum {
+	display: block;
+	font-size: 1.7em;
+	font-weight: bold;
+	line-height: 1;
+	margin-bottom: 3px;
+}
+
+.progressBar li .stepTitle {
+	display: block;
+	line-height: 1.2;
+}
+
+.progressBar li.active .stepNum, .progressBar li.active .stepTitle {
+	color: #1A2F5A;
+	font-weight: bold;
+}
+
+.progressBar li.active {
+	background: #e2e9ef;
+}
+
+.progressBar li.active:after {
+	border-left: 30px solid #e2e9ef;
+}
+
+ul.progressBar li.complete span.stepNum {
+	background-image: url("images/check.png");
+	background-repeat: no-repeat;
+	background-position: 16px 2px;
+}
+
+@media screen and (max-width: 800px) {
+	.progressBar {
+		padding-bottom: 15px;
+	}
+	.progressBar li {
+		padding-left: 15px;
+		padding-right: 15px;
+		border-left: 1px solid #E1E1E1;
+		/*padding-bottom: 100%;*/
+		/*margin-bottom: -100%;*/
+		height: 120%;
+	}
+	.progressBar li:first-child {
+		border-left: none;
+		padding-left: 15px;
+	}
+	.progressBar li:after, .progressBar li:before, .progressBar li.active:after
+		{
+		border: none;
+		display: none;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.progressBar li, .progressBar li:first-child {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.progressBar li .stepNum {
+		font-size: 1.3em;
+	}
+	ul.progressBar li.complete span.stepNum {
+		background-position: 16px -1px;
+	}
+}
+
+.TRM_DESCRIP_TRAMITE .monitor-lbl {
+	text-align: left !important;
+	width: auto !important;
+}
+
+/*POSICIONAR ETIQUETA DE RESULTADO FIRMA*/
+.resultado-firma>div {
+/* 	visibility: none; */
+	display: none;
+	padding-top: 0px;
+	margin-top: -10px;
+	margin-left: 233px;
+	font-style: italic;
+}
+
+/* .monitor_field .monitor-lbl { */
+/* 	width: 220px; */
+/* 	text-align: right; */
+/* 	display: inline-block; */
+/* 	margin-right: 12px; */
+/* } */
+
+.URSEC_FRM_ADQ_PERSONA_FISICA_TOTAL_READ_ONLY .tipo_documento,
+	.URSEC_FRM_ADQ_PERSONA_FISICA_NO_TV_ABONADO_READ_ONLY .tipo_documento,
+	.URSEC_FRM_ADQ_PERSONA_FISICA_TV_ABONADO_READ_ONLY .tipo_documento {
+	width: 100%;
+}
+
+.URSEC_FRM_ADQ_PERSONA_FISICA_TOTAL_READ_ONLY .numero_documento,
+	.URSEC_FRM_ADQ_PERSONA_FISICA_NO_TV_ABONADO_READ_ONLY .numero_documento,
+	.URSEC_FRM_ADQ_PERSONA_FISICA_TV_ABONADO_READ_ONLY .numero_documento {
+	width: 100%;
+}
+
+.CSSGridHistorialEE > div > div > table > thead > tr > th:nth-child(3) > div {
+   width: 400px;
+}
+
+.CSSGridHistorialEE > div > div > table > tbody > tr > td:nth-child(3) > div{
+   width: 400px;
+}
+
+/*--------------------------------------------------------------------*/
+/* Contenedores */
+.contenedorGeneral {
+    margin: 0 auto;
+    max-width: 980px;
+    box-sizing: content-box;
+}
+
+.contGralContenido {
+    width: 100%;
+    overflow: visible;
+    padding-top: 15px;
+    box-sizing: content-box;
+}
+
+/* Botones de acciÃ„ï¿½Ã…Â¼Ã‹ï¿½n de formulario */
+.form-action-buttons, .form-action-buttons ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+.form-action-buttons button {
+    margin-bottom: 10px;
+    margin-left: 25px;
+}
+.form-action-buttons .btn-link {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 25px;
+}
+.form-action-buttons li {
+    float: right;
+}
+.form-action-buttons li.action-buttons-second {
+    float: left;
+}
+
+/* Botones de acciÃ„ï¿½Ã…Â¼Ã‹ï¿½n de formulario */
+    .form-action-buttons {
+        padding-left: 30px;
+    }
+    .form-action-buttons li {
+        float: none;
+    }
+    .form-action-buttons li button {
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+    .form-action-buttons li.action-buttons-primary ul {
+        margin-bottom: 15px;
+    }
+    
+
+/* Botones */
+button {
+    display: inline-block;
+    line-height: 1.5;
+    text-align: center;
+    /*white-space: nowrap;*/
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+button .icn {
+    vertical-align: middle;
+    background-position: center;
+    width: 20px;
+    margin-right: 5px;
+}
+.left-icn{
+    margin: 0 10px 0 0;
+}
+.btn-sm, .btn, .btn-lg , .btn-default, .btn-primario, .btn-secundario {
+    transition: background-color .5s;
+    line-height: 1.1;
+}
+.btn-sm {
+    padding: 2px 10px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+td .btn-sm {
+    margin: 10px 0;
+}
+.btn {
+    padding: 4px 15px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+.btn-lg {
+    padding: 9px 16px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.btn-default {
+    color: #231F20;
+    background-color: #e4e4e4;
+    border: 1px solid #ccc;
+}
+.btn-default:hover {
+    background-color: #d7d6d6;
+}
+.btn-primario {
+    color: #FFF !important;
+    background-color: #337ab7 !important;
+    box-shadow: 0 2px 0 #1A2F5A !important;    
+    position: relative;
+    float: right;
+}
+
+.btn-primario-modal {
+    color: #FFF;
+    background-color: #337ab7;
+    box-shadow: 0 2px 0 #1A2F5A;        
+}  
+
+.fancybox-close{		
+    position: absolute;
+    left: 470px;
+    top: -15px;
+    cursor: pointer;        
+}
+
+TD.css-btn-eliminar-grid img{
+    margin-left: 45%;
+    margin-right: 55%;
+}
+
+TD.css-ver-como-link div div div button{  
+    border: none !important;
+    background: none !important;
+    color: #064D8E !important;
+    text-decoration: underline  !important;	
+}
+
+BUTTON.css-ver-como-link{  
+    border: none !important;
+    background: none !important;
+    color: #064D8E !important;
+    text-decoration: underline  !important;	
+}
+
+.btn-primario:hover {
+    background-color: #296192;
+}
+.btn-secundario {
+    color: #FFF;
+    background-color: #607a92;
+    box-shadow: 0 2px 0 #384450;
+    position: relative;
+    left: 22%;
+    width: 120px;
+}
+.btn-secundario:hover {
+    background-color: #556879;
+}
+
+.btn-secundario1 {
+    color: #FFF;
+    background-color: #607a92;
+    box-shadow: 0 2px 0 #384450;
+    position: relative;
+    left: 20%;
+    width: 120px;
+}
+.btn-secundario1:hover {
+    background-color: #556879;
+}
+
+.btn-secundario2 {
+    color: #FFF;
+    background-color: #607a92;
+    box-shadow: 0 2px 0 #384450;
+    position: relative;
+    left: 18%;
+    width: 120px;
+}
+.btn-secundario2:hover {
+    background-color: #556879;
+}
+button:disabled {
+    color: #F5F5F5;
+    background-color: #C7C7C7;
+    box-shadow: 0 2px 0 #ADADAD;
+}
+.btn-link {
+    font-weight: normal;
+    text-decoration: underline;
+    color: #064D8E;
+}
+.btn-link,
+.btn-link:active,
+.btn-link.active,
+.btn-link[disabled],
+fieldset[disabled] .btn-link {
+    background-color: transparent;
+    box-shadow: none;
+}
+.btn-link,
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:active {
+    border-color: transparent;
+}
+.btn-link:hover,
+.btn-link:focus {
+    color: #064D8E;
+    text-decoration: underline;
+}
+.button-no-style {
+    background: transparent;
+    border: transparent;
+    border-radius: 0;
+    margin: 0;
+}
+.button-no-style:focus {
+    box-shadow: none;
+}
+
+
+div.divBotones{
+	width: 100%;
+	height: 45px;	
+}
+
+/*--------------------------------------------------------------------*/
+
+/*  	.numero_documento .monitor-lbl {  */
+/* 		display: none; */
+/* 		width: 150px; */
+/*  	}  */
+
+
+#errorlist {
+    width: 100%;
+    box-sizing: border-box;
+    position: inherit;
+    background: #ffeded;
+    border: 1px solid #e3c4c4;
+    background-image: url(images/icn-circle-error-lg.png);
+    background-repeat: no-repeat;
+    background-position: 15% 50%;
+    /*background-position-x: 15%;
+    background-position-y: 50%;*/
+    min-height: 60px;
+}
+
+#errorlist.fc-error>p{
+    margin-left: initial;
+    text-align: left;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    color: black;
+/* 	font-size: 1.1em; */
+}
+
+.leftErrorSpan {
+	display: inline-table;
+/* 	width: 15%; */
+    text-align: left !important;
+    margin-left: 115px;
+    font-size: 1.1em;
+	width: auto !important;
+	font-weight: lighter !important;
+    color: #000000 !important;
+    heigth: 50px !important;
+}
+.rightErrorSpan {
+	font-weight: lighter !important;
+	display: inline-table;
+    font-size: 1.1em;
+	heigth: 50px !important;
+}
+
+#errorlistTitle {
+/*     text-align: center; */
+/*     font-weight: bold; */
+/*     font-size: 2em; */
+    color: black;
+/*     padding-bottom: 10px; */
+    
+    text-align: left;
+    font-weight: normal;
+    font-size: 1.3em;
+    margin-left: 115px;
+    margin-top: 20px;
+	margin-bottom: 10px;
+	line-height: 1.1;
+	font-size: 1.2em;
+}
+
+.reloadCaptcha{
+}
+
+.captcha-container{
+	width: 235px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+
+.css-file-input{
+	width: 500px !important;
+	height: 25px !important;
+	text-align: center;
+}
+
+div.docData{
+	width: 250px !important;
+	margin-left: 0px !important;
+	position: relative !important;
+	float: right !important;
+	margin-top: 9px !important;
+}
+
+div.docUploadIcon{
+	width: 150px !important;
+	height: 24px !important;
+	background-image: url(images/fileUpload.png) !important;
+	margin-left: 0px !important;
+    margin-right: 5px !important;
+    margin-top: 0px !important;
+    background-repeat: no-repeat !important;
+}
+
+div.docInfoIconDisabled{
+	background-image: none !important;
+	width: 0px !important;	
+	height: 0px !important;	
+	cursor: pointer !important;   	    	    	     
+}
+
+div.docDownloadIcon {
+	/*background-image: none !important;
+	width: 0px !important;	
+	height: 0px !important;*/
+	cursor: pointer !important;
+}
+
+div.docLockIcon {
+	background-image: none !important;
+	width: 0px !important;	
+	height: 0px !important;
+	cursor: pointer !important;
+}
+
+div.docLockIconDisabled {
+	background-image: none !important;
+	width: 0px !important;	
+	height: 0px !important;
+	cursor: pointer !important;
+}
+
+div.docEraseIconDisabled {
+	background-image: none !important;
+	width: 0px !important;	
+ 	height: 0px !important; 
+ 	cursor: pointer !important;
+} 
+
+div.docDownloadIconDisabled {
+	background-image: none !important;
+	width: 0px !important;	
+	height: 0px !important;
+	cursor: pointer !important;
+}
+
+div.docEraseIcon{
+	cursor: pointer !important;
+	background-image: url(images/icn-error-sm.png) !important; 	
+    margin-bottom: 0px !important;
+    margin-right: 10px !important;
+    position: relative !important;
+    margin-top: 11px;
+} 
+
+dic.docInfoIcon{
+	background-image: none !important;
+	width: 0px !important;	
+	height: 0px !important;
+	cursor: pointer !important;
+}
+
+div.fieldGroup div.gridBody .gridCellRequired:after {
+    content: "*";
+    position: absolute;
+    right: -4px;
+    margin-top: 11px;
+}
+
+.docDataSinError{
+	width: 250px !important;
+	margin-left: 0px !important;
+	position: relative !important;
+	float: right !important;
+	margin-top: 9px !important;
+}
+
+/*
+div.gridCellRequired{
+	min-height: 33px !important;	
+}
+*/
+
+ 
+div.aTab div.contentTab div.tabContent div.formContainer table tbody tr td/*:not([class])*/
+{
+	width: 100%;
+	float: left !important;
+}
+
+div.body form div.gridEditionForm table tbody tr td
+{
+	width: 100%;
+	float: left !important;
+}
+
+div.aTab div.contentTab div.tabContent div.formContainer table tbody tr td div div.gridBody table tbody tr td
+{
+	width: auto;
+	float: none !important;
+}
+
+div.aTab div.contentTab div.tabContent div.formContainer table tbody tr td.btnHabilitar
+{
+	width: 101px!important; 
+	float: right !important;
+	margin-right: 5px !important; 
+}
+
+div.aTab div.contentTab div.tabContent div.formContainer table tbody tr td.btnDeshabilitar
+{
+	width: 101px !important; 
+	float: right !important; 
+	margin-right: 46px !important; 
+}
+
+
+/* Recuadro tooltip con imagen y texto */
+.box-tooltip {
+    position: absolute;
+    right: 0px;
+    background-color: #ecf3f9;
+    border: 3px solid #bed0e0;
+    border-radius: 2px;
+    padding: 10px;
+    width: 10%;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    height: 125px;
+    z-index: 100;
+}
+
+/* Formulario tipo TABLA */
+.left_result {
+	float: right !important;
+    margin-left: 70% !important;
+}
+.left_result > div {
+	display: inline-block;
+    margin-bottom: 20px;
+    float: right !important;
+    width: 30%; /*achicar*/
+}
+.left_result > div > label {
+	background-color: #F1F1F2;
+    border: 1px solid #E4E5E6;
+/* 	width: 235px; achicar */
+}
+.left_result > div > label > span {
+	width: 35% !important; /*achicar*/
+	padding-top: 12px;
+}
+.left_result > div > label > input {
+/*OJO CON ESTO - REVISAR	
+	min-widht: 100px;
+*/	
+	width: 45% !important; /*achicar*/
+	float: right;
+}
+
+/* Fin formulario tipo TABLA */
+
+.input_left {
+	display: inline-block !important;
+	width: 49% !important;
+	margin-bottom: -10px;
+}
+
+.input_right {
+	display: inline-block !important;
+	width: auto !important;
+	margin-bottom: -10px;
+}
+
+/* FORMATO PARA LINKS DEL FORMULARIO TIPO DE AGESIC "AGESIC_FRM_INGRESO_USUARIO" */
+.btnAgesicLoginFrmLinks {
+	height: 0px;
+	margin-left: 20em;
+	margin-top: -2.5em;
+}
+
+td.btnAgesicLoginFrmLinks div div div button.genericBtn {
+	width: 11em !important;
+}
+
+/* muestra 2 atributos en una misa linea, ocultando la etiqueta del segundo */
+.primera_parte {
+	display: inline-block !important;
+	width: 420px !important;
+}
+.primera_parte>div {
+	padding-bottom: 0px !important;
+}
+
+.segunda_parte input {
+	margin-left: 5px;
+}
+.segunda_parte>div.exec_field {
+	width: 40% !important;
+}
+
+.segunda_parte div.fc-errorFnc p { 
+	margin-left: 5px; 
+}
+.segunda_parte>div.exec_field {
+	width: 250px !important;
+	margin-right: 0px !important;	
+}
+.segunda_parte {
+	display: inline-block !important;
+	width: 50% !important;
+	margin-left: 0px;
+}
+
+.segunda_parte>div.exec_field {
+	width: 95% !important;
+}
+.segunda_parte > div > label >input {
+	margin-left: 0px;	
+}
+.segunda_parte span.asLabel {
+	display: none !important;
+}
+
+/* FORMATO PARA LINKS DEL FORMULARIO TIPO DE AGESIC "AGESIC_FRM_INGRESO_USUARIO" */
+.btnAgesicLoginFrmLinks
+{
+	height: 0px;
+	margin-left: 19.7em;
+	margin-top: -2.5em;
+}
+td.btnAgesicLoginFrmLinks div div div button.genericBtn
+{
+	width: 11em !important;
+}
+
+/* FORMATO PARA BOTÃ„â€šÃ¢â‚¬Å“N INGRESAR DEL FORMULARIO TIPO DE AGESIC "AGESIC_FRM_INGRESO_USUARIO" */
+.btnAgesicLoginIngresar
+{
+    margin-top: 2em !important;
+}
+.btnAgesicLoginIngresar div div div button
+{
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#0063b6) to(#315390)) !important;
+	background: -webkit-linear-gradient( #0063b6, #315390) !important;
+	background: -moz-linear-gradient( #0063b6, #315390) !important;
+	background: -ms-linear-gradient( #0063b6, #315390) !important;
+	background: -o-linear-gradient( #0063b6, #315390) !important;
+	background: linear-gradient( #0063b6, #315390) !important;
+	color: #ffffff !important;
+	border-color: #244f9d !important;
+	box-shadow: 0 2px 0 #1A2F5A !important;
+	font-weight: bold !important;
+	min-height: 2.5em !important;
+}
+.btnAgesicLoginIngresar div div div button:hover
+{
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#315390) to(#2b497e)) !important;
+	background: -webkit-linear-gradient( #315390, #2b497e) !important;
+	background: -moz-linear-gradient( #315390, #2b497e) !important;
+	background: -ms-linear-gradient( #315390, #2b497e) !important;
+	background: -o-linear-gradient( #315390, #2b497e) !important;
+	background: linear-gradient( #315390, #2b497e) !important;
+	color: #ffffff !important;
+	border-color: #244f9d !important;
+	box-shadow: 0 2px 0 #1A2F5A !important;
+	font-weight: bold !important;
+	min-height: 2.5em !important;
+}
+
+/* REDUCE EL TAMAÃ„â€šÃ¢â‚¬ËœO DE LOS CAMPOS DEL FORMULARIO TIPO DE AGESIC "AGESIC_FRM_REPRESENTACION_PJ" */
+td.input55em
+{
+    width: 55em !important;
+}
+
+/* ALINEA LAS IMÃ„â€šÃ¯Â¿Â½GENES DE VALIDACIÃ„â€šÃ¢â‚¬Å“N DEL ROL DEL FORMULARIO TIPO DE AGESIC "AGESIC_FRM_REPRESENTACION_PJ" */
+td.imgRolAlignAgesicEmpRep
+{
+	width: max-content !important;
+	margin-left: 1em !important;
+	margin-top: 0.5em !important;
+}
+
+/* AGRANDA EL COMBO DE ROL Y PERMITE ALINEAR LAS IMÃ„â€šÃ¯Â¿Â½GENES Y LABEL DEL FORMULARIO TIPO DE AGESIC "AGESIC_FRM_REPRESENTACION_PJ" */
+td.comboRolAgesicEmpRep
+{
+	width: max-content !important;
+}
+td.comboRolAgesicEmpRep div
+{
+	width: max-content !important;
+	margin: 0px !important;
+}
+td.comboRolAgesicEmpRep div label select
+{
+	width: 28em !important;
+}
+
+/* ALINEA EL LABEL DEL FORMULARIO TIPO DE AGESIC "AGESIC_FRM_REPRESENTACION_PJ" */
+td.lblRolAlignAgesicEmpRep
+{
+	width: max-content !important;
+	margin-left: -4em !important;
+	margin-top: 0.5em !important;
+}
+
+/*AQUI COMIENZA EL ESTILO DEL PASO DE PAGO*/
+.medios-pago {
+	display: block;
+	margin: 5px 0 25px 10px;
+	cursor: inherit;
+}
+				
+.medios-pago > span {
+	text-align: center;
+	width: 120px;
+	display: inline-block;
+}
+				
+.medios-pago > span > img {
+	max-height: 35px;
+}
+				
+.medio{
+	margin-bottom: 10px;
+}
+				
+.medio-organismo{
+	height: 35px;
+	display: block;
+	margin: auto;
+}
+				
+@media screen and (max-width: 980px) {
+	.group-list li span.medios-pago {
+		display: block;
+	}
+	
+	.group-list li span.medios-pago > span, .group-list li span.medios-pago > img {
+		display: block; 
+		margin-bottom: 20px;
+	}
+}
+
+.table-action-icn{
+	margin: 5px !important;
+}
+
+.table-action-link{ 
+	display: block;
+	text-align: left;
+	margin-bottom: 5px;
+}
+
+.modalBottomBarCloseAGESIC{
+	background: url(images/cerrar_AGESIC.png) no-repeat;
+    cursor: pointer;
+    height: 40px;
+    position: absolute;
+    width: 40px;
+    z-index: 8040;
+    top: -18px;
+    right: -18px;
+    word-wrap: break-word;
+    text-decoration: none;
+}
+
+.modalBottomBarCloseAGESIC button.genericBtn{
+	display: none;
+}
+div.modalWinAGESIC{
+	background-color: #f9f9f9 !important;
+}
+
+div.modalWinAGESIC div.modalTopBar{
+	background-color: #f9f9f9;
+    height: 25px !important;
+}
+
+div.modalWinAGESIC div.modalBottomBar{
+	background-color: #f9f9f9;
+	border-top: 1px solid #f9f9f9;
+}
+
+div.modalWinAGESIC div.modalBottomBar div.modalBottomBarConfirm{
+	margin-top: 2px;
+    text-align: center;
+    float: none !important;
+    width: auto !important;
+}
+
+div.formContainer.gridEditionForm.fieldGroup{
+	background-color: #f9f9f9 !important;
+	border-width: 0px !important;
+}
+
+div.formContainer.gridEditionForm.fieldGroup div.title.form-title{
+	border-bottom: 1px solid #f9f9f9;
+	background: #f9f9f9 !important;
+	font-size: 2em !important;
+}
+
+form#frmData{
+	background: #f9f9f9 !important;
+}
+/*AQUI TERMINA EL ESTILO DEL PASO DE PAGO*/
+
+/*ESTILO DEL ERROR*/
+/* Recuadro con nÃºmero de error */
+.box-error {
+    position: absolute;
+    right: -210px;
+    background-color: #ecf3f9;
+    border: 3px solid #bed0e0;
+    border-radius: 2px;
+    padding: 7px 0;
+    width: 220px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    height: 62px;
+}
+.box-error ul {
+    padding: 0 10px;
+    margin: 0;
+    list-style-type: none;
+    overflow: auto;
+    font-size: 1.1em;
+}
+.box-error-title {
+    font-size: 1.4em;
+    display: block;
+    text-align: center;
+    margin-bottom: 3px;
+}
+.box-error .arrow {
+    position: absolute;
+    top: 42.5%;
+    left: -8px;
+    border-right-color: #bed0e0;
+}
+/* Ã�conos del box error */
+.icn-arrow-right-sm {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #000;
+}
+.icn-arrow-left-sm {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #bed0e0;
+}
+
+/* FlotaciÃ³n */
+.float-left, .floatIzq {
+    float: left!important;
+}
+.float-right, .floatDer {
+    float: right!important;
+}
+/*AQUI TERMINA EL ESTILO DEL ERROR*/
+
+.hide-read{
+	display: none;
+}
+.cssBtnPagina{	
+	text-align: right;
+}
+.cssSubmitMsg{
+	  width: 0px !important;
+	  height:0px !important;
+	  border: 0px !important;
+	  border-color: #FFFFFF !important;
+	  background-color: #FFFFFF !important;
+	  position: absolute; 
+	  border-left-color: #FFFFFF !important;
+	  border-right-color: #FFFFFF !important;
+	  border-top-color: #FFFFFF  !important;
+	  border-bottom-color: #FFFFFF !important;
+}

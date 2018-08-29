@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<ROWSET>
+<ATTRIBUTE  id='1002'  name='NUM_CLI'  label='Numero de cliente' type='number' maxlength='10'/>
+<ATTRIBUTE  id='1003'  name='NUM_CLI_GIA'  label='Numero de cliente' type='number' maxlength='10'/>
+<ATTRIBUTE  id='1004'  name='NOM_CLI_GIA'  label='Nombre del cliente' type='string' maxlength='20'/>
+<ATTRIBUTE  id='1005'  name='DOC_CLI_GIA'  label='RUC' type='number' maxlength='12'/>
+<ATTRIBUTE  id='1006'  name='CIU_CLI_GIA'  label='Ciudad' type='string' maxlength='10'/>
+<ATTRIBUTE  id='1007'  name='DIR_CLI_GIA'  label='Direccion' type='string' maxlength='10'/>
+<ATTRIBUTE  id='1008'  name='CP_GIA'  label='CP' type='string' maxlength='10'/>
+<ATTRIBUTE  id='1009'  name='TEL_FAX_GIA'  label='Tel / Fax' type='number' maxlength='8'/>
+<ATTRIBUTE  id='1010'  name='EMAIL_GIA'  label='Email' type='string' maxlength='10'/>
+<ATTRIBUTE  id='1011'  name='COD_VEND_GIA'  label='Codigo de vendedor' type='number' maxlength='10'/>
+<ATTRIBUTE  id='1012'  name='NOM_VEN_GIA'  label='Nombre de Vendedor' type='string' maxlength='10'/>
+<ATTRIBUTE  id='1013'  name='NOM_CLI'  label='Nombre del cliente' type='string' maxlength='10'/>
+<ATTRIBUTE  id='1014'  name='DOC_CLI'  label='RUC' type='number' maxlength='10'/>
+</ROWSET>

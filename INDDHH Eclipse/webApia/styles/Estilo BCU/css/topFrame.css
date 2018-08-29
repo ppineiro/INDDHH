@@ -1,0 +1,89 @@
+BODY{
+   BACKGROUND-COLOR: #1C267D;
+   MARGIN-TOP:-1px;
+   MARGIN-LEFT:0px;
+   MARGIN-RIGHT:0px;
+   MARGIN-BOTTOM:0px;
+   OVERFLOW: hidden;
+}
+    
+.spanLogged{
+	WIDTH:30px;
+	HEIGHT: 18px;
+	color:#FFFFFF;
+	PADDING:2px;
+	FONT-SIZE: 8pt;
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: arial;
+}
+
+.spanName{
+	HEIGHT: 18px;
+	color:#FFFFFF;
+	PADDING:2px;
+	FONT-SIZE: 8pt;
+/* 	FONT-WEIGHT: bold; */
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: arial;
+}
+
+.spanMenu{
+	HEIGHT: 18px;
+	color:#FFFFFF;
+	PADDING:2px;
+	FONT-SIZE: 8pt;
+/* 	FONT-WEIGHT: bold; */
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: arial;
+}
+
+.spanLogout{
+	HEIGHT: 18px;
+	color:#FFFFFF;
+	padding-right: 4px;
+	FONT-SIZE: 8pt;
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	MARGIN-RIGHT:10px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY:arial;
+}
+
+
+.btn{
+	BORDER:1px solid #416D94;
+	color:#1B4D80;
+    HEIGHT: 18px;
+    WIDTH: 18px;
+    MARGIN-LEFT: 1px;
+    margin-right:2px;
+	 margin-bottom:3px;
+    PADDING: 0px;
+    TEXT-ALIGN: center;
+}
+.btn IMG{
+	FILTER:alpha(opacity=40);
+}    
+
+
+.degree {
+}
+
+.degree2 {
+	height:80px;
+}
+
+SELECT{
+	FONT-FAMILY: arial;
+	FONT-SIZE: 8pt;
+}

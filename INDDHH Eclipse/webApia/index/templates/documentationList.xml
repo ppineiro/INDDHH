@@ -1,0 +1,133 @@
+<document>
+	<header/>
+	<footer/>
+<pages>
+<page>
+	<logo/>
+</page>
+<page>
+	<toc/>
+</page>
+<page> 
+	<objective/>
+</page>
+<page>
+	<object name="AttributeVo">
+		<list>
+			<column>attName</column>
+			<column>attDesc</column>
+			<column>attLabel</column>
+			<column>attType</column>
+			<column>attLength</column>
+			<column>attMask</column>
+			<column>attRegExp</column>
+		</list>
+	</object>
+</page>
+<page>
+	<object name="DbConnectionVo">
+		<list>
+			<column>conName</column>
+			<column>conType</column>
+			<column>conDesc</column>
+			<column>conString</column>
+			<column>conMax</column>
+		</list>
+	</object>
+</page>
+<page>
+	<object name="BusClassVo">
+		<list>
+			<column>busClaName</column>
+			<column>busClaDesc</column>
+			<column>busClaType</column>
+		</list>
+	</object>
+</page>
+<page>
+	<object name="FormVo">
+		<list>
+			<column>frmName</column>
+			<column>frmTitle</column>
+			<column>frmDesc</column>
+		</list>
+	</object>
+</page>
+<page>
+	<object name="BusEntStatusVo">
+		<list>
+			<column>busEntStaName</column>
+			<column>busEntStaDesc</column>
+		</list>
+	</object>
+</page>
+<page>
+	<object name="BusEntityVo">
+		<list>
+			<column>busEntName</column>
+			<column>busEntTitle</column>
+			<column>busEntDesc</column>
+			<column>busEntAdminType</column>
+		</list>
+	</object>
+</page>
+<page>
+	<object name="RoleVo">
+		<list>
+			<column>rolName</column>
+			<column>rolDesc</column>
+		</list>
+	</object>
+</page>
+<page>
+	<object name="ClaTreeVo">
+		<list>
+			<column>claName</column>
+			<column>claDesc</column>
+			<column>claNameFather</column>
+		</list>
+	</object>
+</page>
+<page>
+	<object name="TaskVo">
+		<list>
+			<column>tskName</column>
+			<column>tskTitle</column>
+			<column>tskDesc</column>
+		</list>
+	</object>
+</page>
+<page>
+	<object name="ProcessVo">
+		<list>
+			<column>proName</column>
+			<column>proTitle</column>
+			<column>proDesc</column>
+			<column>proAction</column>
+			<column>busEntName</column>
+		</list>
+	</object>
+</page>
+<page>
+	<object name="QueryVo">
+		<list>
+			<column>qryName</column>
+			<column>qryTitle</column>
+			<column>qryDesc</column>
+			<column>qrySource</column>
+			<column>qryType</column>
+		</list>
+	</object>
+</page>
+<page>
+	<object name="SchedulerVo">
+		<list>
+			<column>schStartDate</column>
+			<column>schStartTime</column>
+			<column>busClaName</column>
+			<column>schPer</column>
+		</list>
+	</object>
+</page>
+</pages>
+</document>

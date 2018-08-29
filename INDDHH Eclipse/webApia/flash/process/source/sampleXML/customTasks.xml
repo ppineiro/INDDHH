@@ -1,0 +1,25 @@
+<CUSTOM_TASKS>
+	<TASK tskId="1001" tskName="TAREA_1" imgName="groupRing.png">
+		<EVENTS>
+			<EVENT busClaId="1010" busClaName="CLASE_1" evtId="1" evtName="ONREADY" order="1"/>
+			<EVENT busClaId="1011" busClaName="CLASE_2" evtId="1" evtName="ONREADY" order="2"/>
+			<EVENT busClaId="1012" busClaName="CLASE_3" evtId="2" evtName="ONCOMPLETE" order="1"/>
+		</EVENTS>
+	</TASK>
+	<TASK tskId="1002" tskName="TAREA_2" imgName="groupRing.png">
+		<EVENTS>
+			<EVENT busClaId="1010" busClaName="CLASE_1" evtId="1" evtName="ONREADY" order="1"/>
+			<EVENT busClaId="1011" busClaName="CLASE_2" evtId="1" evtName="ONREADY" order="2"/>
+			<EVENT busClaId="1012" busClaName="CLASE_3" evtId="2" evtName="ONCOMPLETE" order="1"/>
+			<EVENT busClaId="1011" busClaName="CLASE_2" evtId="1" evtName="ONREADY" order="2"/>
+			<EVENT busClaId="1012" busClaName="CLASE_3" evtId="2" evtName="ONCOMPLETE" order="1"/>		</EVENTS>
+	</TASK>
+	<TASK tskId="1003" tskName="TAREA_3" imgName="groupRing.png">
+		<EVENTS>
+			<EVENT busClaId="1010" busClaName="CLASE_1" evtId="1" evtName="ONREADY" order="1"/>
+			<EVENT busClaId="1011" busClaName="CLASE_2" evtId="1" evtName="ONREADY" order="2"/>
+			<EVENT busClaId="1012" busClaName="CLASE_3" evtId="2" evtName="ONCOMPLETE" order="1"/>
+			<EVENT busClaId="1011" busClaName="CLASE_2" evtId="1" evtName="ONREADY" order="2"/>
+			<EVENT busClaId="1012" busClaName="CLASE_3" evtId="2" evtName="ONCOMPLETE" order="1"/>		</EVENTS>
+	</TASK>
+</CUSTOM_TASKS>

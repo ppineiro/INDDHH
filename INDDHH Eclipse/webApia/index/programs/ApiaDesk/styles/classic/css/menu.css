@@ -1,0 +1,89 @@
+/* CSS Document */
+
+#menu{
+	width:80px;
+	font-family:Arial;
+	font-size:9px;
+	border:1px solid black;
+	margin-left:15px;
+	background-color:#E1F5FF;
+}
+#menu table{
+	margin-left:15px;
+	background-color:#FFFFFF;
+	width:65px;
+}
+#menu table{
+	/*background-color:#FFFFFF;*/
+}
+#menuBar{
+	border:1px solid #333333;
+	border-top:0px;
+	background-image:url(../images/menudegree.GIF);
+	background-repeat:repeat-x;
+	-moz-opacity:0.9;
+	opacity:0.9;
+	filter:alpha(opacity=90);
+}
+#startMenu{
+	border:1px solid black;
+		border-top:0px;
+	padding:9px;
+}
+#startMenu div{
+	cursor:pointer;
+	cursor:default;
+	font-family:Arial;
+	font-size:9pt;
+	padding:5px;
+}
+.menuBack{
+	background-color:#555555;
+/*	background-image:url(../images/menuBack.gif);*/
+	background-repeat:repeat-y;
+	-moz-opacity:0.7;
+	opacity:0.7;
+	filter:alpha(opacity=70);
+	/*background-color:#FDFDFD;*/
+	padding:-5px;
+}
+html { overflow:hidden; }
+
+.subMenu{
+	background-color:white;
+	border:1px solid black;
+	padding:9px;
+	font-family:Arial;
+	font-size:8pt;
+	background-image:url(../../../../../styles/gradient.jsp?height=1&width=15&colors=AEAEAE;DEDEDE;FFFFFF);
+	background-position:left;
+	background-repeat:repeat-y;
+}
+.subMenu div{
+	cursor:pointer;
+	cursor:default;
+	padding:3px;
+	padding-right:8px;
+}
+.shortCut{
+	filter:alpha(opacity=30);
+	-moz-opacity:0.3;
+	opacity:0.3;
+	filter:(alpha(opacity=30));
+}
+
+.menuBar td{
+	font-family:Arial;
+	font-size:9px;
+}
+.folder{
+	background-image:url(../images/moreItems.gif);
+	background-repeat:no-repeat;
+	background-position:right;
+}
+
+.messengerAdvice{
+	border:1px solid black;
+	font-family:Arial;
+	color:#000000;
+}

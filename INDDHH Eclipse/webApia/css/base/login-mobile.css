@@ -1,0 +1,169 @@
+.divImage {
+	height: 18%;	
+}
+
+.logoA {
+	display: none;
+}
+
+.logoB {
+	height: 83px;
+    width: 238px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-image: url("img/logo-small.png");
+    background-repeat: no-repeat;
+    float: none;
+}
+
+#loginForm, #requestForm {
+	float: none;
+}
+
+#loginForm .section, #requestForm .section {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    padding-top: 0px;
+}
+
+#loginForm div.field, #requestForm div.field {
+	display: block;
+	float: none;
+	margin: 0px;
+	width: 100%;
+}
+
+#loginForm div.field label {
+	display: none;
+}
+
+input, select, password {
+    border: 1px solid #CCCCCC;
+    border-radius: 6px 6px 6px 6px;
+    color: #666666;
+    font-size: 1.6em;
+    height: 32px;
+}
+#loginUsr, #loginPassword, #loginEnvironment, #captchaText {
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+div.header {
+    height: 40px;
+}
+
+.languages {
+	text-align: center;
+	position: absolute;
+    top: 330px;
+    float: none;
+    width: 100%;
+}
+
+.loginBtn, .genPassBtn {
+	width: 100% !important;
+    height: 60px;
+    background-color: #0159a6;
+    color: #ffffff;
+    text-align: center;
+    font-size: 2.3em;
+    position: fixed;
+    bottom: 0px;
+    line-height: 59px;
+    z-index: 3;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-top: 0px;
+}
+.loginBtn > div, .genPassBtn > div, .loginBtn > div > div, .genPassBtn > div > div {
+	height: 100%;
+}
+
+.loginBtn br, .genPassBtn br{
+	display: none;
+}
+.loginBtn button, .genPassBtn button {
+	background: none !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 100%;
+	outline: 0;
+}
+
+div.theFooter {
+	display: none;
+}
+
+div.loginRemember, div.fullSite {
+	text-align: center;
+    font-weight: bold;
+    margin-top: 18px;
+    display: block !important;
+}
+div.fullSite {
+	margin-top: 80px;
+	
+}
+div.fullSite a {
+	color: #0679B8;
+}
+
+#requestForm input {
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+#requestForm div.section div.required label {
+    font-size: 1.7em;
+}
+
+div.spinner {
+    font-size: 1.3em;
+}
+
+div.modalContent {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.captchaActive {
+	top: 278px;
+}
+
+div.loginContainer { padding: 0px; width: auto;}
+
+@media screen and (min-aspect-ratio: 13/9) {
+	.divImage {
+		width: 50%;
+	}
+	
+	#loginForm {
+		width: 50%;
+	    position: absolute;
+	    right: 0px;
+	    top: 40px;
+    }
+    
+    .languages  {
+    	top: 0px !important;
+    }
+    
+    .loginBtn {
+        position: fixed;
+    	left: 0px;
+    }
+    
+    .section.fullSite {
+    	position: fixed;
+	    top: 4px;
+	    margin: 0px !important;
+    }
+    
+    .sec3 div.field {
+    	padding-top: 0px !important;
+    }
+}

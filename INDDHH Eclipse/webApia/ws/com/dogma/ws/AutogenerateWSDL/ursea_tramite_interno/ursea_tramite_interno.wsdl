@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.apiasolutions.com/WebServices"
+	xmlns:impl="http://www.apiasolutions.com/WebServices"
+	xmlns:intf="http://www.apiasolutions.com/WebServices"
+	xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:apachesoap="http://xml.apache.org/xml-soap"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:ns3="http://www.ig.com.br/poc/Venda"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns1="http://www.apiasolutions.com/WebServices/Data">
+	<wsdl:types>
+		<schema elementFormDefault="qualified" targetNamespace="http://www.apiasolutions.com/WebServices" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://www.apiasolutions.com/WebServices">
+			<element name="ApiaWSInput" type="impl:ApiaWSInputType"/>
+			<complexType name="ApiaWSInputType">
+			  	<sequence>
+					<element name="E_BO_URL_DOCUMENTO_DATOS_STR" type="xsd:string"/>
+					<element name="E_BO_TRM_NRO_INSTANCIA_STR" type="xsd:string"/>
+					<element name="E_BO_TRM_NOMBRE_STR" type="xsd:string"/>
+				</sequence>
+			</complexType>
+			<element name="ExecResult" type="impl:ExecResultType"/>
+			<complexType name="ExecResultType">
+			  	<sequence>
+			  		<element name="resultCode" type="xsd:int"/>
+			  		<element name="resultMessage" type="xsd:string"/>
+				</sequence>
+			</complexType>
+		</schema>
+	</wsdl:types>
+	<wsdl:message name="ursea_tramite_internoRequest">
+		<wsdl:part name="ursea_tramite_internoInput" element="impl:ApiaWSInput"/>
+	</wsdl:message>
+	<wsdl:message name="ursea_tramite_internoResponse">
+		<wsdl:part name="ursea_tramite_internoReturn" element="impl:ExecResult"/>
+	</wsdl:message>	
+	<wsdl:portType name="ApiaWSInterface">
+		<wsdl:operation name="ursea_tramite_interno" parameterOrder="ursea_tramite_internoInput">
+			<wsdl:input name="ursea_tramite_internoRequest" message="impl:ursea_tramite_internoRequest"/>
+			<wsdl:output name="ursea_tramite_internoResponse" message="impl:ursea_tramite_internoResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ApiaWSSoapBinding" type="impl:ApiaWSInterface">
+		<wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="ursea_tramite_interno">
+			<wsdlsoap:operation soapAction="apiaAction"/>
+			<wsdl:input>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ApiaWSInterfaceService">
+		<wsdl:port name="ApiaWSursea_tramite_interno" binding="impl:ApiaWSSoapBinding">
+			<wsdlsoap:address location="http://LOCATION-TOKEN"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

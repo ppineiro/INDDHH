@@ -1,0 +1,14 @@
+[
+	{
+		"name":"Encargar Pizza - Español",
+		"url":"http://w3.st.com.uy/Itil/game/xpdls/Encargar%20pizza_es.xpdl"
+	},
+	{
+		"name":"Order Pizza - English",
+		"url":"http://w3.st.com.uy/Itil/game/xpdls/Order%20pizza_en.xpdl"
+	},
+	{
+		"name":"Pedir Pizza - Portugues",
+		"url":"http://w3.st.com.uy/Itil/game/xpdls/Pedir%20pizza_pt.xpdl"
+	}
+]

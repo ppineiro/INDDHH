@@ -1,0 +1,1 @@
+<system:query show="ifCanBeFav"><div id="favFncContainer" class="right"><div id="favFncSelection" class="favSelection <system:query show="ifIsFav">favIs</system:query>" favFncId="<system:query show="value" from="theBean" field="favFncId"/>"></div></div></system:query>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<shortcuts>
+	<shortcut img="styles/classic/images/envelope_icon.png" text="Mensajes" action="openMessages()" onload="startMessenger()" dblclick="messenger.openInbox()" js="messenger.js">
+		<menu>
+			<menuItem text="Open Inbox" calledFunction="messenger.openInbox()" />
+			<menuItem text="Check" calledFunction="" />
+			<menuItem text="Check In:" calledFunction="">
+				<menuItem text="5 minutes" calledFunction="messenger.setRefreshRate(5)" />
+				<menuItem text="10 minutes" calledFunction="messenger.setRefreshRate(10)" />
+				<menuItem text="30 minutes" calledFunction="messenger.setRefreshRate(15)" />
+			</menuItem>
+		</menu>
+	</shortcut>
+	<shortcut img="styles/classic/images/postit_icon.png" text="Postits" action="openMessages()" dblclick="addPostit()" js="postIts.js">
+		<menu>
+			<menuItem text="New Postit" calledFunction="addPostit()" />
+			<menuItem text="Hide Postits" calledFunction="hidePostits()" />
+			<menuItem text="Show Postits" calledFunction="showPostits()" />
+			<menuItem text="Send To Back" calledFunction="postitsToBack()" />
+			<menuItem text="Sort" calledFunction="">
+				<menuItem text="Cascade" calledFunction="sortPostits('cascade')" />
+				<menuItem text="Hotizontally" calledFunction="sortPostits('hotizontally')" />
+			</menuItem>
+		</menu>
+	</shortcut>
+	<!--<shortcut img="tasks_icon.png" text="Tasks" action="openMessages()" onload='initTaskList("taskList.xml")' dblclick="openTaskList()" js="TaskList.js">
+		<menu>
+			<menuItem text="My Tasks" calledFunction="addPostit()" />
+			<menuItem text="Free Tasks" calledFunction="hidePostits()" />
+		</menu>
+	</shortcut> -->
+</shortcuts>

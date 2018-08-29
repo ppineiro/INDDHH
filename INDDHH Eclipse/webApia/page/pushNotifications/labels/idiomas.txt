@@ -1,0 +1,16 @@
+{
+  "idiomas": [
+      {
+          "nombre": "Español",
+          "url": "lng-es"
+      },
+  {
+          "nombre": "English",
+          "url": "lng-en"
+      },
+  {
+          "nombre": "Português",
+          "url": "lng-pt"
+      }
+  ]
+}

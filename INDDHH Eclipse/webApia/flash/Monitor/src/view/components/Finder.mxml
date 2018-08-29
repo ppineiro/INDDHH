@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<mx:VBox width="100%" xmlns:mx="http://www.adobe.com/2006/mxml" initialize="finderReady()">
+		<mx:Metadata>
+		[Event(name="searchSelected", type="flash.events.Event")]
+		</mx:Metadata>
+		<mx:Script>
+				<![CDATA[
+				import mx.collections.ArrayCollection;
+				import util.Map;
+				import view.ExternalLoader;
+				import communication.Communication;
+				import flash.events.*;
+				import labels.LabelManager;
+				import flash.xml.*;
+				import mx.controls.ComboBox;
+				
+				public static var SEARCH_SELECTED:String = "searchSelected";
+				
+				public var selectedRow:Object;
+				
+				private var searchTypes:ArrayCollection = new ArrayCollection(
+				[
+					{label:LabelManager.getInstance().getLabel("lbl_entity"), data:"E" },
+					{label:LabelManager.getInstance().getLabel("lbl_process"), data:"P"}, 
+					{label:LabelManager.getInstance().getLabel("lbl_task"), data:"T"}, 
+					{label:"", data:""}
+				]);
+				private var typeLabels:Map;
+				
+				public function finderReady():void {
+					Communication.getInstance().addEventListener(Communication.ON_SEARCHCOMPLETE, searchComplete);
+					typeLabels = new Map();
+					typeLabels.put("E", LabelManager.getInstance().getLabel("lbl_entity"));
+					typeLabels.put("P", LabelManager.getInstance().getLabel("lbl_process"));
+					typeLabels.put("T", LabelManager.getInstance().getLabel("lbl_task"));
+					
+				}
+				private function searchComplete(e:Event):void {
+					var searchNode:XMLNode = Communication.getInstance().search;
+					searchGrid.dataProvider = parseSearchData(searchNode);
+				}
+				private function search():void {
+					var type = finderCombo.selectedItem.data;
+					var find:String = finderInput.text;
+					//finderInput.text = "";
+					searchGrid.dataProvider = null;
+					Communication.getInstance().getSearch(find,type);
+				}
+				private function parseSearchData(node:XMLNode):Array {
+					var dataArray:Array = new Array();
+					for (var i:int = 0; i < node.childNodes.length; i++ ) {
+						var data:Object = new Object();
+						data.name = node.childNodes[i].attributes.name;
+						//data.type = node.childNodes[i].attributes.type;
+						data.type = typeLabels.getValue(node.childNodes[i].attributes.type);
+						data.id = node.childNodes[i].attributes.id;
+						dataArray.push(data);
+					}
+					return dataArray;
+				}
+				
+				private function itemDoubleClicked(e:Event):void {
+					selectedRow = e.currentTarget.selectedItem;
+					var t = typeLabels.getKey(selectedRow.type);
+					Communication.getInstance().getCentral(selectedRow.id, t);
+				}
+			]]>
+		</mx:Script>
+		<mx:HBox width="100%" height="10%">
+			<mx:TextInput id="finderInput" width="100%" editable="true" />
+		</mx:HBox>
+		<mx:HBox width="100%" height="10%">
+			<mx:ComboBox width="75%" id="finderCombo" maxWidth="100" dataProvider="{searchTypes}" />
+			<mx:Button click="search()" toolTip="{LabelManager.getInstance().getLabel('tt_search')}" paddingLeft="0" paddingRight="0" width="50" label="{LabelManager.getInstance().getLabel('lbl_search')}"></mx:Button>
+		</mx:HBox>
+		<mx:HBox width="100%" height="100%">
+			<mx:DataGrid id="searchGrid" width="100%" height="100%" doubleClickEnabled="true" itemDoubleClick="itemDoubleClicked(event);dispatchEvent(new Event(Finder.SEARCH_SELECTED));">
+				<mx:columns>
+					<mx:DataGridColumn headerText="Id" visible="false" dataField="id" />
+					<mx:DataGridColumn headerText="{LabelManager.getInstance().getLabel('lbl_title')}" dataField="name" />
+					<mx:DataGridColumn headerText="{LabelManager.getInstance().getLabel('lbl_type')}" dataField="type"/>
+				</mx:columns>
+			</mx:DataGrid>
+		</mx:HBox>
+	</mx:VBox>

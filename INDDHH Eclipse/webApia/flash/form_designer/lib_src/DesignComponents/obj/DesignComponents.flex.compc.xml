@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flex-config xmlns="http://www.adobe.com/2006/flex-config">
+  <output>C:\Development\Workspace2\Apia Development\Dogma2.0\flash\DesignComponents\.\bin\DesignComponents.swc</output>
+  <use-network>true</use-network>
+  <target-player>10.0</target-player>
+  <warnings>true</warnings>
+  <benchmark>false</benchmark>
+  <compiler>
+    <accessible>false</accessible>
+    <allow-source-path-overlap>false</allow-source-path-overlap>
+    <optimize>true</optimize>
+    <strict>true</strict>
+    <es>false</es>
+    <show-actionscript-warnings>true</show-actionscript-warnings>
+    <show-binding-warnings>true</show-binding-warnings>
+    <show-unused-type-selector-warnings>true</show-unused-type-selector-warnings>
+    <use-resource-bundle-metadata>true</use-resource-bundle-metadata>
+    <verbose-stacktraces>false</verbose-stacktraces>
+    <source-path>
+      <path-element>c:\development\workspace2\apia development\dogma2.0\flash\designcomponents\src</path-element>
+    </source-path>
+    <library-path>
+      <path-element>c:\development\workspace2\apia development\dogma2.0\flash\designcomponents\lib\f_controls.swc</path-element>
+    </library-path>
+  </compiler>
+  <include-classes>
+    <class>Main</class>
+    <class>design.component.Table</class>
+    <class>design.component.field.AbstractField</class>
+    <class>design.component.field.Check</class>
+    <class>design.component.field.ColorChooser</class>
+    <class>design.component.field.Combo</class>
+    <class>design.component.field.Input</class>
+    <class>design.component.field.ModalInput</class>
+    <class>design.component.field.NumericInput</class>
+    <class>design.component.field.Output</class>
+  </include-classes>
+</flex-config>

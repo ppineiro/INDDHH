@@ -1,0 +1,31 @@
+/**
+* Sample file for styling Apia.
+* Write here your CSS classes to override Apia default style.
+*/
+
+.modalContent.modal-loading {
+	width: 200px;
+	border-radius: 5px;
+}
+
+.modalContent.modal-loading .header {
+	display: none;
+}
+
+.modalContent.modal-loading .footer {
+	display: none;
+}
+
+.modalContent.modal-loading .content {
+    text-align: center;
+    background: url(spinner.gif) no-repeat;
+    background-position: top center;
+    background-size: 30px;
+    padding-top: 40px;
+    margin: 35px 0 15px;
+    
+}
+
+th, td {
+    font-size: 100% !important;
+}

@@ -1,0 +1,366 @@
+html {
+	height: 100%;
+}
+
+body {
+	overflow: auto; /*Corrección de scrollbar vertical en IE*/
+	height: 100%;
+}
+
+div.spinner {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	overflow: 0px;
+	font-family: Arial;
+	font-size: 10pt;
+	/*color: #0679B8*/
+	background: #f3f3f3;
+}
+
+input {
+	font-family: Arial;
+	border: 1px solid #C0C0C0;
+	border-radius: 4px 4px 4px 4px;
+	color: #606060;
+}
+
+select {
+	font-family: Arial;
+	border: 1px solid #C0C0C0;
+	border-radius: 4px 4px 4px 4px;
+	color: #606060;
+}
+
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+
+.center {
+	text-align: center;
+}
+
+div.section {
+	clear: both;
+	padding-top: 5px;
+}
+
+div.section div.field {
+	display: inline-table;
+	float: left;
+	margin-right: 10px;
+	width: 150px;
+}
+
+div.section div.field label {
+	display: block;
+}
+
+div.section div.required label:before {
+	content: '*'
+}
+
+div.section div.required label {
+	font-weight: bold;
+}
+
+div.section div.field div.button {
+	float: right;
+}
+
+div.header {
+	height: 10%;
+}
+
+div.header div.languages {
+	float: right;
+	margin-top: 5px;
+	color: #0679B8;
+}
+
+div.header div.languages label.language {
+	padding-right: 5px;
+	font-family: Arial;
+	text-transform: lowercase;
+}
+
+div.header div.languages label.language A {
+	color: #6B6B6B;
+}
+
+div.message {
+	float: right;
+	padding-right: 70px;
+}
+
+div.body {
+	height: 70%;
+}
+
+div.body form { /*width: 350px;*/
+	float: right;
+    padding: 10px;
+}
+
+div.footer {
+	height: 5%;
+	vertical-align: bottom;
+}
+
+div.footer div.version {
+	text-align: right;
+	font-size: 7pt;
+	font-weight: bold;
+	color: #CCCCCC;
+}
+
+div.theFooter {
+	padding-left: 10px;
+}
+
+.divImage {
+	height: 15%;
+	width: 100%;
+}
+
+.logoA {
+	float: right;
+	background-image: url(img/cabezal.jpg);
+	background-repeat: no-repeat;
+	width: 560px;
+	height: 61px
+}
+
+.logoB {
+	float: right;
+	background-image: url(img/logo-apia.jpg);
+	background-repeat: no-repeat;
+	width: 188px;
+	height: 61px
+}
+
+div.loginRemember {
+	margin-top: 25px;
+}
+
+div.loginRemember A {
+	color: #0679B8
+}
+
+div.fatalError {
+	color: #FF0000;
+	font-size: 10pt;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+A:link {
+	text-decoration: none
+}
+
+A:visited {
+	text-decoration: none
+}
+
+A:active {
+	text-decoration: none
+}
+
+A:hover {
+	text-decoration: underline;
+}
+
+div.fncPanel .button button.genericBtn {
+	font-weight: bold;
+}
+
+button.genericBtn {
+	padding-bottom: 1px;
+	height: 24px;
+	width: 100%;
+	color: #606060;
+	font-family: Arial;
+	font-size: 12px;
+	border: 1px solid silver;
+	border-radius: 3px;
+	cursor: pointer;
+}
+/*.cssgradients button.genericBtn {	background: -webkit-gradient(linear, 0 0, 0 100%, from(white) to(#EFEFEF));	background: -webkit-linear-gradient( white, #EFEFEF);	background: -moz-linear-gradient( white, #EFEFEF);	background: -ms-linear-gradient( white, #EFEFEF);	background: -o-linear-gradient( white, #EFEFEF);	background: linear-gradient( white, #EFEFEF);}*/
+.cssgradients button.genericBtn {
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#247AB3)
+		to(#2B85C3));
+	background: -webkit-linear-gradient(#247AB3, #2B85C3);
+	background: -moz-linear-gradient(#247AB3, #2B85C3);
+	background: -ms-linear-gradient(#247AB3, #2B85C3);
+	background: -o-linear-gradient(#247AB3, #2B85C3);
+	background: linear-gradient(#247AB3, #2B85C3);
+	color: white;
+	border-color: #2b85c3;
+}
+/*.no-cssgradients button.genericBtn {	background-image: url("img/button/back_button.png");}*/
+.no-cssgradients button.genericBtn {
+	border: none;
+	background-image: url("img/button/back_button.png");
+	background-position: 0px 24px;
+	color: white;
+}
+
+.boxshadow button.genericBtn {
+	-moz-box-shadow: 0 1px 2px #C0C0C0;
+	-webkit-box-shadow: 0 1px 2px #C0C0C0;
+	box-shadow: 0 1px 2px #C0C0C0;
+}
+
+/*Top no-borderradius*/
+.t1,.t2,.t3,.t4 {
+	font-size: 1px;
+	overflow: hidden;
+	display: block;
+}
+
+.t1 {
+	height: 1px;
+	background: #C0C0C0;
+	margin: 0 5px;
+}
+
+.t2 {
+	height: 1px;
+	background-color: #2a7db3;
+	border-right: 2px solid #C0C0C0;
+	border-left: 2px solid #C0C0C0;
+	margin: 0 3px;
+}
+
+.t3 {
+	height: 1px;
+	background-color: #247bb4;
+	border-right: 1px solid #C0C0C0;
+	border-left: 1px solid #C0C0C0;
+	margin: 0 2px;
+}
+
+.t4 {
+	height: 2px;
+	background-color: #2d7fb6;
+	border-right: 1px solid #C0C0C0;
+	border-left: 1px solid #C0C0C0;
+	margin: 0 1px;
+}
+
+.t2.pressed,.t3.pressed,.t4.pressed {
+	background: #1b6fa6 !important;
+}
+
+/*Bottom no-borderradius*/
+.b1,.b2,.b3,.b4 {
+	font-size: 1px;
+	overflow: hidden;
+	display: block;
+}
+
+.b1 {
+	height: 1px;
+	background: #C0C0C0;
+	margin: 0 5px;
+}
+
+.b2 {
+	height: 1px;
+	background-color: #2a84c2;
+	border-right: 2px solid #C0C0C0;
+	border-left: 2px solid #C0C0C0;
+	margin: 0 3px;
+}
+
+.b3 {
+	height: 1px;
+	background-color: #2a84c1;
+	border-right: 1px solid #C0C0C0;
+	border-left: 1px solid #C0C0C0;
+	margin: 0 2px;
+}
+
+.b4 {
+	height: 2px;
+	background-color: #2983c0;
+	border-right: 1px solid #C0C0C0;
+	border-left: 1px solid #C0C0C0;
+	margin: 0 1px;
+}
+
+.b2.pressed,.b3.pressed,.b4.pressed {
+	background: #1b6fa6 !important;
+}
+
+/**BORRAR**/
+button.apia-rounded-button {
+	/*background-color: #03476C;*/
+	background-color: #0054BD;
+	color: white;
+	cursor: pointer;
+	border: 1px solid #03476C;
+	/*LIKE FF*/
+	padding-left: 9px;
+	padding-right: 9px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	/*ROUNDED BUTTON*/
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	/*BUTTON BACKGROUND*/
+	/*background-image: -moz-linear-gradient(center top , #049CDB 0%, #0064CD 100%);
+    background-image: -webkit-linear-gradient(top, #049CDB 0%, #0064CD 100%);*/
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#0054BD)
+		to(#004A7D)); /*old webkit*/
+	background: -webkit-linear-gradient(#0054BD, #004A7D); /*new webkit*/
+	background: -moz-linear-gradient(#0054BD, #004A7D); /*gecko*/
+	background: -ms-linear-gradient(#0054BD, #004A7D); /*IE10*/
+	background: -o-linear-gradient(#0054BD, #004A7D); /*opera 11.10+*/
+	background: linear-gradient(#0054BD, #004A7D); /*future CSS3 browsers*/
+	-pie-background: linear-gradient(#0054BD, #004A7D); /*PIE*/
+}
+
+button.apia-rounded-button:hover {
+	border: 1px solid #022F46;
+}
+
+button.genericBtn:hover{
+	background: #1e8ac6;
+	border: 1px solid #022F46;
+}
+
+button.apia-rounded-button:active {
+	padding-left: 10px;
+	padding-right: 8px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+div.campaign {
+	margin-top: 10px;
+}
+
+#messageContainer {
+    margin-top: 10px;
+    border: 1px solid rgb(237, 201, 103);
+    background-color: rgb(249, 237, 184);
+    margin-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #707070;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+#rememberBtn {
+	width: 200px;
+}

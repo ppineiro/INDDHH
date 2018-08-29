@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Box xmlns:mx="http://www.adobe.com/2006/mxml">
+   <mx:Script>
+	   <![CDATA[
+			import mx.managers.PopUpManager;
+			import mx.events.CloseEvent;
+			import labels.LabelManager;
+			import mx.controls.RadioButton;
+			import communication.FileDownloader;
+			import mx.controls.Alert;
+
+			private var TYPE_EXCEL:String	= "excel";
+			private var TYPE_PDF:String		= "pdf";
+			private var TYPE_RTF:String		= "rtf";
+			private var TYPE_CSV:String		= "csv";
+			private var TYPE_TXT:String		= "txt";
+			
+			private function export(event : CloseEvent) : void {
+				var fileName:String = "export";
+				var type = TYPE_TXT;
+				if (txt.selected) {
+					fileName += ".txt";
+				}
+				if (pdf.selected) {
+					type = TYPE_PDF;
+					fileName += ".pdf";
+				}
+				if (xls.selected) {
+					fileName += ".xls";
+					type = TYPE_EXCEL;
+				}
+				if (csv.selected) {
+					fileName += ".csv";
+					type = TYPE_CSV;
+				}
+				var downloader:FileDownloader = new FileDownloader();
+				downloader.addEventListener(FileDownloader.ON_DOWNLOAD, downloadComplete);
+				downloader.addEventListener(FileDownloader.ON_ERROR,downloadError);
+				downloader.download("../../../" + Parameters.BASE_URL + Parameters.EXPORT_URL + type + Parameters.TAB_ID_REQUEST, fileName);
+			}
+			
+			private function downloadComplete(e:Event){
+			}
+			
+			private function downloadError(e:Event){
+				Alert.show(LabelManager.getInstance().getLabel("lbl_downloadError"));
+			}
+			
+	]]>
+   </mx:Script>
+	<mx:Box height="100%" direction="vertical">
+		<mx:RadioButton groupName="type" id="txt" label="TXT" selected="true" />
+		<mx:RadioButton groupName="type" id="pdf" label="PDF"/>
+		<mx:RadioButton groupName="type" id="xls" label="XLS"/>
+		<mx:RadioButton groupName="type" id="csv" label="CSV"/>
+	</mx:Box>
+	<mx:HBox width="100%" height="30">
+		<mx:Spacer width="100%"/>
+		<mx:Button label="{LabelManager.getInstance().getLabel('lbl_export')}" click="export(null)"/>
+	</mx:HBox>
+</mx:Box>

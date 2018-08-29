@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PROCESS_DEFINITION>
+	<ELEMENT id="1732" pro_ele_id="1732" type="I">
+		<INIT_MARK/>
+<DESIGN y="186" x="30"/>		<DEPENDENCY id="1742" vertexes="" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1733" pro_ele_id="1733" type="O">
+		<OPERATOR ope_id="2" />
+<DESIGN y="267" x="315"/>		<DEPENDENCIES>
+		<DEPENDENCY id="1736" vertexes="" name="compra form mayor a 5 dias">(ent_att(&apos;COMPRA_MENOR_X_DIAS_NUM&apos;) = 2)</DEPENDENCY>
+		<DEPENDENCY id="1737" vertexes="" name="cpra menor 5 dias, saldo ok, doc ok">(ent_att(&apos;COMPRA_MENOR_X_DIAS_NUM&apos;) = 1 and ent_att(&apos;FORM_OK_STR&apos;) = &apos;true&apos; and ent_att(&apos;SALDO_CC_OK_STR&apos;) = &apos;true&apos; and ent_att(&apos;DOC_OK_STR&apos;) = &apos;true&apos;)</DEPENDENCY>
+		<DEPENDENCY id="1741" vertexes="" name="cpra menor 5 dias, saldo ok, falta doc">(ent_att(&apos;COMPRA_MENOR_X_DIAS_NUM&apos;) = 1 and ent_att(&apos;FORM_OK_STR&apos;) = &apos;true&apos; and ent_att(&apos;SALDO_CC_OK_STR&apos;) = &apos;true&apos; and ent_att(&apos;DOC_OK_STR&apos;) = &apos;false&apos;)</DEPENDENCY>
+		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="1734" pro_ele_id="1734" type="O">
+		<OPERATOR ope_id="2" />
+<DESIGN y="198" x="1058"/>		<DEPENDENCIES>
+		<DEPENDENCY id="1741" vertexes="" name="no aprueba, DOC NO OK" loop_back="true">(ent_att(&apos;FORM_OK_STR&apos;) = &apos;true&apos; and
+ ent_att(&apos;SALDO_CC_OK_STR&apos;) = &apos;true&apos; and
+ ent_att(&apos;DOC_OK_STR&apos;) = &apos;false&apos;)</DEPENDENCY>
+		<DEPENDENCY id="1744" vertexes="" name="si aprueba">(ent_att(&apos;FORM_OK_STR&apos;) = &apos;true&apos; and
+ ent_att(&apos;SALDO_CC_OK_STR&apos;) = &apos;true&apos; and
+ ent_att(&apos;DOC_OK_STR&apos;) = &apos;true&apos;)</DEPENDENCY>
+		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="1735" pro_ele_id="1735" type="O">
+		<OPERATOR ope_id="2" />
+<DESIGN y="263" x="837"/>		<DEPENDENCIES>
+		<DEPENDENCY id="1741" vertexes="" name="DOC NO OK" loop_back="true">(ent_att(&apos;FORM_OK_STR&apos;) = &apos;true&apos; and
+ ent_att(&apos;SALDO_CC_OK_STR&apos;) = &apos;true&apos; and
+ ent_att(&apos;DOC_OK_STR&apos;) = &apos;false&apos;)</DEPENDENCY>
+		<DEPENDENCY id="1743" vertexes="" name="DOC OK">(ent_att(&apos;FORM_OK_STR&apos;) = &apos;true&apos; and
+ ent_att(&apos;SALDO_CC_OK_STR&apos;) = &apos;true&apos; and
+ ent_att(&apos;DOC_OK_STR&apos;) = &apos;true&apos;)</DEPENDENCY>
+		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="1736" pro_ele_id="1736" type="P">
+		<PROCESS pro_id="1004" type="m" name="ARCHIVO" >			<FORMS>
+			</FORMS>
+</PROCESS>
+<DESIGN y="457" x="206"/>		<DEPENDENCY id="1740" vertexes="" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1737" pro_ele_id="1737" type="O">
+		<OPERATOR ope_id="2" />
+<DESIGN y="264" x="561"/>		<DEPENDENCIES>
+		<DEPENDENCY id="1736" vertexes="" name="NO PRESENTO doc en PLAZO (DOC NO OK)">(ent_att(&apos;FORM_OK_STR&apos;) = &apos;true&apos; and
+ ent_att(&apos;SALDO_CC_OK_STR&apos;) = &apos;true&apos; and
+ ent_att(&apos;DOC_OK_STR&apos;) = &apos;false&apos;)</DEPENDENCY>
+		<DEPENDENCY id="1746" vertexes="" name="Saldo,Form,Doc OK">(ent_att(&apos;FORM_OK_STR&apos;) = &apos;true&apos; and
+ ent_att(&apos;SALDO_CC_OK_STR&apos;) = &apos;true&apos; and
+ ent_att(&apos;DOC_OK_STR&apos;) = &apos;true&apos;)</DEPENDENCY>
+		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="1738" pro_ele_id="1738" type="O">
+		<OPERATOR ope_id="2" />
+<DESIGN y="266" x="152"/>		<DEPENDENCIES>
+		<DEPENDENCY id="1733" vertexes="191;301" name="form y saldo ok">(ent_att(&apos;FORM_OK_STR&apos;) = &apos;true&apos; and
+ ent_att(&apos;SALDO_CC_OK_STR&apos;) = &apos;true&apos;)</DEPENDENCY>
+		<DEPENDENCY id="1745" vertexes="" name="Form y/o Saldo NO OK">(ent_att(&apos;FORM_OK_STR&apos;) = &apos;false&apos; or
+ ent_att(&apos;SALDO_CC_OK_STR&apos;) = &apos;false&apos;)</DEPENDENCY>
+		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="1739" pro_ele_id="1739" type="E">
+		<END_MARK/>
+<DESIGN y="483" x="778"/>	</ELEMENT>
+	<ELEMENT id="1740" pro_ele_id="1740" type="O">
+		<OPERATOR ope_id="2" />
+<DESIGN y="484" x="536"/>		<DEPENDENCIES>
+		<DEPENDENCY id="1739" vertexes="" name="no corresponde renovar">(ent_att(&apos;LIC_RENOVAR_NUM&apos;) = 2)</DEPENDENCY>
+		<DEPENDENCY id="1746" vertexes="" name="LIC para renovar" loop_back="true">(ent_att(&apos;LIC_RENOVAR_NUM&apos;) = 1)</DEPENDENCY>
+		</DEPENDENCIES>
+	</ELEMENT>
+	<ELEMENT id="1741" pro_ele_id="1741" type="P">
+		<PROCESS pro_id="1009" type="m" name="INFORMACION_SOLICITA_LICENCIAS" >			<FORMS>
+			</FORMS>
+</PROCESS>
+<DESIGN y="101" x="439"/>		<DEPENDENCY id="1737" vertexes="" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1742" pro_ele_id="1742" type="T">
+		<TASK task_id="1038" name="LICBEN_ANALISIS_INTERNO_DATOS">
+			<FORMS>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="1010" conditionDoc="" name="GRUPO_ESPERA"></POOL>
+			</POOLS>
+			<EVENTS>
+				<EVENT event_id="11" class_id="1047" class_name="IMP_SOL_COMPLETA_TAREA" event_name="ONREADY" order="0"/>
+			</EVENTS>
+			<STATES>
+			</STATES>
+		</TASK>
+<DESIGN y="266" x="62"/>		<DEPENDENCY id="1738" vertexes="" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1743" pro_ele_id="1743" type="T">
+		<TASK task_id="1026" name="LICBEN_EMITIR_LICENCIA">
+			<FORMS>
+				<STEP>
+					<FORM form_id="1009" name="IMP_SOL_DI" type="E" conditionDoc="" order="1" read_only="true" />
+					<FORM form_id="1010" name="IMP_SOL_DE" type="E" conditionDoc="" order="2" read_only="true" />
+					<FORM form_id="1011" name="IMP_SOL_VAI" type="E" conditionDoc="" order="3" read_only="true" />
+					<FORM form_id="1058" name="IMP_SOL_VIN_NUEVO" type="E" conditionDoc="" order="4" read_only="true" />
+					<FORM form_id="1055" name="IMP_SOL_VERIF_INFO" type="E" conditionDoc="" order="5" read_only="false" />
+					<FORM form_id="1026" name="IMP_SOL_BENEFICIO" type="E" conditionDoc="" order="6" read_only="false" />
+					<FORM form_id="1056" name="IMP_SOL_HISTORIAL_VERIF_INFO" type="E" conditionDoc="" order="7" read_only="true" />
+				</STEP>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="1009" conditionDoc="" name="ENCARGADOS_ESTUDIO_TECNICO"></POOL>
+			</POOLS>
+			<EVENTS>
+				<EVENT event_id="10" class_id="1084" class_name="CARGA_HISTORIAL_ON_CONFIRM" event_name="ONCOMPLETE" order="0"/>
+			</EVENTS>
+			<STATES>
+			</STATES>
+		</TASK>
+<DESIGN y="264" x="977"/>		<DEPENDENCY id="1734" vertexes="" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1744" pro_ele_id="1744" type="T">
+		<TASK task_id="1027" name="LICBEN_ENTREGAR_LICENCIA">
+			<FORMS>
+				<STEP>
+					<FORM form_id="1022" name="IMP_SOL_TIPOLIC" type="E" conditionDoc="" order="1" read_only="true" />
+					<FORM form_id="1009" name="IMP_SOL_DI" type="E" conditionDoc="" order="2" read_only="true" />
+					<FORM form_id="1026" name="IMP_SOL_BENEFICIO" type="E" conditionDoc="" order="3" read_only="true" />
+					<FORM form_id="1028" name="IMP_SOL_ENTREGAR_LIC" type="E" conditionDoc="" order="4" read_only="false" />
+				</STEP>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="1007" conditionDoc="" name="ATENCION_CLIENTES"></POOL>
+			</POOLS>
+			<EVENTS>
+			</EVENTS>
+			<STATES>
+			</STATES>
+		</TASK>
+<DESIGN y="439" x="920"/>		<DEPENDENCY id="1736" vertexes="" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1745" pro_ele_id="1745" type="T">
+		<TASK task_id="1023" name="LICBEN_ESPERAR_TRAMITE_PENDIENTE">
+			<FORMS>
+				<STEP>
+					<FORM form_id="1057" name="ESP_CANT_DIAS" type="E" conditionDoc="" order="1" read_only="false" />
+				</STEP>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="1010" conditionDoc="" name="GRUPO_ESPERA"></POOL>
+			</POOLS>
+			<EVENTS>
+			</EVENTS>
+			<STATES>
+			</STATES>
+		</TASK>
+<DESIGN y="92" x="154"/>		<DEPENDENCY id="1733" vertexes="" ></DEPENDENCY>
+	</ELEMENT>
+	<ELEMENT id="1746" pro_ele_id="1746" type="T">
+		<TASK task_id="1022" name="LICBEN_ESTUDIO_TECNICO">
+			<FORMS>
+				<STEP>
+					<FORM form_id="1022" name="IMP_SOL_TIPOLIC" type="E" conditionDoc="" order="1" read_only="true" />
+					<FORM form_id="1009" name="IMP_SOL_DI" type="E" conditionDoc="" order="2" read_only="true" />
+					<FORM form_id="1010" name="IMP_SOL_DE" type="E" conditionDoc="" order="3" read_only="true" />
+					<FORM form_id="1011" name="IMP_SOL_VAI" type="E" conditionDoc="" order="4" read_only="true" />
+					<FORM form_id="1058" name="IMP_SOL_VIN_NUEVO" type="E" conditionDoc="" order="5" read_only="true" />
+					<FORM form_id="1055" name="IMP_SOL_VERIF_INFO" type="E" conditionDoc="" order="6" read_only="false" />
+					<FORM form_id="1026" name="IMP_SOL_BENEFICIO" type="E" conditionDoc="" order="7" read_only="false" />
+					<FORM form_id="1056" name="IMP_SOL_HISTORIAL_VERIF_INFO" type="E" conditionDoc="" order="8" read_only="true" />
+				</STEP>
+			</FORMS>
+			<POOLS>
+				<POOL pool_id="1009" conditionDoc="" name="ENCARGADOS_ESTUDIO_TECNICO"></POOL>
+			</POOLS>
+			<EVENTS>
+				<EVENT event_id="10" class_id="1084" class_name="CARGA_HISTORIAL_ON_CONFIRM" event_name="ONCOMPLETE" order="0"/>
+			</EVENTS>
+			<STATES>
+			</STATES>
+		</TASK>
+<DESIGN y="262" x="733"/>		<DEPENDENCY id="1735" vertexes="" ></DEPENDENCY>
+	</ELEMENT>
+			<EVENTS>
+				<EVENT event_id="12" class_id="1032" class_name="IMP_SOL_SETEAR_ATTS_ONCREATE" event_name="ONCREATE" order="0"/>
+			</EVENTS>
+</PROCESS_DEFINITION>
+ITION>

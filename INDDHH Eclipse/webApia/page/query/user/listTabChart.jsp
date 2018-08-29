@@ -1,0 +1,1 @@
+<system:query show="ifValue" from="theBean" field="hasCharts" value="true"></div></div><div class="aTab"><div class="tab"><system:label show="text" label="tabCharts" /></div><div class="contentTab"><div id="chartContainer" data-qryChtId="<system:query show="value" from="theBean" field="firstChart.qryChtId" />"></div></div></div></system:query>

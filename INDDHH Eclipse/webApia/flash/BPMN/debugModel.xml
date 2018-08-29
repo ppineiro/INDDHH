@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<debugger>
+	<toolbar>
+		<button id="start" enabled="true"/>
+		<button id="next" enabled="false"/>
+		<button id="stop" enabled="false"/>
+		<button id="resume" enabled="false"/>
+	</toolbar>
+	<attributes>
+		<attribute id="1" name="att1" desc="attribute 1" from="E" typeDesc="String" type="S" current="currente" />
+		<attribute id="2" name="att2" desc="attribute 2" from="P" typeDesc="String" type="S" current="currente" />
+	</attributes>
+	<roles>
+		<role id="1" name="walter" desc="walter" poolName="corcho" poolId="corcho2"  />
+		<role id="1" name="walter" desc="walter"/>
+	</roles>
+	<messages>
+		<message>MESNAJEEEJEJJSADD AJSDASD ASD SAD ASD SAD ASDK SADJ ASJD JASD SADASJDFUSDFIFG SDFHGISDFHGS DFVHISDFV H SCICHVXCV XCV XCV XCV </message>
+	</messages>
+</debugger>

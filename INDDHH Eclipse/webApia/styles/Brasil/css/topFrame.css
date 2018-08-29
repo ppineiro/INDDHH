@@ -1,0 +1,111 @@
+BODY{
+ /*  BORDER-BOTTOM:5px solid #7c7c94;
+  BORDER-TOP:1px solid #727a84;   
+   BORDER-LEFT:1px solid #7c7c94;   
+   BORDER-RIGHT:1px solid #7c7c94;*/   
+   MARGIN-TOP:1px;
+   MARGIN-LEFT:0px;
+   MARGIN-RIGHT:0px;
+   MARGIN-BOTTOM:0px;
+   OVERFLOW: hidden;
+}
+    
+.spanLogged{
+	WIDTH:30px;
+	HEIGHT: 18px;
+/*	filter:shadow(color=#c1c1c1,strength=1);*/
+	color: #00500f;
+	PADDING:2px;
+	FONT-SIZE: 8pt;
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+}
+
+.spanName{
+	HEIGHT: 18px;
+/*	filter:shadow(color=#c1c1c1,strength=1);*/
+	color: #00500f;
+	PADDING:2px;
+	FONT-SIZE: 8pt;
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+}
+
+.spanMenu{
+	HEIGHT: 18px;
+	color: #00500f;
+	PADDING:2px;
+	FONT-SIZE: 8pt;
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	text-transform: uppercase;
+	 font-weight: bold;
+}
+
+.spanLogout{
+	HEIGHT: 18px;
+	color: #00500f;
+	PADDING:2px;
+	FONT-SIZE: 8pt;
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	MARGIN-RIGHT:10px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	 font-weight: bold;
+}
+
+
+.btn{
+	BORDER:1px solid #416D94;
+	color:#1B4D80;
+    HEIGHT: 18px;
+    WIDTH: 18px;
+    MARGIN-LEFT: 1px;
+    margin-right:2px;
+	 margin-bottom:3px;
+    PADDING: 0px;
+    TEXT-ALIGN: center;
+}
+.btn IMG{
+	FILTER:alpha(opacity=40);
+}    
+
+.degree1 {
+    background-color: #00500F;
+    background-image: url("../images/header.jpg");
+    background-repeat: no-repeat;
+    width: 24%;
+	background-position: left center;
+}
+.degree{
+	background-image: url("../images/separator.jpg");
+    background-position: center top;
+    background-repeat: repeat-x;
+    clear: both;
+    height: 2px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+.degree2 {
+	background-color: #00500F;
+    background-image: url("../images/degree2.jpg");
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+SELECT{
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	FONT-SIZE: 8pt;
+}

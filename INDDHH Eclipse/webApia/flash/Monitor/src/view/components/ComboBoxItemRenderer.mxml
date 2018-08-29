@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- http://blog.flexexamples.com/2007/09/25/creating-a-custom-combobox-item-renderer-in-flex/ -->
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml"
+		styleName="plain">
+
+	<mx:Label text="{data.label}"
+			fontWeight="{data.fontWeight}" />
+</mx:VBox>

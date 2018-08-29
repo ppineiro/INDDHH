@@ -1,0 +1,99 @@
+BODY{
+   MARGIN-TOP:1px;
+   MARGIN-LEFT:0px;
+   MARGIN-RIGHT:0px;
+   MARGIN-BOTTOM:0px;
+   OVERFLOW: hidden;
+}
+    
+.spanLogged{
+	WIDTH:30px;
+	HEIGHT: 18px;
+/*	filter:shadow(color=#c1c1c1,strength=1);*/
+	color: white;
+	PADDING:2px;
+	FONT-SIZE: 8pt;
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+}
+
+.spanName{
+	HEIGHT: 18px;
+/*	filter:shadow(color=#c1c1c1,strength=1);*/
+	color: white;
+	PADDING:2px;
+	FONT-SIZE: 8pt;
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+}
+
+.spanMenu{
+	HEIGHT: 18px;
+	color: white;
+	PADDING:2px;
+	FONT-SIZE: 8pt;
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	text-transform: uppercase;
+	 font-weight: bold;
+}
+
+.spanLogout{
+	HEIGHT: 18px;
+	color: white;
+	PADDING:2px;
+	FONT-SIZE: 8pt;
+	LETTER-SPACING:1px;
+	MARGIN-TOP:1px;
+	MARGIN-RIGHT:10px;
+	margin-bottom:1px;
+	CURSOR:default;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	font-weight: bold;
+}
+
+.btn{
+	BORDER:1px solid #416D94;
+	color:#1B4D80;
+    HEIGHT: 18px;
+    WIDTH: 18px;
+    MARGIN-LEFT: 1px;
+    margin-right:2px;
+	 margin-bottom:3px;
+    PADDING: 0px;
+    TEXT-ALIGN: center;
+}
+.btn IMG{
+	FILTER:alpha(opacity=40);
+}    
+
+.degree1 {
+    background-color: #446289;
+     background-image: url("../images/degree2.jpg");
+    background-repeat: repeat;
+    width: 24%;
+	background-position: left bottom;
+}
+.degree{
+}
+
+.degree2 {
+	background-color: #446289;
+    background-image: url("../images/degree2.jpg");
+    background-position: right bottom;
+    background-repeat: repeat;
+}
+
+SELECT{
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	FONT-SIZE: 8pt;
+}

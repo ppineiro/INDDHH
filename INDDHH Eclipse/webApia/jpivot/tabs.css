@@ -1,0 +1,127 @@
+#tabContainer{
+	height:20;
+	font-family:Tahoma, Courier, mono;
+	font-size:10pt;
+
+}
+#tabContainer tr{
+	height:20;
+}
+#tabContainer td.notHere{
+	height:20;
+	padding-left:1px;
+	padding-right:1px;
+	filter:alpha(opacity=50);
+	opacity: 0.5;
+	-moz-opacity:0.5;
+	cursor:pointer;
+	cursor:hand;
+}
+#tabContainer td.here{
+	height:20;
+	padding-left:1px;
+	padding-right:1px;
+	filter:alpha(opacity=100);
+	opacity: 1;
+	-moz-opacity:1;
+	cursor:pointer;
+	cursor:hand;
+}
+#tabContainer a{
+	background: url(../jPivot/images/liac.gif) top left no-repeat;
+	padding: 0.1em 10px 0.5em 10px;
+	font-family:Tahoma, Courier, mono;
+	font-size:8pt;
+	font-weight:bold;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	/*border-right:1px solid #000000;*/
+	vertical-align:sub;
+	color:#000000;
+	border-right:1px solid #1B4D80;
+}
+
+#tabContainer a:hover{
+	background: url(../jPivot/images/liahoverc.gif) top left no-repeat;
+	padding: 0.1em 10px 0.5em 10px;
+	font-family:Tahoma, Courier, mono;
+	font-size:8pt;
+	font-weight:bold;
+	font-family:Tahoma, Courier, mono;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+	color:#000000;
+}
+
+#tabContainer td.here a{
+	background: url(../jPivot/images/liaselectedc.gif) top left no-repeat;
+	padding: 0.1em 10px 0.5em 10px;
+	font-family:Tahoma, Courier, mono;
+	font-size:8pt;
+	font-weight:bold;
+	color:#000000;
+	font-family:Tahoma, Courier, mono;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+}
+
+#tabBottom{
+	/*background-image: url(../jPivot/images/tabBottom.JPG);
+	background-repeat:repeat-x;*/
+	height:3px;
+	font-size:1px;
+	background-color:#92C0E2;
+	border:1px solid #1B4D80;
+	margin-left:3px;
+	padding-left:3px;
+	color:#000000;
+	position:relative;
+}
+
+#tabContainer span{
+	background: url(../jPivot/images/liac.gif) top left no-repeat;
+	padding: 0.1em 10px 0.5em 10px;
+	font-family:Tahoma, Courier, mono;
+	font-size:8pt;
+	font-weight:bold;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	/*border-right:1px solid #000000;*/
+	vertical-align:sub;
+	color:#000000;
+	border-right:1px solid #1B4D80;
+}
+
+#tabContainer span.hover{
+	background: url(../jPivot/images/liahoverc.gif) top left no-repeat;
+	padding: 0.1em 10px 0.5em 10px;
+	font-family:Tahoma, Courier, mono;
+	font-size:8pt;
+	font-weight:bold;
+	font-family:Tahoma, Courier, mono;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+	color:#000000;
+}
+
+#tabContainer td.here span{
+	background: url(../jPivot/images/liaselectedc.gif) top left no-repeat;
+	padding: 0.1em 10px 0.5em 10px;
+	font-family:Tahoma, Courier, mono;
+	font-size:8pt;
+	font-weight:bold;
+	color:#000000;
+	font-family:Tahoma, Courier, mono;
+	cursor:pointer;
+	cursor:default;
+	text-decoration:none;
+	vertical-align:sub;
+}

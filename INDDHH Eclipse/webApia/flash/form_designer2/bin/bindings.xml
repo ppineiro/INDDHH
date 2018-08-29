@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<bindings>
+	<values>
+		<value>
+			<level name="id" value="1" />
+			<level name="inout" value="in" />
+			<level name="type" value="S" />
+			<level name="param" value="Message" />
+			<level name="desc" value="Descripción del Message" />
+		</value>
+		<value>
+			<level name="id" value="2" />
+			<level name="inout" value="In" />
+			<level name="type" value="S" />
+			<level name="param" value="ENTITY_TO_ADMIN" />
+			<level name="desc" value="Descripción de ENTITY_TO_ADMIN" />
+		</value>
+		<value>
+			<level name="id" value="3" />
+			<level name="inout" value="In" />
+			<level name="type" value="S" />
+			<level name="param" value="FILTER_BY_FATHER" />
+			<level name="desc" value="Descripción de FILTER_BY_FATHER" />
+		</value>
+		<value>
+			<level name="id" value="4" />
+			<level name="inout" value="In" />
+			<level name="type" value="S" />
+			<level name="param" value="Otro parametros" />
+			<level name="desc" value="Descripción de otro parametro" />
+		</value>
+		<value>
+			<level name="id" value="5" />
+			<level name="inout" value="In" />
+			<level name="type" value="S" />
+			<level name="param" value="Parametro 5" />
+			<level name="desc" value="Descripción de parametro 5" />
+		</value>
+		<value>
+			<level name="id" value="6" />
+			<level name="inout" value="In" />
+			<level name="type" value="S" />
+			<level name="param" value="parametro 6" />
+			<level name="desc" value="Descripción de parametro 6" />
+		</value>
+		<value>
+			<level name="id" value="7" />
+			<level name="inout" value="In" />
+			<level name="type" value="S" />
+			<level name="param" value="parametro 7" />
+			<level name="desc" value="Descripción de parametro 7" />
+		</value>
+		<value>
+			<level name="id" value="8" />
+			<level name="inout" value="In" />
+			<level name="type" value="S" />
+			<level name="param" value="parametro 8" />
+			<level name="desc" value="Descripción de parametro 8" />
+		</value>
+		<value>
+			<level name="id" value="9" />
+			<level name="inout" value="In" />
+			<level name="type" value="S" />
+			<level name="param" value="parametro 9" />
+			<level name="desc" value="Descripción de parametro 9" />
+		</value>
+		<value>
+			<level name="id" value="10" />
+			<level name="inout" value="In" />
+			<level name="type" value="S" />
+			<level name="param" value="parametro 10" />
+			<level name="desc" value="Descripción de parametro 10" />
+		</value>
+	</values>
+</bindings>

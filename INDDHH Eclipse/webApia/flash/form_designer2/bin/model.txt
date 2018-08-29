@@ -1,0 +1,39 @@
+<FORM_LAYOUT>
+  <FORM_FIELD fieldId="0" fieldLabel="" fieldType="14" attId="0" attName="null" x="0" y="0">
+    <FORM_FIELD_CHILD fieldId="1" fieldLabel="Descripción del caso de test" fieldType="1" attId="2371" attName="CDT_DESCRIPCION" x="4" y="0">
+      <PROPERTY prpId="2" prpLabel="prpReadOnly" value="T" type="S"/>
+      <PROPERTY prpId="24" prpLabel="prpColWidth" value="770" type="S"/>
+    </FORM_FIELD_CHILD>
+    <FORM_FIELD_CHILD fieldId="4" fieldLabel="Id caso de test" fieldType="1" attId="2479" attName="CDT_ID_CASO_TEST" x="3" y="0">
+      <PROPERTY prpId="2" prpLabel="prpReadOnly" value="T" type="S"/>
+      <PROPERTY prpId="10" prpLabel="prpModal" value="MODAL_CASOS_DE_TEST" type="S"/>
+      <PROPERTY prpId="24" prpLabel="prpColWidth" value="100" type="S"/>
+      <EVENTS>
+        <EVENT event_id="37" event_name="ONMODALRETURN" order="0" class_id="1049" class_name="ENT_CASO_DE_TEST_ONMODALRETURN" bnd_id="6372">
+          <BINDING param_id="1201" param_name="form" param_type="S" att_type="V">CAM_TEST_CASO_DE_TEST</BINDING>
+          <BINDING param_id="1202" param_name="param1" param_type="S" att_type="V">CDT_DESCRIPCION</BINDING>
+          <BINDING param_id="1203" param_name="param2" param_type="S" att_type="null"/>
+          <BINDING param_id="1204" param_name="param3" param_type="S" att_type="null"/>
+          <BINDING param_id="1205" param_name="param4" param_type="S" att_type="null"/>
+          <BINDING param_id="1206" param_name="param5" param_type="S" att_type="null"/>
+        </EVENT>
+      </EVENTS>
+    </FORM_FIELD_CHILD>
+    <FORM_FIELD_CHILD fieldId="6" fieldLabel="No aprobado" fieldType="3" attId="2811" attName="CAM_TEST_NO_APROBADO" x="5" y="0">
+      <PROPERTY prpId="24" prpLabel="prpColWidth" value="50" type="S"/>
+    </FORM_FIELD_CHILD>
+    <FORM_FIELD_CHILD fieldId="7" fieldLabel="" fieldType="5" attId="0" attName="null" x="2" y="0">
+      <PROPERTY prpId="6" prpLabel="prpValue" value="Ver detalles" type="S"/>
+      <EVENTS>
+        <EVENT event_id="4" event_name="ONCLICK" order="0" class_id="1296" class_name="CAM_PROD_VER_DETALLES_CDT" bnd_id="null"/>
+      </EVENTS>
+    </FORM_FIELD_CHILD>
+    <FORM_FIELD_CHILD fieldId="8" fieldLabel="Casos de test" fieldType="3" attId="2558" attName="CDT_CT_SELECT" x="1" y="0"/>
+    <PROPERTY prpId="8" prpLabel="prpColSpan" value="4" type="N"/>
+    <PROPERTY prpId="32" prpLabel="prpHideChecks" value="T" type="S"/>
+  </FORM_FIELD>
+  <EVENTS>
+    <EVENT event_id="2" event_name="ONLOAD" order="0" class_id="1207" class_name="CAM_TEST_CARGAR_CASOS_DE_TEST" bnd_id="null"/>
+    <EVENT event_id="19" event_name="ONRELOAD" order="1" class_id="1207" class_name="CAM_TEST_CARGAR_CASOS_DE_TEST" bnd_id="null"/>
+  </EVENTS>
+</FORM_LAYOUT>

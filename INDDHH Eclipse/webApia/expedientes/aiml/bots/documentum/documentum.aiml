@@ -1,0 +1,33 @@
+<?xml version = "1.0" encoding = "utf-8" standalone = "yes"?>
+<aiml>
+
+	<category>
+		<pattern>*</pattern>
+		<template>NO MATCH</template>
+	</category>
+
+	<category>
+		<pattern>APIADOCUMENTUM</pattern>
+    	<template>
+    		<random>
+    			<li>ApiaDocumentum es una aplicación de expedientes electrónicos en Uruguay</li>
+    			<li>ApiaDocumentum es la innovación personificada digitalmente</li>
+    			<li>ApiaDocumentum se fue a la 2.0</li>
+    		</random>
+    	</template>
+	</category>
+
+	<category>
+		<pattern>* APIADOCUMENTUM</pattern>
+		<template>
+			<srai>APIADOCUMENTUM</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>APIADOCUMENTUM *</pattern>
+		<template>
+			<srai>APIADOCUMENTUM</srai>
+		</template>
+	</category>
+
+</aiml>

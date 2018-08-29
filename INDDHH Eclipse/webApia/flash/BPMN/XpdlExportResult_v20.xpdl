@@ -1,0 +1,1541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package Id="1" Name="EmailVotingProcess" xmlns="http://www.statum.biz/2009/APIA.XPDL2.1" xmlns:xpd="http://www.wfmc.org/2008/XPDL2.1">
+  <xpd:PackageHeader>
+    <xpd:XPDLVersion>2.1</xpd:XPDLVersion>
+    <xpd:Vendor>STATUM</xpd:Vendor>
+    <xpd:Created>Wed May 27 14:14:43 GMT 2009</xpd:Created>
+    <xpd:VendorExtensions>
+      <xpd:VendorExtension ToolId="APIA" schemaLocation="http://www.statum.biz/2009/schemas/apia.xsd"/>
+    </xpd:VendorExtensions>
+  </xpd:PackageHeader>
+  <xpd:Pools>
+    <xpd:Pool Id="2" Name="EmailVotingProcess" Orientation="HORIZONTAL" Process="1" BoundaryVisible="true" MainPool="true">
+      <xpd:Lanes>
+        <xpd:Lane Id="0" Name="Lane-0">
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="1080.0" Width="1440.0">
+              <xpd:Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+        </xpd:Lane>
+      </xpd:Lanes>
+      <xpd:NodeGraphicsInfos>
+        <xpd:NodeGraphicsInfo IsVisible="true" Height="1080.0" Width="1440.0">
+          <xpd:Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+        </xpd:NodeGraphicsInfo>
+      </xpd:NodeGraphicsInfos>
+    </xpd:Pool>
+    <xpd:Pool Id="159" Name="Discussion Cycle" Orientation="HORIZONTAL" Process="4" BoundaryVisible="true" MainPool="false">
+      <xpd:Lanes>
+        <xpd:Lane Id="6" Name="Lane-6">
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="396.19998931884766" Width="1201.0">
+              <xpd:Coordinates XCoordinate="47.4000129699707" YCoordinate="24.000022888183594"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+        </xpd:Lane>
+      </xpd:Lanes>
+      <xpd:NodeGraphicsInfos>
+        <xpd:NodeGraphicsInfo IsVisible="true" Height="402.19998931884766" Width="1231.0">
+          <xpd:Coordinates XCoordinate="20.400012969970703" YCoordinate="21.000022888183594"/>
+        </xpd:NodeGraphicsInfo>
+      </xpd:NodeGraphicsInfos>
+    </xpd:Pool>
+    <xpd:Pool Id="281" Name="Collect Votes" Orientation="HORIZONTAL" Process="5" BoundaryVisible="true" MainPool="false">
+      <xpd:Lanes>
+        <xpd:Lane Id="8" Name="Lane-8">
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="8" Height="523.0" Width="1155.0">
+              <xpd:Coordinates XCoordinate="47.0" YCoordinate="439.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+        </xpd:Lane>
+      </xpd:Lanes>
+      <xpd:NodeGraphicsInfos>
+        <xpd:NodeGraphicsInfo IsVisible="true" Height="529.0" Width="1185.0">
+          <xpd:Coordinates XCoordinate="20.0" YCoordinate="436.0"/>
+        </xpd:NodeGraphicsInfo>
+      </xpd:NodeGraphicsInfos>
+    </xpd:Pool>
+  </xpd:Pools>
+  <xpd:Associations>
+    <xpd:Association Id="321" Source="291" Target="294" AssociationDirection="None">
+      <xpd:Object Id="0"/>
+      <xpd:ConnectorGraphicsInfos>
+        <xpd:ConnectorGraphicsInfo IsVisible="true">
+          <xpd:Coordinates XCoordinate="201.18382263183594" YCoordinate="862.5"/>
+          <xpd:Coordinates XCoordinate="201.0" YCoordinate="905.0"/>
+          <xpd:Coordinates XCoordinate="237.7903289794922" YCoordinate="906.1521606445312"/>
+        </xpd:ConnectorGraphicsInfo>
+      </xpd:ConnectorGraphicsInfos>
+    </xpd:Association>
+    <xpd:Association Id="322" Source="294" Target="292" AssociationDirection="From">
+      <xpd:Object Id="0"/>
+      <xpd:ConnectorGraphicsInfos>
+        <xpd:ConnectorGraphicsInfo IsVisible="true">
+          <xpd:Coordinates XCoordinate="276.5" YCoordinate="907.4835815429688"/>
+          <xpd:Coordinates XCoordinate="296.0" YCoordinate="908.0"/>
+          <xpd:Coordinates XCoordinate="295.0" YCoordinate="863.0"/>
+        </xpd:ConnectorGraphicsInfo>
+      </xpd:ConnectorGraphicsInfos>
+    </xpd:Association>
+    <xpd:Association Id="323" Source="292" Target="303" AssociationDirection="From">
+      <xpd:Object Id="0"/>
+      <xpd:ConnectorGraphicsInfos>
+        <xpd:ConnectorGraphicsInfo IsVisible="true">
+          <xpd:Coordinates XCoordinate="326.0" YCoordinate="862.0"/>
+          <xpd:Coordinates XCoordinate="330.0" YCoordinate="910.0"/>
+          <xpd:Coordinates XCoordinate="380.7903137207031" YCoordinate="909.0557861328125"/>
+        </xpd:ConnectorGraphicsInfo>
+      </xpd:ConnectorGraphicsInfos>
+    </xpd:Association>
+    <xpd:Association Id="320" Source="304" Target="296" AssociationDirection="From">
+      <xpd:Object Id="0"/>
+      <xpd:ConnectorGraphicsInfos>
+        <xpd:ConnectorGraphicsInfo IsVisible="true">
+          <xpd:Coordinates XCoordinate="194.01614379882812" YCoordinate="577.240478515625"/>
+          <xpd:Coordinates XCoordinate="219.0" YCoordinate="577.0"/>
+          <xpd:Coordinates XCoordinate="218.0" YCoordinate="526.0"/>
+        </xpd:ConnectorGraphicsInfo>
+      </xpd:ConnectorGraphicsInfos>
+    </xpd:Association>
+    <xpd:Association Id="216" Source="214" Target="159" AssociationDirection="None">
+      <xpd:Object Id="0"/>
+      <xpd:ConnectorGraphicsInfos>
+        <xpd:ConnectorGraphicsInfo IsVisible="true">
+          <xpd:Coordinates XCoordinate="797.6000366210938" YCoordinate="382.0000305175781"/>
+          <xpd:Coordinates XCoordinate="666.4000244140625" YCoordinate="420.0000305175781"/>
+        </xpd:ConnectorGraphicsInfo>
+      </xpd:ConnectorGraphicsInfos>
+    </xpd:Association>
+    <xpd:Association Id="205" Source="204" Target="171" AssociationDirection="From">
+      <xpd:Object Id="0"/>
+      <xpd:ConnectorGraphicsInfos>
+        <xpd:ConnectorGraphicsInfo IsVisible="true">
+          <xpd:Coordinates XCoordinate="128.62904357910156" YCoordinate="86.94915771484375"/>
+          <xpd:Coordinates XCoordinate="204.00001525878906" YCoordinate="88.00001525878906"/>
+          <xpd:Coordinates XCoordinate="215.45509338378906" YCoordinate="181.50003051757812"/>
+        </xpd:ConnectorGraphicsInfo>
+      </xpd:ConnectorGraphicsInfos>
+    </xpd:Association>
+    <xpd:Association Id="213" Source="212" Target="173" AssociationDirection="From">
+      <xpd:Object Id="0"/>
+      <xpd:ConnectorGraphicsInfos>
+        <xpd:ConnectorGraphicsInfo IsVisible="true">
+          <xpd:Coordinates XCoordinate="256.08709716796875" YCoordinate="345.3000183105469"/>
+          <xpd:Coordinates XCoordinate="335.20001220703125" YCoordinate="344.8000183105469"/>
+          <xpd:Coordinates XCoordinate="344.9074401855469" YCoordinate="316.5000305175781"/>
+        </xpd:ConnectorGraphicsInfo>
+      </xpd:ConnectorGraphicsInfos>
+    </xpd:Association>
+    <xpd:Association Id="218" Source="217" Target="180" AssociationDirection="None">
+      <xpd:Object Id="0"/>
+      <xpd:ConnectorGraphicsInfos>
+        <xpd:ConnectorGraphicsInfo IsVisible="true">
+          <xpd:Coordinates XCoordinate="962.4000244140625" YCoordinate="99.19999694824219"/>
+          <xpd:Coordinates XCoordinate="948.236328125" YCoordinate="175.50003051757812"/>
+        </xpd:ConnectorGraphicsInfo>
+      </xpd:ConnectorGraphicsInfos>
+    </xpd:Association>
+    <xpd:Association Id="210" Source="207" Target="171" AssociationDirection="None">
+      <xpd:Object Id="0"/>
+      <xpd:ConnectorGraphicsInfos>
+        <xpd:ConnectorGraphicsInfo IsVisible="true">
+          <xpd:Coordinates XCoordinate="212.40000915527344" YCoordinate="277.0000305175781"/>
+          <xpd:Coordinates XCoordinate="216.46339416503906" YCoordinate="231.50003051757812"/>
+        </xpd:ConnectorGraphicsInfo>
+      </xpd:ConnectorGraphicsInfos>
+    </xpd:Association>
+  </xpd:Associations>
+  <Artifacts>
+    <Artifact Id="204" ArtifactType="DataObject" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z" xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1">
+      <xpd:DataObject Id="204" Name="Issue Voting List [up to 5 issues]" RequiredForStart="false" ProducedAtCompletion="false"/>
+      <xpd:NodeGraphicsInfos>
+        <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="69.4000015258789" Width="53.72903343939012">
+          <xpd:Coordinates XCoordinate="74.40000915527344" YCoordinate="51.20001983642578"/>
+        </xpd:NodeGraphicsInfo>
+      </xpd:NodeGraphicsInfos>
+    </Artifact>
+    <Artifact Id="207" ArtifactType="Annotation" TextAnnotation="Allow 1 week for the discussion of the issues through e-mail or calls" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z" xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1">
+      <xpd:NodeGraphicsInfos>
+        <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="44.0" Width="148.0">
+          <xpd:Coordinates XCoordinate="64.4000129699707" YCoordinate="255.0000228881836"/>
+        </xpd:NodeGraphicsInfo>
+      </xpd:NodeGraphicsInfos>
+    </Artifact>
+    <Artifact Id="212" ArtifactType="DataObject" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z" xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1">
+      <xpd:DataObject Id="212" Name="Calendar" RequiredForStart="false" ProducedAtCompletion="false"/>
+      <xpd:NodeGraphicsInfos>
+        <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="65.5999755859375" Width="50.78707787298387">
+          <xpd:Coordinates XCoordinate="204.80001831054688" YCoordinate="312.0000305175781"/>
+        </xpd:NodeGraphicsInfo>
+      </xpd:NodeGraphicsInfos>
+    </Artifact>
+    <Artifact Id="214" ArtifactType="Annotation" TextAnnotation="The Sub-Process will repeat of the DiscussionOver variable is False" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z" xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1">
+      <xpd:NodeGraphicsInfos>
+        <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="47.20001220703125" Width="138.39996337890625">
+          <xpd:Coordinates XCoordinate="797.6000366210938" YCoordinate="358.4000244140625"/>
+        </xpd:NodeGraphicsInfo>
+      </xpd:NodeGraphicsInfos>
+    </Artifact>
+    <Artifact Id="217" ArtifactType="Annotation" TextAnnotation="This Task returns the value of the DiscussionOver to True or False" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z" xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1">
+      <xpd:NodeGraphicsInfos>
+        <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="56.0" Width="95.199951171875">
+          <xpd:Coordinates XCoordinate="962.4000244140625" YCoordinate="71.19999694824219"/>
+        </xpd:NodeGraphicsInfo>
+      </xpd:NodeGraphicsInfos>
+    </Artifact>
+    <Artifact Id="294" ArtifactType="DataObject" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z" xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1">
+      <xpd:DataObject Id="294" Name="Vote" RequiredForStart="false" ProducedAtCompletion="false"/>
+      <xpd:NodeGraphicsInfos>
+        <xpd:NodeGraphicsInfo IsVisible="true" LaneId="8" Height="50.0" Width="38.70967741935484">
+          <xpd:Coordinates XCoordinate="237.29032258064518" YCoordinate="881.0"/>
+        </xpd:NodeGraphicsInfo>
+      </xpd:NodeGraphicsInfos>
+    </Artifact>
+    <Artifact Id="303" ArtifactType="DataObject" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z" xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1">
+      <xpd:DataObject Id="303" Name="Vote Tally" RequiredForStart="false" ProducedAtCompletion="false"/>
+      <xpd:NodeGraphicsInfos>
+        <xpd:NodeGraphicsInfo IsVisible="true" LaneId="8" Height="50.0" Width="38.70967741935484">
+          <xpd:Coordinates XCoordinate="380.2903225806452" YCoordinate="883.0"/>
+        </xpd:NodeGraphicsInfo>
+      </xpd:NodeGraphicsInfos>
+    </Artifact>
+    <Artifact Id="304" ArtifactType="DataObject" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z" xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1">
+      <xpd:DataObject Id="304" Name="Calendar" RequiredForStart="false" ProducedAtCompletion="false"/>
+      <xpd:NodeGraphicsInfos>
+        <xpd:NodeGraphicsInfo IsVisible="true" LaneId="8" Height="61.0" Width="47.225806451612904">
+          <xpd:Coordinates XCoordinate="146.29032258064518" YCoordinate="546.0"/>
+        </xpd:NodeGraphicsInfo>
+      </xpd:NodeGraphicsInfos>
+    </Artifact>
+  </Artifacts>
+  <WorkflowProcesses>
+    <WorkflowProcess Id="1" Name="EmailVotingProcess" apia:ProId="1" apia:ProVerId="1" apia:ProName="EmailVotingProcess" apia:ProType="A" apia:ProAction="C" apia:Cycle="-1" apia:ProInstIdeNum="-1" apia:DateBindsOk="true" apia:HasInstance="false" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z" xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1">
+      <xpd:ProcessHeader/>
+      <xpd:RedefinableHeader>
+        <xpd:Author>admin</xpd:Author>
+        <xpd:Version>1</xpd:Version>
+        <xpd:Responsibles>
+          <xpd:Responsible>admin</xpd:Responsible>
+        </xpd:Responsibles>
+      </xpd:RedefinableHeader>
+      <Participants>
+        <Participant Id="1011" Name="pepe" apia:PartGenerated="false" apia:PartAllEnvs="false" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:ParticipantType Type="ROLE"/>
+        </Participant>
+        <Participant Id="1" Name="admin" apia:PartGenerated="true" apia:PartAllEnvs="true" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:ParticipantType Type="ROLE"/>
+        </Participant>
+      </Participants>
+      <DataFields/>
+      <Activities>
+        <Activity Id="6" Name="Start on Friday" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="6" apia:ProId="1" apia:ProVerId="1" apia:ElementType="E" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Event>
+            <xpd:StartEvent Trigger="Timer" Implementation="WebService"/>
+          </xpd:Event>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="50.0" Width="50.0">
+              <xpd:Coordinates XCoordinate="25.0" YCoordinate="25.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="9" Name="Receive Issues List" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="9" apia:ProId="1" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task apia:TskName="Receive Issues List">
+              <TaskUser Implementation="Other">
+			    <Performers>
+				  <Performer apia:ProEleId="9" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+              </TaskUser>
+              <FormsRef>
+                <Step>
+                  <FormRef ProEleId="9" BusEntId="2162" FrmId="1153" FrmName="GET_ENTITY" FrmType="E" ProEleFrmStepId="1" ProEleFrmReadOnly="0" ProEleFrmMultiply="0" ProEleFrmEvalCond="1 = 1" ProId="1" ProVerId="1" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z">1 = 1</FormRef>
+                </Step>
+              </FormsRef>
+              <ApiaTskStates>
+                <ApiaTskState ProEleId="9" BusEntId="2162" EntStaId="1061" StaName="ESTADO_PRUEBA" EvtId="10" EvtName="ONCOMPLETE"/>
+              </ApiaTskStates>
+              <ApiaTskEvents>
+                <ApiaTskEvent ProEleId="9" EvtId="30" EvtName="ONWORK" BusClaId="1041" BusClaName="HOLA_APIA" BusClaParBndId="1601" ProEleEvtBusClaExecOrder="0">
+                  <BusClaParBindings>
+                    <BusClaParBinding BusClaParId="1001" BusClaParName="par" BusClaParType="S" BusClaParBndId="1601">11</BusClaParBinding>
+                  </BusClaParBindings>
+                </ApiaTskEvent>
+              </ApiaTskEvents>
+              <TskDocumentation/>
+              <TskNotifications/>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="50.0" Width="75.0">
+              <xpd:Coordinates XCoordinate="125.0" YCoordinate="25.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="10" Name="Review Issues List" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="10" apia:ProId="1" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="Review Issues List">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="10" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>  
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="50.0" Width="75.0">
+              <xpd:Coordinates XCoordinate="125.0" YCoordinate="100.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="12" Name="Any Issues Ready?" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="12" apia:ProId="1" apia:ProVerId="1" apia:ElementType="G" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Route GatewayType="Exclusive" MarkerVisible="false"/>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="75.0" Width="75.0">
+              <xpd:Coordinates XCoordinate="125.0" YCoordinate="187.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="18" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="18" apia:ProId="1" apia:ProVerId="1" apia:ElementType="E" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Event>
+            <xpd:EndEvent Result="None" Implementation="WebService"/>
+          </xpd:Event>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="50.0" Width="50.0">
+              <xpd:Coordinates XCoordinate="25.0" YCoordinate="200.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="20" Name="Discussion Cycle" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="20" apia:ProId="1" apia:ProVerId="1" apia:ElementType="S" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <SubFlow Id="4" Execution="SYNCHR" apia:ApiaExecution="SYNCHR"/>
+          </Implementation>
+          <xpd:Loop LoopType="Standard">
+            <xpd:LoopStandard LoopCondition="" TestTime="Before"/>
+          </xpd:Loop>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="50.0" Width="75.0">
+              <xpd:Coordinates XCoordinate="250.0" YCoordinate="200.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="23" Name="Announce Issues" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="23" apia:ProId="1" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="Announce Issues">
+              <TaskUser Implementation="Other">
+			    <Performers>
+				  <Performer apia:ProEleId="23" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>  
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="50.0" Width="75.0">
+              <xpd:Coordinates XCoordinate="375.0" YCoordinate="200.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="24" Name="Collect Votes" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="24" apia:ProId="1" apia:ProVerId="1" apia:ElementType="S" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <SubFlow Id="5" Execution="SYNCHR" apia:ApiaExecution="SYNCHR"/>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="50.0" Width="99.0">
+              <xpd:Coordinates XCoordinate="500.0" YCoordinate="199.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="25" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="25" apia:ProId="1" apia:ProVerId="1" apia:ElementType="E" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Event>
+            <xpd:EndEvent Result="None" Implementation="WebService"/>
+          </xpd:Event>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="50.0" Width="50.0">
+              <xpd:Coordinates XCoordinate="625.0" YCoordinate="200.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="26" Name="Prepare Results" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="26" apia:ProId="1" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="Prepare Results">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="26" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="50.0" Width="75.0">
+              <xpd:Coordinates XCoordinate="620.0" YCoordinate="275.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="27" Name="Post Results on Web Site" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="27" apia:ProId="1" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="Post Results on Web Site">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="27" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="50.0" Width="75.0">
+              <xpd:Coordinates XCoordinate="575.0" YCoordinate="375.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="28" Name="E-Mail Results of Vote" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="28" apia:ProId="1" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="E-Mail Results of Vote">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="28" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="50.0" Width="75.0">
+              <xpd:Coordinates XCoordinate="675.0" YCoordinate="375.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="35" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="35" apia:ProId="1" apia:ProVerId="1" apia:ElementType="E" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Event>
+            <xpd:IntermediateEvent Trigger="Timer" Target="24" Implementation="WebService"/>
+          </xpd:Event>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="30.0" Width="30.0">
+              <xpd:Coordinates XCoordinate="515.0" YCoordinate="234.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="41" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="41" apia:ProId="1" apia:ProVerId="1" apia:ElementType="G" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Route GatewayType="Parallel" MarkerVisible="false" Instantiate="false"/>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="50.0" Width="50.0">
+              <xpd:Coordinates XCoordinate="637.0" YCoordinate="446.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="82" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="82" apia:ProId="1" apia:ProVerId="1" apia:ElementType="G" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Route GatewayType="Parallel" MarkerVisible="true" Instantiate="false"/>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" Height="50.0" Width="50.0" LaneId="0">
+              <xpd:Coordinates XCoordinate="637.0" YCoordinate="330.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="45" Name="Did Enough Members Vote?" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="45" apia:ProId="1" apia:ProVerId="1" apia:ElementType="G" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Route GatewayType="Exclusive" MarkerVisible="false"/>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="61.0" Width="61.0">
+              <xpd:Coordinates XCoordinate="711.0" YCoordinate="474.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="47" Name="Issues with Majority?" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="47" apia:ProId="1" apia:ProVerId="1" apia:ElementType="G" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Route GatewayType="Exclusive" MarkerVisible="false"/>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="61.0" Width="61.0">
+              <xpd:Coordinates XCoordinate="801.0" YCoordinate="414.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="49" Name="Have the members been warned?" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="49" apia:ProId="1" apia:ProVerId="1" apia:ElementType="G" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Route GatewayType="Exclusive" MarkerVisible="false"/>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="61.0" Width="61.0">
+              <xpd:Coordinates XCoordinate="711.0" YCoordinate="614.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="51" Name="2nd time?" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="51" apia:ProId="1" apia:ProVerId="1" apia:ElementType="G" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Route GatewayType="Exclusive" MarkerVisible="false"/>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="61.0" Width="61.0">
+              <xpd:Coordinates XCoordinate="801.0" YCoordinate="304.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="53" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="53" apia:ProId="1" apia:ProVerId="1" apia:ElementType="G" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Route GatewayType="Parallel" MarkerVisible="false" Instantiate="false"/>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="50.0" Width="50.0">
+              <xpd:Coordinates XCoordinate="845.0" YCoordinate="207.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="54" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="54" apia:ProId="1" apia:ProVerId="1" apia:ElementType="G" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Route GatewayType="Parallel" MarkerVisible="false" Instantiate="false"/>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="50.0" Width="50.0">
+              <xpd:Coordinates XCoordinate="1010.0" YCoordinate="203.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="55" Name="Reduce to two solutions" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="55" apia:ProId="1" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="Reduce to two solutions">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="55" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="50.0" Width="75.0">
+              <xpd:Coordinates XCoordinate="912.0" YCoordinate="145.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="56" Name="E-mail voters that have to change votes" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="56" apia:ProId="1" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="E-mail voters that have to change votes">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="56" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="50.0" Width="75.0">
+              <xpd:Coordinates XCoordinate="916.0" YCoordinate="253.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="67" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="67" apia:ProId="1" apia:ProVerId="1" apia:ElementType="E" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Event>
+            <xpd:EndEvent Result="None" Implementation="WebService"/>
+          </xpd:Event>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="50.0" Width="50.0">
+              <xpd:Coordinates XCoordinate="989.0" YCoordinate="419.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="71" Name="Reduce number of voting members and Recalculate vote" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="71" apia:ProId="1" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="Reduce number of voting members and Recalculate vote">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="71" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="50.0" Width="97.0">
+              <xpd:Coordinates XCoordinate="809.0" YCoordinate="618.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="79" Name="Reannounce Vote with warning to voting members" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="79" apia:ProId="1" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="Reannounce Vote with warning to voting members">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="79" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="0" Height="50.0" Width="98.0">
+              <xpd:Coordinates XCoordinate="810.0" YCoordinate="737.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+      </Activities>
+      <Transitions>
+        <Transition Id="14" From="9" To="10" Quantity="1">
+          <xpd:Condition>
+            <xpd:Expression>1 = 1</xpd:Expression>
+          </xpd:Condition>
+          <xpd:Assignments>
+            <xpd:Assignment>
+              <xpd:Target>varVal</xpd:Target>
+              <xpd:Expression>true</xpd:Expression>
+            </xpd:Assignment>
+          </xpd:Assignments>
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="163.42384338378906" YCoordinate="75.5"/>
+              <xpd:Coordinates XCoordinate="163.35617065429688" YCoordinate="100.5"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="42" From="27" To="41" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="612.0" YCoordinate="445.0"/>
+              <xpd:Coordinates XCoordinate="612.0" YCoordinate="480.0"/>
+              <xpd:Coordinates XCoordinate="637.0" YCoordinate="480.0"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="65" From="54" To="23" Quantity="1" apia:LoopBack="true" Name="yes">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="1060.0689697265625" YCoordinate="228.9310302734375"/>
+              <xpd:Coordinates XCoordinate="1092.0" YCoordinate="229.0"/>
+              <xpd:Coordinates XCoordinate="1091.0" YCoordinate="120.0"/>
+              <xpd:Coordinates XCoordinate="358.0" YCoordinate="125.0"/>
+              <xpd:Coordinates XCoordinate="359.0" YCoordinate="208.0"/>
+              <xpd:Coordinates XCoordinate="375.0" YCoordinate="209.0"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="61" From="53" To="55" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="871.671875" YCoordinate="208.671875"/>
+              <xpd:Coordinates XCoordinate="873.0" YCoordinate="171.0"/>
+              <xpd:Coordinates XCoordinate="912.5" YCoordinate="170.9901885986328"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="63" From="55" To="54" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="987.5" YCoordinate="170.0614013671875"/>
+              <xpd:Coordinates XCoordinate="1035.0" YCoordinate="169.0"/>
+              <xpd:Coordinates XCoordinate="1035.5" YCoordinate="203.5"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="62" From="53" To="56" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="869.95654296875" YCoordinate="256.9565124511719"/>
+              <xpd:Coordinates XCoordinate="869.0" YCoordinate="277.0"/>
+              <xpd:Coordinates XCoordinate="916.5" YCoordinate="278.05621337890625"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="64" From="56" To="54" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="991.5" YCoordinate="278.9601135253906"/>
+              <xpd:Coordinates XCoordinate="1035.0" YCoordinate="279.0"/>
+              <xpd:Coordinates XCoordinate="1035.5" YCoordinate="253.5"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="83" From="26" To="82" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="658.0" YCoordinate="325.0"/>
+              <xpd:Coordinates XCoordinate="658.0" YCoordinate="330.0"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="32" From="82" To="27" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="648.0" YCoordinate="380.0"/>
+              <xpd:Coordinates XCoordinate="647.0" YCoordinate="385.0"/>
+              <xpd:Coordinates XCoordinate="612.0" YCoordinate="385.0"/>
+              <xpd:Coordinates XCoordinate="612.0" YCoordinate="395.0"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="33" From="82" To="28" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="668.0" YCoordinate="380.0"/>
+              <xpd:Coordinates XCoordinate="669.0" YCoordinate="385.0"/>
+              <xpd:Coordinates XCoordinate="710.0" YCoordinate="385.0"/>
+              <xpd:Coordinates XCoordinate="710.0" YCoordinate="395.0"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="43" From="28" To="41" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="712.0" YCoordinate="445.0"/>
+              <xpd:Coordinates XCoordinate="712.0" YCoordinate="480.0"/>
+              <xpd:Coordinates XCoordinate="687.0" YCoordinate="480.0"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="29" From="20" To="23" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="325.5" YCoordinate="225.87350463867188"/>
+              <xpd:Coordinates XCoordinate="375.5" YCoordinate="225.8765106201172"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="31" From="24" To="25" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="599.5" YCoordinate="225.1372833251953"/>
+              <xpd:Coordinates XCoordinate="625.0001220703125" YCoordinate="225.06796264648438"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="30" From="23" To="24" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="450.5" YCoordinate="225.6228485107422"/>
+              <xpd:Coordinates XCoordinate="500.5" YCoordinate="225.28829956054688"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="81" From="79" To="24" Quantity="1" apia:LoopBack="true">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="908.5" YCoordinate="761.8552856445312"/>
+              <xpd:Coordinates XCoordinate="935.0" YCoordinate="761.0"/>
+              <xpd:Coordinates XCoordinate="933.0" YCoordinate="806.0"/>
+              <xpd:Coordinates XCoordinate="488.0" YCoordinate="807.0"/>
+              <xpd:Coordinates XCoordinate="485.0" YCoordinate="239.0"/>
+              <xpd:Coordinates XCoordinate="500.5" YCoordinate="236.01162719726562"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="77" From="71" To="47" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="857.8046875" YCoordinate="618.5"/>
+              <xpd:Coordinates XCoordinate="857.0" YCoordinate="579.0"/>
+              <xpd:Coordinates XCoordinate="830.0" YCoordinate="580.0"/>
+              <xpd:Coordinates XCoordinate="831.6660766601562" YCoordinate="475.1660461425781"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="68" Name="no" From="47" To="67" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="862.43310546875" YCoordinate="444.9331359863281"/>
+              <xpd:Coordinates XCoordinate="989.00048828125" YCoordinate="444.1539001464844"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="17" From="6" To="9" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="74.99925231933594" YCoordinate="50.192935943603516"/>
+              <xpd:Coordinates XCoordinate="125.5" YCoordinate="50.58268737792969"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="15" From="10" To="12" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="163.3721160888672" YCoordinate="150.5"/>
+              <xpd:Coordinates XCoordinate="163.43678283691406" YCoordinate="187.93678283691406"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="19" Name="No" From="12" To="18" Quantity="1">
+          <xpd:Condition Type="OTHERWISE"/>
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="125.74788665771484" YCoordinate="225.2478790283203"/>
+              <xpd:Coordinates XCoordinate="74.99986267089844" YCoordinate="225.08181762695312"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="36" Name="Time Out [1 week]" From="35" To="26" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="530.0" YCoordinate="264.0"/>
+              <xpd:Coordinates XCoordinate="530.0" YCoordinate="300.0"/>
+              <xpd:Coordinates XCoordinate="620.5" YCoordinate="300.5"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="21" Name="yes" From="12" To="20" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="199.9873504638672" YCoordinate="225.5126495361328"/>
+              <xpd:Coordinates XCoordinate="250.5" YCoordinate="225.7196807861328"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="59" Name="yes" From="47" To="51" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="832.3057250976562" YCoordinate="414.80572509765625"/>
+              <xpd:Coordinates XCoordinate="832.302978515625" YCoordinate="365.197021484375"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="60" Name="no" From="51" To="53" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="832.1510009765625" YCoordinate="304.6510009765625"/>
+              <xpd:Coordinates XCoordinate="832.0" YCoordinate="234.0"/>
+              <xpd:Coordinates XCoordinate="846.75" YCoordinate="233.75"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="46" From="41" To="45" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="662.5" YCoordinate="496.5"/>
+              <xpd:Coordinates XCoordinate="662.0" YCoordinate="506.0"/>
+              <xpd:Coordinates XCoordinate="712.0648193359375" YCoordinate="505.5648193359375"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="48" Name="yes" From="45" To="47" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="772.1611328125" YCoordinate="504.6611022949219"/>
+              <xpd:Coordinates XCoordinate="786.0" YCoordinate="504.0"/>
+              <xpd:Coordinates XCoordinate="785.0" YCoordinate="448.0"/>
+              <xpd:Coordinates XCoordinate="803.635009765625" YCoordinate="447.135009765625"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="50" Name="no" From="45" To="49" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="742.1902465820312" YCoordinate="535.3097534179688"/>
+              <xpd:Coordinates XCoordinate="742.1915893554688" YCoordinate="614.6915893554688"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="75" Name="yes" From="49" To="71" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="772.42138671875" YCoordinate="645.07861328125"/>
+              <xpd:Coordinates XCoordinate="809.5" YCoordinate="644.6849365234375"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="80" Name="no" From="49" To="79" Quantity="1">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="741.8739624023438" YCoordinate="675.3739624023438"/>
+              <xpd:Coordinates XCoordinate="741.0" YCoordinate="765.0"/>
+              <xpd:Coordinates XCoordinate="810.5" YCoordinate="763.7457885742188"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="57" Name="yes" From="51" To="20" Quantity="1" apia:LoopBack="true">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="862.4464721679688" YCoordinate="335.0534973144531"/>
+              <xpd:Coordinates XCoordinate="1116.0" YCoordinate="335.0"/>
+              <xpd:Coordinates XCoordinate="1112.0" YCoordinate="84.0"/>
+              <xpd:Coordinates XCoordinate="235.0" YCoordinate="86.0"/>
+              <xpd:Coordinates XCoordinate="234.0" YCoordinate="208.0"/>
+              <xpd:Coordinates XCoordinate="250.5" YCoordinate="213.5841064453125"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+      </Transitions>
+      <ApiaExtensions/>
+      <BusEntProcess BusEntId="1" ProId="1" ProVerId="1" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z"/>
+      <ProDocumentation/>
+      <ProNotifications/>
+    </WorkflowProcess>
+    <WorkflowProcess Id="4" Name="Discussion Cycle" apia:ProId="4" apia:ProVerId="1" apia:ProName="Discussion Cycle" apia:ProType="A" apia:ProAction="C" apia:Cycle="-1" apia:ProInstIdeNum="-1" apia:DateBindsOk="true" apia:HasInstance="false" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z" xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1">
+      <xpd:ProcessHeader/>
+      <xpd:RedefinableHeader>
+        <xpd:Author>admin</xpd:Author>
+        <xpd:Version>1</xpd:Version>
+        <xpd:Responsibles>
+          <xpd:Responsible>admin</xpd:Responsible>
+        </xpd:Responsibles>
+      </xpd:RedefinableHeader>
+      <Activities>
+        <Activity Id="169" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="169" apia:ProId="4" apia:ProVerId="1" apia:ElementType="E" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Event>
+            <xpd:StartEvent Trigger="None" Implementation="WebService"/>
+          </xpd:Event>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="50.0" Width="50.0">
+              <xpd:Coordinates XCoordinate="55.4000129699707" YCoordinate="183.0000228881836"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="203" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="203" apia:ProId="4" apia:ProVerId="1" apia:ElementType="G" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Route GatewayType="Parallel" MarkerVisible="true"/>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" Height="50.0" Width="50.0" LaneId="6">
+              <xpd:Coordinates XCoordinate="265.0" YCoordinate="181.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="171" Name="Announce Issues for Discussion" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="171" apia:ProId="4" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="Announce Issues for Discussion">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="171" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="50.0" Width="75.0">
+              <xpd:Coordinates XCoordinate="180.4000129699707" YCoordinate="181.0000228881836"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="172" Name="Moderate E-mail Discussion" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="172" apia:ProId="4" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="Moderate E-mail Discussion">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="172" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="50.0" Width="93.0">
+              <xpd:Coordinates XCoordinate="297.4000129699707" YCoordinate="50.000022888183594"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="173" Name="Check calendar for Conference Call" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="173" apia:ProId="4" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="Check calendar for Conference Call">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="173" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="50.0" Width="94.0">
+              <xpd:Coordinates XCoordinate="305.4000129699707" YCoordinate="266.0000228881836"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="174" Name="Delay 5 days from announcement" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="174" apia:ProId="4" apia:ProVerId="1" apia:ElementType="E" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Event>
+            <xpd:IntermediateEvent Trigger="Timer" Implementation="WebService"/>
+          </xpd:Event>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="57.19999694824219" Width="57.19999694824219">
+              <xpd:Coordinates XCoordinate="398.5999946594238" YCoordinate="177.20001983642578"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="175" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="175" apia:ProId="4" apia:ProVerId="1" apia:ElementType="E" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Event>
+            <xpd:IntermediateEvent Trigger="Timer" Target="172" Implementation="WebService"/>
+          </xpd:Event>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="42.0" Width="42.0">
+              <xpd:Coordinates XCoordinate="305.4000129699707" YCoordinate="81.0000228881836"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="176" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="176" apia:ProId="4" apia:ProVerId="1" apia:ElementType="E" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Event>
+            <xpd:EndEvent Result="None" Implementation="WebService"/>
+          </xpd:Event>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="50.0" Width="50.0">
+              <xpd:Coordinates XCoordinate="1030.4000129699707" YCoordinate="176.0000228881836"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="178" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="178" apia:ProId="4" apia:ProVerId="1" apia:ElementType="G" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Route GatewayType="Exclusive" MarkerVisible="false"/>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="50.0" Width="50.0">
+              <xpd:Coordinates XCoordinate="455.4000129699707" YCoordinate="106.0000228881836"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="179" Name="E-Mail Discussion Deadline Warning" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="179" apia:ProId="4" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="E-Mail Discussion Deadline Warning">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="179" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="59.0" Width="75.0">
+              <xpd:Coordinates XCoordinate="530.4000129699707" YCoordinate="174.0000228881836"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="180" Name="Evaluate Discussion Progress" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="180" apia:ProId="4" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="Evaluate Discussion Progress">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="180" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="50.0" Width="75.0">
+              <xpd:Coordinates XCoordinate="905.4000129699707" YCoordinate="175.0000228881836"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="181" Name="Moderate Conference Call Discussion" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="181" apia:ProId="4" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="Moderate Conference Call Discussion">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="181" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="50.0" Width="75.0">
+              <xpd:Coordinates XCoordinate="655.4000129699707" YCoordinate="308.0000228881836"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="182" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="182" apia:ProId="4" apia:ProVerId="1" apia:ElementType="G" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Route GatewayType="Parallel" MarkerVisible="false"/>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="50.0" Width="50.0">
+              <xpd:Coordinates XCoordinate="805.4000129699707" YCoordinate="176.0000228881836"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="183" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="183" apia:ProId="4" apia:ProVerId="1" apia:ElementType="G" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Route GatewayType="Exclusive" MarkerVisible="false"/>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="50.0" Width="50.0">
+              <xpd:Coordinates XCoordinate="755.4000129699707" YCoordinate="264.0000228881836"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="184" Name="Conference call in Discussion Week?" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="184" apia:ProId="4" apia:ProVerId="1" apia:ElementType="G" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Route GatewayType="Exclusive" MarkerVisible="false"/>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="58.59998321533203" Width="58.59998321533203">
+              <xpd:Coordinates XCoordinate="455.4000129699707" YCoordinate="261.0000228881836"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="185" Name="Wait until Thursday 9 am" Status="None" StartQuantity="1" IsATransaction="false" apia:ProEleId="185" apia:ProId="4" apia:ProVerId="1" apia:ElementType="E" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Event>
+            <xpd:IntermediateEvent Trigger="Timer" Implementation="WebService"/>
+          </xpd:Event>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="6" Height="50.0" Width="50.0">
+              <xpd:Coordinates XCoordinate="555.4000129699707" YCoordinate="309.0000228881836"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+      </Activities>
+      <Transitions>
+        <Transition Id="186" From="169" To="171">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="105.39899444580078" YCoordinate="207.77398681640625"/>
+              <xpd:Coordinates XCoordinate="180.90000915527344" YCoordinate="207.09133911132812"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+         <Transition Id="206" From="171" To="203">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="255.5" YCoordinate="206.0"/>
+              <xpd:Coordinates XCoordinate="265.0" YCoordinate="206.0"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="187" From="203" To="172">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="290.0" YCoordinate="181.0"/>
+              <xpd:Coordinates XCoordinate="290.0" YCoordinate="75.0"/>
+              <xpd:Coordinates XCoordinate="305.0" YCoordinate="75.0"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="188" From="203" To="174">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="315.0" YCoordinate="206.0"/>
+              <xpd:Coordinates XCoordinate="398.6" YCoordinate="206.0"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="193" From="203" To="173">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="290.0" YCoordinate="231.0"/>
+              <xpd:Coordinates XCoordinate="290.0" YCoordinate="281.0"/>
+              <xpd:Coordinates XCoordinate="305.0" YCoordinate="285.0"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="200" From="172" To="178">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="390.9000244140625" YCoordinate="75.154296875"/>
+              <xpd:Coordinates XCoordinate="478.4000244140625" YCoordinate="74.0000228881836"/>
+              <xpd:Coordinates XCoordinate="480.0525817871094" YCoordinate="107.34748077392578"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="194" From="173" To="184">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="399.9000244140625" YCoordinate="291.6113586425781"/>
+              <xpd:Coordinates XCoordinate="456.3462219238281" YCoordinate="291.2462158203125"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="189" From="174" To="179">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="455.79827880859375" YCoordinate="205.48692321777344"/>
+              <xpd:Coordinates XCoordinate="530.9000244140625" YCoordinate="204.66468811035156"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="192" From="180" To="176">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="980.9000244140625" YCoordinate="200.91659545898438"/>
+              <xpd:Coordinates XCoordinate="1030.4000244140625" YCoordinate="200.97203063964844"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="202" From="178" To="182">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="505.68817138671875" YCoordinate="131.71189880371094"/>
+              <xpd:Coordinates XCoordinate="831.4000244140625" YCoordinate="134.00003051757812"/>
+              <xpd:Coordinates XCoordinate="831.2677001953125" YCoordinate="176.86767578125"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="190" From="179" To="182">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="605.9000244140625" YCoordinate="203.7326202392578"/>
+              <xpd:Coordinates XCoordinate="806.20068359375" YCoordinate="201.80067443847656"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="191" From="182" To="180">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="855.84375" YCoordinate="201.5563201904297"/>
+              <xpd:Coordinates XCoordinate="905.9000244140625" YCoordinate="201.17041015625"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="197" From="185" To="181">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="605.4000244140625" YCoordinate="333.97247314453125"/>
+              <xpd:Coordinates XCoordinate="655.9000244140625" YCoordinate="333.9167785644531"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="198" From="181" To="183">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="730.9" YCoordinate="334.1"/>
+              <xpd:Coordinates XCoordinate="782.2" YCoordinate="334.4"/>
+              <xpd:Coordinates XCoordinate="781.9" YCoordinate="313.5"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="199" From="183" To="182">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="805.8" YCoordinate="289.4"/>
+              <xpd:Coordinates XCoordinate="829.4" YCoordinate="288.8"/>
+              <xpd:Coordinates XCoordinate="830.6" YCoordinate="226.2"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="196" Name="yes" From="184" To="185">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="485.1" YCoordinate="320.0"/>
+              <xpd:Coordinates XCoordinate="484.6" YCoordinate="332.8"/>
+              <xpd:Coordinates XCoordinate="555.4" YCoordinate="333.7"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="201" Name="7 days" From="175" To="178">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="328.5" YCoordinate="122.9"/>
+              <xpd:Coordinates XCoordinate="329.4" YCoordinate="132.0"/>
+              <xpd:Coordinates XCoordinate="456.1" YCoordinate="131.7"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="195" Name="no" From="184" To="183">
+          <xpd:Condition Type="OTHERWISE"/>
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="514.4" YCoordinate="290.7"/>
+              <xpd:Coordinates XCoordinate="756.1" YCoordinate="289.7"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+      </Transitions>
+      <ApiaExtensions/>
+      <BusEntProcess BusEntId="2" ProId="4" ProVerId="1" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z"/>
+      <ProDocumentation/>
+      <ProNotifications/>
+    </WorkflowProcess>
+    <WorkflowProcess Id="5" Name="Collect Votes" apia:ProId="5" apia:ProVerId="1" apia:ProName="Collect Votes" apia:ProType="A" apia:ProAction="C" apia:Cycle="-1" apia:ProInstIdeNum="-1" apia:DateBindsOk="true" apia:HasInstance="false" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z" xmlns:apia="http://www.statum.biz/2009/APIA.XPDL2.1">
+      <xpd:ProcessHeader/>
+      <xpd:RedefinableHeader>
+        <xpd:Author>admin</xpd:Author>
+        <xpd:Version>1</xpd:Version>
+        <xpd:Responsibles>
+          <xpd:Responsible>admin</xpd:Responsible>
+        </xpd:Responsibles>
+      </xpd:RedefinableHeader>
+      <Activities>
+        <Activity Id="288" apia:ProEleId="288" apia:ProId="5" apia:ProVerId="1" apia:ElementType="E" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Event>
+            <xpd:StartEvent Trigger="None"/>
+          </xpd:Event>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="8" Height="50.0" Width="50.0">
+              <xpd:Coordinates XCoordinate="93.0" YCoordinate="636.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="289" Name="Delay 6 Days" apia:ProEleId="289" apia:ProId="5" apia:ProVerId="1" apia:ElementType="E" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Event>
+            <xpd:IntermediateEvent Trigger="Timer"/>
+          </xpd:Event>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="8" Height="50.0" Width="50.0">
+              <xpd:Coordinates XCoordinate="213.0" YCoordinate="705.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="291" Name="Receive Vote" apia:ProEleId="291" apia:ProId="5" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="Receive Vote">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="291" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="8" Height="50.0" Width="75.0">
+              <xpd:Coordinates XCoordinate="163.0" YCoordinate="812.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="292" Name="Increment Tally" apia:ProEleId="292" apia:ProId="5" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="Increment Tally">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="292" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="8" Height="49.0" Width="73.0">
+              <xpd:Coordinates XCoordinate="272.0" YCoordinate="813.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="295" Name="Moderate E-mail Discussion" apia:ProEleId="295" apia:ProId="5" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="Moderate E-mail Discussion">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="295" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="8" Height="50.0" Width="75.0">
+              <xpd:Coordinates XCoordinate="202.0" YCoordinate="633.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="296" Name="Check Calendar for Conference Call" apia:ProEleId="296" apia:ProId="5" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="Check Calendar for Conference Call">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="296" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="8" Height="50.0" Width="100.0">
+              <xpd:Coordinates XCoordinate="142.0" YCoordinate="476.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="298" Name="Conference Call in Voting Week?" apia:ProEleId="298" apia:ProId="5" apia:ProVerId="1" apia:ElementType="G" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Route GatewayType="Exclusive"/>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="8" Height="74.0" Width="74.0">
+              <xpd:Coordinates XCoordinate="290.0" YCoordinate="461.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="299" apia:ProEleId="299" apia:ProId="5" apia:ProVerId="1" apia:ElementType="E" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Event>
+            <xpd:EndEvent/>
+          </xpd:Event>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="8" Height="50.0" Width="50.0">
+              <xpd:Coordinates XCoordinate="604.0" YCoordinate="634.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="300" Name="Wait Until Thursday 9am" apia:ProEleId="300" apia:ProId="5" apia:ProVerId="1" apia:ElementType="E" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <xpd:Event>
+            <xpd:IntermediateEvent Trigger="Timer"/>
+          </xpd:Event>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="8" Height="52.0" Width="52.0">
+              <xpd:Coordinates XCoordinate="384.0" YCoordinate="560.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="301" Name="Moderate Conference Call Discussion" apia:ProEleId="301" apia:ProId="5" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="Moderate Conference Call Discussion">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="301" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="8" Height="50.0" Width="75.0">
+              <xpd:Coordinates XCoordinate="498.0" YCoordinate="559.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+        <Activity Id="302" Name="E-Mail Vote Deadline Warning" apia:ProEleId="302" apia:ProId="5" apia:ProVerId="1" apia:ElementType="T" apia:EnvId="1" apia:RegUser="admin" apia:RegStatus="0" apia:RegDate="2009-01-15T13:56:46.893Z">
+          <Implementation>
+            <Task TskName="E-Mail Vote Deadline Warning">
+              <TaskUser Implementation="Other">
+                <Performers>
+				  <Performer apia:ProEleId="302" apia:PerfId="1" apia:PerfName="admin"/>
+			    </Performers>
+			  </TaskUser>
+            </Task>
+          </Implementation>
+          <xpd:NodeGraphicsInfos>
+            <xpd:NodeGraphicsInfo IsVisible="true" LaneId="8" Height="50.0" Width="75.0">
+              <xpd:Coordinates XCoordinate="473.0" YCoordinate="704.0"/>
+            </xpd:NodeGraphicsInfo>
+          </xpd:NodeGraphicsInfos>
+          <ApiaExtensions/>
+        </Activity>
+      </Activities>
+      <Transitions>
+        <Transition Id="305" From="288" To="295">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="143.0" YCoordinate="660.5"/>
+              <xpd:Coordinates XCoordinate="202.5" YCoordinate="659.5"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="308" From="288" To="296">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="117.5" YCoordinate="636.0"/>
+              <xpd:Coordinates XCoordinate="115.0" YCoordinate="503.0"/>
+              <xpd:Coordinates XCoordinate="142.5" YCoordinate="502.8"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="314" From="288" To="291">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="117.9" YCoordinate="686.0"/>
+              <xpd:Coordinates XCoordinate="117.0" YCoordinate="846.0"/>
+              <xpd:Coordinates XCoordinate="163.0" YCoordinate="845.0"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="307" From="288" To="289">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="130.7" YCoordinate="682.5"/>
+              <xpd:Coordinates XCoordinate="131.0" YCoordinate="729.0"/>
+              <xpd:Coordinates XCoordinate="213.0" YCoordinate="729.8"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="312" From="289" To="302">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="263.0" YCoordinate="730.0"/>
+              <xpd:Coordinates XCoordinate="473.5" YCoordinate="729.6"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="315" From="291" To="292">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="238.5" YCoordinate="838.2"/>
+              <xpd:Coordinates XCoordinate="272.5" YCoordinate="838.3"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="316" From="292" To="291" apia:LoopBack="true">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="345.5" YCoordinate="838.3"/>
+              <xpd:Coordinates XCoordinate="375.0" YCoordinate="838.0"/>
+              <xpd:Coordinates XCoordinate="376.0" YCoordinate="790.0"/>
+              <xpd:Coordinates XCoordinate="134.0" YCoordinate="790.0"/>
+              <xpd:Coordinates XCoordinate="134.0" YCoordinate="833.0"/>
+              <xpd:Coordinates XCoordinate="163.0" YCoordinate="833.0"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="306" From="295" To="299">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="277.5" YCoordinate="658.6"/>
+              <xpd:Coordinates XCoordinate="604.0" YCoordinate="659.0"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="309" From="296" To="298">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="242.5" YCoordinate="500.9"/>
+              <xpd:Coordinates XCoordinate="291.7" YCoordinate="499.7"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="313" From="302" To="299">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="548.5" YCoordinate="729.5"/>
+              <xpd:Coordinates XCoordinate="630.0" YCoordinate="729.0"/>
+              <xpd:Coordinates XCoordinate="629.4" YCoordinate="684.0"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="319" From="301" To="299">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="573.5" YCoordinate="585.1"/>
+              <xpd:Coordinates XCoordinate="593.0" YCoordinate="585.0"/>
+              <xpd:Coordinates XCoordinate="590.0" YCoordinate="637.0"/>
+              <xpd:Coordinates XCoordinate="607.2" YCoordinate="646.7"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="318" From="300" To="301">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="436.0" YCoordinate="585.7"/>
+              <xpd:Coordinates XCoordinate="498.5" YCoordinate="585.2"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="311" From="298" To="300">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="326.7" YCoordinate="534.7"/>
+              <xpd:Coordinates XCoordinate="325.0" YCoordinate="585.0"/>
+              <xpd:Coordinates XCoordinate="384.0" YCoordinate="585.7"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="310" Name="no" From="298" To="299">
+          <xpd:ConnectorGraphicsInfos>
+            <xpd:ConnectorGraphicsInfo IsVisible="true">
+              <xpd:Coordinates XCoordinate="364.4" YCoordinate="498.6"/>
+              <xpd:Coordinates XCoordinate="626.0" YCoordinate="499.0"/>
+              <xpd:Coordinates XCoordinate="628.5" YCoordinate="634.0"/>
+            </xpd:ConnectorGraphicsInfo>
+          </xpd:ConnectorGraphicsInfos>
+        </Transition>
+      </Transitions>
+      <ApiaExtensions/>
+      <BusEntProcess BusEntId="3" ProId="5" ProVerId="1" EnvId="1" RegUser="admin" RegStatus="0" RegDate="2009-01-15T13:56:46.893Z"/>
+      <ProDocumentation/>
+      <ProNotifications/>
+    </WorkflowProcess>
+  </WorkflowProcesses>
+  <ApiaExtensions/>
+</Package>

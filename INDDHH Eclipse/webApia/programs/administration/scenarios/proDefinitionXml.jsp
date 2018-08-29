@@ -1,0 +1,1 @@
+<jsp:useBean id="dBean" scope="session" class="com.dogma.bean.administration.SimScenarioBean"></jsp:useBean><%=dBean.getProcessXml()%>

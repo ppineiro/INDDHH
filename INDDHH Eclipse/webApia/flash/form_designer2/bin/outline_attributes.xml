@@ -1,0 +1,253 @@
+<?xml version="1.0" ?>
+<forms>
+	<data>
+		<level width="0%" name="id" label="id" type="label" hidden="true" />
+		<level width="9%" name="type" label="Tipo" type="label" />
+		<level width="0%" name="max" label="Max" type="label" hidden="true"/>
+		<level width="79%" name="name" label="Nombre" type="label" />
+		<level width="0%" name="label" label="Etiqueta" type="label" />
+		<level width="12%" name="details" label="Detalles" type="info"/>
+	</data>
+	<values pages="2" current_page="1">
+		<value>
+			<level name="id" value="1001"/>
+			<level name="type" value="D" />
+			<level name="max" value="" />
+			<level name="name" value="ATT_DTE"/>
+			<level name="label" value="att ATT_DTE" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1002"/>
+			<level name="type" value="D" />
+			<level name="max" value="" />
+			<level name="name" value="ATT_DTE_2"/>
+			<level name="label" value="att ATT_DTE_2" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1003"/>
+			<level name="type" value="D" />
+			<level name="max" value="" />
+			<level name="name" value="ATT_ENTIDAD_DTE"/>
+			<level name="label" value="Att ATT_ENTIDAD_DTE" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1004"/>
+			<level name="type" value="N" />
+			<level name="max" value="10" />
+			<level name="name" value="ATT_ENTIDAD_NUM"/>
+			<level name="label" value="att ATT_ENTIDAD_NUM" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1005"/>
+			<level name="type" value="S" />
+			<level name="max" value="25" />
+			<level name="name" value="ATT_ENTIDAD_STR"/>
+			<level name="label" value="att ATT_ENTIDAD_STR" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1006"/>
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="ATT_LISTBOX"/>
+			<level name="label" value="att ATT_LISTBOX" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1007"/>
+			<level name="type" value="N" />
+			<level name="max" value="" />
+			<level name="name" value="ATT_MULTIPLICA_PROCESO"/>
+			<level name="label" value="att ATT_MULTIPLICA_PROCESO" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1008"/>
+			<level name="type" value="N" />
+			<level name="max" value="10" />
+			<level name="name" value="ATT_PARAM1_NUM"/>
+			<level name="label" value="att ATT_PARAM1_NUM" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1009"/>
+			<level name="type" value="S" />
+			<level name="max" value="25" />
+			<level name="name" value="ATT_PARAM1_STR"/>
+			<level name="label" value="att ATT_PARAM1_STR" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1010"/>
+			<level name="type" value="S" />
+			<level name="max" value="25" />
+			<level name="name" value="ATT_PARAM2_STR"/>
+			<level name="label" value="att ATT_PARAM2_STR" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1011"/>
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="ATT_PARAM3_STR"/>
+			<level name="label" value="att ATT_PARAM3_STR" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1012"/>
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="ATT_PARAM4_STR"/>
+			<level name="label" value="att ATT_PARAM4_STR" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1013"/>
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="ATT_PASSWORD"/>
+			<level name="label" value="att ATT_PASSWORD" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1014"/>
+			<level name="type" value="D" />
+			<level name="max" value="" />
+			<level name="name" value="ATT_PROCESO_DTE"/>
+			<level name="label" value="att ATT_PROCESO_DTE" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1015"/>
+			<level name="type" value="N" />
+			<level name="max" value="10" />
+			<level name="name" value="ATT_PROCESO_NUM"/>
+			<level name="label" value="att ATT_PROCESO_NUM" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1016"/>
+			<level name="type" value="S" />
+			<level name="max" value="255" />
+			<level name="name" value="ATT_PROCESO_STR"/>
+			<level name="label" value="att ATT_PROCESO_STR" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1017"/>
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="ATT_STR"/>
+			<level name="label" value="att ATT_STR" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1018"/>
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="ATT_STR2"/>
+			<level name="label" value="att ATT_STR2" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1019"/>
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="ATT_STR3"/>
+			<level name="label" value="att ATT_STR3" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1020"/>
+			<level name="type" value="S" />
+			<level name="max" value="" />
+			<level name="name" value="ATT_STR4"/>
+			<level name="label" value="att ATT_STR4" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1021"/>
+			<level name="type" value="S" />
+			<level name="max" value="255" />
+			<level name="name" value="CATALOGO_PIEZAS"/>
+			<level name="label" value="Imagen de repuestos" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1022"/>
+			<level name="type" value="S" />
+			<level name="max" value="255" />
+			<level name="name" value="CIUDAD"/>
+			<level name="label" value="Ciudad" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1023"/>
+			<level name="type" value="S" />
+			<level name="max" value="15" />
+			<level name="name" value="CLIENTE_DOCUMENTO_IDENTIDAD"/>
+			<level name="label" value="Documento de identidad" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1024"/>
+			<level name="type" value="S" />
+			<level name="max" value="255" />
+			<level name="name" value="CLIENTE_NOMBRE"/>
+			<level name="label" value="Nombre de cliente" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1025"/>
+			<level name="type" value="S" />
+			<level name="max" value="10" />
+			<level name="name" value="CLIENTE_NUMERO_STR"/>
+			<level name="label" value="Numero de cliente String" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1026"/>
+			<level name="type" value="N" />
+			<level name="max" value="10" />
+			<level name="name" value="COSTO"/>
+			<level name="label" value="Costo de reparación" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1027"/>
+			<level name="type" value="S" />
+			<level name="max" value="255" />
+			<level name="name" value="DIVISION_GUBERNAMENTAL"/>
+			<level name="label" value="División Gubernamental" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1028"/>
+			<level name="type" value="S" />
+			<level name="max" value="255" />
+			<level name="name" value="DOCUMENTO_GARANTIA"/>
+			<level name="label" value="Documento de garantia" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1029"/>
+			<level name="type" value="S" />
+			<level name="max" value="10" />
+			<level name="name" value="ENCUESTA"/>
+			<level name="label" value="Encuesta Si/No?" />
+			<level name="details" />
+		</value>
+		<value>
+			<level name="id" value="1030"/>
+			<level name="type" value="D" />
+			<level name="max" value="" />
+			<level name="name" value="FECHA_ALTA"/>
+			<level name="label" value="Fecha de ingreso OS" />
+			<level name="details" />
+		</value>
+	</values>
+</forms>

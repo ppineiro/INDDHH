@@ -1,0 +1,20 @@
+/* CSS Document */
+#contextMenu{
+	background-image:url(conMenu.GIF);
+	background-repeat:repeat-y;
+	background-color:#FFFFFF;
+}
+tr.hoverEmulate{
+	border:3px solid red;
+	background-color:#D5FFBB;
+}
+#contextMenu tr{
+	cursor:pointer;
+	cursor:default;
+}
+#contextMenu tr:hover{
+	background-color:#D5FFBB;
+}
+#contextMenu td{
+	font-size:10px;
+}

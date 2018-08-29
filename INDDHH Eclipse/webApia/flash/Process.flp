@@ -1,0 +1,38 @@
+﻿<flash_project name="Process Dogma 2" version="1">
+    <project_folder name="process" expanded="true">
+        <project_folder name="DIALOGS" expanded="false">
+            <project_file path="./process/source/ConditionModal.as" filetype="as" />
+            <project_file path="./process/source/EventModal.as" filetype="as" />
+            <project_file path="./process/source/FormModal.as" filetype="as" />
+            <project_file path="./process/source/GenericFinder.as" filetype="as" />
+            <project_file path="./process/source/NameModal.as" filetype="as" />
+            <project_file path="./process/source/RolModal.as" filetype="as" />
+            <project_file path="./process/source/PoolModal.as" filetype="as" />
+        </project_folder>
+        <project_folder name="ELEMENTS" expanded="false">
+            <project_file path="./process/source/EndTask.as" filetype="as" />
+            <project_file path="./process/source/InitTask.as" filetype="as" />
+            <project_file path="./process/source/Operator.as" filetype="as" />
+            <project_file path="./process/source/SubProcess.as" filetype="as" />
+            <project_file path="./process/source/Task.as" filetype="as" />
+        </project_folder>
+        <project_folder name="SHARED CLASSES" expanded="false">
+            <project_file path="./classes/Aligner.as" filetype="as" />
+            <project_file path="./classes/ToolTipClass.as" filetype="as" />
+            <project_file path="./classes/WindowManager.as" filetype="as" />
+        </project_folder>
+        <project_file path="./process/source/Element.as" filetype="as" />
+        <project_file path="./process/source/Flow.as" filetype="as" />
+        <project_file path="./process/source/ButtonBar.as" filetype="as" />
+        <project_file path="./process/source/Model.as" filetype="as" />
+        <project_file path="./process/source/MouseCursor.as" filetype="as" />
+        <project_file path="./process/source/processDesigner.fla" filetype="fla" profile="" def_file="true" />
+        <project_file path="./process/source/Rol.as" filetype="as" />
+        <project_file path="./process/source/shell.fla" filetype="fla" profile="" />
+        <project_file path="./process/source/TempLine.as" filetype="as" />
+        <project_file path="./process/source/ToolCursor.as" filetype="as" />
+        <project_file path="./process/source/IconCellRenderer.as" filetype="as" />
+        <project_file path="./generic_as/apiaUtils.as" filetype="as" />
+        <project_file path="./process/source/LineObj.as" filetype="as" />
+    </project_folder>
+</flash_project>

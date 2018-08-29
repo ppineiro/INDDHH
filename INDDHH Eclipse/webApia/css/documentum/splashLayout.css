@@ -1,0 +1,166 @@
+.splashPreview {}
+
+/***** TEMPLATE DEFAULT *****/
+.splashLayout div.planelContainerHorizontalTop {}
+.splashLayout div.panelContainerHorizontalBottom { clear: both;}
+.splashLayout div.panelContainerVerticalLeft { float: left; width: 48%; margin: 0px; }
+.splashLayout div.panelContainerVerticualRight { float: right; width: 47%; margin: 0px;}
+.splashLayout div.panelContainerRight { }
+.splashLayout div.left { float: left; width: 74%; margin: 0 0 0 1%; }
+.splashLayout div.right {float: right; width: 25%; margin: 0px; }
+
+.templateView.splashPreview div.planelContainerHorizontalTop { height: 30px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateView.splashPreview div.panelContainerHorizontalBottom { height: 30px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateView.splashPreview div.panelContainerVerticalLeft { height: 140px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateView.splashPreview div.panelContainerVerticualRight { height: 140px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateView.splashPreview div.panelContainerRight { height: 210px; border: 1px dashed grey; margin: 2px; text-align: center; }
+
+.templateViewMdl.splashPreview div.planelContainerHorizontalTop { height: 35px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateViewMdl.splashPreview div.panelContainerHorizontalBottom { height: 35px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateViewMdl.splashPreview div.panelContainerVerticalLeft { height: 140px; border: 1px dashed grey; margin: 2px; text-align: center; width: 47% !important; }
+.templateViewMdl.splashPreview div.panelContainerVerticualRight { height: 140px; border: 1px dashed grey; margin: 2px; text-align: center; width: 47% !important; }
+.templateViewMdl.splashPreview div.panelContainerRight { height: 220px; border: 1px dashed grey; margin: 2px; text-align: center; }
+
+/***** TEMPLATE 1 COLUMN *****/
+.splashLayout div.planelContainerHorizontalTop-OneColumn { width: 99%; margin: 0px; }
+.splashLayout div.left-OneColumn { float: left; width: 98%; margin: 0 0 0 1%; }
+
+.templateView.splashPreview div.planelContainerHorizontalTop-OneColumn { height: 220px; border: 1px dashed grey; margin: 2px; text-align: center; width: 99% !important; }
+
+.templateViewMdl.splashPreview div.planelContainerHorizontalTop-OneColumn { height: 220px; border: 1px dashed grey; margin: 2px; text-align: center; width: 99% !important; }
+
+/***** TEMPLATE DEFAULT 2 COLUMNS *****/
+.splashLayout div.panelContainerVerticalLeft-TwoColumns { float: left; width: 100%; margin: 0px; }
+.splashLayout div.panelContainerVerticalRight-TwoColumns { float: right; width: 100%; margin: 0px;}
+.splashLayout div.left-TwoColumns { float: left; width: 49%; margin: 0 0 0 1%; }
+.splashLayout div.right-TwoColumns {float: right; width: 49%; margin: 0px; }
+
+.templateView.splashPreview div.panelContainerVerticalLeft-TwoColumns { height: 220px; border: 1px dashed grey; margin: 2px; text-align: center; width: 100% !important; }
+.templateView.splashPreview div.panelContainerVerticalRight-TwoColumns { height: 220px; border: 1px dashed grey; margin: 2px; text-align: center; width: 100% !important; }
+
+.templateViewMdl.splashPreview div.panelContainerVerticalLeft-TwoColumns { height: 220px; border: 1px dashed grey; margin: 2px; text-align: center; width: 98% !important; }
+.templateViewMdl.splashPreview div.panelContainerVerticalRight-TwoColumns { height: 220px; border: 1px dashed grey; margin: 2px; text-align: center; width: 98% !important; }
+
+/***** TEMPLATE DEFAULT 3 COLUMNS *****/
+.splashLayout div.panelContainerVerticalLeft-ThreeColumns { float: left; width: 100%; margin: 0px; }
+.splashLayout div.panelContainerVerticalMiddle-ThreeColumns { width: 100%; margin: 0px; }
+.splashLayout div.panelContainerVerticalRight-ThreeColumns { float: right; width: 100%; margin: 0px;}
+.splashLayout div.left-ThreeColumns { float: left; width: 32%; margin: 0 0 0 1%; }
+.splashLayout div.middle-ThreeColumns { float: left; width: 32%; margin: 0 0 0 1%; }
+.splashLayout div.right-ThreeColumns {float: right; width: 32%; margin: 0px; }
+
+.templateView.splashPreview div.panelContainerVerticalLeft-ThreeColumns { height: 220px; border: 1px dashed grey; margin: 2px; text-align: center; width: 100% !important; }
+.templateView.splashPreview div.panelContainerVerticalMiddle-ThreeColumns { height: 220px; border: 1px dashed grey; margin: 2px; text-align: center; width: 100% !important; }
+.templateView.splashPreview div.panelContainerVerticalRight-ThreeColumns { height: 220px; border: 1px dashed grey; margin: 2px; text-align: center; width: 100% !important; }
+
+.templateViewMdl.splashPreview div.panelContainerVerticalLeft-ThreeColumns { height: 220px; border: 1px dashed grey; margin: 2px; text-align: center; width: 98% !important; }
+.templateViewMdl.splashPreview div.panelContainerVerticalMiddle-ThreeColumns { height: 220px; border: 1px dashed grey; margin: 2px; text-align: center; width: 98% !important; }
+.templateViewMdl.splashPreview div.panelContainerVerticalRight-ThreeColumns { height: 220px; border: 1px dashed grey; margin: 2px; text-align: center; width: 98% !important; }
+
+/***** TEMPLATE DEFAULT 4 COLUMNS *****/
+.splashLayout div.panelContainerVerticalLeft-FourColumns { float: left; width: 100%; margin: 0px; }
+.splashLayout div.panelContainerVerticalMiddleLeft-FourColumns { width: 100%; margin: 0px; }
+.splashLayout div.panelContainerVerticalMiddleRight-FourColumns { width: 100%; margin: 0px; }
+.splashLayout div.panelContainerVerticalRight-FourColumns { float: right; width: 100%; margin: 0px;}
+.splashLayout div.left-FourColumns { float: left; width: 24%; margin: 0 0 0 1%; }
+.splashLayout div.middleLeft-FourColumns { float: left; width: 24%; margin: 0 0 0 1%; }
+.splashLayout div.middleRight-FourColumns { float: right; width: 24%; margin: 0 0 0 1%; }
+.splashLayout div.right-FourColumns {float: right; width: 24%; margin: 0 0 0 1%; }
+
+.templateView.splashPreview div.panelContainerVerticalLeft-FourColumns { height: 220px; border: 1px dashed grey; margin: 1px; text-align: center; width: 100% !important; }
+.templateView.splashPreview div.panelContainerVerticalMiddleLeft-FourColumns { height: 220px; border: 1px dashed grey; margin: 1px; text-align: center; width: 100% !important; }
+.templateView.splashPreview div.panelContainerVerticalMiddleRight-FourColumns { height: 220px; border: 1px dashed grey; margin: 1px; text-align: center; width: 100% !important; }
+.templateView.splashPreview div.panelContainerVerticalRight-FourColumns { height: 220px; border: 1px dashed grey; margin: 1px; text-align: center; width: 100% !important; }
+
+.templateViewMdl.splashPreview div.panelContainerVerticalLeft-FourColumns { height: 220px; border: 1px dashed grey; margin: 1px; text-align: center; width: 98% !important; }
+.templateViewMdl.splashPreview div.panelContainerVerticalMiddleLeft-FourColumns { height: 220px; border: 1px dashed grey; margin: 1px; text-align: center; width: 98% !important; }
+.templateViewMdl.splashPreview div.panelContainerVerticalMiddleRight-FourColumns { height: 220px; border: 1px dashed grey; margin: 1px; text-align: center; width: 98% !important; }
+.templateViewMdl.splashPreview div.panelContainerVerticalRight-FourColumns { height: 220px; border: 1px dashed grey; margin: 1px; text-align: center; width: 98% !important; }
+
+/***** TEMPLATE 1 COLUMN 2 ROWS *****/
+.splashLayout div.planelContainerHorizontalTop-OneColTwoRows {}
+.splashLayout div.panelContainerHorizontalBottom-OneColTwoRows { clear: both;}
+.splashLayout div.panelContainerVerticalLeft-OneColTwoRows { float: left; width: 100%; margin: 0px; }
+.splashLayout div.left-OneColTwoRows { float: left; width: 24%; margin: 0 0 0 1%; }
+.splashLayout div.right-OneColTwoRows {float: right; width: 74%; margin: 0px; }
+
+.templateView.splashPreview div.planelContainerHorizontalTop-OneColTwoRows { height: 108px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateView.splashPreview div.panelContainerHorizontalBottom-OneColTwoRows { height: 108px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateView.splashPreview div.panelContainerVerticalLeft-OneColTwoRows { height: 220px; border: 1px dashed grey; margin: 2px; text-align: center; }
+
+.templateViewMdl.splashPreview div.planelContainerHorizontalTop-OneColTwoRows { height: 108px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateViewMdl.splashPreview div.panelContainerHorizontalBottom-OneColTwoRows { height: 108px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateViewMdl.splashPreview div.panelContainerVerticalLeft-OneColTwoRows { height: 220px; border: 1px dashed grey; margin: 2px; text-align: center; width: 98% !important; }
+
+/***** TEMPLATE 4 SECTIONS *****/
+.splashLayout div.planelContainerHorizontalTop-FourSections {}
+.splashLayout div.panelContainerVerticalLeft-FourSections { float: left; width: 48%; margin: 0px; }
+.splashLayout div.panelContainerVerticalRight-FourSections { float: right; width: 48%; margin: 0px;}
+.splashLayout div.panelContainerRight-FourSections { }
+.splashLayout div.left-FourSections { float: left; width: 25%; margin: 0 0 0 1%; }
+.splashLayout div.right-FourSections {float: right; width: 74%; margin: 0px; }
+
+.templateView.splashPreview div.planelContainerHorizontalTop-FourSections { height: 50px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateView.splashPreview div.panelContainerVerticalLeft-FourSections { height: 165px; border: 1px dashed grey; margin: 2px; text-align: center; width: 48% !important; }
+.templateView.splashPreview div.panelContainerVerticalRight-FourSections { height: 165px; border: 1px dashed grey; margin: 2px; text-align: center; width: 47% !important; }
+.templateView.splashPreview div.panelContainerLeft-FourSections { height: 220px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateView.splashPreview div.panelContainerVerticalRight-FourSections { height: 165px; border: 1px dashed grey; margin: 2px; text-align: center; width: 47% !important; }
+
+.templateViewMdl.splashPreview div.planelContainerHorizontalTop-FourSections { height: 50px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateViewMdl.splashPreview div.panelContainerHorizontalBottom-FourSections { height: 165px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateViewMdl.splashPreview div.panelContainerVerticalLeft-FourSections { height: 165px; border: 1px dashed grey; margin: 2px; text-align: center; width: 48% !important; }
+.templateViewMdl.splashPreview div.panelContainerLeft-FourSections { height: 220px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateViewMdl.splashPreview div.panelContainerVerticalRight-FourSections { height: 165px; border: 1px dashed grey; margin: 2px; text-align: center; width: 47% !important; }
+
+/***** TEMPLATE 7 SECTIONS *****/
+.splashLayout div.planelContainerHorizontalTop-SevenSections {}
+.splashLayout div.panelContainerHorizontalBottom-SevenSections { clear: both;}
+.splashLayout div.panelContainerVerticalLeft-SevenSections { float: left; width: 48%; margin: 0px; }
+.splashLayout div.panelContainerVerticalRight-SevenSections { float: right; width: 48%; margin: 0px;}
+.splashLayout div.panelContainerRight-SevenSections { }
+.splashLayout div.left-SevenSections { float: left; width: 74%; margin: 0 0 0 1%; }
+.splashLayout div.right-SevenSections {float: right; width: 25%; margin: 0px; }
+.splashLayout div.top-SevenSections { float: left; width: 99%; margin: 0 0 0 1%; }
+.splashLayout div.bottom-SevenSections {float: left; width: 99%; margin: 0 0 0 1%; }
+
+.templateView.splashPreview div.planelContainerHorizontalTop-SevenSections { height: 30px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateView.splashPreview div.panelContainerHorizontalBottom-SevenSections { height: 30px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateView.splashPreview div.panelContainerVerticalLeft-SevenSections { height: 95px; border: 1px dashed grey; margin: 2px; text-align: center; width: 48% !important; }
+.templateView.splashPreview div.panelContainerVerticalRight-SevenSections { height: 95px; border: 1px dashed grey; margin: 2px; text-align: center; width: 47% !important; }
+.templateView.splashPreview div.panelContainerRight-SevenSections { height: 165px; border: 1px dashed grey; margin: 2px; text-align: center; }
+
+.templateViewMdl.splashPreview div.planelContainerHorizontalTop-SevenSections { height: 30px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateViewMdl.splashPreview div.panelContainerHorizontalBottom-SevenSections { height: 30px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateViewMdl.splashPreview div.panelContainerVerticalLeft-SevenSections { height: 95px; border: 1px dashed grey; margin: 2px; text-align: center; width: 48% !important; }
+.templateViewMdl.splashPreview div.panelContainerVerticalRight-SevenSections { height: 95px; border: 1px dashed grey; margin: 2px; text-align: center; width: 47% !important; }
+.templateViewMdl.splashPreview div.panelContainerRight-SevenSections { height: 165px; border: 1px dashed grey; margin: 2px; text-align: center; }
+
+
+/***** TEMPLATE DOCUMENTUM *****/
+.splashLayout div.planelContainerHorizontalTop-Documentum {margin-left: auto; margin-right: auto;margin-bottom: 10px;margin-top: 0px;}
+.splashLayout div.planelContainerHorizontalTop-Documentum div.title{display:none;}
+.splashLayout div.planelContainerHorizontalTop-Documentum div.planelContainer div.panel div.title{color:red;}
+
+.splashLayout div.panelContainerHorizontalBottom-Documentum { clear: both;}
+.splashLayout div.panelContainerVerticalLeft-Documentum { float: left; width: 38%; margin: 0px; }
+.splashLayout div.panelContainerVerticalRight-Documentum { float: right; width: 58%; margin: 0px;}
+.splashLayout div.panelContainerRight-Documentum { }
+.splashLayout div.left-Documentum { float: left; width: 20%; margin: 0 0 0 1%; }
+.splashLayout div.right-Documentum {float: right; width: 77%; margin: 0px; }
+
+.templateView.splashPreview div.panelContainerHorizontalBottom-Documentum { height: 165px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateView.splashPreview div.panelContainerVerticalLeft-Documentum { height: 50px; border: 1px dashed grey; margin: 2px; text-align: center; width: 48% !important; }
+.templateView.splashPreview div.panelContainerVerticalRight-Documentum { height: 50px; border: 1px dashed grey; margin: 2px; text-align: center; width: 47% !important; }
+.templateView.splashPreview div.panelContainerLeft-Documentum { height: 220px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateView.splashPreview div.panelContainerVerticalRight-Documentum { height: 50px; border: 1px dashed grey; margin: 2px; text-align: center; width: 47% !important; }
+.templateView.splashPreview div.planelContainerHorizontalTop-Documentum { height: 30px; border: 1px dashed grey; margin: 2px; text-align: center; }
+
+.templateViewMdl.splashPreview div.panelContainerHorizontalBottom-Documentum { height: 165px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateViewMdl.splashPreview div.panelContainerVerticalLeft-Documentum { height: 50px; border: 1px dashed grey; margin: 2px; text-align: center; width: 48% !important; }
+.templateViewMdl.splashPreview div.panelContainerLeft-Documentum { height: 220px; border: 1px dashed grey; margin: 2px; text-align: center; }
+.templateViewMdl.splashPreview div.panelContainerVerticalRight-Documentum { height: 50px; border: 1px dashed grey; margin: 2px; text-align: center; width: 47% !important; }
+.templateViewMdl.splashPreview div.planelContainerHorizontalTop-Documentum { height: 30px; border: 1px dashed grey; margin: 2px; text-align: center; }
+
+
+
+

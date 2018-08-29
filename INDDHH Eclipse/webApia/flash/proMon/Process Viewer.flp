@@ -1,0 +1,34 @@
+﻿<flash_project name="Process Designer 6" version="1">
+    <project_folder name="External" expanded="true">
+        <project_file path="./source/ToolPanel.fla" filetype="fla" profile="" />
+        <project_file path="./source/shell_process_events.fla" filetype="fla" profile="" />
+    </project_folder>
+    <project_folder name="util" expanded="true">
+        <project_file path="./source/com/st/util/IconCellRenderer.as" filetype="as" />
+        <project_file path="./source/com/st/util/WindowManager.as" filetype="as" />
+        <project_file path="./source/com/st/util/Screen_Navigator.as" filetype="as" />
+        <project_file path="./source/com/st/util/DataSourceXML.as" filetype="as" />
+        <project_file path="./source/com/st/util/Labels.as" filetype="as" />
+    </project_folder>
+    <project_folder name="View" expanded="true">
+        <project_folder name="Elements" expanded="true">
+            <project_file path="./source/com/st/process/view/elements/Element.as" filetype="as" />
+            <project_file path="./source/com/st/process/view/elements/EndTask.as" filetype="as" />
+            <project_file path="./source/com/st/process/view/elements/InitTask.as" filetype="as" />
+            <project_file path="./source/com/st/process/view/elements/LineObj.as" filetype="as" />
+            <project_file path="./source/com/st/process/view/elements/Operator.as" filetype="as" />
+            <project_file path="./source/com/st/process/view/elements/Rol.as" filetype="as" />
+            <project_file path="./source/com/st/process/view/elements/SubProcess.as" filetype="as" />
+            <project_file path="./source/com/st/process/view/elements/Task.as" filetype="as" />
+            <project_file path="./source/com/st/process/view/dialogs/Finder.as" filetype="as" />
+        </project_folder>
+        <project_file path="./source/com/st/process/view/TempLine.as" filetype="as" />
+        <project_file path="./source/com/st/process/view/infoText.as" filetype="as" />
+    </project_folder>
+    <project_file path="./source/com/st/process/controller/Process.as" filetype="as" />
+    <project_file path="./source/com/st/process/model/ProcessModel.as" filetype="as" />
+    <project_file path="./source/com/st/process/controller/XmlProcessParser.as" filetype="as" />
+    <project_file path="./source/Process Designer 6.fla" filetype="fla" profile="" />
+    <project_file path="./source/shell.fla" filetype="fla" profile="" def_file="true" />
+    <project_file path="./source/com/st/process/view/ProcessView.as" filetype="as" />
+</flash_project>

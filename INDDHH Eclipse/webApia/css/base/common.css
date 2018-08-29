@@ -1,0 +1,1147 @@
+/*TABS*/
+div.tabHolder { border-bottom: 1px solid #CCCCCC; margin-right: 355px;}
+div.tabHolder > div.tab { 
+	display: inline-block; cursor: pointer; margin-right: 5px;  font-weight: normal; padding: 2px 5px; color: #00549D;
+	border-bottom: 3px solid white;
+	font-size: 1.1em;
+}
+
+div.tabHolder div.active {
+	font-weight: bold;
+	color:#00549D;
+	border-bottom: 3px solid #00549D;
+}
+
+div.tabHolder div.marked {
+	font-weight: bold; 
+	background-image: url("img/alert.gif");
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 14px;
+}
+
+div.tabHolder div.docsMarked {
+	color: #DD0000 !important; 
+}
+
+div.tabHolder div.tab:hover {border-bottom: 3px solid #c0c0c0 }
+
+div.tabComponent { padding-top: 10px; margin-right: 355px;} /*Replicar cambios en fakeTabComponent*/
+div.tabComponent div.aTab { margin-top: 5px; }
+div.tabComponent div.aTab div.contentTab {display: none;}
+div.tabComponent div.aTab div.active {display: block;}
+
+.mdlBody .tabHolder { margin-right: 0px !important; }
+
+/*Debe tener el mismo margin-right que div.tabComponent, pero tiene distinto nombre para que no se usen tabs*/
+div.fakeTabComponent { padding-top: 10px; margin-right: 355px;}
+
+.chat-window {
+	width: 220px;
+	border: 1px solid #A0A0A0;
+	position: absolute;
+	height: 370px;
+	
+	-moz-box-shadow: 0px 2px 10px #909090;
+	-webkit-box-shadow: 0px 2px 10px #909090;
+	box-shadow: 0px 2px 10px #909090;
+}
+
+.chat-window .remover {
+	margin-right: 5px;
+	font-weight: bold;
+	font-size: 1.1em;
+	float: right;
+	cursor: pointer;
+}
+
+.chat-title {
+	line-height: 30px;
+	font-weight: bold;
+	padding-left: 7px;
+	color: white;
+    
+    -webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.cssgradients .chat-title {
+	/*GRADIENT*/
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#075196) to(#29477c)); /*old webkit*/
+    background: -webkit-linear-gradient( #075196, #29477c); /*new webkit*/
+    background: -moz-linear-gradient( #075196, #29477c); /*gecko*/
+    background: -ms-linear-gradient( #075196, #29477c); /*IE10*/
+    background: -o-linear-gradient( #075196, #29477c); /*opera 11.10+*/
+    background: linear-gradient( #075196, #29477c); /*future CSS3 browsers*/
+    border: 1px solid;
+}
+
+.no-cssgradients .chat-title {
+	/*GRADIENT*/
+	background: url("img/top_frm.png") repeat-x scroll #2A467A;
+} 
+
+.chat-highlight {
+	background: #E19B33 !important;
+}
+
+.chat-title .chat-title-text {
+	width: 165px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
+	cursor: default;
+	height: 30px;
+}
+
+.remover {
+	margin-top: -2px;
+}
+
+.minimizer {
+	margin-right: 5px;
+	font-weight: bold;
+	font-size: 1.5em;
+	float: right;
+	cursor: pointer
+}
+
+.chat-content {
+	background-color: #FEFEFE;
+}
+
+.chat-content .chatParticipants {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	padding-right: 16px;
+	padding-bottom: 5px;
+}
+
+.chat-content div.chat-prps {
+	background-image: url(img/chat/prps.png);
+	background-position: center;
+	width: 13px;
+	height: 13px;
+	position: absolute;
+	right: 3px;
+	top: 34px;
+}
+
+.chat-content div.chat-prps:hover {
+	background-color: #D0D0D0;
+	cursor: pointer;
+}
+
+.chat-content div.chat-prps.pressed {
+	background-color: #D0D0D0;
+}
+
+div.chat-prp-opts {
+	position: absolute;
+	top: 47px;
+	right: 0px;
+	width: 110px;
+	
+	background-color: white;
+	border: 1px solid #DDDDDD;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	-moz-box-shadow: 1px 1px 2px #909090;
+	-webkit-box-shadow: 1px 1px 2px #909090;
+	box-shadow: 1px 1px 2px #909090;
+}
+
+div.chat-prp-opts > hr {
+	border-color: #F0F0F0;
+}
+
+div.chat-prp-opt {
+	font-weight: normal;
+	line-height: 14px;
+	padding-left: 12px;
+	padding-right: 12px;
+	cursor: pointer;
+}
+
+div.chat-prp-opt:hover {
+	background-color: #0066b1;
+	color: white;
+}
+
+div.chat-user {
+	height: 25px;
+	line-height: 25px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-bottom: 1px solid #C0C0C0;
+	color: #6B6B6B;
+	cursor: pointer;
+}
+
+div.chat-user:hover {
+	color: black;
+}
+
+div.chat-user label.checkbox-label input[type=checkbox]{
+    position: relative;
+    vertical-align: middle;
+    bottom: 1px;
+    margin-right: 15px;
+	margin-left: 5px;
+}
+
+div.chat-user label.checkbox-label {
+ 	display: block;
+   	width: 100%;
+   	cursor: pointer;
+}
+
+div.chat-user.selected {
+	background-color: #e0e4e9;
+}
+    
+.chat-admin-message {
+	color: #707070;
+	font-style: italic;
+}
+
+.chat-admin-message a {
+	font-style: normal;
+}
+
+.chat-content .chatContent {
+	width: 100%;
+	height: 297px;
+	position: relative;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+}
+
+.chat-content > input {
+	width: 100%;
+	border-left-width: 0;
+	border-right-width: 0;
+	padding-left: 0;
+	border-top: 1px solid #808080;
+}
+
+.chat-content > textarea {
+	width: 100%;
+	border-left: 0px;
+	border-right: 0px;
+	height: 26px;
+}
+
+.chatParticipants {
+	padding-top: 2px !important;
+	margin-bottom: 3px !important;
+	word-wrap: break-word;
+	background-color: #EDEDED;
+	padding-left: 5px;
+}
+
+div.chatParticipants label { font-weight: bold; }
+div.chatParticipants span.participant { margin-right: 5px; }
+
+.chat-mask { 
+	background-color: white;
+	opacity: 0.75;
+	filter: alpha(opacity=75);
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+}
+
+/* div.tabContentContainer *.tabUser .chat .content { height: 100px; overflow: auto; padding-left: 10px; padding-right: 5px; padding-bottom: 5px; } */
+
+.chat-loader {
+	display: inline-block;
+	width: 16px;
+	height: 11px;
+	background-image: url(img/chat/ajax-loader.gif);
+	margin-left: 4px;
+	margin-bottom: -2px;
+}
+
+/*AUTOCOMPLETER*/
+input.autocompleter-loading {
+	background-image: url(img/spinner.gif);
+	background-repeat: no-repeat;
+	background-position: right 50%;
+}
+
+ul.autocompleter-choices {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border: 1px solid #7c7c7c;
+	border-left-color: #c3c3c3;
+	border-right-color: #c3c3c3;
+	border-bottom-color: #ddd;
+	background-color: #fff;
+	text-align: left;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	z-index: 9999 !important;
+	background-color: #fff;
+}
+
+ul.autocompleter-choices li {
+	position: relative;
+	margin: -2px 0 0 0;
+	padding: 0.2em 1.5em 0.2em 1em;
+	display: block;
+	float: none !important;
+	cursor: pointer;
+	font-weight: normal;
+	white-space: nowrap;
+	line-height: 1.5em;
+}
+
+ul.autocompleter-choices li.autocompleter-selected {
+	background-color: #444;
+	color: #fff;
+}
+
+ul.autocompleter-choices span.autocompleter-queried {
+	display: inline;
+	float: none;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
+
+ul.autocompleter-choices li.autocompleter-selected span.autocompleter-queried
+	{
+	color: #9FCFFF;
+}
+
+/*SPINNER*/
+.spinner {
+	position: absolute;
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+	z-index: 1;
+	background: #fff;
+}
+
+.spinner-msg {
+	text-align: center;
+}
+
+.spinner-img {
+	background: url(img/spinner.gif) no-repeat;
+	width: 24px;
+	height: 24px;
+	margin: 0 auto;
+}
+
+.spinner-content {
+	position: relative !important;
+	top: 45% !important;
+	z-index: 10;
+}
+
+.documentSpinner {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+/*MESSAGES*/
+div.warning label{
+	color:orange;
+	font-weight:bold;
+	display:block;
+	height: 100px;
+	width: 300px;
+}
+
+label.message{
+	color: black;
+	display:block;
+	height: 100px;
+	width: 300px;
+}
+
+label.error{
+	color:red;
+	display:block;
+	height: 100px;
+	width: 300px;
+}
+
+/*MONITORES*/
+span.monitor-input {
+	word-wrap: break-word;
+	margin-left: 5px;
+}
+
+span.monitor-select {
+	margin-left: 5px;
+}
+
+.monitorGridCell > input.monitor-checkbox {
+	margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+span.monitor-password {
+	margin-left: 5px;
+}
+
+.cssgradients div.monitor-button button.genericBtn:hover {
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(white) to(#EFEFEF));
+	background: -webkit-linear-gradient( white, #EFEFEF);
+	background: -moz-linear-gradient( white, #EFEFEF);
+	background: -ms-linear-gradient( white, #EFEFEF);
+	background: -o-linear-gradient( white, #EFEFEF);
+	background: linear-gradient( white, #EFEFEF);
+	color: #606060;
+	border-color: silver;
+}
+/*Igual a .no-cssgradients button.genericBtn*/
+.no-cssgradients div.monitor-button button.genericBtn:hover {
+	background-image: url("img/button/back_button.png");
+	color: #606060;
+	border-color: silver;
+}
+
+div.monitor-area {
+	word-wrap: break-word;
+	margin-left: 5px;
+}
+
+div.monitor-fileinput > div.docData {
+	margin-left: 5px;
+}
+
+span.monitor-radio {
+	margin-left: 5px;
+}
+
+div.monitor-editor {
+	margin-left: 5px;
+}
+
+div.monitor-editor pre {
+	white-space: normal;
+}
+
+label.monitor-lbl {
+	font-weight: bold;
+}
+
+span.monitor-lbl {
+	display: block;
+    color: #464646;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+/*SIGNATURE*/
+div.fieldGroup.signature div.title { 
+	color: #464646;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #cccccc;
+}
+
+table.sign {
+	width: 100%;
+}
+table.sign div.subtitle {
+	margin-left: 5px;
+}
+table.sign div.subtitle.notFirst {
+	padding-top: 6px;
+}
+div.fieldGroup.signature > table {
+    margin-bottom: 10px;
+}
+
+/*MODALES*/
+.modalBlocker{
+	z-index: 999;
+	filter: alpha(opacity=75);
+	-moz-opacity: 0.75;
+	opacity: 0.75;
+	background-color: white;
+	position: fixed !important; 
+	display: block;
+	top: 0px;
+	left: 0px;
+	outline: none;
+}
+
+.modalContent { 
+	width: 500px; 
+	background-color: white; 
+	-webkit-box-shadow: 0px 4px 23px 3px #a8a8a8;
+	-moz-box-shadow: 0px 4px 23px 3px #a8a8a8;
+	box-shadow: 0px 4px 23px 3px #a8a8a8;
+	
+	border: 1px solid #a8a8a8;
+	color: #6b6b6b;
+	outline: none;
+}
+
+html.no-boxshadow .modalContent {
+	border: 1px solid #a8a8a8;
+}
+
+.modalContent .header { font-weight: bold; margin-bottom: 5px; padding: 5px; background-color: #5A89A2; color: white; min-height: 15px;}
+.modalContent .content { overflow: auto; padding: 8px; max-height: 300px; /* maxHeight is defined by code in modal.js */ }
+.modalContent .footer { margin-top: 5px; min-height: 20px; padding: 1px; background-color: #F5F5F5; }
+.modalContent .footer .button {color: #0679B8; cursor: pointer; display: inline; margin-left: 8px; line-height: 20px; float: left;}
+.modalContent .footer .button:first-child {font-weight: bold;}
+.modalContent .footer .close { float:right; cursor: pointer; color: #0679B8; line-height: 20px; }
+.modalContent .footer .close { float:right; cursor: pointer; color: #0679B8; line-height: 20px; margin-right: 20px;}
+
+.modalContent .footer .button:hover, .modalContent .footer .close:hover {
+	text-decoration: underline;
+}
+
+.modalError .header { background-color: #C93737 !important; color: white !important; }
+.modalError .content span {display: inline-block; }
+.modalError .content .stacktrace {margin-left: 10px; font-style: italic; margin-bottom: 5px;}
+.modalError { width: 450px; }
+
+.modalWarning .header, .modalWarningHeader { background-color: #ebb34d !important; color: white !important; /*orange*/}
+.modalWarning { width: 450px; }
+
+.modalMessage .header { background-color: #5BAC5B; }
+.modalMessage { width: 450px; }
+
+.modalContent table { width: 100%; table-layout: fixed; }
+.modalContent table tr td { white-space: normal; }
+.modalContent table tr td.text { width: 20%; }
+.modalContent table tr td.required:before {
+    content: "*";
+}
+.modalContent table tr td.content { width: 100%; }
+.modalContent table tr td input { width: 80%; }
+.modalContent table tr td input.default { width: 20px; }
+.modalContent table tr td select { width: 80%; }
+.modalContent table tr td textarea { width: 80%; height: 100px; }
+
+.modalContent .optionTextOverflow { text-overflow: ellipsis; overflow: hidden; white-space: pre; display: block; }
+
+.normalWhiteSpace { white-space: normal !important; }
+.normalPreWrap .content { white-space: pre-wrap; }
+.selectMidle { width: 45% !important; }
+.inputMidle { width: 45% !important; }
+.normalPreLine { white-space: pre-line; }
+
+.progressBarContainer {height: 10px;}
+.progressBarContainer .progressBar { height: 10px; width: 0px; background-color: #c0c0c0; }
+
+.closeButton{background-image:url(img/modalCloseBtn.png);}
+
+.modalOptionsContainer {color:#777777; position: relative; }
+#contentTabAttributes .modalOptionsContainer { float: left; }
+.modalOptionsContainer .option { background-position: right center; background-repeat: no-repeat; border: 1px solid #DDDDDD; clear: none; display: inline-block; margin: 2px; padding: 4px 8px; line-height: 17px; border-radius: 3px; box-shadow: 0px 3px 6px -5px; background-color: white;}
+.modalOptionsContainer .option.dateOption { height: 29px;}
+.modalOptionsContainer .optionLarge { width: 48%; }
+.modalOptionsContainer .optionWidthAll { width: 90%; }
+.modalOptionsContainer .optionWidth75 { width: 70%; }
+.modalOptionsContainer .optionWidth50 { width: 50%; }
+.modalOptionsContainer .optionWidth40 { width: 40%; }
+.modalOptionsContainer .optionWidth30 { width: 29% !important; }
+.modalOptionsContainer .forceAlignOption { position: relative; }
+.modalOptionsContainer .forceAlignOption > .optionIcon { position: absolute; right: 15px; top: 4px; }
+.modalOptionsContainer .optionWidthAllModal { padding-right: 16px; width: 90%; word-break: break-all; }
+.modalOptionsContainer .optionMiddle { min-width: 200px; word-break: break-all; }
+.modalOptionsContainer .optionMiddleModal { padding-right: 16px; width: 40%; word-break: break-all; }
+.modalOptionsContainer .optionOneEighthModal { padding-right: 3px; padding-left: 3px; width: 14%; word-break: break-all; }
+.modalOptionsContainer .option button { cursor: pointer; }
+.modalOptionsContainer .option input[type=text] { margin: 3px; width: inherit !important; background-color: white; }
+.modalOptionsContainer .option input[type=text].force50 { margin: 3px; width: 50% !important; background-color: white; }
+.modalOptionsContainer .option input[type=checkbox] { margin: 3px; width: inherit !important;}
+.modalOptionsContainer .option div.text { overflow: hidden; text-overflow: ellipsis; width: 80%; }
+.modalOptionsContainer .optionBoxSizing { box-sizing: border-box; }
+.modalOptionsContainer .optionNoRightPadding { padding-right: 0px; }
+
+.modalOptionsContainer .option.document {
+    padding: 5px 10px;
+}
+
+.modalOptionsContainer div.option-highlighted { border: 0px !important; vertical-align: top; width: 5px; height: 5px; display: inline-block; }
+.modalOptionsContainer div.option-highlighted:after {content:'*'; color: orange; margin-left:5px; font-size: 10pt; }  
+
+span.italic { font-style: italic; }
+
+/*Veriricar que el css selector type=checkbox funcione en ie*/
+.modalOptionsContainer .option input[type=checkbox] { 
+	margin: 5px 10px 3px 3px; 
+	width: auto !important;
+	vertical-align: bottom;
+}
+
+#WSBusClassContainter > .option > span {
+	position: relative;
+	top: 2px;
+}
+
+.modalOptionsContainer .option select { margin: 3px; width: inherit !important; }
+.modalOptionsContainer .option span {}
+.modalOptionsContainer div.imgContainer {
+    width: 80%; background-size: contain; height: 60px; float: left; 
+	background-repeat: no-repeat; background-position: top left;
+	margin: 3px;
+}
+
+.modalOptionsContainer .optionTextOverflow { text-overflow: ellipsis !important; overflow: hidden; }
+.modalOptionsContainer .optionRemove { margin-top: 2px; background-image: url("img/remove2.gif"); width: 16px; height: 16px; cursor: pointer; float: right;}
+.modalOptionsContainer.largerOption .optionRemove { height: 30px; }
+.modalOptionsContainer .optionRemoveNoImg { background-color: #F7F7F7; border: 1px solid #dddddd;}
+.modalOptionsContainer .optionRemoveTD { background-image: url("img/remove.gif"); cursor: pointer; border: 1px solid #A7A7A7 !important; padding-right: 16px;}
+.modalOptionsContainer .optionDownload { background-image: url("img/document/download.gif"); cursor: pointer; width: 15px; height: 15px; margin-left: 5px; margin-right: 5px; display: inline-block; background-repeat: no-repeat;}
+.modalOptionsContainer .optionRemoveOver {}
+.modalOptionsContainer .optionAdd {
+		cursor: pointer; 
+		height: 20px;
+		margin-top: 3px;
+		float: left;
+	}
+.modalOptionsContainer .optionAddOnlyIcon { background-image: url("img/add.gif"); background-repeat: no-repeat; cursor: pointer; height: 16px !important; width: 6px !important; margin-right: 10px; background-position: center; }
+.modalOptionsContainer .optionAddRigth { float: right !important; }
+.modalOptionsContainer .optionAddOver {}
+.modalOptionsContainer .optionUser { background-image: url("img/user.gif"); width: 16px; display: inline-block; margin-right: 5px; background-repeat: no-repeat; }
+.modalOptionsContainer .optionPool { background-image: url("img/pool.gif"); width: 16px; display: inline-block; margin-right: 5px; background-repeat: no-repeat; }
+.modalOptionsContainer .optionIcon { background-repeat: no-repeat; cursor: pointer; width: 16px; height: 16px; margin-left: 5px; margin-right: 5px; display: inline-block; float: right;}
+.modalOptionsContainer .optionWebServicePubNOk { background-image: url("img/priority1.gif"); float: left; margin-top: 5px;}
+.modalOptionsContainer .optionWebServicePubOk { background-image: url("img/priority2.gif"); float: left; margin-top: 5px;}
+.modalOptionsContainer .optionWebServiceUnPub { 
+	background-image: url("img/priority3.gif"); 
+	float: left;
+	margin-top: 5px;	
+}
+.modalOptionsContainer .optionWebServiceNoStatus { float: left;}
+.modalOptionsContainer .optionPublish { 
+	background-image: url("img/upload.gif");
+	margin-top: 4px;
+}
+.modalOptionsContainer .optionUnPublish { 
+	background-image: url("img/download.gif");
+	float: right;
+	top: 5px;
+	position: relative;
+}
+.modalOptionsContainer .optionUnPublishAll { 
+	background-image: url("img/unpubAll.png"); 
+	width: 20px !important;
+	float: right;
+	top: 5px;
+	position: relative;
+}
+.modalOptionsContainer .optionUsersSelected { background-image: url("img/users16x16.png"); }
+.modalOptionsContainer .optionUsersUnSelected { background-image: url("img/users_gris16x16.png"); }
+.modalOptionsContainer .optionModify { background-image: url("img/modify2.gif"); width: 20px !important; height: 20px !important; }
+.modalOptionsContainer .optionInfo { background-image: url("img/document/info.gif"); }
+.modalOptionsContainer .optionItalic { font-style: italic; color: gray; }
+.modalOptionsContainer .optionFunctionalities { max-height: 350px; overflow: auto; }
+.modalOptionsContainer .optionFunctionalities.forceMaxHeight { max-height: 500px !important; }
+.modalOptionsContainer .optionFunctionalities ul { margin-top: 0px; /*list-style: none;*/ }
+.profileFunctionalitiesContainer .modalOptionsContainer .optionFunctionalities ul { list-style: none; }
+
+.mdlContainer .modalOptionsContainer .optionFunctionalities ul.modal { margin-top: 0px; list-style: none !important; }
+.modalOptionsContainer .optionFunctionalities ul li { margin-left: -15px; line-height: 15px; width: 350px; display: inline-block;}
+.modalOptionsContainer .optionFunctionalities ul li.modal { line-height: 20px; }
+.modalOptionsContainer .optionFunctionalities ul li.noFather { padding-left: 0px !important; }
+.modalOptionsContainer .optionFunctionalities ul li.fncTypeFolder { background-image: url("img/folder_16x14.png"); background-position: 3px 3px; background-repeat: no-repeat; padding-left: 20px; }
+.modalOptionsContainer .optionFunctionalities ul li.fncTypeFolder > ul { padding-left: 20px; }
+.modalOptionsContainer .optionFunctionalities ul li.fncTypeFolder > li { padding-left: 20px; }
+.modalOptionsContainer .optionFunctionalities ul li input.chkFnc { float: left; }
+.modalOptionsContainer .optionCategoryTree { max-height: 98px; height: 98px; overflow: auto; }
+.modalOptionsContainer .optionCategoryTree ul { margin-top: 0px; }
+.modalOptionsContainer .optionCategoryTree ul li { margin-left: -15px; line-height: 15px; width: 200px; }
+.modalOptionsContainer .optionCubeModal { max-height: 350px; }
+.modalOptionsContainer .optionCubeModal ul { margin-top: 0px; list-style-type: none;}
+.modalOptionsContainer .optionCubeModal ul li { margin-left: -15px; line-height: 20px; /*width: 480px; */}
+.modalOptionsContainer.maxHeightOptionsContainer {height: 300px;}
+.modalOptionsContainer .optionWidthParameter { width: 45%; }
+.modalOptionsContainer .optionWidthParameter img { float: left; }
+.modalOptionsContainer .optionParameter { float: left; }
+.modalOptionsContainer .optionParameterName { max-width: 50%; text-align: right; float: left; margin-right: 10px; word-wrap: break-word; }
+.modalOptionsContainer .option input.optionParameterString { width : calc(100% - 10px) !important; }
+.modalOptionsContainer .option input.optionParameterNumeric { width : calc(100% - 10px) !important; }
+.modalOptionsContainer .optionParameterDate { max-width: 120px !important; }
+.modalOptionsContainer .highlighted { border: 1px solid orange !important; }
+
+
+.left { float: left !important; }
+.right { float: right !important; }
+
+.modalOptionsContainerTable {color:#777777;}
+.modalOptionsContainerTable .option { background-position: right center; background-repeat: no-repeat; clear: none; float: left; margin: 2px; padding: 2px 5px; line-height: 17px; border-radius: 3px; height: 20px;}
+.modalOptionsContainerTable .option input { margin: 0px; width: 85% !important; }
+.modalOptionsContainerTable .optionRemove { padding-right: 16px; background-image: url("img/remove.gif"); cursor: pointer; }
+.modalOptionsContainerTable .optionIcon { background-repeat: no-repeat; cursor: pointer; width: 16px; height: 16px; margin-left: 5px; margin-right: 5px; display: inline-block; float: right;}
+.modalOptionsContainerTable .optionModify { background-image: url("img/modify2.gif"); width: 20px !important; height: 20px !important; margin-top: 1px !important; margin-left: 5px !important; position: absolute !important; }
+
+.optionFormsContainer { max-height: 540px !important; overflow: auto; }
+
+.optionRemoveFnc { background-position: center center; background-repeat: no-repeat; background-image: url("img/remove.gif"); float: left; cursor: pointer; margin: 2px; padding: 2px 5px; height: 7px; }
+.showChilds { background-position: center center; background-repeat: no-repeat; background-image: url("img/plus.gif");  float: left; cursor: pointer; margin: 3px 4px; padding: 2px 4px; height: 4px; }
+.hideChilds { background-position: center center; background-repeat: no-repeat; background-image: url("img/minus.gif"); float: left; cursor: pointer; margin: 3px 4px; padding: 2px 4px; height: 4px; }
+
+td div input.parameterString { width: 95% !important; }
+td div input.parameterNumeric { width: 95% !important; }
+td div input.parameterDate { width: 90% !important; }
+
+div.mdl-btn { 
+	background-image: url(img/lupa.gif);
+	width: 16px;
+	height: 15px;
+	display: inline-block;
+	position: relative;
+	left: 2px;
+	top: 2px;
+	cursor: pointer;
+	margin-top: -2px;
+} /*cuando se le saco el width y el height se dejaron de ver las lupas*/
+
+select option.disabled { color: red; }
+select option.enabled { color: green; }
+
+div.okMsg {
+	background-image: url('img/messages/okMsg.gif');
+    background-repeat: no-repeat;
+    padding: 10px 10px 10px 40px;
+    background-position: 10px;
+    background-color: #dff0d5;
+    border-radius: 2px;
+    border: 1px solid #9dc286;
+    color: #44763b;
+    font-weight: bold;
+}
+
+div.warnMsg {
+	background-image: url('img/messages/warnMsg.gif');
+    background-repeat: no-repeat;
+    padding: 10px 10px 10px 40px;
+    background-position: 10px;
+    background-color: #fff1c2;
+    border-radius: 2px;
+    border: 1px solid #dec369;
+    color: #857132;
+    font-weight: bold;
+}
+
+div.errMsg {
+	background-image: url('img/messages/errMsg.gif');
+    background-repeat: no-repeat;
+    padding: 10px 10px 10px 40px;
+    background-position: 10px;
+    background-color: #f2dede;
+    border-radius: 2px;
+    border: 1px solid #ceabab;
+    color: #8d313d;
+    font-weight: bold;
+}
+
+/*
+CSS para modals de usuarios, ambientes, perfiles, grupos, etc
+*/
+
+div.hiddenModal{display: none;}
+div.mdlContainer { 
+	width: 485px; 
+	background-color: #FFFFFF; 
+	border: 1px solid #a8a8a8;
+	padding: 6px;
+}
+
+html.borderradius div.mdlContainer {
+	border-radius: 3px;
+}
+
+html.boxshadow div.mdlContainer {
+	box-shadow: 0px 4px 23px 5px #a8a8a8;
+}
+
+div.mdlContainer .mdlHeader{ background-color: #5A89A2; border-bottom: 1px solid white; color: white; /*padding-bottom: 3px;*/padding: 5px; font-weight: bold; text-align: center; margin-bottom: 4px;}
+div.mdlContainer .mdlBody { background-color: white;}
+div.mdlContainer .mdlBody .gridBody { width: 100%; }
+div.mdlContainer .mdlFooter{ background-color: #FFFFFF; margin-top: 5px; margin-right: 10px; min-height: 20px; padding: 2px; }
+div.mdlContainer .mdlFooter .button { color: #0679B8; cursor: pointer; font-weight: bold; margin-left: 5px; margin-top: 5px;}
+div.mdlContainer .mdlFooter .close { color: #0679B8; cursor: pointer; float: right; margin-top: 5px; padding: 2px; }
+div.mdlContainer .mdlFooter .btn { color: #0679B8; cursor: pointer; font-weight: bold; margin-left: 5px; margin-top: 7px; float: left;}
+div.mdlContainer .mdlFooter .modalButton{ color: #0679B8; cursor: pointer; font-weight: bold; margin-left: 5px; margin-top: 7px; display: inline-block; }
+div.mdlContainer .mdlFooter .modalButtonSecundary{ color: #0679B8; cursor: pointer; margin-left: 20px; margin-top: 7px; display: inline-block; }
+div.mdlContainer div.mdlBody div.gridFooter {width: 485px; }
+div.mdlContainer div.mdlBody div.gridFooter table { color:#4D90FE;border-top:1px solid;border-collapse: collapse;}
+div.mdlContainer div.mdlBody div.gridFooter table tr td{background-color: #5A89A2}
+div.mdlContainer div.mdlBody div.gridFooter table tr td.roundedLeft{background-color: #6581CF; }
+div.mdlContainer div.mdlBody div.gridFooter table tr td.roundedRight{background-color: #6581CF;}
+
+div.mdlContainer div.mdlBody div.gridHeader table{}
+
+.tabModal { max-height: 350px; height: 350px; margin-left: 5px !important; }
+.tabHidden { display: none !important; }
+.tabHolderHidden { display: none !important; }
+
+/*
+CSS para modal de info de documentos
+*/
+div.mdlDocContainer { 
+	width: 485px; 
+	background-color: #FFFFFF;   
+	padding: 6px;
+}
+div.mdlDocContainer .mdlHeader{ background-color: #5A89A2; border-bottom: 1px solid white; color: white; padding: 5px; font-weight: bold; text-align: center; margin-bottom: 4px;}
+div.mdlDocContainer .mdlBody { background-color: white;}
+div.mdlDocContainer .mdlBody .gridBody { width: 484px; }
+div.mdlDocContainer .mdlFooter{ background-color: #FFFFFF; margin-top: 5px; margin-right: 10px; min-height: 20px; padding: 2px; }
+div.mdlDocContainer .mdlFooter .button { color: #0679B8; cursor: pointer; display: inline; font-weight: bold; margin-left: 5px; margin-top: 2px; }
+div.mdlDocContainer .mdlFooter .close { color: #0679B8; cursor: pointer; float: right; margin-top: 2px; padding: 2px; }
+div.mdlDocContainer .mdlFooter .modalButton{ color: #0679B8; cursor: pointer; display: inline; font-weight: bold; margin-left: 5px; margin-top: 2px; }
+div.mdlDocContainer .mdlFooter .modalButtonSecundary { color: #0679B8; cursor: pointer; display: inline; margin-left: 5px; margin-top: 2px; }
+div.mdlDocContainer .mdlBody .generalInfo {}
+div.mdlDocContainer .mdlBody .generalInfo .text{font-weight: bold;}
+div.mdlDocContainer .mdlBody .generalInfo .content{}
+div.mdlDocContainer .mdlBody .history {width: 100%; }
+div.mdlDocContainer .mdlBody .history thead { background-color: #c0c0c0}
+div.mdlDocContainer .mdlBody .history tbody {}
+
+div.mdlBody table tbody tr td input[type=file] { width: 100% !important; height: 20px; }
+
+/*
+CSS para modal generador de escenarios
+*/
+input.scenarioInput{
+	width: 33px !important;
+}
+div.mdlDocContainer .mdlBody .history tbody {}
+
+div.option span.checkcontainer {
+	margin-left: 10px;
+}
+
+
+/*
+CSS para modal de verificar firmas
+*/
+div.mdlVerifySignContainer {background-color: #FFFFFF; border: 3px solid #ffffff; padding: 3px;}
+div.mdlVerifySignContainer .mdlHeader{ background-color: #5A89A2; border-bottom: 1px solid white; color: white; padding: 5px; font-weight: bold; text-align: center; margin-bottom: 4px;}
+div.mdlVerifySignContainer .mdlBody { background-color: white;}
+div.mdlVerifySignContainer .mdlBody table {width: 100%}
+div.mdlVerifySignContainer .mdlBody table thead tr th { border: 1px solid gray}
+div.mdlVerifySignContainer .mdlBody table tbody tr td { border-left: 1px solid #FFFFFF; border-right: 1px solid #FFFFFF; padding: 4px 5px }
+
+table.gridTranslations input {
+	width: 95% !important;
+}
+
+div.modalContent li.li {
+	display: table;
+	margin-left: -10px;
+}
+
+div.modalContent li span {
+	margin-left: 5px;
+}
+
+div.modalContent li label {
+	margin-left: 5px;
+}
+
+div.modalContent li input {
+	vertical-align: bottom;
+	position: relative;
+	top: 3px;
+}
+
+div.modalContent div > ul > li {
+	padding-top: 3px;
+}
+
+.modalItem { 
+	width: 70%;
+}
+
+.modal-disable-scroll {
+	overflow: hidden !important;
+}
+
+.cssgradients .optionSelected {	background: #0063b6; color: #ffffff;	border-color: #244f9d;}
+.no-cssgradients .optionSelected { background: #0063b6; color: #ffffff; border-color: #244f9d;}
+
+/*DATEPICKER*/
+input.datePicker {
+    width: 65px;
+}
+
+.datepicker_vista {
+	position: absolute;
+	font-family: Tahoma, sans-serif;
+	color: #000;
+	line-height: normal;
+	width: 172px;
+	height: 135px;
+	padding: 14px;
+	background: url(img/datepicker/frame.png) no-repeat;
+	z-index: 2;
+}
+
+/* header
+********************************************************/
+.datepicker_vista .header {
+	position: relative;
+	height: 15px;
+	margin-bottom: 5px;
+	padding-top: 1px;
+	background-color: #FFFFFF;
+}
+
+.datepicker_vista .header .title {
+	text-align: center;
+	margin: 0 18px 0 18px;
+}
+
+.datepicker_vista .header .titleText {
+}
+
+.datepicker_vista .header .previous,
+.datepicker_vista .header .next,
+.datepicker_vista .header .closeButton {
+	position: absolute;
+	cursor: pointer;
+	text-indent: -40px;
+	overflow: hidden;
+	width: 12px;
+	height: 12px;
+	top: 2px;
+	background-image: url(img/datepicker/buttons.png);
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+.datepicker_vista .header .previous {
+	left: 4px;
+}
+.datepicker_vista .header .previous:hover {
+	background-position: left bottom;
+}
+.datepicker_vista .header .next {
+	right: 20px;
+	background-position: -13px top;
+}
+.datepicker_vista .header .next:hover {
+	background-position: -13px bottom;
+}
+.datepicker_vista .header .closeButton {
+	display: none;
+	right: 0px;
+	top: 0px;
+	background-position: right top;
+}
+.datepicker_vista .header .closeButton:hover {
+	background-position: right bottom;
+}
+
+.datepicker_vista .header .clearButton {
+	position: absolute;
+	cursor: pointer;
+	overflow: hidden;
+	width: 12px;
+	height: 12px;
+	top: 2px;
+	right: 2px;
+	background-image: url(img/eraserIcon.png);
+	opacity: 0.7;
+}
+
+.datepicker_vista .header .clearButton:hover {
+	opacity: 1;
+}
+
+
+/* body
+********************************************************/
+.datepicker_vista .body {
+	position: relative;
+	top: 0px;
+	left: 2px;
+	width: 168px;
+	height: 112px;
+	overflow: hidden;
+}
+
+/* time
+********************************************************/
+.datepicker_vista .time {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.datepicker_vista .time .hour,
+.datepicker_vista .time .separator,
+.datepicker_vista .time .minutes {
+	border: 1px solid #ccc;
+	background: #fff;
+	width: 50px;
+	font-size: 2.7em;
+	position: absolute;
+	top: 10px;
+	text-align: center;
+	padding: 2px;
+}
+
+.datepicker_vista .time .hour {
+	left: 15px;
+}
+.datepicker_vista .time .separator {
+	background: transparent;
+	border: 0px;
+	width: 10px;
+	left: 76px;
+}
+
+.datepicker_vista .time .minutes {
+	left: 95px;
+}
+.datepicker_vista .time .ok {
+	position: absolute;
+	top: 65px;
+	width: 136px;
+	left: 15px;
+	font-size: 1.7em;
+}
+
+/* days-grid
+********************************************************/
+.datepicker_vista .days .day {
+	float: left;
+	text-align: center;
+	overflow: hidden;
+	width: 23px;
+	height: 15px;
+	margin: 0 1px 1px 0;
+}
+.datepicker_vista .days .titles {
+	height: 15px;
+	border-bottom: 1px solid #e0e0e0;
+	margin-bottom: 1px;
+}
+.datepicker_vista .days .day0 {
+	margin-right: 0;
+}
+
+.datepicker_vista .days .week5 .day {
+	margin-bottom: 0;
+}
+
+/* days-colors
+********************************************************/
+.datepicker_vista .days .week .day {
+	cursor: pointer;
+}
+.datepicker_vista .days .week .day:hover {
+	background: url(img/datepicker/days.png) left top no-repeat;
+	color: #0084AA;
+}
+
+.datepicker_vista .days .otherMonth {
+	color: #aaa;
+}
+
+.datepicker_vista .days .selected {
+	background: url(img/datepicker/days.png) left bottom no-repeat;
+	color: #316879;
+}
+
+/* months-grid
+********************************************************/
+.datepicker_vista .months .month {
+	float: left;
+	cursor: pointer;
+	text-align: center;
+	padding-top: 6px;
+	width: 55px;
+	overflow: hidden;
+	height: 21px;
+	margin: 0 1px 1px 0;
+}
+
+.datepicker_vista .months .month3,
+.datepicker_vista .months .month6,
+.datepicker_vista .months .month9,
+.datepicker_vista .months .month12 {
+	margin-right: 0;
+}
+
+.datepicker_vista .months .month10,
+.datepicker_vista .months .month11,
+.datepicker_vista .months .month12 {
+	margin-bottom: 0;
+}
+
+/* months-colors
+********************************************************/
+.datepicker_vista .months .month:hover {
+	background: url(img/datepicker/months.png) left top no-repeat;
+	color: #0084AA;
+}
+
+.datepicker_vista .months .selected {
+	background: url(img/datepicker/months.png) left bottom no-repeat;
+	color: #316879;
+}
+
+/* years-grid
+********************************************************/
+.datepicker_vista .years .year {
+	float: left;
+	cursor: pointer;
+	text-align: center;
+	padding-top: 6px;
+	width: 32px;
+	overflow: hidden;
+	height: 21px;
+	margin: 0 1px 1px 0;
+}
+
+.datepicker_vista .years .year4,
+.datepicker_vista .years .year9,
+.datepicker_vista .years .year14,
+.datepicker_vista .years .year19 {
+	margin-right: 0;
+}
+
+.datepicker_vista .years .year15,
+.datepicker_vista .years .year16,
+.datepicker_vista .years .year17,
+.datepicker_vista .years .year18,
+.datepicker_vista .years .year19 {
+	margin-bottom: 0;
+}
+
+/* years-colors
+********************************************************/
+.datepicker_vista .years .year:hover {
+	background: url(img/datepicker/years.png) left top no-repeat;
+	color: #0084AA;
+}
+
+.datepicker_vista .years .selected {
+	background: url(img/datepicker/years.png) left bottom no-repeat;
+	color: #316879;
+}
+
+/* global
+********************************************************/
+.datepicker_vista .unavailable {
+	background: none !important;
+	color: #fbb !important;
+	cursor: default !important;
+}

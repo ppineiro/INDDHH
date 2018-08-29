@@ -1,0 +1,680 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../../print.css" type="text/css" media="print"><meta content="PDF,org.alivepdf.pdf.PDF,totalPages,addBookmark,addCell,addEventListener,addImage,addImageStream,addLink,addMultiCell,addPage,addText,addTextNote,addTransition,beginFill,curveTo,dispatchEvent,drawCircle,drawEllipse,drawPolygone,drawRect,drawRoundRect,end,endFill,getCurrentPage,getDefaultOrientation,getDefaultSize,getDefaultUnit,getMargins,getPage,getPages,getX,getY,gotoPage,hasEventListener,lineStyle,lineTo,moveTo,newLine,removeAllPages,removeEventListener,removePage,rotatePage,save,setAliasNbPages,setAlpha,setAuthor,setAutoPageBreak,setBottomMargin,setCreator,setDisplayMode,setFont,setFontSize,setKeywords,setLeftMargin,setMargins,setRightMargin,setSubject,setTitle,setTopMargin,setUnit,setViewerPreferences,setX,setXY,setY,textStyle,toString,willTrigger,writeText" name="keywords"><title>org.alivepdf.pdf.PDF</title></head><body><script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript"><!--
+				asdocTitle = 'PDF - AlivePDF API Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script><table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable"><tr><td align="left" class="titleTableTitle">AlivePDF API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?org/alivepdf/pdf/PDF.html&amp;org/alivepdf/pdf/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td></tr><tr class="titleTableRow2"><td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;PDF</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a></td></tr><tr class="titleTableRow3"><td colspan="2">&nbsp;</td></tr></table><script type="text/javascript" language="javascript"><!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class PDF"); titleBar_setSubNav(false,true,false,false,true,false,true,false,false,false,false,false,false,false);}
+--></script><div class="MainContent"><table cellspacing="0" cellpadding="0" class="classHeaderTable"><tr><td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">org.alivepdf.pdf</a></td></tr><tr><td class="classHeaderTableLabel">Class</td><td class="classSignature">public final  class PDF</td></tr><tr><td class="classHeaderTableLabel">Implements</td><td>flash.events.IEventDispatcher</td></tr></table><p></p>
+ The PDF class represents a PDF document.
+ <p></p><br><hr></div><a name="propertySummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Properties</div><table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0"><tr><th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#totalPages">totalPages</a> : int<div class="summaryTableDescription">[read-only]
+  Lets you retrieve the number of pages in the PDF document
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr></table></div><a name="methodSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Methods</div><table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0"><tr><th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#PDF()">PDF</a>(orientation:String = "Portrait", unit:String = "Mm", pageSize:Object = null, rotation:int = 0)</div><div class="summaryTableDescription">
+  The PDF class represents a PDF document.</div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#addBookmark()">addBookmark</a>(text:String, level:int, y:Number, color:<a href="../colors/RGBColor.html">RGBColor</a>):void</div><div class="summaryTableDescription">
+  Lets you add a bookmark
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#addCell()">addCell</a>(width:Number = 0, height:Number = 0, text:String = "", border:Number = 0, ln:String = "0", align:Number, fill:String = "0", link:*):void</div><div class="summaryTableDescription">
+  Add a cell with some text to the current page
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#addEventListener()">addEventListener</a>(type:String, listener:Function, useCapture:Boolean = false, priority:int = 0, useWeakReference:Boolean = false):void</div><div class="summaryTableDescription"></div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#addImage()">addImage</a>(displayObject:DisplayObject, x:Number = 0, y:Number = 0, width:Number = 0, height:Number = 0, imageFormat:String = "JPG", quality:Number = 100, alpha:Number = 1, resizeMode:String = "None", blendMode:String = "Normal", keepTransformation:Boolean = true, link:String = ""):void</div><div class="summaryTableDescription">
+   The addImage method takes an incoming DisplayObject.</div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#addImageStream()">addImageStream</a>(imageBytes:ByteArray, x:Number = 0, y:Number = 0, width:Number = 0, height:Number = 0, alpha:Number = 1, resizeMode:String = "None", blendMode:String = "Normal", keepTransformation:Boolean = true, link:String = ""):void</div><div class="summaryTableDescription">
+   The addImageStream method takes an incoming image as a ByteArray.</div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#addLink()">addLink</a>(x:Number, y:Number, width:Number, height:Number, link:String, highlight:* = I):void</div><div class="summaryTableDescription">
+  Lets you add clickable link to a specific position
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#addMultiCell()">addMultiCell</a>(width:Number, height:Number, text:String, border:String = "0", align:int = J, filled:* = 0):void</div><div class="summaryTableDescription">
+  Add a multicell with some text to the current page
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#addPage()">addPage</a>(page:<a href="../pages/Page.html">Page</a> = null):<a href="../pages/Page.html">Page</a></div><div class="summaryTableDescription">
+   Lets you add a page to the current PDF
+    
+   </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#addText()">addText</a>(text:String, x:Number = 0, y:Number = 0):void</div><div class="summaryTableDescription">
+  Lets you set some text to any position on the page
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#addTextNote()">addTextNote</a>(x:Number, y:Number, width:Number, height:Number, text:String = "A note !"):void</div><div class="summaryTableDescription">
+  Lets you add a text annotation to the current page
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#addTransition()">addTransition</a>(style:String = "R", duration:Number = 1, dimension:String = "H", motionDirection:String = "I", transitionDirection:int = 0):void</div><div class="summaryTableDescription">
+  Lets you add a transition between each PDF page
+  Note : PDF must be shown in fullscreen to see the transitions, use the setDisplayMode method with the PageMode.FULL_SCREEN parameter
+  
+  </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#beginFill()">beginFill</a>(color:<a href="../colors/Color.html">Color</a>):void</div><div class="summaryTableDescription">
+  Sets the filling color for different color spaces CMYK/RGB/DEVICEGRAY
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#curveTo()">curveTo</a>(controlX1:Number, controlY1:Number, controlX2:Number, controlY2:Number, finalX3:Number, finalY3:Number):void</div><div class="summaryTableDescription">
+  The curveTo method draws a cubic bezier curve
+  </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#dispatchEvent()">dispatchEvent</a>(event:Event):Boolean</div><div class="summaryTableDescription"></div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#drawCircle()">drawCircle</a>(x:Number, y:Number, radius:Number):void</div><div class="summaryTableDescription">
+  The drawCircle method draws a circle
+  </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#drawEllipse()">drawEllipse</a>(x:Number, y:Number, radiusX:Number, radiusY:Number):void</div><div class="summaryTableDescription">
+  The drawEllipse method draws an ellipse
+  </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#drawPolygone()">drawPolygone</a>(points:Array):void</div><div class="summaryTableDescription">
+  The drawPolygone method draws a polygone
+  </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#drawRect()">drawRect</a>(rect:Rectangle):void</div><div class="summaryTableDescription">
+  The drawRect method draws a rectangle shape
+  </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#drawRoundRect()">drawRoundRect</a>(rect:Rectangle, ellipseWidth:Number):void</div><div class="summaryTableDescription">
+  The drawRoundedRect method draws a rounded rectangle shape
+  </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#end()">end</a>():void</div><div class="summaryTableDescription">
+  The end method closes the stroke
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#endFill()">endFill</a>():void</div><div class="summaryTableDescription">
+  Ends all previous filling
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#getCurrentPage()">getCurrentPage</a>():<a href="../pages/Page.html">Page</a></div><div class="summaryTableDescription">
+  Lets you retrieve the current Page
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#getDefaultOrientation()">getDefaultOrientation</a>():String</div><div class="summaryTableDescription">
+   Returns the default PDF orientation
+   
+   </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#getDefaultSize()">getDefaultSize</a>():<a href="../layout/Size.html">Size</a></div><div class="summaryTableDescription">
+   Returns the default PDF Size
+   
+   </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#getDefaultUnit()">getDefaultUnit</a>():String</div><div class="summaryTableDescription">
+   Returns the default PDF unit unit
+   
+   </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#getMargins()">getMargins</a>():Rectangle</div><div class="summaryTableDescription">
+  Lets you retrieve the margins dimensions
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#getPage()">getPage</a>(page:int):<a href="../pages/Page.html">Page</a></div><div class="summaryTableDescription">
+  Lets you retrieve a Page object
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#getPages()">getPages</a>():Array</div><div class="summaryTableDescription">
+  Lets you retrieve all the PDF pages
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#getX()">getX</a>():Number</div><div class="summaryTableDescription">
+  Lets you retrieve the X position for the current page
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#getY()">getY</a>():Number</div><div class="summaryTableDescription">
+  Lets you retrieve the Y position for the current page
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#gotoPage()">gotoPage</a>(page:int):void</div><div class="summaryTableDescription">
+  Lets you move to a Page in the PDF
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#hasEventListener()">hasEventListener</a>(type:String):Boolean</div><div class="summaryTableDescription"></div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#lineStyle()">lineStyle</a>(color:<a href="../colors/Color.html">Color</a>, thickness:Number = 1, flatness:Number = 0, alpha:Number = 1, blendMode:String = "Normal", style:<a href="../drawing/DashedLine.html">DashedLine</a> = null, caps:String = null, joints:String = null, miterLimit:Number = 3):void</div><div class="summaryTableDescription">
+  Sets the stroke style
+  </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#lineTo()">lineTo</a>(x:Number, y:Number):void</div><div class="summaryTableDescription">
+  Lets you draw a stroke from the current point to the new point
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#moveTo()">moveTo</a>(x:Number, y:Number):void</div><div class="summaryTableDescription">
+  Lets you move the current drawing point to the specified destination
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#newLine()">newLine</a>(height:*):void</div><div class="summaryTableDescription">
+  Lets you insert a line break for text
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#removeAllPages()">removeAllPages</a>():void</div><div class="summaryTableDescription">
+  Lets you remove all the pages from the PDF
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#removeEventListener()">removeEventListener</a>(type:String, listener:Function, useCapture:Boolean = false):void</div><div class="summaryTableDescription"></div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#removePage()">removePage</a>(page:int):<a href="../pages/Page.html">Page</a></div><div class="summaryTableDescription">
+  Lets you remove a Page from the PDF
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#rotatePage()">rotatePage</a>(number:int, rotation:Number):void</div><div class="summaryTableDescription">
+  Lets you rotate a specific page (between 1 and n-1)
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#save()">save</a>(method:String, url:String = "", downloadMethod:String = "inline", fileName:String = "generated.pdf"):*</div><div class="summaryTableDescription"></div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setAliasNbPages()">setAliasNbPages</a>(alias:String = "{nb}"):void</div><div class="summaryTableDescription">
+  Lets you specify an alias for the total number of pages
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setAlpha()">setAlpha</a>(alpha:Number, blendMode:String = "Normal"):void</div><div class="summaryTableDescription">
+  Lets you specify the opacity for the next drawing operations, from 0 (100% transparent) to 1 (100% opaque)
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setAuthor()">setAuthor</a>(author:String):void</div><div class="summaryTableDescription">
+  Sets the specified author for the PDF
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setAutoPageBreak()">setAutoPageBreak</a>(auto:Boolean, margin:Number):void</div><div class="summaryTableDescription">
+   Lets you enable or disable auto page break mode and triggering margin 
+   
+   </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setBottomMargin()">setBottomMargin</a>(margin:Number):void</div><div class="summaryTableDescription">
+  Lets you specify the bottom margin
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setCreator()">setCreator</a>(creator:String):void</div><div class="summaryTableDescription">
+  Sets the specified creator for the PDF
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setDisplayMode()">setDisplayMode</a>(zoom:String = "FullWidth", layout:String = "SinglePage", mode:String = "UseNone"):void</div><div class="summaryTableDescription">
+  Lets you set a specific display mode, the DisplayMode takes care of the general layout of the PDF in the PDF reader
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setFont()">setFont</a>(family:String, style:String = "", size:int = 0):void</div><div class="summaryTableDescription">
+  Lets you set a specific font
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setFontSize()">setFontSize</a>(size:int):void</div><div class="summaryTableDescription">
+  Lets you set a new size for the current font
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setKeywords()">setKeywords</a>(keywords:String):void</div><div class="summaryTableDescription">
+  Sets the specified keywords for the PDF
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setLeftMargin()">setLeftMargin</a>(margin:Number):void</div><div class="summaryTableDescription">
+  Lets you specify the left margin
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setMargins()">setMargins</a>(left:Number, top:Number, right:Number = -1, bottom:Number = 20):void</div><div class="summaryTableDescription">
+  Lets you specify the left, top, and right margins
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setRightMargin()">setRightMargin</a>(margin:Number):void</div><div class="summaryTableDescription">
+  Lets you specify the right margin
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setSubject()">setSubject</a>(subject:String):void</div><div class="summaryTableDescription">
+  Lets you set a subject for the PDF
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setTitle()">setTitle</a>(title:String):void</div><div class="summaryTableDescription">
+  Lets you set a title for the PDF
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setTopMargin()">setTopMargin</a>(margin:Number):void</div><div class="summaryTableDescription">
+  Lets you specify the top margin
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setUnit()">setUnit</a>(unit:String):String</div><div class="summaryTableDescription"></div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setViewerPreferences()">setViewerPreferences</a>(toolbar:String = "false", menubar:String = "false", windowUI:String = "false", fitWindow:String = "false", centeredWindow:String = "false", displayTitle:String = "false"):void</div><div class="summaryTableDescription">
+  Lets you control the way the document is to be presented on the screen or in print.</div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setX()">setX</a>(x:Number):void</div><div class="summaryTableDescription">
+  Lets you specify the X position for the current page
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setXY()">setXY</a>(x:Number, y:Number):void</div><div class="summaryTableDescription">
+  Lets you specify the X and Y position for the current page
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#setY()">setY</a>(y:Number):void</div><div class="summaryTableDescription">
+  Lets you specify the Y position for the current page
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#textStyle()">textStyle</a>(color:<a href="../colors/Color.html">Color</a>, alpha:Number = 1, rendering:int = 0, wordSpace:Number = 0, characterSpace:Number = 0, scale:Number = 100, leading:Number = 0):void</div><div class="summaryTableDescription">
+  Sets the text style
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#toString()">toString</a>():String</div><div class="summaryTableDescription"></div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#willTrigger()">willTrigger</a>(type:String):Boolean</div><div class="summaryTableDescription"></div></td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#writeText()">writeText</a>(lineHeight:Number, text:String, link:String = ""):void</div><div class="summaryTableDescription">
+  Lets you write some text
+    </div></td><td class="summaryTableOwnerCol">PDF</td></tr></table></div><a name="eventSummary"></a><div class="summarySection"><div class="summaryTableTitle">Events</div><table id="summaryTableEvent" class="summaryTable " cellpadding="3" cellspacing="0"><tr><th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#event:added">added</a></div></td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when a page has been added to the PDF.</td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#event:complete">complete</a></div></td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when PDF has been generated and available.</td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#event:pageTree">pageTree</a></div></td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when the PDF page tree has been generated.</td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#event:resources">resources</a></div></td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when the required resources (fonts, images, etc.) haven been written into the PDF.</td><td class="summaryTableOwnerCol">PDF</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a class="signatureLink" href="#event:started">started</a></div></td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when the PDF generation has been initiated.</td><td class="summaryTableOwnerCol">PDF</td></tr></table></div><script type="text/javascript" language="javascript"><!--
+showHideInherited();
+--></script><div class="MainContent"><a name="propertyDetail"></a><div class="detailSectionHeader">Property detail</div><a name="totalPages"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">totalPages</td><td class="detailHeaderType">property</td></tr></table><div class="detailBody"><code>totalPages:int</code>&nbsp;&nbsp;[read-only]<p>
+  Lets you retrieve the number of pages in the PDF document
+    </p><span class="label">Implementation</span><br><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get totalPages():int</code><br><br><span class="label">Example</span><br>  This example shows how to retrieve the number of pages :
+  <div class="listing"><pre>
+    var totalPages:int = myPDF.getPageCount ();
+  </pre></div><p></p></div><a name="constructorDetail"></a><div class="detailSectionHeader">Constructor detail</div><a name="PDF()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">PDF</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td></tr></table><div class="detailBody"><code>public function PDF(orientation:String = "Portrait", unit:String = "Mm", pageSize:Object = null, rotation:int = 0)</code><p>
+  The PDF class represents a PDF document.
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">orientation</span>:String</code> (default = "<code>Portrait</code>")<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">unit</span>:String</code> (default = "<code>Mm</code>")<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">pageSize</span>:Object</code> (default = <code>null</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">rotation</span>:int</code> (default = <code>0</code>)<code></code></td></tr></table><br><span class="label">Example</span><br>  This example shows how to create a valid PDF document :
+  <div class="listing"><pre>
+    var myPDF:PDF = new PDF ( Orientation.PORTRAIT, Unit.MM, Size.A4 );
+  </pre></div><p></p></div><a name="methodDetail"></a><div class="detailSectionHeader">Method detail</div><a name="addBookmark()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">addBookmark</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td></tr></table><div class="detailBody"><code>public function addBookmark(text:String, level:int, y:Number, color:<a href="../colors/RGBColor.html">RGBColor</a>):void</code><p>
+  Lets you add a bookmark
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">text</span>:String</code> &mdash; Text appearing in the outline panel
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">level</span>:int</code> &mdash; Specify the bookmark's level
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">y</span>:Number</code> &mdash; Position in the current page to go
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">color</span>:<a href="../colors/RGBColor.html">RGBColor</a></code> &mdash; Red offset for the text color
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to add a bookmark for the current page :
+  <div class="listing"><pre>
+    myPDF.addBookmark("A bookmark", 0, 0, 0, .9, 0);
+  myPDF.addPage();
+  myPDF.addBookmark("Another bookmark", 0, 60, .9, .9, 0);
+  </pre></div><p></p></div><a name="addCell()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">addCell</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function addCell(width:Number = 0, height:Number = 0, text:String = "", border:Number = 0, ln:String = "0", align:Number, fill:String = "0", link:*):void</code><p>
+  Add a cell with some text to the current page
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">width</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; Cell width
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">height</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; Cell height
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">text</span>:String</code> (default = "<code></code>")<code></code> &mdash; Text to add into the cell
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">border</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; Sets the new position after cell is drawn, default value is 0
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">ln</span>:String</code> (default = "<code>0</code>")<code></code> &mdash; Lets you center or align the text into the cell
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">align</span>:Number</code> &mdash; Lets you specify if the cell is colored (1) or transparent (0)
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">fill</span>:String</code> (default = "<code>0</code>")<code></code> &mdash; Any http link, like http://www.mylink.com
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">link</span>:*</code></td></tr></table><br><span class="label">Example</span><br>  This example shows how to write some text within a cell :
+  <div class="listing"><pre>
+    myPDF.setFont(FontFamily.HELVETICA, 'B', 12);
+  myPDF.textStyle ( new RGBColor ( 0x990000 ) );
+  myPDF.addCell(50,10,'Some text into a cell !',1,1);
+  </pre></div>
+  This example shows how to write some clikable text within a cell :
+  <div class="listing"><pre>
+    myPDF.setFont(FontFamily.HELVETICA, 'B', 12);
+  myPDF.textStyle ( new RGBColor ( 0x990000 ) );
+  myPDF.addCell(50,10,'A clikable cell !', 1, 1, null, 0, "http://www.alivepdf.org");
+  </pre></div><p></p></div><a name="addEventListener()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">addEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function addEventListener(type:String, listener:Function, useCapture:Boolean = false, priority:int = 0, useWeakReference:Boolean = false):void</code><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">type</span>:String</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">listener</span>:Function</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">useCapture</span>:Boolean</code> (default = <code>false</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">priority</span>:int</code> (default = <code>0</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">useWeakReference</span>:Boolean</code> (default = <code>false</code>)<code></code></td></tr></table></div><a name="addImage()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">addImage</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function addImage(displayObject:DisplayObject, x:Number = 0, y:Number = 0, width:Number = 0, height:Number = 0, imageFormat:String = "JPG", quality:Number = 100, alpha:Number = 1, resizeMode:String = "None", blendMode:String = "Normal", keepTransformation:Boolean = true, link:String = ""):void</code><p>
+   The addImage method takes an incoming DisplayObject. A JPG snapshot is done and included in the PDF document
+   
+   </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">displayObject</span>:DisplayObject</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">x</span>:Number</code> (default = <code>0</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">y</span>:Number</code> (default = <code>0</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">width</span>:Number</code> (default = <code>0</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">height</span>:Number</code> (default = <code>0</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">imageFormat</span>:String</code> (default = "<code>JPG</code>")<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">quality</span>:Number</code> (default = <code>100</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">alpha</span>:Number</code> (default = <code>1</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">resizeMode</span>:String</code> (default = "<code>None</code>")<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">blendMode</span>:String</code> (default = "<code>Normal</code>")<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">keepTransformation</span>:Boolean</code> (default = <code>true</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">link</span>:String</code> (default = "<code></code>")<code></code></td></tr></table><br><span class="label">Example</span><br>   This example shows how to add a 100% compression quality JPG image into the current page at a position of 0,0 with no resizing behavior :
+   <div class="listing"><pre>
+      myPDF.addImage ( displayObject, 0, 0, 0, 0, ImageFormat.JPG, 100, .2 );
+   </pre></div><p></p></div><a name="addImageStream()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">addImageStream</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function addImageStream(imageBytes:ByteArray, x:Number = 0, y:Number = 0, width:Number = 0, height:Number = 0, alpha:Number = 1, resizeMode:String = "None", blendMode:String = "Normal", keepTransformation:Boolean = true, link:String = ""):void</code><p>
+   The addImageStream method takes an incoming image as a ByteArray. This method can be used to embed high-quality images (300 dpi) to the PDF
+   
+   </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">imageBytes</span>:ByteArray</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">x</span>:Number</code> (default = <code>0</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">y</span>:Number</code> (default = <code>0</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">width</span>:Number</code> (default = <code>0</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">height</span>:Number</code> (default = <code>0</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">alpha</span>:Number</code> (default = <code>1</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">resizeMode</span>:String</code> (default = "<code>None</code>")<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">blendMode</span>:String</code> (default = "<code>Normal</code>")<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">keepTransformation</span>:Boolean</code> (default = <code>true</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">link</span>:String</code> (default = "<code></code>")<code></code></td></tr></table><br><span class="label">Example</span><br>   This example shows how to add an image as a ByteArray into the current page with a page resize behavior :
+   <div class="listing"><pre>
+      myPDF.addImageStream( bytes, 0, 0, 0, 0, 1, ImageResize.RESIZE_PAGE );
+   </pre></div><p></p></div><a name="addLink()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">addLink</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function addLink(x:Number, y:Number, width:Number, height:Number, link:String, highlight:* = I):void</code><p>
+  Lets you add clickable link to a specific position
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">x</span>:Number</code> &mdash; Page Format, can be Size.A3, Size.A4, Size.A5, Size.LETTER or Size.LEGAL
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">y</span>:Number</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">width</span>:Number</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">height</span>:Number</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">link</span>:String</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">highlight</span>:*</code> (default = <code>I</code>)<code></code></td></tr></table><br><span class="label">Example</span><br>  This example shows how to add an invisible clickable link in the current page :
+  <div class="listing"><pre>
+    myPDF.addLink ( 70, 4, 60, 16, "http://www.alivepdf.org");
+  </pre></div><p></p></div><a name="addMultiCell()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">addMultiCell</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function addMultiCell(width:Number, height:Number, text:String, border:String = "0", align:int = J, filled:* = 0):void</code><p>
+  Add a multicell with some text to the current page
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">width</span>:Number</code> &mdash; Cell width
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">height</span>:Number</code> &mdash; Cell height
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">text</span>:String</code> &mdash; Text to add into the cell
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">border</span>:String</code> (default = "<code>0</code>")<code></code> &mdash; Lets you specify if a border should be drawn around the cell
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">align</span>:int</code> (default = <code>J</code>)<code></code> &mdash; Lets you center or align the text into the cell, values can be L (left align), C (centered), R (right align), J (justified) default value
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">filled</span>:*</code> (default = <code>0</code>)<code></code> &mdash; Lets you specify if the cell is colored (1) or transparent (0)
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to write a table made of text cells :
+  <div class="listing"><pre>
+    myPDF.setFont( FontFamily.COURIER, Style.BOLD, 14 );
+  myPDF.textStyle ( new RGBColor ( 0x990000 ) );
+  myPDF.addMultiCell ( 70, 24, "A multicell :)", 1);
+  myPDF.addMultiCell ( 70, 24, "A multicell :)", 1);
+  </pre></div><p></p></div><a name="addPage()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">addPage</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function addPage(page:<a href="../pages/Page.html">Page</a> = null):<a href="../pages/Page.html">Page</a></code><p>
+   Lets you add a page to the current PDF
+    
+   </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">page</span>:<a href="../pages/Page.html">Page</a></code> (default = <code>null</code>)<code></code></td></tr></table><p></p><span class="label">Returns</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20"></td><td><code><a href="../pages/Page.html">Page</a></code></td></tr></table><br><span class="label">Example</span><br>   
+   This example shows how to add an A4 page with a landscape orientation :
+   <div class="listing"><pre>
+      var page:Page = new Page ( Orientation.LANDSCAPE, Unit.MM, Size.A4 );
+   myPDF.addPage( page );
+   </pre></div>
+   This example shows how to add a page with a custom size :
+   <div class="listing"><pre>
+      var customSize:Size = new Size ( [420.94, 595.28], "CustomSize", [5.8,  8.3], [148, 210] );
+   var page:Page = new Page ( Orientation.PORTRAIT, Unit.MM, customSize );
+   myPDF.addPage ( page );
+   </pre></div><p></p></div><a name="addText()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">addText</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function addText(text:String, x:Number = 0, y:Number = 0):void</code><p>
+  Lets you set some text to any position on the page
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">text</span>:String</code> &mdash; The text to add
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">x</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; X position
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">y</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; Y position
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to set some text to a specific place :
+  <div class="listing"><pre>
+    myPDF.addText ('Cubic Bezier curve with curveTo', 14, 110);
+  </pre></div><p></p></div><a name="addTextNote()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">addTextNote</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function addTextNote(x:Number, y:Number, width:Number, height:Number, text:String = "A note !"):void</code><p>
+  Lets you add a text annotation to the current page
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">x</span>:Number</code> &mdash; Note X position
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">y</span>:Number</code> &mdash; Note Y position
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">width</span>:Number</code> &mdash; Note width
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">height</span>:Number</code> &mdash; Note height
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">text</span>:String</code> (default = "<code>A note !</code>")<code></code> &mdash; Text for the note
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to add a note annotation in the current page :
+  <div class="listing"><pre>
+    myPDF.addNote (100, 75, 50, 50, "A note !");
+  </pre></div><p></p></div><a name="addTransition()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">addTransition</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function addTransition(style:String = "R", duration:Number = 1, dimension:String = "H", motionDirection:String = "I", transitionDirection:int = 0):void</code><p>
+  Lets you add a transition between each PDF page
+  Note : PDF must be shown in fullscreen to see the transitions, use the setDisplayMode method with the PageMode.FULL_SCREEN parameter
+  
+  </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">style</span>:String</code> (default = "<code>R</code>")<code></code> &mdash; Transition style, can be Transition.SPLIT, Transition.BLINDS, BLINDS.BOX, Transition.WIPE, etc.
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">duration</span>:Number</code> (default = <code>1</code>)<code></code> &mdash; The transition duration
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">dimension</span>:String</code> (default = "<code>H</code>")<code></code> &mdash; The dimension in which the the specified transition effect occurs
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">motionDirection</span>:String</code> (default = "<code>I</code>")<code></code> &mdash; The motion's direction for the specified transition effect
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">transitionDirection</span>:int</code> (default = <code>0</code>)<code></code> &mdash; The direction in which the specified transition effect moves
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to add a 4 seconds "Wipe" transition between the first and second page :
+  <div class="listing"><pre>
+  myPDF.addTransition (Transition.WIPE, 4, Dimension.VERTICAL);   
+  myPDF.addPage();  
+  myPDF.addTransition (Transition.WIPE, 4, Dimension.VERTICAL);
+  </pre></div><p></p></div><a name="beginFill()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">beginFill</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function beginFill(color:<a href="../colors/Color.html">Color</a>):void</code><p>
+  Sets the filling color for different color spaces CMYK/RGB/DEVICEGRAY
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">color</span>:<a href="../colors/Color.html">Color</a></code> &mdash; Color object, can be CMYKColor, GrayColor, or RGBColor
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to create a red rectangle in the current page :
+  <div class="listing"><pre>
+    myPDF.beginFill ( new RGBColor ( 0x990000 ) );
+  myPDF.drawRect ( new Rectangle ( 10, 26, 50, 25 ) );
+  </pre></div><p></p></div><a name="curveTo()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">curveTo</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function curveTo(controlX1:Number, controlY1:Number, controlX2:Number, controlY2:Number, finalX3:Number, finalY3:Number):void</code><p>
+  The curveTo method draws a cubic bezier curve
+  </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">controlX1</span>:Number</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">controlY1</span>:Number</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">controlX2</span>:Number</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">controlY2</span>:Number</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">finalX3</span>:Number</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">finalY3</span>:Number</code></td></tr></table><br><span class="label">Example</span><br>  This example shows how to draw some curves lines in the current page :
+  <br><b>Important : Always call the end() method when you're done</b><div class="listing"><pre>
+    myPDF.lineStyle ( new RGBColor ( 0x990000 ), 1, 1, null, CapsStyle.NONE, JointStyle.MITER );
+  myPDF.moveTo ( 10, 200 );
+  myPDF.curveTo ( 120, 210, 196, 280, 139, 195 );
+  myPDF.curveTo ( 190, 110, 206, 190, 179, 205 );
+  myPDF.end();
+  </pre></div><p></p></div><a name="dispatchEvent()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">dispatchEvent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function dispatchEvent(event:Event):Boolean</code><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">event</span>:Event</code></td></tr></table><p></p><span class="label">Returns</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20"></td><td><code>Boolean</code></td></tr></table></div><a name="drawCircle()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">drawCircle</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function drawCircle(x:Number, y:Number, radius:Number):void</code><p>
+  The drawCircle method draws a circle
+  </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">x</span>:Number</code> &mdash; X Position
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">y</span>:Number</code> &mdash; Y Position
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">radius</span>:Number</code> &mdash; Circle Radius
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to create a rounded red ellipse in the current page :
+  <div class="listing"><pre>
+    myPDF.beginFill ( new RGBColor ( 0x990000 ) );
+  myPDF.drawCircle ( 30, 180, 20 );
+  </pre></div><p></p></div><a name="drawEllipse()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">drawEllipse</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function drawEllipse(x:Number, y:Number, radiusX:Number, radiusY:Number):void</code><p>
+  The drawEllipse method draws an ellipse
+  </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">x</span>:Number</code> &mdash; X Position
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">y</span>:Number</code> &mdash; Y Position
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">radiusX</span>:Number</code> &mdash; X Radius
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">radiusY</span>:Number</code> &mdash; Y Radius
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to create a rounded red ellipse in the current page :
+  <div class="listing"><pre>
+    myPDF.lineStyle ( new RGBColor ( 0x990000 ), 1, .3, new DashedLine ([0, 1, 2, 6]), CapsStyle.NONE, JointStyle.ROUND );
+  myPDF.beginFill ( new RGBColor ( 0x990000 ) );
+  myPDF.drawEllipse( 45, 275, 40, 15 );
+  </pre></div><p></p></div><a name="drawPolygone()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">drawPolygone</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function drawPolygone(points:Array):void</code><p>
+  The drawPolygone method draws a polygone
+  </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">points</span>:Array</code> &mdash; Array of points
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to create a polygone with a few points :
+  <div class="listing"><pre>
+    myPDF.beginFill ( new RGBColor ( 0x990000 ) );
+  myPDF.drawPolygone ( [89, 40, 20, 90, 40, 50, 10, 60, 70, 90] );
+  </pre></div><p></p></div><a name="drawRect()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">drawRect</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function drawRect(rect:Rectangle):void</code><p>
+  The drawRect method draws a rectangle shape
+  </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">rect</span>:Rectangle</code> &mdash; A flash.geom.Rectange object
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to create a blue rectangle in the current page :
+  <div class="listing"><pre>
+    myPDF.lineStyle ( new RGBColor ( 0x990000 ), 1, .3, null, CapsStyle.ROUND, JointStyle.MITER );
+  myPDF.beginFill ( new RGBColor ( 0x009900 ) );
+  myPDF.drawRect ( new Rectangle ( 20, 46, 100, 45 ) );
+  </pre></div><p></p></div><a name="drawRoundRect()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">drawRoundRect</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function drawRoundRect(rect:Rectangle, ellipseWidth:Number):void</code><p>
+  The drawRoundedRect method draws a rounded rectangle shape
+  </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">rect</span>:Rectangle</code> &mdash; A flash.geom.Rectange object
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">ellipseWidth</span>:Number</code> &mdash; Angle radius
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to create a rounded green rectangle in the current page :
+  <div class="listing"><pre>
+    myPDF.lineStyle ( new RGBColor ( 0x00FF00 ), 1, 0, .3, BlendMode.NORMAL, null, CapsStyle.ROUND, JointStyle.MITER );
+  myPDF.beginFill ( new RGBColor ( 0x009900 ) );
+  myPDF.drawRoundRect ( new Rectangle ( 20, 46, 100, 45 ), 20 );
+  </pre></div><p></p></div><a name="end()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">end</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function end():void</code><p>
+  The end method closes the stroke
+    </p><br><span class="label">Example</span><br>  This example shows how to draw some dashed lines in the current page with specific caps style and joint style :
+  <br><b>Important : Always call the end() method when you're done</b><div class="listing"><pre>
+  
+  myPDF.lineStyle( new RGBColor ( 0x990000 ), 1, 1 );
+  myPDF.moveTo ( 10, 20 );
+  myPDF.lineTo ( 40, 20 );
+  myPDF.lineTo ( 40, 40 );
+  myPDF.lineTo ( 10, 40 );
+  myPDF.lineTo ( 10, 20 );
+  // end the stroke
+  myPDF.end();
+  </pre></div><p></p></div><a name="endFill()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">endFill</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function endFill():void</code><p>
+  Ends all previous filling
+    </p><br><span class="label">Example</span><br>  This example shows how to create a red rectangle in the current page :
+  <div class="listing"><pre>
+    myPDF.beginFill ( new RGBColor ( 0x990000 ) );
+  myPDF.moveTo ( 10, 10 );
+  myPDF.lineTo ( 20, 90 );
+  myPDF.lineTo ( 90, 50);
+  myPDF.end()
+  myPDF.endFill();
+  </pre></div><p></p></div><a name="getCurrentPage()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">getCurrentPage</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function getCurrentPage():<a href="../pages/Page.html">Page</a></code><p>
+  Lets you retrieve the current Page
+    </p><p></p><span class="label">Returns</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20"></td><td><code><a href="../pages/Page.html">Page</a></code> &mdash; 
+                        Page A Page object
+  
+                        
+                     </td></tr></table><br><span class="label">Example</span><br>  This example shows how to retrieve the current page :
+  <div class="listing"><pre>
+    var page:Page = myPDF.getCurrentPage ();
+  </pre></div><p></p></div><a name="getDefaultOrientation()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">getDefaultOrientation</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function getDefaultOrientation():String</code><p>
+   Returns the default PDF orientation
+   
+   </p><p></p><span class="label">Returns</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20"></td><td><code>String</code> &mdash; String
+   
+   </td></tr></table></div><a name="getDefaultSize()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">getDefaultSize</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function getDefaultSize():<a href="../layout/Size.html">Size</a></code><p>
+   Returns the default PDF Size
+   
+   </p><p></p><span class="label">Returns</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20"></td><td><code><a href="../layout/Size.html">Size</a></code> &mdash; 
+                        Size
+   
+   
+                        
+                     </td></tr></table></div><a name="getDefaultUnit()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">getDefaultUnit</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function getDefaultUnit():String</code><p>
+   Returns the default PDF unit unit
+   
+   </p><p></p><span class="label">Returns</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20"></td><td><code>String</code> &mdash; String
+   
+   </td></tr></table></div><a name="getMargins()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">getMargins</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function getMargins():Rectangle</code><p>
+  Lets you retrieve the margins dimensions
+    </p><p></p><span class="label">Returns</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20"></td><td><code>Rectangle</code> &mdash; Rectangle
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to get the margins dimensions :
+  <div class="listing"><pre>
+    var marginsDimensions:Rectangle = myPDF.getMargins ();
+  // output : (x=10.00, y=10.0012, w=575.27, h=811.88)
+  trace( marginsDimensions )
+  </pre></div><p></p></div><a name="getPage()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">getPage</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function getPage(page:int):<a href="../pages/Page.html">Page</a></code><p>
+  Lets you retrieve a Page object
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">page</span>:int</code> &mdash; page number, from 1 to total numbers of pages
+  </td></tr></table><p></p><span class="label">Returns</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20"></td><td><code><a href="../pages/Page.html">Page</a></code> &mdash; 
+                        Page
+  
+                        
+                     </td></tr></table><br><span class="label">Example</span><br>  This example shows how to retrieve the first page :
+  <div class="listing"><pre>
+    var page:Page = myPDF.getPage ( 1 );
+  </pre></div><p></p></div><a name="getPages()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">getPages</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function getPages():Array</code><p>
+  Lets you retrieve all the PDF pages
+    </p><p></p><span class="label">Returns</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20"></td><td><code>Array</code> &mdash; Array
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to retrieve all the PDF pages :
+  <div class="listing"><pre>
+    var pdfPages:Array = myPDF.getPages ();
+    for each ( var p:in pdfPages ) trace( p );
+  
+  outputs :
+  
+  [Page orientation=Portrait width=210 height=297]
+  [Page orientation=Landscape width=297 height=210]
+  
+  </pre></div><p></p></div><a name="getX()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">getX</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function getX():Number</code><p>
+  Lets you retrieve the X position for the current page
+    </p><p></p><span class="label">Returns</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20"></td><td><code>Number</code> &mdash; Number the X position
+  </td></tr></table></div><a name="getY()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">getY</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function getY():Number</code><p>
+  Lets you retrieve the Y position for the current page
+    </p><p></p><span class="label">Returns</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20"></td><td><code>Number</code> &mdash; Number the Y position
+  </td></tr></table></div><a name="gotoPage()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">gotoPage</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function gotoPage(page:int):void</code><p>
+  Lets you move to a Page in the PDF
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">page</span>:int</code> &mdash; page number, from 1 to total numbers of pages
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to move to the first page :
+  <div class="listing"><pre>
+    myPDF.gotoPage ( 1 );
+  // draw on the first page
+  myPDF.lineStyle( new RGBColor(0xFF0000), 2, 0 );
+     myPDF.drawRect( 60, 60, 40, 40 ); 
+  </pre></div><p></p></div><a name="hasEventListener()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">hasEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function hasEventListener(type:String):Boolean</code><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">type</span>:String</code></td></tr></table><p></p><span class="label">Returns</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20"></td><td><code>Boolean</code></td></tr></table></div><a name="lineStyle()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">lineStyle</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function lineStyle(color:<a href="../colors/Color.html">Color</a>, thickness:Number = 1, flatness:Number = 0, alpha:Number = 1, blendMode:String = "Normal", style:<a href="../drawing/DashedLine.html">DashedLine</a> = null, caps:String = null, joints:String = null, miterLimit:Number = 3):void</code><p>
+  Sets the stroke style
+  </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">color</span>:<a href="../colors/Color.html">Color</a></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">thickness</span>:Number</code> (default = <code>1</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">flatness</span>:Number</code> (default = <code>0</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">alpha</span>:Number</code> (default = <code>1</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">blendMode</span>:String</code> (default = "<code>Normal</code>")<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">style</span>:<a href="../drawing/DashedLine.html">DashedLine</a></code> (default = <code>null</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">caps</span>:String</code> (default = <code>null</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">joints</span>:String</code> (default = <code>null</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">miterLimit</span>:Number</code> (default = <code>3</code>)<code></code></td></tr></table><br><span class="label">Example</span><br>  This example shows how to set a specific stroke style :
+  <div class="listing"><pre>
+    myPDF.lineStyle ( new RGBColor ( 0x990000 ), 1, 0, 1, null, Caps.NONE, Joint.MITER );
+  </pre></div><p></p></div><a name="lineTo()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">lineTo</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function lineTo(x:Number, y:Number):void</code><p>
+  Lets you draw a stroke from the current point to the new point
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">x</span>:Number</code> &mdash; X position
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">y</span>:Number</code> &mdash; Y position
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to draw some dashed lines in the current page with specific caps style and joint style :
+  <br><b>Important : Always call the end() method when you're done</b><div class="listing"><pre>
+    myPDF.lineStyle( new RGBColor ( 0x990000 ), 1, 1 );
+  myPDF.moveTo ( 10, 20 );
+  myPDF.lineTo ( 40, 20 );
+  myPDF.lineTo ( 40, 40 );
+  myPDF.lineTo ( 10, 40 );
+  myPDF.lineTo ( 10, 20 );
+  myPDF.end();
+  </pre></div><p></p></div><a name="moveTo()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">moveTo</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function moveTo(x:Number, y:Number):void</code><p>
+  Lets you move the current drawing point to the specified destination
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">x</span>:Number</code> &mdash; X position
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">y</span>:Number</code> &mdash; Y position
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to move the pen to 120,200 :
+  <div class="listing"><pre>
+    myPDF.moveTo ( 120, 200 );
+  </pre></div><p></p></div><a name="newLine()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">newLine</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function newLine(height:*):void</code><p>
+  Lets you insert a line break for text
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">height</span>:*</code> &mdash; Line break height
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to add a line break :
+  <div class="listing"><pre>
+    myPDF.newLine ( 10 );
+  </pre></div><p></p></div><a name="removeAllPages()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">removeAllPages</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function removeAllPages():void</code><p>
+  Lets you remove all the pages from the PDF
+    </p><br><span class="label">Example</span><br>  This example shows how to remove all the pages :
+  <div class="listing"><pre>
+  myPDF.removeAllPages();
+  </pre></div><p></p></div><a name="removeEventListener()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">removeEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function removeEventListener(type:String, listener:Function, useCapture:Boolean = false):void</code><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">type</span>:String</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">listener</span>:Function</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">useCapture</span>:Boolean</code> (default = <code>false</code>)<code></code></td></tr></table></div><a name="removePage()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">removePage</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function removePage(page:int):<a href="../pages/Page.html">Page</a></code><p>
+  Lets you remove a Page from the PDF
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">page</span>:int</code> &mdash; page number, from 1 to total numbers of pages
+  </td></tr></table><p></p><span class="label">Returns</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20"></td><td><code><a href="../pages/Page.html">Page</a></code> &mdash; 
+                        Page
+  
+                        
+                     </td></tr></table><br><span class="label">Example</span><br>  This example shows how to remove the first page :
+  <div class="listing"><pre>
+  myPDF.removePage ( 1 );
+  </pre>
+  If you want to remove pages each by each, you can combine removePage with getPageCount
+  <pre>
+  myPDF.removePage ( myPDFEncoder.getPageCount() );
+  </pre></div><p></p></div><a name="rotatePage()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">rotatePage</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function rotatePage(number:int, rotation:Number):void</code><p>
+  Lets you rotate a specific page (between 1 and n-1)
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">number</span>:int</code> &mdash; Page number
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">rotation</span>:Number</code> &mdash; Page rotation (must be a multiple of 90)
+  </td></tr></table><br><span class="label">Throws</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20"></td><td><code></code> &mdash;  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to rotate the first page 90 clock wise :
+  <div class="listing"><pre>
+    myPDF.rotatePage ( 1, 90 );
+  </pre></div>
+  This example shows how to rotate the first page 90 counter clock wise :
+  <div class="listing"><pre>
+    myPDF.rotatePage ( 1, -90 );
+  </pre></div><p></p></div><a name="save()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">save</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function save(method:String, url:String = "", downloadMethod:String = "inline", fileName:String = "generated.pdf"):*</code><p></p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">method</span>:String</code> &mdash; Can be se to Method.LOCAL, the savePDF will return the PDF ByteArray. When Method.REMOTE is passed, just specify the path to the create.php file
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">url</span>:String</code> (default = "<code></code>")<code></code> &mdash; The url of the create.php file
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">downloadMethod</span>:String</code> (default = "<code>inline</code>")<code></code> &mdash; Lets you specify the way the PDF is going to be available. Use Download.INLINE if you want the PDF to be opened in the browser, use Download.ATTACHMENT if you want to make it available with a save-as dialog box
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">fileName</span>:String</code> (default = "<code>generated.pdf</code>")<code></code> &mdash; The name of the PDF, only available when Method.REMOTE is used
+  </td></tr></table><p></p><span class="label">Returns</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20"></td><td><code>*</code> &mdash; The ByteArray PDF when Method.LOCAL is used, otherwise the method returns null
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to save the PDF on the desktop with the AIR runtime :
+  <div class="listing"><pre>
+    var f:FileStream = new FileStream();
+       file = File.desktopDirectory.resolvePath("generate.pdf");
+       f.open( file, FileMode.WRITE);
+       var bytes:ByteArray = myPDF.save( Method.LOCAL );
+       f.writeBytes(bytes);
+       f.close(); 
+  </pre></div>
+  
+  This example shows how to save the PDF through a download dialog-box with Flash or Flex :
+  <div class="listing"><pre>
+    myPDF.save( Method.REMOTE, "http://localhost/save.php", Download.ATTACHMENT );
+  </pre></div>
+  
+  This example shows how to view the PDF in the browser with Flash or Flex :
+  <div class="listing"><pre>
+    myPDF.save( Method.REMOTE, "http://localhost/save.php", Download.INLINE );
+  </pre></div><p></p></div><a name="setAliasNbPages()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setAliasNbPages</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setAliasNbPages(alias:String = "{nb}"):void</code><p>
+  Lets you specify an alias for the total number of pages
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">alias</span>:String</code> (default = "<code>{nb}</code>")<code></code> &mdash; Alias to use
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to show the total number of pages :
+  <div class="listing"><pre>
+    myPDF.setAliasNbPages ( "[nb]" );
+  myPDF.textStyle( new RGBColor (0,0,0), 1 );
+  myPDF.setFont( FontFamily.HELVETICA, Style.NORMAL, 18 );
+  // then use the alias when needed
+  myPDF.addText ("There are [nb] pages in the PDF !", 150, 50);
+  </pre></div><p></p></div><a name="setAlpha()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setAlpha</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setAlpha(alpha:Number, blendMode:String = "Normal"):void</code><p>
+  Lets you specify the opacity for the next drawing operations, from 0 (100% transparent) to 1 (100% opaque)
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">alpha</span>:Number</code> &mdash; Opacity
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">blendMode</span>:String</code> (default = "<code>Normal</code>")<code></code> &mdash; Blend mode, can be Blend.DIFFERENCE, BLEND.HARDLIGHT, etc.
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to set the transparency to 50% for any following drawing, image or text operation :
+  <div class="listing"><pre>
+    myPDF.setAlpha ( .5 );
+  </pre></div><p></p></div><a name="setAuthor()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setAuthor</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setAuthor(author:String):void</code><p>
+  Sets the specified author for the PDF
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">author</span>:String</code> &mdash; The author
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to add a specific author to the PDF tags :
+  <div class="listing"><pre>
+    myPDF.setAuthor ( "Bob" );
+  </pre></div><p></p></div><a name="setAutoPageBreak()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setAutoPageBreak</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setAutoPageBreak(auto:Boolean, margin:Number):void</code><p>
+   Lets you enable or disable auto page break mode and triggering margin 
+   
+   </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">auto</span>:Boolean</code> &mdash; Page break mode
+   </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">margin</span>:Number</code> &mdash; Bottom margin
+   
+   </td></tr></table></div><a name="setBottomMargin()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setBottomMargin</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setBottomMargin(margin:Number):void</code><p>
+  Lets you specify the bottom margin
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">margin</span>:Number</code> &mdash; Bottom margin
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how set bottom margin for the PDF document :
+  <div class="listing"><pre>
+    myPDF.setBottomMargin ( 10 );
+  </pre></div><p></p></div><a name="setCreator()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setCreator</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setCreator(creator:String):void</code><p>
+  Sets the specified creator for the PDF
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">creator</span>:String</code> &mdash; Name of the PDF creator
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to set a creator name to the PDF tags :
+  <div class="listing"><pre>
+    myPDF.setCreator ( "My Application 1.0" );
+  </pre></div><p></p></div><a name="setDisplayMode()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setDisplayMode</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setDisplayMode(zoom:String = "FullWidth", layout:String = "SinglePage", mode:String = "UseNone"):void</code><p>
+  Lets you set a specific display mode, the DisplayMode takes care of the general layout of the PDF in the PDF reader
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">zoom</span>:String</code> (default = "<code>FullWidth</code>")<code></code> &mdash; Zoom mode, can be Display.FULL_PAGE, Display.FULL_WIDTH, Display.REAL, Display.DEFAULT
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">layout</span>:String</code> (default = "<code>SinglePage</code>")<code></code> &mdash; Layout of the PDF document, can be Layout.SINGLE_PAGE, Layout.ONE_COLUMN, Layout.TWO_COLUMN_LEFT, Layout.TWO_COLUMN_RIGHT
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">mode</span>:String</code> (default = "<code>UseNone</code>")<code></code> &mdash; PageMode can be pageMode.USE_NONE, PageMode.USE_OUTLINES, PageMode.USE_THUMBS, PageMode.FULL_SCREEN
+  </td></tr></table><br><span class="label">Example</span><br>  This example creates a PDF which opens at full page scaling, one page at a time :
+  <div class="listing"><pre>
+    myPDF.setDisplayMode (Display.FULL_PAGE, Layout.SINGLE_PAGE);
+  </pre></div>
+  To create a full screen PDF you would write :
+  <div class="listing"><pre>
+  
+  myPDF.setDisplayMode( Display.FULL_PAGE, Layout.SINGLE_PAGE, PageMode.FULLSCREEN );
+  </pre></div><p></p></div><a name="setFont()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setFont</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setFont(family:String, style:String = "", size:int = 0):void</code><p>
+  Lets you set a specific font
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">family</span>:String</code> &mdash; Font family, can be any of FontFamily.COURIER, FontFamily.HELVETICA, FontFamily.ARIAL, FontFamily.TIMES, FontFamily.SYMBOL, FontFamily.ZAPFDINGBATS.
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">style</span>:String</code> (default = "<code></code>")<code></code> &mdash; Any font style, can be Style.BOLD, Style.ITALIC, Style.BOLD_ITALIC, Style.NORMAL
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">size</span>:int</code> (default = <code>0</code>)<code></code></td></tr></table><br><span class="label">Example</span><br>  This example shows how to set the Helvetica font, with a bold style :
+  <div class="listing"><pre>
+    myPDF.setFont( FontFamily.HELVETICA, Style.BOLD );
+  </pre></div><p></p></div><a name="setFontSize()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setFontSize</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setFontSize(size:int):void</code><p>
+  Lets you set a new size for the current font
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">size</span>:int</code> &mdash; Font size
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to se the current font to 18 :
+  <div class="listing"><pre>
+    myPDF.setFontSize( 18 );
+  </pre></div><p></p></div><a name="setKeywords()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setKeywords</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setKeywords(keywords:String):void</code><p>
+  Sets the specified keywords for the PDF
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">keywords</span>:String</code> &mdash; The keywords
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to add some keywords to the PDF tags :
+  <div class="listing"><pre>
+    myPDF.setKeywords ( "Design, Agency, Communication, etc." );
+  </pre></div><p></p></div><a name="setLeftMargin()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setLeftMargin</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setLeftMargin(margin:Number):void</code><p>
+  Lets you specify the left margin
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">margin</span>:Number</code> &mdash; Left margin
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how set left margin for the PDF document :
+  <div class="listing"><pre>
+    myPDF.setLeftMargin ( 10 );
+  </pre></div><p></p></div><a name="setMargins()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setMargins</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setMargins(left:Number, top:Number, right:Number = -1, bottom:Number = 20):void</code><p>
+  Lets you specify the left, top, and right margins
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">left</span>:Number</code> &mdash; Left margin
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">top</span>:Number</code> &mdash; Right number
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">right</span>:Number</code> (default = <code>-1</code>)<code></code> &mdash; Top number
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">bottom</span>:Number</code> (default = <code>20</code>)<code></code> &mdash; Bottom number
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to set margins for the PDF document :
+  <div class="listing"><pre>
+    myPDF.setMargins ( 10, 10, 10, 10 );
+  </pre></div><p></p></div><a name="setRightMargin()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setRightMargin</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setRightMargin(margin:Number):void</code><p>
+  Lets you specify the right margin
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">margin</span>:Number</code> &mdash; Right margin
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how set right margin for the PDF document :
+  <div class="listing"><pre>
+    myPDF.setRightMargin ( 10 );
+  </pre></div><p></p></div><a name="setSubject()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setSubject</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setSubject(subject:String):void</code><p>
+  Lets you set a subject for the PDF
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">subject</span>:String</code> &mdash; The subject
+  </td></tr></table><br><span class="label">Example</span><br>   This example shows how to set a specific subject to the PDF tags :
+  <div class="listing"><pre>
+    myPDF.setSubject ( "Any topic" );
+  </pre></div><p></p></div><a name="setTitle()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setTitle</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setTitle(title:String):void</code><p>
+  Lets you set a title for the PDF
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">title</span>:String</code> &mdash; The title
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to set a specific title to the PDF tags :
+  <div class="listing"><pre>
+    myPDF.setTitle ( "AlivePDF !" );
+  </pre></div><p></p></div><a name="setTopMargin()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setTopMargin</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setTopMargin(margin:Number):void</code><p>
+  Lets you specify the top margin
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">margin</span>:Number</code> &mdash; Top margin
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how set top margin for the PDF document :
+  <div class="listing"><pre>
+    myPDF.setTopMargin ( 10 );
+  </pre></div><p></p></div><a name="setUnit()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setUnit</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setUnit(unit:String):String</code><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">unit</span>:String</code></td></tr></table><p></p><span class="label">Returns</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20"></td><td><code>String</code></td></tr></table></div><a name="setViewerPreferences()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setViewerPreferences</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setViewerPreferences(toolbar:String = "false", menubar:String = "false", windowUI:String = "false", fitWindow:String = "false", centeredWindow:String = "false", displayTitle:String = "false"):void</code><p>
+  Lets you control the way the document is to be presented on the screen or in print.
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">toolbar</span>:String</code> (default = "<code>false</code>")<code></code> &mdash; Toolbar behavior
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">menubar</span>:String</code> (default = "<code>false</code>")<code></code> &mdash; Menubar behavior
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">windowUI</span>:String</code> (default = "<code>false</code>")<code></code> &mdash; WindowUI behavior
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">fitWindow</span>:String</code> (default = "<code>false</code>")<code></code> &mdash; Specify whether to resize the document's window to fit the size of the first displayed page.
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">centeredWindow</span>:String</code> (default = "<code>false</code>")<code></code> &mdash; Specify whether to position the document's window in the center of the screen.
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">displayTitle</span>:String</code> (default = "<code>false</code>")<code></code> &mdash; Specify whether the window's title bar should display the document title taken from the value passed to the setTitle method
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to present the document centered on the screen with no toolbars :
+  <div class="listing"><pre>
+    myPDF.setViewerPreferences (ToolBar.HIDE, MenuBar.HIDE, WindowUI.HIDE, FitWindow.DEFAULT, CenterWindow.CENTERED);
+  </pre></div><p></p></div><a name="setX()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setX</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setX(x:Number):void</code><p>
+  Lets you specify the X position for the current page
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">x</span>:Number</code> &mdash; The X position
+  </td></tr></table></div><a name="setXY()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setXY</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setXY(x:Number, y:Number):void</code><p>
+  Lets you specify the X and Y position for the current page
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">x</span>:Number</code> &mdash; The X position
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">y</span>:Number</code> &mdash; The Y position
+  </td></tr></table></div><a name="setY()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">setY</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function setY(y:Number):void</code><p>
+  Lets you specify the Y position for the current page
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">y</span>:Number</code> &mdash; The Y position
+  </td></tr></table></div><a name="textStyle()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">textStyle</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function textStyle(color:<a href="../colors/Color.html">Color</a>, alpha:Number = 1, rendering:int = 0, wordSpace:Number = 0, characterSpace:Number = 0, scale:Number = 100, leading:Number = 0):void</code><p>
+  Sets the text style
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">color</span>:<a href="../colors/Color.html">Color</a></code> &mdash; Color object, can be CMYKColor, GrayColor, or RGBColor
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">alpha</span>:Number</code> (default = <code>1</code>)<code></code> &mdash; Text opacity
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">rendering</span>:int</code> (default = <code>0</code>)<code></code> &mdash; pRendering Specify the text rendering mode
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">wordSpace</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; Spaces between each words
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">characterSpace</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; Spaces between each characters
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">scale</span>:Number</code> (default = <code>100</code>)<code></code> &mdash; Text scaling
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">leading</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; Text leading
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to set a specific black text style with full opacity :
+  <div class="listing"><pre>
+    myPDF.textStyle ( new RGBColor ( 0x000000 ), 1 ); 
+  </pre></div><p></p></div><a name="toString()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">toString</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function toString():String</code><p></p><span class="label">Returns</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20"></td><td><code>String</code></td></tr></table></div><a name="willTrigger()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">willTrigger</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function willTrigger(type:String):Boolean</code><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">type</span>:String</code></td></tr></table><p></p><span class="label">Returns</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20"></td><td><code>Boolean</code></td></tr></table></div><a name="writeText()"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">writeText</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public function writeText(lineHeight:Number, text:String, link:String = ""):void</code><p>
+  Lets you write some text
+    </p><span class="label">Parameters</span><table border="0" cellspacing="0" cellpadding="0"><tr><td width="20px"></td><td><code><span class="label">lineHeight</span>:Number</code> &mdash; Line height, lets you specify height between each lines
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">text</span>:String</code> &mdash; Text to write, to put a line break just add a \n in the text string
+  </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">link</span>:String</code> (default = "<code></code>")<code></code> &mdash; Any link, like http://www.mylink.com, will open te browser when clicked
+  </td></tr></table><br><span class="label">Example</span><br>  This example shows how to add some text to the current page :
+  <div class="listing"><pre>
+    myPDF.writeText ( 5, "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.", "http://www.google.fr");
+  </pre></div>
+  This example shows how to add some text with a clickable link :
+  <div class="listing"><pre>
+    myPDF.writeText ( 5, "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.", "http://www.google.fr");
+  </pre></div><p></p></div><div class="detailSectionHeader">Event detail</div><a name="event:added"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">added</td><td class="detailHeaderType">event&nbsp;</td></tr></table><div class="detailBody"><span class="label">Event object type: </span><a href="../events/PageEvent.html"><code>org.alivepdf.events.PageEvent</code></a><br><p></p><p>
+  Dispatched when a page has been added to the PDF. The addPage() method generate this event
+    </p><br><span class="label">Example</span><br>  This example shows how to listen for such an event :
+  <div class="listing"><pre>
+    myPDF.addEventListener ( PageEvent.ADDED, pageAdded );
+  </pre></div><p></p></div><a name="event:complete"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">complete</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><span class="label">Event object type: </span><a href="../events/ProcessingEvent.html"><code>org.alivepdf.events.ProcessingEvent</code></a><br><p></p><p>
+  Dispatched when PDF has been generated and available. The save() method generate this event
+    </p><br><span class="label">Example</span><br>  This example shows how to listen for such an event :
+  <div class="listing"><pre>
+    myPDF.addEventListener ( ProcessingEvent.COMPLETE, generationComplete );
+  </pre></div><p></p></div><a name="event:pageTree"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">pageTree</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><span class="label">Event object type: </span><a href="../events/ProcessingEvent.html"><code>org.alivepdf.events.ProcessingEvent</code></a><br><p></p><p>
+  Dispatched when the PDF page tree has been generated. The save() method generate this event
+    </p><br><span class="label">Example</span><br>  This example shows how to listen for such an event :
+  <div class="listing"><pre>
+    myPDF.addEventListener ( ProcessingEvent.PAGE_TREE, pageTreeAdded );
+  </pre></div><p></p></div><a name="event:resources"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">resources</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><span class="label">Event object type: </span><a href="../events/ProcessingEvent.html"><code>org.alivepdf.events.ProcessingEvent</code></a><br><p></p><p>
+  Dispatched when the required resources (fonts, images, etc.) haven been written into the PDF. The save() method generate this event
+    </p><br><span class="label">Example</span><br>  This example shows how to listen for such an event :
+  <div class="listing"><pre>
+    myPDF.addEventListener ( ProcessingEvent.RESOURCES, resourcesAdded );
+  </pre></div><p></p></div><a name="event:started"></a><table cellspacing="0" cellpadding="0" class="detailHeader"><tr><td class="detailHeaderName">started</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><span class="label">Event object type: </span><a href="../events/ProcessingEvent.html"><code>org.alivepdf.events.ProcessingEvent</code></a><br><p></p><p>
+  Dispatched when the PDF generation has been initiated. The save() method generate this event
+    </p><br><span class="label">Example</span><br>  This example shows how to listen for such an event :
+  <div class="listing"><pre>
+    myPDF.addEventListener ( ProcessingEvent.STARTED, generationStarted );
+  </pre></div><p></p></div><br><br><hr><br><p></p><center class="copyright">Thibault Imbert - AlivePDF 0.1.4.1 Documentation - http://www.alivepdf.org/</center></div></body></html><!--Thibault Imbert - AlivePDF 0.1.4.1 Documentation - http://www.alivepdf.org/-->

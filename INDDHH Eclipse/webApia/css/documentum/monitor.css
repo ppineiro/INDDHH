@@ -1,0 +1,68 @@
+@CHARSET "ISO-8859-1";
+
+span.monitor-input {
+	font-weight: bold;
+	word-wrap: break-word;
+}
+
+div.monitor-multiple {
+	font-weight: bold;
+}
+
+span.monitor-select {
+	font-weight: bold;
+}
+
+div.monitor-tree {
+	font-weight: bold;
+}
+
+monitor-checkbox {
+	
+}
+
+span.monitor-password {
+	font-weight: bold;
+}
+
+label.monitor-label {
+	
+}
+
+.cssgradients div.monitor-button button.genericBtn:hover {
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(white) to(#EFEFEF));
+	background: -webkit-linear-gradient( white, #EFEFEF);
+	background: -moz-linear-gradient( white, #EFEFEF);
+	background: -ms-linear-gradient( white, #EFEFEF);
+	background: -o-linear-gradient( white, #EFEFEF);
+	background: linear-gradient( white, #EFEFEF);
+	color: #606060;
+	border-color: silver;
+}
+/*Igual a .no-cssgradients button.genericBtn*/
+.no-cssgradients div.monitor-button button.genericBtn:hover {
+	background-image: url("img/button/back_button.png");
+	color: #06060;
+	border-color: silver;
+}
+
+div.monitor-area {
+	font-weight: bold;
+	word-wrap: break-word;
+}
+
+a.monitor-href {
+	
+}
+
+span.monitor-radio {
+	font-weight: bold;
+}
+
+span.monitor-title {
+	
+}
+
+div.monitor-editor {
+	
+}

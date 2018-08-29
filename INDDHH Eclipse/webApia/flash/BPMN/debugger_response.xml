@@ -1,0 +1,104 @@
+<xml-fragment xmlns:ns="http://www.dogma.com/simulation/debugger/xml">
+  <ns:toolbar>
+    <ns:button id="stop" enabled="true"/>
+    <ns:button id="resume" enabled="true"/>
+    <ns:button id="start" enabled="false"/>
+    <ns:button id="next" enabled="true"/>
+  </ns:toolbar>
+  <ns:attributes/>
+  <ns:roles/>
+  <ns:design>
+    <ns:elements>
+      <ns:element id="5023" ready="0" completed="1" waiting="0" skipped="0">
+        <ns:pools>
+          <ns:pool id="1032" name="REGISTRADOR"/>
+        </ns:pools>
+      </ns:element>
+      <ns:element id="5032" ready="0" completed="1" waiting="2" skipped="0">
+        <ns:pools/>
+      </ns:element>
+      <ns:element id="5033" ready="0" completed="1" waiting="0" skipped="1">
+        <ns:pools>
+          <ns:pool id="1030" name="ANALISTA"/>
+        </ns:pools>
+      </ns:element>
+      <ns:element id="5034" ready="0" completed="1" waiting="2" skipped="0">
+        <ns:pools>
+          <ns:pool id="1052" name="MESA_AYUDA"/>
+        </ns:pools>
+      </ns:element>
+      <ns:element id="5035" ready="0" completed="0" waiting="3" skipped="0">
+        <ns:pools/>
+      </ns:element>
+      <ns:element id="5028" ready="0" completed="1" waiting="1" skipped="0">
+        <ns:pools/>
+      </ns:element>
+      <ns:element id="5029" ready="0" completed="1" waiting="1" skipped="0">
+        <ns:pools/>
+      </ns:element>
+      <ns:element id="5030" ready="0" completed="1" waiting="2" skipped="0">
+        <ns:pools/>
+      </ns:element>
+      <ns:element id="5031" ready="0" completed="0" waiting="2" skipped="1">
+        <ns:pools/>
+      </ns:element>
+      <ns:element id="5024" ready="0" completed="1" waiting="1" skipped="0">
+        <ns:pools>
+          <ns:pool id="1030" name="ANALISTA"/>
+        </ns:pools>
+      </ns:element>
+      <ns:element id="5025" ready="0" completed="1" waiting="0" skipped="0">
+        <ns:pools/>
+      </ns:element>
+      <ns:element id="5026" ready="0" completed="0" waiting="1" skipped="1">
+        <ns:pools/>
+      </ns:element>
+      <ns:element id="5027" ready="0" completed="1" waiting="2" skipped="0">
+        <ns:pools>
+          <ns:pool id="1052" name="MESA_AYUDA"/>
+        </ns:pools>
+      </ns:element>
+    </ns:elements>
+    <ns:dependencies>
+      <ns:dependency from="5029" to="5033" true="0" false="1" waiting="0" skipped="0"/>
+      <ns:dependency from="5030" to="5027" true="1" false="0" waiting="0" skipped="0"/>
+      <ns:dependency from="5029" to="5035" true="0" false="1" waiting="1" skipped="0"/>
+      <ns:dependency from="5028" to="5026" true="0" false="1" waiting="0" skipped="0"/>
+      <ns:dependency from="5033" to="5028" true="1" false="0" waiting="0" skipped="0"/>
+      <ns:dependency from="5028" to="5028" true="0" false="0" waiting="1" skipped="0"/>
+      <ns:dependency from="5035" to="5035" true="0" false="0" waiting="2" skipped="0"/>
+      <ns:dependency from="5029" to="5029" true="0" false="0" waiting="2" skipped="0"/>
+      <ns:dependency from="5026" to="5026" true="0" false="0" waiting="1" skipped="0"/>
+      <ns:dependency from="5024" to="5024" true="0" false="0" waiting="1" skipped="0"/>
+      <ns:dependency from="5023" to="5033" true="1" false="0" waiting="0" skipped="0"/>
+      <ns:dependency from="5028" to="5024" true="1" false="0" waiting="0" skipped="0"/>
+      <ns:dependency from="5027" to="5027" true="0" false="0" waiting="2" skipped="0"/>
+      <ns:dependency from="5027" to="5029" true="1" false="0" waiting="0" skipped="0"/>
+      <ns:dependency from="5030" to="5030" true="0" false="0" waiting="2" skipped="0"/>
+      <ns:dependency from="5024" to="5032" true="1" false="0" waiting="0" skipped="0"/>
+      <ns:dependency from="5034" to="5030" true="1" false="0" waiting="0" skipped="0"/>
+      <ns:dependency from="5030" to="5031" true="0" false="1" waiting="0" skipped="0"/>
+      <ns:dependency from="5025" to="5023" true="1" false="0" waiting="0" skipped="0"/>
+      <ns:dependency from="5032" to="5034" true="1" false="0" waiting="0" skipped="0"/>
+      <ns:dependency from="5034" to="5034" true="0" false="0" waiting="2" skipped="0"/>
+      <ns:dependency from="5026" to="5032" true="0" false="0" waiting="0" skipped="1"/>
+      <ns:dependency from="5032" to="5032" true="0" false="0" waiting="2" skipped="0"/>
+      <ns:dependency from="5031" to="5031" true="0" false="0" waiting="2" skipped="0"/>
+      <ns:dependency from="5031" to="5035" true="0" false="0" waiting="0" skipped="1"/>
+    </ns:dependencies>
+  </ns:design>
+  <ns:threads>
+    <ns:thread id="3" name="ANALISIS">
+      <ns:elements>
+        <ns:element id="5033"/>
+        <ns:element id="5023"/>
+        <ns:element id="5025"/>
+      </ns:elements>
+      <ns:dependencies>
+        <ns:dependency from="5023" to="5033"/>
+        <ns:dependency from="5025" to="5023"/>
+      </ns:dependencies>
+    </ns:thread>
+  </ns:threads>
+  <ns:messages/>
+</xml-fragment>

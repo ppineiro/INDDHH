@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<data-sources />
+
+	<form-beans></form-beans>
+
+	<global-exceptions />
+
+	<action-mappings>
+		<action path="/apia.execution.DocumentAction" scope="request" type="biz.statum.apia.web.action.DocumentAction" parameter="action">
+			<forward name="downloadDocument"		path="/page/generic/downloadDocument.jsp" />  
+			<forward name="data"					path="/page/ajax/returnXML.jsp" /> 
+		</action>
+		
+		<action path="/apia.execution.TaskAction" scope="request" type="biz.statum.apia.web.action.execution.TaskAction" parameter="action">
+			<forward name="taskUrl"					path="/page/execution/tasks/task.jsp" />
+			<forward name="data"					path="/page/ajax/returnXML.jsp" /> 
+			<forward name="errorUrl"				path="/page/execution/tasks/error.jsp" />
+			<forward name="errorUrlPro"				path="/page/execution/tasks/error.jsp?errType=pro" />
+			<forward name="errorUrlPool"			path="/page/execution/tasks/error.jsp?errType=pool" />
+			<forward name="downloadDocument"		path="/page/generic/downloadDocument.jsp" />
+			<forward name="viewSigns"				path="/page/execution/verifyDocSigns.jsp" />
+			<forward name="downloadPKCS7"			path="/page/execution/downloadPKCS7.jsp" />
+		</action>
+		<action path="/apia.execution.FormAction" scope="request" type="biz.statum.apia.web.action.execution.FormAction" parameter="action">
+			<forward name="taskUrl"					path="/page/execution/tasks/task.jsp" />
+			<forward name="entityUrl"				path="/page/execution/entities/edit.jsp"/>
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="editGridAdmin"			path="/page/execution/includes/editGrid.jsp?isTask=false" />
+			<forward name="editGridExec"			path="/page/execution/includes/editGrid.jsp?isTask=true" />
+			<forward name="viewSigns"				path="/page/execution/verifySigns.jsp" />
+			<forward name="viewFieldSigns"			path="/page/execution/verifyFieldSigns.jsp" />
+			<forward name="downloadPKCS7"			path="/page/execution/downloadPKCS7.jsp" />
+			<forward name="imagePreview"			path="/page/execution/previewImage.jsp" />
+		</action>
+		<action path="/apia.execution.EntInstanceListAction" scope="request" type="biz.statum.apia.web.action.execution.EntInstanceListAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/execution/entities/list.jsp"/>
+			<forward name="update"					path="/page/execution/entities/edit.jsp"/>
+			<forward name="view"					path="/page/execution/entities/edit.jsp"/>
+			<forward name="createInstance"			path="/page/execution/entities/selectEntity.jsp"/>
+			<forward name="listAlt"					path="/page/execution/proStart/listAlter.jsp"/>
+			<forward name="listAltQry"				path="/page/query/process/alteration/list.jsp"/>
+			<forward name="downloadDocument"		path="/page/generic/downloadDocument.jsp" /> 
+			<forward name="backToQuery"				path="/apia.query.EntityInstanceAction.run?action=goBack" />
+			<forward name="blanckAdmEntity"			path="/page/generic/admEntityBlanck.jsp" />
+			<forward name="viewSigns"				path="/page/execution/verifyDocSigns.jsp" />
+			<forward name="downloadPKCS7"			path="/page/execution/downloadPKCS7.jsp" />
+		</action>
+		<action path="/apia.execution.ProCancelAction" scope="request" type="biz.statum.apia.web.action.execution.ProCancelAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="listCan"					path="/page/execution/proStart/listCancel.jsp"/>
+			<forward name="listCanQry"				path="/page/query/process/cancelation/list.jsp"/>
+		</action>
+		<action path="/apia.taskslist.TasksListAction" scope="request" type="biz.statum.apia.web.action.taskslist.TasksListAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/taskslist/list.jsp"/>
+			<forward name="download"				path="/page/taskslist/download.jsp"/>
+			<forward name="image"					path="/page/generic/imageOut.jsp"/>
+		</action>
+		<action path="/apia.execution.GenerateReportAction" scope="request" type="biz.statum.apia.web.action.execution.GenerateReportAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="generator"				path="/page/execution/reports/generator.jsp"/>
+			<forward name="download"				path="/page/execution/reports/download.jsp"/>
+		</action>
+		<action path="/apia.execution.CustMonDocumentAction" scope="request" type="biz.statum.apia.web.action.execution.CustMonDocumentAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" />
+			<forward name="list"					path="/page/monitor/documents/custom/list.jsp"/>			
+			<forward name="download"				path="/page/monitor/documents/custom/download.jsp"/>
+		</action>		
+		<action path="/apia.execution.SocialAction" scope="request" type="biz.statum.apia.web.action.SocialAction" parameter="action">
+			<forward name="data"					path="/page/ajax/returnXML.jsp" /> 
+		</action>
+	</action-mappings>
+
+	<controller />
+
+	<message-resources parameter="com.sastock.web.resources.GeneralResources" />
+
+</struts-config>

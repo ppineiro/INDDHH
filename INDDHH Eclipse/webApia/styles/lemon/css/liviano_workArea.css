@@ -1,0 +1,456 @@
+BODY {
+	BACKGROUND-COLOR: #yellow;
+    OVERFLOW: hidden;
+    MARGIN:0px;
+    margin-top :2px;
+	PADDING-top:2px;
+}
+#divContent{
+	HEIGHT:100px;
+	WIDTH:800px;
+    OVERFLOW: auto;
+    MARGIN: 0px;
+    PADDING-LEFT:4px;
+    PADDING-RIGHT:4px;
+    FONT-FAMILY: Tahoma, Verdana, Arial; 
+    FONT-SIZE: 8pt;
+    SCROLLBAR-FACE-COLOR: #F1F0EF; /*#DFDFDF;*/
+    SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+    SCROLLBAR-SHADOW-COLOR: #C0C0C0;
+    SCROLLBAR-ARROW-COLOR: #00005A;
+    SCROLLBAR-DARKSHADOW-COLOR: #808080;
+    SCROLLBAR-BASE-COLOR: #F1F0EF;
+    scrollbar-3d-light-color: #808080;
+	border-left : 1px solid gray;
+	border-right : 1px solid gray;	
+	border-top :1px solid #141822;
+	border-bottom :1px solid #303030;	
+	background-color : #f3f5f8;
+}
+.listBody #divContent{
+	HEIGHT:100px;
+	WIDTH:800px;
+    OVERFLOW: auto;
+    MARGIN: 0px;
+    PADDING:0px;
+    border :0px;
+    FONT-FAMILY: Tahoma, Verdana, Arial; 
+    FONT-SIZE: 8pt;
+}
+.btn {
+	align : center;
+	padding-left : 4px;
+}
+.pageTop{
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#495261', endColorStr='#495261', gradientType='1');	
+	border-bottom : 1px solid #3c4655;
+	border-top : 1px solid gray;	
+    FONT-FAMILY: Arial,Helvetica,sans;
+ 	FONT-SIZE: 12px;
+ 	FONT-WEIGHT:bolder;
+    padding : 0px;
+    color  : #edf0f5;
+    height : 27px;
+    font-variant : small-caps;
+    WIDTH: 800px; 
+    border-collapse: collapse ;
+    border-top : 2px groove #838b99;
+    border-left : 1px solid #2c3340;
+    border-right : 1px solid #2c3340;    
+    table-layout:fixed;
+}
+.pageTop TR{ 
+	padding : 0px;
+	margin : 0px;
+	border : 0px;
+}
+.pageTop TD{
+	width : 800px;
+	FONT-FAMILY: Verdana;
+	PADDING-LEFT:4px;
+	PADDING-RIGHT:4px;
+	PADDING-TOP:1px;
+	PADDING-BOTTOM:2px;
+}
+.pageTop .col1{}
+.pageTop .col2{	
+	text-align:right;
+}
+.pageTop button {
+	BORDER: 1px solid #242c38;
+	PADDING-LEFT:2px;
+	PADDING-RIGHT:2px;
+	PADDING-TOP:1px;
+	PADDING-BOTTOM:1px;*/
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled=true, startColorstr=#d1d5de, endColorstr=#e6e9ee);
+	BORDER: 1px solid #383e49;
+	padding : 1px;
+	margin : 1px;
+    FONT-SIZE: 8pt;
+    color:#383e49;
+}
+.pageBottom{
+	border-bottom : 1px solid black;
+	border-top : 1px solid #666e7c;
+	FONT-FAMILY: Verdana,Arial,sans-serif;
+	FONT-SIZE:11px;
+	background-color : #495261;
+	BORDER:gray 1px solid;
+    WIDTH:800px;
+	MARGIN:0px;
+    
+}
+.pageBottom TD{
+	PADDING-LEFT:4px;
+	PADDING-RIGHT:0px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:0px;
+}
+.pageBottom .col1{}
+.pageBottom .col2{
+	text-align:right;
+}
+.pageBottom BUTTON{
+	BORDER: 1px solid #242c38;
+	PADDING-LEFT:2px;
+	PADDING-RIGHT:2px;
+	PADDING-TOP:1px;
+	PADDING-BOTTOM:1px;*/
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled=true, startColorstr=#d1d5de, endColorstr=#e6e9ee);
+	BORDER: 1px solid #383e49;
+	padding : 1px;
+	margin : 1px;
+    FONT-SIZE: 8pt;
+    color:#383e49;
+}
+.subTit{
+	FONT-FAMILY: Verdana, Arial; 
+	FONT-SIZE: 11px;
+	color : #293450;
+	FONT-WEIGHT:bold;
+	TEXT-ALIGN:left;
+	filter:progid:DXImageTransform.Microsoft.Alpha(style=rectangular, opacity=00, finishOpacity=90);
+	BORDER-BOTTOM:1px solid #bec5cf;
+	MARGIN-TOP:10px;
+	MARGIN-BOTTOM:6px;
+	MARGIN-LEFT:0px;
+	MARGIN-RIGHT:0px;
+}
+.tblFormLayout{
+	TABLE-LAYOUT:fixed;
+	BORDER-COLLAPSE:collapse;
+	FONT-FAMILY:Tahoma, Verdana, Arial; 
+	FONT-SIZE:8pt;
+	MARGIN:4px;
+	PADDING : 4px;
+}
+.tblFormLayout .col1{
+	WIDTH:160px;
+	TEXT-ALIGN:right;
+	COLOR:#333333;
+}
+.tblFormLayout .col2{
+	WIDTH:200px;
+}
+.tblFormLayout .col3{
+	WIDTH:160px;
+	TEXT-ALIGN:right;
+	COLOR:#333333;
+}
+.tblFormLayout .col4{
+	WIDTH:200px;
+}
+.tblFormLayout TR{
+}
+.tblFormLayout TD{
+	FONT-FAMILY:Tahoma, Verdana, Arial;
+	FONT-SIZE:8pt;
+	PADDING:2px;
+}
+.tblFormLayout .readOnly{
+    BORDER-BOTTOM:1px solid #EFEFEF;
+    FONT-WEIGHT:bold;
+    FONT-SIZE: 8pt;
+    PADDING-LEFT:2px;
+    COLOR: black;
+    CURSOR: default;
+        table-layout:fixed;
+}
+.tblDataGrid{
+	border:1px outset;
+	BORDER-COLLAPSE:collapse;
+	TABLE-LAYOUT:fixed;
+	FONT-FAMILY: Verdana,Arial,sans-serif;
+	FONT-SIZE:11px;
+	table-layout: fixed;
+}
+.tblDataGrid THEAD TD{
+	FONT-FAMILY: Verdana,Arial,sans-serif;
+	FONT-SIZE:11px;
+	TEXT-ALIGN:center;
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#B7B1AC', endColorStr='#F1F0EF', gradientType='0');
+	color : #142a3c;
+	border-top : 1px solid #d9d9d9;
+	border-right : 1px solid #c2cad4;
+	border-bottom : 1px solid #687079;
+}
+.tblDataGrid THEAD TD A{
+	COLOR:black;
+}
+.tblDataGrid TBODY TR{
+	BACKGROUND-COLOR:#ffffff;
+}
+.tblDataGrid TBODY TD{
+	FONT-FAMILY: Verdana,Arial,sans-serif;
+	FONT-SIZE:11px;
+	PADDING-LEFT:2px;
+	PADDING-RIGHT:2px;
+	PADDING-TOP:2px;
+	PADDING-BOTTOM:1px;
+    BORDER-LEFT:1px solid #EAEAEA;
+	WORD-WRAP: normal;
+}
+.tblDataGrid #taskList TD{
+	FONT-FAMILY: Tahoma,Verdana,Arial,sans-serif;
+	FONT-SIZE:8pt;
+	PADDING-LEFT:3px;
+	PADDING-RIGHT:2px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:1px;
+    BORDER-LEFT:1px solid #EAEAEA;
+    NOWRAP : true;
+    height : 22px;
+    line-height : 20px;
+	WORD-WRAP:normal;
+}
+.tblDataGrid .trOdd{
+	BACKGROUND-COLOR:#f3f5f8;
+}
+.tblDataGrid .trSelected{
+    BACKGROUND-COLOR: #d7fdff;
+}
+.tblDataGrid .tdRed{
+	FONT-FAMILY: Verdana,Arial,sans-serif;
+    COLOR:red;
+}
+.tblDataGrid .tdProLat{
+	FONT-WEIGHT:bold;
+	COLOR:#ff0000;
+}
+.tblDataGrid .tdProInAle{
+	COLOR:#880000;
+}
+.tblDataGrid .tdDisable{
+	COLOR:#aaaaaa;
+}
+.tblDataGridTDHID {
+	FONT-FAMILY: Tahoma,Verdana,Arial,sans-serif;
+	FONT-SIZE:8pt;
+	PADDING-LEFT:1px;
+	PADDING-RIGHT:1px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:1px;
+    BORDER-LEFT:1px solid #CACACA;
+    NOWRAP : true;	
+}
+CONTROL\:grid{
+	width:800px;
+	BORDER-LEFT :				1px solid #777777;
+	BORDER-RIGHT :				1px solid #777777;
+	BORDER-BOTTOM :				1px solid #777777;
+	BACKGROUND-COLOR:			white;//#EFEFEF; //#EAEAEA;
+	OVERFLOW:					auto;
+    SCROLLBAR-FACE-COLOR: #F1F0EF; 
+    SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+    SCROLLBAR-SHADOW-COLOR: #C0C0C0;
+    SCROLLBAR-ARROW-COLOR: #00005A;
+    SCROLLBAR-DARKSHADOW-COLOR: #808080;
+    SCROLLBAR-BASE-COLOR: #F1F0EF;
+    scrollbar-3d-light-color: #808080;
+}
+.oHeadExtended{
+	background-color = #DADADA;
+	border-left = 1px solid gray;
+	border-right = 1px solid gray;
+	border-top = 1px solid gray;
+}
+.oHeadExtendedExpr{
+	width: 800px;
+}
+.navBar{
+	TABLE-LAYOUT:fixed;
+	BACKGROUND-COLOR:#e3e6ec;
+	width:800px;
+	border:1px outset;
+	margin:0px;
+}
+.navBar .col1{
+	width:300px;
+    FONT-FAMILY: Tahoma, Verdana, Arial; 
+    FONT-SIZE: 8pt;
+}
+.navBar .col2{
+    FONT-FAMILY: Tahoma, Verdana, Arial; 
+    FONT-SIZE: 8pt;
+	width:500px;
+	text-align:right;
+}
+.navBar .colM{
+    FONT-FAMILY: Tahoma, Verdana, Arial; 
+    FONT-SIZE: 8pt;
+	width:200px;
+	text-align:right;
+}
+.navBar .colM2{
+    FONT-FAMILY: Tahoma, Verdana, Arial; 
+    FONT-SIZE: 8pt;
+	text-align:right;
+}
+.navBar BUTTON{
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled=true, startColorstr=#dadce5, endColorstr=#fbfdff);
+	BORDER: 1px solid #7b8490;
+	BACKGROUND-COLOR:#e3e5e7;
+	padding : 1px;
+	margin : 1px;
+    FONT-SIZE: 8pt;
+    color:#181b22;
+}
+INPUT{
+	font-size:11px;
+   	font-family:Tahoma, Verdana, Arial;
+}
+INPUT.txtReadOnly{
+	BACKGROUND-COLOR: gainsboro;
+    BORDER: 1px inset;
+    COLOR: dimgray;
+    CURSOR: default;
+    FONT-SIZE: 8pt;
+}
+TEXTAREA{
+	font-size:11px;
+   	font-family:Tahoma, Verdana, Arial;
+}
+TEXTAREA.txtReadOnly{
+	BACKGROUND-COLOR: gainsboro;
+    BORDER: 1px inset;
+    COLOR: dimgray;
+    CURSOR: default;
+    FONT-SIZE: 8pt;
+}
+SELECT{
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	FONT-SIZE: 8pt;
+}
+LABEL{
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+    FONT-SIZE: 8pt;
+}
+LABEL.required{
+	FONT-STYLE:italic;
+}
+BUTTON{
+	BACKGROUND-COLOR:#EAEAEA;
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled=true, startColorstr=#fdfdfd, endColorstr=#d6d7e7);
+	BORDER: 1px solid #1B4D80;
+	color:#000000;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+    FONT-SIZE: 8pt;
+    MARGIN-LEFT:2px;
+    MARGIN-RIGHT:2px;
+}
+.hiddenBottom BUTTON{
+	PADDING-LEFT:0px;
+	PADDING-RIGHT:0px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:0px;
+}
+.liDep {
+	list-style-type : square;
+}
+A:visited { color: black;}
+.tblComment {
+    FONT-FAMILY: Tahoma, Verdana, Arial; 
+    FONT-SIZE: 8pt;
+    WIDTH : 800px;
+}
+.tblComment PRE {
+    FONT-FAMILY: Tahoma, Verdana, Arial; 
+    FONT-SIZE: 8pt;
+}
+.tblComment #trHead{
+	BACKGROUND-COLOR : #CFCFCF;
+}
+.tblFilter {
+	width:800px;
+	BORDER-BOTTOM:
+	1px solid silver;
+	FONT-FAMILY: Tahoma, Verdana, Arial; 
+    FONT-SIZE: 7pt;
+        table-layout:fixed;
+}
+#printDiv{
+	BACKGROUND-COLOR:#EFEFEF;
+	POSITION:absolute;
+	TOP:0px;						
+	LEFT:0px;
+	WIDTH:800px;
+    HEIGHT:600px;
+	TEXT-ALIGN:center;
+    FONT-FAMILY: Tahoma, Verdana, Arial; 
+    FONT-SIZE: 8pt;
+}
+.txtRequired {
+	color: black;
+	font-weight:bold;
+}
+.menuItem { font-family:ms sans serif,helvetica,arial,sans-serif; font-size:8pt; width:800px; padding-left:16; background-Color:menu; color:black; padding-top: 2px; padding-bottom: 2px; margin-bottom:0; margin-top:0; cursor: default; }  
+.menuItemDefault { font-family:ms sans serif,helvetica,arial,sans-serif;  font-size:8pt;  font-weight:bold;  width:800px;  padding-left:16;  background-Color:menu;  color:black;  padding-top: 2px;  padding-bottom: 2px;  cursor: default; }  
+.highlightItem {  font-family:ms sans serif,helvetica,arial, sans-serif;  font-size:8pt;  width:800px;  padding-left:16;  background-Color:highlight;  color:white;  padding-top: 2px;  padding-bottom: 2px;  cursor: default; }
+.GridHeader th{ 
+position:relative;
+cursor: default;
+font-weight:normal;
+z-index: 1;
+border-bottom:0px;
+}
+.Grid{
+border:0;
+border-color:#AAAAAA;
+border-width:1px;
+border-style:solid;
+border-collapse:collapse;
+background-color:#DADADA;
+    table-layout:fixed;
+}
+.Grid tbody tr td{
+border:0;
+border-color:#DADADA;
+border-width:1px;
+border-style:solid;
+border-collapse:collapse;
+}
+.GridHeader TD A, TH A{
+text-decoration:none;
+border:1px solid #000000;
+background-color:#DADADA;
+}
+.frmSubTit{
+	FONT-FAMILY: Verdana, Arial; 
+	FONT-SIZE: 11px;
+	color : #293450;
+	FONT-WEIGHT:bold;
+	TEXT-ALIGN:left;
+	PADDING-LEFT:3px;
+	PADDING-RIGHT:0px;
+	PADDING-TOP:0px;
+	PADDING-BOTTOM:0px;	
+	MARGIN-TOP:0px;
+	MARGIN-BOTTOM:0px;
+	MARGIN-LEFT:3px;
+	MARGIN-RIGHT:0px;
+	BACKGROUND-COLOR : #ced5df;
+	width : 800px;
+}

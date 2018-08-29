@@ -1,0 +1,182 @@
+{
+  "ApiaShellCommand": {
+    "executeCommand": {
+      "!type": "fn(command: string)",
+      "!doc": "Executes commands and save results in container."
+    },
+    "executeCommands": {
+      "!type": "fn(arrCommands: [string])",
+      "!doc": "Executes each command in array and save results in container."
+    },
+    "generateCommandCompleteTask": {
+      "!type": "fn(tskName: string, proInstId: number, arrEntAtts: [string], arrProAtts: [string]) -> string",
+      "!doc": "Generates and returns the 'Complete Task' command syntax from input parameters."
+    },
+    "executeCommandCompleteTask": {
+      "!type": "fn(tskName: string, proInstId: number, arrEntAtts: [string], arrProAtts: [string])",
+      "!doc": "Generates the 'Complete Task' command syntax from input parameters and executes. Save results in container."
+    },
+    "generateCommandCompleteTaskHelp": {
+      "!type": "fn() -> string",
+      "!doc": "Generates and returns the 'Complete Task' command syntax for obtain help about the command."
+    },
+    "executeCommandCompleteTaskHelp": {
+      "!type": "fn()",
+      "!doc": "Generates the 'Complete Task' command syntax for obtain help about the command and executes. Save results in container."
+    },
+    "generateCommandBusinessClass": {
+      "!type": "fn(busClassName: string, parameters: [[string]]) -> string",
+      "!doc": "Generates and returns the 'Execute Business Class' command syntax from input parameters."
+    },
+    "executeCommandBusinessClass": {
+      "!type": "fn(busClassName: string, parameters: [[string]])",
+      "!doc": "Generates the 'Execute Business Class' command syntax from input parameters and executes. Save results in container."
+    },
+    "generateCommandBusinessClassHelp": {
+      "!type": "fn() -> string",
+      "!doc": "Generates and returns the 'Execute Business Class' command syntax for obtain help about the command."
+    },
+    "executeCommandBusinessClassHelp": {
+      "!type": "fn()",
+      "!doc": "Generates the 'Execute Business Class' command syntax for obtain help about the command and executes. Save results in container."
+    },
+    "generateCommandHelp": {
+      "!type": "fn() -> string",
+      "!doc": "Generates and returns the 'Help' command syntax."
+    },
+    "executeCommandHelp": {
+      "!type": "fn(busClassName: string, parameters: [[string]])",
+      "!doc": "Generates the 'Help' command syntax and executes. Save results in container."
+    },
+    "generateCommandList": {
+      "!type": "fn(type: string, name: string) -> string",
+      "!doc": "Generates and returns the 'List' command syntax from input parameters."
+    },
+    "executeCommandList": {
+      "!type": "fn(type: string, name: string)",
+      "!doc": "Generates the 'List' command syntax from input parameters and executes. Save results in container."
+    },
+    "generateCommandListQuery": {
+      "!type": "fn(qryName: string) -> string",
+      "!doc": "Generates and returns the 'List Query' command syntax from input parameters."
+    },
+    "executeCommandListQuery": {
+      "!type": "fn(qryName: string)",
+      "!doc": "Generates the 'List Query' command syntax from input parameters and executes. Save results in container."
+    },
+    "generateCommandListBusClass": {
+      "!type": "fn(busClassName: string) -> string",
+      "!doc": "Generates and returns the 'List Business Class' command syntax from input parameters."
+    },
+    "executeCommandListBusClass": {
+      "!type": "fn(busClassName: string)",
+      "!doc": "Generates the 'List Business Class' command syntax from input parameters and executes. Save results in container."
+    },
+    "generateCommandListProcess": {
+      "!type": "fn(proName: string) -> string",
+      "!doc": "Generates and returns the 'List Process' command syntax from input parameters."
+    },
+    "executeCommandListProcess": {
+      "!type": "fn(proName: string)",
+      "!doc": "Generates the 'List Process' command syntax from input parameters and executes. Save results in container."
+    },
+    "generateCommandListAttribute": {
+      "!type": "fn(attName: string) -> string",
+      "!doc": "Generates and returns the 'List Attribute' command syntax from input parameters."
+    },
+    "executeCommandListAttribute": {
+      "!type": "fn(attName: string)",
+      "!doc": "Generates the 'List Attribute' command syntax from input parameters and executes. Save results in container."
+    },
+    "generateCommandListEntity": {
+      "!type": "fn(entName: string) -> string",
+      "!doc": "Generates and returns the 'List Entity' command syntax from input parameters."
+    },
+    "executeCommandListEntity": {
+      "!type": "fn(entName: string)",
+      "!doc": "Generates the 'List Entity' command syntax from input parameters and executes. Save results in container."
+    },
+    "generateCommandListHelp": {
+      "!type": "fn() -> string",
+      "!doc": "Generates and returns the 'List' command syntax for obtain help about the command."
+    },
+    "executeCommandListHelp": {
+      "!type": "fn()",
+      "!doc": "Generates the 'List' command syntax for obtain help about the command and executes. Save results in container."
+    },
+    "generateCommandQuery": {
+      "!type": "fn(qryName: string, max: number, arrFilters: [[string]], open: boolean) -> string",
+      "!doc": "Generates and returns the 'Query' command syntax from input parameters."
+    },
+    "executeCommandQuery": {
+      "!type": "fn(qryName: string, max: number, arrFilters: [[string]], open: boolean)",
+      "!doc": "Generates the 'Query' command syntax from input parameters and executes. Save results in container."
+    },
+    "generateCommandQueryHelp": {
+      "!type": "fn() -> string",
+      "!doc": "Generates and returns the 'Query' command syntax for obtain help about the command."
+    },
+    "executeCommandQueryHelp": {
+      "!type": "fn()",
+      "!doc": "Generates the 'Query' command syntax for obtain help about the command and executes. Save results in container."
+    },
+    "generateCommandStartProcess": {
+      "!type": "fn(proName: string, busEntInstNum: number, proInstNum: number, arrAttributes: [[string]], open: boolean) -> string",
+      "!doc": "Generates and returns the 'Start Process' command syntax from input parameters."
+    },
+    "executeCommandStartProcess": {
+      "!type": "fn(proName: string, busEntInstNum: number, proInstNum: number, arrAttributes: [[string]], open: boolean)",
+      "!doc": "Generates the 'Start Process' command syntax from input parameters and executes. Save results in container."
+    },
+    "generateCommandStartProcessHelp": {
+      "!type": "fn() -> string",
+      "!doc": "Generates and returns the 'Start Process' command syntax for obtain help about the command."
+    },
+    "executeCommandStartProcessHelp": {
+      "!type": "fn()",
+      "!doc": "Generates the 'Start Process' command syntax for obtain help about the command and executes. Save results in container."
+    },
+    "generateCommandWorkTask": {
+      "!type": "fn(tskName: string, arrEntAttributes: [[string]], arrProtAttributes: [[string]]) -> string",
+      "!doc": "Generates and returns the 'Work Task' command syntax from input parameters."
+    },
+    "executeCommandWorkTask": {
+      "!type": "fn(tskName: string, arrEntAttributes: [[string]], arrProtAttributes: [[string]])",
+      "!doc": "Generates the 'Work Task' command syntax from input parameters and executes. Save results in container."
+    },
+    "generateCommandWorkTaskHelp": {
+      "!type": "fn() -> string",
+      "!doc": "Generates and returns the 'Work Task' command syntax for obtain help about the command."
+    },
+    "executeCommandWorkTaskHelp": {
+      "!type": "fn()",
+      "!doc": "Generates the 'Work Task' command syntax for obtain help about the command and executes. Save results in container."
+    },
+    "listTypeAttribute": {
+      "!type": "string",
+      "!doc": "Type for list Attributes."
+    },
+    "listTypeBusinessClass": {
+      "!type": "string",
+      "!doc": "Type for list Business Classes."
+    },
+    "listTypeEntity": {
+      "!type": "string",
+      "!doc": "Type for list Entities."
+    },
+    "listTypeProcess": {
+      "!type": "string",
+      "!doc": "Type for list Processes."
+    },
+    "listTypeQuery": {
+      "!type": "string",
+      "!doc": "Type for list Queries."
+    }
+  }
+}
+
+
+
+
+
+

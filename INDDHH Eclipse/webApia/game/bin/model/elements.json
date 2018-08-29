@@ -1,0 +1,929 @@
+{
+    "elements": [
+      {
+        "name": "task",
+        "attGroup": [
+          {
+            "name": "BPMN",
+            "attribute": [
+              {
+                "label": "name",
+                "name": "name",
+                "type": "text",
+                "change": "setName"
+              },
+              {
+                "label": "description",
+                "name": "description",
+                "type": "text"
+              },
+              {
+                "label": "duration",
+                "name": "duration",
+                "type": "text",
+                "numeric": "true"
+              },
+              {
+                "label": "alert duration",
+                "name": "alertduration",
+                "type": "text",
+                "numeric": "true"
+              },
+              {
+                "label": "alert type",
+                "name": "alerttype",
+                "type": "text"
+              },
+              {
+                "label": "looptype",
+                "name": "looptype",
+                "type": "combo",
+                "change": "loopTypeChange",
+                "values": {
+                  "value": [
+                    { "disable": "testtime,mi_ordering,loopmaximum" },
+                    {
+                      "label": "Standard",
+                      "value": "Standard",
+                      "disable": "mi_ordering",
+                      "enable": "testtime,loopmaximum"
+                    },
+                    {
+                      "label": "Multi-Instance",
+                      "value": "MultiInstance",
+                      "enable": "mi_ordering",
+                      "disable": "testtime,loopmaximum"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "test time",
+                "name": "testtime",
+                "type": "combo",
+                "disabled": "true",
+                "value": "After",
+                "values": {
+                  "value": [
+                    {
+                      "label": "Before",
+                      "value": "Before"
+                    },
+                    {
+                      "label": "After",
+                      "value": "After"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "loop maximum",
+                "name": "loopmaximum",
+                "value": "1",
+                "type": "text",
+                "numeric": "true",
+                "disabled": "true"
+              },
+              {
+                "label": "loop counter",
+                "name": "loopcounter",
+                "value": "0",
+                "type": "text",
+                "numeric": "true",
+                "disabled": "true"
+              },
+              {
+                "label": "Mi Ordering",
+                "name": "mi_ordering",
+                "type": "combo",
+                "disabled": "true",
+                "value": "Sequential",
+                "values": {
+                  "value": [
+                    {
+                      "label": "Sequential",
+                      "value": "Sequential"
+                    },
+                    {
+                      "label": "Parallel",
+                      "value": "Parallel"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Task Type",
+                "name": "taskType",
+                "type": "combo",
+                "change": "typeChange",
+                "values": {
+                  "value": [
+                    {
+                      
+                    },
+                    {
+                      "label": "Service Task",
+                      "value": "TaskService"
+                    },
+                    {
+                      "label": "Send Task",
+                      "value": "TaskSend"
+                    },
+                    {
+                      "label": "Receive Task",
+                      "value": "TaskReceive"
+                    },
+                    {
+                      "label": "User Task",
+                      "value": "TaskUser"
+                    },
+                    {
+                      "label": "Script Task",
+                      "value": "TaskScript"
+                    },
+                    {
+                      "label": "Manual Task",
+                      "value": "TaskManual"
+                    },
+                    {
+                      "label": "Reference Task",
+                      "value": "TaskReference"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "start quantity",
+                "name": "startquantity",
+                "type": "text",
+                "numeric": "true"
+              },
+              {
+                "label": "completion quantity",
+                "name": "completionquantity",
+                "type": "text",
+                "numeric": "true"
+              }
+            ]
+          },
+          {
+            "name": "Documentation",
+            "attribute": {
+              "label": "Documents",
+              "name": "documents",
+              "type": "modal"
+            }
+          },
+          {
+            "name": "Forms",
+            "attribute": [
+              {
+                "label": "Forms",
+                "name": "forms",
+                "type": "modal"
+              },
+              {
+                "label": "Forms",
+                "name": "forms",
+                "type": "modal"
+              },
+              {
+                "label": "Forms",
+                "name": "forms",
+                "type": "modal"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "csubflow",
+        "attGroup": [
+          {
+            "name": "BPMN",
+            "attribute": [
+              {
+                "label": "name",
+                "name": "name",
+                "type": "text",
+                "change": "setName"
+              },
+              {
+                "label": "description",
+                "name": "description",
+                "type": "text"
+              },
+              {
+                "label": "transaction",
+                "name": "transaction",
+                "type": "checkbox",
+                "change": "transactionChange",
+                "value": "false"
+              },
+              {
+                "name": "adhoc",
+                "label": "ad-hoc",
+                "type": "checkbox",
+                "change": "adhocChange",
+                "enable": "adhocordering",
+                "value": "false"
+              },
+              {
+                "label": "adhoc ordering",
+                "name": "adhocordering",
+                "type": "combo",
+                "value": "Sequential",
+                "values": {
+                  "value": [
+                    {
+                      "label": "Sequential",
+                      "value": "Sequential"
+                    },
+                    {
+                      "label": "Parallel",
+                      "value": "Parallel"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "looptype",
+                "name": "looptype",
+                "type": "combo",
+                "change": "loopTypeChange",
+                "values": {
+                  "value": [
+                    { "disable": "testtime,mi_ordering,loopmaximum" },
+                    {
+                      "label": "Standard",
+                      "value": "Standard",
+                      "disable": "mi_ordering",
+                      "enable": "testtime,loopmaximum"
+                    },
+                    {
+                      "label": "Multi-Instance",
+                      "value": "MultiInstance",
+                      "enable": "mi_ordering",
+                      "disable": "testtime,loopmaximum"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "test time",
+                "name": "testtime",
+                "type": "combo",
+                "disabled": "true",
+                "value": "Before",
+                "values": {
+                  "value": [
+                    {
+                      "label": "Before",
+                      "value": "Before"
+                    },
+                    {
+                      "label": "After",
+                      "value": "After"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "loop maximum",
+                "name": "loopmaximum",
+                "value": "1",
+                "type": "text",
+                "numeric": "true",
+                "disabled": "true"
+              },
+              {
+                "label": "loop counter",
+                "name": "loopcounter",
+                "value": "0",
+                "type": "text",
+                "numeric": "true",
+                "disabled": "true"
+              },
+              {
+                "label": "Mi Ordering",
+                "name": "mi_ordering",
+                "type": "combo",
+                "disabled": "true",
+                "value": "Sequential",
+                "values": {
+                  "value": [
+                    {
+                      "label": "Sequential",
+                      "value": "Sequential"
+                    },
+                    {
+                      "label": "Parallel",
+                      "value": "Parallel"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "processType",
+                "label": "Process Type",
+                "type": "combo",
+                "change": "typeChange",
+                "value": "Embedded",
+                "values": {
+                  "value": [
+                    {
+                      "label": "Embedded sub-process",
+                      "value": "Embedded"
+                    },
+                    {
+                      "label": "Reusable sub-process",
+                      "value": "Reusable"
+                    },
+                    {
+                      "label": "Reference sub-process",
+                      "value": "Reference"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "start quantity",
+                "name": "startquantity",
+                "type": "text",
+                "numeric": "true"
+              },
+              {
+                "label": "completion quantity",
+                "name": "completionquantity",
+                "type": "text",
+                "numeric": "true"
+              }
+            ]
+          },
+          { "name": "Documentation" },
+          { "name": "Forms" },
+          { "name": "group3" }
+        ]
+      },
+      {
+        "name": "esubflow",
+        "attGroup": [
+          {
+            "name": "BPMN",
+            "attribute": [
+              {
+                "label": "name",
+                "name": "name",
+                "type": "text",
+                "change": "setName"
+              },
+              {
+                "label": "description",
+                "name": "description",
+                "type": "text"
+              },
+              {
+                "label": "transaction",
+                "name": "transaction",
+                "type": "checkbox",
+                "change": "transactionChange",
+                "value": "false"
+              },
+              {
+                "name": "adhoc",
+                "label": "ad-hoc",
+                "type": "checkbox",
+                "change": "adhocChange",
+                "enable": "adhocordering"
+              },
+              {
+                "label": "adhoc ordering",
+                "name": "adhocordering",
+                "type": "combo",
+                "value": "Sequential",
+                "values": {
+                  "value": [
+                    {
+                      "label": "Sequential",
+                      "value": "Sequential"
+                    },
+                    {
+                      "label": "Parallel",
+                      "value": "Parallel"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "looptype",
+                "name": "looptype",
+                "type": "combo",
+                "change": "loopTypeChange",
+                "values": {
+                  "value": [
+                    { "disable": "testtime,mi_ordering,loopmaximum" },
+                    {
+                      "label": "Standard",
+                      "value": "Standard",
+                      "disable": "mi_ordering",
+                      "enable": "testtime,loopmaximum"
+                    },
+                    {
+                      "label": "Multi-Instance",
+                      "value": "MultiInstance",
+                      "enable": "mi_ordering",
+                      "disable": "testtime,loopmaximum"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "test time",
+                "name": "testtime",
+                "type": "combo",
+                "disabled": "true",
+                "value": "After",
+                "values": {
+                  "value": [
+                    {
+                      "label": "Before",
+                      "value": "Before"
+                    },
+                    {
+                      "label": "After",
+                      "value": "After"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "loop maximum",
+                "name": "loopmaximum",
+                "value": "1",
+                "type": "text",
+                "numeric": "true",
+                "disabled": "true"
+              },
+              {
+                "label": "loop counter",
+                "name": "loopcounter",
+                "value": "0",
+                "type": "text",
+                "numeric": "true",
+                "disabled": "true"
+              },
+              {
+                "label": "Mi Ordering",
+                "name": "mi_ordering",
+                "type": "combo",
+                "disabled": "true",
+                "value": "Sequential",
+                "values": {
+                  "value": [
+                    {
+                      "label": "Sequential",
+                      "value": "sequential"
+                    },
+                    {
+                      "label": "Parallel",
+                      "value": "parallel"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "start quantity",
+                "name": "startquantity",
+                "type": "text",
+                "numeric": "true"
+              },
+              {
+                "label": "completion quantity",
+                "name": "completionquantity",
+                "type": "text",
+                "numeric": "true"
+              },
+              {
+                "label": "expanded",
+                "name": "expanded",
+                "value": "true",
+                "type": "text",
+                "disabled": "true"
+              }
+            ]
+          },
+          { "name": "Documentation" },
+          { "name": "Forms" },
+          { "name": "group3" }
+        ]
+      },
+      {
+        "name": "startevent",
+        "attGroup": [
+          {
+            "name": "BPMN",
+            "attribute": [
+              {
+                "label": "name",
+                "name": "name",
+                "type": "text",
+                "change": "setName"
+              },
+              {
+                "label": "description",
+                "name": "description",
+                "type": "text"
+              },
+              {
+                "name": "eventType",
+                "label": "Event Type",
+                "type": "combo",
+                "change": "typeChange",
+                "values": {
+                  "value": [
+                    {
+                      
+                    },
+                    {
+                      "label": "Message",
+                      "value": "Message"
+                    },
+                    {
+                      "label": "Timer",
+                      "value": "Timer"
+                    },
+                    {
+                      "label": "Conditional",
+                      "value": "Conditional"
+                    },
+                    {
+                      "label": "Signal",
+                      "value": "Signal"
+                    },
+                    {
+                      "label": "Multiple",
+                      "value": "Multiple"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          { "name": "Documentation" },
+          { "name": "Forms" },
+          { "name": "group3" }
+        ]
+      },
+      {
+        "name": "middleevent",
+        "attGroup": [
+          {
+            "name": "BPMN",
+            "attribute": [
+              {
+                "label": "name",
+                "name": "name",
+                "type": "text",
+                "change": "setName"
+              },
+              {
+                "label": "description",
+                "name": "description",
+                "type": "text"
+              },
+              {
+                "name": "eventType",
+                "label": "Event Type",
+                "type": "combo",
+                "change": "typeChange",
+                "values": {
+                  "value": [
+                    {
+                      
+                    },
+                    {
+                      "label": "Message",
+                      "value": "Message"
+                    },
+                    {
+                      "label": "Compensate",
+                      "value": "Compensate"
+                    },
+                    {
+                      "label": "Conditional",
+                      "value": "Conditional"
+                    },
+                    {
+                      "label": "Link",
+                      "value": "Link"
+                    },
+                    {
+                      "label": "Signal",
+                      "value": "Signal"
+                    },
+                    {
+                      "label": "Multiple",
+                      "value": "Multiple"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          { "name": "Documentation" },
+          { "name": "Forms" },
+          { "name": "group3" }
+        ]
+      },
+      {
+        "name": "endevent",
+        "attGroup": [
+          {
+            "name": "BPMN",
+            "attribute": [
+              {
+                "label": "name",
+                "name": "name",
+                "type": "text",
+                "change": "setName"
+              },
+              {
+                "label": "description",
+                "name": "description",
+                "type": "text"
+              },
+              {
+                "name": "eventType",
+                "label": "Event Type",
+                "type": "combo",
+                "change": "typeChange",
+                "values": {
+                  "value": [
+                    {
+                      
+                    },
+                    {
+                      "label": "Message",
+                      "value": "Message"
+                    },
+                    {
+                      "label": "Error",
+                      "value": "Error"
+                    },
+                    {
+                      "label": "Cancel",
+                      "value": "Cancel"
+                    },
+                    {
+                      "label": "Compensate",
+                      "value": "Compensate"
+                    },
+                    {
+                      "label": "Signal",
+                      "value": "Signal"
+                    },
+                    {
+                      "label": "Terminate",
+                      "value": "Terminate"
+                    },
+                    {
+                      "label": "Multiple",
+                      "value": "Multiple"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          { "name": "Documentation" },
+          { "name": "Forms" },
+          { "name": "group3" }
+        ]
+      },
+      {
+        "name": "gateway",
+        "attGroup": [
+          {
+            "name": "BPMN",
+            "attribute": {
+              "name": "gatewaytype",
+              "label": "Gateway Type",
+              "type": "combo",
+              "change": "typeChange",
+              "values": {
+                "value": [
+                  {
+                    
+                  },
+                  {
+                    "label": "Event Based",
+                    "value": "EventBasedXOR"
+                  },
+                  {
+                    "label": "Inclusive",
+                    "value": "OR"
+                  },
+                  {
+                    "label": "Complex",
+                    "value": "Complex"
+                  },
+                  {
+                    "label": "Parallel",
+                    "value": "AND"
+                  }
+                ]
+              }
+            }
+          },
+          { "name": "Documentation" },
+          { "name": "Forms" },
+          { "name": "group3" }
+        ]
+      },
+      {
+        "name": "mflow",
+        "attGroup": { "name": "BPMN" }
+      },
+      {
+        "name": "association",
+        "attGroup": { "name": "BPMN" }
+      },
+      {
+        "name": "sflow",
+        "attGroup": {
+          "name": "BPMN",
+          "attribute": {
+            "name": "conditiontype",
+            "label": "Condition Type",
+            "type": "combo",
+            "change": "conditionChange",
+            "values": {
+              "value": [
+                {
+                  
+                },
+                {
+                  "label": "Deafult",
+                  "value": "OTHERWISE"
+                },
+                {
+                  "label": "Expression",
+                  "value": "CONDITION"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "name": "pool",
+        "attGroup": {
+          "name": "BPMN",
+          "attribute": [
+            {
+              "label": "name",
+              "name": "name",
+              "type": "text",
+              "change": "setName"
+            },
+            {
+              "label": "description",
+              "name": "description",
+              "type": "text",
+              "required": "true"
+            },
+            {
+              "label": "boundaryvisible",
+              "name": "boundaryvisible",
+              "type": "text",
+              "value": "true",
+              "disabled": "true"
+            }
+          ]
+        }
+      },
+      {
+        "name": "group",
+        "attGroup": {
+          "name": "BPMN",
+          "attribute": {
+            "label": "Text",
+            "name": "name",
+            "type": "text",
+            "change": "setText"
+          }
+        }
+      },
+      {
+        "name": "swimlane",
+        "attGroup": {
+          "name": "BPMN",
+          "attribute": [
+            {
+              "label": "name",
+              "name": "name",
+              "type": "text",
+              "change": "setName"
+            },
+            {
+              "label": "description",
+              "name": "description",
+              "type": "text",
+              "required": "true"
+            }
+          ]
+        }
+      },
+      {
+        "name": "textannotation",
+        "attGroup": {
+          "name": "BPMN",
+          "attribute": {
+            "label": "Annotation",
+            "name": "textannotation",
+            "type": "text",
+            "change": "setText"
+          }
+        }
+      },
+      {
+        "name": "dataobject",
+        "attGroup": {
+          "name": "BPMN",
+          "attribute": [
+            {
+              "label": "name",
+              "name": "name",
+              "type": "text",
+              "change": "setName"
+            },
+            {
+              "label": "description",
+              "name": "description",
+              "type": "text"
+            },
+            {
+              "label": "state",
+              "name": "state",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      {
+        "name": "back",
+        "x": "0",
+        "y": "0",
+        "height": "0",
+        "width": "0",
+        "attGroup": {
+          "name": "BPMN",
+          "attribute": [
+            {
+              "label": "diagram",
+              "name": "lala",
+              "attributes": {
+                "attribute": [
+                  {
+                    "label": "name",
+                    "name": "na,e",
+                    "type": "text"
+                  },
+                  {
+                    "label": "description",
+                    "name": "description",
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "main process",
+              "name": "lala",
+              "attributes": {
+                "attribute": [
+                  {
+                    "label": "text",
+                    "name": "text",
+                    "type": "text"
+                  },
+                  {
+                    "label": "description",
+                    "name": "description",
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "boundaryvisible",
+              "name": "boundaryvisible",
+              "type": "text",
+              "value": "false",
+              "disabled": "true"
+            }
+          ]
+        }
+      }
+    ]
+}

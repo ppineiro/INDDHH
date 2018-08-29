@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<data-sources />
+
+	<form-beans></form-beans>
+
+	<global-exceptions />
+
+	<global-forwards>
+		<forward name="startupInProgress"			path="/page/system/startupInProgress.jsp" />
+		<forward name="siteNotAvailable"			path="/page/system/siteNotAvailable.jsp" />
+		<forward name="errorLoadingParams"			path="/page/system/errorLoadingParams.jsp" />
+		<forward name="errorLoadingCustomFixes"		path="/page/system/errorLoadingCustomFixes.jsp" />
+			
+		<forward name="forceLogin"					path="/page/login/login.jsp" />
+		<forward name="fatalError"					path="/page/main/fatalError.jsp" />
+		<forward name="masterInit"					path="/page/login/login.jsp" />
+		<forward name="masterInvalidToken"			path="/page/invalidToken.jsp"/>
+		<forward name="masterInvalidSession"		path="/page/invalidSession.jsp"/>
+		<forward name="masterNotLoggedAjax"			path="/page/notLoggedXML.jsp" />
+		<forward name="masterInvalidTokenAjax"		path="/page/invalidTokenXML.jsp" />
+		<forward name="downloadDeps"				path="/page/generic/downloadDeps.jsp" />
+		<forward name="errorMessage"				path="/page/generic/errorMessage.jsp" />
+		<forward name="masterInvalidTokenAjax"		path="/page/invalidSessionXML.jsp" />
+	</global-forwards>
+
+	<action-mappings>
+		<action path="/apia.splash.MenuAction" scope="request" type="biz.statum.apia.web.action.splash.MenuAction" parameter="action">
+			<forward name="init"					path="/page/main/container.jsp" /> 
+			<forward name="xml"						path="/page/ajax/returnXML.jsp" />
+		</action>
+
+		<action path="/apia.splash.SplashAction" scope="request" type="biz.statum.apia.web.action.splash.SplashAction" parameter="action">
+			<forward name="init"					path="/page/splash/splash.jsp" />  
+			<forward name="xml"						path="/page/ajax/returnXML.jsp" />
+			<forward name="jfreechart"				path="/page/ajax/returnJFreeChart.jsp" />
+			<forward name="about"					path="/page/main/about.jsp" />
+		</action>
+	 
+		<action path="/apia.portal.PortalAction" scope="request" type="biz.statum.apia.web.action.portal.PortalAction" parameter="action">
+			<forward name="init"					path="/page/login/login.jsp" />
+<!-- 			<forward name="initMobile"				path="/miniSite/index.jsp" /> -->
+			<forward name="xml"						path="/page/ajax/returnXML.jsp" />
+			<forward name="jfreechart"				path="/page/ajax/returnJFreeChart.jsp" />
+		</action>
+	</action-mappings>
+
+	<controller />
+
+
+</struts-config>

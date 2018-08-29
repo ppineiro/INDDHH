@@ -1,0 +1,6 @@
+<script type="text/javascript">
+	var MSG_NO_EMPTY_MSG		= '<system:label show="text" label="msgNoMsgEmpty" />';
+	var MSG_MARK_CHANNEL		= '<system:label show="text" label="msgMarkChannel" />';
+	var MSG_PUB_OK				= '<system:label show="text" label="msgPubMsgOk" />';
+	var MSG_PUB_NO_OK			= '<system:label show="text" label="msgPubMsgNoOk" />';
+</script><system:edit show="ifModalNotLoaded" field="socialShareMdl.jsp"><system:edit show="markModalAsLoaded" field="socialShareMdl.jsp" /><div id="mdlSocialShareContainer" class="mdlContainer hiddenModal"><div class="mdlHeader"><system:label show="tooltip" label="lblShareMsg" /></div><div class="mdlBody" id="mdlBody"><div class="fieldGroup" id="channels"><div class="title"><system:label show="text" label="lblChannels" /></div></div><div class="fieldGroup"><div class="title"><system:label show="text" label="lblSocMsg" /></div><textarea id="txtToPub" name="txtToPub" rows="4" maxlength="3000" style="resize:none; width: 99%;"></textarea></div></div><div class="mdlFooter"><div class="modalButton" id="btnPublishMdlSocialShare" title="<system:label show="tooltip" label="btnPub" />"><system:label show="text" label="btnPub" /></div><div class="close" id="closeMdlSocialShare"><system:label show="text" label="btnCer" /></div></div></div></system:edit>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox width="100%" xmlns:mx="http://www.adobe.com/2006/mxml" initialize="visualizationReady()">
+		<mx:Metadata>
+		[Event(name="visualizationChanged", type="flash.events.Event")]
+		</mx:Metadata>
+		<mx:Script>
+			<![CDATA[
+				import flash.utils.Timer;
+				import mx.collections.ArrayCollection;
+				import view.ExternalLoader;
+				import communication.Communication;
+				import flash.events.*;
+				import labels.LabelManager;
+				import flash.xml.*;
+				import mx.controls.*;
+				import data.*;
+				
+				public static var VISUALIZATION_CHANGED:String = "visualizationChanged";
+				
+				public function visualizationReady():void {
+					//Communication.getInstance().addEventListener(Communication.ON_SEARCHCOMPLETE, searchComplete);
+					
+					var tree:Boolean = (Parameters.DEFAULT_VISUALIZATION == "Tree");
+					
+					circleLayoutRB.selected = !tree;
+					treeLayoutRB.selected = tree;
+					
+					Filter.setTypeVisibilityTo(Filter.ENTITY, Parameters.DEFAULT_SHOW_RELATED_ENTITIES);
+					Filter.setTypeVisibilityTo(Filter.PROCESS, Parameters.DEFAULT_SHOW_RELATED_PROCESS);
+					Filter.setTypeVisibilityTo(Filter.TASK, Parameters.DEFAULT_SHOW_RELATED_TASKS);
+					Group.setTypeGroupBy(Group.ENTITY_INSTANCE, Parameters.DEFAULT_GROUP_ENTITY_INSTANCES);
+					Group.setTypeGroupBy(Group.PROCESS_INSTANCE, Parameters.DEFAULT_GROUP_PROCESS_INSTANCES);
+					
+					dispatchEvent(new Event(Visualization.VISUALIZATION_CHANGED));
+				}
+				
+				private function optionsChanged(e:Event):void {
+					Filter.setTypeVisibilityTo(Filter.ENTITY, entitiesCB.selected);
+					Filter.setTypeVisibilityTo(Filter.PROCESS, processesCB.selected);
+					Filter.setTypeVisibilityTo(Filter.TASK, tasksCB.selected);
+					Group.setTypeGroupBy(Group.ENTITY_INSTANCE, entitiesInstancesCB.selected);
+					Group.setTypeGroupBy(Group.PROCESS_INSTANCE, processesInstancesCB.selected);
+				}
+				
+				public function getLayout():String {
+					
+					if (circleLayoutRB.selected) {
+						return "Circle";
+					}
+					if (treeLayoutRB.selected) {
+						return "Tree";
+					}
+				}
+				
+			]]>
+		</mx:Script>
+		<mx:VBox width="100%">
+			<mx:RadioButton selected="true" id="circleLayoutRB" label="{LabelManager.getInstance().getLabel('lbl_circleLayout')}" click="optionsChanged(event);dispatchEvent(new Event(Visualization.VISUALIZATION_CHANGED));"/>
+			<mx:RadioButton selected="false" id="treeLayoutRB" label="{LabelManager.getInstance().getLabel('lbl_treeLayout')}" click="optionsChanged(event);dispatchEvent(new Event(Visualization.VISUALIZATION_CHANGED));"/>
+		</mx:VBox>
+		<mx:VBox width="100%">
+			<mx:CheckBox selected="{Parameters.DEFAULT_SHOW_RELATED_ENTITIES}" id="entitiesCB" label="{LabelManager.getInstance().getLabel('lbl_showEntities')}" click="optionsChanged(event);dispatchEvent(new Event(Visualization.VISUALIZATION_CHANGED));"/>
+			<mx:CheckBox selected="{Parameters.DEFAULT_SHOW_RELATED_PROCESS}" id="processesCB" label="{LabelManager.getInstance().getLabel('lbl_showProcess')}" click="optionsChanged(event);dispatchEvent(new Event(Visualization.VISUALIZATION_CHANGED));"/>
+			<mx:CheckBox selected="{Parameters.DEFAULT_SHOW_RELATED_TASKS}" id="tasksCB" label="{LabelManager.getInstance().getLabel('lbl_showTasks')}" click="optionsChanged(event);dispatchEvent(new Event(Visualization.VISUALIZATION_CHANGED));"/>
+		</mx:VBox>
+		<mx:VBox width="100%">
+			<mx:CheckBox selected="{Parameters.DEFAULT_GROUP_ENTITY_INSTANCES}" id="entitiesInstancesCB" label="{LabelManager.getInstance().getLabel('lbl_groupEntitiesInstances')}" click="optionsChanged(event);dispatchEvent(new Event(Visualization.VISUALIZATION_CHANGED));"/>
+			<mx:CheckBox selected="{Parameters.DEFAULT_GROUP_PROCESS_INSTANCES}" id="processesInstancesCB" label="{LabelManager.getInstance().getLabel('lbl_groupProcessInstances')}" click="optionsChanged(event);dispatchEvent(new Event(Visualization.VISUALIZATION_CHANGED));"/>
+		</mx:VBox>
+	</mx:HBox>

@@ -1,0 +1,26 @@
+<?xml version = "1.0" encoding = "utf-8" standalone = "yes"?>
+<aiml>
+
+	<category>
+		<pattern>ACCESO RAPIDO 2</pattern>
+		<template>2</template>
+	</category>
+	
+	<category>
+		<pattern>EXPEDIENTE QUE CREE</pattern>
+		<template><srai>ACCESO RAPIDO 2</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES QUE CREE</pattern>
+		<template><srai>ACCESO RAPIDO 2</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTE QUE YO CREE</pattern>
+		<template><srai>ACCESO RAPIDO 2</srai></template>
+	</category>
+	<category>
+		<pattern>EXPEDIENTES QUE YO CREE</pattern>
+		<template><srai>ACCESO RAPIDO 2</srai></template>
+	</category>
+
+</aiml>

@@ -1,0 +1,525 @@
+<%response.setCharacterEncoding(com.dogma.Parameters.APP_ENCODING);%>
+<%@page import="com.dogma.Parameters"%>
+<%@page import="com.dogma.*"%>
+<%@page import="com.st.util.labels.LabelManager"%>
+<%@page import="com.dogma.bean.DogmaAbstractBean"%>
+<%@page import="java.util.*"%>
+<%@page import="com.dogma.vo.*"%>
+ 
+<jsp:useBean id="bLogin" scope="session" class="com.dogma.bean.security.LoginBean">
+</jsp:useBean>
+
+<%
+
+String userAgent=request.getHeader("User-Agent");
+boolean MSIE=userAgent.indexOf("MSIE")>=0;
+boolean MSIE6=userAgent.indexOf("MSIE 6")>=0;
+boolean MSIE7=userAgent.indexOf("MSIE 7.0")>=0;
+boolean MSIE8=userAgent.indexOf("MSIE 8.0")>=0;
+boolean FIREFOX=userAgent.indexOf("Firefox/")>=0;
+boolean FIREFOX2=userAgent.indexOf("Firefox/2")>=0;
+boolean FIREFOX3=userAgent.indexOf("Firefox/3")>=0;
+boolean FIREFOX4=userAgent.indexOf("Firefox/4")>=0;
+boolean FIREFOX5=userAgent.indexOf("Firefox/5")>=0;
+boolean FIREFOX6=userAgent.indexOf("Firefox/6")>=0;
+boolean FIREFOX7=userAgent.indexOf("Firefox/7")>=0;
+boolean FIREFOX8=userAgent.indexOf("Firefox/8")>=0;
+boolean FIREFOX9=userAgent.indexOf("Firefox/9")>=0;
+boolean FIREFOX10=userAgent.indexOf("Firefox/10")>=0;
+boolean CHROME=userAgent.indexOf("Chrome")>=0;
+boolean OPERA=userAgent.toLowerCase().indexOf("opera")>=0;
+
+Integer langId = null; //Parameters.DEFAULT_LANG; utilizar primero el lenguaje del label set por defecto
+Integer labelSet = Parameters.DEFAULT_LABEL_SET;
+if (request.getParameter("langId") != null && !"null".equals(request.getParameter("langId"))) {
+	try{
+		langId = new Integer(request.getParameter("langId"));
+	}catch(NumberFormatException e){
+		langId = Parameters.DEFAULT_LANG; 
+	}
+} 
+
+UserData uData = bLogin.getUserData(request);
+
+//verificar que el lenguaje esté en el label set
+Collection languages = bLogin.getLabelSetLanguages(labelSet);
+if (languages == null || languages.size() == 0) { //no se encontraron lenguajes en el label set, utilizar el lenguaje por defecto
+	langId = Parameters.DEFAULT_LANG;
+} else { //verificar que el lenguaje seleccionado esté en el label set
+	Iterator iterator = languages.iterator();
+	LanguageVo langVo = null;
+	while (iterator.hasNext() && langVo == null) {
+		langVo = (LanguageVo) iterator.next();
+		if (langVo.getLangId().equals(langId)) {
+			break;
+		} else {
+			langVo = null;
+		}
+	}
+	
+	if (langVo == null) { //no se encontró el lenguaje colocar el lenguaje por defecto del label set
+		langId = bLogin.getLabelSetDefaultLanguage(labelSet);
+	}
+}
+
+if (langId == null) { //no se encontró por ningún lado el lenguaje que se debe utilizar, quedarse por el default global
+	langId = Parameters.DEFAULT_LANG;
+}
+
+if (uData != null) {
+	uData.setLabelSetId(labelSet);
+	uData.setLangId(langId);
+}
+String defaultEnviroment=EnvParameters.getEnvParameter(new Integer(1),EnvParameters.ENV_STYLE);
+
+int MODE_LOGIN	= 1;
+int MODE_CHANGE_PASSWORD = 2;
+
+int showMode = (request.getParameter("changePwd") == null) ? MODE_LOGIN : MODE_CHANGE_PASSWORD;
+
+boolean classicEnbaled = Parameters.CLASSIC_LOGIN_ENABLED || (!Parameters.CLASSIC_LOGIN_ENABLED && !Parameters.DESKTOP_LOGIN_ENABLED);
+%>
+<%@page import="com.dogma.busClass.userValidation.ApiaPasswordValidationException"%>
+<html>
+<head>
+	<link rel="shortcut icon" href="<%=Parameters.ROOT_PATH%>/images/favicon.ico">
+	<meta http-equiv="Content-Type" content="text/html; charset=<%=com.dogma.Parameters.APP_ENCODING%>">
+	<link href="<%=Parameters.ROOT_PATH%>/styles/<%=defaultEnviroment%>/css/login.css" rel="styleSheet" type="text/css" media="screen"></link>
+	<title><%=LabelManager.getName("0001"+Parameters.DEFAULT_LABEL_SET,"titSys")%></title>
+	<script language="javascript" src="<%=Parameters.ROOT_PATH%>/scripts/events.js"></script>
+	<script language="javascript">
+	
+	function checkCapsLock(e) {
+			var code=e.which;
+			var element=e.target;
+			var left=window.innerWidth;
+			var top=window.innerHeight;
+			if(navigator.userAgent.indexOf("MSIE")>0){
+				e=window.event;
+				code=e.keyCode;
+				element=e.srcElement;
+				left=document.body.clientWidth;
+				top=document.body.clientHeight;
+			}
+			
+			if (e.keyCode == 13 && document.getElementById('txtPwd').value != null &&
+   				document.getElementById('txtPwd').value != "" && document.getElementById('txtUser').value != null &&
+   				document.getElementById('txtUser').value != "") {
+				btnConf();
+				return true;
+			}
+			
+			var content='<table style="background-color:#FFFFE1;" width="150" border="0" cellpadding="0"><tr><td align="center" style="font-family:Tahoma; color:#FF0000; font-size:10px;">Atencion!</td></tr><tr><td align="center" style="font-family:Tahoma; color:#000000; font-size:10px;">Tiene el Bloq Mayus Activado, puede causarle problemas.</td></tr></table>';
+			var div=document.createElement("DIV");
+			div.style.position="absolute";
+			div.style.width="150px";
+			div.style.border="1px solid #000000";
+			div.align="center";
+			div.id="capsMessage";
+			div.innerHTML=content;
+			div.style.top=((top/2)-25)+"px";
+			div.style.left=((left/2)+60)+"px";
+			if ( ( code >= 65 && code <= 90 ) && !e.shiftKey ) {
+				//alert( myMsg +"WAA");
+				document.body.appendChild(div);
+			} else if ( ( code >= 97 && code <= 122 ) && e.shiftKey ) {
+				//alert( myMsg +" SHIFT");
+				document.body.appendChild(div);
+			}else{
+				var toDelete=document.getElementById("capsMessage");
+				if(toDelete!=null){
+					document.body.removeChild(toDelete);
+				}
+			}
+			//if(code==13){
+			//	btnConf();
+			//}
+		
+	}
+	
+	</script>
+</head>
+<body>
+	<form name="frmLogin" id="frmLogin" method="post">
+		<table height="100%" width="100%" border=0>
+  			<tr align="center" valign="middle">
+    			<td>
+			      <table class="box" border="0" cellpadding="0" cellspacing="0">
+			        <tr><td colspan=2><img src="<%=Parameters.ROOT_PATH%>/styles/<%=defaultEnviroment%>/images/apiaHeader2.jpg"></td></tr>
+			        <tr>
+			          <td class="col3">
+          				<table class="lg" width="100%" id="tblLogin" border=0>
+			          		<col width="40%" align="right"><col width="60%"></col>
+          					<tr height="10px"><td colspan="2">&nbsp;</td></tr>
+								<% if (showMode == MODE_LOGIN && classicEnbaled) { %>
+					          		<% if (Parameters.LOGIN_JSP_LOGIN == null || Parameters.LOGIN_JSP_LOGIN.length() == 0) { %>
+										<%@include file="loginParamsApia.jsp" %>
+						          		<tr>
+			          						<td align="right" title="<%=LabelManager.getToolTip(labelSet,langId,"lblUsu")%>"><%=LabelManager.getNameWAccess(labelSet,langId,"lblUsu")%>:</td>
+			          						<td><input type="text" onkeyup="enableBtnOk(event)" onKeyPress="checkCapsLock(event)" onblur="setTimeout(function(){try{enableBtnOk(event)}catch(e){}},200)" name="txtUser" id="txtUser" size="15" accesskey="<%= LabelManager.getAccessKey(labelSet,langId,"lblUsu") %>" <%if(request.getParameter("txtUser")!=null && !"null".equals(request.getParameter("txtUser"))){ out.print(" value='" + bLogin.fmtHTML( bLogin.fmtStr( request.getParameter("txtUser") ) ) + "' "); }%>></input></td>
+						          		</tr>
+			          					<tr>
+			          						<td align="right" title="<%=LabelManager.getToolTip(labelSet,langId,"lblPwd")%>"><%=LabelManager.getNameWAccess(labelSet,langId,"lblPwd")%>:</td>
+			          						<td><input onKeyPress="checkCapsLock(event)" onkeyup="enableBtnOk(event)" type="password" name="txtPwd" id="txtPwd" size="15" maxlength="50" accesskey="<%= LabelManager.getAccessKey(labelSet,langId,"lblPwd") %>" ></input></td>
+						          		</tr><%
+						          		if(! forceEnvironment){ %>
+							          		<tr <%if(allEnvironments != null && allEnvironments.size() == 1){out.print(" style=\"display:none\" ");}%>>
+				          						<td align="right" title="<%=LabelManager.getToolTip(labelSet,langId,"lblAmb")%>"><%=LabelManager.getNameWAccess(labelSet,langId,"lblAmb")%>:</td>
+				          						<td>
+				          							<% 
+				          							if (userCanSelectEnvironment){
+					          							if(allEnvironments!=null && allEnvironments.size() == 1) { 
+					          								Iterator it = allEnvironments.iterator();
+					          								Environment eVo = (Environment) it.next(); %>
+					          								<input type="hidden" name="cmbEnv" value="<%= eVo.id %>"><%
+					          							} else if (hiddeSelectedEnvironment) { 
+				          									if (allEnvironments != null) {
+																for (Iterator it = allEnvironments.iterator(); it.hasNext(); ) {
+																	Environment eVo = (Environment)it.next();
+																	if(!containsForbiden(eVo.name) && eVo.id.toString().equals(selectedEnvironmentId)){ %>
+																		<input type="hidden" name="cmbEnv" value="<%= eVo.id %>">
+																		<%=bLogin.fmtHTML(eVo.name)%>
+																	<%}
+																}
+															} 
+														} else { %>
+						          							<select id="cmbEnv" name="cmbEnv" onKeyPress="checkCapsLock(event)" accesskey="<%= LabelManager.getAccessKey(labelSet,langId,"lblAmb") %>"><%
+						          								if (allEnvironments != null) {
+																	for (Iterator it = allEnvironments.iterator(); it.hasNext(); ) {
+																		Environment eVo = (Environment)it.next();
+																		if(!containsForbiden(eVo.name)){
+																			%><option value="<%=eVo.id%>"  <%if(eVo.id.toString().equals(selectedEnvironmentId)){ out.print(" selected "); }%>><%=bLogin.fmtHTML(eVo.name)%></option><%
+																		}
+																	}
+																} %>
+						          							</select><%
+						          						} 
+						          					} else {
+					          							if(allEnvironments!=null && allEnvironments.size() == 1) { 
+					          								Environment eVo = (Environment) allEnvironments.iterator().next(); %>
+					          								<input type="hidden" id="cmbEnv" name="cmbEnv" value="<%= eVo.id %>"><%
+					          							} else { %>		          					
+															<input type="text" name="txtEnv" id="txtEnv" onkeyup="enableBtnOk(event)" size="15" maxlength="50" accesskey="<%= LabelManager.getAccessKey(labelSet,langId,"lblAmb")%>" <%if(selectedEnvironmentName!=null){ out.print(" value='" + selectedEnvironmentName + "' "); }%>>
+							          					<%}%>
+						          					<%}%>
+				          						</td>
+							          		</tr>
+							          		
+							          	<%} else {%>
+							          		<tr>
+							          			<td colspan="2">
+													<input type="hidden" name="cmbEnv" value="<%=forcedEnvironment%>">
+												</td>
+											</tr>
+										<%}%>
+										
+					  					<tr height="20px"><td colspan="2">&nbsp;</td></tr>
+			          					<tr>
+											<td align="center" colspan="2">
+												<button type="button" id="btnOK" disabled onclick="btnConf()" accesskey="<%=LabelManager.getAccessKey(labelSet,langId,"btnLog")%>" title="<%=LabelManager.getToolTip(labelSet,langId,"btnLog")%>"><%=LabelManager.getNameWAccess(labelSet,langId,"btnLog")%></button>
+												<button type="button" onclick="btnCanc()" accesskey="<%=LabelManager.getAccessKey(labelSet,langId,"btnCan")%>" title="<%=LabelManager.getToolTip(labelSet,langId,"btnCan")%>"><%=LabelManager.getNameWAccess(labelSet,langId,"btnCan")%></button>
+												
+												<% if (Parameters.LOGIN_SHOW_GEN_PWD) { %>
+													<br><br>
+													<a href="#" class="remember" onclick="btnRemPwd()" title="<%=LabelManager.getToolTip(labelSet,langId,"btnRemPwd")%>"><%=LabelManager.getName(labelSet,langId,"btnRemPwd")%></a>
+												<% } %>
+											</td>
+										</tr>
+										<tr height="10px"><td colspan="2">&nbsp;</td></tr>
+									<% } else { %>
+										<tr>
+											<td align="center" colspan="2">
+												<jsp:include page="<%= Parameters.LOGIN_JSP_LOGIN %>"/>
+											</td>
+										</tr>
+									<% } 				
+								} else if (showMode == MODE_CHANGE_PASSWORD && classicEnbaled) {
+									if (Parameters.LOGIN_JSP_CHANGE_PWD == null || Parameters.LOGIN_JSP_CHANGE_PWD.length() == 0) { %>
+			          					<tr>
+			          						<td align="right" title="<%=LabelManager.getToolTip(labelSet,langId,"lblPwd")%>"><%=LabelManager.getNameWAccess(labelSet,langId,"lblPwd")%>:</td>
+			          						<td><input onKeyPress="checkCapsLock(event)" onkeyup="enableBtnOk(event)" type="password" name="txtPwd" id="txtPwd" size="15" maxlength="50" accesskey="<%= LabelManager.getAccessKey(labelSet,langId,"lblPwd") %>"  <%if(Parameters.PWD_REG_EXP!=null){out.print("sRegExp =\""+Parameters.PWD_REG_EXP+"\" onchange='testRegExpPassword(this)'");}%>></input></td>
+						          		</tr>
+			          					<tr>
+			          						<td align="right" title="<%=LabelManager.getToolTip(labelSet,langId,"lblConPwd")%>"><%=LabelManager.getNameWAccess(labelSet,langId,"lblConPwd")%>:</td>
+			          						<td><input onKeyPress="checkCapsLock(event)" onkeyup="enableBtnOk(event)" type="password" name="txtConfPwd" id="txtConfPwd" size="15" maxlength="50" accesskey="<%= LabelManager.getAccessKey(labelSet,langId,"lblConPwd") %>"  <%if(Parameters.PWD_REG_EXP!=null){out.print("sRegExp =\""+Parameters.PWD_REG_EXP+"\" onchange='testRegExpPassword(this)'");}%>></input></td>
+						          		</tr>			          		
+			
+			          					<tr height="20px"><td colspan="2">&nbsp;</td></tr>
+			          					<tr>
+											<td align="center" colspan="2">
+												<button type="button" id="btnOK" disabled onclick="btnConf()" accesskey="<%=LabelManager.getAccessKey(labelSet,langId,"btnLog")%>" title="<%=LabelManager.getToolTip(labelSet,langId,"btnLog")%>"><%=LabelManager.getNameWAccess(labelSet,langId,"btnLog")%></button>
+												<button type="button" onclick="btnCanc()" accesskey="<%=LabelManager.getAccessKey(labelSet,langId,"btnCan")%>" title="<%=LabelManager.getToolTip(labelSet,langId,"btnCan")%>"><%=LabelManager.getNameWAccess(labelSet,langId,"btnCan")%></button>
+												
+												<% if (Parameters.LOGIN_SHOW_GEN_PWD) { %>
+													<br><br>
+													<a href="#" class="remember" onclick="btnRemPwd()" title="<%=LabelManager.getToolTip(labelSet,langId,"btnRemPwd")%>"><%=LabelManager.getName(labelSet,langId,"btnRemPwd")%></a>
+												<% } %>
+												<br><br>
+												<font color="#FF0000"><%=LabelManager.getName(labelSet,langId,"msgMustChangePassword")%></font>
+											</td>
+										</tr>
+									<% } else { %>
+										<tr>
+											<td align="center" colspan="2">
+												<jsp:include page="<%= Parameters.LOGIN_JSP_CHANGE_PWD %>"/>
+											</td>
+										</tr>
+									<% } %>
+								<% } 
+								boolean showRestartInProgress = com.dogma.Parameters.RESTART_IN_PROGRESS;
+								boolean showBadVersion = (!"[ApiaVersion]".equals(DogmaConstants.APIA_VERSION)) && ! DogmaConstants.APIA_VERSION.equals(Parameters.CURRENT_APIA_VERSION);
+								if (showRestartInProgress || showBadVersion || !classicEnbaled) { %>
+									<tr>
+										<td align="center" colspan="2">
+											<% if (showRestartInProgress) { %>
+												<br><br><b><%=LabelManager.getToolTip(labelSet,langId,"lblRstartInProg")%></b>
+											<% }
+											
+											if (showBadVersion) { %>
+												<br><br>
+												<font color="#FF0000"><b>ERROR IN DATABASE VERSION (<%= Parameters.CURRENT_APIA_VERSION %>) <br>AND CODE VERSION (<%= DogmaConstants.APIA_VERSION %>)</b><br>
+												Please contact the administrator</font>
+											<% } 
+											
+											if(!classicEnbaled) {%>
+												<br>
+												<font color="#FF0000"><b><%= LabelManager.getName(labelSet, langId, "msgClaNotEnbl") %></b></font>
+											<% } %>
+										</td>
+									</tr>
+									<tr height="10px"><td colspan="2">&nbsp;</td></tr>
+				          		<% } 
+								if(!MSIE6&&!MSIE7&&!MSIE8&&!FIREFOX2&&!FIREFOX3&&!FIREFOX4&&!FIREFOX5&&!FIREFOX6&&!FIREFOX7&&!FIREFOX8&&!FIREFOX9&&!FIREFOX10){
+				          		%>
+				          		<tr height="10px"><td align="center" colspan="2"><%=LabelManager.getName(labelSet,langId,"msgBrwsNotSupported")%></td></tr>
+				          		<%}%>
+  						</table>
+          			</td>
+				</tr>
+	  		</table>
+	  	</td>
+  	</tr>
+  	<tr><td class="copyrightTxt" valign="bottom"><%=com.dogma.DogmaConstants.COPYRIGHT_NOTICE%></td></tr>
+	</table>
+	
+	<input type=hidden name="hidLangId" value="<%=langId%>">
+	
+	</form>
+</body>
+</html>
+<script language="javascript" src='<%=Parameters.ROOT_PATH%>/scripts/common.js'></script>
+<script language="javascript" DEFER src='<%=Parameters.ROOT_PATH%>/scripts/val.js'></script>
+<script language="javascript" DEFER src='<%=Parameters.ROOT_PATH%>/scripts/util.js'></script>
+
+<SCRIPT LANGUAGE=javascript DEFER>
+GNR_REG_EXP_FAIL			= "<%=com.st.util.StringUtil.escapeScriptStr(LabelManager.getName(labelSet,langId,DogmaException.GNR_REG_EXP_FAIL))%>";
+
+function btnConf(){
+	
+<%if(request.getParameter("changePwd")==null){%>
+	if (checkData()){
+		document.getElementById('btnOK').disabled=true;
+		<%if (request.getParameter("fromOpenUrl") != null){%>
+			document.getElementById("frmLogin").action="security.LoginAction.do?action=login&logFromSession=<%=request.getParameter("logFromSession")%>&fromOpenUrl=<%=request.getParameter("fromOpenUrl")%>&type=<%=request.getParameter("type")%>&entCode=<%=request.getParameter("entCode")%>&proCode=<%=request.getParameter("proCode")%>&proCancelCode=<%=request.getParameter("proCancelCode")%>&sessionAtts=<%=request.getParameter("sessionAtts")%>&onFinish=<%=request.getParameter("onFinish")%>&attParams=<%=request.getParameter("attParams")%>";
+			document.getElementById("frmLogin").submit();
+		<%}else if (request.getParameter("fromTskUrl") != null){%>
+			document.getElementById("frmLogin").action="security.LoginAction.do?action=login&logFromSession=<%=request.getParameter("logFromSession")%>&fromTskUrl=<%=request.getParameter("fromTskUrl")%>&nomTsk=<%=request.getParameter("nomTsk")%>&numInst=<%=request.getParameter("numInst")%>&sessionAtts=<%=request.getParameter("sessionAtts")%>&onFinish=<%=request.getParameter("onFinish")%>";
+			document.getElementById("frmLogin").submit();
+		<%}else if(request.getParameter("fromQryUrl")!= null){
+			//Obtenemos los filtros
+			String filters = "";
+			Enumeration e = request.getParameterNames(); //Obtenemos todos los parametros
+			while(e.hasMoreElements())	{ //recorremos todos los parametros
+				String s_param = e.nextElement().toString();
+				if (s_param.startsWith("filter_")){ //si el parametro comienza con filter_ entonces es un filtro
+					String filterValue = request.getParameter(s_param);
+					filters = filters + "&" + s_param + "="+ filterValue;
+				}
+			}	
+			%>
+			document.getElementById("frmLogin").action="security.LoginAction.do?action=login&logFromSession=<%=request.getParameter("logFromSession")%>&fromQryUrl=<%=request.getParameter("fromQryUrl")%>&qryId=<%=request.getParameter("qryId")%>&onlyGrid=<%=request.getParameter("onlyGrid")%>&onlyChart=<%=request.getParameter("onlyChart")%>&sessionAtts=<%=request.getParameter("sessionAtts")%>&onFinish=<%=request.getParameter("onFinish")%><%=filters%>";
+			document.getElementById("frmLogin").submit();
+		<%}else {%>
+			document.getElementById("frmLogin").action="security.LoginAction.do?action=login";
+			document.getElementById("frmLogin").submit();
+		<%}%>
+	}
+<%} else {%>
+	if(document.getElementById("txtPwd").value == document.getElementById("txtConfPwd").value){
+		document.getElementById("frmLogin").action="security.LoginAction.do?action=pwdChange";			
+		document.getElementById("frmLogin").submit();
+	} else { 
+		alert("<%=LabelManager.getName(labelSet,langId,"msgUsuPwdDif")%>");				
+	}
+<%}%>
+}
+
+function btnRemPwd() {
+	document.getElementById("frmLogin").action="security.LoginAction.do?action=remPassword";			
+	document.getElementById("frmLogin").submit();
+}
+
+function enableBtnOk(evt){
+	
+		<%if (!classicEnbaled) { %>
+			return;
+		<%}%>
+	
+		var element=evt.target;
+		if(window.event){
+			evt=window.event;
+			element=evt.srcElement;
+		}
+		//Boton backSpace
+		if (evt.keyCode==8 && element.value==""){
+			document.getElementById('btnOK').disabled=true;
+			return true;
+		}
+		
+		//Boton suprimir
+		if (evt.keyCode==46 && element.value==""){
+			document.getElementById('btnOK').disabled=true;
+			return true;
+		}
+		
+		//Otras teclas menos enter
+		if (evt.keyCode != 13){
+			if (element.name == 'txtUser' && evt.keyCode != 9){
+				if((document.getElementById('txtPwd').value != null) &&
+   					(document.getElementById('txtPwd').value != "") &&
+   					((document.getElementById('txtEnv') && document.getElementById('txtEnv').value!="")||(!document.getElementById('txtEnv')))
+   					<%if(request.getParameter("changePwd")!=null){%>
+		   			&& (document.getElementById('txtConfPwd').value != "")
+		   			<%}%>
+   					){
+	   				document.getElementById('btnOK').disabled=false;
+	   			}
+			}else if (element.name == 'txtPwd' && evt.keyCode!=9){
+				if (
+				<%if (showMode == MODE_LOGIN) { %>
+					(document.getElementById('txtUser').value != null) && (document.getElementById('txtUser').value != "") && ((document.getElementById('txtEnv') && document.getElementById('txtEnv').value!="")||(!document.getElementById('txtEnv')))
+	   			<%} else if(request.getParameter("changePwd")!=null){%>
+	   				(document.getElementById('txtConfPwd').value != "")
+	   			<%}%>
+	   			){
+	   				if((document.getElementById('txtPwd').value != null) &&
+   					(document.getElementById('txtPwd').value != "")){
+	   					document.getElementById('btnOK').disabled=false;
+	   				}
+	  	 		}
+			}else if (element.name == 'txtConfPwd' && evt.keyCode!=9){
+				if (document.getElementById('txtPwd').value != ""){
+	   				document.getElementById('btnOK').disabled=false;
+	  	 		}
+			}else if (element.name == 'txtEnv' && evt.keyCode!=9){
+				if ((document.getElementById('txtUser').value != null) && 
+	   			(document.getElementById('txtUser').value != "") &&
+				((document.getElementById('txtEnv') && document.getElementById('txtEnv').value!="")||(!document.getElementById('txtEnv')))
+	   			<%if(request.getParameter("changePwd")!=null){%>
+	   			&& (document.getElementById('txtConfPwd').value != "")
+	   			<%}%>
+	   			){
+	   				document.getElementById('btnOK').disabled=false;
+	  	 		}
+			}
+		}
+		if (element.name == 'txtUser'){
+			setTimeout("fireEvent(document.getElementById('txtPwd'),'keyup')",200);
+		}
+}
+
+function btnCanc(){
+<%if(request.getParameter("changePwd")!=null){%>	
+	window.location.href="<%=Parameters.ROOT_PATH%>/programs/login/login.jsp";
+<%}else{%>
+	frmLogin.reset();
+	document.getElementById("txtUser").value="";
+	document.getElementById("txtPwd").value="";
+	document.getElementById('btnOK').disabled=true;
+	document.getElementById("txtUser").focus();
+<%}%>
+}
+
+function checkData() {
+	if (document.getElementById("txtUser").value == "") {
+		alert("<%=bLogin.fmtScriptStr(LabelManager.getName(labelSet,langId,"msgUsuVac"))%>");
+		document.getElementById("txtUser").value="";
+		document.getElementById("txtUser").focus();
+		return false;
+	} else if (document.getElementById("txtPwd").value == "") {
+		alert("<%=bLogin.fmtScriptStr(LabelManager.getName(labelSet,langId,"msgPwdVac"))%>");
+		document.getElementById("txtPwd").value="";
+		document.getElementById("txtPwd").focus();
+		return false;
+	}
+	 <% if (!Parameters.LOGIN_SHOW_ENV_COMBO){%>
+		 else 
+		 	{ try {
+			 	if (document.getElementById("txtEnv").value == "") {
+				alert("<%=bLogin.fmtScriptStr(LabelManager.getName(labelSet,langId,"msgEnvVac"))%>");
+				document.getElementById("txtEnv").value="";
+				document.getElementById("txtEnv").focus();
+				return false;
+				}
+			} catch (e) {}
+	}
+	<%}%>		
+	return true;
+}
+window.onload=function(){
+	if(document.getElementById("cmbEnv")){
+		if(document.getElementById("cmbEnv") && document.getElementById("cmbEnv").clientWidth > 310 ){
+			document.getElementById("cmbEnv").style.width="310px";
+		}
+	}
+	if(document.getElementById("txtUser")){
+		document.getElementById("txtUser").focus();
+	}
+	setTimeout("fireEvent(document.getElementById('txtPwd'),'keyup')",200);
+}
+</SCRIPT>
+
+<%
+	int intErrors = 0;
+	String errMessage = null;
+	if (session.getAttribute("bLogin") != null) {
+		DogmaAbstractBean tmpBean;
+		tmpBean= (DogmaAbstractBean) session.getAttribute("bLogin");
+		String strMessageShow = "";
+		if (tmpBean.getMessages() != null) {
+			Iterator it = tmpBean.getMessages().iterator();
+			while(it.hasNext()){
+				ErrMessageVo errMsg = (ErrMessageVo) it.next();
+				String strAux = LabelManager.getName(labelSet,langId,errMsg.getMsg());
+				strMessageShow += "(*) " + com.st.util.StringUtil.parseMessage(strAux,errMsg.getParams()) + "\n";
+			}
+			
+		} 
+		if (tmpBean.getDogmaException() != null) {
+			if(tmpBean.getDogmaException().getCause() instanceof ApiaPasswordValidationException){
+				strMessageShow += tmpBean.getDogmaException().getMessage();
+			} else {
+				strMessageShow += "Exception Info:" + tmpBean.getDogmaException().getCompleteStackTrace();
+				com.dogma.bean.DogmaAbstractBean.logError(request, tmpBean.getDogmaException().getCompleteStackTrace());
+			}
+		}
+		tmpBean.clearMessages();	
+		if (!strMessageShow.equals("")) {
+			out.print("<TEXTAREA id=errorText style='display:none'>"+ strMessageShow + "</TEXTAREA>");
+			out.print("<SCRIPT language=javascript>");
+			out.print("if (document.addEventListener) {    document.addEventListener('DOMContentLoaded', fnStartDocInit, false);}");
+			out.print("else{window.document.onreadystatechange=fnStartDocInit;}");
+			%>function fnStartDocInit(){
+				if (document.readyState=='complete' || (navigator.userAgent.indexOf("MSIE")<0)){
+						try {
+							alert(document.getElementById("errorText").value);
+						} catch (e) {
+							str = document.getElementById("errorText").value;
+							alert(str);
+						}
+					}
+				}<%
+			out.print("</SCRIPT>");
+		}	
+	}
+%>

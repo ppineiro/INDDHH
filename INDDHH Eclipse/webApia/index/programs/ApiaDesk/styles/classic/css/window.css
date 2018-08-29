@@ -1,0 +1,90 @@
+/* CSS Document */
+
+.window{
+	/*background-color:#EFEFEF;*/
+	background-color:#A9A9A9;
+	border-right:2px double #333333;
+	border-left:2px double #333333;
+	border-bottom:2px double #333333;
+}
+.winDrag{
+	/*background-color:#666666;
+	border:1px solid black;
+	color:#FFFFFF;
+	*/
+	font-family:Arial;	
+	color:#333333;
+	/*background-color:#EFEFEF;*/
+}
+.winContent{
+	border:1px solid #999999;
+	background-color:white;
+}
+.winSizer{
+	border:1px solid #666666;
+	background-color:#CCCCCC;
+	cursor:pointer;
+	cursor:nw-resize;
+}
+
+
+.windowGrid{
+	border:1px solid #999999;
+	background-color:white;
+	overflow:hidden;
+}
+.gridHeader{
+	position:relative;
+	overflow:hidden;
+}
+
+.gridHeader th{
+	background-color:#AEAEAE;
+	white-space:normal;
+	border-right:1px solid #EAEAEA;
+}
+
+.gridHeader th div{
+	position:relative;
+	font-family:Tahoma;
+	font-size:10px;
+	padding:5px;
+	padding-top:2px;
+	padding-bottom:2px;
+	overflow:hidden;
+	text-align:left;
+}
+
+.gridBody{
+	position:relative;
+	overflow:auto;
+}
+
+.gridBody table{
+	border-collapse: collapse;
+}
+
+.gridBody tr{
+	background:transparent;
+}
+
+.gridBody tr.selected{
+	background-color: #D5FFBB;
+}
+
+.gridBody td div{
+	position:relative;
+	font-family:Tahoma;
+	font-size:10px;
+	padding:5px;
+	padding-top:2px;
+	padding-bottom:2px;
+	overflow:hidden;
+	border-right:1px solid transparent;
+}
+
+.panel{
+	border:1px solid #AAAAAA;
+	border-top:1px solid #666666;
+	border-left:1px solid #666666;
+}

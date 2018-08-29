@@ -1,0 +1,50 @@
+////YA IMPACTADO EN SCRIPT DE CREACION
+
+CREATE PROCEDURE [SPR_READ_DB_CONNECTION]
+@p_where VARCHAR(2000),
+@p_order_by VARCHAR(2000),
+@from_row INT,
+@rows_per_page INT
+AS
+DECLARE
+  @total INT,
+  @aux_sql VARCHAR(1500) 
+
+SET NOCOUNT ON
+
+CREATE TABLE #tmp_table (
+    id INT IDENTITY (1,1),
+     env_id int,
+     db_con_id_auto int,
+     db_con_name varchar(50),
+     db_con_desc varchar(255),
+     db_con_type varchar(1),
+     db_con_string varchar(255),
+     db_con_user varchar(20),
+     db_con_password varchar(255),
+     db_con_max_con int,
+     DB_CON_MIN_CON  int,
+     DB_CON_IDLE_CON  int,
+     DB_CON_WAIT_CON  int,
+     prj_id int,
+     reg_user varchar(20),
+     reg_status int,
+     reg_date datetime
+)
+
+SET @aux_sql = 'INSERT INTO #tmp_table 
+
+(env_id,db_con_id_auto, db_con_name, db_con_desc, db_con_type, db_con_string, db_con_user,db_con_password,db_con_max_con, DB_CON_MIN_CON,DB_CON_IDLE_CON, DB_CON_WAIT_CON, prj_id, reg_user, reg_status, reg_date) '
+SET @aux_sql = @aux_sql + ' SELECT 
+db.env_id,db.db_con_id_auto,db.db_con_name,db.db_con_desc,db.db_con_type,db.db_con_string,db.db_con_user,db.db_con_password,db.db_con_max_con,db.DB_CON_MIN_CON,db.DB_CON_IDLE_CON,db.DB_CON_WAIT_CON,db.prj_id,db.reg_user,db.reg_status,db.reg_date 
+FROM db_connection db LEFT OUTER JOIN project p ON (db.env_id=p.env_id and db.prj_id=p.prj_id_auto and db.reg_status=p.reg_status) WHERE db.reg_status = 0 '
+IF (@p_where IS NOT NULL) SET @aux_sql = @aux_sql + ' AND ' + @p_where
+IF (@p_order_by IS NOT NULL) SET @aux_sql = @aux_sql + ' ORDER BY ' + @p_order_by
+set @total = @from_row + @rows_per_page
+set rowcount @total
+EXEC(@aux_sql)
+set rowcount @rows_per_page
+SELECT * FROM #tmp_table WHERE id BETWEEN @from_row AND (@from_row + @rows_per_page - 1)
+DROP TABLE #tmp_table
+set rowcount 0
+--
