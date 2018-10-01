@@ -4,14 +4,16 @@ import com.dogma.busClass.ApiaAbstractClass;
 import com.dogma.busClass.BusClassException;
 import com.dogma.busClass.object.Attribute;
 import com.dogma.busClass.object.Entity;
+import com.dogma.busClass.object.Field;
+import com.dogma.busClass.object.Form;
 
 public class CargarClausulaConsentimiento extends ApiaAbstractClass {
 
 	@Override
 	protected void executeClass() throws BusClassException {
 		
-		Entity currEnt = this.getCurrentEntity();
-		Attribute attClausula = currEnt.getAttribute("INDDHH_CLAUSULA_TEXTO_STR");
+		//Entity currEnt = this.getCurrentEntity();
+		//Attribute attClausula = currEnt.getAttribute("INDDHH_CLAUSULA_TEXTO_STR");
 
 		String clausulaTexto = "De conformidad con la Ley Nº 18.331, de 11 de agosto de 2008, "
 				+ "de Protección de Datos Personales y Acción de Habeas Data (LPDP), "
@@ -25,8 +27,12 @@ public class CargarClausulaConsentimiento extends ApiaAbstractClass {
 				+ "podrá ejercer los derechos de acceso, rectificación, actualización, "
 				+ "inclusión o supresión, es Bulevar General Artigas 1532.";
 		
-		attClausula.setValueLargeStr(clausulaTexto);
+		//attClausula.setValueLargeStr(clausulaTexto);
 		
+		Form form = getCurrentForm();
+	    Field field = form.getField("CLAUSULA");
+	    int propId = 6;
+	    field.setProperty(propId, clausulaTexto);
 	}
 
 }

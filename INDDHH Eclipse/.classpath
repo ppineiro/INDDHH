@@ -13,7 +13,11 @@
 	<classpathentry kind="lib" path="webApia/WEB-INF/lib/apache-activemq-4.1.1.jar"/>
 	<classpathentry kind="lib" path="webApia/WEB-INF/lib/apia-framework.jar"/>
 	<classpathentry kind="lib" path="webApia/WEB-INF/lib/apia.chat.jar"/>
-	<classpathentry kind="lib" path="webApia/WEB-INF/lib/Apia.jar"/>
+	<classpathentry kind="lib" path="webApia/WEB-INF/lib/Apia.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Pablo/Documents/Apia%20(manuales,%20paquetes,%20updates%20e%20instalaciones)/javadoc_Apia_3.1.0.6.zip!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="webApia/WEB-INF/lib/ApiaDebuggerXml.jar"/>
 	<classpathentry kind="lib" path="webApia/WEB-INF/lib/apianotificaciones.jar"/>
 	<classpathentry kind="lib" path="webApia/WEB-INF/lib/ApiaPGEConnector.jar"/>
