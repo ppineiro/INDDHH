@@ -1,4 +1,4 @@
-package solicitudsalonactos;
+package inddhh;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -16,8 +16,10 @@ public class SetFechaHoy extends ApiaAbstractClass{
 		cal.setTime(date);
 		Date dateTmt1 = cal.getTime();
 		
+		String parNombreAtt = getParameter("nombreAtt").getValuesAsString();
+		
 		if (!this.isFromMonitor()) {
-			this.getCurrentEntity().getAttribute("INDDHH_SA_FECHA_SOLICITUD_FEC").setValue(dateTmt1);
+			this.getCurrentEntity().getAttribute(parNombreAtt).setValue(dateTmt1);
 		}
 	}
 
