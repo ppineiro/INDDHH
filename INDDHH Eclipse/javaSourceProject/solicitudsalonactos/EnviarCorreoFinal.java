@@ -53,7 +53,8 @@ public class EnviarCorreoFinal extends ApiaAbstractClass {
 				+ "Fecha de la actividad: " + fechaActividad + "<br>" + "Hora de inicio: " + horaInicio + "<br>"
 				+ "Hora de fin: " + horaFin + "<br><br>" + "Responsable por INDDHH del salón: " + responsableNombre
 				+ "<br>" + "Correo electrónico del responsable: " + responsableCorreo + "<br><br>"
-				+ "Saludamos atentamente.";
+				+ "Saludos cordiales,"
+				+ "<br>Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
 
 		apia.sendMail(destinos, asunto, texto);
 	}
@@ -80,7 +81,8 @@ public class EnviarCorreoFinal extends ApiaAbstractClass {
 		String texto = "Estimados,<br><br>La solicitud del Salón de Actos de la Institución ha sido aprobada.<br><br>"
 				+ "Fecha de la actividad: " + fechaActividad + "<br>" + "Hora de inicio: " + horaInicio + "<br>"
 				+ "Hora de fin: " + horaFin + "<br><br>" + "Responsable del salón: " + responsableNombre + "<br>"
-				+ "Correo electrónico del responsable: " + responsableCorreo + "<br><br>" + "Saludamos atentamente.";
+				+ "Correo electrónico del responsable: " + responsableCorreo + "<br><br>" + "Saludos cordiales,"
+						+ "<br>Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
 
 		apia.sendMail(destinos, asunto, texto);
 	}
@@ -98,7 +100,8 @@ public class EnviarCorreoFinal extends ApiaAbstractClass {
 		String texto = "Estimados,<br><br>La solicitud del Salón de Actos de la Institución ha sido rechazada.<br><br>"
 				+ "Fecha de la actividad: " + fechaActividad + "<br>" + "Hora de inicio: " + horaInicio + "<br>"
 				+ "Hora de fin: " + horaFin + "<br><br>" + "Motivo de rechazo: " + motivoRechazo + "<br><br>"
-				+ "Saludamos atentamente.";
+				+ "Saludos cordiales,"
+				+ "<br>Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
 
 		apia.sendMail(destinos, asunto, texto);
 	}

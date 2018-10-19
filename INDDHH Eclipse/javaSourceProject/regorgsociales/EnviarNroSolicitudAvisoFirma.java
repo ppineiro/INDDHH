@@ -9,8 +9,13 @@ public class EnviarNroSolicitudAvisoFirma extends ApiaAbstractClass {
 	@Override
 	protected void executeClass() throws BusClassException {
 		Entity currEnt = this.getCurrentEntity();
-		int nroSolicitud = ((Double) currEnt.getAttribute("INDDHH_ROS_NRO_SOLICITUD_NUM").getValue()).intValue();
-
+		int nroSolicitud = 0;
+		
+		Object nroSolicitudObj = currEnt.getAttribute("INDDHH_ROS_NRO_SOLICITUD_NUM").getValue();
+		if(nroSolicitudObj != null && nroSolicitudObj.toString() != "") {
+			nroSolicitud = ((Double) currEnt.getAttribute("INDDHH_ROS_NRO_SOLICITUD_NUM").getValue()).intValue();
+		}
+	
 		String tieneFirmaElectronica = currEnt.getAttribute("TRM_TIENE_FIRMA_ELECTRONICA_STR").getValueAsString(); // NO-SI
 		
 		String organizacion = currEnt.getAttribute("INDDHH_ROS_NOMBRE_ORGANIZACION_STR").getValueAsString();
@@ -29,12 +34,12 @@ public class EnviarNroSolicitudAvisoFirma extends ApiaAbstractClass {
 
 		String[] destinos = { correo };
 
-		String asunto = "Registro ingresado correctamente con Nº de solicitud " + nroSolicitud;
+		String asunto = "INDDHH - Registro ingresado correctamente con Nº de solicitud " + nroSolicitud;
 
-		String texto = "Estimados,<br><br>La solicitud de registro de " + organizacion
-				+ " ante la Institución fue ingresada correctamente.<br>" + "Su número de solicitud es: <b>"
+		String texto = "Estimados,<br><br>La solicitud de registro de <b>" + organizacion
+				+ "</b> ante la Institución fue ingresada correctamente.<br>" + "Su número de solicitud es: <b>"
 				+ nroSolicitud + "</b><br>" + "En los próximos días será evaluada y comunicada oportunamente.<br><br>"
-				+ "Saludamos atentamente.<br>" + "Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
+				+ "Saludos cordiales,<br>" + "Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
 
 		apia.sendMail(destinos, asunto, texto);
 	}
@@ -44,13 +49,13 @@ public class EnviarNroSolicitudAvisoFirma extends ApiaAbstractClass {
 
 		String[] destinos = { correo };
 
-		String asunto = "Registro ingresado correctamente con Nº de solicitud " + nroSolicitud;
+		String asunto = "INDDHH - Registro ingresado correctamente con Nº de solicitud " + nroSolicitud;
 
-		String texto = "Estimados,<br><br>La solicitud de registro de " + organizacion
-				+ " ante la Institución fue ingresada correctamente.<br>" + "Su número de solicitud es: <b>"
+		String texto = "Estimados,<br><br>La solicitud de registro de <b>" + organizacion
+				+ "</b> ante la Institución fue ingresada correctamente.<br>" + "Su número de solicitud es: <b>"
 				+ nroSolicitud + "</b><br>" + "En los próximos días será evaluada y comunicada oportunamente.<br>"
-				+ "Recuerde que debe pasar por nuestras oficinas en Bvar. Gral. Artigas 1532 a firmar.<br><br>"
-				+ "Saludamos atentamente.<br>" + "Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
+				+ "<b>Recuerde que debe pasar por nuestras oficinas en Bvar. Gral. Artigas 1532 a firmar.</b><br><br>"
+				+ "Saludos cordiales,<br>" + "Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
 
 		apia.sendMail(destinos, asunto, texto);
 	}
