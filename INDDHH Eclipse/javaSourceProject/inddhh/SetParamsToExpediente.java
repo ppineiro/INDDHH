@@ -3,6 +3,7 @@ package inddhh;
 import com.dogma.busClass.ApiaAbstractClass;
 import com.dogma.busClass.BusClassException;
 import com.dogma.busClass.object.Entity;
+import com.dogma.busClass.object.def.EntityDef;
 
 public class SetParamsToExpediente extends ApiaAbstractClass {
 
@@ -22,8 +23,14 @@ public class SetParamsToExpediente extends ApiaAbstractClass {
 		- DEF_TRM_CONCATENAR_PDF_STR: si se concatena los pdf del trámtie y se envían al expediente. ( 1=No, 2= Si)
 		*/
 		
-		Entity currEnt = this.getCurrentEntity();
+		//Entity currEnt = this.getCurrentEntity();
 		
+		int idDefTramite = Integer.valueOf(getCurrentEntity().getAttribute("TRM_COD_TRAMITE_STR").getValueAsString()).intValue();
+	    
+	    EntityDef entDefDefTrm = getEntityDef("DEF_TRAMITE");
+	    
+	    Entity entDefTramite = getEntity(entDefDefTrm.getName(), entDefDefTrm.getPrefix(), Integer.valueOf(idDefTramite), entDefDefTrm.getPosfix());
+	    
 		String paramsDef = this.getParameter("paramsDef").getValueAsString();
 		String ofiOrigen = this.getParameter("ofiOrigen").getValueAsString();
 		String clasif = this.getParameter("clasif").getValueAsString();
@@ -35,16 +42,16 @@ public class SetParamsToExpediente extends ApiaAbstractClass {
 		String adjunto = this.getParameter("adjunto").getValueAsString();
 		String pdf = this.getParameter("pdf").getValueAsString();
 		
-		currEnt.getAttribute("TRM_PARAMETROS_DESDE_DEFINICION_STR").setValue(paramsDef);
-		currEnt.getAttribute("DEF_TRM_EXPEDIENTE_OFICINA_ORIGEN_STR").setValue(ofiOrigen);
-		currEnt.getAttribute("DEF_TRM_EXPEDIENTE_CLASIFICACION_STR").setValue(clasif);
-		currEnt.getAttribute("DEF_TRM_EXPEDIENTE_DOC_FISICA_STR").setValue(docFisica);
-		currEnt.getAttribute("DEF_TRM_EXPEDIENTE_CONFIDENCIALIDAD_STR").setValue(confidenc);
-		currEnt.getAttribute("DEF_TRM_EXPEDIENTE_PRIORIDAD_STR").setValue(prioridad);
-		currEnt.getAttribute("DEF_TRM_EXPEDIENTE_ASUNTO_STR").setValue(asunto);
-		currEnt.getAttribute("DEF_TRM_EXPEDIENTE_TIPO_STR").setValue(tipo);
-		currEnt.getAttribute("DEF_TRM_EXPEDIENTE_ADJUNTO_STR").setValue(adjunto);
-		currEnt.getAttribute("DEF_TRM_CONCATENAR_PDF_STR").setValue(pdf);
+		entDefTramite.getAttribute("TRM_PARAMETROS_DESDE_DEFINICION_STR").setValue(paramsDef);
+		entDefTramite.getAttribute("DEF_TRM_EXPEDIENTE_OFICINA_ORIGEN_STR").setValue(ofiOrigen);
+		entDefTramite.getAttribute("DEF_TRM_EXPEDIENTE_CLASIFICACION_STR").setValue(clasif);
+		entDefTramite.getAttribute("DEF_TRM_EXPEDIENTE_DOC_FISICA_STR").setValue(docFisica);
+		entDefTramite.getAttribute("DEF_TRM_EXPEDIENTE_CONFIDENCIALIDAD_STR").setValue(confidenc);
+		entDefTramite.getAttribute("DEF_TRM_EXPEDIENTE_PRIORIDAD_STR").setValue(prioridad);
+		entDefTramite.getAttribute("DEF_TRM_EXPEDIENTE_ASUNTO_STR").setValue(asunto);
+		entDefTramite.getAttribute("DEF_TRM_EXPEDIENTE_TIPO_STR").setValue(tipo);
+		entDefTramite.getAttribute("DEF_TRM_EXPEDIENTE_ADJUNTO_STR").setValue(adjunto);
+		entDefTramite.getAttribute("DEF_TRM_CONCATENAR_PDF_STR").setValue(pdf);
 		
 	}
 

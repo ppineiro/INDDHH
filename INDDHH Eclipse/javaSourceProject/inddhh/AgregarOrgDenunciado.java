@@ -51,6 +51,9 @@ public class AgregarOrgDenunciado extends ApiaAbstractClass{
 			currEnt.getAttribute("INDDHH_ORG_INCISO_TABLA_STR").setValue(org, ctdOrgs);
 			currEnt.getAttribute("INDDHH_ORG_UNIDAD_EJECUTORA_TABLA_STR").setValue(unEjec, ctdOrgs);
 		}		
+		
 	}
+	
+	
 
 }

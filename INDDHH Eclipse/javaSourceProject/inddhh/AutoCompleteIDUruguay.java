@@ -23,51 +23,58 @@ public class AutoCompleteIDUruguay extends ApiaAbstractClass {
 		String ci = samlAssertion.getDocumento();
 		String nombreCompleto = samlAssertion.getNombreCompleto();
 		String email = samlAssertion.getEmail();
-		
-		//String datos = "Tipo Doc: "+tipoDoc+" CI: "+ci+" Nombre: "+nombreCompleto+" email: "+email;
-		//addMessage(datos);
-		
+
+		// String datos = "Tipo Doc: "+tipoDoc+" CI: "+ci+" Nombre: "+nombreCompleto+"
+		// email: "+email;
+		// addMessage(datos);
+
 		Entity currEnt = this.getCurrentEntity();
-		currEnt.getAttribute("INDDHH_ATT_DATOS_PERSONALES_DOC_NUM_STR").setValue(ci);
-		currEnt.getAttribute("INDDHH_ATT_DATOS_PERSONALES_NOMBRES_STR").setValue(getNombres(nombreCompleto));
-		currEnt.getAttribute("INDDHH_ATT_DATOS_PERSONALES_APELLIDOS_STR").setValue(getApellidos(nombreCompleto));
-		currEnt.getAttribute("INDDHH_CORREO_CONTACTO_STR").setValue(email);
+		if (!ci.isEmpty() && ci != null) {
+			currEnt.getAttribute("INDDHH_ATT_DATOS_PERSONALES_DOC_NUM_STR").setValue(ci);
+		}
+		if (!nombreCompleto.isEmpty() && nombreCompleto != null) {
+			currEnt.getAttribute("INDDHH_ATT_DATOS_PERSONALES_NOMBRES_STR").setValue(getNombres(nombreCompleto));
+		}
+		if (!nombreCompleto.isEmpty() && nombreCompleto != null) {
+			currEnt.getAttribute("INDDHH_ATT_DATOS_PERSONALES_APELLIDOS_STR").setValue(getApellidos(nombreCompleto));
+		}
+		if (!email.isEmpty() && email != null) {
+			currEnt.getAttribute("INDDHH_CORREO_CONTACTO_STR").setValue(email);
+		}
 	}
-	
+
 	private String getNombres(String nombreCompleto) {
 		String nombres = "";
-		
+
 		String[] partesNombre = nombreCompleto.split(" ");
 		int largo = partesNombre.length;
-		
-		if(largo == 4) {
-			nombres = partesNombre[0]+" "+partesNombre[1];
+
+		if (largo == 4) {
+			nombres = partesNombre[0] + " " + partesNombre[1];
 		} else if (largo == 2 || largo == 3) {
 			nombres = partesNombre[0];
 		}
-		
-		//addMessage("Nombres: "+nombres);
-		
+
+		// addMessage("Nombres: "+nombres);
+
 		return nombres;
 	}
-	
+
 	private String getApellidos(String nombreCompleto) {
 		String apellidos = "";
-		
+
 		String[] partesNombre = nombreCompleto.split(" ");
 		int largo = partesNombre.length;
-		
-		if(largo == 4 || largo == 3) {
-			apellidos = partesNombre[2]+" "+partesNombre[3];
+
+		if (largo == 4 || largo == 3) {
+			apellidos = partesNombre[2] + " " + partesNombre[3];
 		} else if (largo == 2) {
 			apellidos = partesNombre[1];
 		}
-		
-		//addMessage("Apellidos: "+apellidos);
-		
+
+		// addMessage("Apellidos: "+apellidos);
+
 		return apellidos;
 	}
-	
-
 
 }

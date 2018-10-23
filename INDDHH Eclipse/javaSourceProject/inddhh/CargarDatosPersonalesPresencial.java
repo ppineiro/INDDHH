@@ -27,7 +27,7 @@ public class CargarDatosPersonalesPresencial extends ApiaAbstractClass {
 		String correo = currEnt.getAttribute("TRM_EMAIL_USUARIO_STR").getValueAsString();
 
 		// Completo datos que ya se rellenaron
-		if (!tipoDoc.isEmpty()) {
+		if (!tipoDoc.isEmpty() && tipoDoc != null) {
 			String apellidos = primerAp + " " + segAp;
 			String nombres = primerNom + " " + segNom;
 
