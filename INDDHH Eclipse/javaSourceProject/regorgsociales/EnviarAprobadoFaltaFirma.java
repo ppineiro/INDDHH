@@ -11,9 +11,9 @@ public class EnviarAprobadoFaltaFirma extends ApiaAbstractClass {
 		Entity currEnt = this.getCurrentEntity();
 		int nroSolicitud = 0;
 
-		Object nroSolicitudObj = currEnt.getAttribute("INDDHH_ROS_NRO_SOLICITUD_NUM").getValue();
+		Object nroSolicitudObj = currEnt.getAttribute("INDDHH_ROS_NRO_SOLICITUD_STR").getValue();
 		if (nroSolicitudObj != null && nroSolicitudObj.toString() != "") {
-			nroSolicitud = ((Double) currEnt.getAttribute("INDDHH_ROS_NRO_SOLICITUD_NUM").getValue()).intValue();
+			nroSolicitud = ((Double) currEnt.getAttribute("INDDHH_ROS_NRO_SOLICITUD_STR").getValue()).intValue();
 		}
 
 		String tieneFirmaElectronica = currEnt.getAttribute("TRM_TIENE_FIRMA_ELECTRONICA_STR").getValueAsString(); // NO("1")-SI("2")
@@ -42,7 +42,7 @@ public class EnviarAprobadoFaltaFirma extends ApiaAbstractClass {
 				+ " ante la Institución fue APROBADA.<br>"
 				+ "Debe pasar por nuestras oficinas en Bvar. Gral. Artigas 1532 a firmar.<br>"
 				+ "Una vez lo haga le será dado su número de registro.<br><br>" + "Saludos cordiales,<br>"
-				+ "Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
+				+ "Secretaría General.<br>" + "Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
 
 		apia.sendMail(destinos, asunto, texto);
 	}

@@ -7,12 +7,12 @@ import com.dogma.controller.ThreadData;
 
 import com.gxc.saml.SAMLAssertion;
 
-public class AutoCompleteIDUruguay extends ApiaAbstractClass {
+public class AutoCompleteIDUruguaySoloUY extends ApiaAbstractClass {
 
 	@Override
 	protected void executeClass() throws BusClassException {
 		if (!this.isFromMonitor()) {
-
+			
 			SAMLAssertion samlAssertion = new SAMLAssertion();
 
 			if (ThreadData.getUserData().getUserAttributes() != null) {
@@ -21,38 +21,31 @@ public class AutoCompleteIDUruguay extends ApiaAbstractClass {
 				}
 			}
 
-			String attPaisEmisor = this.getParameter("paisEmisor").getValueAsString();
-			String attTipoDoc = this.getParameter("tipoDoc").getValueAsString();
 			String attDocNum = this.getParameter("docNum").getValueAsString();
 			String attNombre = this.getParameter("nombre").getValueAsString();
 			String attApellido = this.getParameter("apellido").getValueAsString();
 			String attEmail = this.getParameter("email").getValueAsString();
 
 			String paisDoc = samlAssertion.getPaisDocumento();
-			String tipoDoc = samlAssertion.getTipoDocumento();
 			String numDoc = samlAssertion.getDocumento();
 			String nombreCompleto = samlAssertion.getNombreCompleto();
 			String email = samlAssertion.getEmail();
 
 			Entity currEnt = this.getCurrentEntity();
 
-			if (!paisDoc.isEmpty() && paisDoc != null) {
-				currEnt.getAttribute(attPaisEmisor).setValue(paisDoc);
-			}
-			if (!tipoDoc.isEmpty() && tipoDoc != null) {
-				currEnt.getAttribute(attTipoDoc).setValue(tipoDoc);
-			}
-			if (!numDoc.isEmpty() && numDoc != null) {
-				currEnt.getAttribute(attDocNum).setValue(numDoc);
-			}
-			if (!nombreCompleto.isEmpty() && nombreCompleto != null) {
-				currEnt.getAttribute(attNombre).setValue(getNombres(nombreCompleto));
-			}
-			if (!nombreCompleto.isEmpty() && nombreCompleto != null) {
-				currEnt.getAttribute(attApellido).setValue(getApellidos(nombreCompleto));
-			}
-			if (!email.isEmpty() && email != null) {
-				currEnt.getAttribute(attEmail).setValue(email);
+			if (paisDoc.compareTo("uy") == 0) {
+				if (!numDoc.isEmpty() && numDoc != null) {
+					currEnt.getAttribute(attDocNum).setValue(numDoc);
+				}
+				if (!nombreCompleto.isEmpty() && nombreCompleto != null) {
+					currEnt.getAttribute(attNombre).setValue(getNombres(nombreCompleto));
+				}
+				if (!nombreCompleto.isEmpty() && nombreCompleto != null) {
+					currEnt.getAttribute(attApellido).setValue(getApellidos(nombreCompleto));
+				}
+				if (!email.isEmpty() && email != null) {
+					currEnt.getAttribute(attEmail).setValue(email);
+				}
 			}
 		}
 	}

@@ -12,7 +12,7 @@ public class GenerarNroSolicitud extends ApiaAbstractClass{
 		Entity currEnt = this.getCurrentEntity();
 		int nroEnt = currEnt.getIdentifierObject().getNumber();
 		
-		currEnt.getAttribute("INDDHH_ROS_NRO_SOLICITUD_STR").setValue(nroEnt+"");
+		currEnt.getAttribute("INDDHH_ROS_NRO_SOLICITUD_STR").setValue(String.valueOf(nroEnt));
 		
 	}
 

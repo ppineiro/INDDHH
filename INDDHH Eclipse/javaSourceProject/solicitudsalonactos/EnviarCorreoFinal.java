@@ -53,8 +53,9 @@ public class EnviarCorreoFinal extends ApiaAbstractClass {
 				+ "Fecha de la actividad: " + fechaActividad + "<br>" + "Hora de inicio: " + horaInicio + "<br>"
 				+ "Hora de fin: " + horaFin + "<br><br>" + "Responsable por INDDHH del salón: " + responsableNombre
 				+ "<br>" + "Correo electrónico del responsable: " + responsableCorreo + "<br><br>"
-				+ "Saludos cordiales,"
-				+ "<br>Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
+				+ "Ante cualquier duda o inconveniente comunicarse a secretaria@inddhh.gub.uy o al teléfono 1948.<br><br>"
+				+ "Saludos cordiales,<br>" + "Secretaría General.<br>"
+				+ "Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
 
 		apia.sendMail(destinos, asunto, texto);
 	}
@@ -67,24 +68,30 @@ public class EnviarCorreoFinal extends ApiaAbstractClass {
 		String responsableCorreo = apia.getCurrentEntity().getAttribute("INDDHH_SA_CORREO_RESPONSABLE_STR")
 				.getValueAsString();
 
-		String secCD = apia.getUser("inddhh_sec_cd").getEmail();
 		String secGral = apia.getUser("inddhh_secgral").getEmail();
 		String mantenimiento = apia.getUser("inddhh_mantenimiento").getEmail();
 		String seguridad = apia.getUser("inddhh_seguridad").getEmail();
 		String comunicaciones = apia.getUser("inddhh_com").getEmail();
 		String cooperativa = apia.getUser("inddhh_cooperativa").getEmail();
 
-		String[] destinos = { secCD, secGral, mantenimiento, seguridad, comunicaciones, cooperativa };
+		String[] destinos = { secGral, mantenimiento, seguridad, comunicaciones, cooperativa };
 
 		String asunto = "Solicitud de Salón de Actos INDDHH aprobada";
 
 		String texto = "Estimados,<br><br>La solicitud del Salón de Actos de la Institución ha sido aprobada.<br><br>"
 				+ "Fecha de la actividad: " + fechaActividad + "<br>" + "Hora de inicio: " + horaInicio + "<br>"
 				+ "Hora de fin: " + horaFin + "<br><br>" + "Responsable del salón: " + responsableNombre + "<br>"
-				+ "Correo electrónico del responsable: " + responsableCorreo + "<br><br>" + "Saludos cordiales,"
-						+ "<br>Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
+				+ "Correo electrónico del responsable: " + responsableCorreo + "<br><br>"
+				+ "Ante cualquier duda o inconveniente comunicarse a secretaria@inddhh.gub.uy o al teléfono 1948.<br><br>"
+				+ "Saludos cordiales,<br>" + "Secretaría General.<br>"
+				+ "Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
 
 		apia.sendMail(destinos, asunto, texto);
+
+		if (inddhh.Helpers.validarEmail(responsableCorreo)) {
+			String[] destResp = { responsableCorreo };
+			apia.sendMail(destResp, asunto, texto);
+		}
 	}
 
 	private static void solRechazadaSolicitante(ApiaAbstractClass apia, String nombreSolicitante,
@@ -100,8 +107,9 @@ public class EnviarCorreoFinal extends ApiaAbstractClass {
 		String texto = "Estimados,<br><br>La solicitud del Salón de Actos de la Institución ha sido rechazada.<br><br>"
 				+ "Fecha de la actividad: " + fechaActividad + "<br>" + "Hora de inicio: " + horaInicio + "<br>"
 				+ "Hora de fin: " + horaFin + "<br><br>" + "Motivo de rechazo: " + motivoRechazo + "<br><br>"
-				+ "Saludos cordiales,"
-				+ "<br>Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
+				+ "Ante cualquier duda o inconveniente comunicarse a secretaria@inddhh.gub.uy o al teléfono 1948.<br><br>"
+				+ "Saludos cordiales,<br>" + "Secretaría General.<br>"
+				+ "Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
 
 		apia.sendMail(destinos, asunto, texto);
 	}
