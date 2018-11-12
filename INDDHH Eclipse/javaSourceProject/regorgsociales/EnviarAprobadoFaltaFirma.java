@@ -9,12 +9,8 @@ public class EnviarAprobadoFaltaFirma extends ApiaAbstractClass {
 	@Override
 	protected void executeClass() throws BusClassException {
 		Entity currEnt = this.getCurrentEntity();
-		int nroSolicitud = 0;
 
-		Object nroSolicitudObj = currEnt.getAttribute("INDDHH_ROS_NRO_SOLICITUD_STR").getValue();
-		if (nroSolicitudObj != null && nroSolicitudObj.toString() != "") {
-			nroSolicitud = ((Double) currEnt.getAttribute("INDDHH_ROS_NRO_SOLICITUD_STR").getValue()).intValue();
-		}
+		String nroSolicitud = currEnt.getAttribute("INDDHH_ROS_NRO_SOLICITUD_STR").getValueAsString();
 
 		String tieneFirmaElectronica = currEnt.getAttribute("TRM_TIENE_FIRMA_ELECTRONICA_STR").getValueAsString(); // NO("1")-SI("2")
 		String chkFirmaPendiente = currEnt.getAttribute("INDDHH_ROS_HA_FIRMADO_STR").getValueAsString(); // "true"-"false"
@@ -31,7 +27,7 @@ public class EnviarAprobadoFaltaFirma extends ApiaAbstractClass {
 		}
 	}
 
-	private static void envioAprobadoNoFirmo(ApiaAbstractClass apia, String correo, int nroSolicitud,
+	private static void envioAprobadoNoFirmo(ApiaAbstractClass apia, String correo, String nroSolicitud,
 			String organizacion) throws BusClassException {
 
 		String[] destinos = { correo };
