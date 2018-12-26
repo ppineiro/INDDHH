@@ -13,7 +13,7 @@ public class CDAutoCompleteIDUruguaySoloUY extends ApiaAbstractClass {
 	@Override
 	protected void executeClass() throws BusClassException {
 
-		Entity currEnt = this.getCurrentEntity();
+		Entity currEnt = this.getCurrentEntity(); 
 		Form currForm = this.getCurrentForm();
 
 		SAMLAssertion samlAssertion = new SAMLAssertion();

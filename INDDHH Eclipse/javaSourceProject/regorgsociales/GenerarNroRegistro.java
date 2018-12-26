@@ -16,21 +16,29 @@ public class GenerarNroRegistro extends ApiaAbstractClass {
 		// TODO Auto-generated method stub
 		Entity currEnt = this.getCurrentEntity();
 
-		Collection<EntityFilter> colFilters = new ArrayList<EntityFilter>();
+		String aprobacion = currEnt.getAttribute("INDDHH_ROS_APROBACION_STR").getValueAsString();
 
-		EntityFilter resolucion = new EntityFilter("1", 8, EntityFilter.COLUMN_FILTER_EQUAL); // 1 = Aprobado
+		if (aprobacion.compareTo("1") == 0) {
 
-		colFilters.add(resolucion);
+			Collection<EntityFilter> colFilters = new ArrayList<EntityFilter>();
 
-		// Busca entidades de solicitudes que han finalizado y fueron aprobadas
-		Collection<Identifier> solicitudesFinalizadasAprobadas = this.findEntities("INDDHH_REGISTRO_ORG", colFilters);
-		int nroSolicitudesFinalizadasAprobadas = solicitudesFinalizadasAprobadas.size();
-		
-		int nroArrancarNroRegistro = Double.valueOf(this.getParameter("nroArrancar").getValueAsString()).intValue();
+			EntityFilter resolucion = new EntityFilter("1", 8, EntityFilter.COLUMN_FILTER_EQUAL); // 1 = Aprobado
 
-		int nroAsignarSolActual = nroSolicitudesFinalizadasAprobadas + nroArrancarNroRegistro + 1;
+			colFilters.add(resolucion);
 
-		currEnt.getAttribute("INDDHH_ROS_NRO_REGISTRO_STR").setValue(String.valueOf(nroAsignarSolActual));
+			// Busca entidades de solicitudes que han finalizado y fueron aprobadas
+			Collection<Identifier> solicitudesFinalizadasAprobadas = this.findEntities("INDDHH_REGISTRO_ORG",
+					colFilters);
+			int nroSolicitudesFinalizadasAprobadas = solicitudesFinalizadasAprobadas.size();
+
+			int nroArrancarNroRegistro = Double.valueOf(this.getParameter("nroArrancar").getValueAsString()).intValue();
+
+			int nroAsignarSolActual = nroSolicitudesFinalizadasAprobadas + nroArrancarNroRegistro + 1;
+
+			currEnt.getAttribute("INDDHH_ROS_NRO_REGISTRO_STR").setValue(String.valueOf(nroAsignarSolActual));
+		} else {
+			currEnt.getAttribute("INDDHH_ROS_NRO_REGISTRO_STR").setValue("");
+		}
 	}
 
 }
