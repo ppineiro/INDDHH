@@ -25,7 +25,7 @@ public class CargarClausulaConsentimiento extends ApiaAbstractClass {
 				+ "pérdida, tratamiento o acceso no autorizado por parte de terceros. "
 				+ "El responsable de la Base de datos es la INDDHH y la dirección donde "
 				+ "podrá ejercer los derechos de acceso, rectificación, actualización, "
-				+ "inclusión o supresión, es Bulevar General Artigas 1532.";
+				+ "inclusión o supresión, es Bulevar General Artigas 1532, Montevideo.";
 		
 		//attClausula.setValueLargeStr(clausulaTexto);
 		
