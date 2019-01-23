@@ -10,7 +10,7 @@ public class CargarReglamentoDoc extends ApiaAbstractClass{
 	protected void executeClass() throws BusClassException {
 		Entity currEnt = this.getCurrentEntity();
 		currEnt.getAttribute("INDDHH_SA_REGLAMENTO_DOC_STR").addDocument("C:\\Users\\INDDHH\\Documents\\Reglamento.txt", 
-				"Reglamento", "Reglamento Salón de actos", false);
+				"Reglamento", "Reglamento SalÃ³n de actos", false);
 	}
 
 }

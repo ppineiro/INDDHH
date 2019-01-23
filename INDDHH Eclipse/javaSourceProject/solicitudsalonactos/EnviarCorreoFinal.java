@@ -47,15 +47,15 @@ public class EnviarCorreoFinal extends ApiaAbstractClass {
 
 		String[] destinos = { correoSolicitante };
 
-		String asunto = "Solicitud de Sal髇 de Actos INDDHH aprobada";
+		String asunto = "Solicitud de Sal贸n de Actos INDDHH aprobada";
 
-		String texto = "Estimados,<br><br>La solicitud del Sal髇 de Actos de la Instituci髇 ha sido aprobada.<br><br>"
+		String texto = "Estimados,<br><br>La solicitud del Sal贸n de Actos de la Instituci贸n ha sido aprobada.<br><br>"
 				+ "Fecha de la actividad: " + fechaActividad + "<br>" + "Hora de inicio: " + horaInicio + "<br>"
-				+ "Hora de fin: " + horaFin + "<br><br>" + "Responsable por INDDHH del sal髇: " + responsableNombre
-				+ "<br>" + "Correo electr髇ico del responsable: " + responsableCorreo + "<br><br>"
-				+ "Ante cualquier duda o inconveniente comunicarse a secretaria@inddhh.gub.uy o al tel閒ono 1948.<br><br>"
-				+ "Saludos cordiales,<br>" + "Secretar韆 General.<br>"
-				+ "Instituci髇 Nacional de Derechos Humanos y Defensor韆 del Pueblo.";
+				+ "Hora de fin: " + horaFin + "<br><br>" + "Responsable por INDDHH del sal贸n: " + responsableNombre
+				+ "<br>" + "Correo electr贸nico del responsable: " + responsableCorreo + "<br><br>"
+				+ "Ante cualquier duda o inconveniente comunicarse a secretaria@inddhh.gub.uy o al tel茅fono 1948.<br><br>"
+				+ "Saludos cordiales,<br>" + "Secretar铆a General.<br>"
+				+ "Instituci贸n Nacional de Derechos Humanos y Defensor铆a del Pueblo.";
 
 		apia.sendMail(destinos, asunto, texto);
 	}
@@ -76,15 +76,15 @@ public class EnviarCorreoFinal extends ApiaAbstractClass {
 
 		String[] destinos = { secGral, mantenimiento, seguridad, comunicaciones, cooperativa };
 
-		String asunto = "Solicitud de Sal髇 de Actos INDDHH aprobada";
+		String asunto = "Solicitud de Sal贸n de Actos INDDHH aprobada";
 
-		String texto = "Estimados,<br><br>La solicitud del Sal髇 de Actos de la Instituci髇 ha sido aprobada.<br><br>"
+		String texto = "Estimados,<br><br>La solicitud del Sal贸n de Actos de la Instituci贸n ha sido aprobada.<br><br>"
 				+ "Fecha de la actividad: " + fechaActividad + "<br>" + "Hora de inicio: " + horaInicio + "<br>"
-				+ "Hora de fin: " + horaFin + "<br><br>" + "Responsable del sal髇: " + responsableNombre + "<br>"
-				+ "Correo electr髇ico del responsable: " + responsableCorreo + "<br><br>"
-				+ "Ante cualquier duda o inconveniente comunicarse a secretaria@inddhh.gub.uy o al tel閒ono 1948.<br><br>"
-				+ "Saludos cordiales,<br>" + "Secretar韆 General.<br>"
-				+ "Instituci髇 Nacional de Derechos Humanos y Defensor韆 del Pueblo.";
+				+ "Hora de fin: " + horaFin + "<br><br>" + "Responsable del sal贸n: " + responsableNombre + "<br>"
+				+ "Correo electr贸nico del responsable: " + responsableCorreo + "<br><br>"
+				+ "Ante cualquier duda o inconveniente comunicarse a secretaria@inddhh.gub.uy o al tel茅fono 1948.<br><br>"
+				+ "Saludos cordiales,<br>" + "Secretar铆a General.<br>"
+				+ "Instituci贸n Nacional de Derechos Humanos y Defensor铆a del Pueblo.";
 
 		apia.sendMail(destinos, asunto, texto);
 
@@ -102,14 +102,14 @@ public class EnviarCorreoFinal extends ApiaAbstractClass {
 
 		String[] destinos = { correoSolicitante };
 
-		String asunto = "Solicitud de Sal髇 de Actos INDDHH rechazada";
+		String asunto = "Solicitud de Sal贸n de Actos INDDHH rechazada";
 
-		String texto = "Estimados,<br><br>La solicitud del Sal髇 de Actos de la Instituci髇 ha sido rechazada.<br><br>"
+		String texto = "Estimados,<br><br>La solicitud del Sal贸n de Actos de la Instituci贸n ha sido rechazada.<br><br>"
 				+ "Fecha de la actividad: " + fechaActividad + "<br>" + "Hora de inicio: " + horaInicio + "<br>"
 				+ "Hora de fin: " + horaFin + "<br><br>" + "Motivo de rechazo: " + motivoRechazo + "<br><br>"
-				+ "Ante cualquier duda o inconveniente comunicarse a secretaria@inddhh.gub.uy o al tel閒ono 1948.<br><br>"
-				+ "Saludos cordiales,<br>" + "Secretar韆 General.<br>"
-				+ "Instituci髇 Nacional de Derechos Humanos y Defensor韆 del Pueblo.";
+				+ "Ante cualquier duda o inconveniente comunicarse a secretaria@inddhh.gub.uy o al tel茅fono 1948.<br><br>"
+				+ "Saludos cordiales,<br>" + "Secretar铆a General.<br>"
+				+ "Instituci贸n Nacional de Derechos Humanos y Defensor铆a del Pueblo.";
 
 		apia.sendMail(destinos, asunto, texto);
 	}

@@ -21,7 +21,7 @@ public class EnviarAprobadoFaltaFirma extends ApiaAbstractClass {
 
 		if (aprobacion.compareTo("1") == 0) { // Aprobado
 			if (tieneFirmaElectronica.compareTo("1") == 0 && chkFirmaPendiente.compareTo("true") != 0) {
-				// No firmó digitalmente y no pasó a firmar por la oficina
+				// No firmï¿½ digitalmente y no pasï¿½ a firmar por la oficina
 				envioAprobadoNoFirmo(this, correo, nroSolicitud, organizacion);
 			}
 		}
@@ -32,13 +32,13 @@ public class EnviarAprobadoFaltaFirma extends ApiaAbstractClass {
 
 		String[] destinos = { correo };
 
-		String asunto = "INDDHH - Registro con Nº de solucitud " + nroSolicitud + " aprobado";
+		String asunto = "INDDHH - Registro con NÂº de solucitud " + nroSolicitud + " aprobado";
 
 		String texto = "Estimados,<br><br>La solicitud de registro de " + organizacion
-				+ " ante la Institución fue APROBADA.<br>"
+				+ " ante la InstituciÃ³n fue APROBADA.<br>"
 				+ "Debe pasar por nuestras oficinas en Bvar. Gral. Artigas 1532 a firmar.<br>"
-				+ "Una vez lo haga le será dado su número de registro.<br><br>" + "Saludos cordiales,<br>"
-				+ "Secretaría General.<br>" + "Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
+				+ "Una vez lo haga le serÃ¡ dado su nÃºmero de registro.<br><br>" + "Saludos cordiales,<br>"
+				+ "SecretarÃ­a General.<br>" + "InstituciÃ³n Nacional de Derechos Humanos y DefensorÃ­a del Pueblo.";
 
 		apia.sendMail(destinos, asunto, texto);
 	}

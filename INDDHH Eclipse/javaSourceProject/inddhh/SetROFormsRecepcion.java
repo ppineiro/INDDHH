@@ -18,7 +18,7 @@ public class SetROFormsRecepcion extends ApiaAbstractClass {
 
 		Form form = currEnt.getForm("INDDHH_FRM_DATOS_PERSONALES");
 
-		if (canalInicioTmt.compareTo("En Línea") == 0) {
+		if (canalInicioTmt.compareTo("En LÃ­nea") == 0) {
 
 			form.setFormProperty(IProperty.PROPERTY_READONLY, true);
 		} else {

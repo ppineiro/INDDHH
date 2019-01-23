@@ -22,7 +22,7 @@ public class EnviarNroSolicitudAvisoFirma extends ApiaAbstractClass {
 			envioNoTieneFirmaElectronica(this, correo, nroSolicitud, organizacion);
 		} else if (tieneFirmaElectronica.compareTo("1") == 0 && tipoOrg.compareTo("2") != 0) { // No
 			envioNoTieneFirmaElectronicaGubInt(this, correo, nroSolicitud, organizacion);
-		} else if (tieneFirmaElectronica.compareTo("2") == 0) { // Sí
+		} else if (tieneFirmaElectronica.compareTo("2") == 0) { // Sï¿½
 			envioTieneFirmaElectronica(this, correo, nroSolicitud, organizacion);
 		}
 
@@ -33,13 +33,13 @@ public class EnviarNroSolicitudAvisoFirma extends ApiaAbstractClass {
 
 		String[] destinos = { correo };
 
-		String asunto = "INDDHH - Registro ingresado correctamente con Nº de solicitud " + nroSolicitud;
+		String asunto = "INDDHH - Registro ingresado correctamente con NÂº de solicitud " + nroSolicitud;
 
 		String texto = "Estimados,<br><br>La solicitud de registro de <b>" + organizacion
-				+ "</b> ante la Institución fue ingresada correctamente.<br>" + "Su número de solicitud es: <b>"
-				+ nroSolicitud + "</b><br>" + "En los próximos días será evaluada y comunicada oportunamente.<br><br>"
-				+ "Saludos cordiales,<br>" + "Secretaría General.<br>"
-				+ "Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
+				+ "</b> ante la InstituciÃ³n fue ingresada correctamente.<br>" + "Su nÃºmero de solicitud es: <b>"
+				+ nroSolicitud + "</b><br>" + "En los prÃ³ximos dÃ­as serÃ¡ evaluada y comunicada oportunamente.<br><br>"
+				+ "Saludos cordiales,<br>" + "SecretarÃ­a General.<br>"
+				+ "InstituciÃ³n Nacional de Derechos Humanos y DefensorÃ­a del Pueblo.";
 
 		apia.sendMail(destinos, asunto, texto);
 	}
@@ -49,14 +49,14 @@ public class EnviarNroSolicitudAvisoFirma extends ApiaAbstractClass {
 
 		String[] destinos = { correo };
 
-		String asunto = "INDDHH - Registro ingresado correctamente con Nº de solicitud " + nroSolicitud;
+		String asunto = "INDDHH - Registro ingresado correctamente con NÂº de solicitud " + nroSolicitud;
 
 		String texto = "Estimados,<br><br>La solicitud de registro de <b>" + organizacion
-				+ "</b> ante la Institución fue ingresada correctamente.<br>" + "Su número de solicitud es: <b>"
-				+ nroSolicitud + "</b><br>" + "En los próximos días será evaluada y comunicada oportunamente.<br>"
+				+ "</b> ante la InstituciÃ³n fue ingresada correctamente.<br>" + "Su nÃºmero de solicitud es: <b>"
+				+ nroSolicitud + "</b><br>" + "En los prÃ³ximos dÃ­as serÃ¡ evaluada y comunicada oportunamente.<br>"
 				+ "<b>Recuerde que debe pasar por nuestras oficinas en Bvar. Gral. Artigas 1532 a firmar.</b><br><br>"
-				+ "Saludos cordiales,<br>" + "Secretaría General.<br>"
-				+ "Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
+				+ "Saludos cordiales,<br>" + "SecretarÃ­a General.<br>"
+				+ "InstituciÃ³n Nacional de Derechos Humanos y DefensorÃ­a del Pueblo.";
 
 		apia.sendMail(destinos, asunto, texto);
 	}
@@ -66,13 +66,13 @@ public class EnviarNroSolicitudAvisoFirma extends ApiaAbstractClass {
 
 		String[] destinos = { correo };
 
-		String asunto = "INDDHH - Registro ingresado correctamente con Nº de solicitud " + nroSolicitud;
+		String asunto = "INDDHH - Registro ingresado correctamente con NÂº de solicitud " + nroSolicitud;
 
 		String texto = "Estimados,<br><br>La solicitud de registro de <b>" + organizacion
-				+ "</b> ante la Institución fue ingresada correctamente.<br>" + "Su número de solicitud es: <b>"
-				+ nroSolicitud + "</b><br>" + "En los próximos días será evaluada y comunicada oportunamente.<br>"
-				+ "Saludos cordiales,<br>" + "Secretaría General.<br>"
-				+ "Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
+				+ "</b> ante la InstituciÃ³n fue ingresada correctamente.<br>" + "Su nÃºmero de solicitud es: <b>"
+				+ nroSolicitud + "</b><br>" + "En los prÃ³ximos dÃ­as serÃ¡ evaluada y comunicada oportunamente.<br>"
+				+ "Saludos cordiales,<br>" + "SecretarÃ­a General.<br>"
+				+ "InstituciÃ³n Nacional de Derechos Humanos y DefensorÃ­a del Pueblo.";
 
 		apia.sendMail(destinos, asunto, texto);
 	}
