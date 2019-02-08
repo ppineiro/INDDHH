@@ -46,10 +46,19 @@ public class AgregarOrgDenunciado extends ApiaAbstractClass{
 		
 		if(ctdOrgs == 0) {
 			currEnt.getAttribute("INDDHH_ORG_INCISO_TABLA_STR").setValue(org);
-			currEnt.getAttribute("INDDHH_ORG_UNIDAD_EJECUTORA_TABLA_STR").setValue(unEjec);
+			if(unEjec == null || unEjec.isEmpty()) {
+				currEnt.getAttribute("INDDHH_ORG_UNIDAD_EJECUTORA_TABLA_STR").setValue("-");
+			} else {
+				currEnt.getAttribute("INDDHH_ORG_UNIDAD_EJECUTORA_TABLA_STR").setValue(unEjec);
+			}
 		} else {
 			currEnt.getAttribute("INDDHH_ORG_INCISO_TABLA_STR").setValue(org, ctdOrgs);
-			currEnt.getAttribute("INDDHH_ORG_UNIDAD_EJECUTORA_TABLA_STR").setValue(unEjec, ctdOrgs);
+			if(unEjec == null || unEjec.isEmpty()) {
+				currEnt.getAttribute("INDDHH_ORG_UNIDAD_EJECUTORA_TABLA_STR").setValue("-", ctdOrgs);
+			} else {
+				currEnt.getAttribute("INDDHH_ORG_UNIDAD_EJECUTORA_TABLA_STR").setValue(unEjec, ctdOrgs);
+			}
+			
 		}		
 		
 	}

@@ -13,13 +13,13 @@ public class SetViaIngreso extends ApiaAbstractClass {
 		String viaInicio = currEnt.getAttribute("INDDHH_VIA_INICIO_STR").getValueAsString();
 
 		if (viaInicio.compareTo("1") == 0) {
-			currEnt.getAttribute("INDDHH_VIA_INICIO_VALOR_STR").setValue("TelefÃ³nica");
+			currEnt.getAttribute("INDDHH_VIA_INICIO_VALOR_STR").setValue("Telefónica");
 		} else if (viaInicio.compareTo("2") == 0) {
-			currEnt.getAttribute("INDDHH_VIA_INICIO_VALOR_STR").setValue("Correo electrÃ³nico");
+			currEnt.getAttribute("INDDHH_VIA_INICIO_VALOR_STR").setValue("Correo electrónico");
 		} else if (viaInicio.compareTo("3") == 0) {
 			currEnt.getAttribute("INDDHH_VIA_INICIO_VALOR_STR").setValue("Presencial");
 		} else {
-			currEnt.getAttribute("INDDHH_VIA_INICIO_VALOR_STR").setValue("En LÃ­nea");
+			currEnt.getAttribute("INDDHH_VIA_INICIO_VALOR_STR").setValue("En Línea");
 		}
 	}
 

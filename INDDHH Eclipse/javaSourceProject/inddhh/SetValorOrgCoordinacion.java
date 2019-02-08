@@ -22,10 +22,10 @@ public class SetValorOrgCoordinacion extends ApiaAbstractClass {
 					.setValue("Comisionado Parlamentario Penitenciario");
 		} else if (org.compareTo("2") == 0) {
 			currEnt.getAttribute("INDDHH_ORGANISMO_COORDINAR_VALOR_STR")
-					.setValue("DefensorÃ­a de Vecinas y Vecinos de Montevideo");
+					.setValue("Defensoría de Vecinas y Vecinos de Montevideo");
 		} else if (org.compareTo("3") == 0) {
 			currEnt.getAttribute("INDDHH_ORGANISMO_COORDINAR_VALOR_STR")
-					.setValue("ComisiÃ³n Honoraria contra el Racismo, la Xenofobia y toda otra forma de DiscriminaciÃ³n");
+					.setValue("Comisión Honoraria contra el Racismo, la Xenofobia y toda otra forma de Discriminación");
 		} else if (org.compareTo("4") == 0) {
 			currEnt.getAttribute("INDDHH_ORGANISMO_COORDINAR_VALOR_STR").setValue(otroOrg);
 		}

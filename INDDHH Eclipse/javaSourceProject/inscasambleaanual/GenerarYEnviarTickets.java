@@ -47,9 +47,9 @@ public class GenerarYEnviarTickets extends ApiaAbstractClass {
 		String xCalidad;
 		String xUbicacionImgLogo = this.getParameter("ubicLogo").getValueAsString();
 
-		// Determinar nombre de organizaciï¿½n (Persona/Organizaciï¿½n)
+		// Determinar nombre de organizacion (Persona/Organizacion)
 		if (pertenenciaInst.compareTo("1") == 0) {
-			// Sï¿½ pertenece a instituciï¿½n
+			// Si pertenece a institucion
 			if (tipoInst.compareTo("1") == 0 || tipoInst.compareTo("3") == 0) { //Social o Internacional
 				xNombreOrganizacion = nombreInst.toUpperCase();
 			} else if (tipoInst.compareTo("2") == 0) { //Org. del Estado
@@ -65,7 +65,7 @@ public class GenerarYEnviarTickets extends ApiaAbstractClass {
 		if (pertenenciaInst.compareTo("1") == 0) {
 			if ((tipoInst.compareTo("1") == 0 && instRegistrada.compareTo("1") == 0)
 					|| (tipoInst.compareTo("2") == 0)) {
-				// Sï¿½ pertenece a instituciï¿½n y estï¿½ registrada, o es org. del estado
+				// Si pertenece a institucion y esta registrada, o es org. del estado
 				xCalidad = "PARTICIPANTE";
 			} else {
 				xCalidad = "OBSERVADOR";
@@ -93,16 +93,16 @@ public class GenerarYEnviarTickets extends ApiaAbstractClass {
 
 		String[] destinos = { correo };
 
-		String asunto = "INDDHH - InscripciÃ³n a Asamblea Anual de Derechos Humanos completada";
+		String asunto = "INDDHH - Inscripción a Asamblea Anual de Derechos Humanos completada";
 
 		String texto = "Estimado/a " + nombre + ",<br><br>"
-				+ "Su inscripciÃ³n a la Asamblea Anual de Derechos Humanos se ha realizado exitosamente.<br>"
+				+ "Su inscripción a la Asamblea Anual de Derechos Humanos se ha realizado exitosamente.<br>"
 				+ "Le enviamos adjunto su ticket de entrada.<br><br>"
-				+ "Ante cualquier duda o inconveniente comunicarse a asamblea@inddhh.gub.uy o al telÃ©fono 1948.<br><br>"
-				+ "El CÃ³digo para realizar el seguimiento en lÃ­nea del estado del trÃ¡mite es: <font size=4><b>" + GUID
-				+ "</b></font>; para ello, copie el cÃ³digo y pegue en la siguiente pÃ¡gina: https://tramites.gub.uy/seguimiento.<br><br>"
-				+ "Saludos cordiales,<br>" + "SecretarÃ­a General.<br>"
-				+ "InstituciÃ³n Nacional de Derechos Humanos y DefensorÃ­a del Pueblo.";
+				+ "Ante cualquier duda o inconveniente comunicarse a asamblea@inddhh.gub.uy o al teléfono 1948.<br><br>"
+				+ "El Código para realizar el seguimiento en línea del estado del trámite es: <font size=4><b>" + GUID
+				+ "</b></font>; para ello, copie el código y pegue en la siguiente página: https://tramites.gub.uy/seguimiento.<br><br>"
+				+ "Saludos cordiales,<br>" + "Secretaría General.<br>"
+				+ "Institución Nacional de Derechos Humanos y Defensoría del Pueblo.";
 
 		Collection<String> archivos = new ArrayList<>();
 		archivos.add(ticket.getAbsolutePath());
@@ -165,7 +165,7 @@ public class GenerarYEnviarTickets extends ApiaAbstractClass {
 		documento.add(new Paragraph()); // Salto de linea
 		Paragraph lineaOrganizacion = new Paragraph();
 
-		Chunk tlOrganizacion = new Chunk("ORGANIZACIï¿½N", FontFactory.getFont("Arial", 16, Font.BOLD));
+		Chunk tlOrganizacion = new Chunk("ORGANIZACIÓN", FontFactory.getFont("Arial", 16, Font.BOLD));
 		Chunk elOrganizacion = new Chunk(nombreOrganizacion, FontFactory.getFont("Arial", 16));
 
 		lineaOrganizacion.add(tlOrganizacion);
