@@ -1,1 +1,3 @@
-/reportes/
+.DS_Store
+.project
+.classpath
