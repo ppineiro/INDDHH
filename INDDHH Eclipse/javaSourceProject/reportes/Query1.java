@@ -87,14 +87,15 @@ public class Query1 extends QueryAbstractClass {
 			ResultSet rs = stmt.executeQuery(query);
 
 			qry.getData().clear();
-			ArrayList row = new ArrayList();
-
+			
 			while (rs.next()) {
+				ArrayList row = new ArrayList();
+				
 				row.add(rs.getString("tipo_int"));
 				row.add(rs.getString("ctd"));
-			}
-
-			qry.getData().addRow(row);
+				
+				qry.getData().addRow(row);
+			}			
 
 		} catch (SQLException e1) {
 			e1.printStackTrace();
