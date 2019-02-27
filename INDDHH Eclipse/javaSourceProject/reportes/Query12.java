@@ -34,7 +34,6 @@ public class Query12 extends QueryAbstractClass {
 
 			String query =	
 					"(select ent_att.ent_inst_att_str_value as org, count(*) as ctd " + 
-					" y cantidad que se repite " + 
 					" " + 
 					"from bus_ent_inst_attribute ent_att " + 
 					"  join attribute att on ent_att.att_id = att.att_id_auto and ent_att.env_id = att.env_id " + 
@@ -57,7 +56,7 @@ public class Query12 extends QueryAbstractClass {
 					"  and bei.bus_ent_id = 1379 " + 
 					"  and bei.env_id = 1 and ent_att.env_id = 1 "
 					+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
-					+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" +
+					+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " +
 					" " + 
 					"group by org " + 
 					" " + 

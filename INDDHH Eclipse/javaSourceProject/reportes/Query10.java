@@ -784,7 +784,7 @@ public class Query10 extends QueryAbstractClass {
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
 					+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 					+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
-					") " + 
+					") " +  
 					" " + 
 					"UNION ALL " + 
 					"  (SELECT 'Reparación integral por violaciones de los DDHH' as derecho, " + 
