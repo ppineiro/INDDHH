@@ -33,7 +33,7 @@ public class Query10 extends QueryAbstractClass {
 			Statement stmt = conn.createStatement();
 
 			String query =	
-					"(SELECT 'Acceso a informaci贸n p煤blica' as derecho, " + 
+					"(SELECT 'Acceso a informaci髇 p鷅lica' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -62,7 +62,7 @@ public class Query10 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Alimentaci贸n' as derecho, " + 
+					"  (SELECT 'Alimentaci髇' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -149,7 +149,7 @@ public class Query10 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Educaci贸n' as derecho, " + 
+					"  (SELECT 'Educaci髇' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -207,7 +207,7 @@ public class Query10 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Igualdad y no discriminaci贸n por edad' as derecho, " + 
+					"  (SELECT 'Igualdad y no discriminaci髇 por edad' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -236,7 +236,7 @@ public class Query10 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Igualdad y no discriminaci贸n de g茅nero' as derecho, " + 
+					"  (SELECT 'Igualdad y no discriminaci髇 de g閚ero' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -265,7 +265,7 @@ public class Query10 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Igualdad y no discriminaci贸n por discapacidad' as derecho, " + 
+					"  (SELECT 'Igualdad y no discriminaci髇 por discapacidad' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -294,7 +294,7 @@ public class Query10 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Igualdad y no discriminaci贸n por identidad sexual y orientaci贸n sexual' as derecho, " + 
+					"  (SELECT 'Igualdad y no discriminaci髇 por identidad sexual y orientaci髇 sexual' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -323,7 +323,7 @@ public class Query10 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Igualdad y no discriminaci贸n por migrante' as derecho, " + 
+					"  (SELECT 'Igualdad y no discriminaci髇 por migrante' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -352,7 +352,7 @@ public class Query10 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Igualdad y no discriminaci贸n por motivos religiosos' as derecho, " + 
+					"  (SELECT 'Igualdad y no discriminaci髇 por motivos religiosos' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -381,7 +381,7 @@ public class Query10 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Igualdad y no discriminaci贸n por pobreza' as derecho, " + 
+					"  (SELECT 'Igualdad y no discriminaci髇 por pobreza' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -410,7 +410,7 @@ public class Query10 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Igualdad y no discriminaci贸n 茅tnico-racial' as derecho, " + 
+					"  (SELECT 'Igualdad y no discriminaci髇 閠nico-racial' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -439,7 +439,7 @@ public class Query10 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Integridad personal (f铆sica, ps铆quica y moral)' as derecho, " + 
+					"  (SELECT 'Integridad personal (f韘ica, ps韖uica y moral)' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -497,7 +497,7 @@ public class Query10 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Libertad de circulaci贸n y residencia' as derecho, " + 
+					"  (SELECT 'Libertad de circulaci髇 y residencia' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -526,7 +526,7 @@ public class Query10 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Libertad de conciencia y de religi贸n' as derecho, " + 
+					"  (SELECT 'Libertad de conciencia y de religi髇' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -555,7 +555,7 @@ public class Query10 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Libertad de expresi贸n' as derecho, " + 
+					"  (SELECT 'Libertad de expresi髇' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -584,7 +584,7 @@ public class Query10 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Libertad de reuni贸n y asociaci贸n' as derecho, " + 
+					"  (SELECT 'Libertad de reuni髇 y asociaci髇' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -642,7 +642,7 @@ public class Query10 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Participaci贸n pol铆tica' as derecho, " + 
+					"  (SELECT 'Participaci髇 pol韙ica' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -671,7 +671,7 @@ public class Query10 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Prestaci贸n eficiente de servicios p煤blicos' as derecho, " + 
+					"  (SELECT 'Prestaci髇 eficiente de servicios p鷅licos' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -758,7 +758,7 @@ public class Query10 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Protecci贸n judicial' as derecho, " + 
+					"  (SELECT 'Protecci髇 judicial' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -787,7 +787,7 @@ public class Query10 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Reparaci贸n integral por violaciones de los DDHH' as derecho, " + 
+					"  (SELECT 'Reparaci髇 integral por violaciones de los DDHH' as derecho, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 

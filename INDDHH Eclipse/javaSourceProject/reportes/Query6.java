@@ -89,7 +89,7 @@ public class Query6 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"union all " + 
-					"    (SELECT 'TransgÃ©nero' as genero, " + 
+					"    (SELECT 'Transgénero' as genero, " + 
 					"        (select count(*) " + 
 					" " + 
 					"        from bus_ent_inst_attribute ent_att " + 

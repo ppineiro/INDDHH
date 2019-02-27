@@ -283,7 +283,7 @@ public class Query9 extends QueryAbstractClass {
 				") " + 
 				" " + 
 				"UNION ALL " + 
-				"    (SELECT 'PaysandÃº' as depto, " + 
+				"    (SELECT 'Paysandú' as depto, " + 
 				"        (select count(*) " + 
 				" " + 
 				"        from bus_ent_instance bei " + 
@@ -308,7 +308,7 @@ public class Query9 extends QueryAbstractClass {
 				") " + 
 				" " + 
 				"UNION ALL " + 
-				"    (SELECT 'RÃ­o Negro' as depto, " + 
+				"    (SELECT 'Río Negro' as depto, " + 
 				"        (select count(*) " + 
 				" " + 
 				"        from bus_ent_instance bei " + 
@@ -408,7 +408,7 @@ public class Query9 extends QueryAbstractClass {
 				") " + 
 				" " + 
 				"UNION ALL " + 
-				"    (SELECT 'San JosÃ©' as depto, " + 
+				"    (SELECT 'San José' as depto, " + 
 				"        (select count(*) " + 
 				" " + 
 				"        from bus_ent_instance bei " + 
@@ -458,7 +458,7 @@ public class Query9 extends QueryAbstractClass {
 				") " + 
 				" " + 
 				"UNION ALL " + 
-				"    (SELECT 'TacuarembÃ³' as depto, " + 
+				"    (SELECT 'Tacuarembó' as depto, " + 
 				"        (select count(*) " + 
 				" " + 
 				"        from bus_ent_instance bei " + 

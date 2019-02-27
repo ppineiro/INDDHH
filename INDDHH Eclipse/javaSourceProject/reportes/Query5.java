@@ -89,7 +89,7 @@ public class Query5 extends QueryAbstractClass {
 				") " + 
 				" " + 
 				"union all " + 
-				"	(SELECT 'OrganizaciÃ³n social' as persona, " + 
+				"	(SELECT 'Organización social' as persona, " + 
 				"		(select count(*) " + 
 				" " + 
 				"		from bus_ent_inst_attribute ent_att " + 

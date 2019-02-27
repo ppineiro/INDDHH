@@ -61,7 +61,7 @@ public class Query3 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"union all " + 
-					"    (SELECT 'DefensorÃ­a de vecinas y vecinos de Montevideo' as org, " + 
+					"    (SELECT 'Defensoría de vecinas y vecinos de Montevideo' as org, " + 
 					"        (select count(*) " + 
 					" " + 
 					"        from bus_ent_inst_attribute ent_att " + 
@@ -88,7 +88,7 @@ public class Query3 extends QueryAbstractClass {
 					+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
 					") " + 
 					"union all " + 
-					"    (SELECT 'ComisiÃ³n Honoraria contra el Racismo, la Xenofobia y toda otra forma de DiscriminaciÃ³n' as org, " + 
+					"    (SELECT 'Comisión Honoraria contra el Racismo, la Xenofobia y toda otra forma de Discriminación' as org, " + 
 					"        (select count(*) " + 
 					" " + 
 					"        from bus_ent_inst_attribute ent_att " + 

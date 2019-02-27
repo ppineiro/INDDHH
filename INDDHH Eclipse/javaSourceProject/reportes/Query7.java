@@ -89,7 +89,7 @@ public class Query7 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"union all " + 
-					"    (SELECT 'Asi√°tico' as grupo_etnico, " + 
+					"    (SELECT 'Asi·tico' as grupo_etnico, " + 
 					"        (select count(*) " + 
 					" " + 
 					"        from bus_ent_inst_attribute ent_att " + 
@@ -117,7 +117,7 @@ public class Query7 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"union all " + 
-					"    (SELECT 'Ind√≠gena' as grupo_etnico, " + 
+					"    (SELECT 'IndÌgena' as grupo_etnico, " + 
 					"        (select count(*) " + 
 					" " + 
 					"        from bus_ent_inst_attribute ent_att " + 

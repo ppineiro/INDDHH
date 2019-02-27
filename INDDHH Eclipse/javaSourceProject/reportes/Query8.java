@@ -178,7 +178,7 @@ public class Query8 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"union all " + 
-					"    (SELECT '65 y m√°s a√±os' as edad, " + 
+					"    (SELECT '65 y m·s aÒos' as edad, " + 
 					"        (select count(*) " + 
 					" " + 
 					"        from bus_ent_inst_attribute ent_att " + 

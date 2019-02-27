@@ -40,7 +40,7 @@ public class Query12 extends QueryAbstractClass {
 					"  join attribute att on ent_att.att_id = att.att_id_auto and ent_att.env_id = att.env_id " + 
 					"  join bus_ent_instance bei on bei.env_id = ent_att.env_id and bei.bus_ent_inst_id_auto = ent_att.bus_ent_inst_id " + 
 					" " + 
-					"--Denuncia " + 
+					" " + 
 					"where bei.att_value_10 = '1' " + 
 					"  and bei.bus_ent_inst_id_auto in (select bei.bus_ent_inst_id_auto " + 
 					" " + 

@@ -62,7 +62,7 @@ public class Query11 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'NiÃ±os, niÃ±as y adolescentes' as grupo, " + 
+					"  (SELECT 'Niños, niñas y adolescentes' as grupo, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -236,7 +236,7 @@ public class Query11 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Personas vulnerables a la discriminaciÃ³n por motivos Ã©tnico-raciales' as grupo, " + 
+					"  (SELECT 'Personas vulnerables a la discriminación por motivos étnico-raciales' as grupo, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
@@ -265,7 +265,7 @@ public class Query11 extends QueryAbstractClass {
 					") " + 
 					" " + 
 					"UNION ALL " + 
-					"  (SELECT 'Victimas del Terrorismo de Estado' as grupo, " + 
+					"  (SELECT 'Víctimas del Terrorismo de Estado' as grupo, " + 
 					"    (select count(*) " + 
 					" " + 
 					"    from bus_ent_inst_attribute ent_att " + 
