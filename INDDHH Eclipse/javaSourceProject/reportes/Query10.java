@@ -53,7 +53,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 1 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 1  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -82,7 +82,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 2 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 2  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -111,7 +111,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 3 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 3  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -140,7 +140,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 4 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 4  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -169,7 +169,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 5 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 5  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -198,7 +198,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 6 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 6  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -227,7 +227,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 7 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 7  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -256,7 +256,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 8 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 8  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -285,7 +285,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 9 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 9  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -314,7 +314,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 10 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 10  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -343,7 +343,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 11 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 11  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -372,7 +372,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 12 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 12  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -401,7 +401,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 14 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 14  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -430,7 +430,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 15 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 15  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -459,7 +459,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 16 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 16  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -488,7 +488,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 17 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 17  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -517,7 +517,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 18 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 18  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -546,7 +546,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 19 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 19  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -575,7 +575,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 20 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 20  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -604,7 +604,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 21 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 21  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -633,7 +633,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 22 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 22  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -662,7 +662,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 23 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 23  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -691,7 +691,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 24 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 24  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -720,7 +720,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 25 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 25  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -749,7 +749,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 26 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 26  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -778,7 +778,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 27 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 27  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -807,7 +807,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 28 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 28  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -836,7 +836,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 29 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 29  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -864,7 +864,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 30 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 30  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -893,7 +893,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 31 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 31  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -922,7 +922,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 32 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 32  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -951,7 +951,7 @@ public class Query10 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_DERECHO_STR' " + 
-					"      and ent_att.att_index_id = 33 --Indice derecho según orden en formulario " + 
+					"      and ent_att.att_index_id = 33  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "

@@ -51,7 +51,7 @@ public class Query9 extends QueryAbstractClass {
 				"                and bei.env_id = 1 and ent_att.env_id = 1) " + 
 				" " + 
 				"            and bei.bus_ent_id = 1379 " + 
-				"            and bei.att_value_6 = '1' -- Departamento " + 
+				"            and bei.att_value_6 = '1'  " + 
 				"            and bei.env_id = 1 "
 				+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 				+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
@@ -76,7 +76,7 @@ public class Query9 extends QueryAbstractClass {
 				"                and bei.env_id = 1 and ent_att.env_id = 1) " + 
 				" " + 
 				"            and bei.bus_ent_id = 1379 " + 
-				"            and bei.att_value_6 = '2' -- Departamento " + 
+				"            and bei.att_value_6 = '2'  " + 
 				"            and bei.env_id = 1 "
 				+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 				+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
@@ -101,7 +101,7 @@ public class Query9 extends QueryAbstractClass {
 				"                and bei.env_id = 1 and ent_att.env_id = 1) " + 
 				" " + 
 				"            and bei.bus_ent_id = 1379 " + 
-				"            and bei.att_value_6 = '3' -- Departamento " + 
+				"            and bei.att_value_6 = '3'  " + 
 				"            and bei.env_id = 1 "
 				+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 				+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
@@ -126,7 +126,7 @@ public class Query9 extends QueryAbstractClass {
 				"                and bei.env_id = 1 and ent_att.env_id = 1) " + 
 				" " + 
 				"            and bei.bus_ent_id = 1379 " + 
-				"            and bei.att_value_6 = '4' -- Departamento " + 
+				"            and bei.att_value_6 = '4'  " + 
 				"            and bei.env_id = 1 "
 				+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 				+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
@@ -151,7 +151,7 @@ public class Query9 extends QueryAbstractClass {
 				"                and bei.env_id = 1 and ent_att.env_id = 1) " + 
 				" " + 
 				"            and bei.bus_ent_id = 1379 " + 
-				"            and bei.att_value_6 = '5' -- Departamento " + 
+				"            and bei.att_value_6 = '5'  " + 
 				"            and bei.env_id = 1 "
 				+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 				+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
@@ -176,7 +176,7 @@ public class Query9 extends QueryAbstractClass {
 				"                and bei.env_id = 1 and ent_att.env_id = 1) " + 
 				" " + 
 				"            and bei.bus_ent_id = 1379 " + 
-				"            and bei.att_value_6 = '6' -- Departamento " + 
+				"            and bei.att_value_6 = '6'  " + 
 				"            and bei.env_id = 1 "
 				+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 				+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
@@ -201,7 +201,7 @@ public class Query9 extends QueryAbstractClass {
 				"                and bei.env_id = 1 and ent_att.env_id = 1) " + 
 				" " + 
 				"            and bei.bus_ent_id = 1379 " + 
-				"            and bei.att_value_6 = '7' -- Departamento " + 
+				"            and bei.att_value_6 = '7'  " + 
 				"            and bei.env_id = 1 "
 				+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 				+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
@@ -226,7 +226,7 @@ public class Query9 extends QueryAbstractClass {
 				"                and bei.env_id = 1 and ent_att.env_id = 1) " + 
 				" " + 
 				"            and bei.bus_ent_id = 1379 " + 
-				"            and bei.att_value_6 = '8' -- Departamento " + 
+				"            and bei.att_value_6 = '8'  " + 
 				"            and bei.env_id = 1 "
 				+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 				+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
@@ -251,7 +251,7 @@ public class Query9 extends QueryAbstractClass {
 				"                and bei.env_id = 1 and ent_att.env_id = 1) " + 
 				" " + 
 				"            and bei.bus_ent_id = 1379 " + 
-				"            and bei.att_value_6 = '9' -- Departamento " + 
+				"            and bei.att_value_6 = '9'  " + 
 				"            and bei.env_id = 1 "
 				+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 				+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
@@ -276,7 +276,7 @@ public class Query9 extends QueryAbstractClass {
 				"                and bei.env_id = 1 and ent_att.env_id = 1) " + 
 				" " + 
 				"            and bei.bus_ent_id = 1379 " + 
-				"            and bei.att_value_6 = '10' -- Departamento " + 
+				"            and bei.att_value_6 = '10'  " + 
 				"            and bei.env_id = 1 "
 				+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 				+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
@@ -301,7 +301,7 @@ public class Query9 extends QueryAbstractClass {
 				"                and bei.env_id = 1 and ent_att.env_id = 1) " + 
 				" " + 
 				"            and bei.bus_ent_id = 1379 " + 
-				"            and bei.att_value_6 = '11' -- Departamento " + 
+				"            and bei.att_value_6 = '11'  " + 
 				"            and bei.env_id = 1 "
 				+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 				+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
@@ -326,7 +326,7 @@ public class Query9 extends QueryAbstractClass {
 				"                and bei.env_id = 1 and ent_att.env_id = 1) " + 
 				" " + 
 				"            and bei.bus_ent_id = 1379 " + 
-				"            and bei.att_value_6 = '12' -- Departamento " + 
+				"            and bei.att_value_6 = '12'  " + 
 				"            and bei.env_id = 1 "
 				+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 				+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
@@ -351,7 +351,7 @@ public class Query9 extends QueryAbstractClass {
 				"                and bei.env_id = 1 and ent_att.env_id = 1) " + 
 				" " + 
 				"            and bei.bus_ent_id = 1379 " + 
-				"            and bei.att_value_6 = '13' -- Departamento " + 
+				"            and bei.att_value_6 = '13'  " + 
 				"            and bei.env_id = 1 "
 				+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 				+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
@@ -376,7 +376,7 @@ public class Query9 extends QueryAbstractClass {
 				"                and bei.env_id = 1 and ent_att.env_id = 1) " + 
 				" " + 
 				"            and bei.bus_ent_id = 1379 " + 
-				"            and bei.att_value_6 = '14' -- Departamento " + 
+				"            and bei.att_value_6 = '14'  " + 
 				"            and bei.env_id = 1 "
 				+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 				+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
@@ -401,7 +401,7 @@ public class Query9 extends QueryAbstractClass {
 				"                and bei.env_id = 1 and ent_att.env_id = 1) " + 
 				" " + 
 				"            and bei.bus_ent_id = 1379 " + 
-				"            and bei.att_value_6 = '15' -- Departamento " + 
+				"            and bei.att_value_6 = '15'  " + 
 				"            and bei.env_id = 1 "
 				+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 				+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
@@ -426,7 +426,7 @@ public class Query9 extends QueryAbstractClass {
 				"                and bei.env_id = 1 and ent_att.env_id = 1) " + 
 				" " + 
 				"            and bei.bus_ent_id = 1379 " + 
-				"            and bei.att_value_6 = '16' -- Departamento " + 
+				"            and bei.att_value_6 = '16'  " + 
 				"            and bei.env_id = 1 "
 				+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 				+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
@@ -451,7 +451,7 @@ public class Query9 extends QueryAbstractClass {
 				"                and bei.env_id = 1 and ent_att.env_id = 1) " + 
 				" " + 
 				"            and bei.bus_ent_id = 1379 " + 
-				"            and bei.att_value_6 = '17' -- Departamento " + 
+				"            and bei.att_value_6 = '17'  " + 
 				"            and bei.env_id = 1 "
 				+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 				+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
@@ -476,7 +476,7 @@ public class Query9 extends QueryAbstractClass {
 				"                and bei.env_id = 1 and ent_att.env_id = 1) " + 
 				" " + 
 				"            and bei.bus_ent_id = 1379 " + 
-				"            and bei.att_value_6 = '18' -- Departamento " + 
+				"            and bei.att_value_6 = '18'  " + 
 				"            and bei.env_id = 1 "
 				+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 				+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 
@@ -501,7 +501,7 @@ public class Query9 extends QueryAbstractClass {
 				"                and bei.env_id = 1 and ent_att.env_id = 1) " + 
 				" " + 
 				"            and bei.bus_ent_id = 1379 " + 
-				"            and bei.att_value_6 = '19' -- Departamento " + 
+				"            and bei.att_value_6 = '19'  " + 
 				"            and bei.env_id = 1 "
 				+ "and bei.bus_ent_inst_create_data >= timestamp '" + fechaInicioStr + "' "
 				+ "and bei.bus_ent_inst_create_data <= timestamp '" + fechaFinStr + "' " + ") as ctd" + 

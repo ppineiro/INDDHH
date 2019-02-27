@@ -53,7 +53,7 @@ public class Query11 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_GRUPO_POBLACIONAL_STR' " + 
-					"      and ent_att.att_index_id = 1 --Indice de grupo poblacional " + 
+					"      and ent_att.att_index_id = 1  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -82,7 +82,7 @@ public class Query11 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_GRUPO_POBLACIONAL_STR' " + 
-					"      and ent_att.att_index_id = 2 --Indice de grupo poblacional " + 
+					"      and ent_att.att_index_id = 2  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -111,7 +111,7 @@ public class Query11 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_GRUPO_POBLACIONAL_STR' " + 
-					"      and ent_att.att_index_id = 3 --Indice de grupo poblacional " + 
+					"      and ent_att.att_index_id = 3  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -140,7 +140,7 @@ public class Query11 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_GRUPO_POBLACIONAL_STR' " + 
-					"      and ent_att.att_index_id = 4 --Indice de grupo poblacional " + 
+					"      and ent_att.att_index_id = 4  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -169,7 +169,7 @@ public class Query11 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_GRUPO_POBLACIONAL_STR' " + 
-					"      and ent_att.att_index_id = 5 --Indice de grupo poblacional " + 
+					"      and ent_att.att_index_id = 5  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -198,7 +198,7 @@ public class Query11 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_GRUPO_POBLACIONAL_STR' " + 
-					"      and ent_att.att_index_id = 6 --Indice de grupo poblacional " + 
+					"      and ent_att.att_index_id = 6  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -227,7 +227,7 @@ public class Query11 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_GRUPO_POBLACIONAL_STR' " + 
-					"      and ent_att.att_index_id = 7 --Indice de grupo poblacional " + 
+					"      and ent_att.att_index_id = 7  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -256,7 +256,7 @@ public class Query11 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_GRUPO_POBLACIONAL_STR' " + 
-					"      and ent_att.att_index_id = 8 --Indice de grupo poblacional " + 
+					"      and ent_att.att_index_id = 8  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
@@ -285,7 +285,7 @@ public class Query11 extends QueryAbstractClass {
 					"        and bei.env_id = 1 and ent_att.env_id = 1) " + 
 					" " + 
 					"      and att.att_name = 'INDDHH_SELECCIONAR_GRUPO_POBLACIONAL_STR' " + 
-					"      and ent_att.att_index_id = 9 --Indice de grupo poblacional " + 
+					"      and ent_att.att_index_id = 9  " + 
 					"      and bei.bus_ent_id = 1379 " + 
 					"      and ent_att.ent_inst_att_str_value = 'true' " + 
 					"      and bei.env_id = 1 and ent_att.env_id = 1 "
