@@ -7,7 +7,8 @@ if(valor == "SI") {
   //alert("El usuario ya está registrado. Se cancela el trámite");
 	
   var URL_PAGINA_MSG = CONTEXT + "/portal/paginaMensajes.jsp?d=1" + TAB_ID_REQUEST;
-  if (CURRENT_USER_LOGIN == "guest") {
+  var usuario = CURRENT_USER_LOGIN; 
+  if ( usuario.indexOf('guest') > -1 ){
 	if (parent.parent.document != null) {
         parent.parent.document.location.href= URL_PAGINA_MSG;
     } else if (parent.document != null) {

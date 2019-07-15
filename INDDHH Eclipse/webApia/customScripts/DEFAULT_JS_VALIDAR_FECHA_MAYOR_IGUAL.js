@@ -14,9 +14,12 @@ function DEFAULT_JS_VALIDAR_FECHA_MAYOR_IGUAL(evtSource, par_nomFrm, par_attDesd
     	      	fieldHasta.setValue("");
 	        	showMsgError(par_nomFrm, par_attHasta, "La fecha debe ser mayor o igual a "+fechaDesde);
 	        	return false;
-	        }                  
+	        }              
         }        
 	}
+
+
+
 
 
 

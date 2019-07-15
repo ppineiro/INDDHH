@@ -346,5 +346,5 @@
 	<classpathentry kind="lib" path="webApia/WEB-INF/lib/xmlunit-1.1.jar"/>
 	<classpathentry kind="lib" path="webApia/WEB-INF/lib/xmlworker-5.4.1.jar"/>
 	<classpathentry kind="lib" path="webApia/WEB-INF/lib/xpdl.jar"/>
-	<classpathentry kind="output" path="web/WEB-INF/classes"/>
+	<classpathentry kind="output" path="webApia/WEB-INF/classes"/>
 </classpath>

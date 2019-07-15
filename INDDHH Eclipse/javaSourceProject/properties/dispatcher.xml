@@ -1,0 +1,13 @@
+<descriptor>
+    <generic portSocket="7777" localHostSocket="stw04"></generic>
+    <dispatcher MaxThread="10" timeControlProcess="1000" logName="log" logDir="c:\logs\"></dispatcher>
+    <monitor maxLine="1000" countDel="100"></monitor>
+	
+    <!-- ProcessVerifier is used for BackGroundProcesses -->
+	<verifier class="com.dogma.automatic.ProcessVerifier" enabled="Y" time="60000" maxThread="10" procType="CLASS"></verifier>
+	<verifier class="com.dogma.automatic.TaskVerifier" enabled="Y" time="60000" maxThread="10" procType="CLASS"></verifier>
+
+	<!-- SAMPLE VERIFIER OF BUSINESS CLASSES-->
+     <verifier class="com.dogma.automatic.BusClassVerifier" enabled="Y" time="60000" maxThread="10" procType="CLASS" ></verifier> 
+   
+</descriptor>

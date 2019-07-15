@@ -15,7 +15,7 @@ if (par_nameAtt != null && par_nameAtt != '') {
 if (!setBaja) {
   if (par_nameAtt != null && par_nameAtt != '') {
     attSet.setValue("");
- 	showMessage("para eliminar la fila debe hacer click sobre la cruz roja en la columna 'Eliminar fila'"); 
+ 	showMessage("Para eliminar la fila debe hacer click sobre la cruz roja en la columna 'Eliminar fila'"); 
   }
 }
 

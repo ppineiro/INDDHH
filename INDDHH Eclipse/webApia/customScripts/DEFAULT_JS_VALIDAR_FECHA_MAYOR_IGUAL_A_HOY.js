@@ -8,10 +8,15 @@ function DEFAULT_JS_VALIDAR_FECHA_MAYOR_IGUAL_A_HOY(evtSource, par_nomFrm, par_n
         var fechaHoy = getFechaHoy();
         if (validarFechaMayorIgualQue(inputValues, fechaHoy)){
           	field.setValue("");
-        	showMsgError(par_nomFrm, par_nomAtt, "La fecha solicitada debe ser posterior a la fecha actual.");
+        	showMsgError(par_nomFrm, par_nomAtt, "La fecha solicitada debe ser anterior a la fecha actual.");
         	return false;
-        }                  
+        } else
+        {
+            hideMsgError(par_nomFrm, par_nomAtt);
+        }                 
 	}
+
+
 
 
 

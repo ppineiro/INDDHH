@@ -12,7 +12,8 @@ if (par_form=='TRM_TITULO') {
 
 	var noentro = true;
 	if (visibilidad != '1') {
-  		if (CURRENT_USER_LOGIN == 'guest' ) {
+		var usuario = CURRENT_USER_LOGIN; 
+  		if ( usuario.indexOf('guest') > -1 ){
     		noentro = false;
     		top.document.location.href = CONTEXT + '/portal/linkCoesys.jsp?cod_tramite='+codTramite+"&modoAut=" + modoAut;
     		return true;

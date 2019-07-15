@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.com.uy/st/xml" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.com.uy/st/xml">
+	<xs:element name="informationXS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="entitiesXS" minOccurs="0"/>
+				<xs:element ref="processesXS" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="entitiesXS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="entityXS" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="processesXS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="processXS" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:element name="entityXS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="attributesXS" minOccurs="0"/>
+			</xs:sequence>
+			   <xs:attribute name="name" use="required" type="xs:string"/>
+			   <xs:attribute name="prefix" use="optional" type="xs:string"/>
+			   <xs:attribute name="number" use="optional" type="xs:integer"/>
+			   <xs:attribute name="postfix" use="optional" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="processXS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="attributesXS" minOccurs="0"/>
+				<xs:element ref="entityXS" minOccurs="0"/>
+			</xs:sequence>
+				<xs:attribute name="name" use="required" type="xs:string"/>
+			   <xs:attribute name="prefix" use="optional" type="xs:string"/>
+			   <xs:attribute name="number" use="optional" type="xs:integer"/>
+			   <xs:attribute name="postfix" use="optional" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:element name="attributesXS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="attributeXS" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+		
+	<xs:element name="attributeXS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="valueXS"/>
+			</xs:sequence>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="isFile" use="optional" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="valueXS">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string"> 
+					<xs:attribute name="index" use="optional" type="xs:integer"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	
+	
+</xs:schema>

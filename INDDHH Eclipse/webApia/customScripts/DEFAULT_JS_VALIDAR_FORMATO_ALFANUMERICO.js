@@ -29,11 +29,12 @@ if (!(sonLetras(strValue) && sonNumeros(strValue)) || (strValue.length != cantLe
 	ApiaFunctions.getForm(par_form).getField(par_attrib).clearValue();
     var mensaje = "El formato debe ser ";
   if (cantNumeros>0) {
-    mensaje = mensaje+cantNumeros + "nï¿½meros ";
+    mensaje = mensaje+cantNumeros + "números ";
   }
   if (cantLetras>0) {
     mensaje = mensaje+cantLetras + " letras ";
   }
+   debugger; 
     alert(mensaje);
 }
 
@@ -41,7 +42,7 @@ function sonLetras (strValue) {
 	strValue = strValue.toLowerCase();
 	
 	for (var i = baseUno; i < topeUno; i++) {
-		//Si encuentra algo distinto de una letra, retorna false y sale de la funciï¿½n
+		//Si encuentra algo distinto de una letra, retorna false y sale de la función
 		if (letras.indexOf(strValue.charAt(i),0) == -1) {
 			return false;
 		}
@@ -51,7 +52,7 @@ function sonLetras (strValue) {
 
 function sonNumeros (strValue) {
 	for (var i = baseDos; i < topeUno + topeDos; i++) {
-		//Si encuentra algo distinto de un nï¿½mero, retorna false y sale de la funciï¿½n
+		//Si encuentra algo distinto de un número, retorna false y sale de la función
 		if (numeros.indexOf(strValue.charAt(i),0) == -1) {
 			return false;
 		}

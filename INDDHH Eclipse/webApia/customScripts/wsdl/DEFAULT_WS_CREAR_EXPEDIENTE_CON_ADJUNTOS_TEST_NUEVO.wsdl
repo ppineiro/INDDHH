@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.apiasolutions.com/WebServices" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://www.apiasolutions.com/WebServices" xmlns:intf="http://www.apiasolutions.com/WebServices" xmlns:tns1="http://AutogenerateWSDL.ws.dogma.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://www.apiasolutions.com/WebServices" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://AutogenerateWSDL.ws.dogma.com"/>
+   <element name="ws_generacion_expediente_extendido">
+    <complexType>
+     <sequence>
+      <element name="ApiaWSInput" type="impl:ApiaWSInputType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ApiaWSInputType">
+    <complexContent>
+     <extension base="tns1:AbstractApiaWSInputType">
+      <sequence>
+       <element name="B_PRMT_OFICINA_ORIGEN_EXPEDIENTE" nillable="true" type="xsd:string"/>
+       <element name="B_PRMT_TIPO_EXPEDIENTE" nillable="true" type="xsd:string"/>
+       <element name="B_PRMT_ASUNTO_EXPEDIENTE" nillable="true" type="xsd:string"/>
+       <element name="B_PRMT_PRIORIDAD_EXPEDIENTE" nillable="true" type="xsd:string"/>
+       <element name="B_PRMT_CONFIDENCIALIDAD_EXPEDIENTE" nillable="true" type="xsd:string"/>
+       <element name="B_PRMT_DOCUMENTACION_FISICA_EXPEDIENTE" nillable="true" type="xsd:string"/>
+       <element name="B_PRMT_CLASIFICACION_EXPEDIENTE" nillable="true" type="xsd:string"/>
+       <element name="B_archivoEstructurado" nillable="true" type="xsd:string"/>
+       <element name="B_archivoAdjunto" nillable="true" type="xsd:string"/>
+       <element name="B_archivoAdjuntoDos" nillable="true" type="xsd:string"/>
+       <element name="B_archivoAdjuntoTres" nillable="true" type="xsd:string"/>
+       <element name="B_archivoAdjuntoCuatro" nillable="true" type="xsd:string"/>
+       <element name="B_archivoAdjuntoCinco" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <element name="ws_generacion_expediente_extendidoResponse">
+    <complexType>
+     <sequence>
+      <element name="ExecResult" type="impl:ExecResultType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="Parameter">
+    <sequence>
+     <element name="PRMT_NRO_EXPEDIENTE_STR" nillable="true" type="xsd:string"/>
+     <element name="prmtResultado" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ExecResultType">
+    <sequence>
+     <element name="resultCode" type="xsd:int"/>
+     <element name="resultMessage" type="xsd:string"/>
+     <element name="parameters" nillable="true" type="impl:Parameter"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://AutogenerateWSDL.ws.dogma.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://www.apiasolutions.com/WebServices"/>
+   <complexType abstract="true" name="AbstractApiaWSInputType">
+    <sequence/>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="ws_generacion_expediente_extendidoResponse">
+
+      <wsdl:part element="impl:ws_generacion_expediente_extendidoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="ws_generacion_expediente_extendidoRequest">
+
+      <wsdl:part element="impl:ws_generacion_expediente_extendido" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ApiaWSInterface">
+
+      <wsdl:operation name="ws_generacion_expediente_extendido">
+
+         <wsdl:input message="impl:ws_generacion_expediente_extendidoRequest" name="ws_generacion_expediente_extendidoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:ws_generacion_expediente_extendidoResponse" name="ws_generacion_expediente_extendidoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ApiaWSws_generacion_expediente_extendidoSoapBinding" type="impl:ApiaWSInterface">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="ws_generacion_expediente_extendido">
+
+         <wsdlsoap:operation soapAction="apiaAction"/>
+
+         <wsdl:input name="ws_generacion_expediente_extendidoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ws_generacion_expediente_extendidoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ApiaWSInterfaceService">
+
+      <wsdl:port binding="impl:ApiaWSws_generacion_expediente_extendidoSoapBinding" name="ApiaWSws_generacion_expediente_extendido">
+
+         <wsdlsoap:address location="http://192.168.37.30:8080/ApiaDocumentum/services/ApiaWSws_generacion_expediente_extendido"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

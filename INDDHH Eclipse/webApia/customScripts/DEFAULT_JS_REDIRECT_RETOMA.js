@@ -31,7 +31,7 @@ switch (modoAut) {
 
 ApiaFunctions.hideActionButton(ActionButton.BTN_CONFIRM);
 if(valor == "OK") {
-  if( usuario=='guest') {
+  if ( usuario.indexOf('guest') > -1 ){
 	//parent.document.location.href= CONTEXT + "/page/externalAccess/workTask.jsp?logFromFile=true&env=1&lang=1&numInst=" + ping + "&onFinish=101&eatt_str_TRM_RETOMA_TRAMITE_STR=SI";
 	//top.document.location.href= link;
 	top.document.location.href= CONTEXT + '/portal/retomaTramite.jsp?a=1'+auth+TAB_ID_REQUEST;

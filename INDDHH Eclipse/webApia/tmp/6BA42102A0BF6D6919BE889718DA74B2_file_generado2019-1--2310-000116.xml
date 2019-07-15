@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<informationXS xmlns="http://www.com.uy/st/xml">
+  <entitiesXS>
+    <entityXS name="EXPEDIENTE">
+      <attributesXS>
+        <attributeXS isFile="false" name="EXP_TIPO_TITULAR_ENUM">
+          <valueXS index="0">3</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="EXP_TIPO_DOC_STR">
+          <valueXS index="0">CI</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="EXP_NRO_DOC_STR">
+          <valueXS index="0">33333333</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="EXP_DIRECCION_STR">
+          <valueXS index="0">kjhkj Nro. 78iy, BARROS BLANCOS,</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="EXP_DOMICILIO_CONST_STR">
+          <valueXS index="0">kjhkj Nro. 78iy, BARROS BLANCOS,</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="EXP_TELEFONO_STR">
+          <valueXS index="0">099999999</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="EXP_EMAIL_STR">
+          <valueXS index="0">pablo@fx2.com.uy</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="ATT_RESERVA_IDENTIDAD">
+          <valueXS index="0">23</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="ATT_DEN_CIUDADANO">
+          <valueXS index="0">2</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="ATT_DEN_GENERO">
+          <valueXS index="0">1</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="ATT_DEN_ETNIA">
+          <valueXS index="0">1</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="ATT_DEN_FORMA_PRESENTACION">
+          <valueXS index="0">2</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="ATT_DEN_ADMITE">
+          <valueXS index="0">1</valueXS>
+        </attributeXS>
+        <attributeXS isFile="false" name="ATT_DENUNCIA_TEXTO_STR">
+          <valueXS index="0">Este es el campo problema conteniendo el texto de la denuncia.</valueXS>
+        </attributeXS>
+      </attributesXS>
+    </entityXS>
+  </entitiesXS>
+</informationXS>

@@ -5,6 +5,7 @@ var expreg = new RegExp(par_exp_reg);
 var mensaje = par_mensaje;  
 
 if(!expreg.test(valor)) {
+	debugger;
    alert(mensaje);
    if (evtSource.isInGrid()){
        var myGrid = ApiaFunctions.getForm(par_form).getField(par_grilla);
@@ -15,7 +16,6 @@ if(!expreg.test(valor)) {
      
    } 
 }
-
 
 
 

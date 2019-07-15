@@ -1,0 +1,12 @@
+<!--  SAMPLE CUSTOM TASK --> 
+<CUSTOM_TASKS>
+	<!--
+	<TASK environment="DEFAULT" tskName="T1" imgName="/Apia2.3/images/groupRing.png">
+		<EVENTS>
+			<EVENT busClaName="TEST2" evtName="ONREADY" order="1"/>
+			<EVENT busClaName="TEST3" evtName="ONREADY" order="2"/>
+			<EVENT busClaName="NUEVA" evtName="ONCOMPLETE" order="1"/>
+		</EVENTS>
+	</TASK>
+	--> 
+</CUSTOM_TASKS>

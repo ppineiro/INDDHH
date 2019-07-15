@@ -1,0 +1,39 @@
+#TimeZone settings
+#if the parameter USE_TIMEZONE is equals to 0 --> Apia uses the timezone of the O.S.
+#if the parameter USE_TIMEZONE is diferent to 0 --> Apia Adds and subtracts the hours to GMT time
+#TimeZone is in hours
+USE_TIMEZONE = 0
+
+#To run distributed schedulers each server must have a diferent NODE_NAME
+NODE_NAME = APIA
+
+#ENCODING: this is the encoding used by the application. for example: ISO-8859-1, UTF-8
+#APP_ENCODING = ISO-8859-1
+#JAVA_ENCODING = ISO8859_1
+APP_ENCODING = UTF-8
+JAVA_ENCODING = UTF8
+
+#FONT FOR PDF REPORTS
+FONT_PDF = arialuni.ttf
+
+#Disable BI queue consumer for this server (default: false --> enabled)
+#DISABLE_BI_QUEUE_CONSUMER = true
+
+#Country: This is the country to use en BI
+#Examples:
+#URUGUAY: UY (thousands separator is . and decimal separator is ,)
+#MEXICO: MX (thousands separator is , and decimal separator is .)
+COUNTRY = UY
+
+#Forbidden environments allows to disable the access to a collection of environmnets 
+#FORBIDDEN_ENVIRONMENTS = DEFAULT
+
+#Disable ApiaMonitor in this server
+#APIAMONITOR_AGENT_DISABLED = Y
+
+#force load APP_PATH from config.properties
+#FORCE_LOAD_PATH_FROM_PROPERTIES = Y
+
+
+##ZIP LOGS AFTER ROLLING IT
+ZIP_LOGS = Y

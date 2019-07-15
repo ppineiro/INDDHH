@@ -17,7 +17,7 @@ if (borrar) {
 	ajustarAnchoColumna();
 } else {
   if (par_nameAtt != null && par_nameAtt != '') {
- 	showMessage("No se puede eliminar la fila. Haga click en el checkbox 'Eliminar' para marcar el registro para eliminar"); 
+ 	showMessage("No se puede eliminar la fila. Haga click en el checkbox 'Dar de baja' para marcar el registro para eliminar"); 
   }
 }
 

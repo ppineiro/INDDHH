@@ -16,8 +16,8 @@ if (myForm != null) {
 	var codUnico = field.getValue();
 	
 	var modoAut= myForm.getField("TRM_MODO_AUTENTICACION_STR").getValue();
-	
-	if (visibilidad != '1' || CURRENT_USER_LOGIN != 'guest') {
+	var usuario = CURRENT_USER_LOGIN; 
+	if (visibilidad != '1' || usuario.indexOf('guest') > -1 ) {
 	    //parent.parent.document.location.href = CONTEXT + '/portal/linkCoesys.jsp?cod_tramite='+codTramite;
 		//EXTERNAL_ACCESS="true";
 		if (externo=='true') {
