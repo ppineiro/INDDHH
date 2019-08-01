@@ -67,7 +67,13 @@ public class SetParamsToExpediente extends ApiaAbstractClass {
 		
 		entDefTramite.getAttribute("DEF_TRM_EXPEDIENTE_OFICINA_ORIGEN_STR").setValue(ofiOrigen);
 		entDefTramite.getAttribute("DEF_TRM_EXPEDIENTE_TIPO_STR").setValue(tipo);
+		entDefTramite.getAttribute("DEF_TRM_EXPEDIENTE_ASUNTO_STR").setValue(asunto);
+		
+		entDefTramite.persist();
 
+		//Seteo de asunto
+		currEnt.getAttribute("TRM_EXPEDIENTE_ASUNTO_STR").setValue(asunto);
+		
 		try {
 			String proName = "EXPEDIENTE";
 			String entName = "EXPEDIENTE";
@@ -91,14 +97,15 @@ public class SetParamsToExpediente extends ApiaAbstractClass {
 			//XML con datos
 			currEnt.getAttribute("TRM_XML_FILES_STR").addDocument(pathSalida, nomSalida, "", false);
 			
+			
 			//Obtencion de archivo generado y añado a Expediente Adjunto 1
 			Document arcGenerado = currEnt.getAttribute("INDDHH_ARCHIVO_GENERADO_STR").getDocumentValue();
 			String name = arcGenerado.getName();
 			String path = arcGenerado.download();		
 			currEnt.getAttribute("TRM_EXPEDIENTE_ADJUNTO_1_STR").addDocument(path, name, "", false);
 			
-			//Seteo de asunto
-			currEnt.getAttribute("TRM_EXPEDIENTE_ASUNTO_STR").setValue(asunto);
+			currEnt.persist();
+			this.getCurrentTask().complete();
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -334,12 +341,7 @@ public class SetParamsToExpediente extends ApiaAbstractClass {
 
 		nombresAttsAD.add("EXP_TIPO_TITULAR_ENUM");
 		String tipoTitular = currEnt.getAttribute("INDDHH_TIPO_PERSONA_STR").getValueAsString();
-		if (tipoTitular.compareTo("1") == 0) {
-			valoresAttsAD.add("3"); // persona fisica
-		} else if (tipoTitular.compareTo("3") == 0 || tipoTitular.compareTo("4") == 0
-				|| tipoTitular.compareTo("5") == 0) {
-			valoresAttsAD.add("5"); // persona juridica
-		}
+		valoresAttsAD.add("3"); // persona fisica
 		
 		nombresAttsAD.add("EXP_TIPO_DOC_STR");
 		String tipoDoc = currEnt.getAttribute("INDDHH_ATT_DATOS_PERSONALES_DOC_TIPO_STR").getValueAsString();
@@ -347,6 +349,8 @@ public class SetParamsToExpediente extends ApiaAbstractClass {
 			valoresAttsAD.add("CI"); // CI
 		} else if (tipoDoc.compareTo("2") == 0) {
 			valoresAttsAD.add("Pasaporte"); // Pasaporte
+		} else {
+			nombresAttsAD.remove("EXP_TIPO_DOC_STR");
 		}
 		
 		nombresAttsAD.add("EXP_NRO_DOC_STR");
@@ -355,8 +359,8 @@ public class SetParamsToExpediente extends ApiaAbstractClass {
 		
 		nombresAttsAD.add("EXP_NOM_PER_JUR_STR");
 		String nombrePersona = currEnt.getAttribute("INDDHH_ATT_DATOS_PERSONALES_NOMBRES_STR").getValueAsString();
-		String apellidoPersona = currEnt.getAttribute("INDDHH_ATT_DATOS_PERSONALES_NOMBRES_STR").getValueAsString();
-		String nombreCompleto = nombrePersona + apellidoPersona;
+		String apellidoPersona = currEnt.getAttribute("INDDHH_ATT_DATOS_PERSONALES_APELLIDOS_STR").getValueAsString();
+		String nombreCompleto = nombrePersona + " " + apellidoPersona;
 		valoresAttsAD.add(nombreCompleto);
 		
 		nombresAttsAD.add("EXP_DIRECCION_STR");
@@ -396,23 +400,27 @@ public class SetParamsToExpediente extends ApiaAbstractClass {
 		nombresAttsAD.add("ATT_RESERVA_IDENTIDAD");
 		String reservaId = currEnt.getAttribute("INDDHH_RESERVA_IDENTIDAD_STR").getValueAsString();// No-Si
 		if (reservaId.compareTo("1") == 0) {
-			valoresAttsAD.add("2");
-		} else if (reservaId.compareTo("2") == 0) {
 			valoresAttsAD.add("1");
+		} else if (reservaId.compareTo("2") == 0) {
+			valoresAttsAD.add("2");
+		} else {
+			nombresAttsAD.remove("ATT_RESERVA_IDENTIDAD");
 		}
 		
 		nombresAttsAD.add("ATT_DEN_CIUDADANO");
 		String esUruguayo = currEnt.getAttribute("INDDHH_NACIONALIDAD_STR").getValueAsString(); // 1-uruguay
 		if (esUruguayo.isEmpty() || esUruguayo == null || esUruguayo.compareTo("1") == 0) {
-			valoresAttsAD.add("1");
-		} else {
 			valoresAttsAD.add("2");
+		} else {
+			valoresAttsAD.add("1");
 		}
 		
 		nombresAttsAD.add("ATT_DEN_GENERO");
 		String genero = currEnt.getAttribute("INDDHH_PERSONA_GENERO_STR").getValueAsString();
 		if (genero.compareTo("1") == 0 || genero.compareTo("2") == 0) {
 			valoresAttsAD.add(genero);
+		} else {
+			nombresAttsAD.remove("ATT_DEN_GENERO");
 		}
 		
 		nombresAttsAD.add("ATT_DEN_ETNIA");
@@ -425,6 +433,8 @@ public class SetParamsToExpediente extends ApiaAbstractClass {
 			} else {
 				valoresAttsAD.add(grupoEtnico);
 			}
+		} else {
+			nombresAttsAD.remove("ATT_DEN_ETNIA");
 		}
 		
 		nombresAttsAD.add("ATT_DEN_FORMA_PRESENTACION");
@@ -435,6 +445,8 @@ public class SetParamsToExpediente extends ApiaAbstractClass {
 			valoresAttsAD.add("3");
 		} else if (viaInicio.compareTo("3") == 0) {
 			valoresAttsAD.add("1");
+		} else {
+			nombresAttsAD.remove("ATT_DEN_FORMA_PRESENTACION");
 		}
 		
 //		nombresAttsAD.add("ATT_FE_INCISO");
